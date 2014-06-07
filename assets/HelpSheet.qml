@@ -14,8 +14,13 @@ Sheet {
             }
         }
     Container {
+        Label {
+            text: "BB10 OS Downloader v1.1.0"
+            horizontalAlignment: HorizontalAlignment.Center
+            textStyle.fontWeight: FontWeight.Bold
+            }
         Label  {
-            text: "BB10 OS Downloader developed by Thurask. Fight the power."
+            text: "BB10 OS Downloader developed by Thurask. \n Fight the power."
             multiline: true
             horizontalAlignment: HorizontalAlignment.Center
             textFit.mode: LabelTextFitMode.Default
@@ -25,12 +30,12 @@ Sheet {
             text: "Source Code"
             horizontalAlignment: HorizontalAlignment.Center
             translationY: 210.0
+            textStyle.fontWeight: FontWeight.Bold
         }
         Label {
             text: "https://github.com/thurask/bbdownloader"
             horizontalAlignment: HorizontalAlignment.Center
             content.flags: TextContentFlag.ActiveText
-            translationX: 0.0
             translationY: 200.0
         }
     }
