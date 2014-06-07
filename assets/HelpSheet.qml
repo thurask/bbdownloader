@@ -15,7 +15,7 @@ Sheet {
         }
     Container {
         Label  {
-            text: "BB10 OS Downloader developed by Thurask. Apologies for the reset button, but I'm a noob with Cascades/QML/C++/programming in general. Of course, smart people can trudge through this on Github."
+            text: "BB10 OS Downloader developed by Thurask. Fight the power."
             multiline: true
             horizontalAlignment: HorizontalAlignment.Center
             textFit.mode: LabelTextFitMode.Default
