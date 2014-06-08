@@ -73,10 +73,8 @@
 
     QString DownloadManager::saveFileName(const QUrl &url)
     {
-        QDir dir("shared/downloads/bbdownloader/");
-        if (!dir.exists()) {
-            dir.mkdir("shared/downloads/bbdownloader");
-        }
+        QDir dir;
+        dir.mkdir("shared/downloads/bbdownloader");
 
         //Create dir in downloads dir
 
