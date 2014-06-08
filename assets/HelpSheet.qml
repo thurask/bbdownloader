@@ -15,7 +15,7 @@ Sheet {
         }
     Container {
         Label {
-            text: "BB10 OS Downloader v2.1.1"
+            text: "BB10 OS Downloader v2.1.2"
             horizontalAlignment: HorizontalAlignment.Center
             textStyle.fontWeight: FontWeight.Bold
             }

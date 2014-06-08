@@ -41,7 +41,7 @@ Page {
         }
     }
     titleBar: TitleBar {
-        title: "BB10 OS Downloader v2.1.1"
+        title: "BB10 OS Downloader v2.1.2"
     }
     ScrollView {
         id: mainscrollview
@@ -64,7 +64,6 @@ Page {
                 TextField {
                     id: osver_input
                     hintText: "Enter target OS version"
-                    text: "10.2.1.3175"
                     inputMode: TextFieldInputMode.NumbersAndPunctuation
                 }
                 Label {
@@ -74,7 +73,6 @@ Page {
                 TextField {
                     id: radiover_input
                     hintText: "Enter target radio version"
-                    text: "10.2.1.3140"
                     inputMode: TextFieldInputMode.NumbersAndPunctuation
                 }
                 Label {
@@ -84,11 +82,6 @@ Page {
                 TextField {
                     id: swver_input
                     hintText: "Enter target software version"
-                    text: "10.2.1.2941"
-                    onCreationCompleted: {
-                        hashCalculateSha.calculateHash(swversion)
-                        hashedswversion = hashCalculateSha.getHash()
-                    }
                     onTextChanged: {
                         hashCalculateSha.calculateHash(swversion)
                         hashedswversion = hashCalculateSha.getHash()
@@ -102,7 +95,6 @@ Page {
                         id: dropdown_debrick
                         text: "Debrick OS"
                         value: "debrick"
-                        selected: true
                     }
                     Option {
                         id: dropdown_core
@@ -143,11 +135,6 @@ Page {
                         id: dropdown_sdkautoloader
                         text: "SDK Autoloader (BlackBerry Dev)"
                         value: "sdkautoloader"
-                    }
-                    onCreationCompleted: {
-                        if (osdropdown.selectedValue == "debrick") {
-                            os_download_label.text = "Debrick OS:";
-                        } 
                     }
                     onSelectedValueChanged: {
                         if (osdropdown.selectedValue == "debrick") {
@@ -206,7 +193,6 @@ Page {
                         id: dropdown_z30
                         text: "Z30"
                         value: "8960wtr5"
-                        selected: true
                     }
                     Option {
                         id: dropdown_z30_future
@@ -232,11 +218,6 @@ Page {
                         id: dropdown_pblte_new
                         text: "4G PlayBook (v2)"
                         value: "winchester_pblte_new"
-                    }
-                    onCreationCompleted: {
-                        if (devicedropdown.selectedValue == "8960wtr5") {
-                            radio_download_label.text = "Z30 Radio:";
-                        }
                     }
                     onSelectedValueChanged: {
                         if (osdropdown.selectedValue != "sdkautoloader"){
