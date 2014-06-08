@@ -6,7 +6,7 @@
  */
 
 
-#include "hashcalculatesha.h"
+#include "hashcalculatesha.hpp"
 #include <QCryptographicHash>
 #include "QDebug"
 HashCalculateSha::HashCalculateSha(QObject *parent) :

@@ -70,6 +70,7 @@
     <!--  Name of author which is used for signing. Must match the developer name of your development certificate. -->
     <description>Fight the power</description>
     <icon>
+       <image>icon_94.png</image>
        <image>icon.png</image>
     </icon>
     <authorId>gYAAgJz00Keh1JkBPYeN4rkIp48</authorId>
@@ -92,6 +93,7 @@
     <asset path="translations" dest="qm">
         <include name="*.qm"/>
     </asset>
+    <asset path="icon_94.png">icon_94.png</asset>
 
     <!-- Request permission to execute native code.  Required for native applications. -->
     <permission system="true">run_native</permission>
