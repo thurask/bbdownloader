@@ -41,7 +41,7 @@ Page {
         }
     }
     titleBar: TitleBar {
-        title: "BB10 OS Downloader v2.1.0"
+        title: "BB10 OS Downloader v2.1.1"
     }
     ScrollView {
         id: mainscrollview
@@ -102,6 +102,7 @@ Page {
                         id: dropdown_debrick
                         text: "Debrick OS"
                         value: "debrick"
+                        selected: true
                     }
                     Option {
                         id: dropdown_core
@@ -142,6 +143,11 @@ Page {
                         id: dropdown_sdkautoloader
                         text: "SDK Autoloader (BlackBerry Dev)"
                         value: "sdkautoloader"
+                    }
+                    onCreationCompleted: {
+                        if (osdropdown.selectedValue == "debrick") {
+                            os_download_label.text = "Debrick OS:";
+                        } 
                     }
                     onSelectedValueChanged: {
                         if (osdropdown.selectedValue == "debrick") {
@@ -200,6 +206,7 @@ Page {
                         id: dropdown_z30
                         text: "Z30"
                         value: "8960wtr5"
+                        selected: true
                     }
                     Option {
                         id: dropdown_z30_future
@@ -225,6 +232,11 @@ Page {
                         id: dropdown_pblte_new
                         text: "4G PlayBook (v2)"
                         value: "winchester_pblte_new"
+                    }
+                    onCreationCompleted: {
+                        if (devicedropdown.selectedValue == "8960wtr5") {
+                            radio_download_label.text = "Z30 Radio:";
+                        }
                     }
                     onSelectedValueChanged: {
                         if (osdropdown.selectedValue != "sdkautoloader"){
@@ -269,28 +281,28 @@ Page {
                         radio_download_label.text = "WiFi PlayBook ain't got no radio";
                         radio_download_textarea.text = "";
                         if (osdropdown.selectedValue == "debrick") {
-                            os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/winchester.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar";
+                            os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory.desktop/" + osversion + "/winchester.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar";
                         }
                         if (osdropdown.selectedValue != "debrick") {
-                            os_download_textarea.text = "Please set OS mode to Debrick OS";
+                            os_download_textarea.text = "Please set OS Type to Debrick OS";
                         }
                     }
                     if (devicedropdown.selectedValue == "winchester_pblte_old"){
                         if (osdropdown.selectedValue == "debrick") {
-                            os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/winchester.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar";
+                            os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory.desktop/" + osversion + "/winchester.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar";
                             radio_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/mod-qcmdm9k-" + radioversion + "-nto+armle-v7+signed.bar";
                         }
                         if (osdropdown.selectedValue != "debrick") {
-                            os_download_textarea.text = "Please set OS mode to Debrick OS";
+                            os_download_textarea.text = "Please set OS Type to Debrick OS";
                         }
                     }
                     if (devicedropdown.selectedValue == "winchester_pblte_new"){
                         if (osdropdown.selectedValue == "debrick") {
                             radio_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/mod.qcmdm9k-" + radioversion + "-nto+armle-v7+signed.bar";
-                            os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/winchester.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar";
+                            os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory.desktop/" + osversion + "/winchester.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar";
                         }
                         if (osdropdown.selectedValue != "debrick") {
-                            os_download_textarea.text = "Please set OS mode to Debrick OS";
+                            os_download_textarea.text = "Please set OS Type to Debrick OS";
                         }
                     }
                     if (devicedropdown.selectedValue == "8930wtr5") {
