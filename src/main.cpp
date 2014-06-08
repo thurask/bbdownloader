@@ -18,10 +18,12 @@
 
 #include <bb/cascades/Application>
 #include <bb/cascades/QmlDocument>
+#include <bb/cascades/Page>
 
 #include <QCryptographicHash>
 
-#include "hashcalculatesha.h"
+#include "hashcalculatesha.hpp"
+#include "DownloadManager.hpp"
 
 using namespace bb::cascades;
 
@@ -30,7 +32,10 @@ Q_DECL_EXPORT int main(int argc, char **argv)
     Application app(argc, argv);
 
     HashCalculateSha*ihashcalcsha =  new HashCalculateSha();
-        QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("hashCalculateSha", ihashcalcsha);
+    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("hashCalculateSha", ihashcalcsha);
+
+    DownloadManager manager;
+    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("_manager", &manager);
 
     // Create the Application UI object, this is where the main.qml file
     // is loaded and the application scene is set.

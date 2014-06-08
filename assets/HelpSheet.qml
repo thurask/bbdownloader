@@ -15,12 +15,12 @@ Sheet {
         }
     Container {
         Label {
-            text: "BB10 OS Downloader v1.1.0"
+            text: "BB10 OS Downloader v2.0.0"
             horizontalAlignment: HorizontalAlignment.Center
             textStyle.fontWeight: FontWeight.Bold
             }
         Label  {
-            text: "BB10 OS Downloader developed by Thurask. \n Fight the power."
+            text: "BB10 OS Downloader developed by Thurask. \n Fight the power. \n\n Downloads to /downloads/bbdownloader."
             multiline: true
             horizontalAlignment: HorizontalAlignment.Center
             textFit.mode: LabelTextFitMode.Default

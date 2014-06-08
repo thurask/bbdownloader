@@ -34,8 +34,13 @@ Page {
         }
     }
     titleBar: TitleBar {
-        title: "BB10 OS Downloader v1.1.0"
+        title: "BB10 OS Downloader v2.0.0"
     }
+    ScrollView {
+        id: mainscrollview
+        accessibility.name: ""
+        scrollViewProperties.pinchToZoomEnabled: false
+        scrollViewProperties.scrollMode: ScrollMode.Vertical
     Container {
         id: global_download_container
         Container {
@@ -52,6 +57,7 @@ Page {
             TextField {
                 id: osver_input
                 hintText: "Enter target OS version"
+                text: "10.2.1.3175"
                 onTextChanged: {
                     osver_input.text = osver_input.text
                 }
@@ -64,6 +70,7 @@ Page {
             TextField {
                 id: radiover_input
                 hintText: "Enter target radio version"
+                text: "10.2.1.3140"
                 onTextChanged: {
                     radiover_input.text = radiover_input.text
                 }
@@ -76,6 +83,11 @@ Page {
             TextField {
                 id: swver_input
                 hintText: "Enter target software version"
+                text: "10.2.1.2941"
+                onCreationCompleted: {
+                    hashCalculateSha.calculateHash(swver_input.text)
+                    hashedswversion = hashCalculateSha.getHash()
+                }
                 onTextChanged: {
                     hashCalculateSha.calculateHash(swver_input.text)
                     hashedswversion = hashCalculateSha.getHash()
@@ -159,14 +171,13 @@ Page {
                         os_download_label.text = "Autoloader:";
                     }
                 }
-            
             }
             DropDown {
                 id: devicedropdown
                 title: "Choose Device"
                 Option {
                     id: dropdown_winchester
-                    text: "Z10 STL100-1/Dev Alpha A/B"
+                    text: "Z10 STL100-1"
                     value: "winchester"
                 }
                 Option {
@@ -181,7 +192,7 @@ Page {
                 }
                 Option {
                     id: dropdown_q10
-                    text: "Q10/Q5/Dev Alpha C/Classic"
+                    text: "Q10/Q5/Classic/Khan"
                     value: "8960wtr"
                 }
                 Option {
@@ -199,10 +210,25 @@ Page {
                     text: "Z3/Kopi/Cafe"
                     value: "8930wtr5"
                 }
+                Option {
+                    id: dropdown_pb
+                    text: "PlayBook"
+                    value: "winchester_pb"
+                }
+                Option {
+                    id: dropdown_pblte_old
+                    text: "4G PlayBook (v1)"
+                    value: "winchester_pblte_old"
+                }
+                Option {
+                    id: dropdown_pblte_new
+                    text: "4G PlayBook (v2)"
+                    value: "winchester_pblte_new"
+                }
                 onSelectedValueChanged: {
                     if (osdropdown.selectedValue != "sdkautoloader"){
                         if (devicedropdown.selectedValue == "winchester") {
-                            radio_download_label.text = "OMAP Z10/Dev Alpha Radio:";
+                            radio_download_label.text = "OMAP Z10 Radio:";
                         }
                         if (devicedropdown.selectedValue == "8960") {
                             radio_download_label.text = "Qualcomm Z10/P9982 Radio:";
@@ -211,7 +237,7 @@ Page {
                             radio_download_label.text = "Verizon Z10 Radio:";
                         }
                         if (devicedropdown.selectedValue == "8960wtr") {
-                            radio_download_label.text = "Q10/Q5/Dev Alpha C/Classic Radio:";
+                            radio_download_label.text = "Q10/Q5/Khan/Classic Radio:";
                         }
                         if (devicedropdown.selectedValue == "8960wtr5") {
                             radio_download_label.text = "Z30 Radio:";
@@ -222,6 +248,12 @@ Page {
                         if (devicedropdown.selectedValue == "8930wtr5") {
                             radio_download_label.text = "Z3/Kopi/Cafe Radio:";
                         }
+                        if (devicedropdown.selectedValue == "winchester_pblte_old"){
+                            radio_download_label.text = "4G PlayBook Radio: ";
+                        }
+                        if (devicedropdown.selectedValue == "winchester_pblte_new"){
+                            radio_download_label.text = "4G PlayBook Radio: ";
+                        }
                     }
                     }
                 }
@@ -229,7 +261,34 @@ Page {
             Button {
                 id:generatebutton
                 text: "Generate"
+                horizontalAlignment: HorizontalAlignment.Center
                 onClicked: {
+                    if (devicedropdown.selectedValue == "winchester_pb"){
+                        if (osdropdown.selectedValue == "debrick") {
+                            os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/winchester.factory_sfi.desktop-" + osver_input.text + "-nto+armle+v7+signed.bar";
+                        }
+                        if (osdropdown.selectedValue != "debrick") {
+                            os_download_textarea.text = "Please set OS mode to Debrick OS";
+                        }
+                    }
+                    if (devicedropdown.selectedValue == "winchester_pblte_old"){
+                        if (osdropdown.selectedValue == "debrick") {
+                            os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/winchester.factory_sfi.desktop-" + osver_input.text + "-nto+armle+v7+signed.bar";
+                            radio_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/mod-qcmdm9k-" + radiover_input.text + "-nto+armle-v7+signed.bar";
+                        }
+                        if (osdropdown.selectedValue != "debrick") {
+                            os_download_textarea.text = "Please set OS mode to Debrick OS";
+                        }
+                    }
+                    if (devicedropdown.selectedValue == "winchester_pblte_new"){
+                        if (osdropdown.selectedValue == "debrick") {
+                            radio_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/mod.qcmdm9k-" + radiover_input.text + "-nto+armle-v7+signed.bar";
+                            os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/winchester.factory_sfi.desktop-" + osver_input.text + "-nto+armle+v7+signed.bar";
+                        }
+                        if (osdropdown.selectedValue != "debrick") {
+                            os_download_textarea.text = "Please set OS mode to Debrick OS";
+                        }
+                    }
                     if (devicedropdown.selectedValue == "8930wtr5") {
                         if (osdropdown.selectedValue != "sdkautoloader"){
                             radio_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8930.wtr5/" + radiover_input.text + "/qc8930.wtr5-" + radiover_input.text + "-nto+armle-v7+signed.bar"
@@ -450,10 +509,10 @@ Page {
                         }
                     }
                 }
-                horizontalAlignment: HorizontalAlignment.Center
             }
-            Divider {
+            Header {
                 accessibility.name: ""
+                title: "Links"
             }
             Label {
                 id: os_download_label
@@ -477,5 +536,65 @@ Page {
                 visible: true
                 content.flags: TextContentFlag.ActiveText
             }
+            Container {
+            layout: StackLayout {
+                orientation: LayoutOrientation.LeftToRight
+
+            }
+                Button {
+                    id: downloadbutton_os
+                    text: "Download OS"
+                    onClicked: {
+                        _manager.downloadUrl (os_download_textarea.text)
+                    }
+                }
+                Button {
+                    id: downloadbutton_radio
+                    text: "Download Radio"
+                    onClicked: {
+                        _manager.downloadUrl (radio_download_textarea.text)
+                    }
+                }
+            }
+            Header {
+                accessibility.name: ""
+                title: "Progress"
+            }
+            Label {
+                text: "Active Downloads: " + (_manager.activeDownloads == 0 ? "none" : _manager.activeDownloads)
+            }
+            ProgressBar {
+                topMargin: 10
+                leftMargin: 10
+                rightMargin: 10
+                
+                total: _manager.progressTotal
+                value: _manager.progressValue
+                message: _manager.progressMessage
+            }
+            Header {
+                accessibility.name: ""
+                title: "Status"
+            }
+            TextArea {
+                preferredWidth: 900
+                preferredHeight: 145
+                editable: false
+                text: _manager.statusMessage
+            }
+            Header {
+                accessibility.name: ""
+                title: "Errors"
+            }
+            TextArea {
+                preferredWidth: 900
+                preferredHeight: 125
+                editable: false
+                text: _manager.errorMessage
+            }
+            Divider {
+                accessibility.name: ""
+            }
         }
     }
+}

@@ -5,8 +5,8 @@
  *      Author: thura_000
  */
 
-#ifndef HASHCALCULATESHA_H_
-#define HASHCALCULATESHA_H_
+#ifndef HASHCALCULATESHA_HPP_
+#define HASHCALCULATESHA_HPP_
 
 #include <QObject>
 
@@ -27,4 +27,4 @@ public:
 
 };
 
-#endif /* HASHCALCULATESHA_H_ */
+#endif /* HASHCALCULATESHA_HPP_ */
