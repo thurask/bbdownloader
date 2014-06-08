@@ -62,6 +62,11 @@
         // This method is called when the user starts a download by clicking the 'Download' button in the UI
         void downloadUrl(const QString &url);
 
+        //void killDownload();
+
+        // Called to kill download
+        void downloadCancelled();
+
     Q_SIGNALS:
         // The change notification signals of the properties
         void errorMessageChanged();
@@ -83,6 +88,7 @@
 
         // This method is called whenever the current download job received new data
         void downloadReadyRead();
+
 
     private:
         // Enqueues a new download to the internal job queue

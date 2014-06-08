@@ -53,6 +53,11 @@
         append(QUrl(url));
     }
 
+    /*void DownloadManager::killDownload()
+    {
+      downloadCancelled();
+    }*/
+
     void DownloadManager::append(const QUrl &url)
     {
         /**
@@ -73,10 +78,9 @@
 
     QString DownloadManager::saveFileName(const QUrl &url)
     {
+        //Create dir in downloads dir
         QDir dir;
         dir.mkdir("shared/downloads/bbdownloader");
-
-        //Create dir in downloads dir
 
         // First extract the path component from the URL ...
         const QString path = url.path();
@@ -225,6 +229,35 @@
     {
         // Whenever new data are available on the network reply, write them out to the result file
         m_output.write(m_currentDownload->readAll());
+    }
+
+    void DownloadManager::downloadCancelled()
+    {
+        m_currentDownload->abort();
+
+        // Reset the progress information when the download has finished
+                m_progressTotal = 0;
+                m_progressValue = 0;
+                m_progressMessage.clear();
+                emit progressValueChanged();
+                emit progressTotalChanged();
+                emit progressMessageChanged();
+
+                // Close the file where the data have been written
+                m_output.close();
+                m_output.remove();
+
+                // Add a status or error message
+                    addErrorMessage("Cancelled.");
+                    --m_downloadedCount;
+
+                /**
+                 * We can't call 'delete m_currentDownload' here, because this method might have been invoked directly as result of a signal
+                 * emission of the network reply object.
+                 */
+                m_currentDownload->deleteLater();
+                m_currentDownload = 0;
+                emit activeDownloadsChanged();
     }
 
 

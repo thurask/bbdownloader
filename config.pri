@@ -38,18 +38,21 @@ config_pri_assets {
     OTHER_FILES += \
         $$quote($$BASEDIR/assets/HelpSheet.qml) \
         $$quote($$BASEDIR/assets/ProgressBar.qml) \
+        $$quote($$BASEDIR/assets/icon_94.png) \
         $$quote($$BASEDIR/assets/main.qml)
 }
 
 config_pri_source_group1 {
     SOURCES += \
         $$quote($$BASEDIR/src/DownloadManager.cpp) \
+        $$quote($$BASEDIR/src/QmlBeam.cpp) \
         $$quote($$BASEDIR/src/applicationui.cpp) \
         $$quote($$BASEDIR/src/hashcalculatesha.cpp) \
         $$quote($$BASEDIR/src/main.cpp)
 
     HEADERS += \
         $$quote($$BASEDIR/src/DownloadManager.hpp) \
+        $$quote($$BASEDIR/src/QmlBeam.hpp) \
         $$quote($$BASEDIR/src/applicationui.hpp) \
         $$quote($$BASEDIR/src/hashcalculatesha.hpp)
 }
