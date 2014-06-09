@@ -53,11 +53,6 @@
         append(QUrl(url));
     }
 
-    /*void DownloadManager::killDownload()
-    {
-      downloadCancelled();
-    }*/
-
     void DownloadManager::append(const QUrl &url)
     {
         /**
@@ -249,7 +244,6 @@
 
                 // Add a status or error message
                     addErrorMessage("Cancelled.");
-                    --m_downloadedCount;
 
                 /**
                  * We can't call 'delete m_currentDownload' here, because this method might have been invoked directly as result of a signal

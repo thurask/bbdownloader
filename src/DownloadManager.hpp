@@ -62,8 +62,6 @@
         // This method is called when the user starts a download by clicking the 'Download' button in the UI
         void downloadUrl(const QString &url);
 
-        //void killDownload();
-
         // Called to kill download
         void downloadCancelled();
 
