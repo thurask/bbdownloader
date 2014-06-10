@@ -4,10 +4,36 @@ BASEDIR = $$quote($$_PRO_FILE_PWD_)
 device {
     CONFIG(debug, debug|release) {
         profile {
+            INCLUDEPATH += $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore)
+
+            DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore)
+
+            LIBS += -lbbcascades \
+                -lQtCore \
+                -lQtXml \
+                -lQtNetwork
+
             CONFIG += \
                 config_pri_assets \
                 config_pri_source_group1
         } else {
+            INCLUDEPATH += $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore)
+
+            DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore)
+
+            LIBS += -lbbcascades \
+                -lQtCore \
+                -lQtXml \
+                -lQtNetwork
+
             CONFIG += \
                 config_pri_assets \
                 config_pri_source_group1
@@ -17,6 +43,19 @@ device {
 
     CONFIG(release, debug|release) {
         !profile {
+            INCLUDEPATH += $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore)
+
+            DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore)
+
+            LIBS += -lbbcascades \
+                -lQtCore \
+                -lQtXml \
+                -lQtNetwork
+
             CONFIG += \
                 config_pri_assets \
                 config_pri_source_group1
@@ -27,6 +66,19 @@ device {
 simulator {
     CONFIG(debug, debug|release) {
         !profile {
+            INCLUDEPATH += $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore)
+
+            DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore)
+
+            LIBS += -lbbcascades \
+                -lQtCore \
+                -lQtXml \
+                -lQtNetwork
+
             CONFIG += \
                 config_pri_assets \
                 config_pri_source_group1
@@ -38,6 +90,7 @@ config_pri_assets {
     OTHER_FILES += \
         $$quote($$BASEDIR/assets/HelpSheet.qml) \
         $$quote($$BASEDIR/assets/ProgressBar.qml) \
+        $$quote($$BASEDIR/assets/SettingsSheet.qml) \
         $$quote($$BASEDIR/assets/icon_94.png) \
         $$quote($$BASEDIR/assets/main.qml)
 }
@@ -46,6 +99,7 @@ config_pri_source_group1 {
     SOURCES += \
         $$quote($$BASEDIR/src/DownloadManager.cpp) \
         $$quote($$BASEDIR/src/QmlBeam.cpp) \
+        $$quote($$BASEDIR/src/Settings.cpp) \
         $$quote($$BASEDIR/src/applicationui.cpp) \
         $$quote($$BASEDIR/src/hashcalculatesha.cpp) \
         $$quote($$BASEDIR/src/main.cpp)
@@ -53,6 +107,7 @@ config_pri_source_group1 {
     HEADERS += \
         $$quote($$BASEDIR/src/DownloadManager.hpp) \
         $$quote($$BASEDIR/src/QmlBeam.hpp) \
+        $$quote($$BASEDIR/src/Settings.hpp) \
         $$quote($$BASEDIR/src/applicationui.hpp) \
         $$quote($$BASEDIR/src/hashcalculatesha.hpp)
 }

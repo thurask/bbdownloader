@@ -23,8 +23,13 @@ Page {
             id: helpSheetDefinition
             HelpSheet {
             }
+        },
+        ComponentDefinition {
+            id: settingsSheetDefinition
+            SettingsSheet {
+            }
         }
-    ] 
+    ]
     Menu.definition: MenuDefinition {
         helpAction: HelpActionItem {
             onTriggered: {
@@ -32,9 +37,15 @@ Page {
                 help.open();
             }
         }
+        settingsAction: SettingsActionItem {
+            onTriggered: {
+                var settings = settingsSheetDefinition.createObject()
+                settings.open();
+            }
+        }
     }
     titleBar: TitleBar {
-        title: "BB10 OS Downloader v2.1.3"
+        title: "BB10 OS Downloader v2.2.0"
     }
     ScrollView {
         id: mainscrollview
@@ -164,7 +175,7 @@ Page {
                         }
                         if (osdropdown.selectedValue == "sdkautoloader") {
                             os_download_label.text = "Autoloader:";
-                            radio_download_label.text = "SDK downloads wonky. Workaround: tap on link to download in Browser.";
+                            radio_download_label.text = "SDK downloads wonky. \nWorkaround: tap on link to download in Browser.";
                         }
                     }
                 }
@@ -532,6 +543,7 @@ Page {
             Label {
                 id: radio_download_label
                 text: "Radio Link:"
+                multiline: true
             }
             TextArea {
                 id: radio_download_textarea

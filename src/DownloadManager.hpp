@@ -8,14 +8,8 @@
 #ifndef DOWNLOADMANAGER_HPP_
 #define DOWNLOADMANAGER_HPP_
 
-#include <QtCore/QFile>
-    #include <QtCore/QObject>
-    #include <QtCore/QQueue>
-    #include <QtCore/QStringList>
-    #include <QtCore/QTime>
-    #include <QtCore/QUrl>
-    #include <QtNetwork/QNetworkAccessManager>
-    #include <QtCore/QDir>
+    #include <QtNetwork>
+    #include <QtCore>
 
     class QNetworkReply;
 
@@ -86,7 +80,6 @@
 
         // This method is called whenever the current download job received new data
         void downloadReadyRead();
-
 
     private:
         // Enqueues a new download to the internal job queue

@@ -7,11 +7,8 @@
 
  #include "DownloadManager.hpp"
 
-    #include <QtCore/QFileInfo>
-    #include <QtCore/QTimer>
-    #include <QtNetwork/QNetworkReply>
-    #include <QtNetwork/QNetworkRequest>
-    #include <QtCore/QDir>
+    #include <QtCore>
+    #include <QtNetwork>
 
     DownloadManager::DownloadManager(QObject *parent)
         : QObject(parent), m_currentDownload(0), m_downloadedCount(0), m_totalCount(0), m_progressTotal(0), m_progressValue(0)
@@ -144,6 +141,7 @@
 
         // Now create the network request for the URL ...
         QNetworkRequest request(url);
+        request.setAttribute(QNetworkRequest::HttpPipeliningAllowedAttribute, true);
 
         // ... and start the download.
         m_currentDownload = m_manager.get(request);
@@ -203,6 +201,8 @@
         // Add a status or error message
         if (m_currentDownload->error()) {
             addErrorMessage(QString("Failed: %1").arg(m_currentDownload->errorString()));
+            //delete temp file
+            m_output.remove();
         } else {
             addStatusMessage("Succeeded.");
             ++m_downloadedCount;
@@ -238,7 +238,7 @@
                 emit progressTotalChanged();
                 emit progressMessageChanged();
 
-                // Close the file where the data have been written
+                // Delete the file where the data have been written
                 m_output.close();
                 m_output.remove();
 
@@ -253,6 +253,3 @@
                 m_currentDownload = 0;
                 emit activeDownloadsChanged();
     }
-
-
-
