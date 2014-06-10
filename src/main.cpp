@@ -22,11 +22,14 @@
 #include <bb/cascades/Window>
 
 #include <QtCore>
+#include <QtNetwork>
+#include <QtXml>
 
 #include "hashcalculatesha.hpp"
 #include "DownloadManager.hpp"
 #include "Settings.hpp"
 #include "QmlBeam.hpp"
+#include "SwLookup.hpp"
 
 using namespace bb::cascades;
 
@@ -62,6 +65,9 @@ Q_DECL_EXPORT int main(int argc, char **argv)
 
     Settings *settings = new Settings();
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Settings", settings);
+
+    SwLookup swlookup;
+    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("_swlookup", &swlookup);
 
     // Create the Application UI object, this is where the main.qml file
     // is loaded and the application scene is set.

@@ -100,6 +100,7 @@ config_pri_source_group1 {
         $$quote($$BASEDIR/src/DownloadManager.cpp) \
         $$quote($$BASEDIR/src/QmlBeam.cpp) \
         $$quote($$BASEDIR/src/Settings.cpp) \
+        $$quote($$BASEDIR/src/SwLookup.cpp) \
         $$quote($$BASEDIR/src/applicationui.cpp) \
         $$quote($$BASEDIR/src/hashcalculatesha.cpp) \
         $$quote($$BASEDIR/src/main.cpp)
@@ -108,6 +109,7 @@ config_pri_source_group1 {
         $$quote($$BASEDIR/src/DownloadManager.hpp) \
         $$quote($$BASEDIR/src/QmlBeam.hpp) \
         $$quote($$BASEDIR/src/Settings.hpp) \
+        $$quote($$BASEDIR/src/SwLookup.hpp) \
         $$quote($$BASEDIR/src/applicationui.hpp) \
         $$quote($$BASEDIR/src/hashcalculatesha.hpp)
 }

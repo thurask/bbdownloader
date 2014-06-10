@@ -51,7 +51,6 @@ Container {
         
         horizontalAlignment: HorizontalAlignment.Center
         verticalAlignment: VerticalAlignment.Center
-        
         textStyle.color: Color.White
         textStyle.base: SystemDefaults.TextStyles.SmallText
     }
