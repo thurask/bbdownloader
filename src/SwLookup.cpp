@@ -25,11 +25,6 @@ void SwLookup::post(QString osVer)
 {
     const QUrl url("https://cs.sl.blackberry.com/cse/srVersionLookup/2.0.0/");
     QNetworkRequest request(url);
-    /*QSslConfiguration config = request.sslConfiguration();
-            config.setPeerVerifyMode(QSslSocket::VerifyNone);
-            config.setProtocol(QSsl::TlsV1);
-            request.setSslConfiguration(config);*/
-
             QString query = "<srVersionLookupRequest version=\"2.0.0\" authEchoTS=\"1366644680359\">"
                                     "<clientProperties><hardware>"
                                     "<pin>0x2FFFFFB3</pin><bsn>1140011878</bsn><imei>004402242176786</imei><id>0x8D00240A</id><isBootROMSecure>true</isBootROMSecure>"

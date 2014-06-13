@@ -15,7 +15,7 @@ Sheet {
         }
     Container {
         Label {
-            text: "BB10 OS Downloader v3.0.0"
+            text: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
             horizontalAlignment: HorizontalAlignment.Center
             textStyle.fontWeight: FontWeight.Bold
             }

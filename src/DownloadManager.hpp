@@ -59,6 +59,9 @@
         // Called to kill download
         void downloadCancelled();
 
+        // Called to nuke status/error box
+        void messagesCleared();
+
     Q_SIGNALS:
         // The change notification signals of the properties
         void errorMessageChanged();

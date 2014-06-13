@@ -242,9 +242,6 @@
                 m_output.close();
                 m_output.remove();
 
-                // Add a status or error message
-                    addErrorMessage("Cancelled.");
-
                 /**
                  * We can't call 'delete m_currentDownload' here, because this method might have been invoked directly as result of a signal
                  * emission of the network reply object.
@@ -252,4 +249,11 @@
                 m_currentDownload->deleteLater();
                 m_currentDownload = 0;
                 emit activeDownloadsChanged();
+    }
+    void DownloadManager::messagesCleared()
+    {
+        m_errorMessage.clear();
+        m_statusMessage.clear();
+        emit errorMessageChanged();
+        emit statusMessageChanged();
     }

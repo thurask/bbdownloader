@@ -20,10 +20,15 @@
 #include <bb/cascades/QmlDocument>
 #include <bb/cascades/Page>
 #include <bb/cascades/Window>
+#include <bb/ApplicationInfo>
 
 #include <QtCore>
 #include <QtNetwork>
 #include <QtXml>
+#include <QLocale>
+#include <QTranslator>
+
+#include <Qt/qdeclarativedebug.h>
 
 #include "hashcalculatesha.hpp"
 #include "DownloadManager.hpp"
