@@ -43,7 +43,6 @@ ApplicationUI::ApplicationUI() :
     // initial load
     onSystemLanguageChanged();
 
-
     // get app version without hardcoding
     bb::ApplicationInfo appInfo;
         QString versionNumber = appInfo.version();
@@ -51,7 +50,6 @@ ApplicationUI::ApplicationUI() :
         appProperties->insert("name", QVariant(appInfo.title()));
         appProperties->insert("version", QVariant(appInfo.version()));
         appProperties->insert("description", QVariant(appInfo.description()));
-
 
     // Create scene document from main.qml asset, the parent is set
     // to ensure the document gets destroyed properly at shut down.

@@ -252,6 +252,7 @@
     }
     void DownloadManager::messagesCleared()
     {
+        //Clear status messages
         m_errorMessage.clear();
         m_statusMessage.clear();
         emit errorMessageChanged();
