@@ -13,37 +13,20 @@ Sheet {
                 }
             }
         }
-    Container {
-        Label {
-            text: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
-            horizontalAlignment: HorizontalAlignment.Center
-            textStyle.fontWeight: FontWeight.Bold
-            }
-        Label  {
-            text: "BB10 OS Downloader developed by Thurask. \n Twitter: @thuraski"
-            multiline: true
-            horizontalAlignment: HorizontalAlignment.Center
-            textFit.mode: LabelTextFitMode.Default
-            textStyle.textAlign: TextAlign.Center
-            content.flags: TextContentFlag.ActiveText
-        }
-        Label {
-            horizontalAlignment: HorizontalAlignment.Center
-            textStyle.textAlign: TextAlign.Center
-            text: "Bar files save to /downloads/bbdownloader."
-        }
-        Label {
-            text: "Do what you want with the source code:"
-            multiline: true
-            translationY: 210.0
+        Container {
+            Label {
+                text: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
                 horizontalAlignment: HorizontalAlignment.Center
+                textStyle.fontWeight: FontWeight.Bold
             }
-        Label {
-            text: "https://github.com/thurask/bbdownloader"
-            horizontalAlignment: HorizontalAlignment.Center
-            content.flags: TextContentFlag.ActiveText
-            translationY: 200.0
+            Label  {
+                text: "BB10 OS Downloader developed by Thurask. \nTwitter: @thuraski\n\nBar files save to /downloads/bbdownloader. \n\nSo I heard you like spreadsheets (thank you Kyle): \n http://bit.ly/bb10oslist \n\nDo what you want with the source code: \nhttps://github.com/thurask/bbdownloader"
+                multiline: true
+                horizontalAlignment: HorizontalAlignment.Center
+                textFit.mode: LabelTextFitMode.Default
+                textStyle.textAlign: TextAlign.Center
+                content.flags: TextContentFlag.ActiveText
+            }
         }
-    }
     }
 }
