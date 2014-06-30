@@ -24,7 +24,6 @@ TabbedPane {
     property string osinit2
     property string radinit
     property string radinit2
-    property string swrelease_auto
     attachedObjects: [
         ComponentDefinition {
             id: helpSheetDefinition
@@ -113,8 +112,9 @@ TabbedPane {
                                 hintText: "Target OS version"
                                 inputMode: TextFieldInputMode.NumbersAndPunctuation
                                 horizontalAlignment: HorizontalAlignment.Left
-                                onTextChanged: {
+                                onTextChanging: {
                                     osversion = osver_input.text
+                                    _swlookup.post(osver_input.text);
                                 }
                             }
                             Button {
@@ -122,13 +122,7 @@ TabbedPane {
                                 text: "Lookup"
                                 onClicked: {
                                     //Todo: figure out why it needs a few taps to get going (Github?)
-                                    _swlookup.post(osver_input.text);
-                                    var swrelease = _swlookup.softwareRelease();
-                                    if (swrelease.indexOf(".") != -1) {
-                                        swver_input.text = swrelease;
-                                    } else {
-                                        swver_input.text = "SW Release not found.";
-                                    }                            
+                                    swver_input.text = _swlookup.softwareRelease();                                                              
                                 }
                                 horizontalAlignment: HorizontalAlignment.Left
                                 verticalAlignment: VerticalAlignment.Top
@@ -825,9 +819,19 @@ TabbedPane {
                         }
                         TextField {
                             id: autolookup_input
-                            text: "10.x.y(y).zzzz"
                             verticalAlignment: VerticalAlignment.Center
+                            inputMode: TextFieldInputMode.NumbersAndPunctuation
+                            onTextChanging: {
+                                _swlookup.post(autolookup_input.text);
+                            }
+                            input.submitKey: SubmitKey.Submit
                         }
+                    }
+                    Label {
+                        horizontalAlignment: HorizontalAlignment.Center
+                        text: "Don't tap too fast.\nIf things go sour, hit Clear and try again."
+                        multiline: true
+                        verticalAlignment: VerticalAlignment.Center
                     }
                     Container {
                         topPadding: 20.0
@@ -839,21 +843,11 @@ TabbedPane {
                             id: autolookupbutton
                             text: "Keep tapping"
                             onClicked: {
-                                //Kludgetacular. Might need to have someone who isn't a dumbass look at this (Github?)
-                                var inputos_auto = autolookup_input.text;
-                                _swlookup.post(inputos_auto);
-                                swrelease_auto = false;
-                                swrelease_auto = _swlookup.softwareRelease();
-                                var kludgearray = inputos_auto.split(".");
-                                var kludgenum = parseInt(kludgearray[3], 10);
-                                kludgearray[3] = kludgenum -3;
-                                var kludgetooutput = kludgearray.join(".");
-                                outputtext.text = outputtext.text + ("\n" + kludgetooutput + " - " + swrelease_auto);
+                                outputtext.text = outputtext.text + (autolookup_input.text + " - " + _swlookup.softwareRelease() + "\n");
                                 var splitarray = autolookup_input.text.split(".");
                                 var newnum = parseInt(splitarray[3], 10);
                                 splitarray[3] = newnum +3;
-                                var thingtolookup = splitarray.join(".");
-                                autolookup_input.text = thingtolookup;
+                                autolookup_input.text = splitarray.join(".");
                             }
                         }
                         Button {
@@ -862,7 +856,7 @@ TabbedPane {
                             onClicked: {
                                 outputtext.text = "";
                                 autolookup_input.text = "";
-                                swrelease_auto = false;
+                                swrelease_auto = "";
                             }
                         }
                     }
