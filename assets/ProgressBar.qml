@@ -1,3 +1,8 @@
+/*ProgressBar.qml
+ ----------------
+ Blue thingy that moves around when something is downloaded.
+ 
+ --Thurask*/
 import bb.cascades 1.2
 
 // Groups all the visual nodes for the grogress bar

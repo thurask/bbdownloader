@@ -88,7 +88,9 @@ simulator {
 
 config_pri_assets {
     OTHER_FILES += \
+        $$quote($$BASEDIR/assets/AutoLookup.qml) \
         $$quote($$BASEDIR/assets/HelpSheet.qml) \
+        $$quote($$BASEDIR/assets/OSDownloader.qml) \
         $$quote($$BASEDIR/assets/ProgressBar.qml) \
         $$quote($$BASEDIR/assets/SettingsSheet.qml) \
         $$quote($$BASEDIR/assets/icons/icon_94.png) \

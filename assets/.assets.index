@@ -1,7 +1,9 @@
 1
-5
+7
+AutoLookup.qml
 HelpSheet.qml
 icons/icon_94.png
 main.qml
+OSDownloader.qml
 ProgressBar.qml
 SettingsSheet.qml

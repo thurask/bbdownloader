@@ -1,3 +1,9 @@
+/*HelpSheet.qml
+ --------------
+ Help menu, including credits and notes.
+ 
+ --Thurask*/
+
 import bb.cascades 1.2
 
 Sheet {

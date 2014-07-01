@@ -1,10 +1,3 @@
-/*
- * DownloadManager.hpp
- *
- *  Created on: Jun 7, 2014
- *      Author: thura_000
- */
-
 #ifndef DOWNLOADMANAGER_HPP_
 #define DOWNLOADMANAGER_HPP_
 
@@ -61,6 +54,8 @@
 
         // Called to nuke status/error box
         void messagesCleared();
+
+        void saveTextFile(QString urls, QString swrelease);
 
     Q_SIGNALS:
         // The change notification signals of the properties

@@ -2,6 +2,13 @@
 <!DOCTYPE TS>
 <TS version="2.0">
 <context>
+    <name>AutoLookup</name>
+    <message>
+        <source>BB10 OS Downloader %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>HelpSheet</name>
     <message>
         <source>BB10 OS Downloader %1</source>
@@ -9,7 +16,7 @@
     </message>
 </context>
 <context>
-    <name>main</name>
+    <name>OSDownloader</name>
     <message>
         <source>BB10 OS Downloader %1</source>
         <translation type="unfinished"></translation>

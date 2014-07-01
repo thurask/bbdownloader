@@ -1,3 +1,9 @@
+/*SettingsSheet.qml
+ ------------------
+ Settings menu, including theme select.
+ 
+ --Thurask*/
+
 import bb.cascades 1.2
 
 Sheet {

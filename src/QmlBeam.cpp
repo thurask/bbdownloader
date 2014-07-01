@@ -1,9 +1,8 @@
-/*
- * QmlBeam.cpp
- *
- *  Created on: Jun 8, 2014
- *      Author: thura_000
- */
+/*QmlBeam.cpp
+--------------
+Supposedly allows for live QML editing on-device. Rarely works.
+
+--Thurask*/
 
 #include "QmlBeam.hpp"
 

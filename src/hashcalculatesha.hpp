@@ -1,10 +1,3 @@
-/*
- * hashcalculatesha.h
- *
- *  Created on: Jun 6, 2014
- *      Author: thura_000
- */
-
 #ifndef HASHCALCULATESHA_HPP_
 #define HASHCALCULATESHA_HPP_
 

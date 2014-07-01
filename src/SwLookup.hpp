@@ -1,10 +1,3 @@
-/*
- * SwLookup.hpp
- *
- *  Created on: Jun 10, 2014
- *      Author: thura_000
- */
-
 #ifndef SWLOOKUP_HPP_
 #define SWLOOKUP_HPP_
 
@@ -22,6 +15,7 @@ public:
 public Q_SLOTS:
 void post(QString osVer);
     QString softwareRelease();
+    void saveTextFile(QString textinput);
 
 Q_SIGNALS:
     void softwareReleaseChanged();

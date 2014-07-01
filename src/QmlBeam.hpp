@@ -1,10 +1,3 @@
-/*
- * QmlBeam.hpp
- *
- *  Created on: Jun 8, 2014
- *      Author: thura_000
- */
-
 #ifndef QMLBEAM_HPP_
 #define QMLBEAM_HPP_
 
