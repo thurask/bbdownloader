@@ -87,7 +87,7 @@ Page {
                         horizontalAlignment: HorizontalAlignment.Left
                         onTextChanging: {
                             osversion = osver_input.text
-                            _swlookup.post(sversion);
+                            _swlookup.post(osversion);
                         }
                     }
                     Button {
