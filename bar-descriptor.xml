@@ -72,10 +72,6 @@
 
     <!--  Name of author which is used for signing. Must match the developer name of your development certificate. -->
     <description>Fight the power</description>
-    <icon>
-       <image>assets/icons/icon_94.png</image>
-       <image>assets/icons/icon_114.png</image>
-    </icon>
     <authorId>gYAAgJz00Keh1JkBPYeN4rkIp48</authorId>
     <author>Thurask</author>
 
@@ -93,8 +89,12 @@
     <asset path="translations" dest="qm">
         <include name="*.qm"/>
     </asset>
-    <asset path="assets">
-	</asset>
+    <asset path="assets">assets</asset>
+    
+    <icon>
+       <image>assets/icons/icon_94.png</image>
+       <image>assets/icons/icon_114.png</image>
+    </icon>
 
     <!-- Request permission to execute native code.  Required for native applications. -->
     <permission system="true">run_native</permission>
