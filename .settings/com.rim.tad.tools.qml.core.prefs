@@ -2,3 +2,6 @@ config-pri.hash=346BD7776FAAC1C33113B212D4DC50A6
 config-pri.version=2.0
 eclipse.preferences.version=1
 suppress-dialog=never
+white-list._manager=
+white-list._swlookup=
+white-list.hashCalculateSha=

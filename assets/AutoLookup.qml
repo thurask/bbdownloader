@@ -70,7 +70,6 @@ Page {
                 onClicked: {
                     outputtext.text = "";
                     autolookup_input.text = "";
-                    swrelease_auto = "";
                 }
             }
             Button {
