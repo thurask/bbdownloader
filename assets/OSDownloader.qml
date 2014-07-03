@@ -7,6 +7,8 @@
 import bb.cascades 1.2
 import bb.system 1.2
 
+import "js/vars.js" as Variables
+
 Page {
     id:mainpage
     property string hashedswversion
@@ -19,9 +21,6 @@ Page {
     property string radinit
     property string radinit2
     
-    titleBar: TitleBar {
-        title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
-    }
     ScrollView {
         id: mainscrollview
         scrollViewProperties.pinchToZoomEnabled: false
@@ -970,6 +969,11 @@ Page {
     attachedObjects: [
         OSRepo{
             id: osRepoAttached
+            onClosed:{
+                osver_input.text = Variables.osVersion;
+                radiover_input.text = Variables.radioVersion;
+                swver_input.text = Variables.softwareRelease;
+            }
         }
     ]
 }

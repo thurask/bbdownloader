@@ -1,5 +1,5 @@
 /*hashcalculatesha.cpp
---------------
+----------------------
 SHA-1 hashes a given text input.
 
 --Thurask*/

@@ -36,12 +36,18 @@ TabbedPane {
         title: "OS Downloader"
         OSDownloader {
             id:osDownloaderPage
+            titleBar: TitleBar {
+                title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+            }
         }
     }
     Tab {
         title: "OS Lookup Tool"
         AutoLookup {
             id:autoLookupPage
+            titleBar: TitleBar {
+                title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+            }
         }
     }
 }

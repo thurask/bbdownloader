@@ -17,7 +17,6 @@ public slots:
        void SetHash(const QString& aHashValue);
 public:
        QString iHashValue;
-
 };
 
 #endif /* HASHCALCULATESHA_HPP_ */

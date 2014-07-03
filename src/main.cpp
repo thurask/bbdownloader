@@ -12,8 +12,6 @@
 #include <QLocale>
 #include <QTranslator>
 
-#include <Qt/qdeclarativedebug.h>
-
 #include "hashcalculatesha.hpp"
 #include "DownloadManager.hpp"
 #include "Settings.hpp"
@@ -46,15 +44,19 @@ Q_DECL_EXPORT int main(int argc, char **argv)
     qInstallMsgHandler(myMessageOutput);
 #endif
 
-    HashCalculateSha *ihashcalcsha =  new HashCalculateSha();
+    //SHA-1
+    HashCalculateSha*ihashcalcsha =  new HashCalculateSha();
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("hashCalculateSha", ihashcalcsha);
 
+    //File downloader
     DownloadManager manager;
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("_manager", &manager);
 
+    //Theme settings -- Deprecate the second 10.3 comes out
     Settings *settings = new Settings();
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Settings", settings);
 
+    //Software lookup poster
     SwLookup swlookup;
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("_swlookup", &swlookup);
 

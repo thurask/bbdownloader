@@ -4,4 +4,6 @@ eclipse.preferences.version=1
 suppress-dialog=never
 white-list._manager=
 white-list._swlookup=
+white-list.hashCalculateMd4=
+white-list.hashCalculateMd5=
 white-list.hashCalculateSha=

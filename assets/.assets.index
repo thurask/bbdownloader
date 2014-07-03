@@ -1,9 +1,10 @@
 1
-9
+10
 AutoLookup.qml
 HelpSheet.qml
 icons/icon_114.png
 icons/icon_94.png
+js/vars.js
 main.qml
 OSDownloader.qml
 OSRepo.qml

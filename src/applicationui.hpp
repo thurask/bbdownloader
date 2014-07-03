@@ -3,16 +3,6 @@
 
 #include <QObject>
 
-namespace bb
-{
-    namespace cascades
-    {
-        class LocaleHandler;
-    }
-}
-
-class QTranslator;
-
 /*!
  * @brief Application UI object
  *
@@ -27,11 +17,8 @@ public:
     virtual ~ApplicationUI() {}
 
 private slots:
-    void onSystemLanguageChanged();
 
 private:
-    QTranslator* m_pTranslator;
-    bb::cascades::LocaleHandler* m_pLocaleHandler;
 };
 
 #endif /* ApplicationUI_HPP_ */

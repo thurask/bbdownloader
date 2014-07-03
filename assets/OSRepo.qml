@@ -1,10 +1,10 @@
 import bb.cascades 1.2
 import bb.data 1.0
+import bb.system 1.2
+
+import "js/vars.js" as Variables
 
 Sheet {
-    property string radver
-    property string osver
-    property string swrel
     id: osRepo
     content: Page {
         titleBar: TitleBar {
@@ -62,6 +62,13 @@ Sheet {
                         }
                     }
                 ]
+                onTriggered: {
+                    var indexi = repoDataModel.data(indexPath);
+                    Variables.softwareRelease = indexi.software;
+                    Variables.osVersion = (indexi.trueos == "" ? indexi.os : indexi.trueos)
+                    Variables.radioVersion = indexi.radio
+                    xmlToast.show();
+                }
             }
         }
     }
@@ -84,6 +91,10 @@ Sheet {
                 repoDataModel.clear();
                 repoDataModel.insertList(data)
             }
+        },
+        SystemToast {
+            id: xmlToast
+            body: "Values copied to OS Downloader"
         }
     ]
     onCreationCompleted: {

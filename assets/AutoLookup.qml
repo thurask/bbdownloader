@@ -8,9 +8,6 @@ import bb.cascades 1.2
 import bb.system 1.2
 
 Page {
-    titleBar: TitleBar {
-        title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
-    }
     Container {
         Header {
             title: "Input"
