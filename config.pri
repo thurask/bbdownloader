@@ -6,15 +6,21 @@ device {
         profile {
             INCLUDEPATH += $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
-                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore)
+                $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
+                $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
-                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore)
+                $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
+                $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             LIBS += -lbbcascades \
                 -lQtCore \
                 -lQtXml \
+                -lbbcascadespickers \
+                -lbbsystem \
                 -lQtNetwork
 
             CONFIG += \
@@ -23,15 +29,21 @@ device {
         } else {
             INCLUDEPATH += $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
-                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore)
+                $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
+                $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
-                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore)
+                $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
+                $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             LIBS += -lbbcascades \
                 -lQtCore \
                 -lQtXml \
+                -lbbcascadespickers \
+                -lbbsystem \
                 -lQtNetwork
 
             CONFIG += \
@@ -45,15 +57,21 @@ device {
         !profile {
             INCLUDEPATH += $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
-                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore)
+                $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
+                $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
-                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore)
+                $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
+                $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             LIBS += -lbbcascades \
                 -lQtCore \
                 -lQtXml \
+                -lbbcascadespickers \
+                -lbbsystem \
                 -lQtNetwork
 
             CONFIG += \
@@ -68,15 +86,21 @@ simulator {
         !profile {
             INCLUDEPATH += $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
-                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore)
+                $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
+                $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
-                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore)
+                $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
+                $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             LIBS += -lbbcascades \
                 -lQtCore \
                 -lQtXml \
+                -lbbcascadespickers \
+                -lbbsystem \
                 -lQtNetwork
 
             CONFIG += \
@@ -88,7 +112,15 @@ simulator {
 
 config_pri_assets {
     OTHER_FILES += \
+        $$quote($$BASEDIR/assets/720x1280/AppCover.qml) \
+        $$quote($$BASEDIR/assets/720x1280/cover_aseries.png) \
+        $$quote($$BASEDIR/assets/720x720/AppCover.qml) \
+        $$quote($$BASEDIR/assets/720x720/cover_nseries.png) \
+        $$quote($$BASEDIR/assets/768x1280/AppCover.qml) \
+        $$quote($$BASEDIR/assets/768x1280/cover_lseries.png) \
+        $$quote($$BASEDIR/assets/AppCover.qml) \
         $$quote($$BASEDIR/assets/AutoLookup.qml) \
+        $$quote($$BASEDIR/assets/HashTools.qml) \
         $$quote($$BASEDIR/assets/HelpSheet.qml) \
         $$quote($$BASEDIR/assets/OSDownloader.qml) \
         $$quote($$BASEDIR/assets/OSRepo.qml) \
@@ -96,25 +128,34 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/SettingsSheet.qml) \
         $$quote($$BASEDIR/assets/icons/icon_114.png) \
         $$quote($$BASEDIR/assets/icons/icon_94.png) \
+        $$quote($$BASEDIR/assets/images/cover.png) \
+        $$quote($$BASEDIR/assets/js/functions.js) \
+        $$quote($$BASEDIR/assets/js/vars.js) \
         $$quote($$BASEDIR/assets/main.qml)
 }
 
 config_pri_source_group1 {
     SOURCES += \
+        $$quote($$BASEDIR/src/Clipboard.cpp) \
         $$quote($$BASEDIR/src/DownloadManager.cpp) \
         $$quote($$BASEDIR/src/QmlBeam.cpp) \
         $$quote($$BASEDIR/src/Settings.cpp) \
         $$quote($$BASEDIR/src/SwLookup.cpp) \
         $$quote($$BASEDIR/src/applicationui.cpp) \
+        $$quote($$BASEDIR/src/hashcalculatemd4.cpp) \
+        $$quote($$BASEDIR/src/hashcalculatemd5.cpp) \
         $$quote($$BASEDIR/src/hashcalculatesha.cpp) \
         $$quote($$BASEDIR/src/main.cpp)
 
     HEADERS += \
+        $$quote($$BASEDIR/src/Clipboard.hpp) \
         $$quote($$BASEDIR/src/DownloadManager.hpp) \
         $$quote($$BASEDIR/src/QmlBeam.hpp) \
         $$quote($$BASEDIR/src/Settings.hpp) \
         $$quote($$BASEDIR/src/SwLookup.hpp) \
         $$quote($$BASEDIR/src/applicationui.hpp) \
+        $$quote($$BASEDIR/src/hashcalculatemd4.hpp) \
+        $$quote($$BASEDIR/src/hashcalculatemd5.hpp) \
         $$quote($$BASEDIR/src/hashcalculatesha.hpp)
 }
 
@@ -132,9 +173,24 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/*.qml) \
         $$quote($$BASEDIR/../assets/*.js) \
         $$quote($$BASEDIR/../assets/*.qs) \
+        $$quote($$BASEDIR/../assets/720x1280/*.qml) \
+        $$quote($$BASEDIR/../assets/720x1280/*.js) \
+        $$quote($$BASEDIR/../assets/720x1280/*.qs) \
+        $$quote($$BASEDIR/../assets/720x720/*.qml) \
+        $$quote($$BASEDIR/../assets/720x720/*.js) \
+        $$quote($$BASEDIR/../assets/720x720/*.qs) \
+        $$quote($$BASEDIR/../assets/768x1280/*.qml) \
+        $$quote($$BASEDIR/../assets/768x1280/*.js) \
+        $$quote($$BASEDIR/../assets/768x1280/*.qs) \
         $$quote($$BASEDIR/../assets/icons/*.qml) \
         $$quote($$BASEDIR/../assets/icons/*.js) \
-        $$quote($$BASEDIR/../assets/icons/*.qs)
+        $$quote($$BASEDIR/../assets/icons/*.qs) \
+        $$quote($$BASEDIR/../assets/images/*.qml) \
+        $$quote($$BASEDIR/../assets/images/*.js) \
+        $$quote($$BASEDIR/../assets/images/*.qs) \
+        $$quote($$BASEDIR/../assets/js/*.qml) \
+        $$quote($$BASEDIR/../assets/js/*.js) \
+        $$quote($$BASEDIR/../assets/js/*.qs)
 
     HEADERS += \
         $$quote($$BASEDIR/../src/*.h) \

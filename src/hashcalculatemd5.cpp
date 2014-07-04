@@ -1,29 +1,29 @@
-/*hashcalculatesha.cpp
+/*hashcalculatemd5.cpp
 ----------------------
-SHA-1 hashes a given input.
+MD5 hashes a given input.
 
 --Thurask*/
 
-#include "hashcalculatesha.hpp"
+#include "hashcalculatemd5.hpp"
 #include <QCryptographicHash>
 #include <QFile>
 
-HashCalculateSha::HashCalculateSha(QObject *parent) :
+HashCalculateMd5::HashCalculateMd5(QObject *parent) :
 QObject(parent)
 {
     iHashValue = "";
 }
 
-void HashCalculateSha::calculateHash(const QString& aOriginalText )
+void HashCalculateMd5::calculateHash(const QString& aOriginalText )
 {
-    QCryptographicHash hash(QCryptographicHash::Sha1);
+    QCryptographicHash hash(QCryptographicHash::Md5);
     hash.addData(aOriginalText.toUtf8());
     SetHash(QString(hash.result().toHex()));
 }
 
-void HashCalculateSha::calculateFileHash(QString fileName)
+void HashCalculateMd5::calculateFileHash(QString fileName)
 {
- QCryptographicHash filehash(QCryptographicHash::Sha1);
+ QCryptographicHash filehash(QCryptographicHash::Md5);
  QFile file(fileName);
  file.open(QFile::ReadOnly);
  while(!file.atEnd()){
@@ -33,12 +33,12 @@ void HashCalculateSha::calculateFileHash(QString fileName)
  SetHash(QString(filehasharray.toHex()));
 }
 
-void HashCalculateSha::SetHash(const QString& aHashValue)
+void HashCalculateMd5::SetHash(const QString& aHashValue)
 {
     iHashValue = aHashValue;
 }
 
-QString HashCalculateSha::getHash()
+QString HashCalculateMd5::getHash()
 {
     return iHashValue;
 }

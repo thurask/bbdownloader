@@ -24,6 +24,7 @@
 							<tool id="com.qnx.qcc.tool.compiler.813714651" name="QCC Compiler" superClass="com.qnx.qcc.tool.compiler">
 								<option id="com.qnx.qcc.option.compiler.optlevel.1470645359" name="Optimization Level" superClass="com.qnx.qcc.option.compiler.optlevel" value="com.qnx.qcc.option.compiler.optlevel.0" valueType="enumerated"/>
 								<option id="com.qnx.qcc.option.compiler.includePath.1035228657" name="Include Directories (-I)" superClass="com.qnx.qcc.option.compiler.includePath" valueType="includePath">
+									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/bb/cascades/pickers"/>
 									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/bb/system"/>
 									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/qt4/QtNetwork"/>
 									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/qt4/QtXml"/>
@@ -41,6 +42,7 @@
 									<listOptionValue builtIn="false" value="QtNetwork"/>
 									<listOptionValue builtIn="false" value="bbcascades"/>
 									<listOptionValue builtIn="false" value="bbsystem"/>
+									<listOptionValue builtIn="false" value="bbcascadespickers"/>
 								</option>
 							</tool>
 							<tool id="com.qnx.qcc.tool.archiver.2062759920" name="QCC Archiver" superClass="com.qnx.qcc.tool.archiver"/>
@@ -76,6 +78,7 @@
 							<tool id="com.qnx.qcc.tool.compiler.192308013" name="QCC Compiler" superClass="com.qnx.qcc.tool.compiler">
 								<option id="com.qnx.qcc.option.compiler.optlevel.444036344" name="Optimization Level" superClass="com.qnx.qcc.option.compiler.optlevel" value="com.qnx.qcc.option.compiler.optlevel.0" valueType="enumerated"/>
 								<option id="com.qnx.qcc.option.compiler.includePath.2056363022" name="Include Directories (-I)" superClass="com.qnx.qcc.option.compiler.includePath" valueType="includePath">
+									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/bb/cascades/pickers"/>
 									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/bb/system"/>
 									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/qt4/QtNetwork"/>
 									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/qt4/QtXml"/>
@@ -93,6 +96,7 @@
 									<listOptionValue builtIn="false" value="QtNetwork"/>
 									<listOptionValue builtIn="false" value="bbcascades"/>
 									<listOptionValue builtIn="false" value="bbsystem"/>
+									<listOptionValue builtIn="false" value="bbcascadespickers"/>
 								</option>
 							</tool>
 							<tool id="com.qnx.qcc.tool.archiver.1814317071" name="QCC Archiver" superClass="com.qnx.qcc.tool.archiver"/>
@@ -128,6 +132,7 @@
 							<tool id="com.qnx.qcc.tool.compiler.2012932230" name="QCC Compiler" superClass="com.qnx.qcc.tool.compiler">
 								<option id="com.qnx.qcc.option.compiler.optlevel.810657905" name="Optimization Level" superClass="com.qnx.qcc.option.compiler.optlevel" value="com.qnx.qcc.option.compiler.optlevel.0" valueType="enumerated"/>
 								<option id="com.qnx.qcc.option.compiler.includePath.1428553601" name="Include Directories (-I)" superClass="com.qnx.qcc.option.compiler.includePath" valueType="includePath">
+									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/bb/cascades/pickers"/>
 									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/bb/system"/>
 									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/qt4/QtNetwork"/>
 									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/qt4/QtXml"/>
@@ -145,6 +150,7 @@
 									<listOptionValue builtIn="false" value="QtNetwork"/>
 									<listOptionValue builtIn="false" value="bbcascades"/>
 									<listOptionValue builtIn="false" value="bbsystem"/>
+									<listOptionValue builtIn="false" value="bbcascadespickers"/>
 								</option>
 							</tool>
 							<tool id="com.qnx.qcc.tool.archiver.1872179984" name="QCC Archiver" superClass="com.qnx.qcc.tool.archiver"/>
@@ -180,6 +186,7 @@
 							<tool id="com.qnx.qcc.tool.compiler.740589626" name="QCC Compiler" superClass="com.qnx.qcc.tool.compiler">
 								<option id="com.qnx.qcc.option.compiler.optlevel.2123273936" name="Optimization Level" superClass="com.qnx.qcc.option.compiler.optlevel" value="com.qnx.qcc.option.compiler.optlevel.0" valueType="enumerated"/>
 								<option id="com.qnx.qcc.option.compiler.includePath.1785513154" name="Include Directories (-I)" superClass="com.qnx.qcc.option.compiler.includePath" valueType="includePath">
+									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/bb/cascades/pickers"/>
 									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/bb/system"/>
 									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/qt4/QtNetwork"/>
 									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/qt4/QtXml"/>
@@ -197,6 +204,7 @@
 									<listOptionValue builtIn="false" value="QtNetwork"/>
 									<listOptionValue builtIn="false" value="bbcascades"/>
 									<listOptionValue builtIn="false" value="bbsystem"/>
+									<listOptionValue builtIn="false" value="bbcascadespickers"/>
 								</option>
 							</tool>
 							<tool id="com.qnx.qcc.tool.archiver.1518130406" name="QCC Archiver" superClass="com.qnx.qcc.tool.archiver"/>
@@ -229,7 +237,20 @@
 		</scannerConfigBuildInfo>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
-	<storageModule moduleId="refreshScope"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Device-Profile">
+			<resource resourceType="PROJECT" workspacePath="/bbdownloader"/>
+		</configuration>
+		<configuration configurationName="Device-Debug">
+			<resource resourceType="PROJECT" workspacePath="/bbdownloader"/>
+		</configuration>
+		<configuration configurationName="Simulator-Debug">
+			<resource resourceType="PROJECT" workspacePath="/bbdownloader"/>
+		</configuration>
+		<configuration configurationName="Device-Release">
+			<resource resourceType="PROJECT" workspacePath="/bbdownloader"/>
+		</configuration>
+	</storageModule>
 	<storageModule moduleId="com.qnx.tools.ide.qde.core.settings">
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>

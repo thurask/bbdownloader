@@ -71,8 +71,10 @@ void DownloadManager::append(const QUrl &url)
 QString DownloadManager::saveFileName(const QUrl &url)
 {
     //Create dir in downloads dir
-    QDir dir;
-    dir.mkdir("shared/downloads/bbdownloader");
+    QDir dir("shared/downloads/bbdownloader/");
+    if (!dir.exists()) {
+        dir.mkpath(".");
+    }
 
     // First extract the path component from the URL ...
     const QString path = url.path();
@@ -250,6 +252,7 @@ void DownloadManager::downloadCancelled()
     m_currentDownload = 0;
     emit activeDownloadsChanged();
 }
+
 void DownloadManager::messagesCleared()
 {
     //Clear status messages
@@ -258,8 +261,13 @@ void DownloadManager::messagesCleared()
     emit errorMessageChanged();
     emit statusMessageChanged();
 }
+
 void DownloadManager::saveTextFile(QString urls, QString swrelease)
 {
+    QDir dir("shared/downloads/bbdownloader/");
+    if (!dir.exists()) {
+        dir.mkpath(".");
+    }
     //Get local date and time
     QDateTime dateTime = QDateTime::currentDateTime();
     QString dateTimeString = dateTime.toString("yyyy_MMM_dd_hh_mm_ss");

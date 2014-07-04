@@ -50,4 +50,13 @@ TabbedPane {
             }
         }
     }
+    Tab {
+        title: "Hash Tools"
+        HashTools {
+            id:hashToolsPage
+            titleBar: TitleBar {
+                title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+            }
+        }
+    }
 }

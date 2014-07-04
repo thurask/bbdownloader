@@ -1,13 +1,13 @@
-#ifndef HASHCALCULATESHA_HPP_
-#define HASHCALCULATESHA_HPP_
+#ifndef HASHCALCULATEMD4_HPP_
+#define HASHCALCULATEMD4_HPP_
 
 #include <QObject>
 
-class HashCalculateSha : public QObject
+class HashCalculateMd4 : public QObject
 {
     Q_OBJECT
 public:
-    explicit HashCalculateSha(QObject *parent = 0);
+    explicit HashCalculateMd4(QObject *parent = 0);
     Q_INVOKABLE void calculateHash(const QString& aOriginalText );
     Q_INVOKABLE void calculateFileHash(QString fileName);
 
@@ -20,4 +20,4 @@ public:
        QString iHashValue;
 };
 
-#endif /* HASHCALCULATESHA_HPP_ */
+#endif /* HASHCALCULATEMD4_HPP_ */

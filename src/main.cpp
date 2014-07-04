@@ -9,14 +9,16 @@
 #include <QtCore>
 #include <QtNetwork>
 #include <QtXml>
-#include <QLocale>
-#include <QTranslator>
+#include <QFile>
 
 #include "hashcalculatesha.hpp"
+#include "hashcalculatemd5.hpp"
+#include "hashcalculatemd4.hpp"
 #include "DownloadManager.hpp"
 #include "Settings.hpp"
 #include "QmlBeam.hpp"
 #include "SwLookup.hpp"
+#include "Clipboard.hpp"
 
 using namespace bb::cascades;
 
@@ -48,13 +50,25 @@ Q_DECL_EXPORT int main(int argc, char **argv)
     HashCalculateSha*ihashcalcsha =  new HashCalculateSha();
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("hashCalculateSha", ihashcalcsha);
 
+    //MD5
+    HashCalculateMd5*ihashcalcmd5 =  new HashCalculateMd5();
+    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("hashCalculateMd5", ihashcalcmd5);
+
+    //MD4
+    HashCalculateMd4*ihashcalcmd4 =  new HashCalculateMd4();
+    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("hashCalculateMd4", ihashcalcmd4);
+
     //File downloader
     DownloadManager manager;
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("_manager", &manager);
 
-    //Theme settings -- Deprecate the second 10.3 comes out
+    //Theme settings
     Settings *settings = new Settings();
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Settings", settings);
+
+    //Clipboard
+    Clipboard *clipboard = new Clipboard();
+    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Clipboard", clipboard);
 
     //Software lookup poster
     SwLookup swlookup;

@@ -29,6 +29,11 @@ Sheet {
             Header {
                 title: "Known Software (Be Patient, It's Retrieving A Database)"
             }
+            Label {
+                id: errorlabel
+                text: "Make sure you're connected to the Internet, \nhave data service and Github is up."
+                visible: false
+            }
             ListView {
                 id: listView
                 dataModel: repoDataModel
@@ -90,6 +95,9 @@ Sheet {
             onDataLoaded: {
                 repoDataModel.clear();
                 repoDataModel.insertList(data)
+            }
+            onError: {
+                errorlabel.visible = true;
             }
         },
         SystemToast {

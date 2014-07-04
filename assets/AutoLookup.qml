@@ -7,6 +7,8 @@
 import bb.cascades 1.2
 import bb.system 1.2
 
+import "js/functions.js" as Functions
+
 Page {
     Container {
         Header {
@@ -49,16 +51,7 @@ Page {
                 id: autolookupbutton
                 text: "Keep tapping"
                 onClicked: {
-                    outputtext.text = outputtext.text + (autolookup_input.text + " - " + _swlookup.softwareRelease() + "\n");
-                    var splitarray = autolookup_input.text.split(".");
-                    var newnum = parseInt(splitarray[3], 10);
-                    if (newnum < 9998){
-                        splitarray[3] = newnum +3;
-                        autolookup_input.text = splitarray.join(".");
-                    }
-                    else {
-                        break;
-                    }
+                    Functions.autoLookup();
                 }
             }
             Button {

@@ -8,6 +8,7 @@ import bb.cascades 1.2
 import bb.system 1.2
 
 import "js/vars.js" as Variables
+import "js/functions.js" as Functions
 
 Page {
     id:mainpage
@@ -44,13 +45,7 @@ Page {
                 ToggleButton {
                     id: deltasetting
                     onCheckedChanged: {
-                        os_download_textarea.text = "";
-                        radio_download_textarea.text = "";
-                        global_linkcontainer.visible = false;
-                        osdropdown.resetSelectedOption();
-                        devicedropdown.resetSelectedOption();
-                        os_download_label.text = "OS Link:";
-                        radio_download_label.text = "Radio Link:";
+                        Functions.clearButton();
                         _manager.messagesCleared();
                     }
                 }
@@ -254,130 +249,7 @@ Page {
                         enabled: deltasetting.checked ? false : true
                     }
                     onSelectedValueChanged: {
-                        if (devicedropdown.selectedIndex == -1){
-                            radio_download_label.text = "Radio Link:";
-                        }
-                        if (osdropdown.selectedIndex == -1){
-                            os_download_label.text = "OS Link:";
-                        }
-                        if (deltasetting.checked == true){
-                            if (osdropdown.selectedValue == "core"){
-                                dropdown_winchester.enabled = true;
-                                os_download_label.text = "Delta from " + osinit_input.text + " to " + osver_input.text + ":";
-                            }
-                            if (osdropdown.selectedValue == "core_vzw"){
-                                dropdown_winchester.enabled = false;
-                                os_download_label.text = "Verizon delta from " + osinit_input.text + " to " + osver_input.text + ":";                                
-                            }
-                            dropdown_pb.enabled = false;
-                            dropdown_pblte_old.enabled = false;
-                            dropdown_pblte_new.enabled = false;
-                        }
-                        if (deltasetting.checked == false){
-                            if (osdropdown.selectedValue == "debrick") {
-                                os_download_label.text = "Debrick OS:";
-                                dropdown_winchester.enabled = true;
-                                dropdown_pb.enabled = true;
-                                dropdown_pblte_old.enabled = true;
-                                dropdown_pblte_new.enabled = true;
-                            }
-                            if (osdropdown.selectedValue == "core") {
-                                os_download_label.text = "Core OS:";
-                                dropdown_winchester.enabled = true;
-                                dropdown_pb.enabled = false;
-                                dropdown_pblte_old.enabled = false;
-                                dropdown_pblte_new.enabled = false;
-                            }
-                            if (osdropdown.selectedValue == "debrick_vzw") {
-                                os_download_label.text = "Verizon Debrick OS:";
-                                dropdown_winchester.enabled = false;
-                                dropdown_pb.enabled = false;
-                                dropdown_pblte_old.enabled = false;
-                                dropdown_pblte_new.enabled = false;
-                            }
-                            if (osdropdown.selectedValue == "core_vzw") {
-                                os_download_label.text = "Verizon Core OS:";
-                                dropdown_winchester.enabled = false;
-                                dropdown_pb.enabled = false;
-                                dropdown_pblte_old.enabled = false;
-                                dropdown_pblte_new.enabled = false;
-                            }
-                            if (osdropdown.selectedValue == "debrick_china") {
-                                os_download_label.text = "China Debrick OS:";
-                                dropdown_winchester.enabled = false;
-                                dropdown_pb.enabled = false;
-                                dropdown_pblte_old.enabled = false;
-                                dropdown_pblte_new.enabled = false;
-                            }
-                            if (osdropdown.selectedValue == "core_china") {
-                                os_download_label.text = "China Core OS:";
-                                dropdown_winchester.enabled = false;
-                                dropdown_pb.enabled = false;
-                                dropdown_pblte_old.enabled = false;
-                                dropdown_pblte_new.enabled = false;
-                            }
-                            if (osdropdown.selectedValue == "sdkdebrick") {
-                                os_download_label.text = "SDK Debrick OS:";
-                                dropdown_winchester.enabled = true;
-                                dropdown_pb.enabled = false;
-                                dropdown_pblte_old.enabled = false;
-                                dropdown_pblte_new.enabled = false;
-                            }
-                            if (osdropdown.selectedValue == "sdkcore") {
-                                os_download_label.text = "SDK Core OS:";
-                                dropdown_winchester.enabled = true;
-                                dropdown_pb.enabled = false;
-                                dropdown_pblte_old.enabled = false;
-                                dropdown_pblte_new.enabled = false;
-                            }
-                            if (osdropdown.selectedValue == "sdkautoloader") {
-                                os_download_label.text = "Autoloader:";
-                                radio_download_label.text = "SDK downloads wonky. \nWorkaround: tap link to download in Browser.";
-                                dropdown_parana.enabled = false;
-                                dropdown_pb.enabled = false;
-                                dropdown_pblte_old.enabled = false;
-                                dropdown_pblte_new.enabled = false;
-                            }
-                            if (osdropdown.selectedValue != "sdkautoloader"){
-                                dropdown_parana.enabled = true;
-                                if (devicedropdown.selectedValue == "winchester") {
-                                    radio_download_label.text = "OMAP Z10 Radio:";
-                                }
-                                if (devicedropdown.selectedValue == "8960") {
-                                    radio_download_label.text = "Qualcomm Z10/P9982 Radio:";
-                                }
-                                if (devicedropdown.selectedValue == "8960omadm") {
-                                    radio_download_label.text = "Verizon Z10 Radio:";
-                                }
-                                if (devicedropdown.selectedValue == "8960wtr") {
-                                    radio_download_label.text = "Q10/Q5/P9983/Classic Radio:";
-                                }
-                                if (devicedropdown.selectedValue == "8960wtr5") {
-                                    radio_download_label.text = "Z30/Manitoba Radio:";
-                                }
-                                if (devicedropdown.selectedValue == "8960wtr6") {
-                                    radio_download_label.text = "Z30/Manitoba (Future) Radio:";
-                                }
-                                if (devicedropdown.selectedValue == "8930wtr5") {
-                                    radio_download_label.text = "Z3/Kopi/Cafe Radio:";
-                                }
-                                if (devicedropdown.selectedValue == "winchester_pblte_old"){
-                                    radio_download_label.text = "4G PlayBook Radio (mod-qcmdm): ";
-                                }
-                                if (devicedropdown.selectedValue == "winchester_pblte_new"){
-                                    radio_download_label.text = "4G PlayBook Radio (mod.qcmdm): ";
-                                }
-                                if (devicedropdown.selectedValue == "winchester_pb"){
-                                    radio_download_label.text = "";
-                                }
-                                if (devicedropdown.selectedValue == "8974"){
-                                    radio_download_label.text = "Aquila/Aquarius Radio:";
-                                }
-                                if (devicedropdown.selectedValue == "8974_sqw"){
-                                    radio_download_label.text = "Passport Radio:";
-                                }
-                            }
-                        }
+                        Functions.setOS();
                     }
                 }
                 DropDown {
@@ -447,50 +319,7 @@ Page {
                         enabled: deltasetting.checked ? false : true
                     }
                     onSelectedValueChanged: {
-                        if (devicedropdown.selectedIndex == -1){
-                            radio_download_label.text = "Radio Link:";
-                        }
-                        if (osdropdown.selectedIndex == -1){
-                            os_download_label.text = "OS Link:";
-                        }
-                        if (osdropdown.selectedValue != "sdkautoloader"){
-                            if (devicedropdown.selectedValue == "winchester") {
-                                radio_download_label.text = "OMAP Z10 Radio:";
-                            }
-                            if (devicedropdown.selectedValue == "8960") {
-                                radio_download_label.text = "Qualcomm Z10/P9982 Radio:";
-                            }
-                            if (devicedropdown.selectedValue == "8960omadm") {
-                                radio_download_label.text = "Verizon Z10 Radio:";
-                            }
-                            if (devicedropdown.selectedValue == "8960wtr") {
-                                radio_download_label.text = "Q10/Q5/P9983/Classic Radio:";
-                            }
-                            if (devicedropdown.selectedValue == "8960wtr5") {
-                                radio_download_label.text = "Z30/Manitoba Radio:";
-                            }
-                            if (devicedropdown.selectedValue == "8960wtr6") {
-                                radio_download_label.text = "Z30/Manitoba (Future) Radio:";
-                            }
-                            if (devicedropdown.selectedValue == "8930wtr5") {
-                                radio_download_label.text = "Z3/Kopi/Cafe Radio:";
-                            }
-                            if (devicedropdown.selectedValue == "winchester_pblte_old"){
-                                radio_download_label.text = "4G PlayBook Radio (mod-qcmdm): ";
-                            }
-                            if (devicedropdown.selectedValue == "winchester_pblte_new"){
-                                radio_download_label.text = "4G PlayBook Radio (mod.qcmdm): ";
-                            }
-                            if (devicedropdown.selectedValue == "winchester_pb"){
-                                radio_download_label.text = "";
-                            }
-                            if (devicedropdown.selectedValue == "8974"){
-                                radio_download_label.text = "Aquila/Aquarius Radio:";
-                            }
-                            if (devicedropdown.selectedValue == "8974_sqw"){
-                                radio_download_label.text = "Passport Radio:";
-                            }
-                        }
+                        Functions.setRadios();
                     }
                 }
             }
@@ -506,265 +335,14 @@ Page {
                     text: "Generate"
                     horizontalAlignment: HorizontalAlignment.Center
                     onClicked: {
+                        osclipboard.visible = true;
                         //Call Darcy
-                        if (hashedswversion == "da5ebb46fd2330dd29ab9d27245803fca2fd7c54"){
-                            os_download_label.text = "You're winner!";
-                            os_download_textarea.text = "";
-                            radio_download_label.text = "Have a beer, you've earned it.";
-                            radio_download_textarea.text = "";
-                        }
+                        Functions.setEasterEgg(hashedswversion);
                         if (deltasetting.checked == false){
-                            // First, hide the visibility of the link downloader if one wants an autoloader (probably BlackBerry's problem)
-                            if (osdropdown.selectedValue == "sdkautoloader"){
-                                global_linkcontainer.visible = false;
-                            }
-                            if (osdropdown.selectedValue != "sdkautoloader"){
-                                global_linkcontainer.visible = true;
-                            }
-                            // Then set the OS values for Qualcomm 8960+derivatives
-                            if (devicedropdown.selectedValue == "8930wtr5" || devicedropdown.selectedValue == "8960wtr5" || devicedropdown.selectedValue == "8960wtr6" || devicedropdown.selectedValue == "8960wtr" || devicedropdown.selectedValue == "8960omadm" || devicedropdown.selectedValue == "8960"){
-                                if (osdropdown.selectedValue == "debrick") {
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.factory_sfi.desktop/" + osversion + "/qc8960.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "core") {
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.factory_sfi/" + osversion + "/qc8960.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "debrick_vzw"){
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi.desktop/" + osversion + "/qc8960.verizon_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "core_vzw"){
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi/" + osversion + "/qc8960.verizon_sfi-" + osversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "debrick_china"){
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.china_sfi.desktop/" + osversion + "/qc8960.china_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "core_china"){
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.china_sfi/" + osversion + "/qc8960.china_sfi-" + osversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "sdkdebrick") {
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.sdk.desktop/" + osversion + "/qc8960.sdk.desktop-" + osversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "sdkcore") {
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.sdk/" + osversion + "/qc8960.sdk-" + osversion + "-nto+armle-v7+signed.bar";
-                                }
-                            }
-                            // Then QC8974
-                            if (devicedropdown.selectedValue == "8974" || devicedropdown.selectedValue == "8974_sqw"){
-                                if (osdropdown.selectedValue == "debrick") {
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.factory_sfi.desktop/" + osversion + "/qc8974.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "core") {
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.factory_sfi/" + osversion + "/qc8974.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "debrick_vzw"){
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.verizon_sfi.desktop/" + osversion + "/qc8974.verizon_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "core_vzw"){
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.verizon_sfi/" + osversion + "/qc8974.verizon_sfi-" + osversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "debrick_china"){
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.china_sfi.desktop/" + osversion + "/qc8974.china_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "core_china"){
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.china_sfi/" + osversion + "/qc8974.china_sfi-" + osversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "sdkdebrick") {
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.sdk.desktop/" + osversion + "/qc8974.sdk.desktop-" + osversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "sdkcore") {
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.sdk/" + osversion + "/qc8974.sdk-" + osversion + "-nto+armle-v7+signed.bar";
-                                }
-                            }
-                            // Then the PlayBooks
-                            if (devicedropdown.selectedValue == "winchester_pb" || devicedropdown.selectedValue == "winchester_pblte_old" || devicedropdown.selectedValue == "winchester_pblte_new" ){
-                                if (osdropdown.selectedValue == "debrick"){
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory.desktop/" + osversion + "/winchester.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue != "debrick"){
-                                    os_download_textarea.text = "Please set OS Type to Debrick OS";
-                                }
-                            }
-                            // Now the radios
-                            if (devicedropdown.selectedValue == "winchester_pb"){
-                                radio_download_textarea.text = "";
-                            }
-                            if (devicedropdown.selectedValue == "winchester_pblte_old"){
-                                radio_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/mod-qcmdm9k-" + radioversion + "-nto+armle-v7+signed.bar";
-                            }
-                            if (devicedropdown.selectedValue == "winchester_pblte_new"){
-                                radio_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/mod.qcmdm9k-" + radioversion + "-nto+armle-v7+signed.bar";
-                            }
-                            if (devicedropdown.selectedValue == "8930wtr5") {
-                                if (osdropdown.selectedValue != "sdkautoloader"){
-                                    radio_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8930.wtr5/" + radioversion + "/qc8930.wtr5-" + radioversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "sdkautoloader") {
-                                    radio_download_textarea.text = "";
-                                    os_download_textarea.text = "http://developer.blackberry.com/native/downloads/fetch/Autoload-STJ100-1-" + osversion +".exe";
-                                }
-                            }
-                            if (devicedropdown.selectedValue == "8960wtr5"){
-                                if (osdropdown.selectedValue != "sdkautoloader"){
-                                    radio_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr5/" + radioversion + "/qc8960.wtr5-" + radioversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "sdkautoloader") {
-                                    radio_download_textarea.text = "";
-                                    os_download_textarea.text = "http://developer.blackberry.com/native/downloads/fetch/Autoload-STA100-5-" + osversion +".exe";
-                                }
-                            }
-                            if (devicedropdown.selectedValue == "8960wtr6"){
-                                if (osdropdown.selectedValue != "sdkautoloader"){
-                                    radio_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr6/" + radioversion + "/qc8960.wtr6-" + radioversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "sdkautoloader") {
-                                    radio_download_textarea.text = "";
-                                    os_download_textarea.text = "http://developer.blackberry.com/native/downloads/fetch/Autoload-STA100-5-" + osversion +".exe";
-                                }
-                            }
-                            if (devicedropdown.selectedValue == "8960wtr"){
-                                if (osdropdown.selectedValue != "sdkautoloader"){
-                                    radio_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr/" + radioversion + "/qc8960.wtr-" + radioversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "sdkautoloader") {
-                                    radio_download_textarea.text = "";
-                                    os_download_textarea.text = "http://developer.blackberry.com/native/downloads/fetch/Autoload-SQN100-5-" + osversion +".exe";
-                                }
-                            }
-                            if (devicedropdown.selectedValue == "8960omadm"){
-                                if (osdropdown.selectedValue != "sdkautoloader"){
-                                    radio_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.omadm/" + radioversion + "/qc8960.omadm-" + radioversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "sdkautoloader") {
-                                    radio_download_textarea.text = "";
-                                    os_download_textarea.text = "http://developer.blackberry.com/native/downloads/fetch/Autoload-STL100-4-" + osversion +".exe";
-                                }
-                            }
-                            if (devicedropdown.selectedValue == "8960"){
-                                if (osdropdown.selectedValue != "sdkautoloader"){
-                                    radio_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960/" + radioversion + "/qc8960-" + radioversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "sdkautoloader") {
-                                    radio_download_textarea.text = "";
-                                    os_download_textarea.text = "http://developer.blackberry.com/native/downloads/fetch/Autoload-STL100-3-" + osversion +".exe";
-                                }
-                            }
-                            // And lastly the STL100-1
-                            if (devicedropdown.selectedValue == "winchester"){
-                                if (osdropdown.selectedValue != "sdkautoloader"){
-                                    radio_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.m5730/" + radioversion + "/m5730-" + radioversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "debrick") {
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory.desktop/" + osversion + "/winchester.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "core") {
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory/" + osversion + "/winchester.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "sdkdebrick") {
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.winchester.sdk.desktop/" + osversion + "/winchester.sdk.desktop-" + osversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "sdkcore") {
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.winchester.sdk/" + osversion + "/winchester.sdk-" + osversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "debrick_vzw" || osdropdown.selectedValue == "debrick_china" || osdropdown.selectedValue == "core_vzw" || osdropdown.selectedValue == "core_china") {
-                                    os_download_textarea.text = "Please set OS Type to Debrick/Core OS/SDK OS";
-                                }
-                                if (osdropdown.selectedValue == "sdkautoloader") {
-                                    radio_download_textarea.text = "";
-                                    os_download_textarea.text = "http://developer.blackberry.com/native/downloads/fetch/Autoload-STL100-1-" + osversion +".exe";
-                                }
-                            }
-                            // Miscellany
-                            if (devicedropdown.selectedValue == "8974"){
-                                if (osdropdown.selectedValue != "sdkautoloader"){
-                                    radio_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8974/" + radioversion + "/qc8974-" + radioversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "sdkautoloader") {
-                                    radio_download_textarea.text = "";
-                                    os_download_textarea.text = "If nobody can find a regular OS for this hardware, what makes you think there's a SDK OS?";
-                                }
-                            }
-                            if (devicedropdown.selectedValue == "8974_sqw"){
-                                if (osdropdown.selectedValue != "sdkautoloader"){
-                                    radio_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8974.wtr?/" + radioversion + "/qc8974.wtr?-" + radioversion + "-nto+armle-v7+signed.bar";
-                                }
-                                if (osdropdown.selectedValue == "sdkautoloader") {
-                                    radio_download_textarea.text = "";
-                                    os_download_textarea.text = os_download_textarea.text = "http://developer.blackberry.com/native/downloads/fetch/Autoload-SQW100-1-" + osversion +".exe";
-                                }
-                            }
+                            Functions.generateLinks();
                         }
                         if (deltasetting.checked == true){
-                            //PB doesn't have deltas (I think)
-                            if (devicedropdown.selectedValue == "winchester_pb" || devicedropdown.selectedValue == "winchester_pblte_old" || devicedropdown.selectedValue == "winchester_pblte_new" ){
-                                os_download_textarea.text = "Please pick a BB10 device.";
-                            }
-                            if (osdropdown.selectedValue == "core"){
-                                os_download_label.text = "Delta from " + osinit_input.text + " to " + osver_input.text + ":";
-                            }
-                            if (osdropdown.selectedValue == "core_vzw"){
-                                os_download_label.text = "Verizon delta from " + osinit_input.text + " to " + osver_input.text + ":";                                
-                            }
-                            //STL100-1
-                            if (devicedropdown.selectedValue == "winchester"){
-                                global_linkcontainer.visible = true;
-                                if (osdropdown.selectedValue != "core"){
-                                    os_download_textarea.text = "Please set OS Type to Delta OS";
-                                }
-                                if (osdropdown.selectedValue == "core"){
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory.d" + osinit + "/" + osversion + "/winchester.factory_sfi-" + osversion + "-nto+armle-v7+signed+patch+"+ osinit2 + ".bar";
-                                    radio_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.m5730.d" + radinit + "/" + radioversion + "/m5730-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar";
-                                }
-                            }
-                            //QC8960
-                            if (devicedropdown.selectedValue == devicedropdown.selectedValue == "8930wtr5" || devicedropdown.selectedValue == "8960wtr5" || devicedropdown.selectedValue == "8960wtr6" || devicedropdown.selectedValue == "8960wtr" || devicedropdown.selectedValue == "8960omadm" || devicedropdown.selectedValue == "8960"){
-                                global_linkcontainer.visible = true;
-                                if (osdropdown.selectedValue != "core" || osdropdown.selectedValue != "core_vzw"){
-                                    os_download_textarea.text = "Please set OS Type to Delta OS/Verizon Delta OS";
-                                }
-                                if (osdropdown.selectedValue == "core"){
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.factory.d" + osinit + "/" + osversion + "/qc8960.factory_sfi-" + osversion + "-nto+armle-v7+signed+patch+"+ osinit2 + ".bar";
-                                }
-                                if (osdropdown.selectedValue == "core_vzw"){
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon.d" + osinit + "/" + osversion + "/qc8960.verizon_sfi-" + osversion + "-nto+armle-v7+signed+patch+"+ osinit2 + ".bar";
-                                }
-                                if (devicedropdown.selectedValue == "8930wtr5"){
-                                    radio_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8930.wtr5.d" + radinit + "/" + radioversion + "/qc8930.wtr5-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar";
-                                }
-                                if (devicedropdown.selectedValue == "8960wtr6"){
-                                    radio_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr6.d" + radinit + "/" + radioversion + "/qc8960.wtr6-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar";
-                                }
-                                if (devicedropdown.selectedValue == "8960wtr5"){
-                                    radio_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr5.d" + radinit + "/" + radioversion + "/qc8960.wtr5-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar";
-                                }
-                                if (devicedropdown.selectedValue == "8960wtr"){
-                                    radio_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr.d" + radinit + "/" + radioversion + "/qc8960.wtr-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar";
-                                }
-                                if (devicedropdown.selectedValue == "8960omadm"){
-                                    radio_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.omadm.d" + radinit + "/" + radioversion + "/qc8960.omadm-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar";
-                                }
-                                if (devicedropdown.selectedValue == "8960"){
-                                    radio_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.d" + radinit + "/" + radioversion + "/qc8960-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar";
-                                }
-                            }
-                            //QC8974
-                            if (devicedropdown.selectedValue == "8974" || devicedropdown.selectedValue == "8974_sqw"){
-                                global_linkcontainer.visible = true;
-                                if (osdropdown.selectedValue != "core" || osdropdown.selectedValue != "core_vzw"){
-                                    os_download_textarea.text = "Please set OS Type to Delta OS/Verizon Delta OS";
-                                }
-                                if (osdropdown.selectedValue == "core"){
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.factory.d" + osinit + "/" + osversion + "/qc8974.factory_sfi-" + osversion + "-nto+armle-v7+signed+patch+"+ osinit2 + ".bar";
-                                }
-                                if (osdropdown.selectedValue == "core_vzw"){
-                                    os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.verizon.d" + osinit + "/" + osversion + "/qc8974.verizon_sfi-" + osversion + "-nto+armle-v7+signed+patch+"+ osinit2 + ".bar";
-                                }
-                                if (devicedropdown.selectedValue == "8974"){
-                                    radio_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8974.d" + radinit + "/" + radioversion + "/qc8974-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar";
-                                }
-                                if (devicedropdown.selectedValue == "8974_sqw"){
-                                    radio_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8974.wtr?.d" + radinit + "/" + radioversion + "/qc8974.wtr?-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar";
-                                }
-                            }
+                            Functions.generateDeltas();
                         }
                     }
                 }
@@ -772,13 +350,7 @@ Page {
                     id: clearbutton
                     text: "Clear"
                     onClicked: {
-                        os_download_textarea.text = "";
-                        radio_download_textarea.text = "";
-                        global_linkcontainer.visible = false;
-                        osdropdown.resetSelectedOption();
-                        devicedropdown.resetSelectedOption();
-                        os_download_label.text = "OS Link:";
-                        radio_download_label.text = "Radio Link:";
+                        Functions.clearButton();
                         _manager.messagesCleared();
                     }
                 }
@@ -814,9 +386,46 @@ Page {
                     content.flags: TextContentFlag.ActiveText
                 }
                 Container {
-                    visible:false
-                    id: global_linkcontainer
+                    id: global_clipboardcontainer
+                    layout: StackLayout {
+                        orientation: LayoutOrientation.LeftToRight
+                    }
                     horizontalAlignment: HorizontalAlignment.Center
+                    topPadding: 20.0
+                    Button {
+                        id: osclipboard
+                        text: "Copy OS"
+                        visible: false
+                        onClicked: {
+                            if (os_download_textarea.text.indexOf("http") != -1) {
+                                Clipboard.copyToClipboard(os_download_textarea.text);
+                                linkexporttoast.body = "OS URL copied";
+                                linkexporttoast.show();
+                            }
+                        }
+                    }
+                    Button {
+                        id: radioclipboard
+                        text: "Copy Radio"
+                        visible: false
+                        onClicked: {
+                            if (radio_download_textarea.text.indexOf("http") != -1){
+                                Clipboard.copyToClipboard(radio_download_textarea.text);
+                                linkexporttoast.body = "Radio URL copied";
+                                linkexporttoast.show();
+                            }
+                        }
+                    }
+                }
+                Container {
+                    topPadding: 10.0
+                    visible: false
+                    id: global_linkcontainer
+                    layout: StackLayout {
+                        orientation: LayoutOrientation.TopToBottom
+                    }
+                    horizontalAlignment: HorizontalAlignment.Center
+                    //Clipboard buttons
                     Container {
                         layout: StackLayout {
                             orientation: LayoutOrientation.LeftToRight
@@ -847,63 +456,20 @@ Page {
                         Button {
                             id: downloadbutton_export
                             text: "Export Links"
-                            attachedObjects: [
-                                SystemToast {
-                                    id: linkexporttoast
-                                    body: "Links saved to /downloads/bbdownloader"
-                                }   
-                            ]
                             onClicked: {
                                 if (deltasetting.checked == false){
-                                    var exporturls = ("---OPERATING SYSTEMS---\n" +
-                                    "STL100-1\n" +
-                                    "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory.desktop/" + osversion + "/winchester.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n" +
-                                    "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory/" + osversion + "/winchester.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar\n" +
-                                    "\n" +
-                                    "Qualcomm 8960/8930 (Most others)\n" +
-                                    "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.factory_sfi.desktop/" + osversion + "/qc8960.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n" +
-                                    "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.factory_sfi/" + osversion + "/qc8960.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar\n" +
-                                    "\n" +
-                                    "Verizon Devices\n" +
-                                    "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi.desktop/" + osversion + "/qc8960.verizon_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n" +
-                                    "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi/" + osversion + "/qc8960.verizon_sfi-" + osversion + "-nto+armle-v7+signed.bar\n" +
-                                    "\n\n" +
-                                    //"Qualcomm 8974 (Passport)\n" +
-                                    //"Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.factory_sfi.desktop/" + osversion + "/qc8974.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n" +
-                                    //"Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.factory_sfi/" + osversion + "/qc8974.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar\n" +
-                                    //"\n\n" +
-                                    "---RADIOS---\n" +
-                                    "OMAP Z10: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.m5730/" + radioversion + "/m5730-" + radioversion + "-nto+armle-v7+signed.bar\n" +
-                                    "Qualcomm Z10/P9982: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960/" + radioversion + "/qc8960-" + radioversion + "-nto+armle-v7+signed.bar\n" +
-                                    "Verizon Z10: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.omadm/" + radioversion + "/qc8960.omadm-" + radioversion + "-nto+armle-v7+signed.bar\n" +                                
-                                    "Q10/Q5/P9983/Classic: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr/" + radioversion + "/qc8960.wtr-" + radioversion + "-nto+armle-v7+signed.bar\n" +
-                                    "Z30/Manitoba: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr5/" + radioversion + "/qc8960.wtr5-" + radioversion + "-nto+armle-v7+signed.bar\n" +
-                                    //"Z30/Manitoba: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr6/" + radioversion + "/qc8960.wtr6-" + radioversion + "-nto+armle-v7+signed.bar\n" +
-                                    "Z3/Kopi/Cafe: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8930.wtr5/" + radioversion + "/qc8930.wtr5-" + radioversion + "-nto+armle-v7+signed.bar\n" +
-                                    //"Passport: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8974.wtr?/" + radioversion + "/qc8974.wtr?-" + radioversion + "-nto+armle-v7+signed.bar\n" +
-                                    "");
-                                    _manager.saveTextFile (exporturls, swver_input.text);
+                                    Functions.saveLinks();
+                                    var urls = Functions.returnLinks[0];
+                                    var software = Functions.returnLinks[1];
+                                    _manager.saveTextFile (urls, software);
                                 }
                                 if (deltasetting.checked == true){
-                                    var exporturls_delta = ("---OPERATING SYSTEMS---\n" +
-                                    "STL100-1\n" +
-                                    "Delta OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory.d" + osinit + "/" + osversion + "/winchester.factory_sfi-" + osversion + "-nto+armle-v7+signed+patch+"+ osinit2 + ".bar\n" +
-                                    "Qualcomm\n" +
-                                    "Delta OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.factory.d" + osinit + "/" + osversion + "/qc8960.factory_sfi-" + osversion + "-nto+armle-v7+signed+patch+"+ osinit2 + ".bar\n" +
-                                    "Verizon\n" +
-                                    "Delta OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon.d" + osinit + "/" + osversion + "/qc8960.verizon_sfi-" + osversion + "-nto+armle-v7+signed+patch+"+ osinit2 + ".bar\n\n" +
-                                    "---RADIOS---\n" +
-                                    "OMAP Z10: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.m5730.d" + radinit + "/" + radioversion + "/m5730-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar\n" +
-                                    "Qualcomm Z10/P9982: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.d" + radinit + "/" + radioversion + "/qc8960-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar\n" +
-                                    "Verizon Z10: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.omadm.d" + radinit + "/" + radioversion + "/qc8960.omadm-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar\n" +                                
-                                    "Q10/Q5/P9983/Classic: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr.d" + radinit + "/" + radioversion + "/qc8960.wtr-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar\n" +
-                                    "Z30/Manitoba: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr5.d" + radinit + "/" + radioversion + "/qc8960.wtr5-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar\n" +
-                                    //"Z30/Manitoba: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr6.d" + radinit + "/" + radioversion + "/qc8960.wtr6-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar\n" +                                   
-                                    "Z3/Kopi/Cafe: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8930.wtr5.d" + radinit + "/" + radioversion + "/qc8930.wtr5-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar\n" +
-                                    "");
-                                    var deltasw = osinit_input.text + "-to-" + osver_input.text;
-                                    _manager.saveTextFile (exporturls_delta, deltasw);
+                                    Functions.saveDeltaLinks();
+                                    var deltaurls = Functions.returnDeltaLinks[0];
+                                    var deltasoftware = Functions.returnDeltaLinks[1];
+                                    _manager.saveTextFile (deltaurls, deltasoftware);
                                 }
+                                linkexporttoast.body = "Links saved to /downloads/bbdownloader";
                                 linkexporttoast.show();
                             }
                         }
@@ -974,6 +540,9 @@ Page {
                 radiover_input.text = Variables.radioVersion;
                 swver_input.text = Variables.softwareRelease;
             }
+        },
+        SystemToast {
+            id: linkexporttoast
         }
     ]
 }
