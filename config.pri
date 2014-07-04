@@ -145,7 +145,8 @@ config_pri_source_group1 {
         $$quote($$BASEDIR/src/hashcalculatemd4.cpp) \
         $$quote($$BASEDIR/src/hashcalculatemd5.cpp) \
         $$quote($$BASEDIR/src/hashcalculatesha.cpp) \
-        $$quote($$BASEDIR/src/main.cpp)
+        $$quote($$BASEDIR/src/main.cpp) \
+        $$quote($$BASEDIR/src/timer.cpp)
 
     HEADERS += \
         $$quote($$BASEDIR/src/Clipboard.hpp) \
@@ -156,7 +157,8 @@ config_pri_source_group1 {
         $$quote($$BASEDIR/src/applicationui.hpp) \
         $$quote($$BASEDIR/src/hashcalculatemd4.hpp) \
         $$quote($$BASEDIR/src/hashcalculatemd5.hpp) \
-        $$quote($$BASEDIR/src/hashcalculatesha.hpp)
+        $$quote($$BASEDIR/src/hashcalculatesha.hpp) \
+        $$quote($$BASEDIR/src/timer.hpp)
 }
 
 CONFIG += precompile_header

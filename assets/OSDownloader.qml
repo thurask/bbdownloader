@@ -301,6 +301,26 @@ Page {
                         value: "8974"
                     }
                     Option {
+                        id: dropdown_winchester_daa
+                        text: "Dev Alpha A"
+                        value: "winchester_daa"
+                    }
+                    Option {
+                        id: dropdown_winchester_dab
+                        text: "Dev Alpha B"
+                        value: "winchester_dab"
+                    }
+                    Option {
+                        id: dropdown_winchester_daab
+                        text: "Dev Alpha A/B"
+                        value: "winchester_daab"
+                    }
+                    Option {
+                        id: dropdown_devalphac
+                        text: "Dev Alpha C"
+                        value: "8960wtr_dac"
+                    }
+                    Option {
                         id: dropdown_pb
                         text: "PlayBook"
                         value: "winchester_pb"

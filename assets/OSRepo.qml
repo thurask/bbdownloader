@@ -8,11 +8,17 @@ Sheet {
     id: osRepo
     content: Page {
         titleBar: TitleBar {
-            title: "Known Software List"
+            title: "Software List"
             dismissAction: ActionItem {
                 title: "Close"
                 onTriggered: {
                     osRepo.close()
+                }
+            }
+            acceptAction: ActionItem {
+                title: "Refresh"
+                onTriggered: {
+                    repoDataSource.load();
                 }
             }
         }
@@ -70,8 +76,8 @@ Sheet {
                 onTriggered: {
                     var indexi = repoDataModel.data(indexPath);
                     Variables.softwareRelease = indexi.software;
-                    Variables.osVersion = (indexi.trueos == "" ? indexi.os : indexi.trueos)
-                    Variables.radioVersion = indexi.radio
+                    Variables.osVersion = (indexi.trueos == "" ? indexi.os : indexi.trueos);
+                    Variables.radioVersion = indexi.radio;
                     xmlToast.show();
                 }
             }

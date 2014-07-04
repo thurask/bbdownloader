@@ -6,10 +6,22 @@
 
 import bb.cascades 1.2
 import bb.system 1.2
+import qt.timer 1.0
 
 import "js/functions.js" as Functions
 
 Page {
+    attachedObjects: [
+        QTimer{
+            id: timer
+            //set interval
+            interval: 500
+            onTimeout:{
+                Functions.autoLookup();
+                timer.restart();
+            }
+        }
+    ]
     Container {
         Header {
             title: "Input"
@@ -34,13 +46,6 @@ Page {
                 hintText: "Enter OS version"
             }
         }
-        Label {
-            horizontalAlignment: HorizontalAlignment.Center
-            text: "Don't tap too fast.\nIf things go sour, hit Clear and try again."
-            multiline: true
-            verticalAlignment: VerticalAlignment.Center
-            textStyle.textAlign: TextAlign.Center
-        }
         Container {
             topPadding: 20.0
             layout: StackLayout {
@@ -49,9 +54,16 @@ Page {
             horizontalAlignment: HorizontalAlignment.Center
             Button {
                 id: autolookupbutton
-                text: "Keep tapping"
+                text: "Start"
                 onClicked: {
-                    Functions.autoLookup();
+                    timer.start();
+                }
+            }
+            Button {
+                id: autostopbutton
+                text: "Stop"
+                onClicked: {
+                    timer.stop();
                 }
             }
             Button {

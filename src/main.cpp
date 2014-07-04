@@ -9,7 +9,6 @@
 #include <QtCore>
 #include <QtNetwork>
 #include <QtXml>
-#include <QFile>
 
 #include "hashcalculatesha.hpp"
 #include "hashcalculatemd5.hpp"
@@ -19,6 +18,7 @@
 #include "QmlBeam.hpp"
 #include "SwLookup.hpp"
 #include "Clipboard.hpp"
+#include "timer.hpp"
 
 using namespace bb::cascades;
 
@@ -73,6 +73,8 @@ Q_DECL_EXPORT int main(int argc, char **argv)
     //Software lookup poster
     SwLookup swlookup;
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("_swlookup", &swlookup);
+
+    qmlRegisterType<QTimer>("qt.timer", 1, 0, "QTimer");
 
     // Create the Application UI object, this is where the main.qml file
     // is loaded and the application scene is set.

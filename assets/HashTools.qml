@@ -65,7 +65,7 @@ Page {
             Label {
                 text: "Enter text:"
             }
-            TextArea {
+            TextField {
                 id: hashinput
                 hintText: "Text to be hashed"
             }
