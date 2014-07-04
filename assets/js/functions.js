@@ -2,6 +2,8 @@ function clearButton(){
     os_download_textarea.text = "";
     radio_download_textarea.text = "";
     global_linkcontainer.visible = false;
+    osclipboard.visible = false;
+    radioclipboard.visible = false;
     osdropdown.resetSelectedOption();
     devicedropdown.resetSelectedOption();
     os_download_label.text = "OS Link:";
