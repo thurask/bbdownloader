@@ -41,18 +41,6 @@ Sheet {
                 horizontalAlignment: HorizontalAlignment.Center
             }
         }
-        /*Button { //10.3 only
-            text: "Switch theme"
-            // Checks the current theme and then flips the value
-            onClicked: {
-                if (Application.themeSupport.theme.colorTheme.style == VisualStyle.Bright) {
-                    Application.themeSupport.setVisualStyle(VisualStyle.Dark);
-                }
-                else {
-                    Application.themeSupport.setVisualStyle(VisualStyle.Bright);
-                }
-            }
-        }*/
         onCreationCompleted: {
             var theme = Settings.getValueFor("theme", VisualStyle.Bright == themeDropDown.selectedValue ? "bright" : "dark");
             themeDropDown.setSelectedIndex("bright" == theme ? 0 : 1);

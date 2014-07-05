@@ -24,6 +24,14 @@ QString Settings::getValueFor(const QString &objectName, const QString &defaultV
     return settings.value(objectName).toString();
 }
 
+void Settings::clearSettings( const QString &inputValue)
+{
+    QSettings settings;
+    if (inputValue == "clear") {
+            settings.clear();
+        }
+}
+
 void Settings::saveValueFor(const QString &objectName, const QString &inputValue) {
     // A new value is saved to the application settings object.
     QSettings settings;

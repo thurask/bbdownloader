@@ -29,6 +29,11 @@ public:
      * @param objectName Index path to the item
      * @param inputValue new value to the QSettings database
      */
+
+    Q_INVOKABLE
+    void clearSettings( const QString &inputValue);
+
+
     Q_INVOKABLE
     void saveValueFor(const QString &objectName, const QString &inputValue);
 };

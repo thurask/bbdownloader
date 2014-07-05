@@ -58,16 +58,3 @@ void SwLookup::onGetReply()
     }
     sender()->deleteLater();
 }
-
-void SwLookup::saveTextFile(QString textinput)
-{
-    //Get local date and time
-    QDateTime dateTime = QDateTime::currentDateTime();
-    QString dateTimeString = dateTime.toString("Lookup--yyyy_MMM_dd_hh_mm_ss");
-    QFile file("shared/downloads/bbdownloader/"+dateTimeString+".txt");
-    file.open(QIODevice::WriteOnly);
-    QTextStream outStream(&file);
-    outStream << textinput;
-    file.close();
-}
-

@@ -38,6 +38,7 @@ Sheet {
             Label {
                 id: errorlabel
                 text: "Make sure you're connected to the Internet, \nhave data service and Github is up."
+                multiline: true
                 visible: false
             }
             ListView {
@@ -99,6 +100,7 @@ Sheet {
             query: "repo/release"
             type: DataSourceType.Xml
             onDataLoaded: {
+                errorlabel.visible = false;
                 repoDataModel.clear();
                 repoDataModel.insertList(data)
             }

@@ -15,7 +15,6 @@ public:
 public Q_SLOTS:
 void post(QString osVer);
     QString softwareRelease();
-    void saveTextFile(QString textinput);
 
 Q_SIGNALS:
     void softwareReleaseChanged();

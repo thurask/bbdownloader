@@ -84,7 +84,7 @@ Page {
                     }   
                 ]
                 onClicked: {
-                    _swlookup.saveTextFile(outputtext.text);
+                    _manager.saveTextFile(outputtext.text, "Lookup");
                     lookupexporttoast.show();
                 }
             }
