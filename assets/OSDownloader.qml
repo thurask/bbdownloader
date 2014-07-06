@@ -7,7 +7,7 @@
 import bb.cascades 1.2
 import bb.system 1.2
 
-import "js/functions.js" as Functions
+import "js/functions.js" as JScript
 
 Page {
     id:mainpage
@@ -24,7 +24,6 @@ Page {
         id: mainscrollview
         scrollViewProperties.pinchToZoomEnabled: false
         scrollViewProperties.scrollMode: ScrollMode.Vertical
-        
         Container {
             id: global_download_container
             Header {
@@ -43,7 +42,7 @@ Page {
                 ToggleButton {
                     id: deltasetting
                     onCheckedChanged: {
-                        Functions.clearButton();
+                        JScript.clearButton();
                         _manager.messagesCleared();
                     }
                 }
@@ -51,7 +50,8 @@ Page {
                     id: repobutton
                     text: "Known Software"
                     onClicked: {
-                        osRepoAttached.open();
+                        var createdSheet = repoCompDef.createObject();
+                        createdSheet.open();
                     }
                 }   
             }
@@ -247,7 +247,7 @@ Page {
                         enabled: deltasetting.checked ? false : true
                     }
                     onSelectedValueChanged: {
-                        Functions.setOS();
+                        JScript.setOS();
                     }
                 }
                 DropDown {
@@ -337,7 +337,7 @@ Page {
                         enabled: deltasetting.checked ? false : true
                     }
                     onSelectedValueChanged: {
-                        Functions.setRadios();
+                        JScript.setRadios();
                     }
                 }
             }
@@ -355,12 +355,12 @@ Page {
                     onClicked: {
                         osclipboard.visible = true;
                         //Call Darcy
-                        Functions.setEasterEgg(hashedswversion);
+                        JScript.setEasterEgg(hashedswversion);
                         if (deltasetting.checked == false){
-                            Functions.generateLinks();
+                            JScript.generateLinks();
                         }
                         if (deltasetting.checked == true){
-                            Functions.generateDeltas();
+                            JScript.generateDeltas();
                         }
                     }
                 }
@@ -368,7 +368,7 @@ Page {
                     id: clearbutton
                     text: "Clear"
                     onClicked: {
-                        Functions.clearButton();
+                        JScript.clearButton();
                         _manager.messagesCleared();
                     }
                 }
@@ -418,6 +418,8 @@ Page {
                             if (os_download_textarea.text.indexOf("http") != -1) {
                                 Clipboard.copyToClipboard(os_download_textarea.text);
                                 linkexporttoast.body = "OS URL copied";
+                                linkexporttoast.button.enabled = false;
+                                linkexporttoast.button.label = "";
                                 linkexporttoast.show();
                             }
                         }
@@ -430,6 +432,8 @@ Page {
                             if (radio_download_textarea.text.indexOf("http") != -1){
                                 Clipboard.copyToClipboard(radio_download_textarea.text);
                                 linkexporttoast.body = "Radio URL copied";
+                                linkexporttoast.button.enabled = false;
+                                linkexporttoast.button.label = "";
                                 linkexporttoast.show();
                             }
                         }
@@ -476,56 +480,14 @@ Page {
                             text: "Export Links"
                             onClicked: {
                                 if (deltasetting.checked == false){
-                                    var exporturls = ("---OPERATING SYSTEMS---\n" +
-                                    "STL100-1\n" +
-                                    "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory.desktop/" + osversion + "/winchester.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n" +
-                                    "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory/" + osversion + "/winchester.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar\n" +
-                                    "\n" +
-                                    "Qualcomm 8960/8930 (Most others)\n" +
-                                    "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.factory_sfi.desktop/" + osversion + "/qc8960.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n" +
-                                    "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.factory_sfi/" + osversion + "/qc8960.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar\n" +
-                                    "\n" +
-                                    "Verizon Devices\n" +
-                                    "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi.desktop/" + osversion + "/qc8960.verizon_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n" +
-                                    "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi/" + osversion + "/qc8960.verizon_sfi-" + osversion + "-nto+armle-v7+signed.bar\n" +
-                                    "\n\n" +
-                                    //"Qualcomm 8974 (Passport)\n" +
-                                    //"Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.factory_sfi.desktop/" + osversion + "/qc8974.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n" +
-                                    //"Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.factory_sfi/" + osversion + "/qc8974.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar\n" +
-                                    //"\n\n" +
-                                    "---RADIOS---\n" +
-                                    "OMAP Z10: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.m5730/" + radioversion + "/m5730-" + radioversion + "-nto+armle-v7+signed.bar\n" +
-                                    "Qualcomm Z10/P9982: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960/" + radioversion + "/qc8960-" + radioversion + "-nto+armle-v7+signed.bar\n" +
-                                    "Verizon Z10: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.omadm/" + radioversion + "/qc8960.omadm-" + radioversion + "-nto+armle-v7+signed.bar\n" +                                
-                                    "Q10/Q5/P9983/Classic: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr/" + radioversion + "/qc8960.wtr-" + radioversion + "-nto+armle-v7+signed.bar\n" +
-                                    "Z30/Manitoba: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr5/" + radioversion + "/qc8960.wtr5-" + radioversion + "-nto+armle-v7+signed.bar\n" +
-                                    //"Z30/Manitoba: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr6/" + radioversion + "/qc8960.wtr6-" + radioversion + "-nto+armle-v7+signed.bar\n" +
-                                    "Z3/Kopi/Cafe: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8930.wtr5/" + radioversion + "/qc8930.wtr5-" + radioversion + "-nto+armle-v7+signed.bar\n" +
-                                    //"Passport: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8974.wtr?/" + radioversion + "/qc8974.wtr?-" + radioversion + "-nto+armle-v7+signed.bar\n" +
-                                    "");
-                                    _manager.saveTextFile (exporturls, swrelease);
+                                    _manager.exportLinks(swrelease, hashedswversion, osversion, radioversion);
                                 }
                                 if (deltasetting.checked == true){
-                                    var exporturls_delta = ("---OPERATING SYSTEMS---\n" +
-                                    "STL100-1\n" +
-                                    "Delta OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory.d" + osinit + "/" + osversion + "/winchester.factory_sfi-" + osversion + "-nto+armle-v7+signed+patch+"+ osinit2 + ".bar\n" +
-                                    "Qualcomm\n" +
-                                    "Delta OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.factory.d" + osinit + "/" + osversion + "/qc8960.factory_sfi-" + osversion + "-nto+armle-v7+signed+patch+"+ osinit2 + ".bar\n" +
-                                    "Verizon\n" +
-                                    "Delta OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon.d" + osinit + "/" + osversion + "/qc8960.verizon_sfi-" + osversion + "-nto+armle-v7+signed+patch+"+ osinit2 + ".bar\n\n" +
-                                    "---RADIOS---\n" +
-                                    "OMAP Z10: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.m5730.d" + radinit + "/" + radioversion + "/m5730-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar\n" +
-                                    "Qualcomm Z10/P9982: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.d" + radinit + "/" + radioversion + "/qc8960-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar\n" +
-                                    "Verizon Z10: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.omadm.d" + radinit + "/" + radioversion + "/qc8960.omadm-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar\n" +                                
-                                    "Q10/Q5/P9983/Classic: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr.d" + radinit + "/" + radioversion + "/qc8960.wtr-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar\n" +
-                                    "Z30/Manitoba: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr5.d" + radinit + "/" + radioversion + "/qc8960.wtr5-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar\n" +
-                                    //"Z30/Manitoba: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr6.d" + radinit + "/" + radioversion + "/qc8960.wtr6-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar\n" +                                   
-                                    "Z3/Kopi/Cafe: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8930.wtr5.d" + radinit + "/" + radioversion + "/qc8930.wtr5-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar\n" +
-                                    "");
-                                    var deltasw = osinitversion + "-to-" + osversion;
-                                    _manager.saveTextFile (exporturls_delta, deltasw);
+                                    _manager.exportDeltaLinks(swrelease, hashedswversion, osversion, radioversion, osinitversion, osinit, osinit2, radinit, radinit2);
                                 }
                                 linkexporttoast.body = "Links saved to /downloads/bbdownloader";
+                                linkexporttoast.button.enabled = false;
+                                linkexporttoast.button.label = "";
                                 linkexporttoast.show();
                             }
                         }
@@ -589,16 +551,22 @@ Page {
         }
     }
     attachedObjects: [
-        OSRepo{
-            id: osRepoAttached
-            onReleaseSelected: {
-                osver_input.text = repoos;
-                radiover_input.text = reporadio;
-                swver_input.text = reposoftware;
+        ComponentDefinition {
+            id: repoCompDef
+            OSRepo{
+                id: osRepoAttached
+                onReleaseSelected: {
+                    osver_input.text = repoos;
+                    radiover_input.text = reporadio;
+                    swver_input.text = reposoftware;
+                }
             }
         },
         SystemToast {
             id: linkexporttoast
+            body: "";
+            button.enabled: false;
+            button.label: "";
         }
     ]
 }

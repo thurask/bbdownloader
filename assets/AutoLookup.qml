@@ -1,6 +1,6 @@
 /*Autolookup.qml
  ---------------
- Keep tapping that button to get some SW/OS pairs. Export your findings to a text file, if you want.
+Get some SW/OS pairs. Export your findings to a text file, if you want.
  
  --Thurask*/
 
@@ -8,7 +8,7 @@ import bb.cascades 1.2
 import bb.system 1.2
 import qt.timer 1.0
 
-import "js/functions.js" as Functions
+import "js/functions.js" as JScript
 
 Page {
     attachedObjects: [
@@ -17,8 +17,19 @@ Page {
             //set interval
             interval: 500
             onTimeout:{
-                Functions.autoLookup();
+                JScript.autoLookup();
                 timer.restart();
+            }
+        },
+        SystemToast {
+            id: lookupexporttoast
+            body: ""
+            button.enabled: false
+            button.label: ""
+            onFinished: {
+                if (lookupexporttoast.result == SystemUiResult.ButtonSelection){
+                    outputtext.setText(outputtext.storedtext);
+                }
             }
         }
     ]
@@ -48,7 +59,7 @@ Page {
         }
         DropDown {
             id: timeoutdropdown
-            title: "Lookup Frequency"
+            title: "Lookup Interval"
             Option {
                 id: quartersecond
                 text: "250 ms"
@@ -75,7 +86,6 @@ Page {
             }
         }
         Container {
-            topPadding: 20.0
             layout: StackLayout {
                 orientation: LayoutOrientation.LeftToRight
             }
@@ -84,7 +94,7 @@ Page {
                 id: autolookupbutton
                 text: "Start"
                 onClicked: {
-                    Functions.autoLookup();
+                    JScript.autoLookup();
                     timer.start();
                 }
             }
@@ -99,20 +109,23 @@ Page {
                 id: autoclearbutton
                 text: "Clear"
                 onClicked: {
+                    timer.stop();
+                    outputtext.storedtext = outputtext.text;
                     outputtext.text = "";
+                    lookupexporttoast.body = "Cleared";
+                    lookupexporttoast.button.enabled = true;
+                    lookupexporttoast.button.label = "Undo";
+                    lookupexporttoast.show();
                 }
             }
             Button {
                 id: autoexportbutton
                 text: "Export"
-                attachedObjects: [
-                    SystemToast {
-                        id: lookupexporttoast
-                        body: "Lookups saved to /downloads/bbdownloader"
-                    }   
-                ]
                 onClicked: {
                     _manager.saveTextFile(outputtext.text, "Lookup");
+                    lookupexporttoast.body = "Lookups saved to /downloads/bbdownloader";
+                    lookupexporttoast.button.enabled = false;
+                    lookupexporttoast.button.label = "";
                     lookupexporttoast.show();
                 }
             }
@@ -125,6 +138,7 @@ Page {
                 scrollViewProperties.scrollMode: ScrollMode.Vertical
                 scrollViewProperties.pinchToZoomEnabled: false
                 TextArea {
+                    property string storedtext
                     text: ""
                     editable: false
                     id:outputtext

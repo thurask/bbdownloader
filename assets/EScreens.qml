@@ -1,3 +1,9 @@
+/*EScreens.qml
+ -------------
+Load the generator in a HTML file as a WebView, since the generate function was being irritating. Invoke the escreens app.
+
+ --Thurask*/
+
 import bb.cascades 1.2
 
 Page {

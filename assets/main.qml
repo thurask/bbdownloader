@@ -3,6 +3,7 @@
  Get the party started. Formerly the bulk of the QML, now just a bridge between separate tabs. Extensible!
  
  --Thurask*/
+
 import bb.cascades 1.2
 
 TabbedPane {
@@ -42,38 +43,50 @@ TabbedPane {
     }
     Tab {
         title: "OS Downloader"
-        OSDownloader {
-            id:osDownloaderPage
-            titleBar: TitleBar {
-                title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+        delegate: Delegate {
+            OSDownloader {
+                id:osDownloaderPage
+                titleBar: TitleBar {
+                    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+                }
             }
         }
+        delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
     }
     Tab {
         title: "OS Lookup Tool"
-        AutoLookup {
-            id:autoLookupPage
-            titleBar: TitleBar {
-                title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+        delegate: Delegate {
+            AutoLookup {
+                id:autoLookupPage
+                titleBar: TitleBar {
+                    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+                }
             }
         }
+        delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
     }
     Tab {
         title: "Hash Tools"
-        HashTools {
-            id:hashToolsPage
-            titleBar: TitleBar {
-                title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+        delegate: Delegate {
+            HashTools {
+                id:hashToolsPage
+                titleBar: TitleBar {
+                    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+                }
             }
         }
+        delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
     }
     Tab {
         title: "Engineering Screens"
-        EScreens {
-            id:eScreensPage
-            titleBar: TitleBar {
-                title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+        delegate: Delegate {
+            EScreens {
+                id:eScreensPage
+                titleBar: TitleBar {
+                    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+                }
             }
         }
+        delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
     }
 }
