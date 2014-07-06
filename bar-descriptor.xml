@@ -72,6 +72,7 @@
 
     <!--  Name of author which is used for signing. Must match the developer name of your development certificate. -->
     <description>Fight the power</description>
+    <category>core.games</category>
     <authorId>gYAAgJz00Keh1JkBPYeN4rkIp48</authorId>
     <author>Thurask</author>
 
@@ -101,6 +102,7 @@
     <permission>access_shared</permission>
     <permission>access_internet</permission>
     <permission>run_when_backgrounded</permission>
+    <permission>read_device_identifying_information</permission>
     <env var="LD_LIBRARY_PATH" value="app/native/lib:/usr/lib/qt4/lib"/>
     <env var="CASCADES_THEME" value="default"/>
 

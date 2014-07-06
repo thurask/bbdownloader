@@ -4,22 +4,29 @@ BASEDIR = $$quote($$_PRO_FILE_PWD_)
 device {
     CONFIG(debug, debug|release) {
         profile {
-            INCLUDEPATH += $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
+            INCLUDEPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
+                $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
                 $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
-            DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
+            DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
+                $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
                 $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             LIBS += -lbbcascades \
+                -lbbdevice \
                 -lQtCore \
                 -lQtXml \
                 -lbbcascadespickers \
+                -lclipboard \
+                -lbbdata \
                 -lbbsystem \
                 -lQtNetwork
 
@@ -27,22 +34,29 @@ device {
                 config_pri_assets \
                 config_pri_source_group1
         } else {
-            INCLUDEPATH += $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
+            INCLUDEPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
+                $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
                 $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
-            DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
+            DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
+                $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
                 $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             LIBS += -lbbcascades \
+                -lbbdevice \
                 -lQtCore \
                 -lQtXml \
                 -lbbcascadespickers \
+                -lclipboard \
+                -lbbdata \
                 -lbbsystem \
                 -lQtNetwork
 
@@ -55,22 +69,29 @@ device {
 
     CONFIG(release, debug|release) {
         !profile {
-            INCLUDEPATH += $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
+            INCLUDEPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
+                $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
                 $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
-            DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
+            DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
+                $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
                 $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             LIBS += -lbbcascades \
+                -lbbdevice \
                 -lQtCore \
                 -lQtXml \
                 -lbbcascadespickers \
+                -lclipboard \
+                -lbbdata \
                 -lbbsystem \
                 -lQtNetwork
 
@@ -84,22 +105,29 @@ device {
 simulator {
     CONFIG(debug, debug|release) {
         !profile {
-            INCLUDEPATH += $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
+            INCLUDEPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
+                $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
                 $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
-            DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
+            DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
+                $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
                 $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             LIBS += -lbbcascades \
+                -lbbdevice \
                 -lQtCore \
                 -lQtXml \
                 -lbbcascadespickers \
+                -lclipboard \
+                -lbbdata \
                 -lbbsystem \
                 -lQtNetwork
 
@@ -124,6 +152,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/OSRepo.qml) \
         $$quote($$BASEDIR/assets/ProgressBar.qml) \
         $$quote($$BASEDIR/assets/SettingsSheet.qml) \
+        $$quote($$BASEDIR/assets/SysInfo.qml) \
         $$quote($$BASEDIR/assets/html/escreens.html) \
         $$quote($$BASEDIR/assets/icons/icon_114.png) \
         $$quote($$BASEDIR/assets/icons/icon_94.png) \

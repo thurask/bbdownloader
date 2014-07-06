@@ -23,6 +23,7 @@ Page {
     ScrollView {
         scrollViewProperties.scrollMode: ScrollMode.Vertical
         scrollViewProperties.pinchToZoomEnabled: false
+        scrollViewProperties.overScrollEffectMode: OverScrollEffectMode.None
         Container {
             Container {
                 id: webViewContainer

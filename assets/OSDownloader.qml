@@ -24,6 +24,7 @@ Page {
         id: mainscrollview
         scrollViewProperties.pinchToZoomEnabled: false
         scrollViewProperties.scrollMode: ScrollMode.Vertical
+        scrollViewProperties.overScrollEffectMode: OverScrollEffectMode.None
         Container {
             id: global_download_container
             Header {

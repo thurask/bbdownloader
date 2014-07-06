@@ -1,5 +1,5 @@
 1
-18
+19
 720x1280/images/cover.png
 720x720/images/cover.png
 768x1280/images/cover.png
@@ -18,3 +18,4 @@ OSDownloader.qml
 OSRepo.qml
 ProgressBar.qml
 SettingsSheet.qml
+SysInfo.qml

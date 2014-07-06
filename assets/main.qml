@@ -87,6 +87,18 @@ TabbedPane {
                 }
             }
         }
+        delegateActivationPolicy: TabDelegateActivationPolicy.ActivateImmediately
+    }
+    Tab {
+        title: "System Info"
+        delegate: Delegate {
+            SysInfo {
+                id:sysInfoPage
+                titleBar: TitleBar {
+                    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+                }
+            }
+        }
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
     }
 }

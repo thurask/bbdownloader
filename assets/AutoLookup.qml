@@ -137,6 +137,7 @@ Page {
             ScrollView {
                 scrollViewProperties.scrollMode: ScrollMode.Vertical
                 scrollViewProperties.pinchToZoomEnabled: false
+                scrollViewProperties.overScrollEffectMode: OverScrollEffectMode.None
                 TextArea {
                     property string storedtext
                     text: ""
