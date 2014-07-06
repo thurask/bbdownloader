@@ -46,6 +46,34 @@ Page {
                 hintText: "Enter OS version"
             }
         }
+        DropDown {
+            id: timeoutdropdown
+            title: "Lookup Frequency"
+            Option {
+                id: quartersecond
+                text: "250 ms"
+                value: 250
+            }
+            Option {
+                id: halfsecond
+                text: "500 ms"
+                value: 500
+                selected: true
+            }
+            Option {
+                id: threequartersecond
+                text: "750 ms"
+                value: 750
+            }
+            Option {
+                id: fullsecond
+                text: "1000 ms"
+                value: 1000
+            }
+            onSelectedOptionChanged: {
+                timer.interval = timeoutdropdown.selectedValue;
+            }
+        }
         Container {
             topPadding: 20.0
             layout: StackLayout {
@@ -56,6 +84,7 @@ Page {
                 id: autolookupbutton
                 text: "Start"
                 onClicked: {
+                    Functions.autoLookup();
                     timer.start();
                 }
             }
@@ -71,7 +100,6 @@ Page {
                 text: "Clear"
                 onClicked: {
                     outputtext.text = "";
-                    autolookup_input.text = "";
                 }
             }
             Button {

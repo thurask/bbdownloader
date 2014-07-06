@@ -112,25 +112,23 @@ simulator {
 
 config_pri_assets {
     OTHER_FILES += \
-        $$quote($$BASEDIR/assets/720x1280/AppCover.qml) \
-        $$quote($$BASEDIR/assets/720x1280/cover_aseries.png) \
-        $$quote($$BASEDIR/assets/720x720/AppCover.qml) \
-        $$quote($$BASEDIR/assets/720x720/cover_nseries.png) \
-        $$quote($$BASEDIR/assets/768x1280/AppCover.qml) \
-        $$quote($$BASEDIR/assets/768x1280/cover_lseries.png) \
+        $$quote($$BASEDIR/assets/720x1280/images/cover.png) \
+        $$quote($$BASEDIR/assets/720x720/images/cover.png) \
+        $$quote($$BASEDIR/assets/768x1280/images/cover.png) \
         $$quote($$BASEDIR/assets/AppCover.qml) \
         $$quote($$BASEDIR/assets/AutoLookup.qml) \
+        $$quote($$BASEDIR/assets/EScreens.qml) \
         $$quote($$BASEDIR/assets/HashTools.qml) \
         $$quote($$BASEDIR/assets/HelpSheet.qml) \
         $$quote($$BASEDIR/assets/OSDownloader.qml) \
         $$quote($$BASEDIR/assets/OSRepo.qml) \
         $$quote($$BASEDIR/assets/ProgressBar.qml) \
         $$quote($$BASEDIR/assets/SettingsSheet.qml) \
+        $$quote($$BASEDIR/assets/html/escreens.html) \
         $$quote($$BASEDIR/assets/icons/icon_114.png) \
         $$quote($$BASEDIR/assets/icons/icon_94.png) \
         $$quote($$BASEDIR/assets/images/cover.png) \
         $$quote($$BASEDIR/assets/js/functions.js) \
-        $$quote($$BASEDIR/assets/js/vars.js) \
         $$quote($$BASEDIR/assets/main.qml)
 }
 
@@ -178,12 +176,24 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/720x1280/*.qml) \
         $$quote($$BASEDIR/../assets/720x1280/*.js) \
         $$quote($$BASEDIR/../assets/720x1280/*.qs) \
+        $$quote($$BASEDIR/../assets/720x1280/images/*.qml) \
+        $$quote($$BASEDIR/../assets/720x1280/images/*.js) \
+        $$quote($$BASEDIR/../assets/720x1280/images/*.qs) \
         $$quote($$BASEDIR/../assets/720x720/*.qml) \
         $$quote($$BASEDIR/../assets/720x720/*.js) \
         $$quote($$BASEDIR/../assets/720x720/*.qs) \
+        $$quote($$BASEDIR/../assets/720x720/images/*.qml) \
+        $$quote($$BASEDIR/../assets/720x720/images/*.js) \
+        $$quote($$BASEDIR/../assets/720x720/images/*.qs) \
         $$quote($$BASEDIR/../assets/768x1280/*.qml) \
         $$quote($$BASEDIR/../assets/768x1280/*.js) \
         $$quote($$BASEDIR/../assets/768x1280/*.qs) \
+        $$quote($$BASEDIR/../assets/768x1280/images/*.qml) \
+        $$quote($$BASEDIR/../assets/768x1280/images/*.js) \
+        $$quote($$BASEDIR/../assets/768x1280/images/*.qs) \
+        $$quote($$BASEDIR/../assets/html/*.qml) \
+        $$quote($$BASEDIR/../assets/html/*.js) \
+        $$quote($$BASEDIR/../assets/html/*.qs) \
         $$quote($$BASEDIR/../assets/icons/*.qml) \
         $$quote($$BASEDIR/../assets/icons/*.js) \
         $$quote($$BASEDIR/../assets/icons/*.qs) \

@@ -2,10 +2,9 @@ import bb.cascades 1.2
 import bb.data 1.0
 import bb.system 1.2
 
-import "js/vars.js" as Variables
-
 Sheet {
     id: osRepo
+    signal releaseSelected(string reposoftware, string repoos, string reporadio)
     content: Page {
         titleBar: TitleBar {
             title: "Software List"
@@ -76,9 +75,7 @@ Sheet {
                 ]
                 onTriggered: {
                     var indexi = repoDataModel.data(indexPath);
-                    Variables.softwareRelease = indexi.software;
-                    Variables.osVersion = (indexi.trueos == "" ? indexi.os : indexi.trueos);
-                    Variables.radioVersion = indexi.radio;
+                    osRepo.releaseSelected(indexi.software, (indexi.trueos == "" ? indexi.os : indexi.trueos), indexi.radio)
                     xmlToast.show();
                 }
             }

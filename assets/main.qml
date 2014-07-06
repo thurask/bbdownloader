@@ -67,4 +67,13 @@ TabbedPane {
             }
         }
     }
+    Tab {
+        title: "Engineering Screens"
+        EScreens {
+            id:eScreensPage
+            titleBar: TitleBar {
+                title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+            }
+        }
+    }
 }

@@ -7,7 +7,6 @@
 import bb.cascades 1.2
 import bb.system 1.2
 
-import "js/vars.js" as Variables
 import "js/functions.js" as Functions
 
 Page {
@@ -592,10 +591,10 @@ Page {
     attachedObjects: [
         OSRepo{
             id: osRepoAttached
-            onClosed:{
-                osver_input.text = Variables.osVersion;
-                radiover_input.text = Variables.radioVersion;
-                swver_input.text = Variables.softwareRelease;
+            onReleaseSelected: {
+                osver_input.text = repoos;
+                radiover_input.text = reporadio;
+                swver_input.text = reposoftware;
             }
         },
         SystemToast {
