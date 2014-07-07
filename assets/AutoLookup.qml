@@ -35,7 +35,7 @@ Page {
     ]
     Container {
         Header {
-            title: "Input"
+            title: qsTr("Input") + Retranslate.onLanguageChanged
         }
         Container {
             topPadding: 20.0
@@ -43,7 +43,7 @@ Page {
                 orientation: LayoutOrientation.LeftToRight
             }
             Label {
-                text: "OS Version:"
+                text: qsTr("OS Version:") + Retranslate.onLanguageChanged
                 verticalAlignment: VerticalAlignment.Center
             }
             TextField {
@@ -54,12 +54,12 @@ Page {
                     _swlookup.post(autolookup_input.text);
                 }
                 input.submitKey: SubmitKey.Submit
-                hintText: "Enter OS version"
+                hintText: qsTr("Enter OS version") + Retranslate.onLanguageChanged
             }
         }
         DropDown {
             id: timeoutdropdown
-            title: "Lookup Interval"
+            title: qsTr("Lookup Interval") + Retranslate.onLanguageChanged
             Option {
                 id: quartersecond
                 text: "250 ms"
@@ -92,7 +92,7 @@ Page {
             horizontalAlignment: HorizontalAlignment.Center
             Button {
                 id: autolookupbutton
-                text: "Start"
+                text: qsTr("Start") + Retranslate.onLanguageChanged
                 onClicked: {
                     JScript.autoLookup();
                     timer.start();
@@ -100,21 +100,21 @@ Page {
             }
             Button {
                 id: autostopbutton
-                text: "Stop"
+                text: qsTr("Stop") + Retranslate.onLanguageChanged
                 onClicked: {
                     timer.stop();
                 }
             }
             Button {
                 id: autoclearbutton
-                text: "Clear"
+                text: qsTr("Clear") + Retranslate.onLanguageChanged
                 onClicked: {
                     timer.stop();
                     outputtext.storedtext = outputtext.text;
                     outputtext.text = "";
-                    lookupexporttoast.body = "Cleared";
+                    lookupexporttoast.body = qsTr("Cleared") + Retranslate.onLanguageChanged;
                     lookupexporttoast.button.enabled = true;
-                    lookupexporttoast.button.label = "Undo";
+                    lookupexporttoast.button.label = qsTr("Undo") + Retranslate.onLanguageChanged;
                     lookupexporttoast.show();
                 }
             }
@@ -123,7 +123,7 @@ Page {
                 text: "Export"
                 onClicked: {
                     _manager.saveTextFile(outputtext.text, "Lookup");
-                    lookupexporttoast.body = "Lookups saved to /downloads/bbdownloader";
+                    lookupexporttoast.body = qsTr("Lookups saved to /downloads/bbdownloader") + Retranslate.onLanguageChanged;
                     lookupexporttoast.button.enabled = false;
                     lookupexporttoast.button.label = "";
                     lookupexporttoast.show();

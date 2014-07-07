@@ -151,12 +151,14 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/OSDownloader.qml) \
         $$quote($$BASEDIR/assets/OSRepo.qml) \
         $$quote($$BASEDIR/assets/ProgressBar.qml) \
+        $$quote($$BASEDIR/assets/PullToRefresh.qml) \
         $$quote($$BASEDIR/assets/SettingsSheet.qml) \
         $$quote($$BASEDIR/assets/SysInfo.qml) \
         $$quote($$BASEDIR/assets/html/escreens.html) \
         $$quote($$BASEDIR/assets/icons/icon_114.png) \
         $$quote($$BASEDIR/assets/icons/icon_94.png) \
         $$quote($$BASEDIR/assets/images/cover.png) \
+        $$quote($$BASEDIR/assets/images/ic_refresh.png) \
         $$quote($$BASEDIR/assets/js/functions.js) \
         $$quote($$BASEDIR/assets/main.qml)
 }

@@ -26,12 +26,31 @@ Sheet {
                 textStyle.fontWeight: FontWeight.Bold
             }
             Label  {
-                text: "BB10 OS Downloader developed by Thurask. \nTwitter: @thuraski\n\nBar files save to /downloads/bbdownloader. \n\nSo I heard you like spreadsheets (thank you Kyle): \n http://bit.ly/bb10oslist \n\nDo what you want with the source code: \nhttps://github.com/thurask/bbdownloader"
-                multiline: true
+                text: qsTr("BB10 OS Downloader developed by Thurask.") + Retranslate.onLanguageChanged
+                horizontalAlignment: HorizontalAlignment.Center
+                textFit.mode: LabelTextFitMode.Default
+                textStyle.textAlign: TextAlign.Center
+            }
+            Label {
+                text: "Twitter: @thuraski"
                 horizontalAlignment: HorizontalAlignment.Center
                 textFit.mode: LabelTextFitMode.Default
                 textStyle.textAlign: TextAlign.Center
                 content.flags: TextContentFlag.ActiveText
+            }
+            Label {
+                text: qsTr("Save folder: /downloads/bbdownloader") + Retranslate.onLanguageChanged
+                horizontalAlignment: HorizontalAlignment.Center
+                textFit.mode: LabelTextFitMode.Default
+                textStyle.textAlign: TextAlign.Center
+            }
+            Label {
+                text: qsTr("Do what you want with the source code: \nhttps://github.com/thurask/bbdownloader") + Retranslate.onLanguageChanged
+                horizontalAlignment: HorizontalAlignment.Center
+                textFit.mode: LabelTextFitMode.Default
+                textStyle.textAlign: TextAlign.Center
+                content.flags: TextContentFlag.ActiveText
+                multiline: true
             }
         }
     }

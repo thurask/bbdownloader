@@ -15,7 +15,7 @@ Page {
         FilePicker {
             id: picker
             property string selectedFile
-            title: "File Picker"
+            title: qsTr("File Picker") + Retranslate.onLanguageChanged
             mode: FilePickerMode.Picker
             type: FileType.Other
             viewMode: FilePickerViewMode.Default
@@ -40,7 +40,7 @@ Page {
             }
             horizontalAlignment: HorizontalAlignment.Center
             Label {
-                text: "File mode:"
+                text: qsTr("File mode:") + Retranslate.onLanguageChanged
                 verticalAlignment: VerticalAlignment.Center
             }
             ToggleButton {
@@ -63,11 +63,11 @@ Page {
             id: textmodecontainer
             visible: (pickermode == false)
             Label {
-                text: "Enter text:"
+                text: qsTr("Enter text:") + Retranslate.onLanguageChanged
             }
             TextField {
                 id: hashinput
-                hintText: "Text to be hashed"
+                hintText: qsTr("Text to be hashed") + Retranslate.onLanguageChanged
             }
         }
         Container {
@@ -84,7 +84,7 @@ Page {
                 }
                 horizontalAlignment: HorizontalAlignment.Center
                 Button {
-                    text: "Choose a file"
+                    text: qsTr("Choose a file") + Retranslate.onLanguageChanged
                     onClicked: {
                         resultLabel.visible = true;
                         picker.open();
@@ -94,7 +94,7 @@ Page {
             Label {
                 id: resultLabel
                 horizontalAlignment: HorizontalAlignment.Center
-                text: qsTr("Selected file: %1").arg(picker.selectedFile)
+                text: qsTr("%1").arg(picker.selectedFile)
                 multiline: true
             }         
         }
@@ -106,7 +106,7 @@ Page {
             Label {
                 horizontalAlignment: HorizontalAlignment.Center
                 verticalAlignment: VerticalAlignment.Center
-                text: "Be patient with large files"
+                text: qsTr("Be patient with large files") + Retranslate.onLanguageChanged
                 visible: (pickermode == true)
             }
             Divider {
@@ -121,7 +121,7 @@ Page {
                     horizontalAlignment: HorizontalAlignment.Left
                     onClicked: {
                         hashmode = "MD4";
-                        hashoutput_label.text = "Hashed output (MD4):";
+                        hashoutput_label.text = qsTr("Hashed output (MD4):") + Retranslate.onLanguageChanged;
                         if (pickermode == false){
                             hashCalculateMd4.calculateHash(hashinput.text);
                             hashoutput.text = hashCalculateMd4.getHash();
@@ -137,7 +137,7 @@ Page {
                     horizontalAlignment: HorizontalAlignment.Center
                     onClicked: {
                         hashmode = "SHA1"
-                        hashoutput_label.text = "Hashed output (SHA-1):";
+                        hashoutput_label.text = qsTr("Hashed output (SHA-1):") + Retranslate.onLanguageChanged;
                         if (pickermode == false){
                             hashCalculateSha.calculateHash(hashinput.text);
                             hashoutput.text = hashCalculateSha.getHash();
@@ -153,7 +153,7 @@ Page {
                     horizontalAlignment: HorizontalAlignment.Right
                     onClicked: {
                         hashmode = "MD5"
-                        hashoutput_label.text = "Hashed output (MD5):";
+                        hashoutput_label.text = qsTr("Hashed output (MD5):") + Retranslate.onLanguageChanged;
                         if (pickermode == false ){
                             hashCalculateMd5.calculateHash(hashinput.text);
                             hashoutput.text = hashCalculateMd5.getHash();
@@ -173,7 +173,7 @@ Page {
             }
             Label {
                 id: hashoutput_label
-                text: "Hashed output:"
+                text: qsTr("Hashed output:") + Retranslate.onLanguageChanged
             }
             TextArea {
                 id: hashoutput
@@ -186,9 +186,9 @@ Page {
                 }
                 Button {                   
                     id: exportbutton
-                    text: "Export to file"
+                    text: qsTr("Export to file") + Retranslate.onLanguageChanged
                     onClicked: {
-                        hashToast.body = "Hash saved to /downloads/bbdownloader";            
+                        hashToast.body = qsTr("Hash saved to /downloads/bbdownloader") + Retranslate.onLanguageChanged;            
                         hashToast.show();
                         if (togglebutton.checked == false){
                             var exporthash = (hashinput.text + " -- " + hashoutput.text);
@@ -202,9 +202,9 @@ Page {
                 }
                 Button {
                     id: clipboardbutton
-                    text: "Copy to clipboard"
+                    text: qsTr("Copy to clipboard") + Retranslate.onLanguageChanged
                     onClicked: {
-                        hashToast.body = "Hash copied to clipboard";
+                    hashToast.body = qsTr("Hash copied to clipboard") + Retranslate.onLanguageChanged;
                         hashToast.show();
                         Clipboard.copyToClipboard(hashoutput.text);
                     }

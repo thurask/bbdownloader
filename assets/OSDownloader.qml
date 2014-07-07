@@ -28,7 +28,7 @@ Page {
         Container {
             id: global_download_container
             Header {
-                title: "Inputs"
+                title: qsTr("Inputs") + Retranslate.onLanguageChanged
             }                      
             Container {
                 topPadding: 10.0
@@ -37,7 +37,7 @@ Page {
                 }
                 horizontalAlignment: HorizontalAlignment.Center
                 Label {
-                    text: "Deltas"
+                    text: qsTr("Deltas") + Retranslate.onLanguageChanged
                     verticalAlignment: VerticalAlignment.Center
                 }
                 ToggleButton {
@@ -49,7 +49,7 @@ Page {
                 }
                 Button {
                     id: repobutton
-                    text: "Known Software"
+                    text: qsTr("Known Software") + Retranslate.onLanguageChanged
                     onClicked: {
                         var createdSheet = repoCompDef.createObject();
                         createdSheet.open();
@@ -64,7 +64,7 @@ Page {
                 }
                 Label {
                     id: osver_label
-                    text: "Target OS Version"
+                    text: qsTr("Target OS Version") + Retranslate.onLanguageChanged
                 }
                 Container {
                     id: osinputcontainer
@@ -75,7 +75,7 @@ Page {
                     verticalAlignment: VerticalAlignment.Top
                     TextField {
                         id: osver_input
-                        hintText: "Target OS version"
+                        hintText: osver_label.text
                         inputMode: TextFieldInputMode.NumbersAndPunctuation
                         horizontalAlignment: HorizontalAlignment.Left
                         onTextChanging: {
@@ -85,7 +85,7 @@ Page {
                     }
                     Button {
                         id: lookupbutton
-                        text: "Lookup"
+                        text: qsTr("Lookup") + Retranslate.onLanguageChanged
                         onClicked: {
                             swver_input.text = _swlookup.softwareRelease();                                                              
                         }
@@ -103,11 +103,11 @@ Page {
                         }
                         Label {
                             id: radiover_label
-                            text: "Target Radio Version"
+                            text: qsTr("Target Radio Version") + Retranslate.onLanguageChanged
                         }
                         TextField {
                             id: radiover_input
-                            hintText: "Target radio version"
+                            hintText: radiover_label.text
                             inputMode: TextFieldInputMode.NumbersAndPunctuation
                             onTextChanging: {
                                 radioversion = radiover_input.text
@@ -120,11 +120,11 @@ Page {
                         }
                         Label {
                             id: swver_label
-                            text: "Target SW Version"
+                            text: qsTr("Target SW Version") + Retranslate.onLanguageChanged
                         }
                         TextField {
                             id: swver_input
-                            hintText: "Target SW version"
+                            hintText: swver_label.text
                             onTextChanging: {
                                 swrelease = swver_input.text
                                 hashCalculateSha.calculateHash(swrelease)
@@ -150,11 +150,11 @@ Page {
                         }
                         Label {
                             id: osinit_label
-                            text: "Initial OS Version"
+                            text: qsTr("Initial OS Version") + Retranslate.onLanguageChanged
                         }
                         TextField {
                             id: osinit_input
-                            hintText: "Initial OS version"
+                            hintText: osinit_label.text
                             inputMode: TextFieldInputMode.NumbersAndPunctuation
                             onTextChanged: {
                                 osinitversion = osinit_input.text
@@ -171,11 +171,11 @@ Page {
                         }
                         Label {
                             id: radioinit_label
-                            text: "Initial Radio Version"
+                            text: qsTr("Initial Radio Version") + Retranslate.onLanguageChanged
                         }
                         TextField {
                             id: radioinit_input
-                            hintText: "Initial radio version"
+                            hintText: radioinit_label.text
                             inputMode: TextFieldInputMode.NumbersAndPunctuation
                             onTextChanged: {
                                 var radinit_temp = radioinit_input.text;
@@ -194,7 +194,7 @@ Page {
                 DropDown {
                     id: osdropdown
                     objectName: "osdropdown"
-                    title: "Choose OS Type"
+                    title: qsTr("Choose OS Type") + Retranslate.onLanguageChanged
                     Option {
                         id: dropdown_debrick
                         text: "Debrick OS"
@@ -351,7 +351,7 @@ Page {
                 topPadding: 20.0
                 Button {
                     id:generatebutton
-                    text: "Generate"
+                    text: qsTr("Generate") + Retranslate.onLanguageChanged
                     horizontalAlignment: HorizontalAlignment.Center
                     onClicked: {
                         osclipboard.visible = true;
@@ -367,7 +367,7 @@ Page {
                 }
                 Button {
                     id: clearbutton
-                    text: "Clear"
+                    text: qsTr("Clear") + Retranslate.onLanguageChanged
                     onClicked: {
                         JScript.clearButton();
                         _manager.messagesCleared();
@@ -383,7 +383,7 @@ Page {
                 }
                 Label {
                     id: os_download_label
-                    text: "OS Link:"
+                    text: qsTr("OS Link:") + Retranslate.onLanguageChanged
                 }
                 TextArea {
                     id: os_download_textarea
@@ -394,7 +394,7 @@ Page {
                 }
                 Label {
                     id: radio_download_label
-                    text: "Radio Link:"
+                    text: qsTr("Radio Link:") + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 TextArea {
@@ -413,12 +413,12 @@ Page {
                     topPadding: 20.0
                     Button {
                         id: osclipboard
-                        text: "Copy OS"
+                        text: qsTr("Copy OS") + Retranslate.onLanguageChanged
                         visible: false
                         onClicked: {
                             if (os_download_textarea.text.indexOf("http") != -1) {
                                 Clipboard.copyToClipboard(os_download_textarea.text);
-                                linkexporttoast.body = "OS URL copied";
+                                linkexporttoast.body = qsTr("OS URL copied") + Retranslate.onLanguageChanged;
                                 linkexporttoast.button.enabled = false;
                                 linkexporttoast.button.label = "";
                                 linkexporttoast.show();
@@ -427,12 +427,12 @@ Page {
                     }
                     Button {
                         id: radioclipboard
-                        text: "Copy Radio"
+                        text: qsTr("Copy Radio") + Retranslate.onLanguageChanged
                         visible: false
                         onClicked: {
                             if (radio_download_textarea.text.indexOf("http") != -1){
                                 Clipboard.copyToClipboard(radio_download_textarea.text);
-                                linkexporttoast.body = "Radio URL copied";
+                                linkexporttoast.body = qsTr("Radio URL copied") + Retranslate.onLanguageChanged;
                                 linkexporttoast.button.enabled = false;
                                 linkexporttoast.button.label = "";
                                 linkexporttoast.show();
@@ -456,7 +456,7 @@ Page {
                         horizontalAlignment: HorizontalAlignment.Center
                         Button {
                             id: downloadbutton_os
-                            text: "Download OS"
+                            text: qsTr("Download OS") + Retranslate.onLanguageChanged
                             onClicked: {
                                 global_urlcontainer.visible = true;
                                 var osdl = os_download_textarea.text;
@@ -467,7 +467,7 @@ Page {
                         }
                         Button {
                             id: downloadbutton_radio
-                            text: "Download Radio"
+                            text: qsTr("Download Radio") + Retranslate.onLanguageChanged
                             onClicked: {
                                 global_urlcontainer.visible = true;
                                 var raddl = radio_download_textarea.text;
@@ -478,7 +478,7 @@ Page {
                         }
                         Button {
                             id: downloadbutton_export
-                            text: "Export Links"
+                            text: qsTr("Export Links") + Retranslate.onLanguageChanged
                             onClicked: {
                                 if (deltasetting.checked == false){
                                     _manager.exportLinks(swrelease, hashedswversion, osversion, radioversion);
@@ -486,7 +486,7 @@ Page {
                                 if (deltasetting.checked == true){
                                     _manager.exportDeltaLinks(swrelease, hashedswversion, osversion, radioversion, osinitversion, osinit, osinit2, radinit, radinit2);
                                 }
-                                linkexporttoast.body = "Links saved to /downloads/bbdownloader";
+                                linkexporttoast.body = qsTr("Links saved to /downloads/bbdownloader") + Retranslate.onLanguageChanged;
                                 linkexporttoast.button.enabled = false;
                                 linkexporttoast.button.label = "";
                                 linkexporttoast.show();
@@ -498,11 +498,11 @@ Page {
                         visible: false
                         Container {
                             Header {
-                                title: "Progress"
+                                title: qsTr("Progress") + Retranslate.onLanguageChanged
                             }
                             Label {
                                 id: activedl_label
-                                text: "Active Downloads: " + (_manager.activeDownloads == 0 ? "none" : _manager.activeDownloads)
+                                text: qsTr("Active Downloads: ") + Retranslate.onLanguageChanged + (_manager.activeDownloads == 0 ? qsTr("none") + Retranslate.onLanguageChanged : _manager.activeDownloads)
                             }
                             ProgressBar {
                                 topMargin: 10
@@ -515,7 +515,7 @@ Page {
                         }
                         Button {
                             id: stopbutton
-                            text: "Stop Download"
+                            text: qsTr("Stop Download") + Retranslate.onLanguageChanged
                             horizontalAlignment: HorizontalAlignment.Center
                             onClicked: {
                                 var activedl = activedl_label.text;
@@ -525,7 +525,7 @@ Page {
                             }
                         }
                         Header {
-                            title: "Status"
+                            title: qsTr("Status") + Retranslate.onLanguageChanged
                         }
                         TextArea {
                             id: status_textarea
@@ -535,7 +535,7 @@ Page {
                             text: _manager.statusMessage
                         }
                         Header {
-                            title: "Errors"
+                            title: qsTr("Errors") + Retranslate.onLanguageChanged
                         }
                         TextArea {
                             id: error_textarea

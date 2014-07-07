@@ -32,16 +32,16 @@ Page {
                 return parts.join(".");
             }
             Header {
-                title: "Hardware"
+                title: qsTr("Hardware") + Retranslate.onLanguageChanged
             }
             Label {
-                text: "Device Name: " + hardwareinfo.deviceName;
+                text: qsTr("Device Name: ") + Retranslate.onLanguageChanged + hardwareinfo.deviceName;
             }
             Label {
-                text: "Model Name: " + hardwareinfo.modelName;
+                text: qsTr("Model Name: ") + Retranslate.onLanguageChanged + hardwareinfo.modelName;
             }
             Label {
-                text: "Model Number: " + hardwareinfo.modelNumber;
+                text: qsTr("Model Number: ") + Retranslate.onLanguageChanged + hardwareinfo.modelNumber;
             }
             Label {
                 text: "PIN: " + hardwareinfo.pin;
@@ -56,31 +56,31 @@ Page {
                 text: "MEID: " + hardwareinfo.meid;
             }
             Label {
-                text: "Serial Number: " + hardwareinfo.serialNumber;
+                text: qsTr("Serial Number: ") + Retranslate.onLanguageChanged + hardwareinfo.serialNumber;
             }
             Header {
-                title: "Memory"
+                title: qsTr("Memory") + Retranslate.onLanguageChanged
             }
             Label {
-                text: "Free Device Memory: " + maincontainer.numberWithCommas(memoryinfo.availableDeviceMemory()) + " bytes"
+                text: qsTr("Free Device Memory: ") + Retranslate.onLanguageChanged + maincontainer.numberWithCommas(memoryinfo.availableDeviceMemory()) + " bytes"
             }
             Label {
-                text: "Total Device Memory: " + maincontainer.numberWithCommas(memoryinfo.totalDeviceMemory()) + " bytes"
+                text: qsTr("Total Device Memory: ") + Retranslate.onLanguageChanged + maincontainer.numberWithCommas(memoryinfo.totalDeviceMemory()) + " bytes"
             }
             Header {
-                title: "Battery"
+                title: qsTr("Battery") + Retranslate.onLanguageChanged
             }
             Label {
-                text: "Condition: " + (battinfo.condition == 1 ? "OK" : "Bad or Unknown")
+                text: qsTr("Condition: ") + Retranslate.onLanguageChanged + (battinfo.condition == 1 ? "OK" : "Bad or Unknown")
             }
             Label {
-                text: "Remaining: " + battinfo.level + "%"
+                text: qsTr("Remaining: ") + Retranslate.onLanguageChanged + battinfo.level + "%"
             }
             Label {
-                text: "Cycle Count: " + battinfo.cycleCount
+                text: qsTr("Cycle Count: ") + Retranslate.onLanguageChanged + battinfo.cycleCount
             }
             Label {
-                text: "Temperature: " + battinfo.temperature + "°C (" + (1.8 * (battinfo.temperature) + 32) + "°F)"
+                text: qsTr("Temperature: ") + Retranslate.onLanguageChanged + battinfo.temperature + "°C (" + (1.8 * (battinfo.temperature) + 32) + "°F)"
             }
         }
     }

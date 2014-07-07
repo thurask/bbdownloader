@@ -10,9 +10,9 @@ Sheet {
     id: settingsSheet
     content: Page {
         titleBar: TitleBar {
-            title: "Settings"
+            title: qsTr("Settings") + Retranslate.onLanguageChanged
             dismissAction: ActionItem {
-                title: "Close"
+                title: qsTr("Close") + Retranslate.onLanguageChanged
                 onTriggered: {
                     settingsSheet.close()
                     if (settingsSheet) settingsSheet.destroy();
@@ -23,13 +23,13 @@ Sheet {
             topPadding: 20
             DropDown {
                 id: themeDropDown
-                title: "Theme Select"
+                title: qsTr("Theme Select") + Retranslate.onLanguageChanged
                 Option {
-                    text: "Bright"
+                    text: qsTr("Bright") + Retranslate.onLanguageChanged
                     value: VisualStyle.Bright
                 }
                 Option {
-                    text: "Dark"
+                    text: qsTr("Dark") + Retranslate.onLanguageChanged
                     value: VisualStyle.Dark
                 }
                 onSelectedOptionChanged: {
@@ -37,7 +37,7 @@ Sheet {
                 }
             }
             Label {
-                text: "Restart app to save theme setting."
+                text: qsTr("Restart app to save theme setting.") + Retranslate.onLanguageChanged
                 horizontalAlignment: HorizontalAlignment.Center
             }
         }

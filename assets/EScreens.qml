@@ -39,7 +39,7 @@ Page {
             }
             Button {
                 id: openescreens
-                text: "Open EScreens"
+                text: qsTr("Open EScreens") + Retranslate.onLanguageChanged
                 horizontalAlignment: HorizontalAlignment.Center
                 onClicked: {
                     myQuery.trigger(myQuery.query.invokeActionId);

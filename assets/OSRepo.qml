@@ -7,42 +7,60 @@ Sheet {
     signal releaseSelected(string reposoftware, string repoos, string reporadio)
     content: Page {
         titleBar: TitleBar {
-            title: "Software List"
+            title: qsTr("Software List") + Retranslate.onLanguageChanged
             dismissAction: ActionItem {
-                title: "Close"
+                title: qsTr("Close") + Retranslate.onLanguageChanged
                 onTriggered: {
                     osRepo.close()
                 }
             }
             acceptAction: ActionItem {
-                title: "Refresh"
+                title: qsTr("Refresh") + Retranslate.onLanguageChanged
                 onTriggered: {
                     repoDataSource.load();
                 }
             }
         }
         Container {
+            horizontalAlignment: HorizontalAlignment.Fill
             Header {
-                title: "Info"
+                title: qsTr("Info") + Retranslate.onLanguageChanged
             }
             Label {
-                text: "If there's a new OS, notify me or fork this repo, update xml/repo.xml and make a pull request:\nhttps://github.com/thurask/thurask.github.io"
+                text: qsTr("If something is missing, notify me") + Retranslate.onLanguageChanged
                 content.flags: TextContentFlag.ActiveText
                 textStyle.textAlign: TextAlign.Center
+                horizontalAlignment: HorizontalAlignment.Center
                 multiline:true
             }
             Header {
-                title: "Known Software (Be Patient, It's Retrieving A Database)"
+                title: qsTr("Known Software (pull to reload)") + Retranslate.onLanguageChanged
             }
             Label {
                 id: errorlabel
-                text: "Make sure you're connected to the Internet, \nhave data service and Github is up."
+                text: qsTr("Make sure you are connected to the Internet, \nhave data service and Github is up.") + Retranslate.onLanguageChanged
                 multiline: true
                 visible: false
             }
             ListView {
                 id: listView
                 dataModel: repoDataModel
+                property bool isTouched: false
+                onTouch: {
+                    if (event.isDown() | event.isMove()) {
+                        isTouched = true
+                    } else {
+                        isTouched = false
+                    }
+                }
+                leadingVisual: PullToRefresh {
+                    id: pullRefresh
+                    preferredWidth: listhandler.layoutFrame.width
+                    touchActive: listView.isTouched
+                    onRefreshTriggered: {                      
+                        repoDataSource.load();                 
+                    }
+                }
                 listItemComponents: [
                     ListItemComponent {
                         type: "header"
@@ -107,7 +125,10 @@ Sheet {
         },
         SystemToast {
             id: xmlToast
-            body: "Values copied to OS Downloader"
+            body: qsTr("Values copied to OS Downloader") + Retranslate.onLanguageChanged
+        },
+        LayoutUpdateHandler {
+            id: listhandler
         }
     ]
     onCreationCompleted: {

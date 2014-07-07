@@ -1,5 +1,5 @@
 1
-19
+21
 720x1280/images/cover.png
 720x720/images/cover.png
 768x1280/images/cover.png
@@ -12,10 +12,12 @@ html/escreens.html
 icons/icon_114.png
 icons/icon_94.png
 images/cover.png
+images/ic_refresh.png
 js/functions.js
 main.qml
 OSDownloader.qml
 OSRepo.qml
 ProgressBar.qml
+PullToRefresh.qml
 SettingsSheet.qml
 SysInfo.qml

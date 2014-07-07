@@ -42,7 +42,7 @@ TabbedPane {
         }
     }
     Tab {
-        title: "OS Downloader"
+        title: qsTr("OS Downloader") + Retranslate.onLanguageChanged
         delegate: Delegate {
             OSDownloader {
                 id:osDownloaderPage
@@ -54,7 +54,7 @@ TabbedPane {
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
     }
     Tab {
-        title: "OS Lookup Tool"
+        title: qsTr("OS Lookup Tool") + Retranslate.onLanguageChanged
         delegate: Delegate {
             AutoLookup {
                 id:autoLookupPage
@@ -66,7 +66,7 @@ TabbedPane {
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
     }
     Tab {
-        title: "Hash Tools"
+        title: qsTr("Hash Tools") + Retranslate.onLanguageChanged
         delegate: Delegate {
             HashTools {
                 id:hashToolsPage
@@ -78,7 +78,7 @@ TabbedPane {
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
     }
     Tab {
-        title: "Engineering Screens"
+        title: qsTr("Engineering Screens") + Retranslate.onLanguageChanged
         delegate: Delegate {
             EScreens {
                 id:eScreensPage
@@ -90,7 +90,7 @@ TabbedPane {
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivateImmediately
     }
     Tab {
-        title: "System Info"
+        title: qsTr("System Info") + Retranslate.onLanguageChanged
         delegate: Delegate {
             SysInfo {
                 id:sysInfoPage
