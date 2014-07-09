@@ -412,67 +412,73 @@ have data service and Github is up.</translation>
 <context>
     <name>SysInfo</name>
     <message>
-        <location filename="../assets/SysInfo.qml" line="35"/>
+        <location filename="../assets/SysInfo.qml" line="30"/>
         <source>Hardware</source>
         <translation>Hardware</translation>
     </message>
     <message>
-        <location filename="../assets/SysInfo.qml" line="38"/>
+        <location filename="../assets/SysInfo.qml" line="33"/>
         <source>Device Name: </source>
         <translation>Device Name: </translation>
     </message>
     <message>
-        <location filename="../assets/SysInfo.qml" line="41"/>
+        <location filename="../assets/SysInfo.qml" line="36"/>
         <source>Model Name: </source>
         <translation>Model Name: </translation>
     </message>
     <message>
-        <location filename="../assets/SysInfo.qml" line="44"/>
+        <location filename="../assets/SysInfo.qml" line="39"/>
         <source>Model Number: </source>
         <translation>Model Number: </translation>
     </message>
     <message>
-        <location filename="../assets/SysInfo.qml" line="59"/>
+        <location filename="../assets/SysInfo.qml" line="54"/>
         <source>Serial Number: </source>
         <translation>Serial Number: </translation>
     </message>
     <message>
-        <location filename="../assets/SysInfo.qml" line="62"/>
+        <location filename="../assets/SysInfo.qml" line="57"/>
         <source>Memory</source>
         <translation>Memory</translation>
     </message>
     <message>
-        <location filename="../assets/SysInfo.qml" line="65"/>
+        <location filename="../assets/SysInfo.qml" line="60"/>
         <source>Free Device Memory: </source>
         <translation>Free Device Memory: </translation>
     </message>
     <message>
-        <location filename="../assets/SysInfo.qml" line="68"/>
+        <location filename="../assets/SysInfo.qml" line="60"/>
+        <location filename="../assets/SysInfo.qml" line="63"/>
+        <source> bytes</source>
+        <translation> bytes</translation>
+    </message>
+    <message>
+        <location filename="../assets/SysInfo.qml" line="63"/>
         <source>Total Device Memory: </source>
         <translation>Total Device Memory: </translation>
     </message>
     <message>
-        <location filename="../assets/SysInfo.qml" line="71"/>
+        <location filename="../assets/SysInfo.qml" line="66"/>
         <source>Battery</source>
         <translation>Battery</translation>
     </message>
     <message>
-        <location filename="../assets/SysInfo.qml" line="74"/>
+        <location filename="../assets/SysInfo.qml" line="69"/>
         <source>Condition: </source>
         <translation>Condition: </translation>
     </message>
     <message>
-        <location filename="../assets/SysInfo.qml" line="77"/>
+        <location filename="../assets/SysInfo.qml" line="72"/>
         <source>Remaining: </source>
         <translation>Remaining: </translation>
     </message>
     <message>
-        <location filename="../assets/SysInfo.qml" line="80"/>
+        <location filename="../assets/SysInfo.qml" line="75"/>
         <source>Cycle Count: </source>
         <translation>Cycle Count: </translation>
     </message>
     <message>
-        <location filename="../assets/SysInfo.qml" line="83"/>
+        <location filename="../assets/SysInfo.qml" line="78"/>
         <source>Temperature: </source>
         <translation>Temperature: </translation>
     </message>

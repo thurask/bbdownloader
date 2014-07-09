@@ -385,6 +385,10 @@ have data service and Github is up.</source>
         <source>Temperature: </source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source> bytes</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>main</name>

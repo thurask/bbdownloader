@@ -26,11 +26,6 @@ Page {
         scrollViewProperties.pinchToZoomEnabled: false
         Container {
             id: maincontainer
-            function numberWithCommas(x) {
-                var parts = x.toString().split(".");
-                parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                return parts.join(".");
-            }
             Header {
                 title: qsTr("Hardware") + Retranslate.onLanguageChanged
             }
@@ -62,10 +57,10 @@ Page {
                 title: qsTr("Memory") + Retranslate.onLanguageChanged
             }
             Label {
-                text: qsTr("Free Device Memory: ") + Retranslate.onLanguageChanged + maincontainer.numberWithCommas(memoryinfo.availableDeviceMemory()) + " bytes"
+                text: qsTr("Free Device Memory: ") + Retranslate.onLanguageChanged + memoryinfo.availableDeviceMemory().toLocaleString() + qsTr(" bytes") + Retranslate.onLanguageChanged
             }
             Label {
-                text: qsTr("Total Device Memory: ") + Retranslate.onLanguageChanged + maincontainer.numberWithCommas(memoryinfo.totalDeviceMemory()) + " bytes"
+                text: qsTr("Total Device Memory: ") + Retranslate.onLanguageChanged + memoryinfo.totalDeviceMemory().toLocaleString() + qsTr(" bytes") + Retranslate.onLanguageChanged
             }
             Header {
                 title: qsTr("Battery") + Retranslate.onLanguageChanged
