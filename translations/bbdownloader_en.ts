@@ -49,6 +49,11 @@
         <translation>Undo</translation>
     </message>
     <message>
+        <location filename="../assets/AutoLookup.qml" line="123"/>
+        <source>Export</source>
+        <translation>Export</translation>
+    </message>
+    <message>
         <location filename="../assets/AutoLookup.qml" line="126"/>
         <source>Lookups saved to /downloads/bbdownloader</source>
         <translation>Lookups saved to /downloads/bbdownloader</translation>
@@ -216,6 +221,11 @@ https://github.com/thurask/bbdownloader</translation>
         <location filename="../assets/OSDownloader.qml" line="197"/>
         <source>Choose OS Type</source>
         <translation>Choose OS Type</translation>
+    </message>
+    <message>
+        <location filename="../assets/OSDownloader.qml" line="256"/>
+        <source>Choose Device</source>
+        <translation>Choose Device</translation>
     </message>
     <message>
         <location filename="../assets/OSDownloader.qml" line="354"/>
@@ -481,6 +491,72 @@ have data service and Github is up.</translation>
         <location filename="../assets/SysInfo.qml" line="78"/>
         <source>Temperature: </source>
         <translation>Temperature: </translation>
+    </message>
+</context>
+<context>
+    <name>functions</name>
+    <message>
+        <location filename="../assets/js/functions.js" line="9"/>
+        <location filename="../assets/js/functions.js" line="69"/>
+        <location filename="../assets/js/functions.js" line="116"/>
+        <source>OS Link:</source>
+        <translation>OS Link:</translation>
+    </message>
+    <message>
+        <location filename="../assets/js/functions.js" line="10"/>
+        <location filename="../assets/js/functions.js" line="66"/>
+        <location filename="../assets/js/functions.js" line="113"/>
+        <source>Radio Link:</source>
+        <translation>Radio Link:</translation>
+    </message>
+    <message>
+        <location filename="../assets/js/functions.js" line="153"/>
+        <source>SDK downloads wonky. 
+Workaround: tap link to download in Browser.</source>
+        <translation>SDK downloads wonky. 
+Workaround: tap link to download in Browser.</translation>
+    </message>
+    <message>
+        <location filename="../assets/js/functions.js" line="234"/>
+        <source>Please set OS Type to Debrick OS</source>
+        <translation>Please set OS Type to Debrick OS</translation>
+    </message>
+    <message>
+        <location filename="../assets/js/functions.js" line="328"/>
+        <source>Please set OS Type to Debrick/Core OS/SDK OS</source>
+        <translation>Please set OS Type to Debrick/Core OS/SDK OS</translation>
+    </message>
+    <message>
+        <location filename="../assets/js/functions.js" line="378"/>
+        <source>Please pick a BB10 device.</source>
+        <translation>Please pick a BB10 device.</translation>
+    </message>
+    <message>
+        <location filename="../assets/js/functions.js" line="382"/>
+        <source>Delta from </source>
+        <translation>Delta from </translation>
+    </message>
+    <message>
+        <location filename="../assets/js/functions.js" line="382"/>
+        <location filename="../assets/js/functions.js" line="386"/>
+        <source> to </source>
+        <translation> to </translation>
+    </message>
+    <message>
+        <location filename="../assets/js/functions.js" line="386"/>
+        <source>Verizon delta from </source>
+        <translation>Verizon delta from </translation>
+    </message>
+    <message>
+        <location filename="../assets/js/functions.js" line="392"/>
+        <source>Please set OS Type to Delta OS</source>
+        <translation>Please set OS Type to Delta OS</translation>
+    </message>
+    <message>
+        <location filename="../assets/js/functions.js" line="403"/>
+        <location filename="../assets/js/functions.js" line="434"/>
+        <source>Please set OS Type to Delta OS/Verizon Delta OS</source>
+        <translation>Please set OS Type to Delta OS/Verizon Delta OS</translation>
     </message>
 </context>
 <context>

@@ -43,6 +43,10 @@
         <source>Lookups saved to /downloads/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Export</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>EScreens</name>
@@ -248,6 +252,10 @@ https://github.com/thurask/bbdownloader</source>
         <source>Deltas</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Choose Device</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OSRepo</name>
@@ -387,6 +395,54 @@ have data service and Github is up.</source>
     </message>
     <message>
         <source> bytes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>functions</name>
+    <message>
+        <source>OS Link:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio Link:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SDK downloads wonky. 
+Workaround: tap link to download in Browser.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please set OS Type to Debrick OS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please set OS Type to Debrick/Core OS/SDK OS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please pick a BB10 device.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delta from </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Verizon delta from </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please set OS Type to Delta OS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please set OS Type to Delta OS/Verizon Delta OS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> to </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

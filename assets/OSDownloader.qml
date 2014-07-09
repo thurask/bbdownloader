@@ -253,7 +253,7 @@ Page {
                 }
                 DropDown {
                     id: devicedropdown
-                    title: "Choose Device"
+                    title: qsTr("Choose Device") + Retranslate.onLanguageChanged
                     Option {
                         id: dropdown_winchester
                         text: "Z10 STL100-1"

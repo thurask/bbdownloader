@@ -8,4 +8,5 @@ include(config.pri)
 
 TRANSLATIONS = \
 $${TARGET}_en.ts \
+$${TARGET}_fr.ts \
 $${TARGET}_.ts

@@ -6,8 +6,8 @@ function clearButton(){
     radioclipboard.visible = false;
     osdropdown.resetSelectedOption();
     devicedropdown.resetSelectedOption();
-    os_download_label.text = "OS Link:";
-    radio_download_label.text = "Radio Link:";
+    os_download_label.text = qsTr("OS Link:") + Retranslate.onLanguageChanged;
+    radio_download_label.text = qsTr("Radio Link:") + Retranslate.onLanguageChanged;
 };
 
 function setEasterEgg(backdoor){
@@ -63,10 +63,10 @@ function omapEnable(includeWinchester, status){
 
 function setRadios(){
 	if (devicedropdown.selectedIndex == -1){
-        radio_download_label.text = "Radio Link:";
+        radio_download_label.text = qsTr("Radio Link:") + Retranslate.onLanguageChanged;
     }
     if (osdropdown.selectedIndex == -1){
-        os_download_label.text = "OS Link:";
+        os_download_label.text = qsTr("OS Link:") + Retranslate.onLanguageChanged;
     }
     if (osdropdown.selectedValue != "sdkautoloader"){
     	if (devicedropdown.selectedValue == "winchester" || devicedropdown.selectedValue == "winchester_daa" || devicedropdown.selectedValue == "winchester_dab" || devicedropdown.selectedValue == "winchester_daab") {
@@ -110,20 +110,10 @@ function setRadios(){
 
 function setOS(){
 	if (devicedropdown.selectedIndex == -1){
-        radio_download_label.text = "Radio Link:";
+        radio_download_label.text = qsTr("Radio Link:") + Retranslate.onLanguageChanged;
     }
     if (osdropdown.selectedIndex == -1){
-        os_download_label.text = "OS Link:";
-    }
-    if (deltasetting.checked == true){
-        if (osdropdown.selectedValue == "core"){
-            dropdown_winchester.enabled = true;
-            os_download_label.text = "Delta from " + osinit_input.text + " to " + osver_input.text + ":";
-        }
-        if (osdropdown.selectedValue == "core_vzw"){
-            dropdown_winchester.enabled = false;
-            os_download_label.text = "Verizon delta from " + osinit_input.text + " to " + osver_input.text + ":";                                
-        }
+        os_download_label.text = qsTr("OS Link:") + Retranslate.onLanguageChanged;
     }
     if (deltasetting.checked == false){
         if (osdropdown.selectedValue == "debrick") {
@@ -160,7 +150,7 @@ function setOS(){
         }
         if (osdropdown.selectedValue == "sdkautoloader") {
             os_download_label.text = "Autoloader:";
-            radio_download_label.text = "SDK downloads wonky. \nWorkaround: tap link to download in Browser.";
+            radio_download_label.text = qsTr("SDK downloads wonky. \nWorkaround: tap link to download in Browser.") + Retranslate.onLanguageChanged;
             dropdown_parana.enabled = false;
             omapEnable(false, false);
         }
@@ -241,7 +231,7 @@ function generateLinks(){
             os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory.desktop/" + osversion + "/winchester.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar";
         }
         if (osdropdown.selectedValue != "debrick"){
-            os_download_textarea.text = "Please set OS Type to Debrick OS";
+            os_download_textarea.text = qsTr("Please set OS Type to Debrick OS") + Retranslate.onLanguageChanged;
         }
     }
     // Now the radios and SDK autoloaders
@@ -335,7 +325,7 @@ function generateLinks(){
             os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.winchester.sdk/" + osversion + "/winchester.sdk-" + osversion + "-nto+armle-v7+signed.bar";
         }
         if (osdropdown.selectedValue == "debrick_vzw" || osdropdown.selectedValue == "debrick_china" || osdropdown.selectedValue == "core_vzw" || osdropdown.selectedValue == "core_china") {
-            os_download_textarea.text = "Please set OS Type to Debrick/Core OS/SDK OS";
+            os_download_textarea.text = qsTr("Please set OS Type to Debrick/Core OS/SDK OS") + Retranslate.onLanguageChanged;
         }
         if (osdropdown.selectedValue == "sdkautoloader"){
         	radio_download_textarea.text = "";
@@ -385,19 +375,21 @@ function generateLinks(){
 function generateDeltas(){
 	//PB doesn't have deltas (I think)
     if (devicedropdown.selectedValue == "winchester_pb" || devicedropdown.selectedValue == "winchester_pblte_old" || devicedropdown.selectedValue == "winchester_pblte_new" ){
-        os_download_textarea.text = "Please pick a BB10 device.";
+        os_download_textarea.text = qsTr("Please pick a BB10 device.") + Retranslate.onLanguageChanged;
     }
     if (osdropdown.selectedValue == "core"){
-        os_download_label.text = "Delta from " + osinit_input.text + " to " + osver_input.text + ":";
+    	dropdown_winchester.enabled = true;
+        os_download_label.text = qsTr("Delta from ") + Retranslate.onLanguageChanged + osinit_input.text + qsTr(" to ") + Retranslate.onLanguageChanged + osver_input.text + ":";
     }
     if (osdropdown.selectedValue == "core_vzw"){
-        os_download_label.text = "Verizon delta from " + osinit_input.text + " to " + osver_input.text + ":";                                
+    	dropdown_winchester.enabled = false;
+        os_download_label.text = qsTr("Verizon delta from ") + Retranslate.onLanguageChanged + osinit_input.text + qsTr(" to ") + Retranslate.onLanguageChanged + osver_input.text + ":";                              
     }
     //STL100-1 + Dev Alphas
     if (devicedropdown.selectedValue == "winchester" || devicedropdown.selectedValue == "winchester_daa" || devicedropdown.selectedValue == "winchester_dab" || devicedropdown.selectedValue == "winchester_daab"){
         global_linkcontainer.visible = true;
         if (osdropdown.selectedValue != "core"){
-            os_download_textarea.text = "Please set OS Type to Delta OS";
+            os_download_textarea.text = qsTr("Please set OS Type to Delta OS") + Retranslate.onLanguageChanged;
         }
         if (osdropdown.selectedValue == "core"){
             os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory.d" + osinit + "/" + osversion + "/winchester.factory_sfi-" + osversion + "-nto+armle-v7+signed+patch+"+ osinit2 + ".bar";
@@ -408,7 +400,7 @@ function generateDeltas(){
     if (devicedropdown.selectedValue == devicedropdown.selectedValue == "8930wtr5" || devicedropdown.selectedValue == "8960wtr5" || devicedropdown.selectedValue == "8960wtr6" || devicedropdown.selectedValue == "8960wtr" || devicedropdown.selectedValue == "8960wtr_dac" ||devicedropdown.selectedValue == "8960omadm" || devicedropdown.selectedValue == "8960"){
         global_linkcontainer.visible = true;
         if (osdropdown.selectedValue != "core" || osdropdown.selectedValue != "core_vzw"){
-            os_download_textarea.text = "Please set OS Type to Delta OS/Verizon Delta OS";
+            os_download_textarea.text = qsTr("Please set OS Type to Delta OS/Verizon Delta OS") + Retranslate.onLanguageChanged;
         }
         if (osdropdown.selectedValue == "core"){
             os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.factory.d" + osinit + "/" + osversion + "/qc8960.factory_sfi-" + osversion + "-nto+armle-v7+signed+patch+"+ osinit2 + ".bar";
@@ -439,7 +431,7 @@ function generateDeltas(){
     if (devicedropdown.selectedValue == "8974" || devicedropdown.selectedValue == "8974_sqw"){
         global_linkcontainer.visible = true;
         if (osdropdown.selectedValue != "core" || osdropdown.selectedValue != "core_vzw"){
-            os_download_textarea.text = "Please set OS Type to Delta OS/Verizon Delta OS";
+            os_download_textarea.text = qsTr("Please set OS Type to Delta OS/Verizon Delta OS") + Retranslate.onLanguageChanged;
         }
         if (osdropdown.selectedValue == "core"){
             os_download_textarea.text = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.factory.d" + osinit + "/" + osversion + "/qc8974.factory_sfi-" + osversion + "-nto+armle-v7+signed+patch+"+ osinit2 + ".bar";

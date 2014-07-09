@@ -120,7 +120,7 @@ Page {
             }
             Button {
                 id: autoexportbutton
-                text: "Export"
+                text: qsTr("Export") + Retranslate.onLanguageChanged
                 onClicked: {
                     _manager.saveTextFile(outputtext.text, "Lookup");
                     lookupexporttoast.body = qsTr("Lookups saved to /downloads/bbdownloader") + Retranslate.onLanguageChanged;
