@@ -256,6 +256,10 @@ https://github.com/thurask/bbdownloader</source>
         <source>Choose Device</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Links</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OSRepo</name>
@@ -395,6 +399,10 @@ have data service and Github is up.</source>
     </message>
     <message>
         <source> bytes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hardware ID: </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

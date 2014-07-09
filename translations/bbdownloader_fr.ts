@@ -238,6 +238,11 @@ https://github.com/thurask/bbdownloader</translation>
         <translation>Nettoyer</translation>
     </message>
     <message>
+        <location filename="../assets/OSDownloader.qml" line="382"/>
+        <source>Links</source>
+        <translation>Liens</translation>
+    </message>
+    <message>
         <location filename="../assets/OSDownloader.qml" line="386"/>
         <source>OS Link:</source>
         <translation>Lien du système:</translation>
@@ -440,6 +445,11 @@ avoir un service de données et Github est disponible.</translation>
         <location filename="../assets/SysInfo.qml" line="39"/>
         <source>Model Number: </source>
         <translation>Numéro de modèle: </translation>
+    </message>
+    <message>
+        <location filename="../assets/SysInfo.qml" line="45"/>
+        <source>Hardware ID: </source>
+        <translation>Identifiant du matériel: </translation>
     </message>
     <message>
         <location filename="../assets/SysInfo.qml" line="54"/>

@@ -379,7 +379,7 @@ Page {
                 horizontalAlignment: HorizontalAlignment.Center
                 topPadding: 10.0
                 Header {
-                    title: "Links"
+                    title: qsTr("Links") + Retranslate.onLanguageChanged
                 }
                 Label {
                     id: os_download_label

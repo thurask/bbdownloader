@@ -237,6 +237,11 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../assets/OSDownloader.qml" line="382"/>
+        <source>Links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../assets/OSDownloader.qml" line="386"/>
         <source>OS Link:</source>
         <translation type="unfinished"></translation>
@@ -437,6 +442,11 @@ have data service and Github is up.</source>
     <message>
         <location filename="../assets/SysInfo.qml" line="39"/>
         <source>Model Number: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../assets/SysInfo.qml" line="45"/>
+        <source>Hardware ID: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -42,7 +42,7 @@ Page {
                 text: "PIN: " + hardwareinfo.pin;
             }
             Label {
-                text: "HWID: " + hardwareinfo.hardwareId;
+                text: qsTr("Hardware ID: ") + hardwareinfo.hardwareId;
             }
             Label {
                 text: "IMEI: " + hardwareinfo.imei;
