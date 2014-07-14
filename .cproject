@@ -275,4 +275,5 @@
 	<storageModule moduleId="com.qnx.tools.ide.qde.core.settings">
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>

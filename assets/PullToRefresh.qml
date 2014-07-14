@@ -4,7 +4,7 @@
  
  --Thurask*/
 
-import bb.cascades 1.2
+import bb.cascades 1.3
 
 Container {
     signal refreshTriggered

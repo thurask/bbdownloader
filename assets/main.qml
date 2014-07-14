@@ -4,18 +4,13 @@
  
  --Thurask*/
 
-import bb.cascades 1.2
+import bb.cascades 1.3
 
 TabbedPane {
     attachedObjects: [
         ComponentDefinition {
             id: helpSheetDefinition
             HelpSheet {
-            }
-        },
-        ComponentDefinition {
-            id: settingsSheetDefinition
-            SettingsSheet {
             }
         }
     ]
@@ -27,17 +22,14 @@ TabbedPane {
             }
         }
         settingsAction: SettingsActionItem {
-            //title: "Change Theme"
+            title: qsTr("Change Theme") + Retranslate.onLanguageChanged
             onTriggered: {
-                var settings = settingsSheetDefinition.createObject()
-                settings.open();
-                /* 10.3:
                 if (Application.themeSupport.theme.colorTheme.style == VisualStyle.Bright) {
                 Application.themeSupport.setVisualStyle(VisualStyle.Dark);
                 }
                 else {
                 Application.themeSupport.setVisualStyle(VisualStyle.Bright);
-                }*/
+                }
             }
         }
     }

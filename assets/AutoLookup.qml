@@ -4,7 +4,7 @@ Get some SW/OS pairs. Export your findings to a text file, if you want.
  
  --Thurask*/
 
-import bb.cascades 1.2
+import bb.cascades 1.3
 import bb.system 1.2
 import qt.timer 1.0
 

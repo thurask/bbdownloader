@@ -4,7 +4,7 @@ Reads device information.
  
  --Thurask*/
 
-import bb.cascades 1.2
+import bb.cascades 1.3
 import bb.device 1.2
 import bb 1.0
 

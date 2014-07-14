@@ -325,43 +325,43 @@ https://github.com/thurask/bbdownloader</source>
 <context>
     <name>OSRepo</name>
     <message>
-        <location filename="../assets/OSRepo.qml" line="10"/>
+        <location filename="../assets/OSRepo.qml" line="16"/>
         <source>Software List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/OSRepo.qml" line="12"/>
+        <location filename="../assets/OSRepo.qml" line="18"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/OSRepo.qml" line="18"/>
+        <location filename="../assets/OSRepo.qml" line="24"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/OSRepo.qml" line="27"/>
+        <location filename="../assets/OSRepo.qml" line="33"/>
         <source>Info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/OSRepo.qml" line="30"/>
+        <location filename="../assets/OSRepo.qml" line="36"/>
         <source>If something is missing, notify me</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/OSRepo.qml" line="37"/>
+        <location filename="../assets/OSRepo.qml" line="43"/>
         <source>Known Software (pull to reload)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/OSRepo.qml" line="41"/>
+        <location filename="../assets/OSRepo.qml" line="47"/>
         <source>Make sure you are connected to the Internet, 
 have data service and Github is up.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/OSRepo.qml" line="128"/>
+        <location filename="../assets/OSRepo.qml" line="134"/>
         <source>Values copied to OS Downloader</source>
         <translation type="unfinished"></translation>
     </message>
@@ -386,39 +386,6 @@ have data service and Github is up.</source>
     <message>
         <location filename="../assets/PullToRefresh.qml" line="38"/>
         <source>Pull down to refresh</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsSheet</name>
-    <message>
-        <location filename="../assets/SettingsSheet.qml" line="13"/>
-        <source>Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../assets/SettingsSheet.qml" line="15"/>
-        <source>Close</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../assets/SettingsSheet.qml" line="26"/>
-        <source>Theme Select</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../assets/SettingsSheet.qml" line="28"/>
-        <source>Bright</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../assets/SettingsSheet.qml" line="32"/>
-        <source>Dark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../assets/SettingsSheet.qml" line="40"/>
-        <source>Restart app to save theme setting.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -569,36 +536,41 @@ Workaround: tap link to download in Browser.</source>
 <context>
     <name>main</name>
     <message>
-        <location filename="../assets/main.qml" line="45"/>
+        <location filename="../assets/main.qml" line="25"/>
+        <source>Change Theme</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../assets/main.qml" line="37"/>
         <source>OS Downloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="50"/>
-        <location filename="../assets/main.qml" line="62"/>
-        <location filename="../assets/main.qml" line="74"/>
-        <location filename="../assets/main.qml" line="86"/>
-        <location filename="../assets/main.qml" line="98"/>
+        <location filename="../assets/main.qml" line="42"/>
+        <location filename="../assets/main.qml" line="54"/>
+        <location filename="../assets/main.qml" line="66"/>
+        <location filename="../assets/main.qml" line="78"/>
+        <location filename="../assets/main.qml" line="90"/>
         <source>BB10 OS Downloader %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="57"/>
+        <location filename="../assets/main.qml" line="49"/>
         <source>OS Lookup Tool</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="69"/>
+        <location filename="../assets/main.qml" line="61"/>
         <source>Hash Tools</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="81"/>
+        <location filename="../assets/main.qml" line="73"/>
         <source>Engineering Screens</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="93"/>
+        <location filename="../assets/main.qml" line="85"/>
         <source>System Info</source>
         <translation type="unfinished"></translation>
     </message>

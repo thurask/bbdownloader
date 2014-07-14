@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="fr">
+<TS version="2.1" language="fr">
 <context>
     <name>AutoLookup</name>
     <message>
@@ -326,44 +326,44 @@ https://github.com/thurask/bbdownloader</translation>
 <context>
     <name>OSRepo</name>
     <message>
-        <location filename="../assets/OSRepo.qml" line="10"/>
+        <location filename="../assets/OSRepo.qml" line="16"/>
         <source>Software List</source>
         <translation>Liste des logiciels</translation>
     </message>
     <message>
-        <location filename="../assets/OSRepo.qml" line="12"/>
+        <location filename="../assets/OSRepo.qml" line="18"/>
         <source>Close</source>
         <translation>Annuler</translation>
     </message>
     <message>
-        <location filename="../assets/OSRepo.qml" line="18"/>
+        <location filename="../assets/OSRepo.qml" line="24"/>
         <source>Refresh</source>
         <translation>Rafraîchir</translation>
     </message>
     <message>
-        <location filename="../assets/OSRepo.qml" line="27"/>
+        <location filename="../assets/OSRepo.qml" line="33"/>
         <source>Info</source>
         <translation>Infos</translation>
     </message>
     <message>
-        <location filename="../assets/OSRepo.qml" line="30"/>
+        <location filename="../assets/OSRepo.qml" line="36"/>
         <source>If something is missing, notify me</source>
         <translation>S&apos;il manque quelque chose, dites-moi</translation>
     </message>
     <message>
-        <location filename="../assets/OSRepo.qml" line="37"/>
+        <location filename="../assets/OSRepo.qml" line="43"/>
         <source>Known Software (pull to reload)</source>
         <translation>Logiciels connus (tirer pour rafraîchir)</translation>
     </message>
     <message>
-        <location filename="../assets/OSRepo.qml" line="41"/>
+        <location filename="../assets/OSRepo.qml" line="47"/>
         <source>Make sure you are connected to the Internet, 
 have data service and Github is up.</source>
         <translation>Assurez-vous que vous êtes connecté à Internet, 
 avoir un service de données et Github est disponible.</translation>
     </message>
     <message>
-        <location filename="../assets/OSRepo.qml" line="128"/>
+        <location filename="../assets/OSRepo.qml" line="134"/>
         <source>Values copied to OS Downloader</source>
         <translation>Valeurs copiées à downloader</translation>
     </message>
@@ -394,34 +394,28 @@ avoir un service de données et Github est disponible.</translation>
 <context>
     <name>SettingsSheet</name>
     <message>
-        <location filename="../assets/SettingsSheet.qml" line="13"/>
         <source>Settings</source>
-        <translation>Paramètres</translation>
+        <translation type="obsolete">Paramètres</translation>
     </message>
     <message>
-        <location filename="../assets/SettingsSheet.qml" line="15"/>
         <source>Close</source>
-        <translation>Annuler</translation>
+        <translation type="obsolete">Annuler</translation>
     </message>
     <message>
-        <location filename="../assets/SettingsSheet.qml" line="26"/>
         <source>Theme Select</source>
-        <translation>Sélection du thème</translation>
+        <translation type="obsolete">Sélection du thème</translation>
     </message>
     <message>
-        <location filename="../assets/SettingsSheet.qml" line="28"/>
         <source>Bright</source>
-        <translation>Clair</translation>
+        <translation type="obsolete">Clair</translation>
     </message>
     <message>
-        <location filename="../assets/SettingsSheet.qml" line="32"/>
         <source>Dark</source>
-        <translation>Sombre</translation>
+        <translation type="obsolete">Sombre</translation>
     </message>
     <message>
-        <location filename="../assets/SettingsSheet.qml" line="40"/>
         <source>Restart app to save theme setting.</source>
-        <translation>Redémarrer pour enregistrer les paramètres de thème.</translation>
+        <translation type="obsolete">Redémarrer pour enregistrer les paramètres de thème.</translation>
     </message>
 </context>
 <context>
@@ -572,38 +566,44 @@ Solution: utiliser le navigateur.</translation>
 <context>
     <name>main</name>
     <message>
-        <location filename="../assets/main.qml" line="45"/>
+        <location filename="../assets/main.qml" line="25"/>
+        <source>Change Theme</source>
+        <translation>Changer le thème</translation>
+    </message>
+    <message>
+        <location filename="../assets/main.qml" line="37"/>
         <source>OS Downloader</source>
         <translation>OS Downloader</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="50"/>
-        <location filename="../assets/main.qml" line="62"/>
-        <location filename="../assets/main.qml" line="74"/>
-        <location filename="../assets/main.qml" line="86"/>
-        <location filename="../assets/main.qml" line="98"/>
+        <location filename="../assets/main.qml" line="42"/>
+        <location filename="../assets/main.qml" line="54"/>
+        <location filename="../assets/main.qml" line="66"/>
+        <location filename="../assets/main.qml" line="78"/>
+        <location filename="../assets/main.qml" line="90"/>
         <source>BB10 OS Downloader %1</source>
         <translation>BB10 OS Downloader %1</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="57"/>
+        <location filename="../assets/main.qml" line="49"/>
         <source>OS Lookup Tool</source>
         <translation>Outil de recherche</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="69"/>
+        <location filename="../assets/main.qml" line="61"/>
         <source>Hash Tools</source>
         <translation>Outil de hachage</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="81"/>
+        <location filename="../assets/main.qml" line="73"/>
         <source>Engineering Screens</source>
         <translation>EScreens</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="93"/>
+        <location filename="../assets/main.qml" line="85"/>
         <source>System Info</source>
         <translation>Information sur le système</translation>
     </message>
 </context>
 </TS>
+

@@ -317,33 +317,6 @@ have data service and Github is up.</source>
     </message>
 </context>
 <context>
-    <name>SettingsSheet</name>
-    <message>
-        <source>Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Theme Select</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bright</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Dark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Restart app to save theme setting.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>SysInfo</name>
     <message>
         <source>Hardware</source>
@@ -478,6 +451,10 @@ Workaround: tap link to download in Browser.</source>
     </message>
     <message>
         <source>System Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change Theme</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

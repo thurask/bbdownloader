@@ -4,7 +4,7 @@ Load the generator in a HTML file as a WebView, since the generate function was 
 
  --Thurask*/
 
-import bb.cascades 1.2
+import bb.cascades 1.3
 
 Page {
     id: escreens
