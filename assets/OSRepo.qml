@@ -1,3 +1,9 @@
+/*OSRepo.qml
+ -----------
+ Reads remote XML repo. Handy.
+ 
+ --Thurask*/
+
 import bb.cascades 1.2
 import bb.data 1.0
 import bb.system 1.2
