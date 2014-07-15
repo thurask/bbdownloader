@@ -29,32 +29,32 @@
         <translation>Start</translation>
     </message>
     <message>
-        <location filename="../assets/AutoLookup.qml" line="103"/>
+        <location filename="../assets/AutoLookup.qml" line="102"/>
         <source>Stop</source>
         <translation>Stop</translation>
     </message>
     <message>
-        <location filename="../assets/AutoLookup.qml" line="110"/>
+        <location filename="../assets/AutoLookup.qml" line="109"/>
         <source>Clear</source>
         <translation>Clear</translation>
     </message>
     <message>
-        <location filename="../assets/AutoLookup.qml" line="115"/>
+        <location filename="../assets/AutoLookup.qml" line="114"/>
         <source>Cleared</source>
         <translation>Cleared</translation>
     </message>
     <message>
-        <location filename="../assets/AutoLookup.qml" line="117"/>
+        <location filename="../assets/AutoLookup.qml" line="116"/>
         <source>Undo</source>
         <translation>Undo</translation>
     </message>
     <message>
-        <location filename="../assets/AutoLookup.qml" line="123"/>
+        <location filename="../assets/AutoLookup.qml" line="122"/>
         <source>Export</source>
         <translation>Export</translation>
     </message>
     <message>
-        <location filename="../assets/AutoLookup.qml" line="126"/>
+        <location filename="../assets/AutoLookup.qml" line="125"/>
         <source>Lookups saved to /downloads/bbdownloader</source>
         <translation>Lookups saved to /downloads/bbdownloader</translation>
     </message>
@@ -566,41 +566,41 @@ Workaround: tap link to download in Browser.</translation>
 <context>
     <name>main</name>
     <message>
-        <location filename="../assets/main.qml" line="25"/>
+        <location filename="../assets/main.qml" line="26"/>
         <source>Change Theme</source>
         <translation>Change Theme</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="37"/>
+        <location filename="../assets/main.qml" line="39"/>
         <source>OS Downloader</source>
         <translation>OS Downloader</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="42"/>
-        <location filename="../assets/main.qml" line="54"/>
-        <location filename="../assets/main.qml" line="66"/>
-        <location filename="../assets/main.qml" line="78"/>
-        <location filename="../assets/main.qml" line="90"/>
+        <location filename="../assets/main.qml" line="44"/>
+        <location filename="../assets/main.qml" line="56"/>
+        <location filename="../assets/main.qml" line="68"/>
+        <location filename="../assets/main.qml" line="80"/>
+        <location filename="../assets/main.qml" line="92"/>
         <source>BB10 OS Downloader %1</source>
         <translation>BB10 OS Downloader %1</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="49"/>
+        <location filename="../assets/main.qml" line="51"/>
         <source>OS Lookup Tool</source>
         <translation>OS Lookup Tool</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="61"/>
+        <location filename="../assets/main.qml" line="63"/>
         <source>Hash Tools</source>
         <translation>Hash Tools</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="73"/>
+        <location filename="../assets/main.qml" line="75"/>
         <source>Engineering Screens</source>
         <translation>Engineering Screens</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="85"/>
+        <location filename="../assets/main.qml" line="87"/>
         <source>System Info</source>
         <translation>System Info</translation>
     </message>

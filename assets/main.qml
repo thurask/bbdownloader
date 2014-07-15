@@ -21,17 +21,19 @@ TabbedPane {
                 help.open();
             }
         }
-        settingsAction: SettingsActionItem {
-            title: qsTr("Change Theme") + Retranslate.onLanguageChanged
-            onTriggered: {
-                if (Application.themeSupport.theme.colorTheme.style == VisualStyle.Bright) {
-                Application.themeSupport.setVisualStyle(VisualStyle.Dark);
-                }
-                else {
-                Application.themeSupport.setVisualStyle(VisualStyle.Bright);
+        actions: [
+            ActionItem {
+                title: qsTr("Change Theme") + Retranslate.onLanguageChanged
+                onTriggered: {
+                    if (Application.themeSupport.theme.colorTheme.style == VisualStyle.Bright) {
+                        Application.themeSupport.setVisualStyle(VisualStyle.Dark);
+                    }
+                    else {
+                        Application.themeSupport.setVisualStyle(VisualStyle.Bright);
+                    }
                 }
             }
-        }
+        ]
     }
     Tab {
         title: qsTr("OS Downloader") + Retranslate.onLanguageChanged
