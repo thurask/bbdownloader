@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="fr">
+<TS version="2.1" language="fr">
 <context>
     <name>AutoLookup</name>
     <message>
@@ -190,7 +190,7 @@ https://github.com/thurask/bbdownloader</translation>
     <message>
         <location filename="../assets/OSDownloader.qml" line="67"/>
         <source>Target OS Version</source>
-        <translation>Version du système objectif</translation>
+        <translation>Version du système ciblée</translation>
     </message>
     <message>
         <location filename="../assets/OSDownloader.qml" line="88"/>
@@ -200,12 +200,12 @@ https://github.com/thurask/bbdownloader</translation>
     <message>
         <location filename="../assets/OSDownloader.qml" line="106"/>
         <source>Target Radio Version</source>
-        <translation>Version radio objectif</translation>
+        <translation>Version radio ciblée</translation>
     </message>
     <message>
         <location filename="../assets/OSDownloader.qml" line="123"/>
         <source>Target SW Version</source>
-        <translation>Version logicielle objectif</translation>
+        <translation>Version logicielle ciblée</translation>
     </message>
     <message>
         <location filename="../assets/OSDownloader.qml" line="153"/>

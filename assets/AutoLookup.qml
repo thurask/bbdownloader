@@ -94,7 +94,6 @@ Page {
                 id: autolookupbutton
                 text: qsTr("Start") + Retranslate.onLanguageChanged
                 onClicked: {
-                    JScript.autoLookup();
                     timer.start();
                 }
             }
