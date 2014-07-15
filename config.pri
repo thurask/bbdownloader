@@ -154,8 +154,11 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/PullToRefresh.qml) \
         $$quote($$BASEDIR/assets/SysInfo.qml) \
         $$quote($$BASEDIR/assets/html/escreens.html) \
-        $$quote($$BASEDIR/assets/icons/icon_114.png) \
-        $$quote($$BASEDIR/assets/icons/icon_94.png) \
+        $$quote($$BASEDIR/assets/icons/icon_110.png) \
+        $$quote($$BASEDIR/assets/icons/icon_144.png) \
+        $$quote($$BASEDIR/assets/icons/icon_86.png) \
+        $$quote($$BASEDIR/assets/icons/icon_90.png) \
+        $$quote($$BASEDIR/assets/icons/icon_96.png) \
         $$quote($$BASEDIR/assets/images/cover.png) \
         $$quote($$BASEDIR/assets/images/ic_refresh.png) \
         $$quote($$BASEDIR/assets/js/functions.js) \

@@ -1,5 +1,5 @@
 1
-20
+23
 720x1280/images/cover.png
 720x720/images/cover.png
 768x1280/images/cover.png
@@ -9,8 +9,11 @@ EScreens.qml
 HashTools.qml
 HelpSheet.qml
 html/escreens.html
-icons/icon_114.png
-icons/icon_94.png
+icons/icon_110.png
+icons/icon_144.png
+icons/icon_86.png
+icons/icon_90.png
+icons/icon_96.png
 images/cover.png
 images/ic_refresh.png
 js/functions.js

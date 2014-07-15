@@ -63,7 +63,7 @@
 
     <!-- Fourth digit segment of the package version. First three segments are taken from the
          <versionNumber> element.  Must be an integer from 0 to 2^16-1 -->
-    <buildId>25</buildId>
+    <buildId>27</buildId>
     <packageLocale>en,fr</packageLocale>
 
     <!-- A string value (such as "v1", "2.5", or "Alpha 1") that represents the version of the application, as it should be shown to users. Optional. -->
@@ -99,12 +99,15 @@
     <asset path="translations" dest="qm">
         <include name="*.qm"/>
     </asset>
-    <asset path="assets">assets</asset>
-    
+    <asset path="assets"></asset>
     <icon>
-       <image>assets/icons/icon_94.png</image>
-       <image>assets/icons/icon_114.png</image>
+       <image>assets/icons/icon_144.png</image>
+       <image>assets/icons/icon_110.png</image>
+       <image>assets/icons/icon_96.png</image>
+       <image>assets/icons/icon_90.png</image>
+       <image>assets/icons/icon_86.png</image>
     </icon>
+    
 
     <!-- Request permission to execute native code.  Required for native applications. -->
     <permission system="true">run_native</permission>
