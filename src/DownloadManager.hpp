@@ -59,7 +59,7 @@
 
         void exportLinks(QString swrelease, QString hashedswversion, QString osversion, QString radioversion);
 
-        void exportDeltaLinks(QString swrelease, QString hashedswversion, QString osversion, QString radioversion, QString osinitversion, QString osinit, QString osinit2, QString radinit, QString radinit2);
+        void exportDeltaLinks(QString hashedswversion, QString osversion, QString radioversion, QString osinitversion, QString osinit, QString osinit2, QString radinit, QString radinit2);
 
     Q_SIGNALS:
         // The change notification signals of the properties

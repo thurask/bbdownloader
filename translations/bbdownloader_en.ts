@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="en_US">
+<TS version="2.0" language="en_US">
 <context>
     <name>AutoLookup</name>
     <message>
@@ -29,32 +29,32 @@
         <translation>Start</translation>
     </message>
     <message>
-        <location filename="../assets/AutoLookup.qml" line="103"/>
+        <location filename="../assets/AutoLookup.qml" line="102"/>
         <source>Stop</source>
         <translation>Stop</translation>
     </message>
     <message>
-        <location filename="../assets/AutoLookup.qml" line="110"/>
+        <location filename="../assets/AutoLookup.qml" line="109"/>
         <source>Clear</source>
         <translation>Clear</translation>
     </message>
     <message>
-        <location filename="../assets/AutoLookup.qml" line="115"/>
+        <location filename="../assets/AutoLookup.qml" line="114"/>
         <source>Cleared</source>
         <translation>Cleared</translation>
     </message>
     <message>
-        <location filename="../assets/AutoLookup.qml" line="117"/>
+        <location filename="../assets/AutoLookup.qml" line="116"/>
         <source>Undo</source>
         <translation>Undo</translation>
     </message>
     <message>
-        <location filename="../assets/AutoLookup.qml" line="123"/>
+        <location filename="../assets/AutoLookup.qml" line="122"/>
         <source>Export</source>
         <translation>Export</translation>
     </message>
     <message>
-        <location filename="../assets/AutoLookup.qml" line="126"/>
+        <location filename="../assets/AutoLookup.qml" line="125"/>
         <source>Lookups saved to /downloads/bbdownloader</source>
         <translation>Lookups saved to /downloads/bbdownloader</translation>
     </message>
@@ -326,44 +326,44 @@ https://github.com/thurask/bbdownloader</translation>
 <context>
     <name>OSRepo</name>
     <message>
-        <location filename="../assets/OSRepo.qml" line="10"/>
+        <location filename="../assets/OSRepo.qml" line="16"/>
         <source>Software List</source>
         <translation>Software List</translation>
     </message>
     <message>
-        <location filename="../assets/OSRepo.qml" line="12"/>
+        <location filename="../assets/OSRepo.qml" line="18"/>
         <source>Close</source>
         <translation>Close</translation>
     </message>
     <message>
-        <location filename="../assets/OSRepo.qml" line="18"/>
+        <location filename="../assets/OSRepo.qml" line="24"/>
         <source>Refresh</source>
         <translation>Refresh</translation>
     </message>
     <message>
-        <location filename="../assets/OSRepo.qml" line="27"/>
+        <location filename="../assets/OSRepo.qml" line="33"/>
         <source>Info</source>
         <translation>Info</translation>
     </message>
     <message>
-        <location filename="../assets/OSRepo.qml" line="30"/>
+        <location filename="../assets/OSRepo.qml" line="36"/>
         <source>If something is missing, notify me</source>
         <translation>If something is missing, notify me</translation>
     </message>
     <message>
-        <location filename="../assets/OSRepo.qml" line="37"/>
+        <location filename="../assets/OSRepo.qml" line="43"/>
         <source>Known Software (pull to reload)</source>
         <translation>Known Software (pull to reload)</translation>
     </message>
     <message>
-        <location filename="../assets/OSRepo.qml" line="41"/>
+        <location filename="../assets/OSRepo.qml" line="47"/>
         <source>Make sure you are connected to the Internet, 
 have data service and Github is up.</source>
         <translation>Make sure you are connected to the Internet,
 have data service and Github is up.</translation>
     </message>
     <message>
-        <location filename="../assets/OSRepo.qml" line="128"/>
+        <location filename="../assets/OSRepo.qml" line="134"/>
         <source>Values copied to OS Downloader</source>
         <translation>Values copied to OS Downloader</translation>
     </message>
