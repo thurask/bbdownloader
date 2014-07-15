@@ -294,7 +294,7 @@ void DownloadManager::exportLinks(QString swrelease, QString hashedswversion, QS
     saveTextFile(exporturls, swrelease);
 }
 
-void DownloadManager::exportDeltaLinks(QString swrelease, QString hashedswversion, QString osversion, QString radioversion, QString osinitversion, QString osinit, QString osinit2, QString radinit, QString radinit2)
+void DownloadManager::exportDeltaLinks(QString hashedswversion, QString osversion, QString radioversion, QString osinitversion, QString osinit, QString osinit2, QString radinit, QString radinit2)
 {
     QString exporturls_delta = ("---OPERATING SYSTEMS---\n"
             "STL100-1\n"

@@ -484,7 +484,7 @@ Page {
                                     _manager.exportLinks(swrelease, hashedswversion, osversion, radioversion);
                                 }
                                 if (deltasetting.checked == true){
-                                    _manager.exportDeltaLinks(swrelease, hashedswversion, osversion, radioversion, osinitversion, osinit, osinit2, radinit, radinit2);
+                                    _manager.exportDeltaLinks(hashedswversion, osversion, radioversion, osinitversion, osinit, osinit2, radinit, radinit2);
                                 }
                                 linkexporttoast.body = qsTr("Links saved to /downloads/bbdownloader") + Retranslate.onLanguageChanged;
                                 linkexporttoast.button.enabled = false;
