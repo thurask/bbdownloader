@@ -9,6 +9,9 @@ import bb.cascades 1.3
 Container {
     layout: StackLayout {}
     background: Color.Black
+    onCreationCompleted: {
+        Application.setCover(multi)
+    }
     ImageView {
         imageSource: "asset:///images/cover.png"
         scalingMethod: ScalingMethod.AspectFit

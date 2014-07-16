@@ -62,7 +62,7 @@
 <context>
     <name>EScreens</name>
     <message>
-        <location filename="../assets/EScreens.qml" line="42"/>
+        <location filename="../assets/EScreens.qml" line="43"/>
         <source>Open EScreens</source>
         <translation>Open EScreens</translation>
     </message>
@@ -75,72 +75,72 @@
         <translation>File Picker</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="43"/>
+        <location filename="../assets/HashTools.qml" line="47"/>
         <source>File mode:</source>
         <translation>File mode:</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="66"/>
+        <location filename="../assets/HashTools.qml" line="70"/>
         <source>Enter text:</source>
         <translation>Enter text:</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="70"/>
+        <location filename="../assets/HashTools.qml" line="74"/>
         <source>Text to be hashed</source>
         <translation>Text to be hashed</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="87"/>
+        <location filename="../assets/HashTools.qml" line="91"/>
         <source>Choose a file</source>
         <translation>Choose a file</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="97"/>
+        <location filename="../assets/HashTools.qml" line="101"/>
         <source>%1</source>
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="109"/>
+        <location filename="../assets/HashTools.qml" line="113"/>
         <source>Be patient with large files</source>
         <translation>Be patient with large files</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="124"/>
+        <location filename="../assets/HashTools.qml" line="128"/>
         <source>Hashed output (MD4):</source>
         <translation>Hashed output (MD4):</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="140"/>
+        <location filename="../assets/HashTools.qml" line="144"/>
         <source>Hashed output (SHA-1):</source>
         <translation>Hashed output (SHA-1):</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="156"/>
+        <location filename="../assets/HashTools.qml" line="160"/>
         <source>Hashed output (MD5):</source>
         <translation>Hashed output (MD5):</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="176"/>
+        <location filename="../assets/HashTools.qml" line="180"/>
         <source>Hashed output:</source>
         <translation>Hashed output:</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="189"/>
+        <location filename="../assets/HashTools.qml" line="193"/>
         <source>Export to file</source>
         <translation>Export to file</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="191"/>
+        <location filename="../assets/HashTools.qml" line="195"/>
         <source>Hash saved to /downloads/bbdownloader</source>
         <translation>Hash saved to /downloads/bbdownloader</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="205"/>
+        <location filename="../assets/HashTools.qml" line="209"/>
         <source>Copy to clipboard</source>
         <translation>Copy to clipboard</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="207"/>
+        <location filename="../assets/HashTools.qml" line="211"/>
         <source>Hash copied to clipboard</source>
         <translation>Hash copied to clipboard</translation>
     </message>

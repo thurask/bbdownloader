@@ -140,9 +140,12 @@ simulator {
 
 config_pri_assets {
     OTHER_FILES += \
-        $$quote($$BASEDIR/assets/720x1280/images/cover.png) \
-        $$quote($$BASEDIR/assets/720x720/images/cover.png) \
-        $$quote($$BASEDIR/assets/768x1280/images/cover.png) \
+        $$quote($$BASEDIR/assets/10ppd/images/cover.png) \
+        $$quote($$BASEDIR/assets/12ppd/AppCover.qml) \
+        $$quote($$BASEDIR/assets/12ppd/images/cover.png) \
+        $$quote($$BASEDIR/assets/12ppd/images/cover_small.png) \
+        $$quote($$BASEDIR/assets/8ppd/images/cover.png) \
+        $$quote($$BASEDIR/assets/9ppd/images/cover.png) \
         $$quote($$BASEDIR/assets/AppCover.qml) \
         $$quote($$BASEDIR/assets/AutoLookup.qml) \
         $$quote($$BASEDIR/assets/EScreens.qml) \
@@ -160,9 +163,18 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/icons/icon_90.png) \
         $$quote($$BASEDIR/assets/icons/icon_96.png) \
         $$quote($$BASEDIR/assets/images/cover.png) \
+        $$quote($$BASEDIR/assets/images/cover_small.png) \
         $$quote($$BASEDIR/assets/images/ic_refresh.png) \
         $$quote($$BASEDIR/assets/js/functions.js) \
-        $$quote($$BASEDIR/assets/main.qml)
+        $$quote($$BASEDIR/assets/main.qml) \
+        $$quote($$BASEDIR/assets/splash/aseries_landscape.png) \
+        $$quote($$BASEDIR/assets/splash/aseries_portrait.png) \
+        $$quote($$BASEDIR/assets/splash/lseries_landscape.png) \
+        $$quote($$BASEDIR/assets/splash/lseries_portrait.png) \
+        $$quote($$BASEDIR/assets/splash/nseries.png) \
+        $$quote($$BASEDIR/assets/splash/pb_landscape.png) \
+        $$quote($$BASEDIR/assets/splash/pb_portrait.png) \
+        $$quote($$BASEDIR/assets/splash/wseries.png)
 }
 
 config_pri_source_group1 {
@@ -170,7 +182,6 @@ config_pri_source_group1 {
         $$quote($$BASEDIR/src/Clipboard.cpp) \
         $$quote($$BASEDIR/src/DownloadManager.cpp) \
         $$quote($$BASEDIR/src/QmlBeam.cpp) \
-        $$quote($$BASEDIR/src/Settings.cpp) \
         $$quote($$BASEDIR/src/SwLookup.cpp) \
         $$quote($$BASEDIR/src/applicationui.cpp) \
         $$quote($$BASEDIR/src/hashcalculatemd4.cpp) \
@@ -183,7 +194,6 @@ config_pri_source_group1 {
         $$quote($$BASEDIR/src/Clipboard.hpp) \
         $$quote($$BASEDIR/src/DownloadManager.hpp) \
         $$quote($$BASEDIR/src/QmlBeam.hpp) \
-        $$quote($$BASEDIR/src/Settings.hpp) \
         $$quote($$BASEDIR/src/SwLookup.hpp) \
         $$quote($$BASEDIR/src/applicationui.hpp) \
         $$quote($$BASEDIR/src/hashcalculatemd4.hpp) \
@@ -191,8 +201,6 @@ config_pri_source_group1 {
         $$quote($$BASEDIR/src/hashcalculatesha.hpp) \
         $$quote($$BASEDIR/src/timer.hpp)
 }
-
-INCLUDEPATH += $$quote($$BASEDIR/src)
 
 CONFIG += precompile_header
 
@@ -208,24 +216,30 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/*.qml) \
         $$quote($$BASEDIR/../assets/*.js) \
         $$quote($$BASEDIR/../assets/*.qs) \
-        $$quote($$BASEDIR/../assets/720x1280/*.qml) \
-        $$quote($$BASEDIR/../assets/720x1280/*.js) \
-        $$quote($$BASEDIR/../assets/720x1280/*.qs) \
-        $$quote($$BASEDIR/../assets/720x1280/images/*.qml) \
-        $$quote($$BASEDIR/../assets/720x1280/images/*.js) \
-        $$quote($$BASEDIR/../assets/720x1280/images/*.qs) \
-        $$quote($$BASEDIR/../assets/720x720/*.qml) \
-        $$quote($$BASEDIR/../assets/720x720/*.js) \
-        $$quote($$BASEDIR/../assets/720x720/*.qs) \
-        $$quote($$BASEDIR/../assets/720x720/images/*.qml) \
-        $$quote($$BASEDIR/../assets/720x720/images/*.js) \
-        $$quote($$BASEDIR/../assets/720x720/images/*.qs) \
-        $$quote($$BASEDIR/../assets/768x1280/*.qml) \
-        $$quote($$BASEDIR/../assets/768x1280/*.js) \
-        $$quote($$BASEDIR/../assets/768x1280/*.qs) \
-        $$quote($$BASEDIR/../assets/768x1280/images/*.qml) \
-        $$quote($$BASEDIR/../assets/768x1280/images/*.js) \
-        $$quote($$BASEDIR/../assets/768x1280/images/*.qs) \
+        $$quote($$BASEDIR/../assets/10ppd/*.qml) \
+        $$quote($$BASEDIR/../assets/10ppd/*.js) \
+        $$quote($$BASEDIR/../assets/10ppd/*.qs) \
+        $$quote($$BASEDIR/../assets/10ppd/images/*.qml) \
+        $$quote($$BASEDIR/../assets/10ppd/images/*.js) \
+        $$quote($$BASEDIR/../assets/10ppd/images/*.qs) \
+        $$quote($$BASEDIR/../assets/12ppd/*.qml) \
+        $$quote($$BASEDIR/../assets/12ppd/*.js) \
+        $$quote($$BASEDIR/../assets/12ppd/*.qs) \
+        $$quote($$BASEDIR/../assets/12ppd/images/*.qml) \
+        $$quote($$BASEDIR/../assets/12ppd/images/*.js) \
+        $$quote($$BASEDIR/../assets/12ppd/images/*.qs) \
+        $$quote($$BASEDIR/../assets/8ppd/*.qml) \
+        $$quote($$BASEDIR/../assets/8ppd/*.js) \
+        $$quote($$BASEDIR/../assets/8ppd/*.qs) \
+        $$quote($$BASEDIR/../assets/8ppd/images/*.qml) \
+        $$quote($$BASEDIR/../assets/8ppd/images/*.js) \
+        $$quote($$BASEDIR/../assets/8ppd/images/*.qs) \
+        $$quote($$BASEDIR/../assets/9ppd/*.qml) \
+        $$quote($$BASEDIR/../assets/9ppd/*.js) \
+        $$quote($$BASEDIR/../assets/9ppd/*.qs) \
+        $$quote($$BASEDIR/../assets/9ppd/images/*.qml) \
+        $$quote($$BASEDIR/../assets/9ppd/images/*.js) \
+        $$quote($$BASEDIR/../assets/9ppd/images/*.qs) \
         $$quote($$BASEDIR/../assets/html/*.qml) \
         $$quote($$BASEDIR/../assets/html/*.js) \
         $$quote($$BASEDIR/../assets/html/*.qs) \
@@ -237,7 +251,10 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/images/*.qs) \
         $$quote($$BASEDIR/../assets/js/*.qml) \
         $$quote($$BASEDIR/../assets/js/*.js) \
-        $$quote($$BASEDIR/../assets/js/*.qs)
+        $$quote($$BASEDIR/../assets/js/*.qs) \
+        $$quote($$BASEDIR/../assets/splash/*.qml) \
+        $$quote($$BASEDIR/../assets/splash/*.js) \
+        $$quote($$BASEDIR/../assets/splash/*.qs)
 
     HEADERS += \
         $$quote($$BASEDIR/../src/*.h) \

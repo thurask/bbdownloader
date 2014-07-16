@@ -1,8 +1,11 @@
 1
-23
-720x1280/images/cover.png
-720x720/images/cover.png
-768x1280/images/cover.png
+35
+10ppd/images/cover.png
+12ppd/AppCover.qml
+12ppd/images/cover.png
+12ppd/images/cover_small.png
+8ppd/images/cover.png
+9ppd/images/cover.png
 AppCover.qml
 AutoLookup.qml
 EScreens.qml
@@ -15,6 +18,7 @@ icons/icon_86.png
 icons/icon_90.png
 icons/icon_96.png
 images/cover.png
+images/cover_small.png
 images/ic_refresh.png
 js/functions.js
 main.qml
@@ -22,4 +26,12 @@ OSDownloader.qml
 OSRepo.qml
 ProgressBar.qml
 PullToRefresh.qml
+splash/aseries_landscape.png
+splash/aseries_portrait.png
+splash/lseries_landscape.png
+splash/lseries_portrait.png
+splash/nseries.png
+splash/pb_landscape.png
+splash/pb_portrait.png
+splash/wseries.png
 SysInfo.qml

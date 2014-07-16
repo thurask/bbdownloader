@@ -62,7 +62,7 @@
 <context>
     <name>EScreens</name>
     <message>
-        <location filename="../assets/EScreens.qml" line="42"/>
+        <location filename="../assets/EScreens.qml" line="43"/>
         <source>Open EScreens</source>
         <translation>Ouvrir EScreens</translation>
     </message>
@@ -75,72 +75,72 @@
         <translation>File Picker</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="43"/>
+        <location filename="../assets/HashTools.qml" line="47"/>
         <source>File mode:</source>
         <translation>Mode de fichier:</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="66"/>
+        <location filename="../assets/HashTools.qml" line="70"/>
         <source>Enter text:</source>
         <translation>Saisir du texte:</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="70"/>
+        <location filename="../assets/HashTools.qml" line="74"/>
         <source>Text to be hashed</source>
         <translation>Texte qui sera haché</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="87"/>
+        <location filename="../assets/HashTools.qml" line="91"/>
         <source>Choose a file</source>
         <translation>Choisir un fichier</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="97"/>
+        <location filename="../assets/HashTools.qml" line="101"/>
         <source>%1</source>
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="109"/>
+        <location filename="../assets/HashTools.qml" line="113"/>
         <source>Be patient with large files</source>
         <translation>Soyez patient avec de gros fichiers</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="124"/>
+        <location filename="../assets/HashTools.qml" line="128"/>
         <source>Hashed output (MD4):</source>
         <translation>Résultat (MD4):</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="140"/>
+        <location filename="../assets/HashTools.qml" line="144"/>
         <source>Hashed output (SHA-1):</source>
         <translation>Résultat (SHA-1):</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="156"/>
+        <location filename="../assets/HashTools.qml" line="160"/>
         <source>Hashed output (MD5):</source>
         <translation>Résultat (MD5):</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="176"/>
+        <location filename="../assets/HashTools.qml" line="180"/>
         <source>Hashed output:</source>
         <translation>Résultat:</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="189"/>
+        <location filename="../assets/HashTools.qml" line="193"/>
         <source>Export to file</source>
         <translation>Exporter vers un fichier</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="191"/>
+        <location filename="../assets/HashTools.qml" line="195"/>
         <source>Hash saved to /downloads/bbdownloader</source>
         <translation>Hachage enregistré à / downloads / bbdownloader</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="205"/>
+        <location filename="../assets/HashTools.qml" line="209"/>
         <source>Copy to clipboard</source>
         <translation>Copier vers le presse-papiers</translation>
     </message>
     <message>
-        <location filename="../assets/HashTools.qml" line="207"/>
+        <location filename="../assets/HashTools.qml" line="211"/>
         <source>Hash copied to clipboard</source>
         <translation>Hachage copié vers le presse-papiers</translation>
     </message>

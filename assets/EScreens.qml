@@ -32,6 +32,7 @@ Page {
                     url: "local:///assets/html/escreens.html"
                     settings.background: Color.Transparent
                     settings.textAutosizingEnabled: true
+                    settings.zoomToFitEnabled: true
                 }
             }
             Divider {

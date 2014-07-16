@@ -9,12 +9,12 @@
 #include <QtCore>
 #include <QtNetwork>
 #include <QtXml>
+#include <Qt/qdeclarativedebug.h>
 
 #include "hashcalculatesha.hpp"
 #include "hashcalculatemd5.hpp"
 #include "hashcalculatemd4.hpp"
 #include "DownloadManager.hpp"
-#include "Settings.hpp"
 #include "QmlBeam.hpp"
 #include "SwLookup.hpp"
 #include "Clipboard.hpp"
@@ -22,29 +22,12 @@
 
 using namespace bb::cascades;
 
-QString getValue() {
-    Settings settings;
-    // use "theme" key for property showing what theme to use on application start
-    return settings.getValueFor("theme", "");
-}
-
-void myMessageOutput(QtMsgType type, const char* msg) {
-    Q_UNUSED(type);
-    fprintf(stdout, "%s\n", msg);
-    fflush(stdout);
-}
 
 Q_DECL_EXPORT int main(int argc, char **argv)
 
 {
-    qputenv("CASCADES_THEME", getValue().toUtf8());
 
     Application app(argc, argv);
-    app.mainWindow()->setScreenIdleMode(ScreenIdleMode::KeepAwake);
-
-#ifndef QT_NO_DEBUG
-    qInstallMsgHandler(myMessageOutput);
-#endif
 
     //SHA-1
     HashCalculateSha*ihashcalcsha =  new HashCalculateSha();
@@ -61,10 +44,6 @@ Q_DECL_EXPORT int main(int argc, char **argv)
     //File downloader
     DownloadManager manager;
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("_manager", &manager);
-
-    //Theme settings
-    Settings *settings = new Settings();
-    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Settings", settings);
 
     //Clipboard
     Clipboard *clipboard = new Clipboard();

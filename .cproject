@@ -112,7 +112,6 @@
 							<tool id="com.qnx.qcc.tool.archiver.1814317071" name="QCC Archiver" superClass="com.qnx.qcc.tool.archiver"/>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="com.qnx.qcc.toolChain.1611335028.1305389439" name="cover.png" rcbsApplicability="disable" resourcePath="assets/720x720/images/cover.png" toolsToInvoke=""/>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 					</sourceEntries>

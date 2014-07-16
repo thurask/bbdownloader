@@ -81,6 +81,7 @@
        <text xml:lang="en">Fight the power</text>
        <text xml:lang="fr">Le monkey face</text>
     </description>
+
     <category>core.games</category>
     <authorId>gYAAgJz00Keh1JkBPYeN4rkIp48</authorId>
     <author>Thurask</author>
@@ -100,6 +101,7 @@
         <include name="*.qm"/>
     </asset>
     <asset path="assets"></asset>
+    
     <icon>
        <image>assets/icons/icon_144.png</image>
        <image>assets/icons/icon_110.png</image>
@@ -108,7 +110,17 @@
        <image>assets/icons/icon_86.png</image>
     </icon>
     
-
+    <splashScreens>     
+       <image>assets/splash/aseries_portrait.png</image>
+       <image>assets/splash/aseries_landscape.png</image>
+       <image>assets/splash/lseries_portrait.png</image>
+       <image>assets/splash/lseries_landscape.png</image>
+       <image>assets/splash/nseries.png</image>
+       <image>assets/splash/wseries.png</image>
+       <image>assets/splash/pb_portrait.png</image>
+       <image>assets/splash/pb_landscape.png</image>
+    </splashScreens>
+    
     <!-- Request permission to execute native code.  Required for native applications. -->
     <permission system="true">run_native</permission>
     <permission>access_shared</permission>
