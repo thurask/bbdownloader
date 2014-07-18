@@ -9,6 +9,7 @@
 #include <QtCore>
 #include <QtNetwork>
 #include <QtXml>
+#include <Qt/qdeclarativedebug.h>
 
 #include "hashcalculatesha.hpp"
 #include "hashcalculatemd5.hpp"
