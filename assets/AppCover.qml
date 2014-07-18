@@ -10,12 +10,17 @@ Container {
     layout: StackLayout {}
     background: Color.Black
     onCreationCompleted: {
-        Application.setCover(multi)
+        Application.setCover(activeFrame)
     }
-    ImageView {
-        imageSource: "asset:///images/cover.png"
-        scalingMethod: ScalingMethod.AspectFit
-        verticalAlignment: VerticalAlignment.Center
-        horizontalAlignment: HorizontalAlignment.Center
-    }
+    attachedObjects: [
+        SceneCover {
+            id: activeFrame
+            content: ImageView {
+                imageSource: "asset:///images/cover.png"
+                scalingMethod: ScalingMethod.AspectFit
+                verticalAlignment: VerticalAlignment.Center
+                horizontalAlignment: HorizontalAlignment.Center
+            }
+        }
+    ]
 }
