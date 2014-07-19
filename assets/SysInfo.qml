@@ -1,6 +1,6 @@
 /*SysInfo.qml
  -------------
-Reads device information.
+ Reads device information.
  
  --Thurask*/
 
@@ -76,6 +76,58 @@ Page {
             }
             Label {
                 text: qsTr("Temperature: ") + Retranslate.onLanguageChanged + battinfo.temperature + "°C (" + (1.8 * (battinfo.temperature) + 32) + "°F)"
+            }
+            Header {
+                title: qsTr("Device Properties") + Retranslate.onLanguageChanged
+            }
+            WebView {
+                url: "file:///pps/services/deviceproperties"
+            }
+            Header {
+                title: qsTr("Hardware Info") + Retranslate.onLanguageChanged
+            }
+            WebView {
+                url: "file:///pps/services/hw_info/inventory"
+            }
+            Header {
+                title: qsTr("Versions") + Retranslate.onLanguageChanged
+            }
+            Container {
+                background: Color.White
+                Label {
+                    text: "Adobe Flash"
+                    textStyle.color: Color.Black
+                }
+                WebView {
+                    url: "file:///base/etc/flash.version"
+                }
+                Label {
+                    text: "Adobe AIR"
+                    textStyle.color: Color.Black
+                }
+                WebView {
+                    url: "file:///base/etc/air.version"
+                }
+                Label {
+                    text: "WiFi"
+                    textStyle.color: Color.Black
+                }
+                WebView {
+                    url: "file:///base/etc/wifi.version"
+                }
+                Label {
+                    text: "Webkit"
+                    textStyle.color: Color.Black
+                }
+                WebView {
+                    url: "file:///base/etc/webkit.version"
+                }
+            }
+            Header {
+                title: qsTr("Development Mode") + Retranslate.onLanguageChanged
+            }
+            WebView {
+                url: "file:///pps/system/development/devmode"
             }
         }
     }

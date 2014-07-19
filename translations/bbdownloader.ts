@@ -362,6 +362,10 @@ have data service and Github is up.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Hardware ID: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Serial Number: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -371,6 +375,10 @@ have data service and Github is up.</source>
     </message>
     <message>
         <source>Free Device Memory: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> bytes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -398,11 +406,19 @@ have data service and Github is up.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source> bytes</source>
+        <source>Device Properties</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hardware ID: </source>
+        <source>Hardware Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Versions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Development Mode</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

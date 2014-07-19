@@ -502,6 +502,26 @@ have data service and Github is up.</translation>
         <source>Temperature: </source>
         <translation>Temperature: </translation>
     </message>
+    <message>
+        <location filename="../assets/SysInfo.qml" line="81"/>
+        <source>Device Properties</source>
+        <translation>Device Properties</translation>
+    </message>
+    <message>
+        <location filename="../assets/SysInfo.qml" line="87"/>
+        <source>Hardware Info</source>
+        <translation>Hardware Info</translation>
+    </message>
+    <message>
+        <location filename="../assets/SysInfo.qml" line="93"/>
+        <source>Versions</source>
+        <translation>Versions</translation>
+    </message>
+    <message>
+        <location filename="../assets/SysInfo.qml" line="127"/>
+        <source>Development Mode</source>
+        <translation>Development Mode</translation>
+    </message>
 </context>
 <context>
     <name>functions</name>
