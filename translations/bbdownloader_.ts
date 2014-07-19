@@ -62,7 +62,7 @@
 <context>
     <name>EScreens</name>
     <message>
-        <location filename="../assets/EScreens.qml" line="42"/>
+        <location filename="../assets/EScreens.qml" line="43"/>
         <source>Open EScreens</source>
         <translation type="unfinished"></translation>
     </message>
@@ -569,36 +569,36 @@ Workaround: tap link to download in Browser.</source>
 <context>
     <name>main</name>
     <message>
-        <location filename="../assets/main.qml" line="45"/>
+        <location filename="../assets/main.qml" line="38"/>
         <source>OS Downloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="50"/>
-        <location filename="../assets/main.qml" line="62"/>
-        <location filename="../assets/main.qml" line="74"/>
-        <location filename="../assets/main.qml" line="86"/>
-        <location filename="../assets/main.qml" line="98"/>
+        <location filename="../assets/main.qml" line="43"/>
+        <location filename="../assets/main.qml" line="55"/>
+        <location filename="../assets/main.qml" line="67"/>
+        <location filename="../assets/main.qml" line="79"/>
+        <location filename="../assets/main.qml" line="91"/>
         <source>BB10 OS Downloader %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="57"/>
+        <location filename="../assets/main.qml" line="50"/>
         <source>OS Lookup Tool</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="69"/>
+        <location filename="../assets/main.qml" line="62"/>
         <source>Hash Tools</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="81"/>
+        <location filename="../assets/main.qml" line="74"/>
         <source>Engineering Screens</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="93"/>
+        <location filename="../assets/main.qml" line="86"/>
         <source>System Info</source>
         <translation type="unfinished"></translation>
     </message>

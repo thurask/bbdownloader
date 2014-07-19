@@ -449,7 +449,7 @@ function generateDeltas(){
 };
 
 function autoLookup(){
-	outputtext.text = outputtext.text + (autolookup_input.text + " - " + _swlookup.softwareRelease() + "\n");
+	outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - " + (_swlookup.softwareRelease().indexOf("SR") != -1 ? "" : "SR ") + _swlookup.softwareRelease() + "\n");
     var splitarray = autolookup_input.text.split(".");
     var newnum = parseInt(splitarray[3], 10);
     if (newnum < 9998){

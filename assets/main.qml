@@ -31,13 +31,6 @@ TabbedPane {
             onTriggered: {
                 var settings = settingsSheetDefinition.createObject()
                 settings.open();
-                /* 10.3:
-                if (Application.themeSupport.theme.colorTheme.style == VisualStyle.Bright) {
-                Application.themeSupport.setVisualStyle(VisualStyle.Dark);
-                }
-                else {
-                Application.themeSupport.setVisualStyle(VisualStyle.Bright);
-                }*/
             }
         }
     }
@@ -99,6 +92,6 @@ TabbedPane {
                 }
             }
         }
-        delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
+        delegateActivationPolicy: TabDelegateActivationPolicy.ActivatedWhileSelected
     }
 }
