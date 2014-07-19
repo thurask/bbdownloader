@@ -467,6 +467,26 @@ have data service and Github is up.</source>
         <source>Temperature: </source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../assets/SysInfo.qml" line="81"/>
+        <source>Device Properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../assets/SysInfo.qml" line="87"/>
+        <source>Hardware Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../assets/SysInfo.qml" line="93"/>
+        <source>Versions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../assets/SysInfo.qml" line="127"/>
+        <source>Development Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>functions</name>

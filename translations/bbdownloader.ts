@@ -378,6 +378,22 @@ have data service and Github is up.</source>
         <source>Hardware ID: </source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Device Properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hardware Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Versions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Development Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>functions</name>

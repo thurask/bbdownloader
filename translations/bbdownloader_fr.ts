@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="fr">
+<TS version="2.1" language="fr">
 <context>
     <name>AutoLookup</name>
     <message>
@@ -495,6 +495,26 @@ avoir un service de données et Github est disponible.</translation>
         <location filename="../assets/SysInfo.qml" line="78"/>
         <source>Temperature: </source>
         <translation>Température: </translation>
+    </message>
+    <message>
+        <location filename="../assets/SysInfo.qml" line="81"/>
+        <source>Device Properties</source>
+        <translation>Propriétés de l&apos;appareil</translation>
+    </message>
+    <message>
+        <location filename="../assets/SysInfo.qml" line="87"/>
+        <source>Hardware Info</source>
+        <translation>Infos sur le matériel</translation>
+    </message>
+    <message>
+        <location filename="../assets/SysInfo.qml" line="93"/>
+        <source>Versions</source>
+        <translation>Versions</translation>
+    </message>
+    <message>
+        <location filename="../assets/SysInfo.qml" line="127"/>
+        <source>Development Mode</source>
+        <translation>Mode développement</translation>
     </message>
 </context>
 <context>
