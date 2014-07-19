@@ -93,6 +93,6 @@ TabbedPane {
                 }
             }
         }
-        delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
+        delegateActivationPolicy: TabDelegateActivationPolicy.ActivatedWhileSelected
     }
 }
