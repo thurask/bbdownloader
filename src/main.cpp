@@ -19,6 +19,7 @@
 #include "SwLookup.hpp"
 #include "Clipboard.hpp"
 #include "timer.hpp"
+#include "Settings.hpp"
 
 using namespace bb::cascades;
 
@@ -52,6 +53,10 @@ Q_DECL_EXPORT int main(int argc, char **argv)
     //Software lookup poster
     SwLookup swlookup;
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("_swlookup", &swlookup);
+
+    //Theme settings
+    Settings *settings = new Settings();
+    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Settings", settings);
 
     //Timer
     qmlRegisterType<QTimer>("qt.timer", 1, 0, "QTimer");
