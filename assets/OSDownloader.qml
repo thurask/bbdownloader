@@ -502,7 +502,7 @@ Page {
                             }
                             Label {
                                 id: activedl_label
-                                text: qsTr("Active Downloads: ") + Retranslate.onLanguageChanged + (_manager.activeDownloads == 0 ? qsTr("none") + Retranslate.onLanguageChanged : _manager.activeDownloads)
+                                text: qsTr("Active Downloads: ") + Retranslate.onLanguageChanged + (_manager.activeDownloads == 0 ? qsTr(" none") + Retranslate.onLanguageChanged : _manager.activeDownloads)
                             }
                             ProgressBar {
                                 topMargin: 10
