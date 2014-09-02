@@ -561,36 +561,36 @@ Workaround: tap link to download in Browser.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="39"/>
+        <location filename="../assets/main.qml" line="41"/>
         <source>OS Downloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="44"/>
-        <location filename="../assets/main.qml" line="56"/>
-        <location filename="../assets/main.qml" line="68"/>
-        <location filename="../assets/main.qml" line="80"/>
-        <location filename="../assets/main.qml" line="92"/>
+        <location filename="../assets/main.qml" line="46"/>
+        <location filename="../assets/main.qml" line="58"/>
+        <location filename="../assets/main.qml" line="70"/>
+        <location filename="../assets/main.qml" line="82"/>
+        <location filename="../assets/main.qml" line="94"/>
         <source>BB10 OS Downloader %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="51"/>
+        <location filename="../assets/main.qml" line="53"/>
         <source>OS Lookup Tool</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="63"/>
+        <location filename="../assets/main.qml" line="65"/>
         <source>Hash Tools</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="75"/>
+        <location filename="../assets/main.qml" line="77"/>
         <source>Engineering Screens</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="87"/>
+        <location filename="../assets/main.qml" line="89"/>
         <source>System Info</source>
         <translation type="unfinished"></translation>
     </message>

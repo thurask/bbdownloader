@@ -27,9 +27,11 @@ TabbedPane {
                 onTriggered: {
                     if (Application.themeSupport.theme.colorTheme.style == VisualStyle.Bright) {
                         Application.themeSupport.setVisualStyle(VisualStyle.Dark);
+                        Settings.saveValueFor("theme", "dark");
                     }
                     else {
                         Application.themeSupport.setVisualStyle(VisualStyle.Bright);
+                        Settings.saveValueFor("theme", "bright");
                     }
                 }
             }

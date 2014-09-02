@@ -23,12 +23,30 @@
 
 using namespace bb::cascades;
 
+QString getValue() {
+    Settings settings;
+    // use "theme" key for property showing what theme to use on application start
+    return settings.getValueFor("theme", "");
+}
+
+void myMessageOutput(QtMsgType type, const char* msg) {
+    Q_UNUSED(type);
+    fprintf(stdout, "%s\n", msg);
+    fflush(stdout);
+}
+
 
 Q_DECL_EXPORT int main(int argc, char **argv)
 
 {
 
+    qputenv("CASCADES_THEME", getValue().toUtf8());
+
     Application app(argc, argv);
+
+#ifndef QT_NO_DEBUG
+    qInstallMsgHandler(myMessageOutput);
+#endif
 
     //SHA-1
     HashCalculateSha*ihashcalcsha =  new HashCalculateSha();

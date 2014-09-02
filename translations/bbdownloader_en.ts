@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="en_US">
+<TS version="2.0" language="en_US">
 <context>
     <name>AutoLookup</name>
     <message>
@@ -591,36 +591,36 @@ Workaround: tap link to download in Browser.</translation>
         <translation>Change Theme</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="39"/>
+        <location filename="../assets/main.qml" line="41"/>
         <source>OS Downloader</source>
         <translation>OS Downloader</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="44"/>
-        <location filename="../assets/main.qml" line="56"/>
-        <location filename="../assets/main.qml" line="68"/>
-        <location filename="../assets/main.qml" line="80"/>
-        <location filename="../assets/main.qml" line="92"/>
+        <location filename="../assets/main.qml" line="46"/>
+        <location filename="../assets/main.qml" line="58"/>
+        <location filename="../assets/main.qml" line="70"/>
+        <location filename="../assets/main.qml" line="82"/>
+        <location filename="../assets/main.qml" line="94"/>
         <source>BB10 OS Downloader %1</source>
         <translation>BB10 OS Downloader %1</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="51"/>
+        <location filename="../assets/main.qml" line="53"/>
         <source>OS Lookup Tool</source>
         <translation>OS Lookup Tool</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="63"/>
+        <location filename="../assets/main.qml" line="65"/>
         <source>Hash Tools</source>
         <translation>Hash Tools</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="75"/>
+        <location filename="../assets/main.qml" line="77"/>
         <source>Engineering Screens</source>
         <translation>Engineering Screens</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="87"/>
+        <location filename="../assets/main.qml" line="89"/>
         <source>System Info</source>
         <translation>System Info</translation>
     </message>
