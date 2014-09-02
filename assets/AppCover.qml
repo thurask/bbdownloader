@@ -9,6 +9,9 @@ import bb.cascades 1.3
 Container {
     layout: StackLayout {}
     background: Color.Black
+    ImageView {
+        imageSource: "asset:///images/cover.png"
+    }
     onCreationCompleted: {
         Application.setCover(activeFrame)
     }

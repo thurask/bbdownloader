@@ -233,10 +233,6 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>none</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Stop Download</source>
         <translation type="unfinished"></translation>
     </message>
@@ -258,6 +254,10 @@ https://github.com/thurask/bbdownloader</source>
     </message>
     <message>
         <source>Links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> none</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

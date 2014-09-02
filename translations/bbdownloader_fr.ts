@@ -228,97 +228,101 @@ https://github.com/thurask/bbdownloader</translation>
         <translation>Choisir un appareil</translation>
     </message>
     <message>
-        <location filename="../assets/OSDownloader.qml" line="354"/>
+        <location filename="../assets/OSDownloader.qml" line="349"/>
         <source>Generate</source>
         <translation>Générer</translation>
     </message>
     <message>
-        <location filename="../assets/OSDownloader.qml" line="370"/>
+        <location filename="../assets/OSDownloader.qml" line="365"/>
         <source>Clear</source>
         <translation>Nettoyer</translation>
     </message>
     <message>
-        <location filename="../assets/OSDownloader.qml" line="382"/>
+        <location filename="../assets/OSDownloader.qml" line="377"/>
         <source>Links</source>
         <translation>Liens</translation>
     </message>
     <message>
-        <location filename="../assets/OSDownloader.qml" line="386"/>
+        <location filename="../assets/OSDownloader.qml" line="381"/>
         <source>OS Link:</source>
         <translation>Lien du système:</translation>
     </message>
     <message>
-        <location filename="../assets/OSDownloader.qml" line="397"/>
+        <location filename="../assets/OSDownloader.qml" line="392"/>
         <source>Radio Link:</source>
         <translation>Lien de la radio:</translation>
     </message>
     <message>
-        <location filename="../assets/OSDownloader.qml" line="416"/>
+        <location filename="../assets/OSDownloader.qml" line="411"/>
         <source>Copy OS</source>
         <translation>Copier le système</translation>
     </message>
     <message>
-        <location filename="../assets/OSDownloader.qml" line="421"/>
+        <location filename="../assets/OSDownloader.qml" line="416"/>
         <source>OS URL copied</source>
         <translation>Lien du système copié vers le presse-papiers</translation>
     </message>
     <message>
-        <location filename="../assets/OSDownloader.qml" line="430"/>
+        <location filename="../assets/OSDownloader.qml" line="425"/>
         <source>Copy Radio</source>
         <translation>Copier la radio</translation>
     </message>
     <message>
-        <location filename="../assets/OSDownloader.qml" line="435"/>
+        <location filename="../assets/OSDownloader.qml" line="430"/>
         <source>Radio URL copied</source>
         <translation>Lien de la radio copié vers le presse-papiers</translation>
     </message>
     <message>
-        <location filename="../assets/OSDownloader.qml" line="459"/>
+        <location filename="../assets/OSDownloader.qml" line="454"/>
         <source>Download OS</source>
         <translation>Télécharger le système</translation>
     </message>
     <message>
-        <location filename="../assets/OSDownloader.qml" line="470"/>
+        <location filename="../assets/OSDownloader.qml" line="465"/>
         <source>Download Radio</source>
         <translation>Télécharger la radio</translation>
     </message>
     <message>
-        <location filename="../assets/OSDownloader.qml" line="481"/>
+        <location filename="../assets/OSDownloader.qml" line="476"/>
         <source>Export Links</source>
         <translation>Exporter les liens</translation>
     </message>
     <message>
-        <location filename="../assets/OSDownloader.qml" line="489"/>
+        <location filename="../assets/OSDownloader.qml" line="484"/>
         <source>Links saved to /downloads/bbdownloader</source>
         <translation>Liens enregistrés à / downloads / bbdownloader</translation>
     </message>
     <message>
-        <location filename="../assets/OSDownloader.qml" line="501"/>
+        <location filename="../assets/OSDownloader.qml" line="496"/>
         <source>Progress</source>
         <translation>Progrès</translation>
     </message>
     <message>
-        <location filename="../assets/OSDownloader.qml" line="505"/>
+        <location filename="../assets/OSDownloader.qml" line="500"/>
         <source>Active Downloads: </source>
         <translation>Téléchargements actifs</translation>
     </message>
     <message>
-        <location filename="../assets/OSDownloader.qml" line="505"/>
-        <source>none</source>
-        <translation>aucun</translation>
+        <location filename="../assets/OSDownloader.qml" line="500"/>
+        <source> none</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/OSDownloader.qml" line="518"/>
+        <source>none</source>
+        <translation type="obsolete">aucun</translation>
+    </message>
+    <message>
+        <location filename="../assets/OSDownloader.qml" line="513"/>
         <source>Stop Download</source>
         <translation>Arrêter le téléchargement</translation>
     </message>
     <message>
-        <location filename="../assets/OSDownloader.qml" line="528"/>
+        <location filename="../assets/OSDownloader.qml" line="523"/>
         <source>Status</source>
         <translation>Statut</translation>
     </message>
     <message>
-        <location filename="../assets/OSDownloader.qml" line="538"/>
+        <location filename="../assets/OSDownloader.qml" line="533"/>
         <source>Errors</source>
         <translation>Erreurs</translation>
     </message>
@@ -522,63 +526,63 @@ avoir un service de données et Github est disponible.</translation>
     <message>
         <location filename="../assets/js/functions.js" line="9"/>
         <location filename="../assets/js/functions.js" line="69"/>
-        <location filename="../assets/js/functions.js" line="116"/>
+        <location filename="../assets/js/functions.js" line="113"/>
         <source>OS Link:</source>
         <translation>Lien du système:</translation>
     </message>
     <message>
         <location filename="../assets/js/functions.js" line="10"/>
         <location filename="../assets/js/functions.js" line="66"/>
-        <location filename="../assets/js/functions.js" line="113"/>
+        <location filename="../assets/js/functions.js" line="110"/>
         <source>Radio Link:</source>
         <translation>Lien de la radio:</translation>
     </message>
     <message>
-        <location filename="../assets/js/functions.js" line="153"/>
+        <location filename="../assets/js/functions.js" line="150"/>
         <source>SDK downloads wonky. 
 Workaround: tap link to download in Browser.</source>
         <translation>Téléchargements SDK ne fonctionnent pas. 
 Solution: utiliser le navigateur.</translation>
     </message>
     <message>
-        <location filename="../assets/js/functions.js" line="234"/>
+        <location filename="../assets/js/functions.js" line="231"/>
         <source>Please set OS Type to Debrick OS</source>
         <translation>S&apos;il vous plaît utiliser Debrick OS</translation>
     </message>
     <message>
-        <location filename="../assets/js/functions.js" line="328"/>
+        <location filename="../assets/js/functions.js" line="316"/>
         <source>Please set OS Type to Debrick/Core OS/SDK OS</source>
         <translation>S&apos;il vous plaît utiliser Debrick/Core OS/SDK OS</translation>
     </message>
     <message>
-        <location filename="../assets/js/functions.js" line="378"/>
+        <location filename="../assets/js/functions.js" line="366"/>
         <source>Please pick a BB10 device.</source>
         <translation>S&apos;il vous plaît choisir un appareil de BB10.</translation>
     </message>
     <message>
-        <location filename="../assets/js/functions.js" line="382"/>
+        <location filename="../assets/js/functions.js" line="370"/>
         <source>Delta from </source>
         <translation>Delta de </translation>
     </message>
     <message>
-        <location filename="../assets/js/functions.js" line="382"/>
-        <location filename="../assets/js/functions.js" line="386"/>
+        <location filename="../assets/js/functions.js" line="370"/>
+        <location filename="../assets/js/functions.js" line="374"/>
         <source> to </source>
         <translation> à </translation>
     </message>
     <message>
-        <location filename="../assets/js/functions.js" line="386"/>
+        <location filename="../assets/js/functions.js" line="374"/>
         <source>Verizon delta from </source>
         <translation>Verizon delta de </translation>
     </message>
     <message>
-        <location filename="../assets/js/functions.js" line="392"/>
+        <location filename="../assets/js/functions.js" line="380"/>
         <source>Please set OS Type to Delta OS</source>
         <translation>S&apos;il vous plaît utiliser Delta OS</translation>
     </message>
     <message>
-        <location filename="../assets/js/functions.js" line="403"/>
-        <location filename="../assets/js/functions.js" line="434"/>
+        <location filename="../assets/js/functions.js" line="391"/>
+        <location filename="../assets/js/functions.js" line="419"/>
         <source>Please set OS Type to Delta OS/Verizon Delta OS</source>
         <translation>S&apos;il vous plaît utiliser Delta OS/Verizon Delta OS</translation>
     </message>
