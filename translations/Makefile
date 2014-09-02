@@ -1,5 +1,5 @@
 QMAKE_TARGET  = bbdownloader
-LUPDATE       = $(QNX_HOST)/usr/bin/lupdate
+LUPDATE       = $(QNX_HOST)/usr/bin/lupdate -locations none -no-obsolete
 LRELEASE      = $(QNX_HOST)/usr/bin/lrelease
 
 update: $(QMAKE_TARGET).pro FORCE
