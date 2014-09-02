@@ -271,18 +271,13 @@ Page {
                     }
                     Option {
                         id: dropdown_q10
-                        text: "Q10/Q5/P9983/Classic"
+                        text: "Q10/Q5/P9983"
                         value: "8960wtr"
                     }
                     Option {
                         id: dropdown_z30
-                        text: "Z30/Manitoba"
+                        text: "Z30/Manitoba/Classic"
                         value: "8960wtr5"
-                    }
-                    Option {
-                        id: dropdown_z30_future
-                        text: "Z30/Manitoba (Future)"
-                        value: "8960wtr6"
                     }
                     Option {
                         id: dropdown_jakarta
