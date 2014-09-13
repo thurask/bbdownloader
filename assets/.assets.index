@@ -1,5 +1,5 @@
 1
-35
+37
 10ppd/images/cover.png
 12ppd/AppCover.qml
 12ppd/images/cover.png
@@ -9,6 +9,7 @@
 AppCover.qml
 AutoLookup.qml
 EScreens.qml
+HardwareIDs.qml
 HashTools.qml
 HelpSheet.qml
 html/escreens.html
@@ -35,3 +36,4 @@ splash/pb_landscape.png
 splash/pb_portrait.png
 splash/wseries.png
 SysInfo.qml
+xml/hwid.xml

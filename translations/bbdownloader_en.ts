@@ -56,6 +56,29 @@
     </message>
 </context>
 <context>
+    <name>HardwareIDs</name>
+    <message>
+        <source>Hardware IDs</source>
+        <translation>Hardware IDs</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation>Refresh</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation>Info</translation>
+    </message>
+    <message>
+        <source>If something is missing, notify me</source>
+        <translation>If something is missing, notify me</translation>
+    </message>
+    <message>
+        <source>Could not access online repo. Loading local copy.</source>
+        <translation>Could not access online repo. Loading local copy.</translation>
+    </message>
+</context>
+<context>
     <name>HashTools</name>
     <message>
         <source>File Picker</source>
@@ -247,7 +270,7 @@ https://github.com/thurask/bbdownloader</translation>
     </message>
     <message>
         <source> none</source>
-        <translation type="unfinished"></translation>
+        <translation>none</translation>
     </message>
     <message>
         <source>Stop Download</source>
@@ -289,14 +312,12 @@ https://github.com/thurask/bbdownloader</translation>
         <translation>Known Software (pull to reload)</translation>
     </message>
     <message>
-        <source>Make sure you are connected to the Internet, 
-have data service and Github is up.</source>
-        <translation>Make sure you are connected to the Internet,
-have data service and Github is up.</translation>
-    </message>
-    <message>
         <source>Values copied to OS Downloader</source>
         <translation>Values copied to OS Downloader</translation>
+    </message>
+    <message>
+        <source>Could not access online repo. Try again later.</source>
+        <translation>Could not access online repo. Try again later.</translation>
     </message>
 </context>
 <context>
@@ -475,6 +496,10 @@ Workaround: tap link to download in Browser.</translation>
     <message>
         <source>System Info</source>
         <translation>System Info</translation>
+    </message>
+    <message>
+        <source>Hardware ID List</source>
+        <translation>Hardware ID List</translation>
     </message>
 </context>
 </TS>

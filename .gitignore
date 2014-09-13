@@ -1,3 +1,4 @@
 arm/
 x86/
 arm-p/
+translations/*.qm

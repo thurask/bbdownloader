@@ -149,6 +149,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/AppCover.qml) \
         $$quote($$BASEDIR/assets/AutoLookup.qml) \
         $$quote($$BASEDIR/assets/EScreens.qml) \
+        $$quote($$BASEDIR/assets/HardwareIDs.qml) \
         $$quote($$BASEDIR/assets/HashTools.qml) \
         $$quote($$BASEDIR/assets/HelpSheet.qml) \
         $$quote($$BASEDIR/assets/OSDownloader.qml) \
@@ -174,7 +175,8 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/splash/nseries.png) \
         $$quote($$BASEDIR/assets/splash/pb_landscape.png) \
         $$quote($$BASEDIR/assets/splash/pb_portrait.png) \
-        $$quote($$BASEDIR/assets/splash/wseries.png)
+        $$quote($$BASEDIR/assets/splash/wseries.png) \
+        $$quote($$BASEDIR/assets/xml/hwid.xml)
 }
 
 config_pri_source_group1 {
@@ -256,7 +258,10 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/js/*.qs) \
         $$quote($$BASEDIR/../assets/splash/*.qml) \
         $$quote($$BASEDIR/../assets/splash/*.js) \
-        $$quote($$BASEDIR/../assets/splash/*.qs)
+        $$quote($$BASEDIR/../assets/splash/*.qs) \
+        $$quote($$BASEDIR/../assets/xml/*.qml) \
+        $$quote($$BASEDIR/../assets/xml/*.js) \
+        $$quote($$BASEDIR/../assets/xml/*.qs)
 
     HEADERS += \
         $$quote($$BASEDIR/../src/*.h) \
@@ -267,5 +272,4 @@ lupdate_inclusion {
 }
 
 TRANSLATIONS = $$quote($${TARGET}_en.ts) \
-    $$quote($${TARGET}_fr.ts) \
     $$quote($${TARGET}.ts)

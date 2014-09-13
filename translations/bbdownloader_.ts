@@ -56,6 +56,29 @@
     </message>
 </context>
 <context>
+    <name>HardwareIDs</name>
+    <message>
+        <source>Hardware IDs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If something is missing, notify me</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Could not access online repo. Loading local copy.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>HashTools</name>
     <message>
         <source>File Picker</source>
@@ -288,12 +311,11 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Make sure you are connected to the Internet, 
-have data service and Github is up.</source>
+        <source>Values copied to OS Downloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Values copied to OS Downloader</source>
+        <source>Could not access online repo. Try again later.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -471,6 +493,10 @@ Workaround: tap link to download in Browser.</source>
     </message>
     <message>
         <source>System Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hardware ID List</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

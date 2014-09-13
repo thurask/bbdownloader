@@ -44,7 +44,7 @@ Sheet {
             }
             Label {
                 id: errorlabel
-                text: qsTr("Make sure you are connected to the Internet, \nhave data service and Github is up.") + Retranslate.onLanguageChanged
+                text: qsTr("Could not access online repo. Try again later.") + Retranslate.onLanguageChanged
                 multiline: true
                 visible: false
             }

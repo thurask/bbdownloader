@@ -97,4 +97,16 @@ TabbedPane {
         }
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivatedWhileSelected
     }
+    Tab {
+        title: qsTr("Hardware ID List") + Retranslate.onLanguageChanged
+        delegate: Delegate {
+            HardwareIDs {
+                id:hardwareIDsPage
+                titleBar: TitleBar {
+                    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+                }
+            }
+        }
+        delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
+    }
 }
