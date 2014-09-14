@@ -315,7 +315,7 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Could not access online repo. Try again later.</source>
+        <source>Could not access online repo. Loading local copy.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

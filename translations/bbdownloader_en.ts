@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="en_US">
+<TS version="2.1" language="en_US">
 <context>
     <name>AutoLookup</name>
     <message>
@@ -316,8 +316,8 @@ https://github.com/thurask/bbdownloader</translation>
         <translation>Values copied to OS Downloader</translation>
     </message>
     <message>
-        <source>Could not access online repo. Try again later.</source>
-        <translation>Could not access online repo. Try again later.</translation>
+        <source>Could not access online repo. Loading local copy.</source>
+        <translation>Could not access online repo. Loading local copy.</translation>
     </message>
 </context>
 <context>

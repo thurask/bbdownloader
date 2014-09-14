@@ -176,7 +176,10 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/splash/pb_landscape.png) \
         $$quote($$BASEDIR/assets/splash/pb_portrait.png) \
         $$quote($$BASEDIR/assets/splash/wseries.png) \
-        $$quote($$BASEDIR/assets/xml/hwid.xml)
+        $$quote($$BASEDIR/assets/xml/hwid.xml) \
+        $$quote($$BASEDIR/assets/xml/repo.xml) \
+        $$quote($$BASEDIR/assets/xml/xml/hwid.xml) \
+        $$quote($$BASEDIR/assets/xml/xml/repo.xml)
 }
 
 config_pri_source_group1 {
@@ -261,7 +264,10 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/splash/*.qs) \
         $$quote($$BASEDIR/../assets/xml/*.qml) \
         $$quote($$BASEDIR/../assets/xml/*.js) \
-        $$quote($$BASEDIR/../assets/xml/*.qs)
+        $$quote($$BASEDIR/../assets/xml/*.qs) \
+        $$quote($$BASEDIR/../assets/xml/xml/*.qml) \
+        $$quote($$BASEDIR/../assets/xml/xml/*.js) \
+        $$quote($$BASEDIR/../assets/xml/xml/*.qs)
 
     HEADERS += \
         $$quote($$BASEDIR/../src/*.h) \

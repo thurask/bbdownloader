@@ -69,7 +69,7 @@ Page {
         DataSource {
             id: repoDataSource
             remote: true
-            source: "http://thurask.github.io/xml/hwid.xml"
+            source: "http://thurask.github.io/hwid.xml"
             query: "repo/hardware"
             type: DataSourceType.Xml
             onDataLoaded: {

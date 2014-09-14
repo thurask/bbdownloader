@@ -1,5 +1,5 @@
 1
-37
+40
 10ppd/images/cover.png
 12ppd/AppCover.qml
 12ppd/images/cover.png
@@ -37,3 +37,6 @@ splash/pb_portrait.png
 splash/wseries.png
 SysInfo.qml
 xml/hwid.xml
+xml/repo.xml
+xml/xml/hwid.xml
+xml/xml/repo.xml

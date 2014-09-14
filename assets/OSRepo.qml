@@ -44,7 +44,7 @@ Sheet {
             }
             Label {
                 id: errorlabel
-                text: qsTr("Could not access online repo. Try again later.") + Retranslate.onLanguageChanged
+                text: qsTr("Could not access online repo. Loading local copy.") + Retranslate.onLanguageChanged
                 multiline: true
                 visible: false
             }
@@ -117,7 +117,7 @@ Sheet {
         DataSource {
             id: repoDataSource
             remote: true
-            source: "http://thurask.github.io/xml/repo.xml"
+            source: "http://thurask.github.io/repo.xml"
             query: "repo/release"
             type: DataSourceType.Xml
             onDataLoaded: {
@@ -126,6 +126,9 @@ Sheet {
                 repoDataModel.insertList(data)
             }
             onError: {
+                repoDataSource.source = "asset:///xml/repo.xml";
+                repoDataSource.remote = false;
+                repoDataSource.load();
                 errorlabel.visible = true;
             }
         },
