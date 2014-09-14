@@ -1,0 +1,221 @@
+<!--
+===HWID===
+A list of all the hardware IDs for BB10 devices.
+
+Format:
+<hardware>
+	<id>Hardware ID (no leading 0x, ex. 04002607)</id>
+	<name>Device name (ex. Z10)</name>
+	<variant>Device variant (ex. STL100-1)</variant>
+</hardware>
+
+Blank:
+<hardware>
+	<id></id>
+	<name></name>
+	<variant></variant>
+</hardware>
+-->
+
+<repo>
+	<hardware>
+		<id>04002607</id>
+		<name>Z10</name>
+		<variant>STL100-1</variant>
+	</hardware>
+	<hardware>
+		<id>8700240A</id>
+		<name>Z10</name>
+		<variant>STL100-2</variant>
+	</hardware>
+	<hardware>
+		<id>8500240A</id>
+		<name>Z10</name>
+		<variant>STL100-3</variant>
+	</hardware>
+	<hardware>
+		<id>8400240A</id>
+		<name>Z10</name>
+		<variant>STL100-4</variant>
+	</hardware>
+	<hardware>
+		<id>87002A07</id>
+		<name>Q3 (Kopi)</name>
+		<variant>SQC100-1</variant>
+	</hardware>
+	<hardware>
+		<id>8C002A07</id>
+		<name>Q3 (Kopi)</name>
+		<variant>SQC100-2</variant>
+	</hardware>
+	<hardware>
+		<id>8400270A</id>
+		<name>Q10</name>
+		<variant>SQN100-1</variant>
+	</hardware>
+	<hardware>
+		<id>8500270A</id>
+		<name>Q10</name>
+		<variant>SQN100-2</variant>
+	</hardware>
+	<hardware>
+		<id>8600270A</id>
+		<name>Q10</name>
+		<variant>SQN100-3</variant>
+	</hardware>
+	<hardware>
+		<id>8C00270A</id>
+		<name>Q10</name>
+		<variant>SQN100-4</variant>
+	</hardware>
+	<hardware>
+		<id>8700270A</id>
+		<name>Q10</name>
+		<variant>SQN100-5</variant>
+	</hardware>
+	<hardware>
+		<id>8D00270A</id>
+		<name>Dev Alpha C</name>
+		<variant>SQN100-3</variant>
+	</hardware>
+	<hardware>
+		<id>04002307</id>
+		<name>Dev Alpha A</name>
+		<variant>PRO100-2</variant>
+	</hardware>
+	<hardware>
+		<id>04002607</id>
+		<name>Dev Alpha B</name>
+		<variant>STL100-1</variant>
+	</hardware>
+	<hardware>
+		<id>84002A0A</id>
+		<name>Q5</name>
+		<variant>SQR100-1</variant>
+	</hardware>
+	<hardware>
+		<id>85002A0A</id>
+		<name>Q5</name>
+		<variant>SQR100-2</variant>
+	</hardware>
+	<hardware>
+		<id>86002A0A</id>
+		<name>Q5</name>
+		<variant>SQR100-3</variant>
+	</hardware>
+	<hardware>
+		<id>87002C0A</id>
+		<name>Passport</name>
+		<variant>SQW100-1</variant>
+	</hardware>
+	<hardware>
+		<id>85002C0A</id>
+		<name>Passport</name>
+		<variant>SQW100-2</variant>
+	</hardware>
+	<hardware>
+		<id>84002C0A</id>
+		<name>Passport</name>
+		<variant>SQW100-3</variant>
+	</hardware>
+	<hardware>
+		<id>8C00240A</id>
+		<name>Z30</name>
+		<variant>STA100-1</variant>
+	</hardware>
+	<hardware>
+		<id>8D00240A</id>
+		<name>Z30</name>
+		<variant>STA100-2</variant>
+	</hardware>
+	<hardware>
+		<id>8E00240A</id>
+		<name>Z30</name>
+		<variant>STA100-3</variant>
+	</hardware>
+	<hardware>
+		<id>8F00240A</id>
+		<name>Z30</name>
+		<variant>STA100-4</variant>
+	</hardware>
+	<hardware>
+		<id>9500240A</id>
+		<name>Z30</name>
+		<variant>STA100-5</variant>
+	</hardware>
+	<hardware>
+		<id>B500240A</id>
+		<name>Z30</name>
+		<variant>STA100-6</variant>
+	</hardware>
+	<hardware>
+		<id>AD00240A</id>
+		<name>Z30</name>
+		<variant>STA100-9</variant>
+	</hardware>
+	<hardware>
+		<id>04002E07</id>
+		<name>Z3</name>
+		<variant>STJ100-1</variant>
+	</hardware>
+	<hardware>
+		<id>9700240A</id>
+		<name>Z5 (Cafe)</name>
+		<variant>STB100-1</variant>
+	</hardware>
+	<hardware>
+		<id>9600240A</id>
+		<name>Z5 (Cafe)</name>
+		<variant>STB100-2</variant>
+	</hardware>
+	<hardware>
+		<id>A700240A</id>
+		<name>Z5 (Cafe)</name>
+		<variant>STB100-3</variant>
+	</hardware>
+	<hardware>
+		<id>AC00240A</id>
+		<name>Z5 (Cafe)</name>
+		<variant>STB100-4</variant>
+	</hardware>
+	<hardware>
+		<id>9C00240A</id>
+		<name>Z5 (Cafe)</name>
+		<variant>STB100-5</variant>
+	</hardware>
+	<hardware>
+		<id>A500240A</id>
+		<name>P'9982</name>
+		<variant>STK100-1</variant>
+	</hardware>
+	<hardware>
+		<id>A600240A</id>
+		<name>P'9982</name>
+		<variant>STK100-2</variant>
+	</hardware>
+	<hardware>
+		<id>8F00270A</id>
+		<name>P'9983</name>
+		<variant>SQK100-1</variant>
+	</hardware>
+	<hardware>
+		<id>8E00270A</id>
+		<name>P'9983</name>
+		<variant>SQK100-2</variant>
+	</hardware>
+	<hardware>
+		<id>06001A06</id>
+		<name>PlayBook</name>
+		<variant>WiFi</variant>
+	</hardware>
+	<hardware>
+		<id>0D001A06</id>
+		<name>PlayBook</name>
+		<variant>LTE</variant>
+	</hardware>
+	<hardware>
+		<id>0E001A06</id>
+		<name>PlayBook</name>
+		<variant>HSPA+</variant>
+	</hardware>
+</repo>
