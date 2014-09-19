@@ -165,7 +165,9 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/icons/icon_96.png) \
         $$quote($$BASEDIR/assets/images/cover.png) \
         $$quote($$BASEDIR/assets/images/cover_small.png) \
+        $$quote($$BASEDIR/assets/images/ic_info.png) \
         $$quote($$BASEDIR/assets/images/ic_refresh.png) \
+        $$quote($$BASEDIR/assets/images/ic_select.png) \
         $$quote($$BASEDIR/assets/js/functions.js) \
         $$quote($$BASEDIR/assets/main.qml) \
         $$quote($$BASEDIR/assets/splash/aseries_landscape.png) \

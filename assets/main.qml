@@ -16,6 +16,7 @@ TabbedPane {
     ]
     Menu.definition: MenuDefinition {
         helpAction: HelpActionItem {
+            imageSource: "asset:///images/ic_info.png"
             onTriggered: {
                 var help = helpSheetDefinition.createObject()
                 help.open();
@@ -24,6 +25,7 @@ TabbedPane {
         actions: [
             ActionItem {
                 title: qsTr("Change Theme") + Retranslate.onLanguageChanged
+                imageSource: "asset:///images/ic_select.png"
                 onTriggered: {
                     if (Application.themeSupport.theme.colorTheme.style == VisualStyle.Bright) {
                         Application.themeSupport.setVisualStyle(VisualStyle.Dark);

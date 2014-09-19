@@ -283,6 +283,10 @@ https://github.com/thurask/bbdownloader</source>
         <source>Errors</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>OS Version + 1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OSRepo</name>

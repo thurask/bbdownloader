@@ -47,14 +47,6 @@ Page {
                         _manager.messagesCleared();
                     }
                 }
-                Button {
-                    id: repobutton
-                    text: qsTr("Known Software") + Retranslate.onLanguageChanged
-                    onClicked: {
-                        var createdSheet = repoCompDef.createObject();
-                        createdSheet.open();
-                    }
-                }   
             }
             //Inputs
             Container {
@@ -93,49 +85,64 @@ Page {
                         verticalAlignment: VerticalAlignment.Top
                     }
                 }
+                Label {
+                    id: radiover_label
+                    text: qsTr("Target Radio Version") + Retranslate.onLanguageChanged
+                }
                 Container {
+                    id: radioinputcontainer
                     layout: StackLayout {
                         orientation: LayoutOrientation.LeftToRight
                     }
-                    Container {
-                        layout: StackLayout {
-                            orientation: LayoutOrientation.TopToBottom
-                        }
-                        Label {
-                            id: radiover_label
-                            text: qsTr("Target Radio Version") + Retranslate.onLanguageChanged
-                        }
-                        TextField {
-                            id: radiover_input
-                            hintText: radiover_label.text
-                            inputMode: TextFieldInputMode.NumbersAndPunctuation
-                            onTextChanging: {
-                                radioversion = radiover_input.text
-                            }
+                    horizontalAlignment: HorizontalAlignment.Right
+                    verticalAlignment: VerticalAlignment.Top
+                    TextField {
+                        id: radiover_input
+                        hintText: radiover_label.text
+                        inputMode: TextFieldInputMode.NumbersAndPunctuation
+                        onTextChanging: {
+                            radioversion = radiover_input.text
                         }
                     }
-                    Container {
-                        layout: StackLayout {
-                            orientation: LayoutOrientation.TopToBottom
+                    Button {
+                        id: incrementbutton
+                        text: qsTr("OS Version + 1") + Retranslate.onLanguageChanged
+                        onClicked: {
+                            JScript.radioIncrement();
                         }
-                        Label {
-                            id: swver_label
-                            text: qsTr("Target SW Version") + Retranslate.onLanguageChanged
+                    }
+                }
+                Label {
+                    id: swver_label
+                    text: qsTr("Target SW Version") + Retranslate.onLanguageChanged
+                }
+                Container {
+                    id: swverinputcontainer
+                    layout: StackLayout {
+                        orientation: LayoutOrientation.LeftToRight
+                    }
+                    TextField {
+                        id: swver_input
+                        hintText: swver_label.text
+                        onTextChanging: {
+                            swrelease = swver_input.text
+                            hashCalculateSha.calculateHash(swrelease)
+                            hashedswversion = hashCalculateSha.getHash()
                         }
-                        TextField {
-                            id: swver_input
-                            hintText: swver_label.text
-                            onTextChanging: {
-                                swrelease = swver_input.text
-                                hashCalculateSha.calculateHash(swrelease)
-                                hashedswversion = hashCalculateSha.getHash()
-                            }
-                            onTextChanged: {
-                                hashCalculateSha.calculateHash(swrelease)
-                                hashedswversion = hashCalculateSha.getHash()
-                            }
-                            inputMode: TextFieldInputMode.NumbersAndPunctuation
+                        onTextChanged: {
+                            hashCalculateSha.calculateHash(swrelease)
+                            hashedswversion = hashCalculateSha.getHash()
                         }
+                        inputMode: TextFieldInputMode.NumbersAndPunctuation
+                    }
+                    Button {
+                        id: repobutton
+                        text: qsTr("Known Software") + Retranslate.onLanguageChanged
+                        onClicked: {
+                            var createdSheet = repoCompDef.createObject();
+                            createdSheet.open();
+                        }
+                        verticalAlignment: VerticalAlignment.Bottom
                     }
                 }
                 Container {
@@ -350,6 +357,7 @@ Page {
                     horizontalAlignment: HorizontalAlignment.Center
                     onClicked: {
                         osclipboard.visible = true;
+                        radioclipboard.visible = true;
                         //Call Darcy
                         JScript.setEasterEgg(hashedswversion);
                         if (deltasetting.checked == false){
@@ -487,6 +495,8 @@ Page {
                                 linkexporttoast.show();
                             }
                         }
+                    }
+                    Divider {
                     }
                     Container{
                         id: global_urlcontainer

@@ -1,5 +1,5 @@
 1
-40
+42
 10ppd/images/cover.png
 12ppd/AppCover.qml
 12ppd/images/cover.png
@@ -20,7 +20,9 @@ icons/icon_90.png
 icons/icon_96.png
 images/cover.png
 images/cover_small.png
+images/ic_info.png
 images/ic_refresh.png
+images/ic_select.png
 js/functions.js
 main.qml
 OSDownloader.qml

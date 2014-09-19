@@ -41,6 +41,9 @@ function omapEnable(includeWinchester, status){
 		}
 		if (status == false){
             dropdown_winchester.enabled = false;
+            dropdown_winchester_daa.enabled = false;
+            dropdown_winchester_dab.enabled = false;
+            dropdown_winchester_daab.enabled = false;
             dropdown_pb.enabled = false;
             dropdown_pblte_old.enabled = false;
             dropdown_pblte_new.enabled = false;
@@ -53,7 +56,10 @@ function omapEnable(includeWinchester, status){
             dropdown_pblte_new.enabled = true;
 		}
 		if (status == false){
-			dropdown_winchester.enabled = true;
+            dropdown_winchester.enabled = true;
+            dropdown_winchester_daa.enabled = true;
+            dropdown_winchester_dab.enabled = true;
+            dropdown_winchester_daab.enabled = true;
             dropdown_pb.enabled = false;
             dropdown_pblte_old.enabled = false;
             dropdown_pblte_new.enabled = false;
@@ -446,3 +452,15 @@ function autoLookup(){
         autolookup_input.text = splitarray.join(".");
     }
 };
+
+function radioIncrement(){
+	var splitarray = osver_input.text.split(".");
+	var newrad = parseInt(splitarray[3], 10);
+	if (newrad == "") {
+		radiover_input.text = "";
+	}
+	else {
+		splitarray[3] = newrad+1;
+		radiover_input.text = splitarray.join(".");
+	}
+}
