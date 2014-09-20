@@ -40,12 +40,12 @@ Blank:
 	</hardware>
 	<hardware>
 		<id>87002A07</id>
-		<name>Q3 (Kopi)</name>
+		<name>Q3</name>
 		<variant>SQC100-1</variant>
 	</hardware>
 	<hardware>
 		<id>8C002A07</id>
-		<name>Q3 (Kopi)</name>
+		<name>Q3</name>
 		<variant>SQC100-2</variant>
 	</hardware>
 	<hardware>
@@ -160,27 +160,27 @@ Blank:
 	</hardware>
 	<hardware>
 		<id>9700240A</id>
-		<name>Z5 (Cafe)</name>
+		<name>Z5</name>
 		<variant>STB100-1</variant>
 	</hardware>
 	<hardware>
 		<id>9600240A</id>
-		<name>Z5 (Cafe)</name>
+		<name>Z5</name>
 		<variant>STB100-2</variant>
 	</hardware>
 	<hardware>
 		<id>A700240A</id>
-		<name>Z5 (Cafe)</name>
+		<name>Z5</name>
 		<variant>STB100-3</variant>
 	</hardware>
 	<hardware>
 		<id>AC00240A</id>
-		<name>Z5 (Cafe)</name>
+		<name>Z5)</name>
 		<variant>STB100-4</variant>
 	</hardware>
 	<hardware>
 		<id>9C00240A</id>
-		<name>Z5 (Cafe)</name>
+		<name>Z5</name>
 		<variant>STB100-5</variant>
 	</hardware>
 	<hardware>
