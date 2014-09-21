@@ -210,17 +210,6 @@
     </message>
 </context>
 <context>
-    <name>ExportSheet</name>
-    <message>
-        <source>Export Options</source>
-        <translation>Export Options</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation>Close</translation>
-    </message>
-</context>
-<context>
     <name>HardwareIDs</name>
     <message>
         <source>Hardware IDs</source>
