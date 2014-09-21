@@ -4,6 +4,9 @@ function clearButton(){
     global_linkcontainer.visible = false;
     osclipboard.visible = false;
     radioclipboard.visible = false;
+    allclipboard.visible = false;
+    global_exportcontainer.visible = false;
+    clipboardheader.visible = false;
     osdropdown.resetSelectedOption();
     devicedropdown.resetSelectedOption();
     os_download_label.text = qsTr("OS Link:") + Retranslate.onLanguageChanged;
@@ -118,49 +121,47 @@ function setOS(){
     if (osdropdown.selectedIndex == -1){
         os_download_label.text = qsTr("OS Link:") + Retranslate.onLanguageChanged;
     }
-    if (deltasetting.checked == false){
-        if (osdropdown.selectedValue == "debrick") {
-            os_download_label.text = "Debrick OS:";
-            omapEnable(true, true);
-        }
-        if (osdropdown.selectedValue == "core") {
-            os_download_label.text = "Core OS:";
-            omapEnable(false, false);
-        }
-        if (osdropdown.selectedValue == "debrick_vzw") {
-            os_download_label.text = "Verizon Debrick OS:";
-            omapEnable(true, false);
-        }
-        if (osdropdown.selectedValue == "core_vzw") {
-            os_download_label.text = "Verizon Core OS:";
-            omapEnable(true, false);
-        }
-        if (osdropdown.selectedValue == "debrick_china") {
-            os_download_label.text = "China Debrick OS:";
-            omapEnable(true, false);
-        }
-        if (osdropdown.selectedValue == "core_china") {
-            os_download_label.text = "China Core OS:";
-            omapEnable(true, false);
-        }
-        if (osdropdown.selectedValue == "sdkdebrick") {
-            os_download_label.text = "SDK Debrick OS:";
-            omapEnable(false, false);
-        }
-        if (osdropdown.selectedValue == "sdkcore") {
-            os_download_label.text = "SDK Core OS:";
-            omapEnable(false, false);
-        }
-        if (osdropdown.selectedValue == "sdkautoloader") {
-            os_download_label.text = "Autoloader:";
-            radio_download_label.text = qsTr("SDK downloads wonky. \nWorkaround: tap link to download in Browser.") + Retranslate.onLanguageChanged;
-            dropdown_parana.enabled = false;
-            omapEnable(false, false);
-        }
-        if (osdropdown.selectedValue != "sdkautoloader"){
-            dropdown_parana.enabled = true;
-            Functions.setRadios();
-        }
+    if (osdropdown.selectedValue == "debrick") {
+        os_download_label.text = "Debrick OS:";
+        omapEnable(true, true);
+    }
+    if (osdropdown.selectedValue == "core") {
+        os_download_label.text = "Core OS:";
+        omapEnable(false, false);
+    }
+    if (osdropdown.selectedValue == "debrick_vzw") {
+        os_download_label.text = "Verizon Debrick OS:";
+        omapEnable(true, false);
+    }
+    if (osdropdown.selectedValue == "core_vzw") {
+        os_download_label.text = "Verizon Core OS:";
+        omapEnable(true, false);
+    }
+    if (osdropdown.selectedValue == "debrick_china") {
+        os_download_label.text = "China Debrick OS:";
+        omapEnable(true, false);
+    }
+    if (osdropdown.selectedValue == "core_china") {
+        os_download_label.text = "China Core OS:";
+        omapEnable(true, false);
+    }
+    if (osdropdown.selectedValue == "sdkdebrick") {
+        os_download_label.text = "SDK Debrick OS:";
+        omapEnable(false, false);
+    }
+    if (osdropdown.selectedValue == "sdkcore") {
+        os_download_label.text = "SDK Core OS:";
+        omapEnable(false, false);
+    }
+    if (osdropdown.selectedValue == "sdkautoloader") {
+        os_download_label.text = "Autoloader:";
+        radio_download_label.text = qsTr("SDK downloads wonky. \nWorkaround: tap link to download in Browser.") + Retranslate.onLanguageChanged;
+        dropdown_parana.enabled = false;
+        omapEnable(false, false);
+    }
+    if (osdropdown.selectedValue != "sdkautoloader"){
+        dropdown_parana.enabled = true;
+        Functions.setRadios();
     }
 };
 

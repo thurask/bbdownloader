@@ -59,7 +59,19 @@
 
         void exportLinks(QString swrelease, QString hashedswversion, QString osversion, QString radioversion);
 
+        void copyLinks(QString hashedswversion, QString osversion, QString radioversion);
+
+        QString returnLinks(QString hashedswversion, QString osversion, QString radioversion);
+
         void exportDeltaLinks(QString hashedswversion, QString osversion, QString radioversion, QString osinitversion, QString osinit, QString osinit2, QString radinit, QString radinit2);
+
+        void copyDeltaLinks(QString hashedswversion, QString osversion, QString radioversion, QString osinit, QString osinit2, QString radinit, QString radinit2);
+
+        QString returnDeltaLinks(QString hashedswversion, QString osversion, QString radioversion, QString osinit, QString osinit2, QString radinit, QString radinit2);
+
+        QString returnFilename();
+
+        QString readTextFile(QString uri);
 
     Q_SIGNALS:
         // The change notification signals of the properties
@@ -131,6 +143,16 @@
 
         // The list of status messages
         QStringList m_statusMessage;
+
+        void setExportUrls(QString hashedswversion, QString osversion, QString radioversion);
+
+        void setExportUrlsDelta(QString hashedswversion, QString osversion, QString radioversion, QString osinit, QString osinit2, QString radinit, QString radinit2);
+
+        QString exporturls;
+
+        QString exporturlsdelta;
+
+        QString filename;
     };
 
 #endif /* DOWNLOADMANAGER_HPP_ */

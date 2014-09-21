@@ -18,6 +18,9 @@ Page {
         },
         BatteryInfo {
             id: battinfo
+        },
+        SimCardInfo {
+            id: siminfo
         }
     ]
     ScrollView {
@@ -39,16 +42,19 @@ Page {
                 text: qsTr("Model Number: ") + Retranslate.onLanguageChanged + hardwareinfo.modelNumber;
             }
             Label {
-                text: "PIN: " + hardwareinfo.pin;
+                text: qsTr("PIN: ") + Retranslate.onLanguageChanged + hardwareinfo.pin;
             }
             Label {
-                text: qsTr("Hardware ID: ") + hardwareinfo.hardwareId;
+                text: qsTr("Hardware ID: ") + Retranslate.onLanguageChanged + hardwareinfo.hardwareId;
             }
             Label {
-                text: "IMEI: " + hardwareinfo.imei;
+                text: qsTr("HDMI: ") + Retranslate.onLanguageChanged + (hardwareinfo.hdmiConnector == 2 ? qsTr("Micro HDMI") + Retranslate.onLanguageChanged : (hardwareinfo.hdmiConnector == 1 ? qsTr("None") + Retranslate.onLanguageChanged : qsTr("Bad or Unknown")))
             }
             Label {
-                text: "MEID: " + hardwareinfo.meid;
+                text: qsTr("IMEI: ") + Retranslate.onLanguageChanged + hardwareinfo.imei;
+            }
+            Label {
+                text: qsTr("MEID: ") + Retranslate.onLanguageChanged + hardwareinfo.meid;
             }
             Label {
                 text: qsTr("Serial Number: ") + Retranslate.onLanguageChanged + hardwareinfo.serialNumber;
@@ -66,7 +72,7 @@ Page {
                 title: qsTr("Battery") + Retranslate.onLanguageChanged
             }
             Label {
-                text: qsTr("Condition: ") + Retranslate.onLanguageChanged + (battinfo.condition == 1 ? "OK" : "Bad or Unknown")
+                text: qsTr("Condition: ") + Retranslate.onLanguageChanged + (battinfo.condition == 1 ? qsTr("OK") + Retranslate.onLanguageChanged : qsTr("Bad or Unknown") + Retranslate.onLanguageChanged)
             }
             Label {
                 text: qsTr("Remaining: ") + Retranslate.onLanguageChanged + battinfo.level + "%"
@@ -78,56 +84,84 @@ Page {
                 text: qsTr("Temperature: ") + Retranslate.onLanguageChanged + battinfo.temperature + "°C (" + (1.8 * (battinfo.temperature) + 32) + "°F)"
             }
             Header {
-                title: qsTr("Device Properties") + Retranslate.onLanguageChanged
+                title: qsTr("SIM Card") + Retranslate.onLanguageChanged
             }
-            WebView {
-                url: "file:///pps/services/deviceproperties"
+            Label {
+                text: qsTr("Mobile Country Code (MCC): ") + Retranslate.onLanguageChanged + siminfo.mobileCountryCode;
             }
-            Header {
-                title: qsTr("Hardware Info") + Retranslate.onLanguageChanged
+            Label {
+                text: qsTr("Mobile Network Code (MNC): ") + Retranslate.onLanguageChanged + siminfo.mobileNetworkCode;
             }
-            WebView {
-                url: "file:///pps/services/hw_info/inventory"
+            Label {
+                text: qsTr("Serial Number: ") + Retranslate.onLanguageChanged + siminfo.serialNumber;
             }
             Header {
                 title: qsTr("Versions") + Retranslate.onLanguageChanged
             }
             Container {
-                background: Color.White
-                Label {
-                    text: "Adobe Flash"
-                    textStyle.color: Color.Black
-                }
-                WebView {
-                    url: "file:///base/etc/flash.version"
+                layout: StackLayout {
+                    orientation: LayoutOrientation.LeftToRight
                 }
                 Label {
-                    text: "Adobe AIR"
-                    textStyle.color: Color.Black
-                }
-                WebView {
-                    url: "file:///base/etc/air.version"
+                    text: qsTr("Adobe Flash:") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: "WiFi"
-                    textStyle.color: Color.Black
+                    text: _manager.readTextFile("/base/etc/flash.version")
                 }
-                WebView {
-                    url: "file:///base/etc/wifi.version"
+            }
+            Container {
+                layout: StackLayout {
+                    orientation: LayoutOrientation.LeftToRight
                 }
                 Label {
-                    text: "Webkit"
-                    textStyle.color: Color.Black
+                    text: qsTr("Adobe AIR:") + Retranslate.onLanguageChanged
                 }
-                WebView {
-                    url: "file:///base/etc/webkit.version"
+                Label {
+                    text: _manager.readTextFile("/base/etc/air.version")
                 }
+            }
+            Container {
+                layout: StackLayout {
+                    orientation: LayoutOrientation.LeftToRight
+                }
+                Label {
+                    text: qsTr("WiFi:") + Retranslate.onLanguageChanged
+                }
+                Label {
+                    text: _manager.readTextFile("/base/etc/wifi.version")
+                }
+            }
+            Container {
+                layout: StackLayout {
+                    orientation: LayoutOrientation.LeftToRight
+                }
+                Label {
+                    text: qsTr("Webkit:") + Retranslate.onLanguageChanged
+                }
+                Label {
+                    text: _manager.readTextFile("/base/etc/webkit.version")
+                }
+            }
+            Header {
+                title: qsTr("Device Properties") + Retranslate.onLanguageChanged
+            }
+            Label {
+                text: _manager.readTextFile("/pps/services/deviceproperties")
+                multiline: true
+            }
+            Header {
+                title: qsTr("Hardware Info") + Retranslate.onLanguageChanged
+            }
+            Label {
+                text: _manager.readTextFile("/pps/services/hw_info/inventory")
+                multiline: true
             }
             Header {
                 title: qsTr("Development Mode") + Retranslate.onLanguageChanged
             }
-            WebView {
-                url: "file:///pps/system/development/devmode"
+            Label {
+                text: _manager.readTextFile("/pps/system/development/devmode")
+                multiline: true
             }
         }
     }

@@ -21,6 +21,7 @@ Sheet {
                 }
             }
             acceptAction: ActionItem {
+                enabled: localtoggle.checked ? false : true
                 title: qsTr("Refresh") + Retranslate.onLanguageChanged
                 onTriggered: {
                     repoDataSource.load();
@@ -29,44 +30,46 @@ Sheet {
         }
         Container {
             horizontalAlignment: HorizontalAlignment.Fill
-            Header {
-                title: qsTr("Info") + Retranslate.onLanguageChanged
-            }
-            Label {
-                text: qsTr("If something is missing, notify me") + Retranslate.onLanguageChanged
-                content.flags: TextContentFlag.ActiveText
-                textStyle.textAlign: TextAlign.Center
+            Container {
+                layout: StackLayout {
+                    orientation: LayoutOrientation.LeftToRight
+                }
                 horizontalAlignment: HorizontalAlignment.Center
-                multiline:true
+                verticalAlignment: VerticalAlignment.Center
+                Label {
+                    text: qsTr("Use local file") + Retranslate.onLanguageChanged
+                    verticalAlignment: VerticalAlignment.Center
+                }
+                ToggleButton {
+                    id: localtoggle
+                    verticalAlignment: VerticalAlignment.Center
+                    checked: true
+                    onCheckedChanged: {
+                        if (localtoggle.checked == true) {
+                            repoDataSource.source = "asset:///xml/repo.xml";
+                            repoDataSource.remote = false;
+                            repoDataSource.load();
+                        }
+                        else {
+                            repoDataSource.source = "http://thurask.github.io/repo.xml";
+                            repoDataSource.remote = true;
+                            repoDataSource.load();
+                        }
+                    }
+                }
             }
             Header {
-                title: qsTr("Known Software (pull to reload)") + Retranslate.onLanguageChanged
+                title: (localtoggle.checked == true ? qsTr("Known Software (local copy)") + Retranslate.onLanguageChanged : qsTr("Known Software (network copy)") + Retranslate.onLanguageChanged)
             }
             Label {
                 id: errorlabel
-                text: qsTr("Could not access online repo. Loading local copy.") + Retranslate.onLanguageChanged
+                text: qsTr("Could not access online file. Loading local copy.") + Retranslate.onLanguageChanged
                 multiline: true
                 visible: false
             }
             ListView {
                 id: listView
                 dataModel: repoDataModel
-                property bool isTouched: false
-                onTouch: {
-                    if (event.isDown() | event.isMove()) {
-                        isTouched = true
-                    } else {
-                        isTouched = false
-                    }
-                }
-                leadingVisual: PullToRefresh {
-                    id: pullRefresh
-                    preferredWidth: listhandler.layoutFrame.width
-                    touchActive: listView.isTouched
-                    onRefreshTriggered: {                      
-                        repoDataSource.load();                 
-                    }
-                }
                 listItemComponents: [
                     ListItemComponent {
                         type: "header"
@@ -116,8 +119,8 @@ Sheet {
         },
         DataSource {
             id: repoDataSource
-            remote: true
-            source: "http://thurask.github.io/repo.xml"
+            remote: false
+            source: "asset:///xml/repo.xml"
             query: "repo/release"
             type: DataSourceType.Xml
             onDataLoaded: {

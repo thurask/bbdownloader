@@ -10,31 +10,43 @@ import bb.data 1.0
 Page {
     titleBar: TitleBar {
         title: qsTr("Hardware IDs") + Retranslate.onLanguageChanged
-        acceptAction: ActionItem {
-            title: qsTr("Refresh") + Retranslate.onLanguageChanged
-            onTriggered: {
-                repoDataSource.load();
-            }
-        }
     }
     Container {
         horizontalAlignment: HorizontalAlignment.Fill
-        Header {
-            title: qsTr("Info") + Retranslate.onLanguageChanged
-        }
-        Label {
-            text: qsTr("If something is missing, notify me") + Retranslate.onLanguageChanged
-            content.flags: TextContentFlag.ActiveText
-            textStyle.textAlign: TextAlign.Center
+        Container {
+            layout: StackLayout {
+                orientation: LayoutOrientation.LeftToRight
+            }
             horizontalAlignment: HorizontalAlignment.Center
-            multiline:true
+            verticalAlignment: VerticalAlignment.Center
+            Label {
+                text: qsTr("Use local file") + Retranslate.onLanguageChanged
+                verticalAlignment: VerticalAlignment.Center
+            }
+            ToggleButton {
+                id: localtoggle
+                verticalAlignment: VerticalAlignment.Center
+                checked: true
+                onCheckedChanged: {
+                    if (localtoggle.checked == true) {
+                        repoDataSource.source = "asset:///xml/hwid.xml";
+                        repoDataSource.remote = false;
+                        repoDataSource.load();
+                    }
+                    else {
+                        repoDataSource.source = "http://thurask.github.io/hwid.xml";
+                        repoDataSource.remote = true;
+                        repoDataSource.load();
+                    }
+                }
+            }
         }
         Header {
-            title: qsTr("Hardware IDs") + Retranslate.onLanguageChanged
+            title: (localtoggle.checked == true ? qsTr("Hardware IDs (local copy)") + Retranslate.onLanguageChanged : qsTr("Hardware IDs (network copy)") + Retranslate.onLanguageChanged)
         }
         Label {
             id: errorlabel
-            text: qsTr("Could not access online repo. Loading local copy.") + Retranslate.onLanguageChanged
+            text: qsTr("Could not access online file. Loading local copy.") + Retranslate.onLanguageChanged
             multiline: true
             visible: false
         }
@@ -64,12 +76,12 @@ Page {
             "variant"
             ]
             sortedAscending: true
-            grouping: ItemGrouping.ByFullValue           
+            grouping: ItemGrouping.ByFullValue
         },
         DataSource {
             id: repoDataSource
-            remote: true
-            source: "http://thurask.github.io/hwid.xml"
+            remote: false
+            source: "asset:///xml/hwid.xml"
             query: "repo/hardware"
             type: DataSourceType.Xml
             onDataLoaded: {

@@ -107,12 +107,6 @@ Page {
                 layout: StackLayout {
                     orientation: LayoutOrientation.TopToBottom
                 }
-                Label {
-                    horizontalAlignment: HorizontalAlignment.Center
-                    verticalAlignment: VerticalAlignment.Center
-                    text: qsTr("Be patient with large files") + Retranslate.onLanguageChanged
-                    visible: (pickermode == true)
-                }
                 Divider {
                 }
                 Container {

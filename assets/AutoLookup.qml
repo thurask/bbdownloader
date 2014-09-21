@@ -11,6 +11,7 @@ import qt.timer 1.0
 import "js/functions.js" as JScript
 
 Page {
+    property bool scanning: false
     attachedObjects: [
         QTimer{
             id: timer
@@ -29,6 +30,17 @@ Page {
             onFinished: {
                 if (lookupexporttoast.result == SystemUiResult.ButtonSelection){
                     outputtext.setText(outputtext.storedtext);
+                }
+            }
+        },
+        Invocation {
+            id: myQuery
+            query {
+                mimeType: "text/plain"
+                data: outputtext.text
+                invokeActionId: "bb.action.SHARE"
+                onQueryChanged: {
+                    myQuery.query.updateQuery()
                 }
             }
         }
@@ -92,16 +104,16 @@ Page {
             horizontalAlignment: HorizontalAlignment.Center
             Button {
                 id: autolookupbutton
-                text: qsTr("Start") + Retranslate.onLanguageChanged
+                text: qsTr("Start/Stop") + Retranslate.onLanguageChanged
                 onClicked: {
-                    timer.start();
-                }
-            }
-            Button {
-                id: autostopbutton
-                text: qsTr("Stop") + Retranslate.onLanguageChanged
-                onClicked: {
-                    timer.stop();
+                    if (scanning == false) {
+                        timer.start();
+                        scanning = true;
+                    }
+                    else {
+                        timer.stop();
+                        scanning = false;
+                    }
                 }
             }
             Button {
@@ -115,6 +127,13 @@ Page {
                     lookupexporttoast.button.enabled = true;
                     lookupexporttoast.button.label = qsTr("Undo") + Retranslate.onLanguageChanged;
                     lookupexporttoast.show();
+                }
+            }
+            Button {
+                id: autosharebutton
+                text: qsTr("Share") + Retranslate.onLanguageChanged
+                onClicked: {
+                    myQuery.trigger(myQuery.query.invokeActionId)
                 }
             }
             Button {
@@ -141,7 +160,7 @@ Page {
                     property string storedtext
                     text: ""
                     editable: false
-                    id:outputtext
+                    id: outputtext
                     textFormat: TextFormat.Plain
                     content.flags: TextContentFlag.ActiveTextOff
                 }

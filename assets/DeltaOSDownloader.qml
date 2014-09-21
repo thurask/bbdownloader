@@ -1,6 +1,6 @@
-/*OSDownloader.qml
- ------------------
- The meat of the application. Generates and downloads CSE Prod links.
+/*DeltaOSDownloader.qml
+ -----------------------
+ Generates delta links from CSE Prod.
  
  --Thurask*/
 
@@ -14,7 +14,12 @@ Page {
     property string hashedswversion
     property string swrelease
     property string osversion
+    property string osinitversion
+    property string osinit
+    property string osinit2
     property string radioversion
+    property string radinit
+    property string radinit2
     ScrollView {
         id: mainscrollview
         scrollViewProperties.pinchToZoomEnabled: false
@@ -119,6 +124,53 @@ Page {
                         verticalAlignment: VerticalAlignment.Bottom
                     }
                 }
+                Container {
+                    id: deltacontainer
+                    layout: StackLayout {
+                        orientation: LayoutOrientation.LeftToRight
+                    }
+                    Container {
+                        layout: StackLayout {
+                            orientation: LayoutOrientation.TopToBottom
+                        }
+                        Label {
+                            id: osinit_label
+                            text: qsTr("Initial OS Version") + Retranslate.onLanguageChanged
+                        }
+                        TextField {
+                            id: osinit_input
+                            hintText: osinit_label.text
+                            inputMode: TextFieldInputMode.NumbersAndPunctuation
+                            onTextChanged: {
+                                osinitversion = osinit_input.text
+                                var osinit_temp = osinit_input.text;
+                                osinit = osinit_temp.replace(/\./g, "");
+                                var osinit2_temp = osinit_input.text;
+                                osinit2 = osinit_temp.replace(/\./g, "_");
+                            }
+                        }
+                    }
+                    Container {
+                        layout: StackLayout {
+                            orientation: LayoutOrientation.TopToBottom
+                        }
+                        Label {
+                            id: radioinit_label
+                            text: qsTr("Initial Radio Version") + Retranslate.onLanguageChanged
+                        }
+                        TextField {
+                            id: radioinit_input
+                            hintText: radioinit_label.text
+                            inputMode: TextFieldInputMode.NumbersAndPunctuation
+                            onTextChanged: {
+                                var radinit_temp = radioinit_input.text;
+                                radinit = radinit_temp.replace(/\./g, "");
+                                var radinit2_temp = radioinit_input.text;
+                                radinit2 = radinit_temp.replace(/\./g, "_");
+                            }
+                        }
+                    }
+                }
             }
             //Dropdowns
             Container {
@@ -129,49 +181,14 @@ Page {
                     objectName: "osdropdown"
                     title: qsTr("Choose OS Type") + Retranslate.onLanguageChanged
                     Option {
-                        id: dropdown_debrick
-                        text: "Debrick OS"
-                        value: "debrick"
-                    }
-                    Option {
                         id: dropdown_core
-                        text: "Core OS"
+                        text: "Delta OS"
                         value: "core"
                     }
                     Option {
-                        id: dropdown_debrick_verizon
-                        text: "Verizon Debrick OS"
-                        value: "debrick_vzw"
-                    }
-                    Option {
                         id: dropdown_core_verizon
-                        text: "Verizon Core OS"
+                        text: "Verizon Delta OS"
                         value: "core_vzw"
-                    }
-                    Option {
-                        id: dropdown_debrick_china
-                        text: "China Debrick OS"
-                        value: "debrick_china"
-                    }
-                    Option {
-                        id: dropdown_core_china
-                        text: "China Core OS"
-                        value: "core_china"
-                    }
-                    Option {
-                        id: dropdown_sdkdebrick
-                        text: "SDK Debrick OS"
-                        value: "sdkdebrick"
-                    }
-                    Option {
-                        id: dropdown_sdkcore
-                        text: "SDK Core OS"
-                        value: "sdkcore"
-                    }
-                    Option {
-                        id: dropdown_sdkautoloader
-                        text: "SDK Autoloader (BlackBerry Dev)"
-                        value: "sdkautoloader"
                     }
                     onSelectedValueChanged: {
                         JScript.setOS();
@@ -182,8 +199,9 @@ Page {
                     title: qsTr("Choose Device") + Retranslate.onLanguageChanged
                     Option {
                         id: dropdown_winchester
-                        text: "Z10 STL100-1"
+                        text: "Z10 STL100-1/Dev Alpha A/Dev Alpha B"
                         value: "winchester"
+                        enabled: (osdropdown.selectedValue == "core_vzw") ? false : true
                     }
                     Option {
                         id: dropdown_stl
@@ -197,7 +215,7 @@ Page {
                     }
                     Option {
                         id: dropdown_q10
-                        text: "Q10/Q5/P9983"
+                        text: "Q10/Q5/P9983/Dev Alpha C"
                         value: "8960wtr"
                     }
                     Option {
@@ -214,46 +232,6 @@ Page {
                         id: dropdown_windermere
                         text: "Passport"
                         value: "8974_sqw"
-                    }
-                    Option {
-                        id: dropdown_parana
-                        text: "Aquila/Aquarius"
-                        value: "8974"
-                    }
-                    Option {
-                        id: dropdown_winchester_daa
-                        text: "Dev Alpha A"
-                        value: "winchester_daa"
-                    }
-                    Option {
-                        id: dropdown_winchester_dab
-                        text: "Dev Alpha B"
-                        value: "winchester_dab"
-                    }
-                    Option {
-                        id: dropdown_winchester_daab
-                        text: "Dev Alpha A/B"
-                        value: "winchester_daab"
-                    }
-                    Option {
-                        id: dropdown_devalphac
-                        text: "Dev Alpha C"
-                        value: "8960wtr_dac"
-                    }
-                    Option {
-                        id: dropdown_pb
-                        text: "PlayBook"
-                        value: "winchester_pb"
-                    }
-                    Option {
-                        id: dropdown_pblte_old
-                        text: "4G PlayBook (v1)"
-                        value: "winchester_pblte_old"
-                    }
-                    Option {
-                        id: dropdown_pblte_new
-                        text: "4G PlayBook (v2)"
-                        value: "winchester_pblte_new"
                     }
                     onSelectedValueChanged: {
                         JScript.setRadios();
@@ -272,21 +250,15 @@ Page {
                     text: qsTr("Generate") + Retranslate.onLanguageChanged
                     horizontalAlignment: HorizontalAlignment.Center
                     onClicked: {
-                        if (osdropdown.selectedValue == "sdkautoloader") {
-                            radioclipboard.visible = false;
-                            allclipboard.visible = false;
-                        }
-                        else {
-                            radioclipboard.visible = true;
-                            allclipboard.visible = true;
-                        }
+                        radioclipboard.visible = true;
+                        allclipboard.visible = true;
                         osclipboard.visible = true;
                         clipboardheader.visible = true;
                         global_exportcontainer.visible = true;
                         global_linkcontainer.visible = true;
                         //Call Darcy
                         JScript.setEasterEgg(hashedswversion);
-                        JScript.generateLinks()
+                        JScript.generateDeltas();
                     }
                 }
                 Button {
@@ -349,7 +321,7 @@ Page {
                             id: exportbutton
                             text: qsTr("Export Links") + Retranslate.onLanguageChanged
                             onClicked: {
-                                _manager.exportLinks(swrelease, hashedswversion, osversion, radioversion);
+                                _manager.exportDeltaLinks(hashedswversion, osversion, radioversion, osinitversion, osinit, osinit2, radinit, radinit2);
                                 linkexporttoast.body = qsTr("Links saved to /downloads/bbdownloader") + Retranslate.onLanguageChanged;
                                 linkexporttoast.button.enabled = true;
                                 myQuery.query.uri = _manager.returnFilename();
@@ -362,7 +334,7 @@ Page {
                             id: sharebutton
                             text: qsTr("Share Links") + Retranslate.onLanguageChanged
                             onClicked: {
-                                myQuery.query.data = _manager.returnLinks(hashedswversion, osversion, radioversion);
+                                myQuery.query.data = _manager.returnDeltaLinks(hashedswversion, osversion, radioversion, osinit, osinit2, radinit, radinit2);
                                 myQuery.query.uri = "";
                                 myQuery.query.mimeType = "text/plain"
                                 myQuery.trigger(myQuery.query.invokeActionId);
@@ -425,13 +397,13 @@ Page {
                             visible: false
                             onClicked: {
                                 if (os_download_textarea.text.indexOf("http") != -1 && radio_download_textarea.text.indexOf("http") != -1) {
-                                _manager.copyLinks(hashedswversion, osversion, radioversion)
-                                linkexporttoast.body = qsTr("All URLs copied") + Retranslate.onLanguageChanged;
-                                linkexporttoast.button.enabled = true;
-                                myQuery.query.data = _manager.returnLinks(hashedswversion, osversion, radioversion);
-                                myQuery.query.uri = "";
-                                myQuery.query.mimeType = "text/plain"
-                                linkexporttoast.show();
+                                    _manager.copyDeltaLinks(hashedswversion, osversion, radioversion, osinit, osinit2, radinit, radinit2)
+                                    linkexporttoast.body = qsTr("All URLs copied") + Retranslate.onLanguageChanged;
+                                    linkexporttoast.button.enabled = true;
+                                    myQuery.query.data = _manager.returnLinks(hashedswversion, osversion, radioversion);
+                                    myQuery.query.uri = "";
+                                    myQuery.query.mimeType = "text/plain"
+                                    linkexporttoast.show();
                                 }
                             }
                         }

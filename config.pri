@@ -148,14 +148,16 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/9ppd/images/cover.png) \
         $$quote($$BASEDIR/assets/AppCover.qml) \
         $$quote($$BASEDIR/assets/AutoLookup.qml) \
+        $$quote($$BASEDIR/assets/DeltaOSDownloader.qml) \
+        $$quote($$BASEDIR/assets/DownloadComponent.qml) \
         $$quote($$BASEDIR/assets/EScreens.qml) \
+        $$quote($$BASEDIR/assets/ExportSheet.qml) \
         $$quote($$BASEDIR/assets/HardwareIDs.qml) \
         $$quote($$BASEDIR/assets/HashTools.qml) \
         $$quote($$BASEDIR/assets/HelpSheet.qml) \
         $$quote($$BASEDIR/assets/OSDownloader.qml) \
         $$quote($$BASEDIR/assets/OSRepo.qml) \
         $$quote($$BASEDIR/assets/ProgressBar.qml) \
-        $$quote($$BASEDIR/assets/PullToRefresh.qml) \
         $$quote($$BASEDIR/assets/SysInfo.qml) \
         $$quote($$BASEDIR/assets/html/escreens.html) \
         $$quote($$BASEDIR/assets/icons/icon_110.png) \
@@ -163,10 +165,19 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/icons/icon_86.png) \
         $$quote($$BASEDIR/assets/icons/icon_90.png) \
         $$quote($$BASEDIR/assets/icons/icon_96.png) \
+        $$quote($$BASEDIR/assets/images/0.png) \
+        $$quote($$BASEDIR/assets/images/1.png) \
+        $$quote($$BASEDIR/assets/images/2.png) \
+        $$quote($$BASEDIR/assets/images/3.png) \
+        $$quote($$BASEDIR/assets/images/4.png) \
+        $$quote($$BASEDIR/assets/images/5.png) \
+        $$quote($$BASEDIR/assets/images/6.png) \
+        $$quote($$BASEDIR/assets/images/7.png) \
+        $$quote($$BASEDIR/assets/images/8.png) \
+        $$quote($$BASEDIR/assets/images/9.png) \
         $$quote($$BASEDIR/assets/images/cover.png) \
         $$quote($$BASEDIR/assets/images/cover_small.png) \
         $$quote($$BASEDIR/assets/images/ic_info.png) \
-        $$quote($$BASEDIR/assets/images/ic_refresh.png) \
         $$quote($$BASEDIR/assets/images/ic_select.png) \
         $$quote($$BASEDIR/assets/js/functions.js) \
         $$quote($$BASEDIR/assets/main.qml) \
@@ -179,9 +190,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/splash/pb_portrait.png) \
         $$quote($$BASEDIR/assets/splash/wseries.png) \
         $$quote($$BASEDIR/assets/xml/hwid.xml) \
-        $$quote($$BASEDIR/assets/xml/repo.xml) \
-        $$quote($$BASEDIR/assets/xml/xml/hwid.xml) \
-        $$quote($$BASEDIR/assets/xml/xml/repo.xml)
+        $$quote($$BASEDIR/assets/xml/repo.xml)
 }
 
 config_pri_source_group1 {
@@ -266,10 +275,7 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/splash/*.qs) \
         $$quote($$BASEDIR/../assets/xml/*.qml) \
         $$quote($$BASEDIR/../assets/xml/*.js) \
-        $$quote($$BASEDIR/../assets/xml/*.qs) \
-        $$quote($$BASEDIR/../assets/xml/xml/*.qml) \
-        $$quote($$BASEDIR/../assets/xml/xml/*.js) \
-        $$quote($$BASEDIR/../assets/xml/xml/*.qs)
+        $$quote($$BASEDIR/../assets/xml/*.qs)
 
     HEADERS += \
         $$quote($$BASEDIR/../src/*.h) \
