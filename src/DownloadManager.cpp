@@ -69,10 +69,19 @@ void DownloadManager::append(const QUrl &url)
     ++m_totalCount;
 }
 
+void DownloadManager::setDefaultDir(QString dir){
+    default_dir = dir;
+}
+
+QString DownloadManager::defaultDir()
+{
+    return default_dir;
+}
+
 QString DownloadManager::saveFileName(const QUrl &url)
 {
     //Create dir in downloads dir
-    QDir dir("shared/downloads/bbdownloader/");
+    QDir dir(default_dir);
     if (!dir.exists()) {
         dir.mkpath(".");
     }
@@ -88,7 +97,7 @@ QString DownloadManager::saveFileName(const QUrl &url)
 
     // Replace the file name with 'download' if the URL provides no file name.
 
-    basename = "shared/downloads/bbdownloader/" + basename;
+    basename = default_dir + basename;
     // locate in downloads directory
 
     /**
@@ -360,14 +369,14 @@ QString DownloadManager::returnDeltaLinks(QString hashedswversion, QString osver
 
 void DownloadManager::saveTextFile(QString urls, QString swrelease)
 {
-    QDir dir("shared/downloads/bbdownloader/");
+    QDir dir(default_dir);
     if (!dir.exists()) {
         dir.mkpath(".");
     }
     //Get local date and time
     QDateTime dateTime = QDateTime::currentDateTime();
     QString dateTimeString = dateTime.toString("yyyy_MMM_dd_hh_mm_ss");
-    QFile file("shared/downloads/bbdownloader/"+swrelease+"--"+dateTimeString+".txt");
+    QFile file(default_dir+swrelease+"--"+dateTimeString+".txt");
     QFileInfo fi(file);
     filename = fi.absoluteFilePath();
     file.open(QIODevice::WriteOnly);

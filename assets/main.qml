@@ -12,6 +12,11 @@ TabbedPane {
             id: helpSheetDefinition
             HelpSheet {
             }
+        },
+        ComponentDefinition {
+            id: settingsSheetDefinition
+            SettingsSheet {
+            }
         }
     ]
     Menu.definition: MenuDefinition {
@@ -22,22 +27,12 @@ TabbedPane {
                 help.open();
             }
         }
-        actions: [
-            ActionItem {
-                title: qsTr("Change Theme") + Retranslate.onLanguageChanged
-                imageSource: "asset:///images/ic_select.png"
-                onTriggered: {
-                    if (Application.themeSupport.theme.colorTheme.style == VisualStyle.Bright) {
-                        Application.themeSupport.setVisualStyle(VisualStyle.Dark);
-                        Settings.saveValueFor("theme", "dark");
-                    }
-                    else {
-                        Application.themeSupport.setVisualStyle(VisualStyle.Bright);
-                        Settings.saveValueFor("theme", "bright");
-                    }
-                }
+        settingsAction: SettingsActionItem {
+            onTriggered: {
+                var settings = settingsSheetDefinition.createObject()
+                settings.open();
             }
-        ]
+        }
     }
     Tab {
         title: qsTr("OS Downloader") + Retranslate.onLanguageChanged
@@ -129,5 +124,9 @@ TabbedPane {
             }
         }
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
+    }
+    onCreationCompleted: {
+        var defaultdir = Settings.getValueFor("defaultdir", "shared/downloads/bbdownloader/");
+        _manager.setDefaultDir(defaultdir);
     }
 }

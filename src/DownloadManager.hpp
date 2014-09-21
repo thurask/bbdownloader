@@ -73,6 +73,10 @@
 
         QString readTextFile(QString uri);
 
+        void setDefaultDir(QString dir);
+
+        QString defaultDir();
+
     Q_SIGNALS:
         // The change notification signals of the properties
         void errorMessageChanged();
@@ -153,6 +157,8 @@
         QString exporturlsdelta;
 
         QString filename;
+
+        QString default_dir;
     };
 
 #endif /* DOWNLOADMANAGER_HPP_ */

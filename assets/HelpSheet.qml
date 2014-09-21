@@ -39,7 +39,7 @@ Sheet {
                 content.flags: TextContentFlag.ActiveText
             }
             Label {
-                text: qsTr("Save folder: /downloads/bbdownloader") + Retranslate.onLanguageChanged
+                text: qsTr("Default save folder: /accounts/1000/shared/downloads/bbdownloader") + Retranslate.onLanguageChanged
                 horizontalAlignment: HorizontalAlignment.Center
                 textFit.mode: LabelTextFitMode.Default
                 textStyle.textAlign: TextAlign.Center

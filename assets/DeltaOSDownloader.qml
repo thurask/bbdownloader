@@ -322,7 +322,7 @@ Page {
                             text: qsTr("Export Links") + Retranslate.onLanguageChanged
                             onClicked: {
                                 _manager.exportDeltaLinks(hashedswversion, osversion, radioversion, osinitversion, osinit, osinit2, radinit, radinit2);
-                                linkexporttoast.body = qsTr("Links saved to /downloads/bbdownloader") + Retranslate.onLanguageChanged;
+                                linkexporttoast.body = qsTr("Links saved to default directory") + Retranslate.onLanguageChanged;
                                 linkexporttoast.button.enabled = true;
                                 myQuery.query.uri = _manager.returnFilename();
                                 myQuery.query.data = "";

@@ -157,6 +157,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/OSDownloader.qml) \
         $$quote($$BASEDIR/assets/OSRepo.qml) \
         $$quote($$BASEDIR/assets/ProgressBar.qml) \
+        $$quote($$BASEDIR/assets/SettingsSheet.qml) \
         $$quote($$BASEDIR/assets/SysInfo.qml) \
         $$quote($$BASEDIR/assets/html/escreens.html) \
         $$quote($$BASEDIR/assets/icons/icon_110.png) \

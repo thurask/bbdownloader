@@ -1,5 +1,5 @@
 1
-50
+51
 10ppd/images/cover.png
 12ppd/AppCover.qml
 12ppd/images/cover.png
@@ -39,6 +39,7 @@ main.qml
 OSDownloader.qml
 OSRepo.qml
 ProgressBar.qml
+SettingsSheet.qml
 splash/aseries_landscape.png
 splash/aseries_portrait.png
 splash/lseries_landscape.png

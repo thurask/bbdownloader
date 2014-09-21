@@ -186,7 +186,7 @@ Page {
                         id: exportbutton
                         text: qsTr("Export to file") + Retranslate.onLanguageChanged
                         onClicked: {
-                            hashToast.body = qsTr("Hash saved to /downloads/bbdownloader") + Retranslate.onLanguageChanged;            
+                            hashToast.body = qsTr("Hash saved to default directory") + Retranslate.onLanguageChanged;            
                             hashToast.show();
                             if (togglebutton.checked == false){
                                 var exporthash = (hashinput.text + " -- " + hashoutput.text);

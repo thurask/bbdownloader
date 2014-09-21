@@ -36,10 +36,6 @@
         <translation>Export</translation>
     </message>
     <message>
-        <source>Lookups saved to /downloads/bbdownloader</source>
-        <translation>Lookups saved to /downloads/bbdownloader</translation>
-    </message>
-    <message>
         <source>Share</source>
         <translation>Share</translation>
     </message>
@@ -50,6 +46,10 @@
     <message>
         <source>Server</source>
         <translation>Server</translation>
+    </message>
+    <message>
+        <source>Lookups saved to default directory</source>
+        <translation>Lookups saved to default directory</translation>
     </message>
 </context>
 <context>
@@ -147,10 +147,6 @@
         <translation>Export Links</translation>
     </message>
     <message>
-        <source>Links saved to /downloads/bbdownloader</source>
-        <translation>Links saved to /downloads/bbdownloader</translation>
-    </message>
-    <message>
         <source>Copy All</source>
         <translation>Copy All</translation>
     </message>
@@ -177,6 +173,10 @@
     <message>
         <source>Share</source>
         <translation>Share</translation>
+    </message>
+    <message>
+        <source>Links saved to default directory</source>
+        <translation>Links saved to default directory</translation>
     </message>
 </context>
 <context>
@@ -283,16 +283,16 @@
         <translation>Export to file</translation>
     </message>
     <message>
-        <source>Hash saved to /downloads/bbdownloader</source>
-        <translation>Hash saved to /downloads/bbdownloader</translation>
-    </message>
-    <message>
         <source>Copy to clipboard</source>
         <translation>Copy to clipboard</translation>
     </message>
     <message>
         <source>Hash copied to clipboard</source>
         <translation>Hash copied to clipboard</translation>
+    </message>
+    <message>
+        <source>Hash saved to default directory</source>
+        <translation>Hash saved to default directory</translation>
     </message>
 </context>
 <context>
@@ -306,14 +306,14 @@
         <translation>BB10 OS Downloader developed by Thurask.</translation>
     </message>
     <message>
-        <source>Save folder: /downloads/bbdownloader</source>
-        <translation>Save folder: /downloads/bbdownloader</translation>
-    </message>
-    <message>
         <source>Do what you want with the source code: 
 https://github.com/thurask/bbdownloader</source>
         <translation>Do what you want with the source code: 
 https://github.com/thurask/bbdownloader</translation>
+    </message>
+    <message>
+        <source>Default save folder: /accounts/1000/shared/downloads/bbdownloader</source>
+        <translation>Default save folder: /accounts/1000/shared/downloads/bbdownloader</translation>
     </message>
 </context>
 <context>
@@ -383,10 +383,6 @@ https://github.com/thurask/bbdownloader</translation>
         <translation>Export Links</translation>
     </message>
     <message>
-        <source>Links saved to /downloads/bbdownloader</source>
-        <translation>Links saved to /downloads/bbdownloader</translation>
-    </message>
-    <message>
         <source>OS Version + 1</source>
         <translation>OS Version + 1</translation>
     </message>
@@ -434,6 +430,10 @@ https://github.com/thurask/bbdownloader</translation>
         <source>Share</source>
         <translation>Share</translation>
     </message>
+    <message>
+        <source>Links saved to default directory</source>
+        <translation>Links saved to default directory</translation>
+    </message>
 </context>
 <context>
     <name>OSRepo</name>
@@ -468,6 +468,41 @@ https://github.com/thurask/bbdownloader</translation>
     <message>
         <source>Known Software (network copy)</source>
         <translation>Known Software (network copy)</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsSheet</name>
+    <message>
+        <source>Settings</source>
+        <translation>Settings</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Close</translation>
+    </message>
+    <message>
+        <source>Choose Download Location</source>
+        <translation>Choose Download Location</translation>
+    </message>
+    <message>
+        <source>File Picker</source>
+        <translation>File Picker</translation>
+    </message>
+    <message>
+        <source>Download Folder</source>
+        <translation>Download Folder</translation>
+    </message>
+    <message>
+        <source>Current Directory: </source>
+        <translation>Current Directory:</translation>
+    </message>
+    <message>
+        <source>Change Theme</source>
+        <translation>Change Theme</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Default</translation>
     </message>
 </context>
 <context>
@@ -660,10 +695,6 @@ Workaround: tap link to download in Browser.</translation>
 </context>
 <context>
     <name>main</name>
-    <message>
-        <source>Change Theme</source>
-        <translation>Change Theme</translation>
-    </message>
     <message>
         <source>OS Downloader</source>
         <translation>OS Downloader</translation>

@@ -36,10 +36,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Lookups saved to /downloads/bbdownloader</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Share</source>
         <translation type="unfinished"></translation>
     </message>
@@ -49,6 +45,10 @@
     </message>
     <message>
         <source>Server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lookups saved to default directory</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -147,10 +147,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Links saved to /downloads/bbdownloader</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Copy All</source>
         <translation type="unfinished"></translation>
     </message>
@@ -176,6 +172,10 @@
     </message>
     <message>
         <source>Share</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Links saved to default directory</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -283,15 +283,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hash saved to /downloads/bbdownloader</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Copy to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Hash copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hash saved to default directory</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -306,12 +306,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Save folder: /downloads/bbdownloader</source>
+        <source>Do what you want with the source code: 
+https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Do what you want with the source code: 
-https://github.com/thurask/bbdownloader</source>
+        <source>Default save folder: /accounts/1000/shared/downloads/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -382,10 +382,6 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Links saved to /downloads/bbdownloader</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>OS Version + 1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -433,6 +429,10 @@ https://github.com/thurask/bbdownloader</source>
         <source>Share</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Links saved to default directory</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OSRepo</name>
@@ -466,6 +466,41 @@ https://github.com/thurask/bbdownloader</source>
     </message>
     <message>
         <source>Known Software (network copy)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsSheet</name>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose Download Location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File Picker</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download Folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current Directory: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change Theme</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -658,10 +693,6 @@ Workaround: tap link to download in Browser.</source>
 </context>
 <context>
     <name>main</name>
-    <message>
-        <source>Change Theme</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>OS Downloader</source>
         <translation type="unfinished"></translation>
