@@ -48,7 +48,7 @@ Page {
                         horizontalAlignment: HorizontalAlignment.Left
                         onTextChanging: {
                             osversion = osver_input.text
-                            _swlookup.post(osversion);
+                            _swlookup.post(osversion, "https://cs.sl.blackberry.com/cse/srVersionLookup/2.0.0/");
                         }
                     }
                     Button {

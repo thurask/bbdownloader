@@ -1,6 +1,6 @@
 /*Autolookup.qml
  ---------------
-Get some SW/OS pairs. Export your findings to a text file, if you want.
+ Get some SW/OS pairs. Export your findings to a text file, if you want.
  
  --Thurask*/
 
@@ -63,7 +63,7 @@ Page {
                 verticalAlignment: VerticalAlignment.Center
                 inputMode: TextFieldInputMode.NumbersAndPunctuation
                 onTextChanging: {
-                    _swlookup.post(autolookup_input.text);
+                    _swlookup.post(autolookup_input.text, serverdropdown.selectedValue);
                 }
                 input.submitKey: SubmitKey.Submit
                 hintText: qsTr("Enter OS version") + Retranslate.onLanguageChanged
@@ -97,6 +97,36 @@ Page {
                 timer.interval = timeoutdropdown.selectedValue;
             }
         }
+        DropDown {
+            id: serverdropdown
+            title: qsTr("Server") + Retranslate.onLanguageChanged
+            Option {
+                id: main
+                text: "Main"
+                value: "https://cs.sl.blackberry.com/cse/srVersionLookup/2.0.0/"
+                selected: true
+            }
+            Option {
+                id: beta
+                text: "Beta"
+                value: "https://beta.sl.eval.blackberry.com/slscse/srVersionLookup/2.0.0/"
+            }
+            Option {
+                id: beta2
+                text: "Beta 2"
+                value: "https://beta2.sl.eval.blackberry.com/slscse/srVersionLookup/2.0.0/"
+            }
+            Option {
+                id: alpha
+                text: "Alpha"
+                value: "https://alpha.sl.eval.blackberry.com/slscse/srVersionLookup/2.0.0/"
+            }
+            Option {
+                id: alpha2
+                text: "Alpha 2"
+                value: "https://alpha2.sl.eval.blackberry.com/slscse/srVersionLookup/2.0.0/"
+            }
+        }
         Container {
             layout: StackLayout {
                 orientation: LayoutOrientation.LeftToRight
@@ -119,6 +149,7 @@ Page {
             Button {
                 id: autoclearbutton
                 text: qsTr("Clear") + Retranslate.onLanguageChanged
+                enabled: (scanning == false)
                 onClicked: {
                     timer.stop();
                     outputtext.storedtext = outputtext.text;

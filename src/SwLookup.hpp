@@ -13,7 +13,7 @@ public:
     SwLookup(QObject* parent = 0);
 
 public Q_SLOTS:
-void post(QString osVer);
+void post(QString osVer, QString server);
     QString softwareRelease();
 
 Q_SIGNALS:

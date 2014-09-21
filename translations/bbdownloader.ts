@@ -47,6 +47,10 @@
         <source>Start/Stop</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Server</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DeltaOSDownloader</name>

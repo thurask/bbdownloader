@@ -6,7 +6,7 @@ Handles software version lookup.
 
 #include <QtCore>
 #include <QtNetwork>
-#include <QtXml/QtXml>
+#include <QtXml>
 #include <QDateTime>
 #include "SwLookup.hpp"
 
@@ -21,9 +21,9 @@ QString SwLookup::softwareRelease()
     return m_softwareRelease;
 }
 
-void SwLookup::post(QString osVer)
+void SwLookup::post(QString osVer, QString server)
 {
-    const QUrl url("https://cs.sl.blackberry.com/cse/srVersionLookup/2.0.0/");
+    QUrl url(server);
     QNetworkRequest request(url);
     QString query = "<srVersionLookupRequest version=\"2.0.0\" authEchoTS=\"1366644680359\">"
             "<clientProperties><hardware>"
