@@ -151,7 +151,6 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/DeltaOSDownloader.qml) \
         $$quote($$BASEDIR/assets/DownloadComponent.qml) \
         $$quote($$BASEDIR/assets/EScreens.qml) \
-        $$quote($$BASEDIR/assets/ExportSheet.qml) \
         $$quote($$BASEDIR/assets/HardwareIDs.qml) \
         $$quote($$BASEDIR/assets/HashTools.qml) \
         $$quote($$BASEDIR/assets/HelpSheet.qml) \
