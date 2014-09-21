@@ -6,6 +6,7 @@ function clearButton(){
     radioclipboard.visible = false;
     allclipboard.visible = false;
     global_exportcontainer.visible = false;
+    downloadComponent.visible = false;
     clipboardheader.visible = false;
     osdropdown.resetSelectedOption();
     devicedropdown.resetSelectedOption();
