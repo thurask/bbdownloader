@@ -522,7 +522,7 @@ https://github.com/thurask/bbdownloader</translation>
     </message>
     <message>
         <source>No updates available</source>
-        <translation type="unfinished">No updates available</translation>
+        <translation>No updates available</translation>
     </message>
 </context>
 <context>
@@ -749,11 +749,11 @@ Workaround: tap link to download in Browser.</translation>
     </message>
     <message>
         <source>Update available</source>
-        <translation type="unfinished">Update available</translation>
+        <translation>Update available</translation>
     </message>
     <message>
         <source>Update!</source>
-        <translation type="unfinished">Update!</translation>
+        <translation>Update!</translation>
     </message>
 </context>
 </TS>
