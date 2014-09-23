@@ -503,6 +503,26 @@ https://github.com/thurask/bbdownloader</source>
         <source>Default</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Check for Updates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Update!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Update available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No updates available</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SysInfo</name>
@@ -723,6 +743,14 @@ Workaround: tap link to download in Browser.</source>
     </message>
     <message>
         <source>Delta OS Downloader</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Update available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Update!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

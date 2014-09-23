@@ -178,7 +178,6 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/images/cover.png) \
         $$quote($$BASEDIR/assets/images/cover_small.png) \
         $$quote($$BASEDIR/assets/images/ic_info.png) \
-        $$quote($$BASEDIR/assets/images/ic_select.png) \
         $$quote($$BASEDIR/assets/js/functions.js) \
         $$quote($$BASEDIR/assets/main.qml) \
         $$quote($$BASEDIR/assets/splash/aseries_landscape.png) \
@@ -190,7 +189,8 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/splash/pb_portrait.png) \
         $$quote($$BASEDIR/assets/splash/wseries.png) \
         $$quote($$BASEDIR/assets/xml/hwid.xml) \
-        $$quote($$BASEDIR/assets/xml/repo.xml)
+        $$quote($$BASEDIR/assets/xml/repo.xml) \
+        $$quote($$BASEDIR/assets/xml/version.txt)
 }
 
 config_pri_source_group1 {
@@ -200,6 +200,7 @@ config_pri_source_group1 {
         $$quote($$BASEDIR/src/QmlBeam.cpp) \
         $$quote($$BASEDIR/src/Settings.cpp) \
         $$quote($$BASEDIR/src/SwLookup.cpp) \
+        $$quote($$BASEDIR/src/UpdateChecker.cpp) \
         $$quote($$BASEDIR/src/applicationui.cpp) \
         $$quote($$BASEDIR/src/hashcalculatemd4.cpp) \
         $$quote($$BASEDIR/src/hashcalculatemd5.cpp) \
@@ -213,6 +214,7 @@ config_pri_source_group1 {
         $$quote($$BASEDIR/src/QmlBeam.hpp) \
         $$quote($$BASEDIR/src/Settings.hpp) \
         $$quote($$BASEDIR/src/SwLookup.hpp) \
+        $$quote($$BASEDIR/src/UpdateChecker.hpp) \
         $$quote($$BASEDIR/src/applicationui.hpp) \
         $$quote($$BASEDIR/src/hashcalculatemd4.hpp) \
         $$quote($$BASEDIR/src/hashcalculatemd5.hpp) \

@@ -20,6 +20,7 @@
 #include "Clipboard.hpp"
 #include "timer.hpp"
 #include "Settings.hpp"
+#include "UpdateChecker.hpp"
 
 using namespace bb::cascades;
 
@@ -72,9 +73,13 @@ Q_DECL_EXPORT int main(int argc, char **argv)
     SwLookup swlookup;
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("_swlookup", &swlookup);
 
-    //Theme settings
+    //QSettings
     Settings *settings = new Settings();
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Settings", settings);
+
+    //Update checker
+    UpdateChecker *updatechecker = new UpdateChecker();
+    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Checker", updatechecker);
 
     //Timer
     qmlRegisterType<QTimer>("qt.timer", 1, 0, "QTimer");

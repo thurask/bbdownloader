@@ -33,7 +33,6 @@ images/9.png
 images/cover.png
 images/cover_small.png
 images/ic_info.png
-images/ic_select.png
 js/functions.js
 main.qml
 OSDownloader.qml
@@ -51,3 +50,4 @@ splash/wseries.png
 SysInfo.qml
 xml/hwid.xml
 xml/repo.xml
+xml/version.txt

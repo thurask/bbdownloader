@@ -7,7 +7,6 @@ Handles app theme settings.
 #include "Settings.hpp"
 
 #include <QtCore>
-#include <bb/system/Clipboard>
 
 Settings::Settings() {
 }

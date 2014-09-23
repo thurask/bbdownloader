@@ -465,4 +465,4 @@ function radioIncrement(){
 		splitarray[3] = newrad+1;
 		radiover_input.text = splitarray.join(".");
 	}
-}
+};

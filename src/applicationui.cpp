@@ -1,5 +1,6 @@
 #include "applicationui.hpp"
 #include "QmlBeam.hpp"
+#include "UpdateChecker.hpp"
 
 #include <bb/cascades/AbstractCover>
 #include <bb/cascades/Application>
@@ -13,12 +14,11 @@
 using namespace bb::cascades;
 
 ApplicationUI::ApplicationUI() :
-                QObject()
+                        QObject()
 {
 
     // get app version without hardcoding
     bb::ApplicationInfo appInfo;
-    QString versionNumber = appInfo.version();
     QDeclarativePropertyMap* appProperties = new QDeclarativePropertyMap;
     appProperties->insert("name", QVariant(appInfo.title()));
     appProperties->insert("version", QVariant(appInfo.version()));
@@ -29,9 +29,9 @@ ApplicationUI::ApplicationUI() :
     m_pLocaleHandler = new LocaleHandler(this);
 
     bool res = QObject::connect(m_pLocaleHandler,
-        SIGNAL(systemLanguageChanged()),
-        this,
-        SLOT(onSystemLanguageChanged()));
+            SIGNAL(systemLanguageChanged()),
+            this,
+            SLOT(onSystemLanguageChanged()));
 
     // This is only available in Debug builds
     Q_ASSERT(res);
@@ -75,6 +75,6 @@ void ApplicationUI::onSystemLanguageChanged()
     QString file_name = QString("bbdownloader_%1").arg(locale_string);
     if (m_pTranslator->load(file_name, "app/native/qm")) {
         QCoreApplication::instance()
-            ->installTranslator(m_pTranslator);
+        ->installTranslator(m_pTranslator);
     }
 }
