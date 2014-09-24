@@ -178,7 +178,6 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/images/cover.png) \
         $$quote($$BASEDIR/assets/images/cover_small.png) \
         $$quote($$BASEDIR/assets/images/ic_info.png) \
-        $$quote($$BASEDIR/assets/js/functions.js) \
         $$quote($$BASEDIR/assets/main.qml) \
         $$quote($$BASEDIR/assets/splash/aseries_landscape.png) \
         $$quote($$BASEDIR/assets/splash/aseries_portrait.png) \
@@ -271,9 +270,6 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/images/*.qml) \
         $$quote($$BASEDIR/../assets/images/*.js) \
         $$quote($$BASEDIR/../assets/images/*.qs) \
-        $$quote($$BASEDIR/../assets/js/*.qml) \
-        $$quote($$BASEDIR/../assets/js/*.js) \
-        $$quote($$BASEDIR/../assets/js/*.qs) \
         $$quote($$BASEDIR/../assets/splash/*.qml) \
         $$quote($$BASEDIR/../assets/splash/*.js) \
         $$quote($$BASEDIR/../assets/splash/*.qs) \

@@ -60,7 +60,7 @@ Page {
                 Label {
                     text: qsTr("Serial Number: ") + Retranslate.onLanguageChanged + hardwareinfo.serialNumber;
                 }
-            }          
+            }
             Container {
                 topPadding: 20.0
                 Header {

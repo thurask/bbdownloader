@@ -7,8 +7,6 @@
 import bb.cascades 1.3
 import bb.system 1.2
 
-import "js/functions.js" as JScript
-
 Page {
     property string hashedswversion
     property string swrelease
@@ -17,6 +15,7 @@ Page {
     property string osinit
     property string osinit2
     property string radioversion
+    property string radioinitversion
     property string radinit
     property string radinit2
     ScrollView {
@@ -139,6 +138,7 @@ Page {
                         hintText: qsTr("Initial Radio Version") + Retranslate.onLanguageChanged
                         inputMode: TextFieldInputMode.NumbersAndPunctuation
                         onTextChanged: {
+                            radioinitversion = radioinit_input.text
                             radinit = radioinit_input.text.replace(/\./g, "");
                             radinit2 = radioinit_input.text.replace(/\./g, "_");
                         }
@@ -163,8 +163,7 @@ Page {
                         value: "core"
                         onSelectedChanged: {
                             if (selected){
-                                os_download_label.text = qsTr("Delta from ") + Retranslate.onLanguageChanged + osinit_input.text + qsTr(" to ") + Retranslate.onLanguageChanged + osver_input.text + ":";
-                                dropdown_winchester.setEnabled(true);
+                                dropdown_winchester.setEnabled(true)
                             }
                         }
                     }
@@ -174,10 +173,13 @@ Page {
                         value: "core_vzw"
                         onSelectedChanged: {
                             if (selected){
-                                os_download_label.text = qsTr("Verizon delta from ") + Retranslate.onLanguageChanged + osinit_input.text + qsTr(" to ") + Retranslate.onLanguageChanged + osver_input.text + ":";
-                                dropdown_winchester.setEnabled(false);
+                                dropdown_winchester.setEnabled(false)
                             }
                         }
+                    }
+                    onSelectedOptionChanged: {
+                        _linkgen.setDeltaOsLabel(osdropdown.selectedValue, osversion, osinitversion);
+                        os_download_label.text = _linkgen.getDeltaOsLabel();
                     }
                 }
                 DropDown {
@@ -185,9 +187,9 @@ Page {
                     title: qsTr("Choose Device") + Retranslate.onLanguageChanged
                     Option {
                         id: dropdown_winchester
-                        text: "Z10 STL100-1/Dev Alpha A/Dev Alpha B"
+                        text: "Z10 STL100-1"
                         value: "winchester"
-                        enabled: (osdropdown.selectedValue == "core_vzw") ? false : true
+                        enabled: (osdropdown.selectedValue == "core_vzw" ? false : true)
                     }
                     Option {
                         id: dropdown_stl
@@ -201,17 +203,17 @@ Page {
                     }
                     Option {
                         id: dropdown_q10
-                        text: "Q10/Q5/P9983/Dev Alpha C"
+                        text: "Q10/Q5/P9983"
                         value: "8960wtr"
                     }
                     Option {
                         id: dropdown_z30
-                        text: "Z30/Manitoba/Classic"
+                        text: "Z30/Classic"
                         value: "8960wtr5"
                     }
                     Option {
                         id: dropdown_jakarta
-                        text: "Z3/Kopi/Cafe"
+                        text: "Z3"
                         value: "8930wtr5"
                     }
                     Option {
@@ -220,7 +222,8 @@ Page {
                         value: "8974_sqw"
                     }
                     onSelectedValueChanged: {
-                        JScript.setRadios();
+                        _linkgen.setDeltaRadioLabel(devicedropdown.selectedValue, radioversion, radioinitversion)
+                        radio_download_label.text = _linkgen.getDeltaRadioLabel()
                     }
                 }
             }
@@ -239,7 +242,10 @@ Page {
                         global_exportcontainer.visible = true;
                         global_clipboardcontainer.visible = true;
                         global_linkcontainer.visible = true;
-                        JScript.generateDeltas();
+                        _linkgen.setDeltaOS(osversion, osinitversion, hashedswversion, osdropdown.selectedValue, devicedropdown.selectedValue);
+                        _linkgen.setDeltaRadio(radioversion, radioinitversion, hashedswversion, devicedropdown.selectedValue);
+                        os_download_textarea.text = _linkgen.getDeltaOS();
+                        radio_download_textarea.text = _linkgen.getDeltaRadio();
                     }
                 }
                 Button {
@@ -248,6 +254,8 @@ Page {
                     onClicked: {
                         os_download_textarea.text = "";
                         radio_download_textarea.text = "";
+                        _linkgen.forceDeltaOS("");
+                        _linkgen.forceDeltaRadio("");
                         global_linkcontainer.visible = false;
                         global_exportcontainer.visible = false;
                         global_clipboardcontainer.visible = false;
@@ -334,6 +342,7 @@ Page {
                     }
                     horizontalAlignment: HorizontalAlignment.Center
                     topPadding: 10.0
+                    visible: false
                     Header {
                         title: qsTr("Clipboard") + Retranslate.onLanguageChanged
                     }
@@ -389,6 +398,7 @@ Page {
                 Container {
                     topPadding: 10.0
                     id: global_linkcontainer
+                    visible: false
                     layout: StackLayout {
                         orientation: LayoutOrientation.TopToBottom
                     }

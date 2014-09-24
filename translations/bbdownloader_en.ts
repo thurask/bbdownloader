@@ -179,18 +179,6 @@
         <translation>Links saved to default directory</translation>
     </message>
     <message>
-        <source>Delta from </source>
-        <translation>Delta from </translation>
-    </message>
-    <message>
-        <source> to </source>
-        <translation> to </translation>
-    </message>
-    <message>
-        <source>Verizon delta from </source>
-        <translation>Verizon delta from </translation>
-    </message>
-    <message>
         <source>Use Current</source>
         <translation>Use Current</translation>
     </message>
@@ -333,14 +321,129 @@ https://github.com/thurask/bbdownloader</translation>
     </message>
 </context>
 <context>
+    <name>LinkGenerator</name>
+    <message>
+        <source>Delta from </source>
+        <translation>Delta from </translation>
+    </message>
+    <message>
+        <source> to </source>
+        <translation> to </translation>
+    </message>
+    <message>
+        <source>Verizon delta from </source>
+        <translation>Verizon delta from </translation>
+    </message>
+    <message>
+        <source>Debrick OS:</source>
+        <translation>Debrick OS:</translation>
+    </message>
+    <message>
+        <source>Core OS:</source>
+        <translation>Core OS:</translation>
+    </message>
+    <message>
+        <source>Verizon Debrick OS:</source>
+        <translation>Verizon Debrick OS:</translation>
+    </message>
+    <message>
+        <source>Verizon Core OS:</source>
+        <translation>Verizon Core OS</translation>
+    </message>
+    <message>
+        <source>China Debrick OS:</source>
+        <translation>China Debrick OS:</translation>
+    </message>
+    <message>
+        <source>China Core OS:</source>
+        <translation>China Core OS:</translation>
+    </message>
+    <message>
+        <source>SDK Debrick OS:</source>
+        <translation>SDK Debrick OS:</translation>
+    </message>
+    <message>
+        <source>SDK Core OS:</source>
+        <translation>SDK Core OS:</translation>
+    </message>
+    <message>
+        <source>SDK Autoloader:</source>
+        <translation>SDK Autoloader:</translation>
+    </message>
+    <message>
+        <source>OMAP Z10/Dev Alpha A/B Radio:</source>
+        <translation>OMAP Z10/Dev Alpha A/B Radio:</translation>
+    </message>
+    <message>
+        <source>4G PlayBook Radio (mod-qcmdm):</source>
+        <translation>4G PlayBook Radio (mod-qcmdm):</translation>
+    </message>
+    <message>
+        <source>4G PlayBook Radio (mod.qcmdm):</source>
+        <translation>4G PlayBook Radio (mod.qcmdm):</translation>
+    </message>
+    <message>
+        <source>Qualcomm Z10/P9982 Radio:</source>
+        <translation>Qualcomm Z10/P9982 Radio:</translation>
+    </message>
+    <message>
+        <source>Verizon Z10 Radio:</source>
+        <translation>Verizon Z10 Radio:</translation>
+    </message>
+    <message>
+        <source>Q10/Q5/P9983 Radio:</source>
+        <translation>Q10/Q5/P9983 Radio:</translation>
+    </message>
+    <message>
+        <source>Z30/Manitoba/Classic Radio:</source>
+        <translation>Z30/Manitoba/Classic Radio:</translation>
+    </message>
+    <message>
+        <source>Z3/Kopi/Cafe Radio:</source>
+        <translation>Z3/Kopi/Cafe Radio:</translation>
+    </message>
+    <message>
+        <source>Passport Radio:</source>
+        <translation>Passport Radio:</translation>
+    </message>
+    <message>
+        <source>Aquila/Aquarius Radio:</source>
+        <translation>Aquila/Aquarius Radio:</translation>
+    </message>
+    <message>
+        <source>OMAP Z10 radio delta from </source>
+        <translation>OMAP Z10 radio delta from </translation>
+    </message>
+    <message>
+        <source>Qualcomm Z10/P9982 radio delta from </source>
+        <translation>Qualcomm Z10/P9982 radio delta from </translation>
+    </message>
+    <message>
+        <source>Verizon Z10 radio delta from </source>
+        <translation>Verizon Z10 radio delta from </translation>
+    </message>
+    <message>
+        <source>Q10/Q5/P9983 radio delta from </source>
+        <translation>Q10/Q5/P9983 radio delta from </translation>
+    </message>
+    <message>
+        <source>Z3 radio delta from </source>
+        <translation>Z3 radio delta from </translation>
+    </message>
+    <message>
+        <source>Passport radio delta from </source>
+        <translation>Passport radio delta from </translation>
+    </message>
+    <message>
+        <source>Z30/Classic radio delta from </source>
+        <translation>Z30/Classic radio delta from </translation>
+    </message>
+</context>
+<context>
     <name>OSDownloader</name>
     <message>
         <source>Inputs</source>
         <translation>Inputs</translation>
-    </message>
-    <message>
-        <source>Known Software</source>
-        <translation>Known Software</translation>
     </message>
     <message>
         <source>Target OS Version</source>
@@ -355,52 +458,16 @@ https://github.com/thurask/bbdownloader</translation>
         <translation>Target Radio Version</translation>
     </message>
     <message>
+        <source>OS Version + 1</source>
+        <translation>OS Version + 1</translation>
+    </message>
+    <message>
         <source>Target SW Version</source>
         <translation>Target SW Version</translation>
     </message>
     <message>
-        <source>Links</source>
-        <translation>Links</translation>
-    </message>
-    <message>
-        <source>OS Link:</source>
-        <translation>OS Link:</translation>
-    </message>
-    <message>
-        <source>Radio Link:</source>
-        <translation>Radio Link:</translation>
-    </message>
-    <message>
-        <source>Copy OS</source>
-        <translation>Copy OS</translation>
-    </message>
-    <message>
-        <source>OS URL copied</source>
-        <translation>OS URL copied</translation>
-    </message>
-    <message>
-        <source>Copy Radio</source>
-        <translation>Copy Radio</translation>
-    </message>
-    <message>
-        <source>Radio URL copied</source>
-        <translation>Radio URL copied</translation>
-    </message>
-    <message>
-        <source>Download OS</source>
-        <translation>Download OS</translation>
-    </message>
-    <message>
-        <source>Download Radio</source>
-        <translation>Download Radio</translation>
-    </message>
-    <message>
-        <source>Export Links</source>
-        <translation>Export Links</translation>
-    </message>
-    <message>
-        <source>OS Version + 1</source>
-        <translation>OS Version + 1</translation>
+        <source>Known Software</source>
+        <translation>Known Software</translation>
     </message>
     <message>
         <source>Choose OS Type</source>
@@ -419,6 +486,54 @@ https://github.com/thurask/bbdownloader</translation>
         <translation>Clear</translation>
     </message>
     <message>
+        <source>OS Link:</source>
+        <translation>OS Link:</translation>
+    </message>
+    <message>
+        <source>Radio Link:</source>
+        <translation>Radio Link:</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Links</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Export</translation>
+    </message>
+    <message>
+        <source>Export Links</source>
+        <translation>Export Links</translation>
+    </message>
+    <message>
+        <source>Links saved to default directory</source>
+        <translation>Links saved to default directory</translation>
+    </message>
+    <message>
+        <source>Share Links</source>
+        <translation>Share Links</translation>
+    </message>
+    <message>
+        <source>Clipboard</source>
+        <translation>Clipboard</translation>
+    </message>
+    <message>
+        <source>Copy OS</source>
+        <translation>Copy OS</translation>
+    </message>
+    <message>
+        <source>OS URL copied</source>
+        <translation>OS URL copied</translation>
+    </message>
+    <message>
+        <source>Copy Radio</source>
+        <translation>Copy Radio</translation>
+    </message>
+    <message>
+        <source>Radio URL copied</source>
+        <translation>Radio URL copied</translation>
+    </message>
+    <message>
         <source>Copy All</source>
         <translation>Copy All</translation>
     </message>
@@ -427,28 +542,20 @@ https://github.com/thurask/bbdownloader</translation>
         <translation>All URLs copied</translation>
     </message>
     <message>
-        <source>Share Links</source>
-        <translation>Share Links</translation>
-    </message>
-    <message>
-        <source>Export</source>
-        <translation>Export</translation>
-    </message>
-    <message>
-        <source>Clipboard</source>
-        <translation>Clipboard</translation>
-    </message>
-    <message>
         <source>Downloads</source>
         <translation>Downloads</translation>
     </message>
     <message>
-        <source>Share</source>
-        <translation>Share</translation>
+        <source>Download OS</source>
+        <translation>Download OS</translation>
     </message>
     <message>
-        <source>Links saved to default directory</source>
-        <translation>Links saved to default directory</translation>
+        <source>Download Radio</source>
+        <translation>Download Radio</translation>
+    </message>
+    <message>
+        <source>Share</source>
+        <translation>Share</translation>
     </message>
 </context>
 <context>
@@ -694,43 +801,6 @@ https://github.com/thurask/bbdownloader</translation>
     <message>
         <source>Webkit: </source>
         <translation>Webkit: </translation>
-    </message>
-</context>
-<context>
-    <name>functions</name>
-    <message>
-        <source>OS Link:</source>
-        <translation>OS Link:</translation>
-    </message>
-    <message>
-        <source>Radio Link:</source>
-        <translation>Radio Link:</translation>
-    </message>
-    <message>
-        <source>SDK downloads wonky. 
-Workaround: tap link to download in Browser.</source>
-        <translation>SDK downloads wonky. 
-Workaround: tap link to download in Browser.</translation>
-    </message>
-    <message>
-        <source>Please set OS Type to Debrick OS</source>
-        <translation>Please set OS Type to Debrick OS</translation>
-    </message>
-    <message>
-        <source>Please set OS Type to Debrick/Core OS/SDK OS</source>
-        <translation>Please set OS Type to Debrick/Core OS/SDK OS</translation>
-    </message>
-    <message>
-        <source>Delta from </source>
-        <translation>Delta from </translation>
-    </message>
-    <message>
-        <source> to </source>
-        <translation> to </translation>
-    </message>
-    <message>
-        <source>Verizon delta from </source>
-        <translation>Verizon delta from </translation>
     </message>
 </context>
 <context>

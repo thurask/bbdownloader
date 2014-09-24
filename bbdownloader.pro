@@ -7,5 +7,4 @@ LIBS += -lbb -lbbsystem -lbbdata -lbbcascadespickers -lbbdevice
 include(config.pri)
 
 TRANSLATIONS = \
-$${TARGET}_en.ts \
-$${TARGET}_.ts
+$${TARGET}_en.ts

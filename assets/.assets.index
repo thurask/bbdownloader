@@ -1,5 +1,5 @@
 1
-51
+50
 10ppd/images/cover.png
 12ppd/AppCover.qml
 12ppd/images/cover.png
@@ -33,7 +33,6 @@ images/9.png
 images/cover.png
 images/cover_small.png
 images/ic_info.png
-js/functions.js
 main.qml
 OSDownloader.qml
 OSRepo.qml
