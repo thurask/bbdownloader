@@ -71,7 +71,7 @@
 
         QString returnFilename();
 
-        QString readTextFile(QString uri);
+        QString readTextFile(QString uri, QString mode);
 
         void setDefaultDir(QString dir);
 

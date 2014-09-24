@@ -10,100 +10,80 @@ import bb.system 1.2
 import "js/functions.js" as JScript
 
 Page {
-    id:mainpage
     property string hashedswversion
     property string swrelease
     property string osversion
     property string radioversion
     ScrollView {
-        id: mainscrollview
         scrollViewProperties.pinchToZoomEnabled: false
         scrollViewProperties.scrollMode: ScrollMode.Vertical
         scrollViewProperties.overScrollEffectMode: OverScrollEffectMode.None
         Container {
-            id: global_download_container
             Header {
                 title: qsTr("Inputs") + Retranslate.onLanguageChanged
             }
             //Inputs
             Container {
-                id: input_variable_container
                 layout: StackLayout {
                     orientation: LayoutOrientation.TopToBottom 
                 }
                 Label {
-                    id: osver_label
                     text: qsTr("Target OS Version") + Retranslate.onLanguageChanged
                 }
                 Container {
-                    id: osinputcontainer
                     layout: StackLayout {
                         orientation: LayoutOrientation.LeftToRight
                     }
-                    verticalAlignment: VerticalAlignment.Top
                     TextField {
                         id: osver_input
-                        hintText: osver_label.text
+                        hintText: qsTr("Target OS Version") + Retranslate.onLanguageChanged
                         inputMode: TextFieldInputMode.NumbersAndPunctuation
-                        horizontalAlignment: HorizontalAlignment.Left
-                        onTextChanging: {
+                        onTextChanged: {
                             osversion = osver_input.text
                             _swlookup.post(osversion, "https://cs.sl.blackberry.com/cse/srVersionLookup/2.0.0/");
                         }
                     }
                     Button {
-                        id: lookupbutton
                         text: qsTr("Lookup") + Retranslate.onLanguageChanged
                         onClicked: {
                             swver_input.text = _swlookup.softwareRelease();                                                              
                         }
-                        verticalAlignment: VerticalAlignment.Top
                     }
                 }
                 Label {
-                    id: radiover_label
                     text: qsTr("Target Radio Version") + Retranslate.onLanguageChanged
                 }
                 Container {
-                    id: radioinputcontainer
                     layout: StackLayout {
                         orientation: LayoutOrientation.LeftToRight
                     }
-                    verticalAlignment: VerticalAlignment.Top
                     TextField {
                         id: radiover_input
-                        hintText: radiover_label.text
+                        hintText: qsTr("Target Radio Version") + Retranslate.onLanguageChanged
                         inputMode: TextFieldInputMode.NumbersAndPunctuation
-                        onTextChanging: {
+                        onTextChanged: {
                             radioversion = radiover_input.text
                         }
                     }
                     Button {
-                        id: incrementbutton
                         text: qsTr("OS Version + 1") + Retranslate.onLanguageChanged
                         onClicked: {
-                            JScript.radioIncrement();
+                            radiover_input.text = _linkgen.incrementRadio(osversion);
                         }
                     }
                 }
                 Label {
-                    id: swver_label
                     text: qsTr("Target SW Version") + Retranslate.onLanguageChanged
                 }
                 Container {
-                    id: swverinputcontainer
                     layout: StackLayout {
                         orientation: LayoutOrientation.LeftToRight
                     }
                     TextField {
                         id: swver_input
-                        hintText: swver_label.text
-                        onTextChanging: {
-                            swrelease = swver_input.text
-                            hashCalculateSha.calculateHash(swrelease)
-                            hashedswversion = hashCalculateSha.getHash()
-                        }
+                        hintText: qsTr("Target SW Version") + Retranslate.onLanguageChanged
                         onTextChanged: {
+                            swrelease = swver_input.text
                             hashCalculateSha.calculateHash(swrelease)
                             hashedswversion = hashCalculateSha.getHash()
                         }
@@ -116,7 +96,6 @@ Page {
                             var createdSheet = repoCompDef.createObject();
                             createdSheet.open();
                         }
-                        verticalAlignment: VerticalAlignment.Bottom
                     }
                 }
             }
@@ -280,12 +259,9 @@ Page {
                             radioclipboard.visible = true;
                             allclipboard.visible = true;
                         }
-                        osclipboard.visible = true;
-                        clipboardheader.visible = true;
+                        global_clipboardcontainer.visible = true;
                         global_exportcontainer.visible = true;
                         global_linkcontainer.visible = true;
-                        //Call Darcy
-                        JScript.setEasterEgg(hashedswversion);
                         JScript.generateLinks()
                     }
                 }
@@ -293,7 +269,16 @@ Page {
                     id: clearbutton
                     text: qsTr("Clear") + Retranslate.onLanguageChanged
                     onClicked: {
-                        JScript.clearButton();
+                        os_download_textarea.text = "";
+                        radio_download_textarea.text = "";
+                        global_linkcontainer.visible = false;
+                        global_exportcontainer.visible = false;
+                        global_clipboardcontainer.visible = false;
+                        downloadComponent.visible = false;
+                        osdropdown.resetSelectedOption();
+                        devicedropdown.resetSelectedOption();
+                        os_download_label.text = qsTr("OS Link:") + Retranslate.onLanguageChanged;
+                        radio_download_label.text = qsTr("Radio Link:") + Retranslate.onLanguageChanged;
                         _manager.messagesCleared();
                     }
                 }
@@ -319,7 +304,6 @@ Page {
                 Label {
                     id: radio_download_label
                     text: qsTr("Radio Link:") + Retranslate.onLanguageChanged
-                    multiline: true
                 }
                 TextArea {
                     id: radio_download_textarea

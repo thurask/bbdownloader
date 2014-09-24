@@ -1,9 +1,8 @@
-/*
- * UpdateChecker.cpp
- *
- *  Created on: Sep 22, 2014
- *      Author: Thurask
- */
+/*UpdateChecker.cpp
+-------------------
+Handles app version lookup.
+
+--Thurask*/
 
 #include "UpdateChecker.hpp"
 #include <bb/ApplicationInfo>

@@ -58,3 +58,19 @@ void SwLookup::onGetReply()
     }
     sender()->deleteLater();
 }
+
+QString SwLookup::lookupIncrement(QString os)
+{
+    QStringList splitarray = os.split(".");
+    if (splitarray[3] == "") {
+                return "Error";
+            }
+    if (splitarray[3].toInt() < 9998){
+        splitarray[3] = QString::number((splitarray[3]).toInt() + 3);
+        return splitarray.join(".");
+    }
+    else {
+        splitarray[3] = QString::number(0);
+        return splitarray.join(".");
+    }
+}

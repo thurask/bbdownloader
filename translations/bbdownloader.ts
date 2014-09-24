@@ -178,6 +178,22 @@
         <source>Links saved to default directory</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Delta from </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> to </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Verizon delta from </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Current</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DownloadComponent</name>
@@ -615,22 +631,6 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Adobe Flash:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Adobe AIR:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>WiFi:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Webkit:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>HDMI: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -662,6 +662,38 @@ https://github.com/thurask/bbdownloader</source>
         <source>None</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>OS Version: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio Version: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>NFC Firmware: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>NFC Stack: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adobe Flash: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adobe AIR: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>WiFi: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Webkit: </source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>functions</name>
@@ -687,23 +719,11 @@ Workaround: tap link to download in Browser.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Please pick a BB10 device.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Delta from </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Verizon delta from </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please set OS Type to Delta OS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please set OS Type to Delta OS/Verizon Delta OS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -715,10 +735,6 @@ Workaround: tap link to download in Browser.</source>
     <name>main</name>
     <message>
         <source>BB10 OS Downloader %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>OS Downloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -742,15 +758,19 @@ Workaround: tap link to download in Browser.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Delta OS Downloader</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Update available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Update!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OS Downloader</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delta OS Downloader</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

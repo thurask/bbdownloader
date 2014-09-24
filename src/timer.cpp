@@ -1,3 +1,9 @@
+/*timer.cpp
+-----------
+Provides a QTimer that can be used in QML.
+
+--Thurask*/
+
 #include <QTimer>
 #include "timer.hpp"
 

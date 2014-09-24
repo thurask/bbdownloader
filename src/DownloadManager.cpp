@@ -390,12 +390,18 @@ QString DownloadManager::returnFilename()
     return "file://" + filename;
 }
 
-QString DownloadManager::readTextFile(QString uri)
+QString DownloadManager::readTextFile(QString uri, QString mode)
 {
     QFile file(uri);
     file.open(QIODevice::ReadOnly);
     QTextStream textStream(&file);
-    QString text = textStream.readAll();
+    QString text;
+    if (mode == "normal"){
+        text = textStream.readAll();
+    }
+    if (mode == "firstline"){
+        text = textStream.readLine();
+    }
     file.close();
     return text;
 }

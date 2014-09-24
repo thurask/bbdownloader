@@ -13,9 +13,9 @@ Clipboard::Clipboard()
 }
 
 void Clipboard::copyToClipboard(QByteArray copyText){
-    bb::system::Clipboard clipboard;
-    clipboard.clear();
-    clipboard.insert("text/plain", copyText);
+    bb::system::Clipboard clipboard; // create clipboard
+    clipboard.clear(); //empty
+    clipboard.insert("text/plain", copyText); //append
 }
 
 Clipboard::~Clipboard() {

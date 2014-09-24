@@ -21,6 +21,7 @@
 #include "timer.hpp"
 #include "Settings.hpp"
 #include "UpdateChecker.hpp"
+#include "LinkGenerator.hpp"
 
 using namespace bb::cascades;
 
@@ -69,7 +70,7 @@ Q_DECL_EXPORT int main(int argc, char **argv)
     Clipboard *clipboard = new Clipboard();
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Clipboard", clipboard);
 
-    //Software lookup poster
+    //Software lookup
     SwLookup swlookup;
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("_swlookup", &swlookup);
 
@@ -80,6 +81,10 @@ Q_DECL_EXPORT int main(int argc, char **argv)
     //Update checker
     UpdateChecker *updatechecker = new UpdateChecker();
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Checker", updatechecker);
+
+    //Link generator
+    LinkGenerator linkgen;
+    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("_linkgen", &linkgen);
 
     //Timer
     qmlRegisterType<QTimer>("qt.timer", 1, 0, "QTimer");

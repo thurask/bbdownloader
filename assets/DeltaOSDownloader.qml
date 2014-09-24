@@ -10,7 +10,6 @@ import bb.system 1.2
 import "js/functions.js" as JScript
 
 Page {
-    id:mainpage
     property string hashedswversion
     property string swrelease
     property string osversion
@@ -21,177 +20,164 @@ Page {
     property string radinit
     property string radinit2
     ScrollView {
-        id: mainscrollview
         scrollViewProperties.pinchToZoomEnabled: false
         scrollViewProperties.scrollMode: ScrollMode.Vertical
         scrollViewProperties.overScrollEffectMode: OverScrollEffectMode.None
         Container {
-            id: global_download_container
             Header {
                 title: qsTr("Inputs") + Retranslate.onLanguageChanged
             }
             //Inputs
             Container {
-                id: input_variable_container
                 layout: StackLayout {
                     orientation: LayoutOrientation.TopToBottom 
                 }
                 Label {
-                    id: osver_label
                     text: qsTr("Target OS Version") + Retranslate.onLanguageChanged
                 }
                 Container {
-                    id: osinputcontainer
                     layout: StackLayout {
                         orientation: LayoutOrientation.LeftToRight
                     }
-                    verticalAlignment: VerticalAlignment.Top
                     TextField {
                         id: osver_input
-                        hintText: osver_label.text
+                        hintText: qsTr("Target OS Version") + Retranslate.onLanguageChanged
                         inputMode: TextFieldInputMode.NumbersAndPunctuation
-                        horizontalAlignment: HorizontalAlignment.Left
-                        onTextChanging: {
+                        onTextChanged: {
                             osversion = osver_input.text
                             _swlookup.post(osversion, "https://cs.sl.blackberry.com/cse/srVersionLookup/2.0.0/");
                         }
                     }
                     Button {
-                        id: lookupbutton
                         text: qsTr("Lookup") + Retranslate.onLanguageChanged
                         onClicked: {
                             swver_input.text = _swlookup.softwareRelease();                                                              
                         }
-                        verticalAlignment: VerticalAlignment.Top
                     }
                 }
                 Label {
-                    id: radiover_label
                     text: qsTr("Target Radio Version") + Retranslate.onLanguageChanged
                 }
                 Container {
-                    id: radioinputcontainer
                     layout: StackLayout {
                         orientation: LayoutOrientation.LeftToRight
                     }
-                    verticalAlignment: VerticalAlignment.Top
                     TextField {
                         id: radiover_input
-                        hintText: radiover_label.text
+                        hintText: qsTr("Target Radio Version") + Retranslate.onLanguageChanged
                         inputMode: TextFieldInputMode.NumbersAndPunctuation
-                        onTextChanging: {
+                        onTextChanged: {
                             radioversion = radiover_input.text
                         }
                     }
                     Button {
-                        id: incrementbutton
                         text: qsTr("OS Version + 1") + Retranslate.onLanguageChanged
                         onClicked: {
-                            JScript.radioIncrement();
+                            radiover_input.text = _linkgen.incrementRadio(osversion);
                         }
                     }
                 }
                 Label {
-                    id: swver_label
                     text: qsTr("Target SW Version") + Retranslate.onLanguageChanged
                 }
                 Container {
-                    id: swverinputcontainer
                     layout: StackLayout {
                         orientation: LayoutOrientation.LeftToRight
                     }
                     TextField {
                         id: swver_input
-                        hintText: swver_label.text
-                        onTextChanging: {
-                            swrelease = swver_input.text
-                            hashCalculateSha.calculateHash(swrelease)
-                            hashedswversion = hashCalculateSha.getHash()
-                        }
+                        hintText: qsTr("Target SW Version") + Retranslate.onLanguageChanged
                         onTextChanged: {
+                            swrelease = swver_input.text
                             hashCalculateSha.calculateHash(swrelease)
                             hashedswversion = hashCalculateSha.getHash()
                         }
                         inputMode: TextFieldInputMode.NumbersAndPunctuation
                     }
                     Button {
-                        id: repobutton
                         text: qsTr("Known Software") + Retranslate.onLanguageChanged
                         onClicked: {
                             var createdSheet = repoCompDef.createObject();
                             createdSheet.open();
                         }
-                        verticalAlignment: VerticalAlignment.Bottom
                     }
                 }
+                Label {
+                    text: qsTr("Initial OS Version") + Retranslate.onLanguageChanged
+                }
                 Container {
-                    id: deltacontainer
                     layout: StackLayout {
                         orientation: LayoutOrientation.LeftToRight
                     }
-                    Container {
-                        layout: StackLayout {
-                            orientation: LayoutOrientation.TopToBottom
-                        }
-                        Label {
-                            id: osinit_label
-                            text: qsTr("Initial OS Version") + Retranslate.onLanguageChanged
-                        }
-                        TextField {
-                            id: osinit_input
-                            hintText: osinit_label.text
-                            inputMode: TextFieldInputMode.NumbersAndPunctuation
-                            onTextChanged: {
-                                osinitversion = osinit_input.text
-                                var osinit_temp = osinit_input.text;
-                                osinit = osinit_temp.replace(/\./g, "");
-                                var osinit2_temp = osinit_input.text;
-                                osinit2 = osinit_temp.replace(/\./g, "_");
-                            }
+                    TextField {
+                        id: osinit_input
+                        hintText: qsTr("Initial OS Version") + Retranslate.onLanguageChanged
+                        inputMode: TextFieldInputMode.NumbersAndPunctuation
+                        onTextChanged: {
+                            osinitversion = osinit_input.text;
+                            osinit = osinit_input.text.replace(/\./g, "");
+                            osinit2 = osinit_input.text.replace(/\./g, "_");
                         }
                     }
-                    Container {
-                        layout: StackLayout {
-                            orientation: LayoutOrientation.TopToBottom
+                    Button {
+                        text: qsTr("Use Current") + Retranslate.onLanguageChanged
+                        onClicked: {
+                            osinit_input.text = _manager.readTextFile("/base/etc/os.version", "normal");
+                            radioinit_input.text = _manager.readTextFile("/radio/etc/radio.version", "normal");
                         }
-                        Label {
-                            id: radioinit_label
-                            text: qsTr("Initial Radio Version") + Retranslate.onLanguageChanged
+                    }
+                }
+                Label {
+                    text: qsTr("Initial Radio Version") + Retranslate.onLanguageChanged
+                }
+                Container {
+                    layout: StackLayout {
+                        orientation: LayoutOrientation.LeftToRight
+                    }
+                    TextField {
+                        id: radioinit_input
+                        hintText: qsTr("Initial Radio Version") + Retranslate.onLanguageChanged
+                        inputMode: TextFieldInputMode.NumbersAndPunctuation
+                        onTextChanged: {
+                            radinit = radioinit_input.text.replace(/\./g, "");
+                            radinit2 = radioinit_input.text.replace(/\./g, "_");
                         }
-                        TextField {
-                            id: radioinit_input
-                            hintText: radioinit_label.text
-                            inputMode: TextFieldInputMode.NumbersAndPunctuation
-                            onTextChanged: {
-                                var radinit_temp = radioinit_input.text;
-                                radinit = radinit_temp.replace(/\./g, "");
-                                var radinit2_temp = radioinit_input.text;
-                                radinit2 = radinit_temp.replace(/\./g, "_");
-                            }
+                    }
+                    Button {
+                        text: qsTr("OS Version + 1") + Retranslate.onLanguageChanged
+                        onClicked: {
+                            radioinit_input.text = _linkgen.incrementRadio(osinitversion);
                         }
                     }
                 }
             }
             //Dropdowns
             Container {
-                horizontalAlignment: HorizontalAlignment.Center
                 topPadding: 20.0
                 DropDown {
                     id: osdropdown
-                    objectName: "osdropdown"
                     title: qsTr("Choose OS Type") + Retranslate.onLanguageChanged
                     Option {
                         id: dropdown_core
                         text: "Delta OS"
                         value: "core"
+                        onSelectedChanged: {
+                            if (selected){
+                                os_download_label.text = qsTr("Delta from ") + Retranslate.onLanguageChanged + osinit_input.text + qsTr(" to ") + Retranslate.onLanguageChanged + osver_input.text + ":";
+                                dropdown_winchester.setEnabled(true);
+                            }
+                        }
                     }
                     Option {
                         id: dropdown_core_verizon
                         text: "Verizon Delta OS"
                         value: "core_vzw"
-                    }
-                    onSelectedValueChanged: {
-                        JScript.setOS();
+                        onSelectedChanged: {
+                            if (selected){
+                                os_download_label.text = qsTr("Verizon delta from ") + Retranslate.onLanguageChanged + osinit_input.text + qsTr(" to ") + Retranslate.onLanguageChanged + osver_input.text + ":";
+                                dropdown_winchester.setEnabled(false);
+                            }
+                        }
                     }
                 }
                 DropDown {
@@ -250,14 +236,9 @@ Page {
                     text: qsTr("Generate") + Retranslate.onLanguageChanged
                     horizontalAlignment: HorizontalAlignment.Center
                     onClicked: {
-                        radioclipboard.visible = true;
-                        allclipboard.visible = true;
-                        osclipboard.visible = true;
-                        clipboardheader.visible = true;
                         global_exportcontainer.visible = true;
+                        global_clipboardcontainer.visible = true;
                         global_linkcontainer.visible = true;
-                        //Call Darcy
-                        JScript.setEasterEgg(hashedswversion);
                         JScript.generateDeltas();
                     }
                 }
@@ -265,7 +246,16 @@ Page {
                     id: clearbutton
                     text: qsTr("Clear") + Retranslate.onLanguageChanged
                     onClicked: {
-                        JScript.clearButton();
+                        os_download_textarea.text = "";
+                        radio_download_textarea.text = "";
+                        global_linkcontainer.visible = false;
+                        global_exportcontainer.visible = false;
+                        global_clipboardcontainer.visible = false;
+                        downloadComponent.visible = false;
+                        osdropdown.resetSelectedOption();
+                        devicedropdown.resetSelectedOption();
+                        os_download_label.text = qsTr("OS Link:") + Retranslate.onLanguageChanged;
+                        radio_download_label.text = qsTr("Radio Link:") + Retranslate.onLanguageChanged;
                         _manager.messagesCleared();
                     }
                 }
@@ -285,19 +275,16 @@ Page {
                     id: os_download_textarea
                     text: ""
                     editable: false
-                    visible: true
                     content.flags: TextContentFlag.ActiveText
                 }
                 Label {
                     id: radio_download_label
                     text: qsTr("Radio Link:") + Retranslate.onLanguageChanged
-                    multiline: true
                 }
                 TextArea {
                     id: radio_download_textarea
                     text: ""
                     editable: false
-                    visible: true
                     content.flags: TextContentFlag.ActiveText
                 }
                 Container {
@@ -318,7 +305,6 @@ Page {
                         topPadding: 10.0
                         horizontalAlignment: HorizontalAlignment.Center
                         Button {
-                            id: exportbutton
                             text: qsTr("Export Links") + Retranslate.onLanguageChanged
                             onClicked: {
                                 _manager.exportDeltaLinks(hashedswversion, osversion, radioversion, osinitversion, osinit, osinit2, radinit, radinit2);
@@ -331,7 +317,6 @@ Page {
                             }
                         }
                         Button {
-                            id: sharebutton
                             text: qsTr("Share Links") + Retranslate.onLanguageChanged
                             onClicked: {
                                 myQuery.query.data = _manager.returnDeltaLinks(hashedswversion, osversion, radioversion, osinit, osinit2, radinit, radinit2);
@@ -350,9 +335,7 @@ Page {
                     horizontalAlignment: HorizontalAlignment.Center
                     topPadding: 10.0
                     Header {
-                        id:clipboardheader
                         title: qsTr("Clipboard") + Retranslate.onLanguageChanged
-                        visible:false
                     }
                     Container {
                         layout: StackLayout {
@@ -360,9 +343,7 @@ Page {
                         }
                         topPadding: 10.0
                         Button {
-                            id: osclipboard
                             text: qsTr("Copy OS") + Retranslate.onLanguageChanged
-                            visible: false
                             onClicked: {
                                 if (os_download_textarea.text.indexOf("http") != -1) {
                                     Clipboard.copyToClipboard(os_download_textarea.text);
@@ -376,9 +357,7 @@ Page {
                             }
                         }
                         Button {
-                            id: radioclipboard
                             text: qsTr("Copy Radio") + Retranslate.onLanguageChanged
-                            visible: false
                             onClicked: {
                                 if (radio_download_textarea.text.indexOf("http") != -1){
                                     Clipboard.copyToClipboard(radio_download_textarea.text);
@@ -392,9 +371,7 @@ Page {
                             }
                         }
                         Button {
-                            id: allclipboard
                             text: qsTr("Copy All") + Retranslate.onLanguageChanged
-                            visible: false
                             onClicked: {
                                 if (os_download_textarea.text.indexOf("http") != -1 && radio_download_textarea.text.indexOf("http") != -1) {
                                     _manager.copyDeltaLinks(hashedswversion, osversion, radioversion, osinit, osinit2, radinit, radinit2)
@@ -416,7 +393,6 @@ Page {
                         orientation: LayoutOrientation.TopToBottom
                     }
                     horizontalAlignment: HorizontalAlignment.Center
-                    visible: false
                     Header {
                         title: qsTr("Downloads") + Retranslate.onLanguageChanged
                     }
@@ -427,7 +403,6 @@ Page {
                         topPadding: 10.0
                         horizontalAlignment: HorizontalAlignment.Center
                         Button {
-                            id: downloadbutton_os
                             text: qsTr("Download OS") + Retranslate.onLanguageChanged
                             onClicked: {
                                 downloadComponent.visible = true;
@@ -438,7 +413,6 @@ Page {
                             }
                         }
                         Button {
-                            id: downloadbutton_radio
                             text: qsTr("Download Radio") + Retranslate.onLanguageChanged
                             onClicked: {
                                 downloadComponent.visible = true;

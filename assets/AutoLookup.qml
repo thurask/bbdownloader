@@ -8,8 +8,6 @@ import bb.cascades 1.3
 import bb.system 1.2
 import qt.timer 1.0
 
-import "js/functions.js" as JScript
-
 Page {
     property bool scanning: false
     attachedObjects: [
@@ -18,7 +16,8 @@ Page {
             //set interval
             interval: 500
             onTimeout:{
-                JScript.autoLookup();
+                outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - " + (_swlookup.softwareRelease().indexOf("SR") != -1 ? "" : "SR ") + _swlookup.softwareRelease() + "\n");
+                autolookup_input.text = _swlookup.lookupIncrement(autolookup_input.text);
                 timer.restart();
             }
         },
