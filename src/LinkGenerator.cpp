@@ -361,6 +361,12 @@ QString LinkGenerator::getDeltaRadioLabel(){
 }
 
 QString LinkGenerator::incrementRadio(QString input){
+    if (input == "Error"){
+        return input;
+    }
+    if (input == ""){
+        return "Error";
+    }
     QStringList splitarray = input.split(".");
     if (splitarray[3] == "") {
         return "Error";
