@@ -141,12 +141,10 @@ simulator {
 config_pri_assets {
     OTHER_FILES += \
         $$quote($$BASEDIR/assets/10ppd/images/cover.png) \
-        $$quote($$BASEDIR/assets/12ppd/AppCover.qml) \
         $$quote($$BASEDIR/assets/12ppd/images/cover.png) \
         $$quote($$BASEDIR/assets/12ppd/images/cover_small.png) \
         $$quote($$BASEDIR/assets/8ppd/images/cover.png) \
         $$quote($$BASEDIR/assets/9ppd/images/cover.png) \
-        $$quote($$BASEDIR/assets/AppCover.qml) \
         $$quote($$BASEDIR/assets/AutoLookup.qml) \
         $$quote($$BASEDIR/assets/DeltaOSDownloader.qml) \
         $$quote($$BASEDIR/assets/DownloadComponent.qml) \

@@ -7,8 +7,6 @@
 #include <bb/cascades/QmlDocument>
 #include <bb/cascades/AbstractPane>
 #include <bb/cascades/LocaleHandler>
-#include <bb/cascades/SceneCover>
-#include <bb/cascades/Container>
 #include <bb/ApplicationInfo>
 
 using namespace bb::cascades;
@@ -45,17 +43,6 @@ ApplicationUI::ApplicationUI() :
     // to ensure the document gets destroyed properly at shut down.
     QmlDocument *qml = QmlDocument::create("asset:///main.qml").parent(this);
     qml->setContextProperty("AppInfo", appProperties);
-
-    QmlDocument *qmlCover = QmlDocument::create("asset:///AppCover.qml").parent(this);
-
-    if (!qmlCover->hasErrors()) {
-        // Create the QML Container from using the QMLDocument.
-        Container *coverContainer = qmlCover->createRootObject<Container>();
-
-        // Create a SceneCover and set the application cover
-        SceneCover *sceneCover = SceneCover::create().content(coverContainer);
-        Application::instance()->setCover(sceneCover);
-    }
 
     // Create root object for the UI
     AbstractPane *root = qml->createRootObject<AbstractPane>();

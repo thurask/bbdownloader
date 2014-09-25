@@ -1,12 +1,10 @@
 1
-50
+48
 10ppd/images/cover.png
-12ppd/AppCover.qml
 12ppd/images/cover.png
 12ppd/images/cover_small.png
 8ppd/images/cover.png
 9ppd/images/cover.png
-AppCover.qml
 AutoLookup.qml
 DeltaOSDownloader.qml
 DownloadComponent.qml
