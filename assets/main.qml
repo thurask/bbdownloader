@@ -73,7 +73,6 @@ TabbedPane {
     ]
     Menu.definition: MenuDefinition {
         helpAction: HelpActionItem {
-            imageSource: "asset:///images/ic_info.png"
             onTriggered: {
                 var help = helpSheetDefinition.createObject()
                 help.open();
@@ -88,7 +87,7 @@ TabbedPane {
     }
     Tab {
         title: qsTr("OS Downloader") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/1.png"
+        imageSource: "asset:///images/tabs/1.png"
         delegate: Delegate {
             OSDownloader {
                 id:osDownloaderPage
@@ -101,7 +100,7 @@ TabbedPane {
     }
     Tab {
         title: qsTr("Delta OS Downloader") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/2.png"
+        imageSource: "asset:///images/tabs/2.png"
         delegate: Delegate {
             DeltaOSDownloader {
                 id:deltaOsDownloaderPage
@@ -114,7 +113,7 @@ TabbedPane {
     }
     Tab {
         title: qsTr("OS Lookup Tool") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/3.png"
+        imageSource: "asset:///images/tabs/3.png"
         delegate: Delegate {
             AutoLookup {
                 id:autoLookupPage
@@ -127,7 +126,7 @@ TabbedPane {
     }
     Tab {
         title: qsTr("Hash Tools") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/4.png"
+        imageSource: "asset:///images/tabs/4.png"
         delegate: Delegate {
             HashTools {
                 id:hashToolsPage
@@ -140,7 +139,7 @@ TabbedPane {
     }
     Tab {
         title: qsTr("Engineering Screens") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/5.png"
+        imageSource: "asset:///images/tabs/5.png"
         delegate: Delegate {
             EScreens {
                 id:eScreensPage
@@ -153,7 +152,7 @@ TabbedPane {
     }
     Tab {
         title: qsTr("System Info") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/6.png"
+        imageSource: "asset:///images/tabs/6.png"
         delegate: Delegate {
             SysInfo {
                 id:sysInfoPage
@@ -166,7 +165,7 @@ TabbedPane {
     }
     Tab {
         title: qsTr("Hardware ID List") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/7.png"
+        imageSource: "asset:///images/tabs/7.png"
         delegate: Delegate {
             HardwareIDs {
                 id:hardwareIDsPage

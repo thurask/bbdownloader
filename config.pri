@@ -158,33 +158,29 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/SettingsSheet.qml) \
         $$quote($$BASEDIR/assets/SysInfo.qml) \
         $$quote($$BASEDIR/assets/html/escreens.html) \
-        $$quote($$BASEDIR/assets/icons/icon_110.png) \
-        $$quote($$BASEDIR/assets/icons/icon_144.png) \
-        $$quote($$BASEDIR/assets/icons/icon_86.png) \
-        $$quote($$BASEDIR/assets/icons/icon_90.png) \
-        $$quote($$BASEDIR/assets/icons/icon_96.png) \
-        $$quote($$BASEDIR/assets/images/0.png) \
-        $$quote($$BASEDIR/assets/images/1.png) \
-        $$quote($$BASEDIR/assets/images/2.png) \
-        $$quote($$BASEDIR/assets/images/3.png) \
-        $$quote($$BASEDIR/assets/images/4.png) \
-        $$quote($$BASEDIR/assets/images/5.png) \
-        $$quote($$BASEDIR/assets/images/6.png) \
-        $$quote($$BASEDIR/assets/images/7.png) \
-        $$quote($$BASEDIR/assets/images/8.png) \
-        $$quote($$BASEDIR/assets/images/9.png) \
         $$quote($$BASEDIR/assets/images/cover.png) \
         $$quote($$BASEDIR/assets/images/cover_small.png) \
-        $$quote($$BASEDIR/assets/images/ic_info.png) \
+        $$quote($$BASEDIR/assets/images/icons/icon_110.png) \
+        $$quote($$BASEDIR/assets/images/icons/icon_144.png) \
+        $$quote($$BASEDIR/assets/images/icons/icon_90.png) \
+        $$quote($$BASEDIR/assets/images/icons/icon_96.png) \
+        $$quote($$BASEDIR/assets/images/splash/aseries_landscape.png) \
+        $$quote($$BASEDIR/assets/images/splash/aseries_portrait.png) \
+        $$quote($$BASEDIR/assets/images/splash/lseries_landscape.png) \
+        $$quote($$BASEDIR/assets/images/splash/lseries_portrait.png) \
+        $$quote($$BASEDIR/assets/images/splash/nseries.png) \
+        $$quote($$BASEDIR/assets/images/splash/wseries.png) \
+        $$quote($$BASEDIR/assets/images/tabs/0.png) \
+        $$quote($$BASEDIR/assets/images/tabs/1.png) \
+        $$quote($$BASEDIR/assets/images/tabs/2.png) \
+        $$quote($$BASEDIR/assets/images/tabs/3.png) \
+        $$quote($$BASEDIR/assets/images/tabs/4.png) \
+        $$quote($$BASEDIR/assets/images/tabs/5.png) \
+        $$quote($$BASEDIR/assets/images/tabs/6.png) \
+        $$quote($$BASEDIR/assets/images/tabs/7.png) \
+        $$quote($$BASEDIR/assets/images/tabs/8.png) \
+        $$quote($$BASEDIR/assets/images/tabs/9.png) \
         $$quote($$BASEDIR/assets/main.qml) \
-        $$quote($$BASEDIR/assets/splash/aseries_landscape.png) \
-        $$quote($$BASEDIR/assets/splash/aseries_portrait.png) \
-        $$quote($$BASEDIR/assets/splash/lseries_landscape.png) \
-        $$quote($$BASEDIR/assets/splash/lseries_portrait.png) \
-        $$quote($$BASEDIR/assets/splash/nseries.png) \
-        $$quote($$BASEDIR/assets/splash/pb_landscape.png) \
-        $$quote($$BASEDIR/assets/splash/pb_portrait.png) \
-        $$quote($$BASEDIR/assets/splash/wseries.png) \
         $$quote($$BASEDIR/assets/xml/hwid.xml) \
         $$quote($$BASEDIR/assets/xml/repo.xml) \
         $$quote($$BASEDIR/assets/xml/version.txt)
@@ -262,15 +258,18 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/html/*.qml) \
         $$quote($$BASEDIR/../assets/html/*.js) \
         $$quote($$BASEDIR/../assets/html/*.qs) \
-        $$quote($$BASEDIR/../assets/icons/*.qml) \
-        $$quote($$BASEDIR/../assets/icons/*.js) \
-        $$quote($$BASEDIR/../assets/icons/*.qs) \
         $$quote($$BASEDIR/../assets/images/*.qml) \
         $$quote($$BASEDIR/../assets/images/*.js) \
         $$quote($$BASEDIR/../assets/images/*.qs) \
-        $$quote($$BASEDIR/../assets/splash/*.qml) \
-        $$quote($$BASEDIR/../assets/splash/*.js) \
-        $$quote($$BASEDIR/../assets/splash/*.qs) \
+        $$quote($$BASEDIR/../assets/images/icons/*.qml) \
+        $$quote($$BASEDIR/../assets/images/icons/*.js) \
+        $$quote($$BASEDIR/../assets/images/icons/*.qs) \
+        $$quote($$BASEDIR/../assets/images/splash/*.qml) \
+        $$quote($$BASEDIR/../assets/images/splash/*.js) \
+        $$quote($$BASEDIR/../assets/images/splash/*.qs) \
+        $$quote($$BASEDIR/../assets/images/tabs/*.qml) \
+        $$quote($$BASEDIR/../assets/images/tabs/*.js) \
+        $$quote($$BASEDIR/../assets/images/tabs/*.qs) \
         $$quote($$BASEDIR/../assets/xml/*.qml) \
         $$quote($$BASEDIR/../assets/xml/*.js) \
         $$quote($$BASEDIR/../assets/xml/*.qs)
