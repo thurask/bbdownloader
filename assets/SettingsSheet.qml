@@ -130,7 +130,7 @@ Sheet {
             id: timer
             interval: 1000
             onTimeout:{
-                if (Checker.returnUpdate() == true){
+                if (Checker.returnUpdate() == true && Checker.getUpdateVersion() != ""){
                     updateToast.body = qsTr("Update available") + Retranslate.onLanguageChanged;
                     updateToast.button.enabled = true;
                     updateToast.button.label =  qsTr("Update!") + Retranslate.onLanguageChanged

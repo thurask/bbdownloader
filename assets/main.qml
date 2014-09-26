@@ -43,7 +43,7 @@ TabbedPane {
             id: timer
             interval: 1000
             onTimeout:{
-                if (Checker.returnUpdate() == true){
+                if (Checker.returnUpdate() == true && Checker.getUpdateVersion() != ""){
                     updateToast.show();
                 }
                 timer.stop();
