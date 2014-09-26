@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="en_US">
+<TS version="2.1" language="en_US">
 <context>
     <name>AutoLookup</name>
     <message>
@@ -440,6 +440,45 @@ https://github.com/thurask/bbdownloader</translation>
     </message>
 </context>
 <context>
+    <name>Nomedia</name>
+    <message>
+        <source>File Picker</source>
+        <translation>File Picker</translation>
+    </message>
+    <message>
+        <source>Nomedia Helper</source>
+        <translation>Nomedia Helper</translation>
+    </message>
+    <message>
+        <source>Choose a Directory</source>
+        <translation>Choose a Directory</translation>
+    </message>
+    <message>
+        <source>Current Directory:</source>
+        <translation>Current Directory:</translation>
+    </message>
+    <message>
+        <source>.nomedia File Exists: </source>
+        <translation>.nomedia File Exists: </translation>
+    </message>
+    <message>
+        <source>Write .nomedia File</source>
+        <translation>Write .nomedia File</translation>
+    </message>
+    <message>
+        <source>File created!</source>
+        <translation>File created!</translation>
+    </message>
+    <message>
+        <source>Delete .nomedia File</source>
+        <translation>Delete .nomedia File</translation>
+    </message>
+    <message>
+        <source>File deleted!</source>
+        <translation>File deleted!</translation>
+    </message>
+</context>
+<context>
     <name>OSDownloader</name>
     <message>
         <source>Inputs</source>
@@ -844,6 +883,10 @@ https://github.com/thurask/bbdownloader</translation>
     <message>
         <source>Delta OS Downloader</source>
         <translation>Delta OS Downloader</translation>
+    </message>
+    <message>
+        <source>.nomedia Helper</source>
+        <translation>.nomedia Helper</translation>
     </message>
 </context>
 </TS>

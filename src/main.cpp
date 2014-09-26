@@ -22,6 +22,7 @@
 #include "Settings.hpp"
 #include "UpdateChecker.hpp"
 #include "LinkGenerator.hpp"
+#include "Nomedia.hpp"
 
 using namespace bb::cascades;
 
@@ -85,6 +86,10 @@ Q_DECL_EXPORT int main(int argc, char **argv)
     //Link generator
     LinkGenerator linkgen;
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("_linkgen", &linkgen);
+
+    //Nomedia
+    Nomedia nomedia;
+    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Nomedia", &nomedia);
 
     //Timer
     qmlRegisterType<QTimer>("qt.timer", 1, 0, "QTimer");

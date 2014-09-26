@@ -439,6 +439,45 @@ https://github.com/thurask/bbdownloader</source>
     </message>
 </context>
 <context>
+    <name>Nomedia</name>
+    <message>
+        <source>File Picker</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nomedia Helper</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose a Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current Directory:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>.nomedia File Exists: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Write .nomedia File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File created!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete .nomedia File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File deleted!</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>OSDownloader</name>
     <message>
         <source>Inputs</source>
@@ -842,6 +881,10 @@ https://github.com/thurask/bbdownloader</source>
     </message>
     <message>
         <source>Delta OS Downloader</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>.nomedia Helper</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

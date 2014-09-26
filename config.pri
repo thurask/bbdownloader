@@ -152,6 +152,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/HardwareIDs.qml) \
         $$quote($$BASEDIR/assets/HashTools.qml) \
         $$quote($$BASEDIR/assets/HelpSheet.qml) \
+        $$quote($$BASEDIR/assets/Nomedia.qml) \
         $$quote($$BASEDIR/assets/OSDownloader.qml) \
         $$quote($$BASEDIR/assets/OSRepo.qml) \
         $$quote($$BASEDIR/assets/ProgressBar.qml) \
@@ -191,6 +192,7 @@ config_pri_source_group1 {
         $$quote($$BASEDIR/src/Clipboard.cpp) \
         $$quote($$BASEDIR/src/DownloadManager.cpp) \
         $$quote($$BASEDIR/src/LinkGenerator.cpp) \
+        $$quote($$BASEDIR/src/Nomedia.cpp) \
         $$quote($$BASEDIR/src/QmlBeam.cpp) \
         $$quote($$BASEDIR/src/Settings.cpp) \
         $$quote($$BASEDIR/src/SwLookup.cpp) \
@@ -206,6 +208,7 @@ config_pri_source_group1 {
         $$quote($$BASEDIR/src/Clipboard.hpp) \
         $$quote($$BASEDIR/src/DownloadManager.hpp) \
         $$quote($$BASEDIR/src/LinkGenerator.hpp) \
+        $$quote($$BASEDIR/src/Nomedia.hpp) \
         $$quote($$BASEDIR/src/QmlBeam.hpp) \
         $$quote($$BASEDIR/src/Settings.hpp) \
         $$quote($$BASEDIR/src/SwLookup.hpp) \

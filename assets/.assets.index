@@ -1,5 +1,5 @@
 1
-44
+45
 10ppd/images/cover.png
 12ppd/images/cover.png
 12ppd/images/cover_small.png
@@ -36,6 +36,7 @@ images/tabs/7.png
 images/tabs/8.png
 images/tabs/9.png
 main.qml
+Nomedia.qml
 OSDownloader.qml
 OSRepo.qml
 ProgressBar.qml

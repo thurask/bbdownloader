@@ -176,6 +176,19 @@ TabbedPane {
         }
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
     }
+    Tab {
+        title: qsTr(".nomedia Helper") + Retranslate.onLanguageChanged
+        imageSource: "asset:///images/tabs/8.png"
+        delegate: Delegate {
+            Nomedia {
+                id: nomediaPage
+                titleBar: TitleBar {
+                    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+                }
+            }
+        }
+        delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
+    }
     onCreationCompleted: {
         var defaultdir = Settings.getValueFor("defaultdir", "shared/downloads/bbdownloader/");
         _manager.setDefaultDir(defaultdir);
