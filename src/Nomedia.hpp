@@ -8,27 +8,27 @@
 #ifndef NOMEDIA_HPP_
 #define NOMEDIA_HPP_
 
-#include <QtCore> //for Qt to work
+#include <QtCore>
 
-class Nomedia: public QObject //add public QObject for getting this to work with QML
+class Nomedia: public QObject
 {
-    Q_OBJECT //this too
+    Q_OBJECT
 
 public:
     Nomedia();
     virtual ~Nomedia();
 
     public Q_SLOTS:
-    Q_INVOKABLE //Q_INVOKABLE means we can directly use this function from QML; see main.cpp
-    void setDir(QString directory); //set dir variable
     Q_INVOKABLE
-    bool checkNomedia(); //check if file exists in dir
+    void setDir(QString directory);
     Q_INVOKABLE
-    void deleteNomedia(); //delete file
+    bool checkNomedia();
     Q_INVOKABLE
-    void writeNomedia(); //create file
+    void deleteNomedia();
+    Q_INVOKABLE
+    void writeNomedia();
 
-    private: //stuff that we don't need exposed to QML
+    private:
     QDir dir;
     QFile file;
 };

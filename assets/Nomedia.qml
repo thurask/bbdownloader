@@ -21,9 +21,6 @@ Page {
             body: ""
         }
     ]
-    titleBar: TitleBar {
-        title: qsTr("Nomedia Helper") + Retranslate.onLanguageChanged
-    }
     Container {
         topPadding: 20.0
         Button {
@@ -40,7 +37,6 @@ Page {
             text: selecteddir
         }
         Label {
-            id: existlabel
             text: qsTr(".nomedia File Exists: ") + Retranslate.onLanguageChanged + fileexists
         }
         Container {

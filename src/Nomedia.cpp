@@ -1,26 +1,25 @@
-/*
- * Nomedia.cpp
- *
- *  Created on: Sep 25, 2014
- *      Author: Thurask
- */
+/*Nomedia.cpp
+-------------
+Handles operations regarding .nomedia files.
+
+--Thurask*/
 
 #include "Nomedia.hpp"
 
 Nomedia::Nomedia()
 {
-//constructor
+
 }
 
 void Nomedia::setDir(QString directory)
 {
-dir = QDir(directory); //set our working directory from the input (FilePicker)
-file.setFileName(dir.absoluteFilePath(".nomedia")); //set the filename to work with as .nomedia within the above directory
+dir = QDir(directory);
+file.setFileName(dir.absoluteFilePath(".nomedia"));
 }
 
 bool Nomedia::checkNomedia()
 {
-    if (file.exists()){ //file.exists() is a boolean, hence this function is, too
+    if (file.exists()){
         return true;
     }
     else {
@@ -30,17 +29,17 @@ bool Nomedia::checkNomedia()
 
 void Nomedia::deleteNomedia()
 {
-    file.remove(); //remove() deletes the file
+    file.remove();
 }
 
 void Nomedia::writeNomedia()
 {
-    file.open(QIODevice::WriteOnly); //open() creates it, the QIODevice argument specifies read, write or read/write
-    file.close(); //close() closes it; don't need to write anything for a .nomedia file, since they're blank
+    file.open(QIODevice::WriteOnly);
+    file.close();
 }
 
 Nomedia::~Nomedia()
 {
-//destructor
+
 }
 
