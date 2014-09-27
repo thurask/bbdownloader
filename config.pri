@@ -158,7 +158,6 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/ProgressBar.qml) \
         $$quote($$BASEDIR/assets/SettingsSheet.qml) \
         $$quote($$BASEDIR/assets/SysInfo.qml) \
-        $$quote($$BASEDIR/assets/html/escreens.html) \
         $$quote($$BASEDIR/assets/images/cover.png) \
         $$quote($$BASEDIR/assets/images/cover_small.png) \
         $$quote($$BASEDIR/assets/images/icons/icon_110.png) \
@@ -260,9 +259,6 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/9ppd/images/*.qml) \
         $$quote($$BASEDIR/../assets/9ppd/images/*.js) \
         $$quote($$BASEDIR/../assets/9ppd/images/*.qs) \
-        $$quote($$BASEDIR/../assets/html/*.qml) \
-        $$quote($$BASEDIR/../assets/html/*.js) \
-        $$quote($$BASEDIR/../assets/html/*.qs) \
         $$quote($$BASEDIR/../assets/images/*.qml) \
         $$quote($$BASEDIR/../assets/images/*.js) \
         $$quote($$BASEDIR/../assets/images/*.qs) \

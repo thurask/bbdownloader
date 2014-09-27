@@ -216,6 +216,50 @@
         <source>Open EScreens</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>App Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Uptime</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Validity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>3 days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>7 days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>15 days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>30 days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Get Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PIN</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HardwareIDs</name>
@@ -442,10 +486,6 @@ https://github.com/thurask/bbdownloader</source>
     <name>Nomedia</name>
     <message>
         <source>File Picker</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Nomedia Helper</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

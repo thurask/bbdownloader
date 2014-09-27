@@ -1,5 +1,5 @@
 1
-45
+44
 10ppd/images/cover.png
 12ppd/images/cover.png
 12ppd/images/cover_small.png
@@ -12,7 +12,6 @@ EScreens.qml
 HardwareIDs.qml
 HashTools.qml
 HelpSheet.qml
-html/escreens.html
 images/cover.png
 images/cover_small.png
 images/icons/icon_110.png
