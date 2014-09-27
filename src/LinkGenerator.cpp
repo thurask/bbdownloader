@@ -361,20 +361,15 @@ QString LinkGenerator::getDeltaRadioLabel(){
 }
 
 QString LinkGenerator::incrementRadio(QString input){
-    if (input == "Error"){
-        return input;
-    }
-    if (input == ""){
-        return "Error";
-    }
-    QStringList splitarray = input.split(".");
-    if (splitarray[3] == "") {
-        return "Error";
-    }
-    else {
+    QRegExp rx("(\\d{0,4}\\.)(\\d{0,4}\\.)(\\d{0,4}\\.)(\\d{0,4})");
+    if (input.contains(rx) == true){
+        QStringList splitarray = input.split(".");
         QString newrad = QString::number(((splitarray[3]).toInt() + 1));
         splitarray[3] = newrad;
         return splitarray.join(".");
+    }
+    else {
+        return "Error";
     }
 }
 
