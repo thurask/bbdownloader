@@ -218,47 +218,47 @@
     </message>
     <message>
         <source>App Version</source>
-        <translation type="unfinished"></translation>
+        <translation>App Version</translation>
     </message>
     <message>
         <source>Uptime</source>
-        <translation type="unfinished"></translation>
+        <translation>Uptime</translation>
     </message>
     <message>
         <source>Validity</source>
-        <translation type="unfinished"></translation>
+        <translation>Validity</translation>
     </message>
     <message>
         <source>1 day</source>
-        <translation type="unfinished"></translation>
+        <translation>1 day</translation>
     </message>
     <message>
         <source>3 days</source>
-        <translation type="unfinished"></translation>
+        <translation>3 days</translation>
     </message>
     <message>
         <source>7 days</source>
-        <translation type="unfinished"></translation>
+        <translation>7 days</translation>
     </message>
     <message>
         <source>15 days</source>
-        <translation type="unfinished"></translation>
+        <translation>15 days</translation>
     </message>
     <message>
         <source>30 days</source>
-        <translation type="unfinished"></translation>
+        <translation>30 days</translation>
     </message>
     <message>
         <source>Get Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Get Key</translation>
     </message>
     <message>
         <source>Your Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Your Key</translation>
     </message>
     <message>
         <source>PIN</source>
-        <translation type="unfinished"></translation>
+        <translation>PIN</translation>
     </message>
 </context>
 <context>
