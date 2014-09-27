@@ -60,7 +60,7 @@ Page {
             TextField {
                 id: autolookup_input
                 verticalAlignment: VerticalAlignment.Center
-                inputMode: TextFieldInputMode.NumbersAndPunctuation
+                inputMode: TextFieldInputMode.PhoneNumber
                 onTextChanging: {
                     _swlookup.post(autolookup_input.text, serverdropdown.selectedValue);
                 }

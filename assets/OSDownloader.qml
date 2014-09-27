@@ -36,7 +36,7 @@ Page {
                     TextField {
                         id: osver_input
                         hintText: qsTr("Target OS Version") + Retranslate.onLanguageChanged
-                        inputMode: TextFieldInputMode.NumbersAndPunctuation
+                        inputMode: TextFieldInputMode.PhoneNumber
                         onTextChanging: {
                             osversion = osver_input.text
                             _swlookup.post(osversion, "https://cs.sl.blackberry.com/cse/srVersionLookup/2.0.0/");
@@ -59,7 +59,7 @@ Page {
                     TextField {
                         id: radiover_input
                         hintText: qsTr("Target Radio Version") + Retranslate.onLanguageChanged
-                        inputMode: TextFieldInputMode.NumbersAndPunctuation
+                        inputMode: TextFieldInputMode.PhoneNumber
                         onTextChanging: {
                             radioversion = radiover_input.text
                         }
@@ -86,7 +86,7 @@ Page {
                             hashCalculateSha.calculateHash(swrelease)
                             hashedswversion = hashCalculateSha.getHash()
                         }
-                        inputMode: TextFieldInputMode.NumbersAndPunctuation
+                        inputMode: TextFieldInputMode.PhoneNumber
                     }
                     Button {
                         id: repobutton
