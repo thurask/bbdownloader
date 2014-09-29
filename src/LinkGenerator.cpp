@@ -159,8 +159,9 @@ void LinkGenerator::setRadio(QString radio, QString swrelease, QString device)
 
 void LinkGenerator::setDeltaOS(QString os, QString initialos, QString swrelease, QString type, QString device)
 {
+    QString osinit2 = initialos;
     QString osinit = initialos.replace(".","");
-    QString osinit2 = initialos.replace(".","_");
+    osinit2 = osinit2.replace(".","_");
     if (device == "8960" || device == "8960omadm" || device == "8960wtr" || device == "8960wtr5" || device == "8930wtr5"){
         if (type == "core"){
             deltaOsLink = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + swrelease + "/com.qnx.coreos.qcfm.os.qc8960.factory.d" + osinit + "/" + os + "/qc8960.factory_sfi-" + os + "-nto+armle-v7+signed+patch+"+ osinit2 + ".bar";
@@ -184,8 +185,9 @@ void LinkGenerator::setDeltaOS(QString os, QString initialos, QString swrelease,
 
 void LinkGenerator::setDeltaRadio(QString radio, QString initialradio, QString swrelease, QString device)
 {
+    QString radinit2 = initialradio;
     QString radinit = initialradio.replace(".","");
-    QString radinit2 = initialradio.replace(".","_");
+    radinit2 = initialradio.replace(".","_");
     if (device == "winchester"){
         deltaRadioLink = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + swrelease + "/com.qnx.qcfm.radio.m5730.d" + radinit + "/" + radio + "/m5730-" + radio + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar";
     }
