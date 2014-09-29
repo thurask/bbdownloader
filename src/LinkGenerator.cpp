@@ -187,7 +187,7 @@ void LinkGenerator::setDeltaRadio(QString radio, QString initialradio, QString s
 {
     QString radinit2 = initialradio;
     QString radinit = initialradio.replace(".","");
-    radinit2 = initialradio.replace(".","_");
+    radinit2 = radinit2.replace(".","_");
     if (device == "winchester"){
         deltaRadioLink = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + swrelease + "/com.qnx.qcfm.radio.m5730.d" + radinit + "/" + radio + "/m5730-" + radio + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar";
     }
