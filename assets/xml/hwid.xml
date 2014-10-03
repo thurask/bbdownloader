@@ -204,6 +204,31 @@ Blank:
 		<variant>SQK100-2</variant>
 	</hardware>
 	<hardware>
+		<id>9600270A</id>
+		<name>Classic</name>
+		<variant>SQC100-1</variant>
+	</hardware>
+	<hardware>
+		<id>9400270A</id>
+		<name>Classic</name>
+		<variant>SQC100-2</variant>
+	</hardware>
+	<hardware>
+		<id>9500270A</id>
+		<name>Classic</name>
+		<variant>SQC100-3</variant>
+	</hardware>
+	<hardware>
+		<id>9700270A</id>
+		<name>Classic</name>
+		<variant>SQC100-4</variant>
+	</hardware>
+	<hardware>
+		<id>9C00270A</id>
+		<name>Classic</name>
+		<variant>SQC100-5</variant>
+	</hardware>
+	<hardware>
 		<id>06001A06</id>
 		<name>PlayBook</name>
 		<variant>WiFi</variant>
