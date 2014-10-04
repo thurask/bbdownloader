@@ -493,6 +493,10 @@ https://github.com/thurask/bbdownloader</source>
         <source>Z30/Classic radio delta from </source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Nomedia</name>
@@ -526,6 +530,14 @@ https://github.com/thurask/bbdownloader</source>
     </message>
     <message>
         <source>File deleted!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>True</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>False</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -647,6 +659,46 @@ https://github.com/thurask/bbdownloader</source>
         <source>Share</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Debrick OS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Core OS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Verizon Debrick OS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Verizon Core OS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>China Debrick OS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>China Core OS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SDK Debrick OS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SDK Core OS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SDK Autoloader (Old style URL)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SDK Autoloader (New style URL)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OSRepo</name>
@@ -735,6 +787,13 @@ https://github.com/thurask/bbdownloader</source>
     </message>
     <message>
         <source>No updates available</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SwLookup</name>
+    <message>
+        <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

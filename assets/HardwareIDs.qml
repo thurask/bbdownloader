@@ -29,11 +29,13 @@ Page {
                 checked: true
                 onCheckedChanged: {
                     if (localtoggle.checked == true) {
+                        mainheader.title = qsTr("Hardware IDs (local copy)") + Retranslate.onLanguageChanged
                         repoDataSource.source = "asset:///xml/hwid.xml";
                         repoDataSource.remote = false;
                         repoDataSource.load();
                     }
                     else {
+                        mainheader.title = qsTr("Hardware IDs (network copy)") + Retranslate.onLanguageChanged
                         repoDataSource.source = "http://thurask.github.io/hwid.xml";
                         repoDataSource.remote = true;
                         repoDataSource.load();
@@ -42,6 +44,7 @@ Page {
             }
         }
         Header {
+            id: mainheader
             title: (localtoggle.checked == true ? qsTr("Hardware IDs (local copy)") + Retranslate.onLanguageChanged : qsTr("Hardware IDs (network copy)") + Retranslate.onLanguageChanged)
         }
         Label {
@@ -90,6 +93,7 @@ Page {
                 repoDataModel.insertList(data)
             }
             onError: {
+                mainheader.title = qsTr("Hardware IDs (local copy)") + Retranslate.onLanguageChanged
                 repoDataSource.source = "asset:///xml/hwid.xml";
                 repoDataSource.remote = false;
                 repoDataSource.load();

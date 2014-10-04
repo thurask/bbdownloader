@@ -37,7 +37,7 @@ Page {
             text: selecteddir
         }
         Label {
-            text: qsTr(".nomedia File Exists: ") + Retranslate.onLanguageChanged + fileexists
+            text: qsTr(".nomedia File Exists: ") + Retranslate.onLanguageChanged + (fileexists == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)
         }
         Container {
             topPadding: 10.0
