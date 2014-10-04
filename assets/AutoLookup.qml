@@ -18,14 +18,21 @@ Page {
             interval: 500
             onTimeout:{
                 if (silentmode == false){
+                    if (_swlookup.softwareRelease().indexOf(".") != -1){
+                        //if there's a SW release
+                    }
+                    else {
+                        //if there isn't a SW release
+                    }
                     outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - " + (_swlookup.softwareRelease().indexOf("SR") != -1 ? "" : "SR ") + _swlookup.softwareRelease() + "\n");
                 }
                 if (silentmode == true){
                     if (_swlookup.softwareRelease().indexOf(".") != -1){
-                        outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - SR" + _swlookup.softwareRelease() + "\n");
+                        //if there's a SW release
+                        outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - SR " + _swlookup.softwareRelease() + "\n");
                     }
                     else {
-                    
+                        //if there isn't a SW release
                     }
                 }
                 autolookup_input.text = _swlookup.lookupIncrement(autolookup_input.text);
@@ -173,7 +180,7 @@ Page {
                 id: autolookupbutton
                 text: qsTr("Start") + Retranslate.onLanguageChanged
                 onClicked: {
-                    if (scanning == false) {
+                    if (scanning == false) { 
                         if (timeoutdropdown.selectedValue != 86400){
                             timer.start();
                             scanning = true;
@@ -184,6 +191,7 @@ Page {
                         }
                     }
                     else {
+                        beepled.cancel()
                         timer.stop();
                         scanning = false;
                         autolookupbutton.text = qsTr("Start") + Retranslate.onLanguageChanged
