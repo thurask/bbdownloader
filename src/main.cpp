@@ -4,6 +4,7 @@
 #include <bb/cascades/QmlDocument>
 #include <bb/cascades/Page>
 #include <bb/cascades/Window>
+#include <bb/cascades/DevelopmentSupport>
 #include <bb/ApplicationInfo>
 
 #include <QtCore>
@@ -15,7 +16,6 @@
 #include "hashcalculatemd5.hpp"
 #include "hashcalculatemd4.hpp"
 #include "DownloadManager.hpp"
-#include "QmlBeam.hpp"
 #include "SwLookup.hpp"
 #include "Clipboard.hpp"
 #include "timer.hpp"
@@ -50,6 +50,9 @@ Q_DECL_EXPORT int main(int argc, char **argv)
 #ifndef QT_NO_DEBUG
     qInstallMsgHandler(myMessageOutput);
 #endif
+
+    //Live QML
+    DevelopmentSupport::install();
 
     //SHA-1
     HashCalculateSha*ihashcalcsha =  new HashCalculateSha();

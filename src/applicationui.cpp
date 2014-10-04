@@ -1,5 +1,4 @@
 #include "applicationui.hpp"
-#include "QmlBeam.hpp"
 #include "UpdateChecker.hpp"
 
 #include <bb/cascades/AbstractCover>
@@ -49,8 +48,6 @@ ApplicationUI::ApplicationUI() :
 
     // Set created root object as the application scene
     Application::instance()->setScene(root);
-
-    new QmlBeam(this);
 
 }
 
