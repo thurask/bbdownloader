@@ -1,5 +1,5 @@
 1
-46
+48
 10ppd/images/covers/cover.png
 12ppd/images/covers/cover.png
 12ppd/images/covers/cover_small.png
@@ -19,6 +19,8 @@ images/icons/icon_110.png
 images/icons/icon_144.png
 images/icons/icon_90.png
 images/icons/icon_96.png
+images/menus/ic_help.png
+images/menus/ic_settings.png
 images/menus/ic_show_vkb.png
 images/splash/aseries_landscape.png
 images/splash/aseries_portrait.png

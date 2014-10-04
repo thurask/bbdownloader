@@ -46,11 +46,13 @@ Sheet {
                     checked: true
                     onCheckedChanged: {
                         if (localtoggle.checked == true) {
+                            mainheader.title = qsTr("Known Software (local copy)") + Retranslate.onLanguageChanged
                             repoDataSource.source = "asset:///xml/repo.xml";
                             repoDataSource.remote = false;
                             repoDataSource.load();
                         }
                         else {
+                            mainheader.title = qsTr("Known Software (network copy)") + Retranslate.onLanguageChanged
                             repoDataSource.source = "http://thurask.github.io/repo.xml";
                             repoDataSource.remote = true;
                             repoDataSource.load();
@@ -59,6 +61,7 @@ Sheet {
                 }
             }
             Header {
+                id: mainheader
                 title: (localtoggle.checked == true ? qsTr("Known Software (local copy)") + Retranslate.onLanguageChanged : qsTr("Known Software (network copy)") + Retranslate.onLanguageChanged)
             }
             Label {
@@ -129,6 +132,7 @@ Sheet {
                 repoDataModel.insertList(data)
             }
             onError: {
+                mainheader.title = qsTr("Known Software (local copy)") + Retranslate.onLanguageChanged
                 repoDataSource.source = "asset:///xml/repo.xml";
                 repoDataSource.remote = false;
                 repoDataSource.load();

@@ -38,7 +38,7 @@ public:
     Q_INVOKABLE
     QString incrementRadio(QString input);
     Q_INVOKABLE
-    void setAutoloader(QString os, QString device);
+    void setAutoloader(QString os, QString device, bool useOldAutoloader);
     Q_INVOKABLE
     void setOS(QString os, QString swrelease, QString type, QString device);
     Q_INVOKABLE

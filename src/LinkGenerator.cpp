@@ -12,41 +12,78 @@ LinkGenerator::LinkGenerator()
 
 }
 
-void LinkGenerator::setAutoloader(QString os, QString device)
+void LinkGenerator::setAutoloader(QString os, QString device, bool useOldAutoloader)
 {
     radioLink = "";
-    if (device == "winchester"){
-        osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-STL100-1-" + os +".exe";
+    if (useOldAutoloader == true){
+        if (device == "winchester"){
+            osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-STL100-1-" + os +".exe";
+        }
+        if (device == "winchester_daa"){
+            osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlpha-" + os +".exe";
+        }
+        if (device == "winchester_dab"){
+            osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlphaB-" + os +".exe";
+        }
+        if (device == "winchester_daab"){
+            osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlphaA_B-" + os +".exe";
+        }
+        if (device == "8960"){
+            osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-STL100-3-" + os +".exe";
+        }
+        if (device == "8960omadm"){
+            osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-STL100-4-" + os +".exe";
+        }
+        if (device == "8960wtr"){
+            osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-SQN100-5-" + os +".exe";
+        }
+        if (device == "8960wtr_dac"){
+            osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlphaC-" + os +".exe";
+        }
+        if (device == "8960wtr5"){
+            osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-STA100-5-" + os +".exe";
+        }
+        if (device == "8930wtr5"){
+            osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-STJ100-1-" + os +".exe";
+        }
+        if (device == "8974_sqw"){
+            osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-SQW100-1-" + os +".exe";
+        }
     }
-    if (device == "winchester_daa"){
-        osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlpha-" + os +".exe";
-    }
-    if (device == "winchester_dab"){
-        osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlphaB-" + os +".exe";
-    }
-    if (device == "winchester_daab"){
-        osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlphaA_B-" + os +".exe";
-    }
-    if (device == "8960"){
-        osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-STL100-3-" + os +".exe";
-    }
-    if (device == "8960omadm"){
-        osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-STL100-4-" + os +".exe";
-    }
-    if (device == "8960wtr"){
-        osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-SQN100-5-" + os +".exe";
-    }
-    if (device == "8960wtr_dac"){
-        osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlphaC-" + os +".exe";
-    }
-    if (device == "8960wtr5"){
-        osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-STA100-5-" + os +".exe";
-    }
-    if (device == "8930wtr5"){
-        osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-STJ100-1-" + os +".exe";
-    }
-    if (device == "8974_sqw"){
-        osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-SQW100-1-" + os +".exe";
+    else {
+        if (device == "winchester"){
+            osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-STL-100-1-" + os +".exe";
+        }
+        if (device == "winchester_daa"){
+            osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlpha-" + os +".exe";
+        }
+        if (device == "winchester_dab"){
+            osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlphaB-" + os +".exe";
+        }
+        if (device == "winchester_daab"){
+            osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlphaA_B-" + os +".exe";
+        }
+        if (device == "8960"){
+            osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-STL-100-3-" + os +".exe";
+        }
+        if (device == "8960omadm"){
+            osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-STL-100-4-" + os +".exe";
+        }
+        if (device == "8960wtr"){
+            osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-SQN-100-5-" + os +".exe";
+        }
+        if (device == "8960wtr_dac"){
+            osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlphaC-" + os +".exe";
+        }
+        if (device == "8960wtr5"){
+            osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-STA-100-5-" + os +".exe";
+        }
+        if (device == "8930wtr5"){
+            osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-STJ-100-1-" + os +".exe";
+        }
+        if (device == "8974_sqw"){
+            osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-SQW-100-1-" + os +".exe";
+        }
     }
 }
 
@@ -371,7 +408,7 @@ QString LinkGenerator::incrementRadio(QString input){
         return splitarray.join(".");
     }
     else {
-        return "Error";
+        return tr("Error");
     }
 }
 

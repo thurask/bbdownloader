@@ -12,6 +12,7 @@ Page {
     property string swrelease
     property string osversion
     property string radioversion
+    property bool useoldautoloader: true
     ScrollView {
         scrollViewProperties.pinchToZoomEnabled: false
         scrollViewProperties.scrollMode: ScrollMode.Vertical
@@ -108,7 +109,7 @@ Page {
                     title: qsTr("Choose OS Type") + Retranslate.onLanguageChanged
                     Option {
                         id: dropdown_debrick
-                        text: "Debrick OS"
+                        text: qsTr("Debrick OS") + Retranslate.onLanguageChanged
                         value: "debrick"
                         onSelectedChanged: {
                             if (selected){
@@ -124,7 +125,7 @@ Page {
                     }
                     Option {
                         id: dropdown_core
-                        text: "Core OS"
+                        text: qsTr("Core OS") + Retranslate.onLanguageChanged
                         value: "core"
                         onSelectedChanged: {
                             if (selected){
@@ -140,7 +141,7 @@ Page {
                     }
                     Option {
                         id: dropdown_debrick_verizon
-                        text: "Verizon Debrick OS"
+                        text: qsTr("Verizon Debrick OS") + Retranslate.onLanguageChanged
                         value: "debrick_vzw"
                         onSelectedChanged: {
                             if (selected){
@@ -156,7 +157,7 @@ Page {
                     }
                     Option {
                         id: dropdown_core_verizon
-                        text: "Verizon Core OS"
+                        text: qsTr("Verizon Core OS") + Retranslate.onLanguageChanged
                         value: "core_vzw"
                         onSelectedChanged: {
                             if (selected){
@@ -172,7 +173,7 @@ Page {
                     }
                     Option {
                         id: dropdown_debrick_china
-                        text: "China Debrick OS"
+                        text: qsTr("China Debrick OS") + Retranslate.onLanguageChanged
                         value: "debrick_china"
                         onSelectedChanged: {
                             if (selected){
@@ -188,7 +189,7 @@ Page {
                     }
                     Option {
                         id: dropdown_core_china
-                        text: "China Core OS"
+                        text: qsTr("China Core OS") + Retranslate.onLanguageChanged
                         value: "core_china"
                         onSelectedChanged: {
                             if (selected){
@@ -204,7 +205,7 @@ Page {
                     }
                     Option {
                         id: dropdown_sdkdebrick
-                        text: "SDK Debrick OS"
+                        text: qsTr("SDK Debrick OS") + Retranslate.onLanguageChanged
                         value: "sdkdebrick"
                         onSelectedChanged: {
                             if (selected){
@@ -220,7 +221,7 @@ Page {
                     }
                     Option {
                         id: dropdown_sdkcore
-                        text: "SDK Core OS"
+                        text: qsTr("SDK Core OS") + Retranslate.onLanguageChanged
                         value: "sdkcore"
                         onSelectedChanged: {
                             if (selected){
@@ -236,10 +237,28 @@ Page {
                     }
                     Option {
                         id: dropdown_sdkautoloader
-                        text: "SDK Autoloader (BlackBerry Dev)"
+                        text: qsTr("SDK Autoloader (Old style URL)") + Retranslate.onLanguageChanged
                         value: "sdkautoloader"
                         onSelectedChanged: {
                             if (selected){
+                                useoldautoloader = true;
+                                dropdown_winchester.setEnabled(true);
+                                dropdown_winchester_daa.setEnabled(true);
+                                dropdown_winchester_dab.setEnabled(true);
+                                dropdown_winchester_daab.setEnabled(true);
+                                dropdown_pb.setEnabled(false);
+                                dropdown_pblte_old.setEnabled(false);
+                                dropdown_pblte_new.setEnabled(false);
+                            }
+                        }
+                    }
+                    Option {
+                        id: dropdown_sdkautoloader_new
+                        text: qsTr("SDK Autoloader (New style URL)") + Retranslate.onLanguageChanged
+                        value: "sdkautoloader"
+                        onSelectedChanged: {
+                            if (selected){
+                                useoldautoloader = false;
                                 dropdown_winchester.setEnabled(true);
                                 dropdown_winchester_daa.setEnabled(true);
                                 dropdown_winchester_dab.setEnabled(true);
@@ -344,8 +363,11 @@ Page {
                     onSelectedValueChanged: {
                         if (devicedropdown.selectedValue != "sdkautoloader"){
                             _linkgen.setRadioLabel(devicedropdown.selectedValue);
-                            radio_download_label.text = _linkgen.getRadioLabel();
                         }
+                        else {
+                            _linkgen.setRadioLabel("");
+                        }
+                        radio_download_label.text = _linkgen.getRadioLabel();
                     }
                 }
             }
@@ -364,9 +386,9 @@ Page {
                         if (osdropdown.selectedValue == "sdkautoloader") {
                             radioclipboard.visible = false;
                             allclipboard.visible = false;
-                            _linkgen.setAutoloader(osversion, devicedropdown.selectedValue);
                             radio_download_label.text = "";
                             radio_download_textarea.text = "";
+                            _linkgen.setAutoloader(osversion, devicedropdown.selectedValue, useoldautoloader)     
                         }
                         else {
                             radioclipboard.visible = true;
@@ -524,13 +546,13 @@ Page {
                             text: qsTr("Copy All") + Retranslate.onLanguageChanged
                             onClicked: {
                                 if (os_download_textarea.text.indexOf("http") != -1 && radio_download_textarea.text.indexOf("http") != -1) {
-                                _manager.copyLinks(hashedswversion, osversion, radioversion)
-                                linkexporttoast.body = qsTr("All URLs copied") + Retranslate.onLanguageChanged;
-                                linkexporttoast.button.enabled = true;
-                                myQuery.query.data = _manager.returnLinks(hashedswversion, osversion, radioversion);
-                                myQuery.query.uri = "";
-                                myQuery.query.mimeType = "text/plain"
-                                linkexporttoast.show();
+                                    _manager.copyLinks(hashedswversion, osversion, radioversion)
+                                    linkexporttoast.body = qsTr("All URLs copied") + Retranslate.onLanguageChanged;
+                                    linkexporttoast.button.enabled = true;
+                                    myQuery.query.data = _manager.returnLinks(hashedswversion, osversion, radioversion);
+                                    myQuery.query.uri = "";
+                                    myQuery.query.mimeType = "text/plain"
+                                    linkexporttoast.show();
                                 }
                             }
                         }
