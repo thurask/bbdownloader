@@ -40,15 +40,43 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Start/Stop</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Server</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Lookups saved to default directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>250 ms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>500 ms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>750 ms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1000 ms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Once</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only show releases?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -862,14 +890,6 @@ https://github.com/thurask/bbdownloader</source>
     </message>
     <message>
         <source>NFC Stack: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Adobe Flash: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Adobe AIR: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>

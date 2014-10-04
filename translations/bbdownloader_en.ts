@@ -40,16 +40,44 @@
         <translation>Share</translation>
     </message>
     <message>
-        <source>Start/Stop</source>
-        <translation>Start/Stop</translation>
-    </message>
-    <message>
         <source>Server</source>
         <translation>Server</translation>
     </message>
     <message>
         <source>Lookups saved to default directory</source>
         <translation>Lookups saved to default directory</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Start</translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation>Stop</translation>
+    </message>
+    <message>
+        <source>250 ms</source>
+        <translation>250 ms</translation>
+    </message>
+    <message>
+        <source>500 ms</source>
+        <translation>500 ms</translation>
+    </message>
+    <message>
+        <source>750 ms</source>
+        <translation>750 ms</translation>
+    </message>
+    <message>
+        <source>1000 ms</source>
+        <translation>1000 ms</translation>
+    </message>
+    <message>
+        <source>Once</source>
+        <translation>Once</translation>
+    </message>
+    <message>
+        <source>Only show releases?</source>
+        <translation>Only show releases?</translation>
     </message>
 </context>
 <context>
@@ -864,14 +892,6 @@ https://github.com/thurask/bbdownloader</translation>
     <message>
         <source>NFC Stack: </source>
         <translation>NFC Stack: </translation>
-    </message>
-    <message>
-        <source>Adobe Flash: </source>
-        <translation>Adobe Flash: </translation>
-    </message>
-    <message>
-        <source>Adobe AIR: </source>
-        <translation>Adobe Air: </translation>
     </message>
     <message>
         <source>WiFi: </source>
