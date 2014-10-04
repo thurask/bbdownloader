@@ -122,12 +122,14 @@ TabbedPane {
     ]
     Menu.definition: MenuDefinition {
         helpAction: HelpActionItem {
+            imageSource: "asset:///images/menus/ic_help.png"
             onTriggered: {
                 var help = helpSheetDefinition.createObject()
                 help.open();
             }
         }
         settingsAction: SettingsActionItem {
+            imageSource: "asset:///images/menus/ic_settings.png"
             onTriggered: {
                 var settings = settingsSheetDefinition.createObject()
                 settings.open();
