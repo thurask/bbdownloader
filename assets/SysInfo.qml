@@ -126,13 +126,10 @@ Page {
                 }
                 Label {
                     text: qsTr("NFC Stack: ") + Retranslate.onLanguageChanged + _manager.readTextFile("/var/etc/nfc/nfcStack.version", "normal")
-                }
+                }/*
                 Label {
                     text: qsTr("Adobe Flash: ") + Retranslate.onLanguageChanged + _manager.readTextFile("/base/etc/flash.version", "normal")
-                }
-                Label {
-                    text: qsTr("Adobe AIR: ") + Retranslate.onLanguageChanged + _manager.readTextFile("/base/etc/air.version", "normal")
-                }
+                }*/
                 Label {
                     text: qsTr("WiFi: ") + Retranslate.onLanguageChanged + _manager.readTextFile("/base/etc/wifi.version", "normal")
                 }
