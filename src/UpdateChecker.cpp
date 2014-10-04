@@ -15,7 +15,7 @@ UpdateChecker::UpdateChecker()
 void UpdateChecker::checkForUpdates()
 {
     setLocalVersion(bb::ApplicationInfo().version());
-    QUrl url("http://thurask.github.io/version.txt");
+    QUrl url("http://thurask.github.io/bbdownloader_version_1031.txt");
     QNetworkAccessManager *nam = new QNetworkAccessManager(this);
     QNetworkReply *reply = nam->get(QNetworkRequest(url));
     connect(reply, SIGNAL(finished()), this, SLOT(writeUpdateFile()));
@@ -52,12 +52,17 @@ void UpdateChecker::setLocalVersion(QString text)
 
 bool UpdateChecker::returnUpdate()
 {
-    int x = QString::compare(updateVersion, localVersion, Qt::CaseInsensitive);  // if strings are equal x should return 0
-    if (x == 0){
-        return false;
+    if (updateVersion != ""){
+        int x = QString::compare(updateVersion, localVersion, Qt::CaseInsensitive);  // if strings are equal x should return 0
+        if (x == 0){
+            return false;
+        }
+        else {
+            return true;
+        }
     }
-    else{
-        return true;
+    else {
+        return false;
     }
 }
 
