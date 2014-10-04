@@ -9,6 +9,7 @@ import bb.system 1.2
 import qt.timer 1.0
 
 TabbedPane {
+    id: tabbedpane
     attachedObjects: [
         ComponentDefinition {
             id: helpSheetDefinition
@@ -52,6 +53,56 @@ TabbedPane {
         ActiveFrame {
             id: multi
         }
+    ]  
+    shortcuts: [
+        Shortcut {
+            key: "o"
+            onTriggered: {
+                tabbedpane.activeTab = tab1
+            }  
+        },
+        Shortcut {
+            key: "d"
+            onTriggered: {
+                tabbedpane.activeTab = tab2
+            }
+        },
+        Shortcut {
+            key: "l"
+            onTriggered: {
+                tabbedpane.activeTab = tab3
+            }
+        },
+        Shortcut {
+            key: "h"
+            onTriggered: {
+                tabbedpane.activeTab = tab4
+            }
+        },
+        Shortcut {
+            key: "e"
+            onTriggered: {
+                tabbedpane.activeTab = tab5
+            }
+        },
+        Shortcut {
+            key: "s"
+            onTriggered: {
+                tabbedpane.activeTab = tab6
+            }
+        },
+        Shortcut {
+            key: "i"
+            onTriggered: {
+                tabbedpane.activeTab = tab7
+            }
+        },
+        Shortcut {
+            key: "n"
+            onTriggered: {
+                tabbedpane.activeTab = tab8
+            }
+        }
     ]
     Menu.definition: MenuDefinition {
         helpAction: HelpActionItem {
@@ -68,6 +119,7 @@ TabbedPane {
         }
     }
     Tab {
+        id: tab1
         title: qsTr("OS Downloader") + Retranslate.onLanguageChanged
         imageSource: "asset:///images/tabs/1.png"
         delegate: Delegate {
@@ -81,6 +133,7 @@ TabbedPane {
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
     }
     Tab {
+        id: tab2
         title: qsTr("Delta OS Downloader") + Retranslate.onLanguageChanged
         imageSource: "asset:///images/tabs/2.png"
         delegate: Delegate {
@@ -94,6 +147,7 @@ TabbedPane {
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
     }
     Tab {
+        id: tab3
         title: qsTr("OS Lookup Tool") + Retranslate.onLanguageChanged
         imageSource: "asset:///images/tabs/3.png"
         delegate: Delegate {
@@ -107,6 +161,7 @@ TabbedPane {
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
     }
     Tab {
+        id: tab4
         title: qsTr("Hash Tools") + Retranslate.onLanguageChanged
         imageSource: "asset:///images/tabs/4.png"
         delegate: Delegate {
@@ -120,6 +175,7 @@ TabbedPane {
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
     }
     Tab {
+        id: tab5
         title: qsTr("Engineering Screens") + Retranslate.onLanguageChanged
         imageSource: "asset:///images/tabs/5.png"
         delegate: Delegate {
@@ -133,6 +189,7 @@ TabbedPane {
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivateImmediately
     }
     Tab {
+        id: tab6
         title: qsTr("System Info") + Retranslate.onLanguageChanged
         imageSource: "asset:///images/tabs/6.png"
         delegate: Delegate {
@@ -146,6 +203,7 @@ TabbedPane {
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivatedWhileSelected
     }
     Tab {
+        id: tab7
         title: qsTr("Hardware ID List") + Retranslate.onLanguageChanged
         imageSource: "asset:///images/tabs/7.png"
         delegate: Delegate {
@@ -159,6 +217,7 @@ TabbedPane {
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
     }
     Tab {
+        id: tab8
         title: qsTr(".nomedia Helper") + Retranslate.onLanguageChanged
         imageSource: "asset:///images/tabs/8.png"
         delegate: Delegate {
