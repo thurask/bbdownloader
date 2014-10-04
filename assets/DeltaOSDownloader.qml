@@ -41,7 +41,7 @@ Page {
                     TextField {
                         id: osver_input
                         hintText: qsTr("Target OS Version") + Retranslate.onLanguageChanged
-                        inputMode: TextFieldInputMode.PhoneNumber
+                        input.keyLayout: KeyLayout.Number
                         onTextChanged: {
                             osversion = osver_input.text
                             _swlookup.post(osversion, "https://cs.sl.blackberry.com/cse/srVersionLookup/2.0.0/");
@@ -64,7 +64,7 @@ Page {
                     TextField {
                         id: radiover_input
                         hintText: qsTr("Target Radio Version") + Retranslate.onLanguageChanged
-                        inputMode: TextFieldInputMode.PhoneNumber
+                        input.keyLayout: KeyLayout.Number
                         onTextChanged: {
                             radioversion = radiover_input.text
                         }
@@ -86,12 +86,12 @@ Page {
                     TextField {
                         id: swver_input
                         hintText: qsTr("Target SW Version") + Retranslate.onLanguageChanged
+                        input.keyLayout: KeyLayout.Number
                         onTextChanged: {
                             swrelease = swver_input.text
                             hashCalculateSha.calculateHash(swrelease)
                             hashedswversion = hashCalculateSha.getHash()
                         }
-                        inputMode: TextFieldInputMode.PhoneNumber
                     }
                     Button {
                         text: qsTr("Known Software") + Retranslate.onLanguageChanged
@@ -111,7 +111,7 @@ Page {
                     TextField {
                         id: osinit_input
                         hintText: qsTr("Initial OS Version") + Retranslate.onLanguageChanged
-                        inputMode: TextFieldInputMode.PhoneNumber
+                        input.keyLayout: KeyLayout.Number
                         onTextChanged: {
                             osinitversion = osinit_input.text;
                             osinit = osinit_input.text.replace(/\./g, "");
@@ -136,7 +136,7 @@ Page {
                     TextField {
                         id: radioinit_input
                         hintText: qsTr("Initial Radio Version") + Retranslate.onLanguageChanged
-                        inputMode: TextFieldInputMode.PhoneNumber
+                        input.keyLayout: KeyLayout.Number
                         onTextChanged: {
                             radioinitversion = radioinit_input.text
                             radinit = radioinit_input.text.replace(/\./g, "");
