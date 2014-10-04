@@ -10,13 +10,24 @@ import qt.timer 1.0
 
 Page {
     property bool scanning: false
+    property bool silentmode
     attachedObjects: [
         QTimer{
             id: timer
             //set interval
             interval: 500
             onTimeout:{
-                outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - " + (_swlookup.softwareRelease().indexOf("SR") != -1 ? "" : "SR ") + _swlookup.softwareRelease() + "\n");
+                if (silentmode == false){
+                    outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - " + (_swlookup.softwareRelease().indexOf("SR") != -1 ? "" : "SR ") + _swlookup.softwareRelease() + "\n");
+                }
+                if (silentmode == true){
+                    if (_swlookup.softwareRelease().indexOf(".") != -1){
+                        outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - " + _swlookup.softwareRelease() + "\n");
+                    }
+                    else {
+                    
+                    }
+                }
                 autolookup_input.text = _swlookup.lookupIncrement(autolookup_input.text);
                 timer.restart();
             }
@@ -60,11 +71,10 @@ Page {
             TextField {
                 id: autolookup_input
                 verticalAlignment: VerticalAlignment.Center
-                inputMode: TextFieldInputMode.PhoneNumber
+                input.keyLayout: KeyLayout.Number
                 onTextChanging: {
                     _swlookup.post(autolookup_input.text, serverdropdown.selectedValue);
                 }
-                input.submitKey: SubmitKey.Submit
                 hintText: qsTr("Enter OS version") + Retranslate.onLanguageChanged
             }
         }
@@ -73,24 +83,29 @@ Page {
             title: qsTr("Lookup Interval") + Retranslate.onLanguageChanged
             Option {
                 id: quartersecond
-                text: "250 ms"
+                text: qsTr("250 ms") + Retranslate.onLanguageChanged
                 value: 250
             }
             Option {
                 id: halfsecond
-                text: "500 ms"
+                text: qsTr("500 ms") + Retranslate.onLanguageChanged
                 value: 500
                 selected: true
             }
             Option {
                 id: threequartersecond
-                text: "750 ms"
+                text: qsTr("750 ms") + Retranslate.onLanguageChanged
                 value: 750
             }
             Option {
                 id: fullsecond
-                text: "1000 ms"
+                text: qsTr("1000 ms") + Retranslate.onLanguageChanged
                 value: 1000
+            }
+            Option {
+                id: stationary
+                text: qsTr("Once") + Retranslate.onLanguageChanged
+                value: 86400
             }
             onSelectedOptionChanged: {
                 timer.interval = timeoutdropdown.selectedValue;
@@ -127,21 +142,51 @@ Page {
             }
         }
         Container {
+            horizontalAlignment: HorizontalAlignment.Center
+            verticalAlignment: VerticalAlignment.Center
+            layout: StackLayout {
+                orientation: LayoutOrientation.LeftToRight
+            }
+            Label {
+                text: qsTr("Only show releases?") + Retranslate.onLanguageChanged
+                verticalAlignment: VerticalAlignment.Center
+            }
+            ToggleButton {
+                id: silentbutton
+                onCheckedChanged: {
+                    if (checked){
+                        silentmode = true
+                    }
+                    else {
+                        silentmode = false
+                    }
+                }
+            }
+        }
+        Container {
+            topPadding: 10.0
             layout: StackLayout {
                 orientation: LayoutOrientation.LeftToRight
             }
             horizontalAlignment: HorizontalAlignment.Center
             Button {
                 id: autolookupbutton
-                text: qsTr("Start/Stop") + Retranslate.onLanguageChanged
+                text: qsTr("Start") + Retranslate.onLanguageChanged
                 onClicked: {
                     if (scanning == false) {
-                        timer.start();
-                        scanning = true;
+                        if (timeoutdropdown.selectedValue != 86400){
+                            timer.start();
+                            scanning = true;
+                            autolookupbutton.text = qsTr("Stop") + Retranslate.onLanguageChanged
+                        }
+                        else {
+                            outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - " + (_swlookup.softwareRelease().indexOf("SR") != -1 ? "" : "SR ") + _swlookup.softwareRelease() + "\n");
+                        }
                     }
                     else {
                         timer.stop();
                         scanning = false;
+                        autolookupbutton.text = qsTr("Start") + Retranslate.onLanguageChanged
                     }
                 }
             }
