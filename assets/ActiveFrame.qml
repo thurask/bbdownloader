@@ -10,7 +10,7 @@ MultiCover {
     SceneCover {
         MultiCover.level: CoverDetailLevel.High
         content: ImageView {
-            imageSource: "asset:///images/cover.png"
+            imageSource: "asset:///images/covers/cover.png"
             scalingMethod: ScalingMethod.AspectFit
             verticalAlignment: VerticalAlignment.Center
             horizontalAlignment: HorizontalAlignment.Center
@@ -19,7 +19,7 @@ MultiCover {
     SceneCover {
         MultiCover.level: CoverDetailLevel.Medium
         content: ImageView {
-            imageSource: "asset:///images/cover_small.png"
+            imageSource: "asset:///images/covers/cover_small.png"
             scalingMethod: ScalingMethod.AspectFit
             verticalAlignment: VerticalAlignment.Center
             horizontalAlignment: HorizontalAlignment.Center

@@ -140,11 +140,11 @@ simulator {
 
 config_pri_assets {
     OTHER_FILES += \
-        $$quote($$BASEDIR/assets/10ppd/images/cover.png) \
-        $$quote($$BASEDIR/assets/12ppd/images/cover.png) \
-        $$quote($$BASEDIR/assets/12ppd/images/cover_small.png) \
-        $$quote($$BASEDIR/assets/8ppd/images/cover.png) \
-        $$quote($$BASEDIR/assets/9ppd/images/cover.png) \
+        $$quote($$BASEDIR/assets/10ppd/images/covers/cover.png) \
+        $$quote($$BASEDIR/assets/12ppd/images/covers/cover.png) \
+        $$quote($$BASEDIR/assets/12ppd/images/covers/cover_small.png) \
+        $$quote($$BASEDIR/assets/8ppd/images/covers/cover.png) \
+        $$quote($$BASEDIR/assets/9ppd/images/covers/cover.png) \
         $$quote($$BASEDIR/assets/ActiveFrame.qml) \
         $$quote($$BASEDIR/assets/AutoLookup.qml) \
         $$quote($$BASEDIR/assets/DeltaOSDownloader.qml) \
@@ -159,8 +159,8 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/ProgressBar.qml) \
         $$quote($$BASEDIR/assets/SettingsSheet.qml) \
         $$quote($$BASEDIR/assets/SysInfo.qml) \
-        $$quote($$BASEDIR/assets/images/cover.png) \
-        $$quote($$BASEDIR/assets/images/cover_small.png) \
+        $$quote($$BASEDIR/assets/images/covers/cover.png) \
+        $$quote($$BASEDIR/assets/images/covers/cover_small.png) \
         $$quote($$BASEDIR/assets/images/icons/icon_110.png) \
         $$quote($$BASEDIR/assets/images/icons/icon_144.png) \
         $$quote($$BASEDIR/assets/images/icons/icon_90.png) \
@@ -241,27 +241,42 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/10ppd/images/*.qml) \
         $$quote($$BASEDIR/../assets/10ppd/images/*.js) \
         $$quote($$BASEDIR/../assets/10ppd/images/*.qs) \
+        $$quote($$BASEDIR/../assets/10ppd/images/covers/*.qml) \
+        $$quote($$BASEDIR/../assets/10ppd/images/covers/*.js) \
+        $$quote($$BASEDIR/../assets/10ppd/images/covers/*.qs) \
         $$quote($$BASEDIR/../assets/12ppd/*.qml) \
         $$quote($$BASEDIR/../assets/12ppd/*.js) \
         $$quote($$BASEDIR/../assets/12ppd/*.qs) \
         $$quote($$BASEDIR/../assets/12ppd/images/*.qml) \
         $$quote($$BASEDIR/../assets/12ppd/images/*.js) \
         $$quote($$BASEDIR/../assets/12ppd/images/*.qs) \
+        $$quote($$BASEDIR/../assets/12ppd/images/covers/*.qml) \
+        $$quote($$BASEDIR/../assets/12ppd/images/covers/*.js) \
+        $$quote($$BASEDIR/../assets/12ppd/images/covers/*.qs) \
         $$quote($$BASEDIR/../assets/8ppd/*.qml) \
         $$quote($$BASEDIR/../assets/8ppd/*.js) \
         $$quote($$BASEDIR/../assets/8ppd/*.qs) \
         $$quote($$BASEDIR/../assets/8ppd/images/*.qml) \
         $$quote($$BASEDIR/../assets/8ppd/images/*.js) \
         $$quote($$BASEDIR/../assets/8ppd/images/*.qs) \
+        $$quote($$BASEDIR/../assets/8ppd/images/covers/*.qml) \
+        $$quote($$BASEDIR/../assets/8ppd/images/covers/*.js) \
+        $$quote($$BASEDIR/../assets/8ppd/images/covers/*.qs) \
         $$quote($$BASEDIR/../assets/9ppd/*.qml) \
         $$quote($$BASEDIR/../assets/9ppd/*.js) \
         $$quote($$BASEDIR/../assets/9ppd/*.qs) \
         $$quote($$BASEDIR/../assets/9ppd/images/*.qml) \
         $$quote($$BASEDIR/../assets/9ppd/images/*.js) \
         $$quote($$BASEDIR/../assets/9ppd/images/*.qs) \
+        $$quote($$BASEDIR/../assets/9ppd/images/covers/*.qml) \
+        $$quote($$BASEDIR/../assets/9ppd/images/covers/*.js) \
+        $$quote($$BASEDIR/../assets/9ppd/images/covers/*.qs) \
         $$quote($$BASEDIR/../assets/images/*.qml) \
         $$quote($$BASEDIR/../assets/images/*.js) \
         $$quote($$BASEDIR/../assets/images/*.qs) \
+        $$quote($$BASEDIR/../assets/images/covers/*.qml) \
+        $$quote($$BASEDIR/../assets/images/covers/*.js) \
+        $$quote($$BASEDIR/../assets/images/covers/*.qs) \
         $$quote($$BASEDIR/../assets/images/icons/*.qml) \
         $$quote($$BASEDIR/../assets/images/icons/*.js) \
         $$quote($$BASEDIR/../assets/images/icons/*.qs) \
