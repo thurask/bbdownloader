@@ -1,10 +1,10 @@
 1
 46
-10ppd/images/cover.png
-12ppd/images/cover.png
-12ppd/images/cover_small.png
-8ppd/images/cover.png
-9ppd/images/cover.png
+10ppd/images/covers/cover.png
+12ppd/images/covers/cover.png
+12ppd/images/covers/cover_small.png
+8ppd/images/covers/cover.png
+9ppd/images/covers/cover.png
 ActiveFrame.qml
 AutoLookup.qml
 DeltaOSDownloader.qml
@@ -13,8 +13,8 @@ EScreens.qml
 HardwareIDs.qml
 HashTools.qml
 HelpSheet.qml
-images/cover.png
-images/cover_small.png
+images/covers/cover.png
+images/covers/cover_small.png
 images/icons/icon_110.png
 images/icons/icon_144.png
 images/icons/icon_90.png
