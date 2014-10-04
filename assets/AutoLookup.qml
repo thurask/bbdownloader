@@ -22,7 +22,7 @@ Page {
                 }
                 if (silentmode == true){
                     if (_swlookup.softwareRelease().indexOf(".") != -1){
-                        outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - " + _swlookup.softwareRelease() + "\n");
+                        outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - SR" + _swlookup.softwareRelease() + "\n");
                     }
                     else {
                     

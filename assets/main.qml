@@ -21,6 +21,22 @@ TabbedPane {
             SettingsSheet {
             }
         },
+        SystemDialog {
+            id: shortcutDialog
+            title: qsTr("Keyboard Shortcuts") + Retranslate.onLanguageChanged
+            cancelButton.enabled: false
+            customButton.enabled: false
+            body: qsTr("o = OS Downloader") + Retranslate.onLanguageChanged + "\n"
+            + qsTr("d = Delta OS Downloader") + Retranslate.onLanguageChanged + "\n"
+            + qsTr("l = OS Lookup Tool") + Retranslate.onLanguageChanged + "\n"
+            + qsTr("h = Hash Tools") + Retranslate.onLanguageChanged + "\n"
+            + qsTr("e = Engineering Screens") + Retranslate.onLanguageChanged + "\n"
+            + qsTr("s = System Info") + Retranslate.onLanguageChanged + "\n"
+            + qsTr("i = Hardware ID List") + Retranslate.onLanguageChanged + "\n"
+            + qsTr("n = .nomedia Helper") + Retranslate.onLanguageChanged
+            includeRememberMe: false
+            rememberMeChecked: false
+        },
         SystemToast {
             id: updateToast
             body: qsTr("Update available") + Retranslate.onLanguageChanged
@@ -117,6 +133,15 @@ TabbedPane {
                 settings.open();
             }
         }
+        actions: [
+            ActionItem {
+                title: qsTr("Keyboard Shortcuts") + Retranslate.onLanguageChanged
+                imageSource: "asset:///images/menus/ic_show_vkb.png"
+                onTriggered: {
+                    shortcutDialog.show()
+                }
+            }
+        ]
     }
     Tab {
         id: tab1

@@ -10,9 +10,9 @@ Sheet {
     id: helpSheet
     content: Page {
         titleBar: TitleBar {
-            title: "Help"
+            title: qsTr("Help") + Retranslate.onLanguageChanged
             dismissAction: ActionItem {
-                title: "Close"
+                title: qsTr("Close") + Retranslate.onLanguageChanged
                 onTriggered: {
                     helpSheet.close()
                     if (helpSheet) helpSheet.destroy();
@@ -32,7 +32,7 @@ Sheet {
                 textStyle.textAlign: TextAlign.Center
             }
             Label {
-                text: "Twitter: @thuraski"
+                text: qsTr("Updates posted to Github or Twitter: @thuraski") + Retranslate.onLanguageChanged
                 horizontalAlignment: HorizontalAlignment.Center
                 textFit.mode: LabelTextFitMode.Default
                 textStyle.textAlign: TextAlign.Center
