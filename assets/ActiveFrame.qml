@@ -1,4 +1,10 @@
-import bb.cascades 1.3
+/*ActiveFrame.qml
+ ------------------
+ Duh.
+ 
+ --Thurask*/
+
+import bb.cascades 1.4
 
 MultiCover {
     SceneCover {

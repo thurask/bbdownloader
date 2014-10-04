@@ -4,7 +4,7 @@
  
  --Thurask*/
 
-import bb.cascades 1.3
+import bb.cascades 1.4
 import bb.system 1.2
 import qt.timer 1.0
 
@@ -43,7 +43,7 @@ TabbedPane {
             id: timer
             interval: 1000
             onTimeout:{
-                if (Checker.returnUpdate() == true && Checker.getUpdateVersion() != ""){
+                if (Checker.returnUpdate() == true){
                     updateToast.show();
                 }
                 timer.stop();
