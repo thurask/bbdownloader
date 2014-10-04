@@ -165,6 +165,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/images/icons/icon_144.png) \
         $$quote($$BASEDIR/assets/images/icons/icon_90.png) \
         $$quote($$BASEDIR/assets/images/icons/icon_96.png) \
+        $$quote($$BASEDIR/assets/images/menus/ic_show_vkb.png) \
         $$quote($$BASEDIR/assets/images/splash/aseries_landscape.png) \
         $$quote($$BASEDIR/assets/images/splash/aseries_portrait.png) \
         $$quote($$BASEDIR/assets/images/splash/lseries_landscape.png) \
@@ -264,6 +265,9 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/images/icons/*.qml) \
         $$quote($$BASEDIR/../assets/images/icons/*.js) \
         $$quote($$BASEDIR/../assets/images/icons/*.qs) \
+        $$quote($$BASEDIR/../assets/images/menus/*.qml) \
+        $$quote($$BASEDIR/../assets/images/menus/*.js) \
+        $$quote($$BASEDIR/../assets/images/menus/*.qs) \
         $$quote($$BASEDIR/../assets/images/splash/*.qml) \
         $$quote($$BASEDIR/../assets/images/splash/*.js) \
         $$quote($$BASEDIR/../assets/images/splash/*.qs) \

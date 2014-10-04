@@ -390,6 +390,18 @@ https://github.com/thurask/bbdownloader</source>
         <source>Default save folder: /accounts/1000/shared/downloads/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Updates posted to Github or Twitter: @thuraski</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LinkGenerator</name>
@@ -945,6 +957,42 @@ https://github.com/thurask/bbdownloader</source>
     </message>
     <message>
         <source>.nomedia Helper</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keyboard Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>o = OS Downloader</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>d = Delta OS Downloader</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>l = OS Lookup Tool</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>h = Hash Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>e = Engineering Screens</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>s = System Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>i = Hardware ID List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>n = .nomedia Helper</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

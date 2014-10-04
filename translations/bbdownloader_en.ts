@@ -391,6 +391,18 @@ https://github.com/thurask/bbdownloader</translation>
         <source>Default save folder: /accounts/1000/shared/downloads/bbdownloader</source>
         <translation>Default save folder: /accounts/1000/shared/downloads/bbdownloader</translation>
     </message>
+    <message>
+        <source>Help</source>
+        <translation>Help</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Close</translation>
+    </message>
+    <message>
+        <source>Updates posted to Github or Twitter: @thuraski</source>
+        <translation>Updates posted to Github or Twitter: @thuraski</translation>
+    </message>
 </context>
 <context>
     <name>LinkGenerator</name>
@@ -947,6 +959,42 @@ https://github.com/thurask/bbdownloader</translation>
     <message>
         <source>.nomedia Helper</source>
         <translation>.nomedia Helper</translation>
+    </message>
+    <message>
+        <source>Keyboard Shortcuts</source>
+        <translation>Keyboard Shortcuts</translation>
+    </message>
+    <message>
+        <source>o = OS Downloader</source>
+        <translation>o = OS Downloader</translation>
+    </message>
+    <message>
+        <source>d = Delta OS Downloader</source>
+        <translation>d = Delta OS Downloader</translation>
+    </message>
+    <message>
+        <source>l = OS Lookup Tool</source>
+        <translation>l = OS Lookup Tool</translation>
+    </message>
+    <message>
+        <source>h = Hash Tools</source>
+        <translation>h = Hash Tools</translation>
+    </message>
+    <message>
+        <source>e = Engineering Screens</source>
+        <translation>e = Engineering Screens</translation>
+    </message>
+    <message>
+        <source>s = System Info</source>
+        <translation>s = System Info</translation>
+    </message>
+    <message>
+        <source>i = Hardware ID List</source>
+        <translation>i = Hardware ID List</translation>
+    </message>
+    <message>
+        <source>n = .nomedia Helper</source>
+        <translation>n = .nomedia Helper</translation>
     </message>
 </context>
 </TS>
