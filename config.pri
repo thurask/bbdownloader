@@ -145,6 +145,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/12ppd/images/cover_small.png) \
         $$quote($$BASEDIR/assets/8ppd/images/cover.png) \
         $$quote($$BASEDIR/assets/9ppd/images/cover.png) \
+        $$quote($$BASEDIR/assets/ActiveFrame.qml) \
         $$quote($$BASEDIR/assets/AutoLookup.qml) \
         $$quote($$BASEDIR/assets/DeltaOSDownloader.qml) \
         $$quote($$BASEDIR/assets/DownloadComponent.qml) \
