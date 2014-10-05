@@ -1,10 +1,8 @@
 /*ActiveFrame.qml
- * --------------
- * 
- * Duh.
- * 
- * -Thurask
- */
+ ------------------
+ Duh.
+ 
+ --Thurask*/
 
 import bb.cascades 1.3
 
