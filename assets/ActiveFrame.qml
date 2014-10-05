@@ -1,3 +1,11 @@
+/*ActiveFrame.qml
+ * --------------
+ * 
+ * Duh.
+ * 
+ * -Thurask
+ */
+
 import bb.cascades 1.3
 
 MultiCover {
