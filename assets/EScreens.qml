@@ -33,9 +33,21 @@ Page {
             TextField {
                 id: pin
                 hintText: qsTr("PIN") + Retranslate.onLanguageChanged
-                input.keyLayout: KeyLayout.Pin
                 onTextChanging: {
                     pin.text = pin.text.toLowerCase()
+                }
+                validator: Validator {
+                    id: validator_pin
+                    mode: ValidationMode.Immediate
+                    onValidate: {
+                        var regex_pin = RegExp(/\b[0-9a-f]{8}\b/)
+                        if (regex_pin.test(pin.text) == true) {
+                            validator_pin.setValid(true);
+                        }
+                        else {
+                            validator_pin.setValid(false);
+                        }
+                    }
                 }
             }
             Label {
@@ -44,7 +56,19 @@ Page {
             TextField {
                 id: appv
                 hintText: qsTr("App Version") + Retranslate.onLanguageChanged
-                input.keyLayout: KeyLayout.Number
+                validator: Validator {
+                    id: validator_appver
+                    mode: ValidationMode.Immediate
+                    onValidate: {
+                        var regex_appv = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/)
+                        if (regex_appv.test(appv.text) == true) {
+                            validator_appver.setValid(true);
+                        }
+                        else {
+                            validator_appver.setValid(false);
+                        }
+                    }
+                }
             }
             Label {
                 text: qsTr("Uptime") + Retranslate.onLanguageChanged
@@ -52,7 +76,19 @@ Page {
             TextField {
                 id: uptime
                 hintText: qsTr("Uptime") + Retranslate.onLanguageChanged
-                input.keyLayout: KeyLayout.Number
+                validator: Validator {
+                    id: validator_uptime
+                    mode: ValidationMode.Immediate
+                    onValidate: {
+                        var regex_uptime = RegExp(/\b\d{1,}\b/)
+                        if (regex_uptime.test(uptime.text) == true) {
+                            validator_uptime.setValid(true);
+                        }
+                        else {
+                            validator_uptime.setValid(false);
+                        }
+                    }
+                }
             }
             DropDown {
                 id: validity

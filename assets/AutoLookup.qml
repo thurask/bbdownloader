@@ -18,12 +18,6 @@ Page {
             interval: 500
             onTimeout:{
                 if (silentmode == false){
-                    if (_swlookup.softwareRelease().indexOf(".") != -1){
-                        //if there's a SW release
-                    }
-                    else {
-                        //if there isn't a SW release
-                    }
                     outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - " + (_swlookup.softwareRelease().indexOf("SR") != -1 ? "" : "SR ") + _swlookup.softwareRelease() + "\n");
                 }
                 if (silentmode == true){
@@ -62,6 +56,10 @@ Page {
             }
         }
     ]
+    onCreationCompleted: {
+        _swlookup.post(autolookup_input.text, serverdropdown.selectedValue)
+        validator.valid = true;
+    }
     Container {
         Header {
             title: qsTr("Input") + Retranslate.onLanguageChanged
@@ -78,16 +76,34 @@ Page {
             TextField {
                 id: autolookup_input
                 verticalAlignment: VerticalAlignment.Center
-                input.keyLayout: KeyLayout.Number
+                enabled: (scanning == false)
+                text: "10.3.0.1154"
                 onTextChanging: {
                     _swlookup.post(autolookup_input.text, serverdropdown.selectedValue);
                 }
+                onTextChanged: {
+                    _swlookup.post(autolookup_input.text, serverdropdown.selectedValue);
+                }
                 hintText: qsTr("Enter OS version") + Retranslate.onLanguageChanged
+                validator: Validator {
+                    id: validator
+                    mode: ValidationMode.Immediate
+                    onValidate: {
+                        var regex = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/)
+                        if (regex.test(autolookup_input.text) == true) {
+                            validator.setValid(true);
+                        }
+                        else {
+                            validator.setValid(false);
+                        }
+                    }
+                }
             }
         }
         DropDown {
             id: timeoutdropdown
             title: qsTr("Lookup Interval") + Retranslate.onLanguageChanged
+            enabled: (scanning == false)
             Option {
                 id: quartersecond
                 text: qsTr("250 ms") + Retranslate.onLanguageChanged
@@ -121,6 +137,7 @@ Page {
         DropDown {
             id: serverdropdown
             title: qsTr("Server") + Retranslate.onLanguageChanged
+            enabled: (scanning == false)
             Option {
                 id: main
                 text: "Main"
@@ -180,21 +197,26 @@ Page {
                 id: autolookupbutton
                 text: qsTr("Start") + Retranslate.onLanguageChanged
                 onClicked: {
-                    if (scanning == false) { 
-                        if (timeoutdropdown.selectedValue != 86400){
-                            timer.start();
-                            scanning = true;
-                            autolookupbutton.text = qsTr("Stop") + Retranslate.onLanguageChanged
-                        }
-                        else {
-                            outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - " + (_swlookup.softwareRelease().indexOf("SR") != -1 ? "" : "SR ") + _swlookup.softwareRelease() + "\n");
-                        }
+                    if (validator.valid == false){
+                        autolookup_input.text = qsTr("Please input a valid OS version") + Retranslate.onLanguageChanged;
                     }
                     else {
-                        beepled.cancel()
-                        timer.stop();
-                        scanning = false;
-                        autolookupbutton.text = qsTr("Start") + Retranslate.onLanguageChanged
+                        if (scanning == false) {
+                            if (timeoutdropdown.selectedValue != 86400){
+                                _swlookup.post(autolookup_input.text, serverdropdown.selectedValue);
+                                scanning = true;
+                                timer.start();
+                                autolookupbutton.text = qsTr("Stop") + Retranslate.onLanguageChanged
+                            }
+                            else {
+                                outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - " + (_swlookup.softwareRelease().indexOf("SR") != -1 ? "" : "SR ") + _swlookup.softwareRelease() + "\n");
+                            }
+                        }
+                        else {
+                            scanning = false;
+                            timer.stop();
+                            autolookupbutton.text = qsTr("Start") + Retranslate.onLanguageChanged
+                        }
                     }
                 }
             }
@@ -215,6 +237,7 @@ Page {
             Button {
                 id: autosharebutton
                 text: qsTr("Share") + Retranslate.onLanguageChanged
+                enabled: (scanning == false)
                 onClicked: {
                     myQuery.trigger(myQuery.query.invokeActionId)
                 }
@@ -222,6 +245,7 @@ Page {
             Button {
                 id: autoexportbutton
                 text: qsTr("Export") + Retranslate.onLanguageChanged
+                enabled: (scanning == false)
                 onClicked: {
                     _manager.saveTextFile(outputtext.text, "Lookup");
                     lookupexporttoast.body = qsTr("Lookups saved to default directory") + Retranslate.onLanguageChanged;

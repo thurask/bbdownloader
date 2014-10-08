@@ -16,6 +16,7 @@ public Q_SLOTS:
 void post(QString osVer, QString server);
     QString softwareRelease();
     QString lookupIncrement(QString os);
+    void setSoftwareRelease(QString sw);
 
 Q_SIGNALS:
     void softwareReleaseChanged();
