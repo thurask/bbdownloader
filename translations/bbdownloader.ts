@@ -79,6 +79,10 @@
         <source>Only show releases?</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Please input a valid OS version</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DeltaOSDownloader</name>

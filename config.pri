@@ -186,8 +186,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/images/tabs/9.png) \
         $$quote($$BASEDIR/assets/main.qml) \
         $$quote($$BASEDIR/assets/xml/hwid.xml) \
-        $$quote($$BASEDIR/assets/xml/repo.xml) \
-        $$quote($$BASEDIR/assets/xml/version.txt)
+        $$quote($$BASEDIR/assets/xml/repo.xml)
 }
 
 config_pri_source_group1 {
