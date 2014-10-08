@@ -41,10 +41,26 @@ Page {
                     TextField {
                         id: osver_input
                         hintText: qsTr("Target OS Version") + Retranslate.onLanguageChanged
-                        input.keyLayout: KeyLayout.Number
                         onTextChanged: {
                             osversion = osver_input.text
                             _swlookup.post(osversion, "https://cs.sl.blackberry.com/cse/srVersionLookup/2.0.0/");
+                        }
+                        onTextChanging: {
+                            osversion = osver_input.text
+                            _swlookup.post(osversion, "https://cs.sl.blackberry.com/cse/srVersionLookup/2.0.0/");
+                        }
+                        validator: Validator {
+                            id: validator_osver
+                            mode: ValidationMode.Immediate
+                            onValidate: {
+                                var regex = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/)
+                                if (regex.test(osver_input.text) == true) {
+                                    validator_osver.setValid(true);
+                                }
+                                else {
+                                    validator_osver.setValid(false);
+                                }
+                            }
                         }
                     }
                     Button {
@@ -64,9 +80,21 @@ Page {
                     TextField {
                         id: radiover_input
                         hintText: qsTr("Target Radio Version") + Retranslate.onLanguageChanged
-                        input.keyLayout: KeyLayout.Number
                         onTextChanged: {
                             radioversion = radiover_input.text
+                        }
+                        validator: Validator {
+                            id: validator_radver
+                            mode: ValidationMode.Immediate
+                            onValidate: {
+                                var regex = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/)
+                                if (regex.test(radiover_input.text) == true) {
+                                    validator_radver.setValid(true);
+                                }
+                                else {
+                                    validator_radver.setValid(false);
+                                }
+                            }
                         }
                     }
                     Button {
@@ -86,11 +114,23 @@ Page {
                     TextField {
                         id: swver_input
                         hintText: qsTr("Target SW Version") + Retranslate.onLanguageChanged
-                        input.keyLayout: KeyLayout.Number
                         onTextChanged: {
                             swrelease = swver_input.text
                             hashCalculateSha.calculateHash(swrelease)
                             hashedswversion = hashCalculateSha.getHash()
+                        }
+                        validator: Validator {
+                            id: validator_swver
+                            mode: ValidationMode.Immediate
+                            onValidate: {
+                                var regex = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/)
+                                if (regex.test(swver_input.text) == true) {
+                                    validator_swver.setValid(true);
+                                }
+                                else {
+                                    validator_swver.setValid(false);
+                                }
+                            }
                         }
                     }
                     Button {
@@ -111,11 +151,23 @@ Page {
                     TextField {
                         id: osinit_input
                         hintText: qsTr("Initial OS Version") + Retranslate.onLanguageChanged
-                        input.keyLayout: KeyLayout.Number
                         onTextChanged: {
                             osinitversion = osinit_input.text;
                             osinit = osinit_input.text.replace(/\./g, "");
                             osinit2 = osinit_input.text.replace(/\./g, "_");
+                        }
+                        validator: Validator {
+                            id: validator_osinit
+                            mode: ValidationMode.Immediate
+                            onValidate: {
+                                var regex = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/)
+                                if (regex.test(osinit_input.text) == true) {
+                                    validator_osinit.setValid(true);
+                                }
+                                else {
+                                    validator_osinit.setValid(false);
+                                }
+                            }
                         }
                     }
                     Button {
@@ -136,11 +188,23 @@ Page {
                     TextField {
                         id: radioinit_input
                         hintText: qsTr("Initial Radio Version") + Retranslate.onLanguageChanged
-                        input.keyLayout: KeyLayout.Number
                         onTextChanged: {
                             radioinitversion = radioinit_input.text
                             radinit = radioinit_input.text.replace(/\./g, "");
                             radinit2 = radioinit_input.text.replace(/\./g, "_");
+                        }
+                        validator: Validator {
+                            id: validator_radinit
+                            mode: ValidationMode.Immediate
+                            onValidate: {
+                                var regex = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/)
+                                if (regex.test(radioinit_input.text) == true) {
+                                    validator_radinit.setValid(true);
+                                }
+                                else {
+                                    validator_radinit.setValid(false);
+                                }
+                            }
                         }
                     }
                     Button {

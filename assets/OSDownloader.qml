@@ -37,10 +37,26 @@ Page {
                     TextField {
                         id: osver_input
                         hintText: qsTr("Target OS Version") + Retranslate.onLanguageChanged
-                        input.keyLayout: KeyLayout.Number
                         onTextChanging: {
                             osversion = osver_input.text
                             _swlookup.post(osversion, "https://cs.sl.blackberry.com/cse/srVersionLookup/2.0.0/");
+                        }
+                        onTextChanged: {
+                            osversion = osver_input.text
+                            _swlookup.post(osversion, "https://cs.sl.blackberry.com/cse/srVersionLookup/2.0.0/");
+                        }
+                        validator: Validator {
+                            id: validator_osver
+                            mode: ValidationMode.Immediate
+                            onValidate: {
+                                var regex = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/)
+                                if (regex.test(osver_input.text) == true) {
+                                    validator_osver.setValid(true);
+                                }
+                                else {
+                                    validator_osver.setValid(false);
+                                }
+                            }
                         }
                     }
                     Button {
@@ -60,9 +76,21 @@ Page {
                     TextField {
                         id: radiover_input
                         hintText: qsTr("Target Radio Version") + Retranslate.onLanguageChanged
-                        input.keyLayout: KeyLayout.Number
                         onTextChanging: {
                             radioversion = radiover_input.text
+                        }
+                        validator: Validator {
+                            id: validator_radver
+                            mode: ValidationMode.Immediate
+                            onValidate: {
+                                var regex = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/)
+                                if (regex.test(radiover_input.text) == true) {
+                                    validator_radver.setValid(true);
+                                }
+                                else {
+                                    validator_radver.setValid(false);
+                                }
+                            }
                         }
                     }
                     Button {
@@ -82,11 +110,23 @@ Page {
                     TextField {
                         id: swver_input
                         hintText: qsTr("Target SW Version") + Retranslate.onLanguageChanged
-                        input.keyLayout: KeyLayout.Number
                         onTextChanging: {
                             swrelease = swver_input.text
                             hashCalculateSha.calculateHash(swrelease)
                             hashedswversion = hashCalculateSha.getHash()
+                        }
+                        validator: Validator {
+                            id: validator_swver
+                            mode: ValidationMode.Immediate
+                            onValidate: {
+                                var regex = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/)
+                                if (regex.test(swver_input.text) == true || swver_input.text == "N/A") {
+                                    validator_swver.setValid(true);
+                                }
+                                else {
+                                    validator_swver.setValid(false);
+                                }
+                            }
                         }
                     }
                     Button {
