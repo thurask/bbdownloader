@@ -16,10 +16,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Lookup Interval</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Clear</source>
         <translation type="unfinished"></translation>
     </message>
@@ -48,6 +44,26 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Only show releases?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please input a valid OS version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lookup Interval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>250 ms</source>
         <translation type="unfinished"></translation>
     </message>
@@ -65,22 +81,6 @@
     </message>
     <message>
         <source>Once</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Only show releases?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Start</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Stop</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please input a valid OS version</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -821,6 +821,14 @@ https://github.com/thurask/bbdownloader</source>
         <source>No updates available</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Local version: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> | Update version: </source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SwLookup</name>
@@ -1008,14 +1016,6 @@ https://github.com/thurask/bbdownloader</source>
     </message>
     <message>
         <source>Hardware ID List</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Update available</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Update!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

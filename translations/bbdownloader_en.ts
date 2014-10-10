@@ -16,10 +16,6 @@
         <translation>Enter OS version</translation>
     </message>
     <message>
-        <source>Lookup Interval</source>
-        <translation>Lookup Interval</translation>
-    </message>
-    <message>
         <source>Clear</source>
         <translation>Clear</translation>
     </message>
@@ -48,26 +44,6 @@
         <translation>Lookups saved to default directory</translation>
     </message>
     <message>
-        <source>250 ms</source>
-        <translation>250 ms</translation>
-    </message>
-    <message>
-        <source>500 ms</source>
-        <translation>500 ms</translation>
-    </message>
-    <message>
-        <source>750 ms</source>
-        <translation>750 ms</translation>
-    </message>
-    <message>
-        <source>1000 ms</source>
-        <translation>1000 ms</translation>
-    </message>
-    <message>
-        <source>Once</source>
-        <translation>Once</translation>
-    </message>
-    <message>
         <source>Only show releases?</source>
         <translation>Only show releases?</translation>
     </message>
@@ -82,6 +58,30 @@
     <message>
         <source>Please input a valid OS version</source>
         <translation>Please input a valid OS version</translation>
+    </message>
+    <message>
+        <source>Lookup Interval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>250 ms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>500 ms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>750 ms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1000 ms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Once</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -822,6 +822,14 @@ https://github.com/thurask/bbdownloader</translation>
         <source>No updates available</source>
         <translation>No updates available</translation>
     </message>
+    <message>
+        <source>Local version: </source>
+        <translation>Local version: </translation>
+    </message>
+    <message>
+        <source> | Update version: </source>
+        <translation> | Update version: </translation>
+    </message>
 </context>
 <context>
     <name>SwLookup</name>
@@ -1010,14 +1018,6 @@ https://github.com/thurask/bbdownloader</translation>
     <message>
         <source>Hardware ID List</source>
         <translation>Hardware ID List</translation>
-    </message>
-    <message>
-        <source>Update available</source>
-        <translation>Update available</translation>
-    </message>
-    <message>
-        <source>Update!</source>
-        <translation>Update!</translation>
     </message>
     <message>
         <source>OS Downloader</source>

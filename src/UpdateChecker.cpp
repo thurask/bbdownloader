@@ -24,24 +24,29 @@ void UpdateChecker::checkForUpdates()
 void UpdateChecker::writeUpdateFile()
 {
     QNetworkReply *reply = qobject_cast<QNetworkReply *>(sender());
-    setUpdateVersion(QString(reply->readAll()));
+    QString result = QString(reply->readAll());
+    if (result == ""){
+        setUpdateVersion(localVersion);
+    }
+    else {
+        setUpdateVersion(result);
+    }
     sender()->deleteLater();
 }
 
 QString UpdateChecker::getUpdateVersion()
 {
-    emit updateVersionChanged();
     return updateVersion;
 }
 
 void UpdateChecker::setUpdateVersion(QString text)
 {
     updateVersion = text.simplified().toUtf8();
+    compareUpdate();
 }
 
 QString UpdateChecker::getLocalVersion()
 {
-    emit localVersionChanged();
     return localVersion;
 }
 
@@ -50,20 +55,26 @@ void UpdateChecker::setLocalVersion(QString text)
     localVersion = text.toUtf8();
 }
 
-bool UpdateChecker::returnUpdate()
+void UpdateChecker::setUpdateAvailable(bool truth)
 {
-    if (updateVersion != ""){
-        int x = QString::compare(updateVersion, localVersion, Qt::CaseInsensitive);  // if strings are equal x should return 0
-        if (x == 0){
-            return false;
-        }
-        else {
-            return true;
-        }
+    updateAvailable = truth;
+}
+
+bool UpdateChecker::getUpdateAvailable()
+{
+    return updateAvailable;
+}
+
+void UpdateChecker::compareUpdate()
+{
+    int x = QString::compare(updateVersion, localVersion, Qt::CaseInsensitive);  // if strings are equal x should return 0
+    if (x == 0){
+        updateAvailable = false;
     }
-    else {
-        return false;
+    if (x != 0) {
+        updateAvailable = true;
     }
+    emit updateAvailableChanged();
 }
 
 UpdateChecker::~UpdateChecker()

@@ -22,11 +22,10 @@ Page {
                 }
                 if (silentmode == true){
                     if (_swlookup.softwareRelease().indexOf(".") != -1){
-                        //if there's a SW release
                         outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - SR " + _swlookup.softwareRelease() + "\n");
                     }
                     else {
-                        //if there isn't a SW release
+                        
                     }
                 }
                 autolookup_input.text = _swlookup.lookupIncrement(autolookup_input.text);

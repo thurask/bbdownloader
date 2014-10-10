@@ -7,7 +7,6 @@
 import bb.cascades 1.3
 import bb.cascades.pickers 1.0
 import bb.system 1.2
-import qt.timer 1.0
 
 Sheet {
     id: settingsSheet
@@ -21,6 +20,9 @@ Sheet {
                     if (settingsSheet) settingsSheet.destroy();
                 }
             }
+        }
+        onCreationCompleted: {
+            Checker.checkForUpdates();
         }
         ScrollView{
             scrollViewProperties.pinchToZoomEnabled: false
@@ -80,12 +82,33 @@ Sheet {
                         title: qsTr("Check for Updates") + Retranslate.onLanguageChanged
                     }
                     Button {
+                        id: checkbutton
                         text: qsTr("Check") + Retranslate.onLanguageChanged
                         horizontalAlignment: HorizontalAlignment.Center
                         onClicked: {
+                            Checker.updateAvailableChanged.connect(checkbutton.updateAvailable());
                             Checker.checkForUpdates();
-                            timer.start();
+                        }                        
+                        function updateAvailable(){
+                            updatelabel.text = qsTr("Local version: ") + Retranslate.onLanguageChanged + Checker.getLocalVersion() + qsTr(" | Update version: ") + Retranslate.onLanguageChanged + Checker.getUpdateVersion();
+                            if (Checker.getUpdateAvailable() == true && Checker.getUpdateVersion != ""){
+                                updateToast.body = qsTr("Update available") + Retranslate.onLanguageChanged;
+                                updateToast.button.enabled = true;
+                                updateToast.button.label =  qsTr("Update!") + Retranslate.onLanguageChanged
+                                updateToast.show();
+                            }
+                            else {
+                                updateToast.body = qsTr("No updates available") + Retranslate.onLanguageChanged;
+                                updateToast.button.enabled = false;
+                                updateToast.button.label = "";
+                                updateToast.show();
+                            }   
                         }
+                    }
+                    Label {
+                        id: updatelabel
+                        text: qsTr("Local version: ") + Retranslate.onLanguageChanged + AppInfo.version + " | Update version: " + Retranslate.onLanguageChanged
+                        horizontalAlignment: HorizontalAlignment.Center
                     }
                 }
             }
@@ -124,25 +147,6 @@ Sheet {
                 mimeType: "text/html"
                 uri: "http://github.com/thurask/bbdownloader/releases/latest"
                 invokeActionId: "bb.action.OPEN"
-            }
-        },
-        QTimer {
-            id: timer
-            interval: 1000
-            onTimeout:{
-                if (Checker.returnUpdate() == true){
-                    updateToast.body = qsTr("Update available") + Retranslate.onLanguageChanged;
-                    updateToast.button.enabled = true;
-                    updateToast.button.label =  qsTr("Update!") + Retranslate.onLanguageChanged
-                    updateToast.show();
-                }
-                else {
-                    updateToast.body = qsTr("No updates available") + Retranslate.onLanguageChanged;
-                    updateToast.button.enabled = false;
-                    updateToast.button.label = "";
-                    updateToast.show();
-                }
-                timer.stop()
             }
         }
     ]

@@ -6,7 +6,6 @@
 
 import bb.cascades 1.3
 import bb.system 1.2
-import qt.timer 1.0
 
 TabbedPane {
     id: tabbedpane
@@ -37,33 +36,12 @@ TabbedPane {
             includeRememberMe: false
             rememberMeChecked: false
         },
-        SystemToast {
-            id: updateToast
-            body: qsTr("Update available") + Retranslate.onLanguageChanged
-            button.enabled: true
-            button.label: qsTr("Update!") + Retranslate.onLanguageChanged
-            onFinished: {
-                if (updateToast.result == SystemUiResult.ButtonSelection){
-                    invoke.trigger("bb.action.OPEN")
-                }
-            }
-        },
         Invocation {
             id: invoke
             query {
                 mimeType: "text/html"
                 uri: "http://github.com/thurask/bbdownloader/releases/latest"
                 invokeActionId: "bb.action.OPEN"
-            }
-        },
-        QTimer {
-            id: timer
-            interval: 1000
-            onTimeout:{
-                if (Checker.returnUpdate() == true){
-                    updateToast.show();
-                }
-                timer.stop();
             }
         },
         ActiveFrame {
@@ -260,8 +238,6 @@ TabbedPane {
     onCreationCompleted: {
         var defaultdir = Settings.getValueFor("defaultdir", "shared/downloads/bbdownloader/");
         _manager.setDefaultDir(defaultdir);
-        Checker.checkForUpdates();
-        timer.start();
         Application.setCover(multi);
     }
 }

@@ -56,8 +56,9 @@ void SwLookup::onGetReply()
     QXmlStreamReader xml(data);
     while(!xml.atEnd() && !xml.hasError()) {
         if(xml.tokenType() == QXmlStreamReader::StartElement) {
-            if (xml.name() == "softwareReleaseVersion")
+            if (xml.name() == "softwareReleaseVersion") {
                 m_softwareRelease = xml.readElementText();
+            }
             emit softwareReleaseChanged();
         }
         xml.readNext();

@@ -9,6 +9,9 @@ class QNetworkAccessManager;
 class SwLookup : public QObject
 {
     Q_OBJECT
+
+    Q_PROPERTY(QString m_softwareRelease READ softwareRelease WRITE setSoftwareRelease NOTIFY softwareReleaseChanged)
+
 public:
     SwLookup(QObject* parent = 0);
 
