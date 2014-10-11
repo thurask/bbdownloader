@@ -22,26 +22,33 @@ Blank:
 -->
 
 <repo>
-	<release>
-	    <trueos>10.3.1.634</trueos>
-	    <os>10.3.1.0634</os>
-	    <radio>10.3.1.633</radio>
-	    <software>N/A</software>
-	    <notes>SDK Autoloader</notes>
-	</release>
+    <release>
+        <trueos>10.3.0.634</trueos>
+        <os>10.3.0.0634</os>
+        <radio>10.3.0.633</radio>
+        <software>N/A</software>
+        <notes>SDK Autoloader</notes>
+    </release>
+    <release>
+        <trueos></trueos>
+        <os>10.3.0.1418</os>
+        <radio>10.3.0.1419</radio>
+        <software>10.3.0.908</software>
+        <notes>Rogers Passport</notes>
+    </release>
     <release>
         <trueos></trueos>
         <os>10.3.0.1172</os>
         <radio>10.3.0.1155</radio>
         <software>10.3.0.754</software>
-        <notes>On servers for some reason -- Passport only</notes>
+        <notes>Indian Passport</notes>
     </release>
     <release>
         <trueos></trueos>
         <os>10.3.0.1154</os>
         <radio>10.3.0.1155</radio>
         <software>10.3.0.738</software>
-        <notes>On servers for some reason</notes>
+        <notes>Rogers/Bell Passport</notes>
     </release>
     <release>
         <trueos></trueos>
