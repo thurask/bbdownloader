@@ -23,9 +23,9 @@ Blank:
 
 <repo>
     <release>
-        <trueos>10.3.0.634</trueos>
-        <os>10.3.0.0634</os>
-        <radio>10.3.0.633</radio>
+        <trueos>10.3.1.634</trueos>
+        <os>10.3.1.0634</os>
+        <radio>10.3.1.633</radio>
         <software>N/A</software>
         <notes>SDK Autoloader</notes>
     </release>
