@@ -44,10 +44,6 @@
         <translation>Lookups saved to default directory</translation>
     </message>
     <message>
-        <source>Only show releases?</source>
-        <translation>Only show releases?</translation>
-    </message>
-    <message>
         <source>Start</source>
         <translation>Start</translation>
     </message>
@@ -60,28 +56,32 @@
         <translation>Please input a valid OS version</translation>
     </message>
     <message>
+        <source>Only show releases?</source>
+        <translation>Only show releases?</translation>
+    </message>
+    <message>
+        <source>If you get duplicate readings, raise the interval.</source>
+        <translation>If you get duplicate readings, raise the interval.</translation>
+    </message>
+    <message>
         <source>Lookup Interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Lookup Interval</translation>
     </message>
     <message>
         <source>250 ms</source>
-        <translation type="unfinished"></translation>
+        <translation>250 ms</translation>
     </message>
     <message>
         <source>500 ms</source>
-        <translation type="unfinished"></translation>
+        <translation>500 ms</translation>
     </message>
     <message>
         <source>750 ms</source>
-        <translation type="unfinished"></translation>
+        <translation>750 ms</translation>
     </message>
     <message>
         <source>1000 ms</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Once</source>
-        <translation type="unfinished"></translation>
+        <translation>1000 ms</translation>
     </message>
 </context>
 <context>

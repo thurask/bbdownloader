@@ -44,10 +44,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Only show releases?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Start</source>
         <translation type="unfinished"></translation>
     </message>
@@ -57,6 +53,14 @@
     </message>
     <message>
         <source>Please input a valid OS version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only show releases?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you get duplicate readings, raise the interval.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -77,10 +81,6 @@
     </message>
     <message>
         <source>1000 ms</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Once</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
