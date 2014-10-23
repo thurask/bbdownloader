@@ -14,6 +14,7 @@ SwLookup::SwLookup(QObject* parent)
 : QObject(parent)
 , m_networkAccessManager(new QNetworkAccessManager(this))
 {
+    m_softwareRelease = "";
 }
 
 QString SwLookup::softwareRelease()
@@ -56,9 +57,13 @@ void SwLookup::onGetReply()
     QXmlStreamReader xml(data);
     while(!xml.atEnd() && !xml.hasError()) {
         if(xml.tokenType() == QXmlStreamReader::StartElement) {
-            if (xml.name() == "softwareReleaseVersion")
-                m_softwareRelease = xml.readElementText();
-            emit softwareReleaseChanged();
+            if (xml.name() == "softwareReleaseVersion") {
+                QString schwanzstucker = xml.readElementText().simplified();
+                if (QString::compare(m_softwareRelease.simplified(), schwanzstucker, Qt::CaseInsensitive) != 0){
+                    m_softwareRelease = schwanzstucker;
+                    emit softwareReleaseChanged();
+                }
+            }
         }
         xml.readNext();
     }
@@ -84,4 +89,5 @@ QString SwLookup::lookupIncrement(QString os)
 void SwLookup::setSoftwareRelease(QString sw)
 {
     m_softwareRelease = sw;
+    emit softwareReleaseChanged();
 }

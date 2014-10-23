@@ -1,5 +1,5 @@
 1
-47
+48
 10ppd/images/covers/cover.png
 12ppd/images/covers/cover.png
 12ppd/images/covers/cover_small.png
@@ -38,6 +38,7 @@ images/tabs/6.png
 images/tabs/7.png
 images/tabs/8.png
 images/tabs/9.png
+js/escreens.js
 main.qml
 Nomedia.qml
 OSDownloader.qml

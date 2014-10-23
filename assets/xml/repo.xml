@@ -80,6 +80,20 @@ Blank:
     </release>
     <release>
         <trueos></trueos>
+        <os>10.2.1.3442</os>
+        <radio>10.2.1.3140</radio>
+        <software>10.2.1.3062</software>
+        <notes>Minor bugfix to 10.2.1.3412</notes>
+    </release>
+    <release>
+        <trueos></trueos>
+        <os>10.2.1.3412</os>
+        <radio>10.2.1.3140</radio>
+        <software>10.2.1.3054</software>
+        <notes>Minor bugfix to 10.2.1.3247 for Indian Z3</notes>
+    </release>
+    <release>
+        <trueos></trueos>
         <os>10.2.1.3358</os>
         <radio>10.2.1.3359</radio>
         <software>10.2.1.3023</software>

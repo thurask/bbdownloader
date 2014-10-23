@@ -72,16 +72,16 @@
         <translation>1000 ms</translation>
     </message>
     <message>
-        <source>Once</source>
-        <translation>Once</translation>
-    </message>
-    <message>
         <source>Only show releases?</source>
         <translation>Only show releases?</translation>
     </message>
     <message>
         <source>Please input a valid OS version</source>
         <translation>Please input a valid OS version</translation>
+    </message>
+    <message>
+        <source>If you get duplicate readings, raise the interval.</source>
+        <translation>If you get duplicate readings, raise the interval.</translation>
     </message>
 </context>
 <context>

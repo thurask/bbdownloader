@@ -184,6 +184,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/images/tabs/7.png) \
         $$quote($$BASEDIR/assets/images/tabs/8.png) \
         $$quote($$BASEDIR/assets/images/tabs/9.png) \
+        $$quote($$BASEDIR/assets/js/escreens.js) \
         $$quote($$BASEDIR/assets/main.qml) \
         $$quote($$BASEDIR/assets/xml/hwid.xml) \
         $$quote($$BASEDIR/assets/xml/repo.xml)
@@ -288,6 +289,9 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/images/tabs/*.qml) \
         $$quote($$BASEDIR/../assets/images/tabs/*.js) \
         $$quote($$BASEDIR/../assets/images/tabs/*.qs) \
+        $$quote($$BASEDIR/../assets/js/*.qml) \
+        $$quote($$BASEDIR/../assets/js/*.js) \
+        $$quote($$BASEDIR/../assets/js/*.qs) \
         $$quote($$BASEDIR/../assets/xml/*.qml) \
         $$quote($$BASEDIR/../assets/xml/*.js) \
         $$quote($$BASEDIR/../assets/xml/*.qs)
