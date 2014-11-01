@@ -59,10 +59,7 @@ void SwLookup::onGetReply()
         if(xml.tokenType() == QXmlStreamReader::StartElement) {
             if (xml.name() == "softwareReleaseVersion") {
                 QString schwanzstucker = xml.readElementText().simplified();
-                if (QString::compare(m_softwareRelease.simplified(), schwanzstucker, Qt::CaseInsensitive) != 0){
-                    m_softwareRelease = schwanzstucker;
-                    emit softwareReleaseChanged();
-                }
+                m_softwareRelease = schwanzstucker;
             }
         }
         xml.readNext();
@@ -88,6 +85,6 @@ QString SwLookup::lookupIncrement(QString os)
 
 void SwLookup::setSoftwareRelease(QString sw)
 {
-    m_softwareRelease = sw;
+    m_softwareRelease = sw.toUtf8().simplified();
     emit softwareReleaseChanged();
 }

@@ -52,10 +52,6 @@
         <translation>Stop</translation>
     </message>
     <message>
-        <source>Only show releases?</source>
-        <translation>Only show releases?</translation>
-    </message>
-    <message>
         <source>Please input a valid OS version</source>
         <translation>Please input a valid OS version</translation>
     </message>

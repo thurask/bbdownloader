@@ -10,28 +10,20 @@ import qt.timer 1.0
 
 Page {
     property bool scanning: false
-    property bool silentmode
     attachedObjects: [
         QTimer{
             id: timer
-            interval: 1000
+            interval: 2000
             onTimeout: {
                 _swlookup.softwareReleaseChanged.connect(timer.lookup());
-                _swlookup.post(autolookup_input.text);                
+                _swlookup.post(autolookup_input.text, serverdropdown.selectedValue);                
             }
             function lookup() {
-                if (silentmode == false){
-                    outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - " + (_swlookup.softwareRelease().indexOf("SR") != -1 ? "" : "SR ") + _swlookup.softwareRelease() + "\n");
-                }
-                if (silentmode == true){
-                    if (_swlookup.softwareRelease().indexOf(".") != -1){
-                        outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - SR " + _swlookup.softwareRelease() + "\n");
-                    }
+                if (_swlookup.softwareRelease().indexOf(".") != -1 && outputtext.text.indexOf(_swlookup.softwareRelease()) == -1){
+                    outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - SR " + _swlookup.softwareRelease() + "\n");
                 }
                 autolookup_input.text = _swlookup.lookupIncrement(autolookup_input.text);
-                if (timer.active == false){
-                    timer.start();
-                }
+                timer.start();
             }
         },
         SystemToast {
@@ -128,28 +120,6 @@ Page {
             }
         }
         Container {
-            horizontalAlignment: HorizontalAlignment.Center
-            verticalAlignment: VerticalAlignment.Center
-            layout: StackLayout {
-                orientation: LayoutOrientation.LeftToRight
-            }
-            Label {
-                text: qsTr("Only show releases?") + Retranslate.onLanguageChanged
-                verticalAlignment: VerticalAlignment.Center
-            }
-            ToggleButton {
-                id: silentbutton
-                onCheckedChanged: {
-                    if (checked){
-                        silentmode = true
-                    }
-                    else {
-                        silentmode = false
-                    }
-                }
-            }
-        }
-        Container {
             topPadding: 10.0
             layout: StackLayout {
                 orientation: LayoutOrientation.LeftToRight
@@ -165,6 +135,8 @@ Page {
                     else {
                         if (scanning == false) {
                             scanning = true;
+                            outputtext.storedtext = outputtext.text;
+                            outputtext.text = "";
                             autolookupbutton.text = qsTr("Stop") + Retranslate.onLanguageChanged
                             _swlookup.softwareReleaseChanged.connect(timer.lookup())
                             _swlookup.post(autolookup_input.text, serverdropdown.selectedValue);
