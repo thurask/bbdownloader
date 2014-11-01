@@ -1,7 +1,6 @@
 /*UpdateChecker.cpp
 -------------------
 Handles app version lookup.
-
 --Thurask*/
 
 #include "UpdateChecker.hpp"
@@ -24,29 +23,24 @@ void UpdateChecker::checkForUpdates()
 void UpdateChecker::writeUpdateFile()
 {
     QNetworkReply *reply = qobject_cast<QNetworkReply *>(sender());
-    QString result = QString(reply->readAll());
-    if (result == ""){
-        setUpdateVersion(localVersion);
-    }
-    else {
-        setUpdateVersion(result);
-    }
+    setUpdateVersion(QString(reply->readAll()));
     sender()->deleteLater();
 }
 
 QString UpdateChecker::getUpdateVersion()
 {
+    emit updateVersionChanged();
     return updateVersion;
 }
 
 void UpdateChecker::setUpdateVersion(QString text)
 {
     updateVersion = text.simplified().toUtf8();
-    compareUpdate();
 }
 
 QString UpdateChecker::getLocalVersion()
 {
+    emit localVersionChanged();
     return localVersion;
 }
 
@@ -55,30 +49,28 @@ void UpdateChecker::setLocalVersion(QString text)
     localVersion = text.toUtf8();
 }
 
-void UpdateChecker::setUpdateAvailable(bool truth)
+bool UpdateChecker::returnUpdate()
 {
-    updateAvailable = truth;
-}
-
-bool UpdateChecker::getUpdateAvailable()
-{
-    return updateAvailable;
-}
-
-void UpdateChecker::compareUpdate()
-{
-    int x = QString::compare(updateVersion, localVersion, Qt::CaseInsensitive);  // if strings are equal x should return 0
-    if (x == 0){
-        updateAvailable = false;
+    if (updateVersion != ""){
+        int x = QString::compare(updateVersion, localVersion, Qt::CaseInsensitive);  // if strings are equal x should return 0
+        if (x == 0){
+            return false;
+        }
+        else {
+            if ((localVersion.split(".")[3].toInt()) > (updateVersion.split(".")[3].toInt())) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
     }
-    if (x != 0) {
-        updateAvailable = true;
+    else {
+        return false;
     }
-    emit updateAvailableChanged();
 }
 
 UpdateChecker::~UpdateChecker()
 {
 
 }
-

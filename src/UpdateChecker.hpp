@@ -15,9 +15,8 @@ class UpdateChecker: public QObject
 {
     Q_OBJECT
 
-    Q_PROPERTY(QString updateVersion READ getUpdateVersion WRITE setUpdateVersion)
-    Q_PROPERTY(QString localVersion READ getLocalVersion WRITE setLocalVersion)
-    Q_PROPERTY(bool updateAvailable READ getUpdateAvailable WRITE setUpdateAvailable NOTIFY updateAvailableChanged)
+    Q_PROPERTY(QString updateVersion READ getUpdateVersion WRITE setUpdateVersion NOTIFY updateVersionChanged)
+    Q_PROPERTY(QString localVersion READ getLocalVersion WRITE setLocalVersion NOTIFY localVersionChanged)
 
 public:
     UpdateChecker();
@@ -35,21 +34,18 @@ public Q_SLOTS:
     Q_INVOKABLE
     QString getLocalVersion();
     Q_INVOKABLE
-    void setUpdateAvailable(bool truth);
-    Q_INVOKABLE
-    bool getUpdateAvailable();
+    bool returnUpdate();
 
-signals:
-    void updateAvailableChanged();
+Q_SIGNALS:
+    void updateVersionChanged();
+    void localVersionChanged();
 
 private:
     QString updateVersion;
     QString localVersion;
-    bool updateAvailable;
 
 private Q_SLOTS:
     void writeUpdateFile();
-    void compareUpdate();
 };
 
 #endif /* UPDATECHECKER_HPP_ */

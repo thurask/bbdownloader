@@ -55,34 +55,6 @@
         <source>Please input a valid OS version</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Only show releases?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>If you get duplicate readings, raise the interval.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Lookup Interval</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>250 ms</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>500 ms</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>750 ms</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>1000 ms</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>DeltaOSDownloader</name>
