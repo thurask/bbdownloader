@@ -46,7 +46,7 @@ void LinkGenerator::setAutoloader(QString os, QString device, bool useOldAutoloa
         if (device == "8930wtr5"){
             osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-STJ100-1-" + os +".exe";
         }
-        if (device == "8974_sqw"){
+        if (device == "8974_sqw" || device == "8974_sqw_hybrid"){
             osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-SQW100-1-" + os +".exe";
         }
     }
@@ -81,7 +81,7 @@ void LinkGenerator::setAutoloader(QString os, QString device, bool useOldAutoloa
         if (device == "8930wtr5"){
             osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-STJ-100-1-" + os +".exe";
         }
-        if (device == "8974_sqw"){
+        if (device == "8974_sqw" || device == "8974_sqw_hybrid"){
             osLink = "http://developer.blackberry.com/native/downloads/fetch/Autoload-SQW-100-1-" + os +".exe";
         }
     }
@@ -155,6 +155,32 @@ void LinkGenerator::setOS(QString os, QString swrelease, QString type, QString d
             osLink = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + swrelease + "/com.qnx.coreos.qcfm.os.qc8974.sdk/" + os + "/qc8974.sdk-" + os + "-nto+armle-v7+signed.bar";
         }
     }
+    if (device == "8974_sqw_hybrid"){
+        if (type == "debrick"){
+            osLink = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + swrelease + "/qc8960.factory_sfi_hybrid_qc8974.desktop-" + os + "-nto+armle-v7+signed.bar";
+        }
+        if (type == "core"){
+            osLink = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + swrelease + "/qc8960.factory_sfi_hybrid_qc8974-" + os + "-nto+armle-v7+signed.bar";
+        }
+        if (type == "debrick_vzw"){
+            osLink = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + swrelease + "/qc8960.verizon_sfi_hybrid_qc8974.desktop-" + os + "-nto+armle-v7+signed.bar";
+        }
+        if (type == "core_vzw"){
+            osLink = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + swrelease + "/qc8960.verizon_sfi_hybrid_qc8974-" + os + "-nto+armle-v7+signed.bar";
+        }
+        if (type == "debrick_china"){
+            osLink = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + swrelease + "/qc8960.china_sfi_hybrid_qc8974.desktop-" + os + "-nto+armle-v7+signed.bar";
+        }
+        if (type == "core_china"){
+            osLink = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + swrelease + "/qc8960.china_sfi_hybrid_qc8974-" + os + "-nto+armle-v7+signed.bar";
+        }
+        if (type == "sdkdebrick"){
+            osLink = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + swrelease + "/qc8960.sdk_hybrid_qc8974.desktop-" + os + "-nto+armle-v7+signed.bar";
+        }
+        if (type == "sdkcore"){
+            osLink = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + swrelease + "/qc8960.sdk_hybrid_qc8974-" + os + "-nto+armle-v7+signed.bar";
+        }
+    }
 }
 
 void LinkGenerator::setRadio(QString radio, QString swrelease, QString device)
@@ -186,7 +212,7 @@ void LinkGenerator::setRadio(QString radio, QString swrelease, QString device)
     if (device == "8930wtr5"){
         radioLink = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + swrelease + "/com.qnx.qcfm.radio.qc8930.wtr5/" + radio + "/qc8930.wtr5-" + radio + "-nto+armle-v7+signed.bar";
     }
-    if (device == "8974_sqw"){
+    if (device == "8974_sqw" || device == "8974_sqw_hybrid"){
         radioLink = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + swrelease + "/com.qnx.qcfm.radio.qc8974.wtr2/" + radio + "/qc8974.wtr2-" + radio + "-nto+armle-v7+signed.bar";
     }
     if (device == "8974"){
@@ -308,7 +334,7 @@ void LinkGenerator::setRadioLabel(QString device)
     if (device == "8930wtr5"){
         radioLabel = tr("Z3/Kopi/Cafe Radio:");
     }
-    if (device == "8974_sqw"){
+    if (device == "8974_sqw" || device == "8974_sqw_hybrid"){
         radioLabel = tr("Passport Radio:");
     }
     if (device == "8974"){

@@ -58,7 +58,12 @@ bool UpdateChecker::returnUpdate()
             return false;
         }
         else {
-            return true;
+            if ((localVersion.split(".")[3].toInt()) > (updateVersion.split(".")[3].toInt())) {
+                return false;
+            }
+            else {
+                return true;
+            }
         }
     }
     else {

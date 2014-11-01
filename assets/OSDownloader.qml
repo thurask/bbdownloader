@@ -354,6 +354,11 @@ Page {
                         value: "8974_sqw"
                     }
                     Option {
+                        id: dropdown_windermere_new
+                        text: "Passport (8960 Hybrid)"
+                        value: "8974_sqw_hybrid"
+                    }
+                    Option {
                         id: dropdown_parana
                         text: "Aquila/Aquarius"
                         value: "8974"

@@ -58,12 +58,11 @@ TabbedPane {
         },
         QTimer {
             id: timer
-            interval: 1000
+            singleShot: true
             onTimeout:{
                 if (Checker.returnUpdate() == true){
                     updateToast.show();
                 }
-                timer.stop();
             }
         },
         ActiveFrame {

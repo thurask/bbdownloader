@@ -14,7 +14,7 @@ Page {
     attachedObjects: [
         QTimer{
             id: timer
-            interval: 500
+            interval: 1000
             onTimeout: {
                 _swlookup.softwareReleaseChanged.connect(timer.lookup());
                 _swlookup.post(autolookup_input.text);                
@@ -96,10 +96,6 @@ Page {
                 }
             }
         }
-        Label {
-            text: qsTr("If you get duplicate readings, raise the interval.") + Retranslate.onLanguageChanged
-            horizontalAlignment: HorizontalAlignment.Center
-        }
         DropDown {
             id: serverdropdown
             title: qsTr("Server") + Retranslate.onLanguageChanged
@@ -129,36 +125,6 @@ Page {
                 id: alpha2
                 text: "Alpha 2"
                 value: "https://alpha2.sl.eval.blackberry.com/slscse/srVersionLookup/2.0.0/"
-            }
-        }
-        DropDown {
-            id: timeoutdropdown
-            title: qsTr("Lookup Interval") + Retranslate.onLanguageChanged
-            enabled: (scanning == false)
-            Option {
-                id: quartersecond
-                text: qsTr("250 ms") + Retranslate.onLanguageChanged
-                value: 250
-                enabled: (serverdropdown.selectedIndex == 0) //Fast lookup only works for prod, oddly enough
-            }
-            Option {
-                id: halfsecond
-                text: qsTr("500 ms") + Retranslate.onLanguageChanged
-                value: 500
-                selected: true
-            }
-            Option {
-                id: threequartersecond
-                text: qsTr("750 ms") + Retranslate.onLanguageChanged
-                value: 750
-            }
-            Option {
-                id: fullsecond
-                text: qsTr("1000 ms") + Retranslate.onLanguageChanged
-                value: 1000
-            }
-            onSelectedOptionChanged: {
-                timer.interval = timeoutdropdown.selectedValue;
             }
         }
         Container {
@@ -237,7 +203,7 @@ Page {
                 text: qsTr("Export") + Retranslate.onLanguageChanged
                 enabled: (scanning == false)
                 onClicked: {
-                    _manager.saveTextFile(outputtext.text, "Lookup-" + (serverdropdown.selectedOption));
+                    _manager.saveTextFile(outputtext.text, "Lookup-" + (serverdropdown.selectedOption.text));
                     lookupexporttoast.body = qsTr("Lookups saved to default directory") + Retranslate.onLanguageChanged;
                     lookupexporttoast.button.enabled = false;
                     lookupexporttoast.button.label = "";
