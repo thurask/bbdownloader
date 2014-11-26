@@ -5,8 +5,8 @@
  --Thurask*/
 
 import bb.cascades 1.4
-import bb.device 1.2
-import bb 1.0
+import bb.device 1.4
+import bb 1.3
 
 Page {
     attachedObjects: [

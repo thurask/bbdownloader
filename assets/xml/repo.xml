@@ -22,6 +22,13 @@ Blank:
 -->
 
 <repo>
+	<release>
+        <trueos>10.3.1.997</trueos>
+        <os>10.3.1.0997</os>
+        <radio>10.3.1.996</radio>
+        <software>N/A</software>
+        <notes>SDK Autoloader</notes>
+    </release>
     <release>
         <trueos>10.3.1.634</trueos>
         <os>10.3.1.0634</os>
@@ -70,6 +77,12 @@ Blank:
         <radio>10.3.0.441</radio>
         <software>N/A</software>
         <notes>SDK Autoloader</notes>
+    </release><release>
+        <trueos></trueos>
+        <os>10.2.2.1609</os>
+        <radio>10.2.2.1532</radio>
+        <software>10.2.2.984</software>
+        <notes>Ask Angela Merkel</notes>
     </release>
     <release>
         <trueos></trueos>

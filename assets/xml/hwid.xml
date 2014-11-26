@@ -159,6 +159,11 @@ Blank:
 		<variant>STJ100-1</variant>
 	</hardware>
 	<hardware>
+		<id>05002E07</id>
+		<name>Z3</name>
+		<variant>STJ100-2</variant>
+	</hardware>
+	<hardware>
 		<id>9700240A</id>
 		<name>Z5</name>
 		<variant>STB100-1</variant>

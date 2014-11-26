@@ -150,7 +150,7 @@ TabbedPane {
         imageSource: "asset:///images/tabs/1.png"
         delegate: Delegate {
             OSDownloader {
-                id:osDownloaderPage
+                id: osDownloaderPage
                 titleBar: TitleBar {
                     title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
                 }
@@ -164,7 +164,7 @@ TabbedPane {
         imageSource: "asset:///images/tabs/2.png"
         delegate: Delegate {
             DeltaOSDownloader {
-                id:deltaOsDownloaderPage
+                id: deltaOsDownloaderPage
                 titleBar: TitleBar {
                     title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
                 }
@@ -178,7 +178,7 @@ TabbedPane {
         imageSource: "asset:///images/tabs/3.png"
         delegate: Delegate {
             AutoLookup {
-                id:autoLookupPage
+                id: autoLookupPage
                 titleBar: TitleBar {
                     title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
                 }
@@ -192,7 +192,7 @@ TabbedPane {
         imageSource: "asset:///images/tabs/4.png"
         delegate: Delegate {
             HashTools {
-                id:hashToolsPage
+                id: hashToolsPage
                 titleBar: TitleBar {
                     title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
                 }
@@ -206,7 +206,7 @@ TabbedPane {
         imageSource: "asset:///images/tabs/5.png"
         delegate: Delegate {
             EScreens {
-                id:eScreensPage
+                id: eScreensPage
                 titleBar: TitleBar {
                     title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
                 }
@@ -220,7 +220,7 @@ TabbedPane {
         imageSource: "asset:///images/tabs/6.png"
         delegate: Delegate {
             SysInfo {
-                id:sysInfoPage
+                id: sysInfoPage
                 titleBar: TitleBar {
                     title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
                 }
@@ -234,7 +234,7 @@ TabbedPane {
         imageSource: "asset:///images/tabs/7.png"
         delegate: Delegate {
             HardwareIDs {
-                id:hardwareIDsPage
+                id: hardwareIDsPage
                 titleBar: TitleBar {
                     title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
                 }
@@ -255,6 +255,20 @@ TabbedPane {
             }
         }
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
+    }
+    Tab {
+        id: tab9
+        title: qsTr("Blank App Icons") + Retranslate.onLanguageChanged
+        imageSource: "asset:///images/tabs/9.png"
+        delegate: Delegate {
+            BlankIcon {
+                id: blankIconPage
+                titleBar: TitleBar {
+                    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+                }
+            }
+        }
+        delegateActivationPolicy: TabDelegateActivationPolicy.ActivatedWhileSelected
     }
     onCreationCompleted: {
         var defaultdir = Settings.getValueFor("defaultdir", "shared/downloads/bbdownloader/");

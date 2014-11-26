@@ -57,6 +57,17 @@
     </message>
 </context>
 <context>
+    <name>BlankIcon</name>
+    <message>
+        <source>Add blank icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Added!</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DeltaOSDownloader</name>
     <message>
         <source>Inputs</source>
@@ -1028,6 +1039,10 @@ https://github.com/thurask/bbdownloader</source>
     </message>
     <message>
         <source>n = .nomedia Helper</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Blank App Icons</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
