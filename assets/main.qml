@@ -33,7 +33,8 @@ TabbedPane {
             + qsTr("e = Engineering Screens") + Retranslate.onLanguageChanged + "\n"
             + qsTr("s = System Info") + Retranslate.onLanguageChanged + "\n"
             + qsTr("i = Hardware ID List") + Retranslate.onLanguageChanged + "\n"
-            + qsTr("n = .nomedia Helper") + Retranslate.onLanguageChanged
+            + qsTr("n = .nomedia Helper") + Retranslate.onLanguageChanged + "\n"
+            + qsTr("c = Blank App Icons") + Retranslate.onLanguageChanged
             includeRememberMe: false
             rememberMeChecked: false
         },
@@ -68,7 +69,7 @@ TabbedPane {
         ActiveFrame {
             id: multi
         }
-    ]  
+    ]
     shortcuts: [
         Shortcut {
             key: "o"
@@ -117,9 +118,16 @@ TabbedPane {
             onTriggered: {
                 tabbedpane.activeTab = tab8
             }
+        },
+        Shortcut {
+            key: "c"
+            onTriggered: {
+                tabbedpane.activeTab = tab9
+            }
         }
     ]
     Menu.definition: MenuDefinition {
+        id: menu
         helpAction: HelpActionItem {
             imageSource: "asset:///images/menus/ic_help.png"
             onTriggered: {

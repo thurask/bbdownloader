@@ -30,7 +30,37 @@ Sheet {
                 horizontalAlignment: HorizontalAlignment.Center
                 Container {
                     Header {
-                        title: qsTr("Change Theme") + Retranslate.onLanguageChanged
+                        title: qsTr("Colors") + Retranslate.onLanguageChanged
+                    }
+                    DropDown {
+                        id: colordropdown_main
+                        title: qsTr("Primary Color") + Retranslate.onLanguageChanged
+                        Option { text: qsTr("Default") + Retranslate.onLanguageChanged; value: Color.create(0xFF0092CC); selected: true }
+                        Option { text: qsTr("Red") + Retranslate.onLanguageChanged; value: Color.Red }
+                        Option { text: qsTr("Green") + Retranslate.onLanguageChanged; value: Color.Green }
+                        Option { text: qsTr("Yellow") + Retranslate.onLanguageChanged; value: Color.Yellow }
+                        Option { text: qsTr("Blue") + Retranslate.onLanguageChanged; value: Color.Blue }
+                        Option { text: qsTr("Cyan") + Retranslate.onLanguageChanged; value: Color.Cyan }
+                        Option { text: qsTr("Gray") + Retranslate.onLanguageChanged; value: Color.Gray }
+                        Option { text: qsTr("Magenta") + Retranslate.onLanguageChanged; value: Color.Magenta }
+                        onSelectedValueChanged: {
+                            Application.themeSupport.setPrimaryColor(colordropdown_main.selectedValue,colordropdown_base.selectedValue)
+                        }
+                    }
+                    DropDown {
+                        id: colordropdown_base
+                        title: qsTr("Base Color") + Retranslate.onLanguageChanged
+                        Option { text: qsTr("Default") + Retranslate.onLanguageChanged; value: Color.create(0xFF087099); selected: true }
+                        Option { text: qsTr("Dark Red") + Retranslate.onLanguageChanged; value: Color.DarkRed }
+                        Option { text: qsTr("Dark Green") + Retranslate.onLanguageChanged; value: Color.DarkGreen }
+                        Option { text: qsTr("Dark Yellow") + Retranslate.onLanguageChanged; value: Color.DarkYellow }
+                        Option { text: qsTr("Dark Blue") + Retranslate.onLanguageChanged; value: Color.DarkBlue}
+                        Option { text: qsTr("Dark Cyan") + Retranslate.onLanguageChanged; value: Color.DarkCyan}
+                        Option { text: qsTr("Dark Gray") + Retranslate.onLanguageChanged; value: Color.DarkGray}
+                        Option { text: qsTr("Dark Magenta") + Retranslate.onLanguageChanged; value: Color.DarkMagenta}
+                        onSelectedValueChanged: {
+                            Application.themeSupport.setPrimaryColor(colordropdown_main.selectedValue,colordropdown_base.selectedValue)
+                        }
                     }
                     Button {
                         text: qsTr("Change Theme") + Retranslate.onLanguageChanged

@@ -805,6 +805,74 @@ https://github.com/thurask/bbdownloader</translation>
         <source>No updates available</source>
         <translation>No updates available</translation>
     </message>
+    <message>
+        <source>Colors</source>
+        <translation>Colors</translation>
+    </message>
+    <message>
+        <source>Primary Color</source>
+        <translation>Primary Color</translation>
+    </message>
+    <message>
+        <source>Base Color</source>
+        <translation>Base Color</translation>
+    </message>
+    <message>
+        <source>Red</source>
+        <translation>Red</translation>
+    </message>
+    <message>
+        <source>Green</source>
+        <translation>Green</translation>
+    </message>
+    <message>
+        <source>Yellow</source>
+        <translation>Yellow</translation>
+    </message>
+    <message>
+        <source>Blue</source>
+        <translation>Blue</translation>
+    </message>
+    <message>
+        <source>Cyan</source>
+        <translation>Cyan</translation>
+    </message>
+    <message>
+        <source>Gray</source>
+        <translation>Gray</translation>
+    </message>
+    <message>
+        <source>Magenta</source>
+        <translation>Magenta</translation>
+    </message>
+    <message>
+        <source>Dark Red</source>
+        <translation>Dark Red</translation>
+    </message>
+    <message>
+        <source>Dark Green</source>
+        <translation>Dark Green</translation>
+    </message>
+    <message>
+        <source>Dark Yellow</source>
+        <translation>Dark Yellow</translation>
+    </message>
+    <message>
+        <source>Dark Blue</source>
+        <translation>Dark Blue</translation>
+    </message>
+    <message>
+        <source>Dark Cyan</source>
+        <translation>Dark Cyan</translation>
+    </message>
+    <message>
+        <source>Dark Gray</source>
+        <translation>Dark Gray</translation>
+    </message>
+    <message>
+        <source>Dark Magenta</source>
+        <translation>Dark Magenta</translation>
+    </message>
 </context>
 <context>
     <name>SwLookup</name>
@@ -1045,6 +1113,10 @@ https://github.com/thurask/bbdownloader</translation>
     <message>
         <source>Blank App Icons</source>
         <translation>Blank App Icons</translation>
+    </message>
+    <message>
+        <source>c = Blank App Icons</source>
+        <translation>c = Blank App Icons</translation>
     </message>
 </context>
 </TS>
