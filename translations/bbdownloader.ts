@@ -935,10 +935,6 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source> bytes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Hardware ID: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -1024,6 +1020,174 @@ https://github.com/thurask/bbdownloader</source>
     </message>
     <message>
         <source>Webkit: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Physical Size: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> mm x </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> mm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pixel Size: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Resolution: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Technology: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>State: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ready</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PIN Required</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Read Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not Provisioned</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Incompatible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not Detected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Present: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>True</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>False</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Charging State: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Full</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Discharging</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Charging</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not Charging</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Full Charge Capacity: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> mAh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>RxID: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Square</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Portrait</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Landscape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Diagonal: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> px x </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> px/m x </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> px/m</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>LCD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OLED</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CRT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Plasma</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>LED</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> MiB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Build ID: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adobe Flash: </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

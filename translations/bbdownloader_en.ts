@@ -916,10 +916,6 @@ https://github.com/thurask/bbdownloader</translation>
         <translation>Free Device Memory: </translation>
     </message>
     <message>
-        <source> bytes</source>
-        <translation> bytes</translation>
-    </message>
-    <message>
         <source>Total Device Memory: </source>
         <translation>Total Device Memory: </translation>
     </message>
@@ -1026,6 +1022,174 @@ https://github.com/thurask/bbdownloader</translation>
     <message>
         <source>Webkit: </source>
         <translation>Webkit: </translation>
+    </message>
+    <message>
+        <source>Display</source>
+        <translation>Display</translation>
+    </message>
+    <message>
+        <source>Physical Size: </source>
+        <translation>Physical size: </translation>
+    </message>
+    <message>
+        <source> mm x </source>
+        <translation> mm x </translation>
+    </message>
+    <message>
+        <source> mm</source>
+        <translation> mm</translation>
+    </message>
+    <message>
+        <source>Pixel Size: </source>
+        <translation>Pixel Size: </translation>
+    </message>
+    <message>
+        <source>Resolution: </source>
+        <translation>Resolution: </translation>
+    </message>
+    <message>
+        <source>Technology: </source>
+        <translation>Technology: </translation>
+    </message>
+    <message>
+        <source>State: </source>
+        <translation>State: </translation>
+    </message>
+    <message>
+        <source>Ready</source>
+        <translation>Ready</translation>
+    </message>
+    <message>
+        <source>PIN Required</source>
+        <translation>PIN Required</translation>
+    </message>
+    <message>
+        <source>Read Error</source>
+        <translation>Read Error</translation>
+    </message>
+    <message>
+        <source>Not Provisioned</source>
+        <translation>Not Provisioned</translation>
+    </message>
+    <message>
+        <source>Incompatible</source>
+        <translation>Incompatible</translation>
+    </message>
+    <message>
+        <source>Not Detected</source>
+        <translation>Not Detected</translation>
+    </message>
+    <message>
+        <source>Present: </source>
+        <translation>Present: </translation>
+    </message>
+    <message>
+        <source>True</source>
+        <translation>True</translation>
+    </message>
+    <message>
+        <source>False</source>
+        <translation>False</translation>
+    </message>
+    <message>
+        <source>Charging State: </source>
+        <translation>Charging State: </translation>
+    </message>
+    <message>
+        <source>Full</source>
+        <translation>Full</translation>
+    </message>
+    <message>
+        <source>Discharging</source>
+        <translation>Discharging</translation>
+    </message>
+    <message>
+        <source>Charging</source>
+        <translation>Charging</translation>
+    </message>
+    <message>
+        <source>Not Charging</source>
+        <translation>Not Charging</translation>
+    </message>
+    <message>
+        <source>Full Charge Capacity: </source>
+        <translation>Full Charge Capacity: </translation>
+    </message>
+    <message>
+        <source> mAh</source>
+        <translation> mAh</translation>
+    </message>
+    <message>
+        <source>RxID: </source>
+        <translation>RxID: </translation>
+    </message>
+    <message>
+        <source>Aspect: </source>
+        <translation>Aspect: </translation>
+    </message>
+    <message>
+        <source>Square</source>
+        <translation>Square</translation>
+    </message>
+    <message>
+        <source>Portrait</source>
+        <translation>Portrait</translation>
+    </message>
+    <message>
+        <source>Landscape</source>
+        <translation>Landscape</translation>
+    </message>
+    <message>
+        <source>Diagonal: </source>
+        <translation>Diagonal: </translation>
+    </message>
+    <message>
+        <source> px x </source>
+        <translation> px x </translation>
+    </message>
+    <message>
+        <source> px</source>
+        <translation> px</translation>
+    </message>
+    <message>
+        <source> px/m x </source>
+        <translation> px/m x </translation>
+    </message>
+    <message>
+        <source> px/m</source>
+        <translation> px/m</translation>
+    </message>
+    <message>
+        <source>LCD</source>
+        <translation>LCD</translation>
+    </message>
+    <message>
+        <source>OLED</source>
+        <translation>OLED</translation>
+    </message>
+    <message>
+        <source>CRT</source>
+        <translation>CRT</translation>
+    </message>
+    <message>
+        <source>Plasma</source>
+        <translation>Plasma</translation>
+    </message>
+    <message>
+        <source>LED</source>
+        <translation>LED</translation>
+    </message>
+    <message>
+        <source> MiB</source>
+        <translation> MiB</translation>
+    </message>
+    <message>
+        <source>Build ID: </source>
+        <translation>Build ID: </translation>
+    </message>
+    <message>
+        <source>Adobe Flash: </source>
+        <translation>Adobe Flash: </translation>
     </message>
 </context>
 <context>

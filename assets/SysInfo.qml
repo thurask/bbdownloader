@@ -21,6 +21,9 @@ Page {
         },
         SimCardInfo {
             id: siminfo
+        },
+        DisplayInfo {
+            id: dispinfo
         }
     ]
     ScrollView {
@@ -67,6 +70,9 @@ Page {
                     title: qsTr("SIM Card") + Retranslate.onLanguageChanged
                 }
                 Label {
+                    text: qsTr("State: ") + Retranslate.onLanguageChanged + (siminfo.state == 5 ? qsTr("Ready") + Retranslate.onLanguageChanged : (siminfo.state == 4 ? qsTr("PIN Required") + Retranslate.onLanguageChanged : (siminfo.state == 3 ? qsTr("Read Error") + Retranslate.onLanguageChanged : (siminfo.state == 2 ? qsTr("Not Provisioned") + Retranslate.onLanguageChanged : (siminfo.state == 1 ? qsTr("Incompatible") + Retranslate.onLanguageChanged : qsTr("Not Detected") + Retranslate.onLanguageChanged)))))
+                }
+                Label {
                     text: qsTr("Mobile Country Code (MCC): ") + Retranslate.onLanguageChanged + siminfo.mobileCountryCode;
                 }
                 Label {
@@ -82,10 +88,10 @@ Page {
                     title: qsTr("Memory") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: qsTr("Free Device Memory: ") + Retranslate.onLanguageChanged + memoryinfo.availableDeviceMemory().toLocaleString() + qsTr(" bytes") + Retranslate.onLanguageChanged
+                    text: qsTr("Free Device Memory: ") + Retranslate.onLanguageChanged + (memoryinfo.availableDeviceMemory()/1048576).toFixed(2).toLocaleString() + qsTr(" MiB") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: qsTr("Total Device Memory: ") + Retranslate.onLanguageChanged + memoryinfo.totalDeviceMemory().toLocaleString() + qsTr(" bytes") + Retranslate.onLanguageChanged
+                    text: qsTr("Total Device Memory: ") + Retranslate.onLanguageChanged + (memoryinfo.totalDeviceMemory()/1048576).toFixed(2).toLocaleString() + qsTr(" MiB") + Retranslate.onLanguageChanged
                 }
             }
             Container {
@@ -94,7 +100,16 @@ Page {
                     title: qsTr("Battery") + Retranslate.onLanguageChanged
                 }
                 Label {
+                    text: qsTr("Present: ") + Retranslate.onLanguageChanged + (battinfo.present == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)
+                }
+                Label {
+                    text: qsTr("Charging State: ") + Retranslate.onLanguageChanged + (battinfo.chargingState == 4 ? qsTr("Full") + Retranslate.onLanguageChanged : (battinfo.chargingState == 3 ? qsTr("Discharging") + Retranslate.onLanguageChanged : (battinfo.chargingState == 2 ? qsTr("Charging") + Retranslate.onLanguageChanged : (battinfo.chargingState == 1 ? qsTr("Not Charging") + Retranslate.onLanguageChanged : qsTr("Bad or Unknown") + Retranslate.onLanguageChanged))))
+                }
+                Label {
                     text: qsTr("Condition: ") + Retranslate.onLanguageChanged + (battinfo.condition == 1 ? qsTr("OK") + Retranslate.onLanguageChanged : qsTr("Bad or Unknown") + Retranslate.onLanguageChanged)
+                }
+                Label {
+                    text: qsTr("Full Charge Capacity: ") + Retranslate.onLanguageChanged + battinfo.fullChargeCapacity + qsTr(" mAh") + Retranslate.onLanguageChanged
                 }
                 Label {
                     text: qsTr("Remaining: ") + Retranslate.onLanguageChanged + battinfo.level + "%"
@@ -103,7 +118,34 @@ Page {
                     text: qsTr("Cycle Count: ") + Retranslate.onLanguageChanged + battinfo.cycleCount
                 }
                 Label {
-                    text: qsTr("Temperature: ") + Retranslate.onLanguageChanged + battinfo.temperature + "°C (" + (1.8 * (battinfo.temperature) + 32) + "°F)"
+                    text: qsTr("Temperature: ") + Retranslate.onLanguageChanged + battinfo.temperature + "°C (" + parseFloat(1.8 * (battinfo.temperature) + 32) + "°F)"
+                }
+                Label {
+                    text: qsTr("RxID: ") + Retranslate.onLanguageChanged + battinfo.rxid
+                }
+            }
+            Container {
+                topPadding: 20.0
+                Header {
+                    title: qsTr("Display") + Retranslate.onLanguageChanged
+                }
+                Label {
+                    text: qsTr("Aspect: ") + Retranslate.onLanguageChanged + (dispinfo.aspectType == 2 ? qsTr("Square") + Retranslate.onLanguageChanged : (dispinfo.aspectType == 1 ? qsTr("Portrait") + Retranslate.onLanguageChanged : qsTr("Landscape") + Retranslate.onLanguageChanged))
+                }
+                Label {
+                    text: qsTr("Physical Size: ") + Retranslate.onLanguageChanged + dispinfo.physicalSize.height + qsTr(" mm x ") + Retranslate.onLanguageChanged + dispinfo.physicalSize.width + qsTr(" mm") + Retranslate.onLanguageChanged
+                }
+                Label {
+                    text: qsTr("Diagonal: ") + Retranslate.onLanguageChanged + Math.sqrt(Math.pow(dispinfo.physicalSize.height, 2) + Math.pow(dispinfo.physicalSize.width, 2)).toFixed(2) + qsTr(" mm") + Retranslate.onLanguageChanged //Yeah, Mr. Pythagoras! Yeah, math!
+                }
+                Label {
+                    text: qsTr("Pixel Size: ") + Retranslate.onLanguageChanged + dispinfo.pixelSize.height + qsTr(" px x ") + Retranslate.onLanguageChanged + dispinfo.pixelSize.width + qsTr(" px") + Retranslate.onLanguageChanged
+                }
+                Label {
+                    text: qsTr("Resolution: ") + Retranslate.onLanguageChanged + dispinfo.resolution.height + qsTr(" px/m x ") + Retranslate.onLanguageChanged + dispinfo.resolution.width + qsTr(" px/m") + Retranslate.onLanguageChanged
+                }
+                Label {
+                    text: qsTr("Technology: ") + Retranslate.onLanguageChanged + (dispinfo.displayTechnology == 0 ? qsTr("Bad or Unknown") + Retranslate.onLanguageChanged : (dispinfo.displayTechnology == 1 ? qsTr("LCD") + Retranslate.onLanguageChanged : (dispinfo.displayTechnology == 2 ? qsTr("OLED") + Retranslate.onLanguageChanged : (dispinfo.displayTechnology == 3 ? qsTr("CRT") + Retranslate.onLanguageChanged : (dispinfo.displayTechnology == 4 ? qsTr("Plasma") + Retranslate.onLanguageChanged : qsTr("LED") + Retranslate.onLanguageChanged)))))
                 }
             }
             Container {
@@ -113,7 +155,7 @@ Page {
                     title: qsTr("Versions") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: _manager.readTextFile("/base/svnrev", "firstline")
+                    text: qsTr("Build ID: ") + Retranslate.onLanguageChanged + _manager.readTextFile("/base/svnrev", "firstline").slice(9)
                 }
                 Label {
                     text: qsTr ("OS Version: ") + Retranslate.onLanguageChanged + _manager.readTextFile("/base/etc/os.version", "normal")
@@ -126,10 +168,11 @@ Page {
                 }
                 Label {
                     text: qsTr("NFC Stack: ") + Retranslate.onLanguageChanged + _manager.readTextFile("/var/etc/nfc/nfcStack.version", "normal")
-                }/*
+                }
                 Label {
                     text: qsTr("Adobe Flash: ") + Retranslate.onLanguageChanged + _manager.readTextFile("/base/etc/flash.version", "normal")
-                }*/
+                    visible: false
+                }
                 Label {
                     text: qsTr("WiFi: ") + Retranslate.onLanguageChanged + _manager.readTextFile("/base/etc/wifi.version", "normal")
                 }
