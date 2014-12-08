@@ -6,6 +6,7 @@
 
 import bb.cascades 1.4
 import bb.system 1.2
+import bb.device 1.4
 import qt.timer 1.0
 
 Page {
@@ -16,11 +17,15 @@ Page {
             interval: 2000
             onTimeout: {
                 _swlookup.softwareReleaseChanged.connect(timer.lookup());
-                _swlookup.post(autolookup_input.text, serverdropdown.selectedValue);                
+                _swlookup.post(autolookup_input.text, serverdropdown.selectedValue);
             }
             function lookup() {
                 if (_swlookup.softwareRelease().indexOf(".") != -1 && outputtext.text.indexOf(_swlookup.softwareRelease()) == -1){
                     outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - SR " + _swlookup.softwareRelease() + "\n");
+                    led.flash(1);
+                }
+                else {
+                    led.cancel();
                 }
                 autolookup_input.text = _swlookup.lookupIncrement(autolookup_input.text);
                 timer.start();
@@ -47,6 +52,10 @@ Page {
                     myQuery.query.updateQuery()
                 }
             }
+        },
+        Led {
+            color: LedColor.White
+            id: led
         }
     ]
     Container {

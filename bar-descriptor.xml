@@ -121,6 +121,7 @@
     <permission>access_internet</permission>
     <permission>run_when_backgrounded</permission>
     <permission>read_device_identifying_information</permission>
+    <permission>access_led_control</permission>
     <env var="LD_LIBRARY_PATH" value="app/native/lib:/usr/lib/qt4/lib"/>
     <env var="CASCADES_THEME" value="default"/>
 

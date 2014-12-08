@@ -60,6 +60,7 @@ TabbedPane {
         QTimer {
             id: timer
             singleShot: true
+            interval: 2000
             onTimeout:{
                 if (Checker.returnUpdate() == true){
                     updateToast.show();
