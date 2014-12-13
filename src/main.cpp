@@ -23,6 +23,7 @@
 #include "UpdateChecker.hpp"
 #include "LinkGenerator.hpp"
 #include "Nomedia.hpp"
+#include "MetadataReader.hpp"
 
 using namespace bb::cascades;
 
@@ -93,6 +94,10 @@ Q_DECL_EXPORT int main(int argc, char **argv)
     //Nomedia
     Nomedia nomedia;
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Nomedia", &nomedia);
+
+    //Momentics metadata
+    MetadataReader metadata;
+    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("_metadata", &metadata);
 
     //Timer
     qmlRegisterType<QTimer>("qt.timer", 1, 0, "QTimer");

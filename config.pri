@@ -140,25 +140,33 @@ simulator {
 
 config_pri_assets {
     OTHER_FILES += \
+        $$quote($$BASEDIR/assets/10ppd/images/blank/blank.png) \
         $$quote($$BASEDIR/assets/10ppd/images/covers/cover.png) \
+        $$quote($$BASEDIR/assets/12ppd/images/blank/blank.png) \
         $$quote($$BASEDIR/assets/12ppd/images/covers/cover.png) \
         $$quote($$BASEDIR/assets/12ppd/images/covers/cover_small.png) \
+        $$quote($$BASEDIR/assets/8ppd/images/blank/blank.png) \
         $$quote($$BASEDIR/assets/8ppd/images/covers/cover.png) \
+        $$quote($$BASEDIR/assets/9ppd/images/blank/blank.png) \
         $$quote($$BASEDIR/assets/9ppd/images/covers/cover.png) \
         $$quote($$BASEDIR/assets/ActiveFrame.qml) \
         $$quote($$BASEDIR/assets/AutoLookup.qml) \
+        $$quote($$BASEDIR/assets/BlankIcon.qml) \
+        $$quote($$BASEDIR/assets/CustomTitleBar.qml) \
         $$quote($$BASEDIR/assets/DeltaOSDownloader.qml) \
         $$quote($$BASEDIR/assets/DownloadComponent.qml) \
         $$quote($$BASEDIR/assets/EScreens.qml) \
         $$quote($$BASEDIR/assets/HardwareIDs.qml) \
         $$quote($$BASEDIR/assets/HashTools.qml) \
         $$quote($$BASEDIR/assets/HelpSheet.qml) \
+        $$quote($$BASEDIR/assets/MetadataSheet.qml) \
         $$quote($$BASEDIR/assets/Nomedia.qml) \
         $$quote($$BASEDIR/assets/OSDownloader.qml) \
         $$quote($$BASEDIR/assets/OSRepo.qml) \
         $$quote($$BASEDIR/assets/ProgressBar.qml) \
         $$quote($$BASEDIR/assets/SettingsSheet.qml) \
         $$quote($$BASEDIR/assets/SysInfo.qml) \
+        $$quote($$BASEDIR/assets/images/blank/blank.png) \
         $$quote($$BASEDIR/assets/images/covers/cover.png) \
         $$quote($$BASEDIR/assets/images/covers/cover_small.png) \
         $$quote($$BASEDIR/assets/images/icons/icon_110.png) \
@@ -195,6 +203,7 @@ config_pri_source_group1 {
         $$quote($$BASEDIR/src/Clipboard.cpp) \
         $$quote($$BASEDIR/src/DownloadManager.cpp) \
         $$quote($$BASEDIR/src/LinkGenerator.cpp) \
+        $$quote($$BASEDIR/src/MetadataReader.cpp) \
         $$quote($$BASEDIR/src/Nomedia.cpp) \
         $$quote($$BASEDIR/src/Settings.cpp) \
         $$quote($$BASEDIR/src/SwLookup.cpp) \
@@ -210,6 +219,7 @@ config_pri_source_group1 {
         $$quote($$BASEDIR/src/Clipboard.hpp) \
         $$quote($$BASEDIR/src/DownloadManager.hpp) \
         $$quote($$BASEDIR/src/LinkGenerator.hpp) \
+        $$quote($$BASEDIR/src/MetadataReader.hpp) \
         $$quote($$BASEDIR/src/Nomedia.hpp) \
         $$quote($$BASEDIR/src/Settings.hpp) \
         $$quote($$BASEDIR/src/SwLookup.hpp) \
@@ -243,6 +253,9 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/10ppd/images/*.qml) \
         $$quote($$BASEDIR/../assets/10ppd/images/*.js) \
         $$quote($$BASEDIR/../assets/10ppd/images/*.qs) \
+        $$quote($$BASEDIR/../assets/10ppd/images/blank/*.qml) \
+        $$quote($$BASEDIR/../assets/10ppd/images/blank/*.js) \
+        $$quote($$BASEDIR/../assets/10ppd/images/blank/*.qs) \
         $$quote($$BASEDIR/../assets/10ppd/images/covers/*.qml) \
         $$quote($$BASEDIR/../assets/10ppd/images/covers/*.js) \
         $$quote($$BASEDIR/../assets/10ppd/images/covers/*.qs) \
@@ -252,6 +265,9 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/12ppd/images/*.qml) \
         $$quote($$BASEDIR/../assets/12ppd/images/*.js) \
         $$quote($$BASEDIR/../assets/12ppd/images/*.qs) \
+        $$quote($$BASEDIR/../assets/12ppd/images/blank/*.qml) \
+        $$quote($$BASEDIR/../assets/12ppd/images/blank/*.js) \
+        $$quote($$BASEDIR/../assets/12ppd/images/blank/*.qs) \
         $$quote($$BASEDIR/../assets/12ppd/images/covers/*.qml) \
         $$quote($$BASEDIR/../assets/12ppd/images/covers/*.js) \
         $$quote($$BASEDIR/../assets/12ppd/images/covers/*.qs) \
@@ -261,6 +277,9 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/8ppd/images/*.qml) \
         $$quote($$BASEDIR/../assets/8ppd/images/*.js) \
         $$quote($$BASEDIR/../assets/8ppd/images/*.qs) \
+        $$quote($$BASEDIR/../assets/8ppd/images/blank/*.qml) \
+        $$quote($$BASEDIR/../assets/8ppd/images/blank/*.js) \
+        $$quote($$BASEDIR/../assets/8ppd/images/blank/*.qs) \
         $$quote($$BASEDIR/../assets/8ppd/images/covers/*.qml) \
         $$quote($$BASEDIR/../assets/8ppd/images/covers/*.js) \
         $$quote($$BASEDIR/../assets/8ppd/images/covers/*.qs) \
@@ -270,12 +289,18 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/9ppd/images/*.qml) \
         $$quote($$BASEDIR/../assets/9ppd/images/*.js) \
         $$quote($$BASEDIR/../assets/9ppd/images/*.qs) \
+        $$quote($$BASEDIR/../assets/9ppd/images/blank/*.qml) \
+        $$quote($$BASEDIR/../assets/9ppd/images/blank/*.js) \
+        $$quote($$BASEDIR/../assets/9ppd/images/blank/*.qs) \
         $$quote($$BASEDIR/../assets/9ppd/images/covers/*.qml) \
         $$quote($$BASEDIR/../assets/9ppd/images/covers/*.js) \
         $$quote($$BASEDIR/../assets/9ppd/images/covers/*.qs) \
         $$quote($$BASEDIR/../assets/images/*.qml) \
         $$quote($$BASEDIR/../assets/images/*.js) \
         $$quote($$BASEDIR/../assets/images/*.qs) \
+        $$quote($$BASEDIR/../assets/images/blank/*.qml) \
+        $$quote($$BASEDIR/../assets/images/blank/*.js) \
+        $$quote($$BASEDIR/../assets/images/blank/*.qs) \
         $$quote($$BASEDIR/../assets/images/covers/*.qml) \
         $$quote($$BASEDIR/../assets/images/covers/*.js) \
         $$quote($$BASEDIR/../assets/images/covers/*.qs) \

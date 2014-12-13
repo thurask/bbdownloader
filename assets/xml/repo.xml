@@ -22,12 +22,12 @@ Blank:
 -->
 
 <repo>
-      <release>
-	<trueos></trueos>
-	<os>10.3.1.1154</os>
-	<radio>10.3.1.1155</radio>
-	<software>10.3.1.747</software>
-	<notes>Classic launch OS</notes>
+     <release>
+		<trueos></trueos>
+		<os>10.3.1.1154</os>
+		<radio>10.3.1.1155</radio>
+		<software>10.3.1.747</software>
+		<notes>Classic launch OS</notes>
      </release>
      <release>
         <trueos>10.3.1.997</trueos>

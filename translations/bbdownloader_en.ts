@@ -68,6 +68,13 @@
     </message>
 </context>
 <context>
+    <name>CustomTitleBar</name>
+    <message>
+        <source>BB10 OS Downloader %1</source>
+        <translation>BB10 OS Downloader %1</translation>
+    </message>
+</context>
+<context>
     <name>DeltaOSDownloader</name>
     <message>
         <source>Inputs</source>
@@ -298,6 +305,14 @@
         <source>Hardware IDs (network copy)</source>
         <translation>Hardware IDs (network copy)</translation>
     </message>
+    <message>
+        <source>Close</source>
+        <translation>Close</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation>Refresh</translation>
+    </message>
 </context>
 <context>
     <name>HashTools</name>
@@ -512,6 +527,29 @@ https://github.com/thurask/bbdownloader</translation>
     <message>
         <source>Error</source>
         <translation>Error</translation>
+    </message>
+</context>
+<context>
+    <name>MetadataSheet</name>
+    <message>
+        <source>Metadata</source>
+        <translation>Metadata</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Close</translation>
+    </message>
+    <message>
+        <source>Runtime Metadata</source>
+        <translation>Runtime Metadata</translation>
+    </message>
+    <message>
+        <source>Simulator Metadata</source>
+        <translation>Simulator Metadata</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation>Refresh</translation>
     </message>
 </context>
 <context>
@@ -1029,7 +1067,7 @@ https://github.com/thurask/bbdownloader</translation>
     </message>
     <message>
         <source>Physical Size: </source>
-        <translation>Physical size: </translation>
+        <translation>Physical Size: </translation>
     </message>
     <message>
         <source> mm x </source>
@@ -1195,10 +1233,6 @@ https://github.com/thurask/bbdownloader</translation>
 <context>
     <name>main</name>
     <message>
-        <source>BB10 OS Downloader %1</source>
-        <translation>BB10 OS Downloader %1</translation>
-    </message>
-    <message>
         <source>OS Lookup Tool</source>
         <translation>OS Lookup Tool</translation>
     </message>
@@ -1213,10 +1247,6 @@ https://github.com/thurask/bbdownloader</translation>
     <message>
         <source>System Info</source>
         <translation>System Info</translation>
-    </message>
-    <message>
-        <source>Hardware ID List</source>
-        <translation>Hardware ID List</translation>
     </message>
     <message>
         <source>Update available</source>
@@ -1267,10 +1297,6 @@ https://github.com/thurask/bbdownloader</translation>
         <translation>s = System Info</translation>
     </message>
     <message>
-        <source>i = Hardware ID List</source>
-        <translation>i = Hardware ID List</translation>
-    </message>
-    <message>
         <source>n = .nomedia Helper</source>
         <translation>n = .nomedia Helper</translation>
     </message>
@@ -1281,6 +1307,14 @@ https://github.com/thurask/bbdownloader</translation>
     <message>
         <source>c = Blank App Icons</source>
         <translation>c = Blank App Icons</translation>
+    </message>
+    <message>
+        <source>Metadata</source>
+        <translation>Metadata</translation>
+    </message>
+    <message>
+        <source>Hardware IDs</source>
+        <translation>Hardware IDs</translation>
     </message>
 </context>
 </TS>

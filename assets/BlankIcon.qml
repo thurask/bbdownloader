@@ -17,7 +17,6 @@ Page {
         }
     ]
     Container {
-        topPadding: ((dispinfo.pixelSize.height - 10)/2)
         Button {
             text: qsTr("Add blank icon") + Retranslate.onLanguageChanged
             onClicked: {

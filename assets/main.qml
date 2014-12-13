@@ -32,7 +32,6 @@ TabbedPane {
             + qsTr("h = Hash Tools") + Retranslate.onLanguageChanged + "\n"
             + qsTr("e = Engineering Screens") + Retranslate.onLanguageChanged + "\n"
             + qsTr("s = System Info") + Retranslate.onLanguageChanged + "\n"
-            + qsTr("i = Hardware ID List") + Retranslate.onLanguageChanged + "\n"
             + qsTr("n = .nomedia Helper") + Retranslate.onLanguageChanged + "\n"
             + qsTr("c = Blank App Icons") + Retranslate.onLanguageChanged
             includeRememberMe: false
@@ -109,21 +108,15 @@ TabbedPane {
             }
         },
         Shortcut {
-            key: "i"
+            key: "n"
             onTriggered: {
                 tabbedpane.activeTab = tab7
             }
         },
         Shortcut {
-            key: "n"
-            onTriggered: {
-                tabbedpane.activeTab = tab8
-            }
-        },
-        Shortcut {
             key: "c"
             onTriggered: {
-                tabbedpane.activeTab = tab9
+                tabbedpane.activeTab = tab8
             }
         }
     ]
@@ -160,8 +153,7 @@ TabbedPane {
         delegate: Delegate {
             OSDownloader {
                 id: osDownloaderPage
-                titleBar: TitleBar {
-                    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+                titleBar: CustomTitleBar {
                 }
             }
         }
@@ -174,8 +166,7 @@ TabbedPane {
         delegate: Delegate {
             DeltaOSDownloader {
                 id: deltaOsDownloaderPage
-                titleBar: TitleBar {
-                    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+                titleBar: CustomTitleBar {
                 }
             }
         }
@@ -188,8 +179,20 @@ TabbedPane {
         delegate: Delegate {
             AutoLookup {
                 id: autoLookupPage
-                titleBar: TitleBar {
-                    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+                titleBar: CustomTitleBar {
+                    acceptAction.enabled: true
+                    acceptAction.title: qsTr("Metadata") + Retranslate.onLanguageChanged
+                    acceptAction.onTriggered: {
+                        var metadata = metadatadefinition.createObject()
+                        metadata.open();
+                    }
+                    attachedObjects: [
+                        ComponentDefinition {
+                            id: metadatadefinition
+                            MetadataSheet {
+                            }
+                        }
+                    ]
                 }
             }
         }
@@ -202,8 +205,7 @@ TabbedPane {
         delegate: Delegate {
             HashTools {
                 id: hashToolsPage
-                titleBar: TitleBar {
-                    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+                titleBar: CustomTitleBar {
                 }
             }
         }
@@ -216,8 +218,7 @@ TabbedPane {
         delegate: Delegate {
             EScreens {
                 id: eScreensPage
-                titleBar: TitleBar {
-                    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+                titleBar: CustomTitleBar {
                 }
             }
         }
@@ -230,8 +231,20 @@ TabbedPane {
         delegate: Delegate {
             SysInfo {
                 id: sysInfoPage
-                titleBar: TitleBar {
-                    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+                titleBar: CustomTitleBar {
+                    acceptAction.enabled: true
+                    acceptAction.title: qsTr("Hardware IDs") + Retranslate.onLanguageChanged
+                    acceptAction.onTriggered: {
+                        var hwids = hardwareIDsDefinition.createObject()
+                        hwids.open();
+                    }
+                    attachedObjects: [
+                        ComponentDefinition {
+                            id: hardwareIDsDefinition
+                            HardwareIDs {
+                            }
+                        }
+                    ]
                 }
             }
         }
@@ -239,13 +252,12 @@ TabbedPane {
     }
     Tab {
         id: tab7
-        title: qsTr("Hardware ID List") + Retranslate.onLanguageChanged
+        title: qsTr(".nomedia Helper") + Retranslate.onLanguageChanged
         imageSource: "asset:///images/tabs/7.png"
         delegate: Delegate {
-            HardwareIDs {
-                id: hardwareIDsPage
-                titleBar: TitleBar {
-                    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+            Nomedia {
+                id: nomediaPage
+                titleBar: CustomTitleBar {
                 }
             }
         }
@@ -253,33 +265,19 @@ TabbedPane {
     }
     Tab {
         id: tab8
-        title: qsTr(".nomedia Helper") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/tabs/8.png"
-        delegate: Delegate {
-            Nomedia {
-                id: nomediaPage
-                titleBar: TitleBar {
-                    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
-                }
-            }
-        }
-        delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
-    }
-    Tab {
-        id: tab9
         title: qsTr("Blank App Icons") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/tabs/9.png"
+        imageSource: "asset:///images/tabs/8.png"
         delegate: Delegate {
             BlankIcon {
                 id: blankIconPage
-                titleBar: TitleBar {
-                    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+                titleBar: CustomTitleBar {
                 }
             }
         }
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivatedWhileSelected
     }
     onCreationCompleted: {
+        _metadata.getMetadata()
         var defaultdir = Settings.getValueFor("defaultdir", "shared/downloads/bbdownloader/");
         _manager.setDefaultDir(defaultdir);
         Checker.checkForUpdates();

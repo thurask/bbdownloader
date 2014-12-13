@@ -1,5 +1,5 @@
 1
-54
+56
 10ppd/images/blank/blank.png
 10ppd/images/covers/cover.png
 12ppd/images/blank/blank.png
@@ -12,6 +12,7 @@
 ActiveFrame.qml
 AutoLookup.qml
 BlankIcon.qml
+CustomTitleBar.qml
 DeltaOSDownloader.qml
 DownloadComponent.qml
 EScreens.qml
@@ -46,6 +47,7 @@ images/tabs/8.png
 images/tabs/9.png
 js/escreens.js
 main.qml
+MetadataSheet.qml
 Nomedia.qml
 OSDownloader.qml
 OSRepo.qml
