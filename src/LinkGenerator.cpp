@@ -244,6 +244,15 @@ void LinkGenerator::setDeltaOS(QString os, QString initialos, QString swrelease,
             deltaOsLink = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + swrelease + "/com.qnx.coreos.qcfm.os.qc8974.verizon.d" + osinit + "/" + os + "/qc8974.verizon_sfi-" + os + "-nto+armle-v7+signed+patch+"+ osinit2 + ".bar";
         }
     }
+    if (device == "8974_sqw_hybrid"){
+        //TODO: figure this out
+        if (type == "core"){
+            deltaOsLink = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + swrelease + "/com.qnx.coreos.qcfm.os.qc8974.factory.d" + osinit + "/" + os + "/qc8974.factory_sfi-" + os + "-nto+armle-v7+signed+patch+"+ osinit2 + ".bar";
+        }
+        if (type == "core_vzw"){
+            deltaOsLink = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + swrelease + "/com.qnx.coreos.qcfm.os.qc8974.verizon.d" + osinit + "/" + os + "/qc8974.verizon_sfi-" + os + "-nto+armle-v7+signed+patch+"+ osinit2 + ".bar";
+        }
+    }
 }
 
 void LinkGenerator::setDeltaRadio(QString radio, QString initialradio, QString swrelease, QString device)
@@ -269,7 +278,7 @@ void LinkGenerator::setDeltaRadio(QString radio, QString initialradio, QString s
     if (device == "8930wtr5"){
         deltaRadioLink = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + swrelease + "/com.qnx.qcfm.radio.qc8930.wtr5.d" + radinit + "/" + radio + "/qc8930.wtr5-" + radio + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar";
     }
-    if (device == "8974_sqw"){
+    if (device == "8974_sqw" || device == "8974_sqw_hybrid"){
         deltaRadioLink = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + swrelease + "/com.qnx.qcfm.radio.qc8974.wtr2.d" + radinit + "/" + radio + "/qc8974.wtr2-" + radio + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar";
     }
 }
@@ -372,7 +381,7 @@ void LinkGenerator::setDeltaRadioLabel(QString device, QString radio, QString in
     if (device == "8930wtr5"){
         deltaRadioLabel = tr("Z3 radio delta from ") + initialradio + tr(" to ") + radio + ":";
     }
-    if (device == "8974_sqw"){
+    if (device == "8974_sqw" || device == "8974_sqw_hybrid"){
         deltaRadioLabel = tr("Passport radio delta from ") + initialradio + tr(" to ") + radio + ":";
     }
 }

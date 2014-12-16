@@ -24,6 +24,9 @@ Page {
         },
         DisplayInfo {
             id: dispinfo
+        },
+        FileSystemInfo {
+            id: fsinfo
         }
     ]
     ScrollView {
@@ -63,6 +66,21 @@ Page {
                 Label {
                     text: qsTr("Serial Number: ") + Retranslate.onLanguageChanged + hardwareinfo.serialNumber;
                 }
+                Label {
+                    text: qsTr("Physical Keyboard: ") + Retranslate.onLanguageChanged + (hardwareinfo.isPhysicalKeyboardDevice == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)
+                }
+                Label {
+                    text: qsTr("Physical Menu Button: ") + Retranslate.onLanguageChanged + (hardwareinfo.hasPhysicalMenuButton == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)
+                }
+                Label {
+                    text: qsTr("Physical Back Button: ") + Retranslate.onLanguageChanged + (hardwareinfo.hasPhysicalBackButton == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)
+                }
+                Label {
+                    text: qsTr("Physical Phone Keys: ") + Retranslate.onLanguageChanged + (hardwareinfo.hasPhysicalPhoneKeys == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)
+                }
+                Label {
+                    text: qsTr("Physical Trackpad: ") + Retranslate.onLanguageChanged + (hardwareinfo.isTrackpadDevice == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)
+                }
             }
             Container {
                 topPadding: 20.0
@@ -88,10 +106,37 @@ Page {
                     title: qsTr("Memory") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: qsTr("Free Device Memory: ") + Retranslate.onLanguageChanged + (memoryinfo.availableDeviceMemory()/1048576).toFixed(2).toLocaleString() + qsTr(" MiB") + Retranslate.onLanguageChanged
+                    text: qsTr("Total Device Memory: ") + Retranslate.onLanguageChanged + (memoryinfo.totalDeviceMemory()/1048576).toFixed(2).toLocaleString() + qsTr(" MiB") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: qsTr("Total Device Memory: ") + Retranslate.onLanguageChanged + (memoryinfo.totalDeviceMemory()/1048576).toFixed(2).toLocaleString() + qsTr(" MiB") + Retranslate.onLanguageChanged
+                    text: qsTr("Free Device Memory: ") + Retranslate.onLanguageChanged + (memoryinfo.availableDeviceMemory()/1048576).toFixed(2).toLocaleString() + qsTr(" MiB") + Retranslate.onLanguageChanged
+                }
+            }
+            Container {
+                topPadding: 20.0
+                Header {
+                    title: qsTr("Local Filesystem") + Retranslate.onLanguageChanged
+                }
+                Label {
+                    text: qsTr("Physical Capacity: ") + Retranslate.onLanguageChanged + (fsinfo.physicalCapacity()/1000000000).toFixed(2).toLocaleString() + qsTr(" GB") + Retranslate.onLanguageChanged;
+                }
+                Label {
+                    text: qsTr("Accessible Capacity: ") + Retranslate.onLanguageChanged + (fsinfo.fileSystemCapacity("/")/1000000000).toFixed(2).toLocaleString() + qsTr(" GB") + Retranslate.onLanguageChanged;
+                }
+                Label {
+                    text: qsTr("Available Capacity: ") + Retranslate.onLanguageChanged + (fsinfo.availableFileSystemSpace("/")/1000000000).toFixed(2).toLocaleString() + qsTr(" GB") + Retranslate.onLanguageChanged;
+                }
+            }
+            Container {
+                topPadding: 20.0
+                Header {
+                    title: qsTr("SD Card") + Retranslate.onLanguageChanged
+                }
+                Label {
+                    text: qsTr("Accessible Capacity: ") + Retranslate.onLanguageChanged + (fsinfo.fileSystemCapacity("/sdcard/external_sd/")/1000000000).toFixed(2).toLocaleString() + qsTr(" GB") + Retranslate.onLanguageChanged;
+                }
+                Label {
+                    text: qsTr("Available Capacity: ") + Retranslate.onLanguageChanged + (fsinfo.availableFileSystemSpace("/sdcard/external_sd/")/1000000000).toFixed(2).toLocaleString() + qsTr(" GB") + Retranslate.onLanguageChanged;
                 }
             }
             Container {
@@ -147,6 +192,18 @@ Page {
                 Label {
                     text: qsTr("Technology: ") + Retranslate.onLanguageChanged + (dispinfo.displayTechnology == 0 ? qsTr("Bad or Unknown") + Retranslate.onLanguageChanged : (dispinfo.displayTechnology == 1 ? qsTr("LCD") + Retranslate.onLanguageChanged : (dispinfo.displayTechnology == 2 ? qsTr("OLED") + Retranslate.onLanguageChanged : (dispinfo.displayTechnology == 3 ? qsTr("CRT") + Retranslate.onLanguageChanged : (dispinfo.displayTechnology == 4 ? qsTr("Plasma") + Retranslate.onLanguageChanged : qsTr("LED") + Retranslate.onLanguageChanged)))))
                 }
+                Label {
+                    text: qsTr("Display Name: ") + Retranslate.onLanguageChanged + dispinfo.displayName
+                }
+                Label {
+                    text: qsTr("Attached: ") + Retranslate.onLanguageChanged + (dispinfo.attached == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)
+                }
+                Label {
+                    text: qsTr("Detachable: ") + Retranslate.onLanguageChanged + (dispinfo.detachable == true ? qsTr("True") + Retranslate.onLanguageChanged  : qsTr("False") + Retranslate.onLanguageChanged)
+                }
+                Label {
+                    text: qsTr("Wireless: ") + Retranslate.onLanguageChanged + (dispinfo.wireless == true ? qsTr("True") + Retranslate.onLanguageChanged  : qsTr("False") + Retranslate.onLanguageChanged)
+                }
             }
             Container {
                 topPadding: 20.0
@@ -158,7 +215,10 @@ Page {
                     text: qsTr("Build ID: ") + Retranslate.onLanguageChanged + _manager.readTextFile("/base/svnrev", "firstline").slice(9)
                 }
                 Label {
-                    text: qsTr ("OS Version: ") + Retranslate.onLanguageChanged + _manager.readTextFile("/base/etc/os.version", "normal")
+                    text: qsTr("Build Branch: ") + Retranslate.onLanguageChanged + _manager.readTextFile("/base/svnrev", "branch").slice(13)
+                }
+                Label {
+                    text: qsTr("OS Version: ") + Retranslate.onLanguageChanged + _manager.readTextFile("/base/etc/os.version", "normal")
                 }
                 Label {
                     text: qsTr("Radio Version: ") + Retranslate.onLanguageChanged + _manager.readTextFile("/radio/etc/radio.version", "normal")
