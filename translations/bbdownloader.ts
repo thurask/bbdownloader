@@ -1228,6 +1228,70 @@ https://github.com/thurask/bbdownloader</source>
         <source>Adobe Flash: </source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Physical Keyboard: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Physical Menu Button: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Physical Back Button: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Physical Phone Keys: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Physical Trackpad: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Name: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attached: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Detachable: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wireless: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Build Branch: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Physical Capacity: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Accessible Capacity: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Available Capacity: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Local Filesystem</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SD Card</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> GB</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>main</name>

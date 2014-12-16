@@ -1229,6 +1229,70 @@ https://github.com/thurask/bbdownloader</translation>
         <source>Adobe Flash: </source>
         <translation>Adobe Flash: </translation>
     </message>
+    <message>
+        <source>Physical Keyboard: </source>
+        <translation>Physical Keyboard: </translation>
+    </message>
+    <message>
+        <source>Physical Menu Button: </source>
+        <translation>Physical Menu Button: </translation>
+    </message>
+    <message>
+        <source>Physical Back Button: </source>
+        <translation>Physical Back Button: </translation>
+    </message>
+    <message>
+        <source>Physical Phone Keys: </source>
+        <translation>Physical Phone Keys: </translation>
+    </message>
+    <message>
+        <source>Physical Trackpad: </source>
+        <translation>Physical Trackpad: </translation>
+    </message>
+    <message>
+        <source>Display Name: </source>
+        <translation>Display Name: </translation>
+    </message>
+    <message>
+        <source>Attached: </source>
+        <translation>Attached: </translation>
+    </message>
+    <message>
+        <source>Detachable: </source>
+        <translation>Detachable: </translation>
+    </message>
+    <message>
+        <source>Wireless: </source>
+        <translation>Wireless: </translation>
+    </message>
+    <message>
+        <source>Build Branch: </source>
+        <translation>Build Branch: </translation>
+    </message>
+    <message>
+        <source>Physical Capacity: </source>
+        <translation>Physical Capacity: </translation>
+    </message>
+    <message>
+        <source>Accessible Capacity: </source>
+        <translation>Accessible Capacity: </translation>
+    </message>
+    <message>
+        <source>Available Capacity: </source>
+        <translation>Available Capacity: </translation>
+    </message>
+    <message>
+        <source>Local Filesystem</source>
+        <translation>Local Filesystem</translation>
+    </message>
+    <message>
+        <source>SD Card</source>
+        <translation>SD Card</translation>
+    </message>
+    <message>
+        <source> GB</source>
+        <translation> GB</translation>
+    </message>
 </context>
 <context>
     <name>main</name>
