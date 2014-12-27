@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT repo (hardware*)>
+<!ELEMENT hardware (id,name,variant)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT variant (#PCDATA)>
+
+<!--
+===HWID===
+A list of all the hardware IDs for QNX devices.
+
+Format:
+<hardware>
+	<id>Hardware ID (no leading 0x, ex. 04002607)</id>
+	<name>Device name (ex. Z10)</name>
+	<variant>Device variant (ex. STL100-1)</variant>
+</hardware>-->

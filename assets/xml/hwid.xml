@@ -1,22 +1,5 @@
-<!--
-===HWID===
-A list of all the hardware IDs for BB10 devices.
-
-Format:
-<hardware>
-	<id>Hardware ID (no leading 0x, ex. 04002607)</id>
-	<name>Device name (ex. Z10)</name>
-	<variant>Device variant (ex. STL100-1)</variant>
-</hardware>
-
-Blank:
-<hardware>
-	<id></id>
-	<name></name>
-	<variant></variant>
-</hardware>
--->
-
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repo SYSTEM "dtd/hwid.dtd" >
 <repo>
 	<hardware>
 		<id>04002607</id>

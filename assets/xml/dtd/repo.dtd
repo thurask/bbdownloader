@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT repo (release*)>
+<!ELEMENT device (trueos,os,radio,software,notes)>
+<!ELEMENT trueos (#PCDATA)>
+<!ELEMENT os (#PCDATA)>
+<!ELEMENT radio (#PCDATA)>
+<!ELEMENT software (#PCDATA)>
+<!ELEMENT notes (#PCDATA)>
+
+<!--
+===REPO===
+A list of all the OSs available on BlackBerry's public servers. Either on CSE prod or Developer (for autoloaders)
+
+OS Format:
+<release>
+    <trueos>Blank, OS version if it doesn't sort properly</trueos>
+    <os>OS version, OS version with leading zero(es) if it doesn't sort properly</os>
+    <radio>Radio version</radio>
+    <software>Software version</software>
+    <notes>OS notes, generally who released it/if it's an autoloader</notes>
+</release>-->
