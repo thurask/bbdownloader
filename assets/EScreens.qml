@@ -5,6 +5,7 @@
  --Thurask*/
 
 import bb.cascades 1.4
+import bb.device 1.4
 import "js/escreens.js" as Escreens
 
 Page {
@@ -18,6 +19,9 @@ Page {
                     myQuery.query.updateQuery()
                 }
             }
+        },
+        HardwareInfo {
+            id: hwinfo
         }
     ]
     ScrollView {
@@ -29,66 +33,100 @@ Page {
             Label {
                 text: qsTr("PIN") + Retranslate.onLanguageChanged
             }
-            TextField {
-                id: pin
-                hintText: qsTr("PIN") + Retranslate.onLanguageChanged
-                onTextChanging: {
-                    pin.text = pin.text.toLowerCase()
+            Container {
+                layout: StackLayout {
+                    orientation: LayoutOrientation.LeftToRight
                 }
-                validator: Validator {
-                    id: validator_pin
-                    mode: ValidationMode.Immediate
-                    onValidate: {
-                        var regex_pin = RegExp(/\b[0-9a-f]{8}\b/)
-                        if (regex_pin.test(pin.text) == true) {
-                            validator_pin.setValid(true);
+                TextField {
+                    id: pin
+                    hintText: qsTr("PIN") + Retranslate.onLanguageChanged
+                    onTextChanging: {
+                        pin.text = pin.text.toLowerCase()
+                    }
+                    validator: Validator {
+                        id: validator_pin
+                        mode: ValidationMode.Immediate
+                        onValidate: {
+                            var regex_pin = RegExp(/\b[0-9a-f]{8}\b/)
+                            if (regex_pin.test(pin.text) == true) {
+                                validator_pin.setValid(true);
+                            }
+                            else {
+                                validator_pin.setValid(false);
+                            }
                         }
-                        else {
-                            validator_pin.setValid(false);
-                        }
+                    }
+                }
+                Button {
+                    text: qsTr("Load PIN") + Retranslate.onLanguageChanged
+                    onClicked: {
+                        pin.text = hwinfo.pin.slice(2)
                     }
                 }
             }
             Label {
                 text: qsTr("App Version") + Retranslate.onLanguageChanged
             }
-            TextField {
-                id: appv
-                hintText: qsTr("App Version") + Retranslate.onLanguageChanged
-                validator: Validator {
-                    id: validator_appver
-                    mode: ValidationMode.Immediate
-                    onValidate: {
-                        var regex_appv = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/)
-                        if (regex_appv.test(appv.text) == true) {
-                            validator_appver.setValid(true);
+            Container {
+                layout: StackLayout {
+                    orientation: LayoutOrientation.LeftToRight
+                }
+                TextField {
+                    id: appv
+                    hintText: qsTr("App Version") + Retranslate.onLanguageChanged
+                    validator: Validator {
+                        id: validator_appver
+                        mode: ValidationMode.Immediate
+                        onValidate: {
+                            var regex_appv = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/)
+                            if (regex_appv.test(appv.text) == true) {
+                                validator_appver.setValid(true);
+                            }
+                            else {
+                                validator_appver.setValid(false);
+                            }
                         }
-                        else {
-                            validator_appver.setValid(false);
-                        }
+                    }
+                }
+                Button {
+                    text: qsTr("Load App Version") + Retranslate.onLanguageChanged
+                    onClicked: {
+                        appv.text = _manager.readTextFile("/base/etc/os.version", "normal")
                     }
                 }
             }
             Label {
                 text: qsTr("Uptime") + Retranslate.onLanguageChanged
             }
-            TextField {
-                id: uptime
-                hintText: qsTr("Uptime") + Retranslate.onLanguageChanged
-                validator: Validator {
-                    id: validator_uptime
-                    mode: ValidationMode.Immediate
-                    onValidate: {
-                        var regex_uptime = RegExp(/\b\d{1,}\b/)
-                        if (regex_uptime.test(uptime.text) == true) {
-                            validator_uptime.setValid(true);
-                        }
-                        else {
-                            validator_uptime.setValid(false);
+            Container {
+                layout: StackLayout {
+                    orientation: LayoutOrientation.LeftToRight
+                }
+                TextField {
+                    id: uptime
+                    hintText: qsTr("Uptime") + Retranslate.onLanguageChanged
+                    validator: Validator {
+                        id: validator_uptime
+                        mode: ValidationMode.Immediate
+                        onValidate: {
+                            var regex_uptime = RegExp(/\b\d{1,}\b/)
+                            if (regex_uptime.test(uptime.text) == true) {
+                                validator_uptime.setValid(true);
+                            }
+                            else {
+                                validator_uptime.setValid(false);
+                            }
                         }
                     }
                 }
+                Button {
+                    text: qsTr("Open EScreens") + Retranslate.onLanguageChanged
+                    onClicked: {
+                        myQuery.trigger(myQuery.query.invokeActionId);
+                    }
+                }
             }
+            
             DropDown {
                 id: validity
                 title: qsTr("Validity") + Retranslate.onLanguageChanged
@@ -116,9 +154,6 @@ Page {
                     }]
             }
             Container {
-                layout: StackLayout {
-                    orientation: LayoutOrientation.LeftToRight
-                }
                 horizontalAlignment: HorizontalAlignment.Center
                 Button {
                     text: qsTr("Get Key") + Retranslate.onLanguageChanged
@@ -126,18 +161,12 @@ Page {
                         Escreens.newHMAC();
                     }
                 }
-                Button {
-                    text: qsTr("Open EScreens") + Retranslate.onLanguageChanged
-                    onClicked: {
-                        myQuery.trigger(myQuery.query.invokeActionId);
-                    }
-                }
             }
             Label {
                 id: ykey
                 text: qsTr("Your Key") + Retranslate.onLanguageChanged
                 horizontalAlignment: HorizontalAlignment.Center
-                textStyle.fontSize: FontSize.XLarge
+                textStyle.fontSize: FontSize.XXLarge
             }
         }
     }
