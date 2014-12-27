@@ -17,7 +17,7 @@
 						<toolChain id="com.qnx.qcc.toolChain.1358880376" name="com.qnx.qcc.toolChain" superClass="com.qnx.qcc.toolChain">
 							<option id="com.qnx.qcc.option.os.1448297927" name="Target OS:" superClass="com.qnx.qcc.option.os"/>
 							<option id="com.qnx.qcc.option.cpu.73169863" name="Target CPU:" superClass="com.qnx.qcc.option.cpu" value="com.qnx.qcc.option.gen.cpu.armle-v7" valueType="enumerated"/>
-							<option id="com.qnx.qcc.option.compiler.1843838854" name="Compiler:" superClass="com.qnx.qcc.option.compiler"/>
+							<option id="com.qnx.qcc.option.compiler.1843838854" name="Compiler:" superClass="com.qnx.qcc.option.compiler" value="com.qnx.qcc.option.gen.compiler.gcc.4.8.3" valueType="enumerated"/>
 							<option id="com.qnx.qcc.option.runtime.807429583" name="Runtime:" superClass="com.qnx.qcc.option.runtime"/>
 							<targetPlatform archList="all" binaryParser="com.qnx.tools.ide.qde.core.QDEBynaryParser" id="com.qnx.qcc.targetPlatform.331851851" osList="all" superClass="com.qnx.qcc.targetPlatform"/>
 							<builder autoBuildTarget="Device-Debug" enableAutoBuild="true" id="com.qnx.qcc.toolChain.988088652.1976221871" incrementalBuildTarget="Device-Debug" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="device-debug builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="qml.device-debug"/>

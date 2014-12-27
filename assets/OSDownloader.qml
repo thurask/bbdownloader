@@ -12,7 +12,6 @@ Page {
     property string swrelease
     property string osversion
     property string radioversion
-    property bool useoldautoloader: true
     ScrollView {
         scrollViewProperties.pinchToZoomEnabled: false
         scrollViewProperties.scrollMode: ScrollMode.Vertical
@@ -25,7 +24,7 @@ Page {
             //Inputs
             Container {
                 layout: StackLayout {
-                    orientation: LayoutOrientation.TopToBottom 
+                    orientation: LayoutOrientation.TopToBottom
                 }
                 Label {
                     text: qsTr("Target OS Version") + Retranslate.onLanguageChanged
@@ -52,8 +51,7 @@ Page {
                                 var regex = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/)
                                 if (regex.test(osver_input.text) == true) {
                                     validator_osver.setValid(true);
-                                }
-                                else {
+                                } else {
                                     validator_osver.setValid(false);
                                 }
                             }
@@ -62,7 +60,7 @@ Page {
                     Button {
                         text: qsTr("Lookup") + Retranslate.onLanguageChanged
                         onClicked: {
-                            swver_input.text = _swlookup.softwareRelease();                                                              
+                            swver_input.text = _swlookup.softwareRelease();
                         }
                     }
                 }
@@ -86,8 +84,7 @@ Page {
                                 var regex = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/)
                                 if (regex.test(radiover_input.text) == true) {
                                     validator_radver.setValid(true);
-                                }
-                                else {
+                                } else {
                                     validator_radver.setValid(false);
                                 }
                             }
@@ -122,8 +119,7 @@ Page {
                                 var regex = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/)
                                 if (regex.test(swver_input.text) == true || swver_input.text == "N/A") {
                                     validator_swver.setValid(true);
-                                }
-                                else {
+                                } else {
                                     validator_swver.setValid(false);
                                 }
                             }
@@ -140,282 +136,7 @@ Page {
                 }
             }
             //Dropdowns
-            Container {
-                horizontalAlignment: HorizontalAlignment.Center
-                topPadding: 20.0
-                DropDown {
-                    id: osdropdown
-                    objectName: "osdropdown"
-                    title: qsTr("Choose OS Type") + Retranslate.onLanguageChanged
-                    Option {
-                        id: dropdown_debrick
-                        text: qsTr("Debrick OS") + Retranslate.onLanguageChanged
-                        value: "debrick"
-                        onSelectedChanged: {
-                            if (selected){
-                                dropdown_winchester.setEnabled(true);
-                                dropdown_winchester_daa.setEnabled(true);
-                                dropdown_winchester_dab.setEnabled(true);
-                                dropdown_winchester_daab.setEnabled(true);
-                                dropdown_pb.setEnabled(true);
-                                dropdown_pblte_old.setEnabled(true);
-                                dropdown_pblte_new.setEnabled(true);
-                            }
-                        }
-                    }
-                    Option {
-                        id: dropdown_core
-                        text: qsTr("Core OS") + Retranslate.onLanguageChanged
-                        value: "core"
-                        onSelectedChanged: {
-                            if (selected){
-                                dropdown_winchester.setEnabled(true);
-                                dropdown_winchester_daa.setEnabled(true);
-                                dropdown_winchester_dab.setEnabled(true);
-                                dropdown_winchester_daab.setEnabled(true);
-                                dropdown_pb.setEnabled(false);
-                                dropdown_pblte_old.setEnabled(false);
-                                dropdown_pblte_new.setEnabled(false);
-                            }
-                        }
-                    }
-                    Option {
-                        id: dropdown_debrick_verizon
-                        text: qsTr("Verizon Debrick OS") + Retranslate.onLanguageChanged
-                        value: "debrick_vzw"
-                        onSelectedChanged: {
-                            if (selected){
-                                dropdown_winchester.setEnabled(false);
-                                dropdown_winchester_daa.setEnabled(false);
-                                dropdown_winchester_dab.setEnabled(false);
-                                dropdown_winchester_daab.setEnabled(false);
-                                dropdown_pb.setEnabled(false);
-                                dropdown_pblte_old.setEnabled(false);
-                                dropdown_pblte_new.setEnabled(false);
-                            }
-                        }
-                    }
-                    Option {
-                        id: dropdown_core_verizon
-                        text: qsTr("Verizon Core OS") + Retranslate.onLanguageChanged
-                        value: "core_vzw"
-                        onSelectedChanged: {
-                            if (selected){
-                                dropdown_winchester.setEnabled(false);
-                                dropdown_winchester_daa.setEnabled(false);
-                                dropdown_winchester_dab.setEnabled(false);
-                                dropdown_winchester_daab.setEnabled(false);
-                                dropdown_pb.setEnabled(false);
-                                dropdown_pblte_old.setEnabled(false);
-                                dropdown_pblte_new.setEnabled(false);
-                            }
-                        }
-                    }
-                    Option {
-                        id: dropdown_debrick_china
-                        text: qsTr("China Debrick OS") + Retranslate.onLanguageChanged
-                        value: "debrick_china"
-                        onSelectedChanged: {
-                            if (selected){
-                                dropdown_winchester.setEnabled(false);
-                                dropdown_winchester_daa.setEnabled(false);
-                                dropdown_winchester_dab.setEnabled(false);
-                                dropdown_winchester_daab.setEnabled(false);
-                                dropdown_pb.setEnabled(false);
-                                dropdown_pblte_old.setEnabled(false);
-                                dropdown_pblte_new.setEnabled(false);
-                            }
-                        }
-                    }
-                    Option {
-                        id: dropdown_core_china
-                        text: qsTr("China Core OS") + Retranslate.onLanguageChanged
-                        value: "core_china"
-                        onSelectedChanged: {
-                            if (selected){
-                                dropdown_winchester.setEnabled(false);
-                                dropdown_winchester_daa.setEnabled(false);
-                                dropdown_winchester_dab.setEnabled(false);
-                                dropdown_winchester_daab.setEnabled(false);
-                                dropdown_pb.setEnabled(false);
-                                dropdown_pblte_old.setEnabled(false);
-                                dropdown_pblte_new.setEnabled(false);
-                            }
-                        }
-                    }
-                    Option {
-                        id: dropdown_sdkdebrick
-                        text: qsTr("SDK Debrick OS") + Retranslate.onLanguageChanged
-                        value: "sdkdebrick"
-                        onSelectedChanged: {
-                            if (selected){
-                                dropdown_winchester.setEnabled(true);
-                                dropdown_winchester_daa.setEnabled(true);
-                                dropdown_winchester_dab.setEnabled(true);
-                                dropdown_winchester_daab.setEnabled(true);
-                                dropdown_pb.setEnabled(false);
-                                dropdown_pblte_old.setEnabled(false);
-                                dropdown_pblte_new.setEnabled(false);
-                            }
-                        }
-                    }
-                    Option {
-                        id: dropdown_sdkcore
-                        text: qsTr("SDK Core OS") + Retranslate.onLanguageChanged
-                        value: "sdkcore"
-                        onSelectedChanged: {
-                            if (selected){
-                                dropdown_winchester.setEnabled(true);
-                                dropdown_winchester_daa.setEnabled(true);
-                                dropdown_winchester_dab.setEnabled(true);
-                                dropdown_winchester_daab.setEnabled(true);
-                                dropdown_pb.setEnabled(false);
-                                dropdown_pblte_old.setEnabled(false);
-                                dropdown_pblte_new.setEnabled(false);
-                            }
-                        }
-                    }
-                    Option {
-                        id: dropdown_sdkautoloader
-                        text: qsTr("SDK Autoloader (Old style URL)") + Retranslate.onLanguageChanged
-                        value: "sdkautoloader"
-                        onSelectedChanged: {
-                            if (selected){
-                                useoldautoloader = true;
-                                dropdown_winchester.setEnabled(true);
-                                dropdown_winchester_daa.setEnabled(true);
-                                dropdown_winchester_dab.setEnabled(true);
-                                dropdown_winchester_daab.setEnabled(true);
-                                dropdown_pb.setEnabled(false);
-                                dropdown_pblte_old.setEnabled(false);
-                                dropdown_pblte_new.setEnabled(false);
-                            }
-                        }
-                    }
-                    Option {
-                        id: dropdown_sdkautoloader_new
-                        text: qsTr("SDK Autoloader (New style URL)") + Retranslate.onLanguageChanged
-                        value: "sdkautoloader"
-                        onSelectedChanged: {
-                            if (selected){
-                                useoldautoloader = false;
-                                dropdown_winchester.setEnabled(true);
-                                dropdown_winchester_daa.setEnabled(true);
-                                dropdown_winchester_dab.setEnabled(true);
-                                dropdown_winchester_daab.setEnabled(true);
-                                dropdown_pb.setEnabled(false);
-                                dropdown_pblte_old.setEnabled(false);
-                                dropdown_pblte_new.setEnabled(false);
-                            }
-                        }
-                    }
-                    onSelectedValueChanged: {
-                        _linkgen.setOsLabel(osdropdown.selectedValue);
-                        os_download_label.text = _linkgen.getOsLabel();
-                    }
-                }
-                DropDown {
-                    id: devicedropdown
-                    title: qsTr("Choose Device") + Retranslate.onLanguageChanged
-                    Option {
-                        id: dropdown_winchester
-                        text: "Z10 STL100-1"
-                        value: "winchester"
-                        enabled: (osdropdown.selectedValue == "debrick" || osdropdown.selectedValue == "core" || osdropdown.selectedValue == "sdkdebrick" || osdropdown.selectedValue == "sdkcore" || osdropdown.selectedValue == "sdkautoloader" ? true : false)
-                    }
-                    Option {
-                        id: dropdown_stl
-                        text: "Z10 STL100-2/3/P9982"
-                        value: "8960"
-                    }
-                    Option {
-                        id: dropdown_stl_omadm
-                        text: "Z10 STL100-4"
-                        value: "8960omadm"
-                    }
-                    Option {
-                        id: dropdown_q10
-                        text: "Q10/Q5/P9983"
-                        value: "8960wtr"
-                    }
-                    Option {
-                        id: dropdown_z30
-                        text: "Z30/Manitoba/Classic"
-                        value: "8960wtr5"
-                    }
-                    Option {
-                        id: dropdown_jakarta
-                        text: "Z3/Kopi/Cafe"
-                        value: "8930wtr5"
-                    }
-                    Option {
-                        id: dropdown_windermere
-                        text: "Passport"
-                        value: "8974_sqw"
-                    }
-                    Option {
-                        id: dropdown_windermere_new
-                        text: "Passport (8960 Hybrid)"
-                        value: "8974_sqw_hybrid"
-                    }
-                    Option {
-                        id: dropdown_parana
-                        text: "Aquila/Aquarius"
-                        value: "8974"
-                        enabled: (osdropdown.selectedValue != "sdkautoloader" ? true : false)
-                    }
-                    Option {
-                        id: dropdown_winchester_daa
-                        text: "Dev Alpha A"
-                        value: "winchester_daa"
-                        enabled: (osdropdown.selectedValue == "debrick" || osdropdown.selectedValue == "core" || osdropdown.selectedValue == "sdkdebrick" || osdropdown.selectedValue == "sdkcore" || osdropdown.selectedValue == "sdkautoloader" ? true : false)
-                    }
-                    Option {
-                        id: dropdown_winchester_dab
-                        text: "Dev Alpha B"
-                        value: "winchester_dab"
-                        enabled: (osdropdown.selectedValue == "debrick" || osdropdown.selectedValue == "core" || osdropdown.selectedValue == "sdkdebrick" || osdropdown.selectedValue == "sdkcore" || osdropdown.selectedValue == "sdkautoloader" ? true : false)
-                    }
-                    Option {
-                        id: dropdown_winchester_daab
-                        text: "Dev Alpha A/B"
-                        value: "winchester_daab"
-                        enabled: (osdropdown.selectedValue == "debrick" || osdropdown.selectedValue == "core" || osdropdown.selectedValue == "sdkdebrick" || osdropdown.selectedValue == "sdkcore" || osdropdown.selectedValue == "sdkautoloader" ? true : false)
-                    }
-                    Option {
-                        id: dropdown_devalphac
-                        text: "Dev Alpha C"
-                        value: "8960wtr_dac"
-                    }
-                    Option {
-                        id: dropdown_pb
-                        text: "PlayBook"
-                        value: "winchester_pb"
-                        enabled: (osdropdown.selectedValue == "debrick" ? true : false)
-                    }
-                    Option {
-                        id: dropdown_pblte_old
-                        text: "4G PlayBook (v1)"
-                        value: "winchester_pblte_old"
-                        enabled: (osdropdown.selectedValue == "debrick" ? true : false)
-                    }
-                    Option {
-                        id: dropdown_pblte_new
-                        text: "4G PlayBook (v2)"
-                        value: "winchester_pblte_new"
-                        enabled: (osdropdown.selectedValue == "debrick" ? true : false)
-                    }
-                    onSelectedValueChanged: {
-                        if (devicedropdown.selectedValue != "sdkautoloader"){
-                            _linkgen.setRadioLabel(devicedropdown.selectedValue);
-                        }
-                        else {
-                            _linkgen.setRadioLabel("");
-                        }
-                        radio_download_label.text = _linkgen.getRadioLabel();
-                    }
-                }
-            }
+
             //Generator buttons
             Container {
                 layout: StackLayout {
@@ -424,47 +145,20 @@ Page {
                 horizontalAlignment: HorizontalAlignment.Center
                 topPadding: 20.0
                 Button {
-                    id:generatebutton
+                    id: generatebutton
                     text: qsTr("Generate") + Retranslate.onLanguageChanged
                     horizontalAlignment: HorizontalAlignment.Center
                     onClicked: {
-                        if (osdropdown.selectedValue == "sdkautoloader") {
-                            radioclipboard.visible = false;
-                            allclipboard.visible = false;
-                            radio_download_label.text = "";
-                            radio_download_textarea.text = "";
-                            _linkgen.setAutoloader(osversion, devicedropdown.selectedValue, useoldautoloader)     
-                        }
-                        else {
-                            radioclipboard.visible = true;
-                            allclipboard.visible = true;
-                            global_exportcontainer.visible = true;
-                            global_linkcontainer.visible = true;
-                            _linkgen.setOS(osversion, hashedswversion, osdropdown.selectedValue, devicedropdown.selectedValue);
-                            _linkgen.setRadio(radioversion, hashedswversion, devicedropdown.selectedValue);
-                            radio_download_textarea.text = _linkgen.getRadio();
-                        }
-                        global_clipboardcontainer.visible = true;
-                        os_download_textarea.text = _linkgen.getOS();
+                        generatedtext.text = _manager.returnLinks(hashedswversion, osversion, radioversion);
+                        global_exportcontainer.visible = true;
                     }
                 }
                 Button {
                     id: clearbutton
                     text: qsTr("Clear") + Retranslate.onLanguageChanged
                     onClicked: {
-                        os_download_textarea.text = "";
-                        radio_download_textarea.text = "";
-                        _linkgen.forceOS("");
-                        _linkgen.forceRadio("");
-                        global_linkcontainer.visible = false;
+                        generatedtext.text = "";
                         global_exportcontainer.visible = false;
-                        global_clipboardcontainer.visible = false;
-                        downloadComponent.visible = false;
-                        osdropdown.resetSelectedOption();
-                        devicedropdown.resetSelectedOption();
-                        os_download_label.text = qsTr("OS Link:") + Retranslate.onLanguageChanged;
-                        radio_download_label.text = qsTr("Radio Link:") + Retranslate.onLanguageChanged;
-                        _manager.messagesCleared();
                     }
                 }
             }
@@ -475,23 +169,8 @@ Page {
                 Header {
                     title: qsTr("Links") + Retranslate.onLanguageChanged
                 }
-                Label {
-                    id: os_download_label
-                    text: qsTr("OS Link:") + Retranslate.onLanguageChanged
-                }
                 TextArea {
-                    id: os_download_textarea
-                    text: ""
-                    editable: false
-                    visible: true
-                    content.flags: TextContentFlag.ActiveText
-                }
-                Label {
-                    id: radio_download_label
-                    text: qsTr("Radio Link:") + Retranslate.onLanguageChanged
-                }
-                TextArea {
-                    id: radio_download_textarea
+                    id: generatedtext
                     text: ""
                     editable: false
                     visible: true
@@ -504,9 +183,9 @@ Page {
                     }
                     horizontalAlignment: HorizontalAlignment.Center
                     topPadding: 10.0
-                    visible:false
+                    visible: false
                     Header {
-                        title: qsTr("Export") + Retranslate.onLanguageChanged
+                        title: ""
                     }
                     Container {
                         layout: StackLayout {
@@ -528,123 +207,14 @@ Page {
                             }
                         }
                         Button {
-                            id: sharebutton
-                            text: qsTr("Share Links") + Retranslate.onLanguageChanged
-                            onClicked: {
-                                myQuery.query.data = _manager.returnLinks(hashedswversion, osversion, radioversion);
-                                myQuery.query.uri = "";
-                                myQuery.query.mimeType = "text/plain"
-                                myQuery.trigger(myQuery.query.invokeActionId);
-                            }
-                        }
-                    }
-                }
-                Container {
-                    id: global_clipboardcontainer
-                    layout: StackLayout {
-                        orientation: LayoutOrientation.TopToBottom
-                    }
-                    horizontalAlignment: HorizontalAlignment.Center
-                    topPadding: 10.0
-                    visible: false
-                    Header {
-                        title: qsTr("Clipboard") + Retranslate.onLanguageChanged
-                    }
-                    Container {
-                        layout: StackLayout {
-                            orientation: LayoutOrientation.LeftToRight
-                        }
-                        topPadding: 10.0
-                        horizontalAlignment: HorizontalAlignment.Center
-                        Button {
-                            id: osclipboard
-                            text: qsTr("Copy OS") + Retranslate.onLanguageChanged
-                            onClicked: {
-                                if (os_download_textarea.text.indexOf("http") != -1) {
-                                    Clipboard.copyToClipboard(os_download_textarea.text);
-                                    linkexporttoast.body = qsTr("OS URL copied") + Retranslate.onLanguageChanged;
-                                    linkexporttoast.button.enabled = true;
-                                    myQuery.query.data = os_download_textarea.text;
-                                    myQuery.query.uri = "";
-                                    myQuery.query.mimeType = "text/plain"
-                                    linkexporttoast.show();
-                                }
-                            }
-                        }
-                        Button {
-                            id: radioclipboard
-                            text: qsTr("Copy Radio") + Retranslate.onLanguageChanged
-                            onClicked: {
-                                if (radio_download_textarea.text.indexOf("http") != -1){
-                                    Clipboard.copyToClipboard(radio_download_textarea.text);
-                                    linkexporttoast.body = qsTr("Radio URL copied") + Retranslate.onLanguageChanged;
-                                    linkexporttoast.button.enabled = true;
-                                    myQuery.query.data = radio_download_textarea.text;
-                                    myQuery.query.uri = "";
-                                    myQuery.query.mimeType = "text/plain"
-                                    linkexporttoast.show();
-                                }
-                            }
-                        }
-                        Button {
                             id: allclipboard
-                            text: qsTr("Copy All") + Retranslate.onLanguageChanged
+                            text: qsTr("Copy Links") + Retranslate.onLanguageChanged
                             onClicked: {
-                                if (os_download_textarea.text.indexOf("http") != -1 && radio_download_textarea.text.indexOf("http") != -1) {
-                                    _manager.copyLinks(hashedswversion, osversion, radioversion)
-                                    linkexporttoast.body = qsTr("All URLs copied") + Retranslate.onLanguageChanged;
-                                    linkexporttoast.button.enabled = true;
-                                    myQuery.query.data = _manager.returnLinks(hashedswversion, osversion, radioversion);
-                                    myQuery.query.uri = "";
-                                    myQuery.query.mimeType = "text/plain"
-                                    linkexporttoast.show();
-                                }
+                                _manager.copyLinks(hashedswversion, osversion, radioversion)
+                                linkexporttoast.body = qsTr("All URLs copied") + Retranslate.onLanguageChanged;
+                                linkexporttoast.show();
                             }
                         }
-                    }
-                }
-                Container {
-                    topPadding: 10.0
-                    id: global_linkcontainer
-                    layout: StackLayout {
-                        orientation: LayoutOrientation.TopToBottom
-                    }
-                    horizontalAlignment: HorizontalAlignment.Center
-                    visible: false
-                    Header {
-                        title: qsTr("Downloads") + Retranslate.onLanguageChanged
-                    }
-                    Container {
-                        layout: StackLayout {
-                            orientation: LayoutOrientation.LeftToRight
-                        }
-                        topPadding: 10.0
-                        horizontalAlignment: HorizontalAlignment.Center
-                        Button {
-                            id: downloadbutton_os
-                            text: qsTr("Download OS") + Retranslate.onLanguageChanged
-                            onClicked: {
-                                downloadComponent.visible = true;
-                                var osdl = os_download_textarea.text;
-                                if (osdl.indexOf("http") != -1) {
-                                    _manager.downloadUrl(os_download_textarea.text);
-                                }
-                            }
-                        }
-                        Button {
-                            id: downloadbutton_radio
-                            text: qsTr("Download Radio") + Retranslate.onLanguageChanged
-                            onClicked: {
-                                downloadComponent.visible = true;
-                                var raddl = radio_download_textarea.text;
-                                if (raddl.indexOf("http") != -1){
-                                    _manager.downloadUrl(radio_download_textarea.text);
-                                }
-                            }
-                        }
-                    }
-                    DownloadComponent{
-                        id: downloadComponent
                     }
                 }
             }
@@ -653,7 +223,7 @@ Page {
     attachedObjects: [
         ComponentDefinition {
             id: repoCompDef
-            OSRepo{
+            OSRepo {
                 id: osRepoAttached
                 onReleaseSelected: {
                     osver_input.text = repoos;
@@ -664,8 +234,8 @@ Page {
         },
         SystemToast {
             id: linkexporttoast
-            body: "";
-            button.enabled: false;
+            body: ""
+            button.enabled: false
             button.label: qsTr("Share") + Retranslate.onLanguageChanged;
             onFinished: {
                 if (linkexporttoast.result == SystemUiResult.ButtonSelection){

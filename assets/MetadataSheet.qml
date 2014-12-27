@@ -26,18 +26,18 @@ Sheet {
                 Header {
                     title: qsTr("Runtime Metadata") + Retranslate.onLanguageChanged
                 }
-                Label {
+                TextArea {
                     id: runtimelabel
                     text: _metadata.getRuntimeMetadata()
-                    multiline: true
+                    editable: false
                 }
                 Header {
                     title: qsTr("Simulator Metadata") + Retranslate.onLanguageChanged
                 }
-                Label {
+                TextArea {
                     id: simulatorlabel
                     text: _metadata.getSimulatorMetadata()
-                    multiline: true
+                    editable: false
                 }
             }
         }

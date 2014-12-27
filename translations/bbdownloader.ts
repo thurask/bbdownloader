@@ -57,178 +57,9 @@
     </message>
 </context>
 <context>
-    <name>BlankIcon</name>
-    <message>
-        <source>Add blank icon</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Added!</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>CustomTitleBar</name>
     <message>
         <source>BB10 OS Downloader %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>DeltaOSDownloader</name>
-    <message>
-        <source>Inputs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Target OS Version</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Lookup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Target Radio Version</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>OS Version + 1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Target SW Version</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Known Software</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Initial OS Version</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Initial Radio Version</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose OS Type</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose Device</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Generate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Links</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>OS Link:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Radio Link:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copy OS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>OS URL copied</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copy Radio</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Radio URL copied</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Download OS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Download Radio</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export Links</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copy All</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>All URLs copied</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Share Links</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Clipboard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Downloads</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Share</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Links saved to default directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use Current</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>DownloadComponent</name>
-    <message>
-        <source>Progress</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Active Downloads: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source> none</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Stop Download</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Status</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Errors</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -284,38 +115,7 @@
     </message>
 </context>
 <context>
-    <name>HardwareIDs</name>
-    <message>
-        <source>Hardware IDs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use local file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Could not access online file. Loading local copy.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Hardware IDs (local copy)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Hardware IDs (network copy)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>HashTools</name>
+    <name>FileOps</name>
     <message>
         <source>File Picker</source>
         <translation type="unfinished"></translation>
@@ -361,6 +161,10 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Hash saved to default directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Copy to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
@@ -369,7 +173,78 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hash saved to default directory</source>
+        <source>Choose a Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current Directory:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>.nomedia File Exists: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>True</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>False</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Write .nomedia File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File created!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete .nomedia File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File deleted!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Added!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add blank icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>HardwareIDs</name>
+    <message>
+        <source>Hardware IDs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use local file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Could not access online file. Loading local copy.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hardware IDs (local copy)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hardware IDs (network copy)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -408,122 +283,6 @@ https://github.com/thurask/bbdownloader</source>
 <context>
     <name>LinkGenerator</name>
     <message>
-        <source>Delta from </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source> to </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Verizon delta from </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Debrick OS:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Core OS:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Verizon Debrick OS:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Verizon Core OS:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>China Debrick OS:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>China Core OS:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>SDK Debrick OS:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>SDK Core OS:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>SDK Autoloader:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>OMAP Z10/Dev Alpha A/B Radio:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>4G PlayBook Radio (mod-qcmdm):</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>4G PlayBook Radio (mod.qcmdm):</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Qualcomm Z10/P9982 Radio:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Verizon Z10 Radio:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Q10/Q5/P9983 Radio:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Z30/Manitoba/Classic Radio:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Z3/Kopi/Cafe Radio:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Passport Radio:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Aquila/Aquarius Radio:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>OMAP Z10 radio delta from </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Qualcomm Z10/P9982 radio delta from </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Verizon Z10 radio delta from </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Q10/Q5/P9983 radio delta from </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Z3 radio delta from </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Passport radio delta from </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Z30/Classic radio delta from </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -548,49 +307,6 @@ https://github.com/thurask/bbdownloader</source>
     </message>
     <message>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Nomedia</name>
-    <message>
-        <source>File Picker</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose a Directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Current Directory:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>.nomedia File Exists: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Write .nomedia File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>File created!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Delete .nomedia File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>File deleted!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>True</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>False</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -625,14 +341,6 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Choose OS Type</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose Device</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Generate</source>
         <translation type="unfinished"></translation>
     </message>
@@ -641,19 +349,7 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>OS Link:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Radio Link:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Links</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -665,47 +361,7 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Share Links</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Clipboard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copy OS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>OS URL copied</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copy Radio</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Radio URL copied</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copy All</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>All URLs copied</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Downloads</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Download OS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Download Radio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -713,43 +369,7 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Debrick OS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Core OS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Verizon Debrick OS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Verizon Core OS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>China Debrick OS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>China Core OS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>SDK Debrick OS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>SDK Core OS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>SDK Autoloader (Old style URL)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>SDK Autoloader (New style URL)</source>
+        <source>Copy Links</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1300,10 +920,6 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hash Tools</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Engineering Screens</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1320,35 +936,11 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>OS Downloader</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Delta OS Downloader</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>.nomedia Helper</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Keyboard Shortcuts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>o = OS Downloader</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>d = Delta OS Downloader</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>l = OS Lookup Tool</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>h = Hash Tools</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1360,23 +952,27 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>n = .nomedia Helper</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Blank App Icons</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>c = Blank App Icons</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Metadata</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Hardware IDs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>f = File Operations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OS Link Generator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File Operations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>o = OS Link Generator</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -1,5 +1,5 @@
 1
-56
+51
 10ppd/images/blank/blank.png
 10ppd/images/covers/cover.png
 12ppd/images/blank/blank.png
@@ -11,13 +11,10 @@
 9ppd/images/covers/cover.png
 ActiveFrame.qml
 AutoLookup.qml
-BlankIcon.qml
 CustomTitleBar.qml
-DeltaOSDownloader.qml
-DownloadComponent.qml
 EScreens.qml
+FileOps.qml
 HardwareIDs.qml
-HashTools.qml
 HelpSheet.qml
 images/blank/blank.png
 images/covers/cover.png
@@ -48,10 +45,8 @@ images/tabs/9.png
 js/escreens.js
 main.qml
 MetadataSheet.qml
-Nomedia.qml
 OSDownloader.qml
 OSRepo.qml
-ProgressBar.qml
 SettingsSheet.qml
 SysInfo.qml
 xml/hwid.xml

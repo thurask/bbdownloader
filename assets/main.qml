@@ -26,14 +26,11 @@ TabbedPane {
             title: qsTr("Keyboard Shortcuts") + Retranslate.onLanguageChanged
             cancelButton.enabled: false
             customButton.enabled: false
-            body: qsTr("o = OS Downloader") + Retranslate.onLanguageChanged + "\n"
-            + qsTr("d = Delta OS Downloader") + Retranslate.onLanguageChanged + "\n"
+            body: qsTr("o = OS Link Generator") + Retranslate.onLanguageChanged + "\n"
             + qsTr("l = OS Lookup Tool") + Retranslate.onLanguageChanged + "\n"
-            + qsTr("h = Hash Tools") + Retranslate.onLanguageChanged + "\n"
             + qsTr("e = Engineering Screens") + Retranslate.onLanguageChanged + "\n"
             + qsTr("s = System Info") + Retranslate.onLanguageChanged + "\n"
-            + qsTr("n = .nomedia Helper") + Retranslate.onLanguageChanged + "\n"
-            + qsTr("c = Blank App Icons") + Retranslate.onLanguageChanged
+            + qsTr("f = File Operations") + Retranslate.onLanguageChanged
             includeRememberMe: false
             rememberMeChecked: false
         },
@@ -74,49 +71,31 @@ TabbedPane {
         Shortcut {
             key: "o"
             onTriggered: {
-                tabbedpane.activeTab = tab1
+                tabbedpane.activeTab = tab_osgen
             }  
-        },
-        Shortcut {
-            key: "d"
-            onTriggered: {
-                tabbedpane.activeTab = tab2
-            }
         },
         Shortcut {
             key: "l"
             onTriggered: {
-                tabbedpane.activeTab = tab3
-            }
-        },
-        Shortcut {
-            key: "h"
-            onTriggered: {
-                tabbedpane.activeTab = tab4
+                tabbedpane.activeTab = tab_lookup
             }
         },
         Shortcut {
             key: "e"
             onTriggered: {
-                tabbedpane.activeTab = tab5
+                tabbedpane.activeTab = tab_escreens
             }
         },
         Shortcut {
             key: "s"
             onTriggered: {
-                tabbedpane.activeTab = tab6
+                tabbedpane.activeTab = tab_sysinfo
             }
         },
         Shortcut {
-            key: "n"
+            key: "f"
             onTriggered: {
-                tabbedpane.activeTab = tab7
-            }
-        },
-        Shortcut {
-            key: "c"
-            onTriggered: {
-                tabbedpane.activeTab = tab8
+                tabbedpane.activeTab = tab_fileops
             }
         }
     ]
@@ -147,8 +126,8 @@ TabbedPane {
         ]
     }
     Tab {
-        id: tab1
-        title: qsTr("OS Downloader") + Retranslate.onLanguageChanged
+        id: tab_osgen
+        title: qsTr("OS Link Generator") + Retranslate.onLanguageChanged
         imageSource: "asset:///images/tabs/1.png"
         delegate: Delegate {
             OSDownloader {
@@ -160,22 +139,9 @@ TabbedPane {
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
     }
     Tab {
-        id: tab2
-        title: qsTr("Delta OS Downloader") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/tabs/2.png"
-        delegate: Delegate {
-            DeltaOSDownloader {
-                id: deltaOsDownloaderPage
-                titleBar: CustomTitleBar {
-                }
-            }
-        }
-        delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
-    }
-    Tab {
-        id: tab3
+        id: tab_lookup
         title: qsTr("OS Lookup Tool") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/tabs/3.png"
+        imageSource: "asset:///images/tabs/2.png"
         delegate: Delegate {
             AutoLookup {
                 id: autoLookupPage
@@ -199,22 +165,9 @@ TabbedPane {
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
     }
     Tab {
-        id: tab4
-        title: qsTr("Hash Tools") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/tabs/4.png"
-        delegate: Delegate {
-            HashTools {
-                id: hashToolsPage
-                titleBar: CustomTitleBar {
-                }
-            }
-        }
-        delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
-    }
-    Tab {
-        id: tab5
+        id: tab_escreens
         title: qsTr("Engineering Screens") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/tabs/5.png"
+        imageSource: "asset:///images/tabs/3.png"
         delegate: Delegate {
             EScreens {
                 id: eScreensPage
@@ -225,9 +178,9 @@ TabbedPane {
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivateImmediately
     }
     Tab {
-        id: tab6
+        id: tab_sysinfo
         title: qsTr("System Info") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/tabs/6.png"
+        imageSource: "asset:///images/tabs/4.png"
         delegate: Delegate {
             SysInfo {
                 id: sysInfoPage
@@ -252,29 +205,16 @@ TabbedPane {
     }
     Tab {
         id: tab7
-        title: qsTr(".nomedia Helper") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/tabs/7.png"
+        title: qsTr("File Operations") + Retranslate.onLanguageChanged
+        imageSource: "asset:///images/tabs/5.png"
         delegate: Delegate {
-            Nomedia {
-                id: nomediaPage
+            FileOps {
+                id: fileOpsPage
                 titleBar: CustomTitleBar {
                 }
             }
         }
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
-    }
-    Tab {
-        id: tab8
-        title: qsTr("Blank App Icons") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/tabs/8.png"
-        delegate: Delegate {
-            BlankIcon {
-                id: blankIconPage
-                titleBar: CustomTitleBar {
-                }
-            }
-        }
-        delegateActivationPolicy: TabDelegateActivationPolicy.ActivatedWhileSelected
     }
     onCreationCompleted: {
         _metadata.getMetadata()
