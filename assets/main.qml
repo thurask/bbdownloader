@@ -204,13 +204,26 @@ TabbedPane {
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivatedWhileSelected
     }
     Tab {
-        id: tab7
+        id: tab_fileops
         title: qsTr("File Operations") + Retranslate.onLanguageChanged
         imageSource: "asset:///images/tabs/5.png"
         delegate: Delegate {
             FileOps {
                 id: fileOpsPage
                 titleBar: CustomTitleBar {
+                }
+            }
+        }
+        delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
+    }
+    Tab {
+        id: tab_ptcrb
+        title: qsTr("Certification Browser") + Retranslate.onLanguageChanged
+        imageSource: "asset:///images/tabs/6.png"
+        delegate: Delegate {
+            CertViewer {
+                id: certViewerPage
+                tbar: CustomTitleBar {
                 }
             }
         }

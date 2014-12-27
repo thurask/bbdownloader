@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT repo (device*)>
+<!ELEMENT device (name,variant,id,url)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT variant (#PCDATA)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
