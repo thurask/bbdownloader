@@ -18,56 +18,9 @@ Sheet {
                     hardwareIDs.close()
                 }
             }
-            acceptAction: ActionItem {
-                enabled: localtoggle.checked ? false : true
-                title: qsTr("Refresh") + Retranslate.onLanguageChanged
-                onTriggered: {
-                    repoDataSource.load();
-                }
-            }
         }
         Container {
             horizontalAlignment: HorizontalAlignment.Fill
-            Container {
-                layout: StackLayout {
-                    orientation: LayoutOrientation.LeftToRight
-                }
-                horizontalAlignment: HorizontalAlignment.Center
-                verticalAlignment: VerticalAlignment.Center
-                Label {
-                    text: qsTr("Use local file") + Retranslate.onLanguageChanged
-                    verticalAlignment: VerticalAlignment.Center
-                }
-                ToggleButton {
-                    id: localtoggle
-                    verticalAlignment: VerticalAlignment.Center
-                    checked: true
-                    onCheckedChanged: {
-                        if (localtoggle.checked == true) {
-                            mainheader.title = qsTr("Hardware IDs (local copy)") + Retranslate.onLanguageChanged
-                            repoDataSource.source = "asset:///xml/hwid.xml";
-                            repoDataSource.remote = false;
-                            repoDataSource.load();
-                        }
-                        else {
-                            mainheader.title = qsTr("Hardware IDs (network copy)") + Retranslate.onLanguageChanged
-                            repoDataSource.source = "http://thurask.github.io/hwid.xml";
-                            repoDataSource.remote = true;
-                            repoDataSource.load();
-                        }
-                    }
-                }
-            }
-            Header {
-                id: mainheader
-                title: (localtoggle.checked == true ? qsTr("Hardware IDs (local copy)") + Retranslate.onLanguageChanged : qsTr("Hardware IDs (network copy)") + Retranslate.onLanguageChanged)
-            }
-            Label {
-                id: errorlabel
-                text: qsTr("Could not access online file. Loading local copy.") + Retranslate.onLanguageChanged
-                multiline: true
-                visible: false
-            }
             ListView {
                 id: listView
                 dataModel: repoDataModel
@@ -103,16 +56,8 @@ Sheet {
                 query: "repo/hardware"
                 type: DataSourceType.Xml
                 onDataLoaded: {
-                    errorlabel.visible = false;
                     repoDataModel.clear();
                     repoDataModel.insertList(data)
-                }
-                onError: {
-                    mainheader.title = qsTr("Hardware IDs (local copy)") + Retranslate.onLanguageChanged
-                    repoDataSource.source = "asset:///xml/hwid.xml";
-                    repoDataSource.remote = false;
-                    repoDataSource.load();
-                    errorlabel.visible = true;
                 }
             }
         ]
