@@ -1,5 +1,5 @@
 1
-51
+56
 10ppd/images/blank/blank.png
 10ppd/images/covers/cover.png
 12ppd/images/blank/blank.png
@@ -11,6 +11,7 @@
 9ppd/images/covers/cover.png
 ActiveFrame.qml
 AutoLookup.qml
+CertViewer.qml
 CustomTitleBar.qml
 EScreens.qml
 FileOps.qml
@@ -49,5 +50,9 @@ OSDownloader.qml
 OSRepo.qml
 SettingsSheet.qml
 SysInfo.qml
+xml/dtd/hwid.dtd
+xml/dtd/ptcrb.dtd
+xml/dtd/repo.dtd
 xml/hwid.xml
+xml/ptcrb.xml
 xml/repo.xml

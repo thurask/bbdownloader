@@ -57,6 +57,17 @@
     </message>
 </context>
 <context>
+    <name>CertViewer</name>
+    <message>
+        <source>Close</source>
+        <translation>Close</translation>
+    </message>
+    <message>
+        <source>Certification Browser</source>
+        <translation>Certification Browser</translation>
+    </message>
+</context>
+<context>
     <name>CustomTitleBar</name>
     <message>
         <source>BB10 OS Downloader %1</source>
@@ -112,6 +123,14 @@
     <message>
         <source>PIN</source>
         <translation>PIN</translation>
+    </message>
+    <message>
+        <source>Load PIN</source>
+        <translation>Load PIN</translation>
+    </message>
+    <message>
+        <source>Load App Version</source>
+        <translation>Load App Version</translation>
     </message>
 </context>
 <context>
@@ -224,28 +243,8 @@
         <translation>Hardware IDs</translation>
     </message>
     <message>
-        <source>Use local file</source>
-        <translation>Use local file</translation>
-    </message>
-    <message>
-        <source>Could not access online file. Loading local copy.</source>
-        <translation>Could not access online file. Loading local copy.</translation>
-    </message>
-    <message>
-        <source>Hardware IDs (local copy)</source>
-        <translation>Hardware IDs (local copy)</translation>
-    </message>
-    <message>
-        <source>Hardware IDs (network copy)</source>
-        <translation>Hardware IDs (network copy)</translation>
-    </message>
-    <message>
         <source>Close</source>
         <translation>Close</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>Refresh</translation>
     </message>
 </context>
 <context>
@@ -975,6 +974,14 @@ https://github.com/thurask/bbdownloader</translation>
     <message>
         <source>o = OS Link Generator</source>
         <translation>o = OS Link Generator</translation>
+    </message>
+    <message>
+        <source>Certification Browser</source>
+        <translation>Certification Browser</translation>
+    </message>
+    <message>
+        <source>p = Certification Browser</source>
+        <translation type="unfinished">p = Certification Browser</translation>
     </message>
 </context>
 </TS>

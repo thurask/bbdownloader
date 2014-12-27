@@ -57,6 +57,17 @@
     </message>
 </context>
 <context>
+    <name>CertViewer</name>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Certification Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CustomTitleBar</name>
     <message>
         <source>BB10 OS Downloader %1</source>
@@ -111,6 +122,14 @@
     </message>
     <message>
         <source>PIN</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Load PIN</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Load App Version</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -224,27 +243,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Use local file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Could not access online file. Loading local copy.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Hardware IDs (local copy)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Hardware IDs (network copy)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Close</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -973,6 +972,14 @@ https://github.com/thurask/bbdownloader</source>
     </message>
     <message>
         <source>o = OS Link Generator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Certification Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>p = Certification Browser</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

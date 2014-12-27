@@ -30,7 +30,8 @@ TabbedPane {
             + qsTr("l = OS Lookup Tool") + Retranslate.onLanguageChanged + "\n"
             + qsTr("e = Engineering Screens") + Retranslate.onLanguageChanged + "\n"
             + qsTr("s = System Info") + Retranslate.onLanguageChanged + "\n"
-            + qsTr("f = File Operations") + Retranslate.onLanguageChanged
+            + qsTr("f = File Operations") + Retranslate.onLanguageChanged + "\n"
+            + qsTr("p = Certification Browser") + Retranslate.onLanguageChanged
             includeRememberMe: false
             rememberMeChecked: false
         },
@@ -96,6 +97,12 @@ TabbedPane {
             key: "f"
             onTriggered: {
                 tabbedpane.activeTab = tab_fileops
+            }
+        },
+        Shortcut {
+            key: "p"
+            onTriggered: {
+                tabbedpane.activeTab = tab_ptcrb
             }
         }
     ]
