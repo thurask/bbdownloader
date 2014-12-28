@@ -4,14 +4,6 @@
 <context>
     <name>AutoLookup</name>
     <message>
-        <source>Input</source>
-        <translation>Input</translation>
-    </message>
-    <message>
-        <source>OS Version:</source>
-        <translation>OS Version:</translation>
-    </message>
-    <message>
         <source>Enter OS version</source>
         <translation>Enter OS version</translation>
     </message>
@@ -54,6 +46,30 @@
     <message>
         <source>Please input a valid OS version</source>
         <translation>Please input a valid OS version</translation>
+    </message>
+    <message>
+        <source>Production</source>
+        <translation>Production</translation>
+    </message>
+    <message>
+        <source>Beta</source>
+        <translation>Beta</translation>
+    </message>
+    <message>
+        <source>Beta 2</source>
+        <translation>Beta 2</translation>
+    </message>
+    <message>
+        <source>Alpha</source>
+        <translation>Alpha</translation>
+    </message>
+    <message>
+        <source>Alpha 2</source>
+        <translation>Alpha 2</translation>
+    </message>
+    <message>
+        <source>Results</source>
+        <translation>Results</translation>
     </message>
 </context>
 <context>
@@ -131,6 +147,10 @@
     <message>
         <source>Load App Version</source>
         <translation>Load App Version</translation>
+    </message>
+    <message>
+        <source>Load Uptime</source>
+        <translation>Load Uptime</translation>
     </message>
 </context>
 <context>
@@ -281,13 +301,6 @@ https://github.com/thurask/bbdownloader</translation>
     </message>
 </context>
 <context>
-    <name>LinkGenerator</name>
-    <message>
-        <source>Error</source>
-        <translation>Error</translation>
-    </message>
-</context>
-<context>
     <name>MetadataSheet</name>
     <message>
         <source>Metadata</source>
@@ -312,10 +325,6 @@ https://github.com/thurask/bbdownloader</translation>
 </context>
 <context>
     <name>OSDownloader</name>
-    <message>
-        <source>Inputs</source>
-        <translation>Inputs</translation>
-    </message>
     <message>
         <source>Target OS Version</source>
         <translation>Target OS Version</translation>
@@ -912,6 +921,10 @@ https://github.com/thurask/bbdownloader</translation>
         <source> GB</source>
         <translation> GB</translation>
     </message>
+    <message>
+        <source>Boot Time: </source>
+        <translation>Boot Time: </translation>
+    </message>
 </context>
 <context>
     <name>main</name>
@@ -981,7 +994,7 @@ https://github.com/thurask/bbdownloader</translation>
     </message>
     <message>
         <source>p = Certification Browser</source>
-        <translation type="unfinished">p = Certification Browser</translation>
+        <translation>p = Certification Browser</translation>
     </message>
 </context>
 </TS>

@@ -11,6 +11,75 @@ import qt.timer 1.0
 
 Page {
     property bool scanning: false
+    actions: [
+        ActionItem {
+            id: autolookupbutton
+            title: qsTr("Start") + Retranslate.onLanguageChanged
+            onTriggered: {
+                if (validator.valid == false){
+                    autolookup_input.text = qsTr("Please input a valid OS version") + Retranslate.onLanguageChanged;
+                }
+                else {
+                    if (scanning == false) {
+                        scanning = true;
+                        outputtext.storedtext = outputtext.text;
+                        outputtext.text = "";
+                        autolookupbutton.title = qsTr("Stop") + Retranslate.onLanguageChanged
+                        autolookupbutton.imageSource = "asset:///images/menus/ic_stop.png"
+                        _swlookup.softwareReleaseChanged.connect(timer.lookup())
+                        _swlookup.post(autolookup_input.text, serverdropdown.selectedValue);
+                    }
+                    else {
+                        scanning = false;
+                        autolookupbutton.title = qsTr("Start") + Retranslate.onLanguageChanged
+                        autolookupbutton.imageSource = "asset:///images/menus/ic_play.png"
+                        timer.stop();
+                    }
+                }
+            }
+            ActionBar.placement: ActionBarPlacement.Signature
+            imageSource: "asset:///images/menus/ic_play.png"
+        },
+        ActionItem {
+            id: autoclearbutton
+            title: qsTr("Clear") + Retranslate.onLanguageChanged
+            enabled: (scanning == false)
+            onTriggered: {
+                outputtext.storedtext = outputtext.text;
+                outputtext.text = "";
+                lookupexporttoast.body = qsTr("Cleared") + Retranslate.onLanguageChanged;
+                lookupexporttoast.button.enabled = true;
+                lookupexporttoast.button.label = qsTr("Undo") + Retranslate.onLanguageChanged;
+                lookupexporttoast.show();
+            }
+            imageSource: "asset:///images/menus/ic_clear.png"
+            ActionBar.placement: ActionBarPlacement.OnBar
+        },
+        ActionItem {
+            id: autoexportbutton
+            title: qsTr("Export") + Retranslate.onLanguageChanged
+            enabled: (scanning == false)
+            onTriggered: {
+                _manager.saveTextFile(outputtext.text, "Lookup-" + (serverdropdown.selectedOption.text));
+                lookupexporttoast.body = qsTr("Lookups saved to default directory") + Retranslate.onLanguageChanged;
+                lookupexporttoast.button.enabled = false;
+                lookupexporttoast.button.label = "";
+                lookupexporttoast.show();
+            }
+            imageSource: "asset:///images/menus/ic_doctype_doc.png"
+            ActionBar.placement: ActionBarPlacement.OnBar
+        },
+        ActionItem {
+            id: autosharebutton
+            title: qsTr("Share") + Retranslate.onLanguageChanged
+            enabled: (scanning == false)
+            onTriggered: {
+                myQuery.trigger(myQuery.query.invokeActionId)
+            }
+            imageSource: "asset:///images/menus/ic_share.png"
+            ActionBar.placement: ActionBarPlacement.OnBar
+        }
+    ]
     attachedObjects: [
         QTimer{
             id: timer
@@ -59,17 +128,10 @@ Page {
         }
     ]
     Container {
-        Header {
-            title: qsTr("Input") + Retranslate.onLanguageChanged
-        }
         Container {
-            topPadding: 20.0
+            topPadding: 10.0
             layout: StackLayout {
                 orientation: LayoutOrientation.LeftToRight
-            }
-            Label {
-                text: qsTr("OS Version:") + Retranslate.onLanguageChanged
-                verticalAlignment: VerticalAlignment.Center
             }
             TextField {
                 id: autolookup_input
@@ -103,97 +165,33 @@ Page {
             enabled: (scanning == false)
             Option {
                 id: main
-                text: "Production"
+                text: qsTr("Production") + Retranslate.onLanguageChanged
                 value: "https://cs.sl.blackberry.com/cse/srVersionLookup/2.0.0/"
                 selected: true
             }
             Option {
                 id: beta
-                text: "Beta"
+                text: qsTr("Beta") + Retranslate.onLanguageChanged
                 value: "https://beta.sl.eval.blackberry.com/slscse/srVersionLookup/2.0.0/"
             }
             Option {
                 id: beta2
-                text: "Beta 2"
+                text: qsTr("Beta 2") + Retranslate.onLanguageChanged
                 value: "https://beta2.sl.eval.blackberry.com/slscse/srVersionLookup/2.0.0/"
             }
             Option {
                 id: alpha
-                text: "Alpha"
+                text: qsTr("Alpha") + Retranslate.onLanguageChanged
                 value: "https://alpha.sl.eval.blackberry.com/slscse/srVersionLookup/2.0.0/"
             }
             Option {
                 id: alpha2
-                text: "Alpha 2"
+                text: qsTr("Alpha 2") + Retranslate.onLanguageChanged
                 value: "https://alpha2.sl.eval.blackberry.com/slscse/srVersionLookup/2.0.0/"
             }
         }
-        Container {
-            topPadding: 10.0
-            layout: StackLayout {
-                orientation: LayoutOrientation.LeftToRight
-            }
-            horizontalAlignment: HorizontalAlignment.Center
-            Button {
-                id: autolookupbutton
-                text: qsTr("Start") + Retranslate.onLanguageChanged
-                onClicked: {
-                    if (validator.valid == false){
-                        autolookup_input.text = qsTr("Please input a valid OS version") + Retranslate.onLanguageChanged;
-                    }
-                    else {
-                        if (scanning == false) {
-                            scanning = true;
-                            outputtext.storedtext = outputtext.text;
-                            outputtext.text = "";
-                            autolookupbutton.text = qsTr("Stop") + Retranslate.onLanguageChanged
-                            _swlookup.softwareReleaseChanged.connect(timer.lookup())
-                            _swlookup.post(autolookup_input.text, serverdropdown.selectedValue);
-                        }
-                        else {
-                            scanning = false;
-                            autolookupbutton.text = qsTr("Start") + Retranslate.onLanguageChanged
-                            timer.stop();
-                        }
-                    }
-                }
-            }
-            Button {
-                id: autoclearbutton
-                text: qsTr("Clear") + Retranslate.onLanguageChanged
-                enabled: (scanning == false)
-                onClicked: {
-                    outputtext.storedtext = outputtext.text;
-                    outputtext.text = "";
-                    lookupexporttoast.body = qsTr("Cleared") + Retranslate.onLanguageChanged;
-                    lookupexporttoast.button.enabled = true;
-                    lookupexporttoast.button.label = qsTr("Undo") + Retranslate.onLanguageChanged;
-                    lookupexporttoast.show();
-                }
-            }
-            Button {
-                id: autosharebutton
-                text: qsTr("Share") + Retranslate.onLanguageChanged
-                enabled: (scanning == false)
-                onClicked: {
-                    myQuery.trigger(myQuery.query.invokeActionId)
-                }
-            }
-            Button {
-                id: autoexportbutton
-                text: qsTr("Export") + Retranslate.onLanguageChanged
-                enabled: (scanning == false)
-                onClicked: {
-                    _manager.saveTextFile(outputtext.text, "Lookup-" + (serverdropdown.selectedOption.text));
-                    lookupexporttoast.body = qsTr("Lookups saved to default directory") + Retranslate.onLanguageChanged;
-                    lookupexporttoast.button.enabled = false;
-                    lookupexporttoast.button.label = "";
-                    lookupexporttoast.show();
-                }
-            }
-        }
         Header {
-            title: "Results"
+            title: qsTr("Results") + Retranslate.onLanguageChanged
         }
         Container {
             ScrollView {

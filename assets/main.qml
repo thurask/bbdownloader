@@ -56,11 +56,11 @@ TabbedPane {
         },
         QTimer {
             id: timer
-            singleShot: true
             interval: 5000
             onTimeout:{
                 if (Checker.returnUpdate() == true){
                     updateToast.show();
+                    timer.stop();
                 }
             }
         },
@@ -135,7 +135,7 @@ TabbedPane {
     Tab {
         id: tab_osgen
         title: qsTr("OS Link Generator") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/tabs/1.png"
+        imageSource: "asset:///images/menus/ic_qs_mobilehotspot.png"
         delegate: Delegate {
             OSDownloader {
                 id: osDownloaderPage
@@ -148,7 +148,7 @@ TabbedPane {
     Tab {
         id: tab_lookup
         title: qsTr("OS Lookup Tool") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/tabs/2.png"
+        imageSource: "asset:///images/menus/ic_search.png"
         delegate: Delegate {
             AutoLookup {
                 id: autoLookupPage
@@ -174,7 +174,7 @@ TabbedPane {
     Tab {
         id: tab_escreens
         title: qsTr("Engineering Screens") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/tabs/3.png"
+        imageSource: "asset:///images/menus/ic_qs_developer_mode.png"
         delegate: Delegate {
             EScreens {
                 id: eScreensPage
@@ -187,7 +187,7 @@ TabbedPane {
     Tab {
         id: tab_sysinfo
         title: qsTr("System Info") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/tabs/4.png"
+        imageSource: "asset:///images/menus/ic_info.png"
         delegate: Delegate {
             SysInfo {
                 id: sysInfoPage
@@ -213,7 +213,7 @@ TabbedPane {
     Tab {
         id: tab_fileops
         title: qsTr("File Operations") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/tabs/5.png"
+        imageSource: "asset:///images/menus/ic_doctype_generic.png"
         delegate: Delegate {
             FileOps {
                 id: fileOpsPage
@@ -226,7 +226,7 @@ TabbedPane {
     Tab {
         id: tab_ptcrb
         title: qsTr("Certification Browser") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/tabs/6.png"
+        imageSource: "asset:///images/menus/ic_certificate_import.png"
         delegate: Delegate {
             CertViewer {
                 id: certViewerPage

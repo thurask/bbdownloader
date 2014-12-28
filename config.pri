@@ -169,26 +169,39 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/images/icons/icon_144.png) \
         $$quote($$BASEDIR/assets/images/icons/icon_90.png) \
         $$quote($$BASEDIR/assets/images/icons/icon_96.png) \
+        $$quote($$BASEDIR/assets/images/menus/ic_certificate_import.png) \
+        $$quote($$BASEDIR/assets/images/menus/ic_clear.png) \
+        $$quote($$BASEDIR/assets/images/menus/ic_copy.png) \
+        $$quote($$BASEDIR/assets/images/menus/ic_doctype_doc.png) \
+        $$quote($$BASEDIR/assets/images/menus/ic_doctype_generic.png) \
+        $$quote($$BASEDIR/assets/images/menus/ic_edit.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_help.png) \
-        $$quote($$BASEDIR/assets/images/menus/ic_lock.png) \
+        $$quote($$BASEDIR/assets/images/menus/ic_info.png) \
+        $$quote($$BASEDIR/assets/images/menus/ic_pgp_key.png) \
+        $$quote($$BASEDIR/assets/images/menus/ic_play.png) \
+        $$quote($$BASEDIR/assets/images/menus/ic_qs_developer_mode.png) \
+        $$quote($$BASEDIR/assets/images/menus/ic_qs_mobilehotspot.png) \
+        $$quote($$BASEDIR/assets/images/menus/ic_search.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_settings.png) \
+        $$quote($$BASEDIR/assets/images/menus/ic_share.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_show_vkb.png) \
+        $$quote($$BASEDIR/assets/images/menus/ic_stop.png) \
+        $$quote($$BASEDIR/assets/images/numbers/0.png) \
+        $$quote($$BASEDIR/assets/images/numbers/1.png) \
+        $$quote($$BASEDIR/assets/images/numbers/2.png) \
+        $$quote($$BASEDIR/assets/images/numbers/3.png) \
+        $$quote($$BASEDIR/assets/images/numbers/4.png) \
+        $$quote($$BASEDIR/assets/images/numbers/5.png) \
+        $$quote($$BASEDIR/assets/images/numbers/6.png) \
+        $$quote($$BASEDIR/assets/images/numbers/7.png) \
+        $$quote($$BASEDIR/assets/images/numbers/8.png) \
+        $$quote($$BASEDIR/assets/images/numbers/9.png) \
         $$quote($$BASEDIR/assets/images/splash/aseries_landscape.png) \
         $$quote($$BASEDIR/assets/images/splash/aseries_portrait.png) \
         $$quote($$BASEDIR/assets/images/splash/lseries_landscape.png) \
         $$quote($$BASEDIR/assets/images/splash/lseries_portrait.png) \
         $$quote($$BASEDIR/assets/images/splash/nseries.png) \
         $$quote($$BASEDIR/assets/images/splash/wseries.png) \
-        $$quote($$BASEDIR/assets/images/tabs/0.png) \
-        $$quote($$BASEDIR/assets/images/tabs/1.png) \
-        $$quote($$BASEDIR/assets/images/tabs/2.png) \
-        $$quote($$BASEDIR/assets/images/tabs/3.png) \
-        $$quote($$BASEDIR/assets/images/tabs/4.png) \
-        $$quote($$BASEDIR/assets/images/tabs/5.png) \
-        $$quote($$BASEDIR/assets/images/tabs/6.png) \
-        $$quote($$BASEDIR/assets/images/tabs/7.png) \
-        $$quote($$BASEDIR/assets/images/tabs/8.png) \
-        $$quote($$BASEDIR/assets/images/tabs/9.png) \
         $$quote($$BASEDIR/assets/js/escreens.js) \
         $$quote($$BASEDIR/assets/main.qml) \
         $$quote($$BASEDIR/assets/xml/dtd/hwid.dtd) \
@@ -309,12 +322,12 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/images/menus/*.qml) \
         $$quote($$BASEDIR/../assets/images/menus/*.js) \
         $$quote($$BASEDIR/../assets/images/menus/*.qs) \
+        $$quote($$BASEDIR/../assets/images/numbers/*.qml) \
+        $$quote($$BASEDIR/../assets/images/numbers/*.js) \
+        $$quote($$BASEDIR/../assets/images/numbers/*.qs) \
         $$quote($$BASEDIR/../assets/images/splash/*.qml) \
         $$quote($$BASEDIR/../assets/images/splash/*.js) \
         $$quote($$BASEDIR/../assets/images/splash/*.qs) \
-        $$quote($$BASEDIR/../assets/images/tabs/*.qml) \
-        $$quote($$BASEDIR/../assets/images/tabs/*.js) \
-        $$quote($$BASEDIR/../assets/images/tabs/*.qs) \
         $$quote($$BASEDIR/../assets/js/*.qml) \
         $$quote($$BASEDIR/../assets/js/*.js) \
         $$quote($$BASEDIR/../assets/js/*.qs) \

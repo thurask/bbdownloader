@@ -21,7 +21,7 @@ Page {
                 }
             }
             ActionBar.placement: ActionBarPlacement.Signature
-            imageSource: "asset:///images/menus/ic_lock.png"
+            imageSource: "asset:///images/menus/ic_pgp_key.png"
         }
     ]
     attachedObjects: [
@@ -40,7 +40,7 @@ Page {
         }
     ]
     Container {
-        topPadding: 20.0
+        topPadding: 10.0
         Container {
             layout: StackLayout {
                 orientation: LayoutOrientation.LeftToRight
@@ -135,12 +135,13 @@ Page {
                     myQuery.trigger(myQuery.query.invokeActionId);
                 }
             }//Load uptime button isn't the same as the actual escreens uptime, but I'm too proud of it to let it go
-            /*Button {
+            Button {
+                visible: false
                 text: qsTr("Load Uptime") + Retranslate.onLanguageChanged
                 onClicked: {
                     uptime.returnUptime();
                 }
-            }*/
+            }
         }
         
         DropDown {

@@ -4,14 +4,6 @@
 <context>
     <name>AutoLookup</name>
     <message>
-        <source>Input</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>OS Version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Enter OS version</source>
         <translation type="unfinished"></translation>
     </message>
@@ -53,6 +45,30 @@
     </message>
     <message>
         <source>Please input a valid OS version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Production</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Beta</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Beta 2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alpha</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alpha 2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Results</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -130,6 +146,10 @@
     </message>
     <message>
         <source>Load App Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Load Uptime</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -280,13 +300,6 @@ https://github.com/thurask/bbdownloader</source>
     </message>
 </context>
 <context>
-    <name>LinkGenerator</name>
-    <message>
-        <source>Error</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>MetadataSheet</name>
     <message>
         <source>Metadata</source>
@@ -311,10 +324,6 @@ https://github.com/thurask/bbdownloader</source>
 </context>
 <context>
     <name>OSDownloader</name>
-    <message>
-        <source>Inputs</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Target OS Version</source>
         <translation type="unfinished"></translation>
@@ -909,6 +918,10 @@ https://github.com/thurask/bbdownloader</source>
     </message>
     <message>
         <source> GB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Boot Time: </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -12,24 +12,69 @@ Page {
     property string swrelease
     property string osversion
     property string radioversion
+    actions: [
+        ActionItem {
+            title: qsTr("Generate") + Retranslate.onLanguageChanged
+            onTriggered: {
+                generatedtext.text = _manager.returnLinks(hashedswversion, osversion, radioversion);
+                allclipboard.enabled = true;
+                exportbutton.enabled = true;
+            }
+            ActionBar.placement: ActionBarPlacement.Signature
+            imageSource: "asset:///images/menus/ic_edit.png"
+        },
+        ActionItem {
+            title: qsTr("Clear") + Retranslate.onLanguageChanged
+            onTriggered: {
+                generatedtext.text = "";
+                allclipboard.enabled = false;
+                exportbutton.enabled = false;
+            }
+            ActionBar.placement: ActionBarPlacement.OnBar
+            imageSource: "asset:///images/menus/ic_clear.png"
+        },
+        ActionItem {
+            id: allclipboard
+            enabled: false
+            title: qsTr("Copy Links") + Retranslate.onLanguageChanged
+            onTriggered: {
+                _manager.copyLinks(hashedswversion, osversion, radioversion)
+                linkexporttoast.body = qsTr("All URLs copied") + Retranslate.onLanguageChanged;
+                linkexporttoast.show();
+            }
+            ActionBar.placement: ActionBarPlacement.OnBar
+            imageSource: "asset:///images/menus/ic_copy.png"
+        },
+        ActionItem {
+            id: exportbutton
+            enabled: false
+            title: qsTr("Export Links") + Retranslate.onLanguageChanged
+            onTriggered: {
+                _manager.exportLinks(swrelease, hashedswversion, osversion, radioversion);
+                linkexporttoast.body = qsTr("Links saved to default directory") + Retranslate.onLanguageChanged;
+                linkexporttoast.button.enabled = true;
+                myQuery.query.uri = _manager.returnFilename();
+                myQuery.query.data = "";
+                myQuery.query.mimeType = "";
+                linkexporttoast.show();
+            }
+            ActionBar.placement: ActionBarPlacement.OnBar
+            imageSource: "asset:///images/menus/ic_doctype_doc.png"
+        }
+    ]
     ScrollView {
         scrollViewProperties.pinchToZoomEnabled: false
         scrollViewProperties.scrollMode: ScrollMode.Vertical
         scrollViewProperties.overScrollEffectMode: OverScrollEffectMode.OnPinch
         Container {
-            topPadding: 20.0
-            Header {
-                title: qsTr("Inputs") + Retranslate.onLanguageChanged
-            }
+            topPadding: 10.0
             //Inputs
             Container {
                 layout: StackLayout {
                     orientation: LayoutOrientation.TopToBottom
                 }
-                Label {
-                    text: qsTr("Target OS Version") + Retranslate.onLanguageChanged
-                }
                 Container {
+                    topPadding: 5.0
                     layout: StackLayout {
                         orientation: LayoutOrientation.LeftToRight
                     }
@@ -67,10 +112,8 @@ Page {
                         }
                     }
                 }
-                Label {
-                    text: qsTr("Target Radio Version") + Retranslate.onLanguageChanged
-                }
                 Container {
+                    topPadding: 5.0
                     layout: StackLayout {
                         orientation: LayoutOrientation.LeftToRight
                     }
@@ -103,10 +146,8 @@ Page {
                         }
                     }
                 }
-                Label {
-                    text: qsTr("Target SW Version") + Retranslate.onLanguageChanged
-                }
                 Container {
+                    topPadding: 5.0
                     layout: StackLayout {
                         orientation: LayoutOrientation.LeftToRight
                     }
@@ -141,71 +182,12 @@ Page {
                     }
                 }
             }
-            //Generator buttons
-            Container {
-                layout: StackLayout {
-                    orientation: LayoutOrientation.LeftToRight
-                }
-                horizontalAlignment: HorizontalAlignment.Center
-                topPadding: 20.0
-                Button {
-                    id: generatebutton
-                    text: qsTr("Generate") + Retranslate.onLanguageChanged
-                    horizontalAlignment: HorizontalAlignment.Center
-                    onClicked: {
-                        generatedtext.text = _manager.returnLinks(hashedswversion, osversion, radioversion);
-                        global_exportcontainer.visible = true;
-                    }
-                }
-                Button {
-                    id: clearbutton
-                    text: qsTr("Clear") + Retranslate.onLanguageChanged
-                    onClicked: {
-                        generatedtext.text = "";
-                        global_exportcontainer.visible = false;
-                    }
-                }
-            }
             //Links
             Container {
                 horizontalAlignment: HorizontalAlignment.Center
                 topPadding: 10.0
                 Header {
                     title: qsTr("Links") + Retranslate.onLanguageChanged
-                }
-                Container {
-                    id: global_exportcontainer
-                    horizontalAlignment: HorizontalAlignment.Center
-                    visible: false
-                    Container {
-                        topPadding: 10.0
-                        layout: StackLayout {
-                            orientation: LayoutOrientation.LeftToRight
-                        }
-                        horizontalAlignment: HorizontalAlignment.Center
-                        Button {
-                            id: exportbutton
-                            text: qsTr("Export Links") + Retranslate.onLanguageChanged
-                            onClicked: {
-                                _manager.exportLinks(swrelease, hashedswversion, osversion, radioversion);
-                                linkexporttoast.body = qsTr("Links saved to default directory") + Retranslate.onLanguageChanged;
-                                linkexporttoast.button.enabled = true;
-                                myQuery.query.uri = _manager.returnFilename();
-                                myQuery.query.data = "";
-                                myQuery.query.mimeType = "";
-                                linkexporttoast.show();
-                            }
-                        }
-                        Button {
-                            id: allclipboard
-                            text: qsTr("Copy Links") + Retranslate.onLanguageChanged
-                            onClicked: {
-                                _manager.copyLinks(hashedswversion, osversion, radioversion)
-                                linkexporttoast.body = qsTr("All URLs copied") + Retranslate.onLanguageChanged;
-                                linkexporttoast.show();
-                            }
-                        }
-                    }
                 }
                 TextArea {
                     id: generatedtext
