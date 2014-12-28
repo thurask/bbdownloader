@@ -9,6 +9,21 @@ import bb.device 1.4
 import "js/escreens.js" as Escreens
 
 Page {
+    actions: [
+        ActionItem {
+            title: qsTr("Get Key") + Retranslate.onLanguageChanged
+            onTriggered: {
+                var regex_pin = RegExp(/\b[0-9a-f]{8}\b/)
+                var regex_appv = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/)
+                var regex_uptime = RegExp(/\b\d{1,}\b/)
+                if (regex_pin.test(pin.text) == true && regex_appv.test(appv.text) == true && regex_uptime.test(uptime.text) == true){
+                    Escreens.newHMAC();
+                }
+            }
+            ActionBar.placement: ActionBarPlacement.Signature
+            imageSource: "asset:///images/menus/ic_lock.png"
+        }
+    ]
     attachedObjects: [
         Invocation {
             id: myQuery
@@ -108,13 +123,24 @@ Page {
                         }
                     }
                 }
+                function returnUptime() {
+                    var now = new Date();
+                    var dmy = new Date(_manager.readTextFile("/var/boottime.txt", "normal"));
+                    uptime.text = (now.getTime() - dmy.getTime());
+                }
             }
             Button {
                 text: qsTr("Open EScreens") + Retranslate.onLanguageChanged
                 onClicked: {
                     myQuery.trigger(myQuery.query.invokeActionId);
                 }
-            }
+            }//Load uptime button isn't the same as the actual escreens uptime, but I'm too proud of it to let it go
+            /*Button {
+                text: qsTr("Load Uptime") + Retranslate.onLanguageChanged
+                onClicked: {
+                    uptime.returnUptime();
+                }
+            }*/
         }
         
         DropDown {
@@ -124,7 +150,6 @@ Page {
                 Option {
                     text: qsTr("1 day") + Retranslate.onLanguageChanged
                     value: ""
-                    selected: true
                 },
                 Option {
                     text: qsTr("3 days") + Retranslate.onLanguageChanged
@@ -141,16 +166,8 @@ Page {
                 Option {
                     text: qsTr("30 days") + Retranslate.onLanguageChanged
                     value: "%56%20%79%62%69%72%20%7A%6C%66%72%79%73%20%67%62%71%6E%6C%2C%20%61%62%67%20%79%76%78%72%20%6C%72%66%67%72%65%71%6E%6C%2E%20%56%27%7A%20%70%62%62%79%2C%20%56%27%7A%20%70%6E%79%7A%2C%20%56%27%7A%20%74%62%61%61%6E%20%6F%72%20%62%78%6E%6C"
+                    selected: true
                 }]
-        }
-        Container {
-            horizontalAlignment: HorizontalAlignment.Center
-            Button {
-                text: qsTr("Get Key") + Retranslate.onLanguageChanged
-                onClicked: {
-                    Escreens.newHMAC();
-                }
-            }
         }
         Label {
             id: ykey

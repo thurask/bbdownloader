@@ -1,5 +1,5 @@
 1
-56
+57
 10ppd/images/blank/blank.png
 10ppd/images/covers/cover.png
 12ppd/images/blank/blank.png
@@ -25,6 +25,7 @@ images/icons/icon_144.png
 images/icons/icon_90.png
 images/icons/icon_96.png
 images/menus/ic_help.png
+images/menus/ic_lock.png
 images/menus/ic_settings.png
 images/menus/ic_show_vkb.png
 images/splash/aseries_landscape.png

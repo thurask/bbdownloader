@@ -170,6 +170,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/images/icons/icon_90.png) \
         $$quote($$BASEDIR/assets/images/icons/icon_96.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_help.png) \
+        $$quote($$BASEDIR/assets/images/menus/ic_lock.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_settings.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_show_vkb.png) \
         $$quote($$BASEDIR/assets/images/splash/aseries_landscape.png) \
