@@ -151,19 +151,15 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/9ppd/images/covers/cover.png) \
         $$quote($$BASEDIR/assets/ActiveFrame.qml) \
         $$quote($$BASEDIR/assets/AutoLookup.qml) \
-        $$quote($$BASEDIR/assets/BlankIcon.qml) \
+        $$quote($$BASEDIR/assets/CertViewer.qml) \
         $$quote($$BASEDIR/assets/CustomTitleBar.qml) \
-        $$quote($$BASEDIR/assets/DeltaOSDownloader.qml) \
-        $$quote($$BASEDIR/assets/DownloadComponent.qml) \
         $$quote($$BASEDIR/assets/EScreens.qml) \
+        $$quote($$BASEDIR/assets/FileOps.qml) \
         $$quote($$BASEDIR/assets/HardwareIDs.qml) \
-        $$quote($$BASEDIR/assets/HashTools.qml) \
         $$quote($$BASEDIR/assets/HelpSheet.qml) \
         $$quote($$BASEDIR/assets/MetadataSheet.qml) \
-        $$quote($$BASEDIR/assets/Nomedia.qml) \
         $$quote($$BASEDIR/assets/OSDownloader.qml) \
         $$quote($$BASEDIR/assets/OSRepo.qml) \
-        $$quote($$BASEDIR/assets/ProgressBar.qml) \
         $$quote($$BASEDIR/assets/SettingsSheet.qml) \
         $$quote($$BASEDIR/assets/SysInfo.qml) \
         $$quote($$BASEDIR/assets/images/blank/blank.png) \
@@ -194,7 +190,11 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/images/tabs/9.png) \
         $$quote($$BASEDIR/assets/js/escreens.js) \
         $$quote($$BASEDIR/assets/main.qml) \
+        $$quote($$BASEDIR/assets/xml/dtd/hwid.dtd) \
+        $$quote($$BASEDIR/assets/xml/dtd/ptcrb.dtd) \
+        $$quote($$BASEDIR/assets/xml/dtd/repo.dtd) \
         $$quote($$BASEDIR/assets/xml/hwid.xml) \
+        $$quote($$BASEDIR/assets/xml/ptcrb.xml) \
         $$quote($$BASEDIR/assets/xml/repo.xml)
 }
 
@@ -321,7 +321,10 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/js/*.qs) \
         $$quote($$BASEDIR/../assets/xml/*.qml) \
         $$quote($$BASEDIR/../assets/xml/*.js) \
-        $$quote($$BASEDIR/../assets/xml/*.qs)
+        $$quote($$BASEDIR/../assets/xml/*.qs) \
+        $$quote($$BASEDIR/../assets/xml/dtd/*.qml) \
+        $$quote($$BASEDIR/../assets/xml/dtd/*.js) \
+        $$quote($$BASEDIR/../assets/xml/dtd/*.qs)
 
     HEADERS += \
         $$quote($$BASEDIR/../src/*.h) \
