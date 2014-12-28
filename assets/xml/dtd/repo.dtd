@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!ELEMENT repo (release*)>
-<!ELEMENT device (trueos,os,radio,software,notes)>
+<!ELEMENT release (trueos,os,radio,software,notes)>
 <!ELEMENT trueos (#PCDATA)>
 <!ELEMENT os (#PCDATA)>
 <!ELEMENT radio (#PCDATA)>
