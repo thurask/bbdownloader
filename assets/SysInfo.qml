@@ -55,6 +55,9 @@ Page {
                     text: qsTr("Hardware ID: ") + Retranslate.onLanguageChanged + hardwareinfo.hardwareId;
                 }
                 Label {
+                    text: qsTr("Boot Time: ") + Retranslate.onLanguageChanged + _manager.readTextFile("/var/boottime.txt", "normal");
+                }
+                Label {
                     text: qsTr("HDMI: ") + Retranslate.onLanguageChanged + (hardwareinfo.hdmiConnector == 2 ? qsTr("Micro HDMI") + Retranslate.onLanguageChanged : (hardwareinfo.hdmiConnector == 1 ? qsTr("None") + Retranslate.onLanguageChanged : qsTr("Bad or Unknown")))
                 }
                 Label {
@@ -163,7 +166,7 @@ Page {
                     text: qsTr("Cycle Count: ") + Retranslate.onLanguageChanged + battinfo.cycleCount
                 }
                 Label {
-                    text: qsTr("Temperature: ") + Retranslate.onLanguageChanged + battinfo.temperature + "°C (" + parseFloat(1.8 * (battinfo.temperature) + 32) + "°F)"
+                    text: qsTr("Temperature: ") + Retranslate.onLanguageChanged + battinfo.temperature.toFixed(2) + "°C (" + parseFloat(1.8 * (battinfo.temperature) + 32).toFixed(2) + "°F)"
                 }
                 Label {
                     text: qsTr("RxID: ") + Retranslate.onLanguageChanged + battinfo.rxid
@@ -178,16 +181,16 @@ Page {
                     text: qsTr("Aspect: ") + Retranslate.onLanguageChanged + (dispinfo.aspectType == 2 ? qsTr("Square") + Retranslate.onLanguageChanged : (dispinfo.aspectType == 1 ? qsTr("Portrait") + Retranslate.onLanguageChanged : qsTr("Landscape") + Retranslate.onLanguageChanged))
                 }
                 Label {
-                    text: qsTr("Physical Size: ") + Retranslate.onLanguageChanged + dispinfo.physicalSize.height + qsTr(" mm x ") + Retranslate.onLanguageChanged + dispinfo.physicalSize.width + qsTr(" mm") + Retranslate.onLanguageChanged
+                    text: qsTr("Physical Size: ") + Retranslate.onLanguageChanged + dispinfo.physicalSize.height.toFixed(2) + qsTr(" mm x ") + Retranslate.onLanguageChanged + dispinfo.physicalSize.width.toFixed(2) + qsTr(" mm") + Retranslate.onLanguageChanged
                 }
                 Label {
                     text: qsTr("Diagonal: ") + Retranslate.onLanguageChanged + Math.sqrt(Math.pow(dispinfo.physicalSize.height, 2) + Math.pow(dispinfo.physicalSize.width, 2)).toFixed(2) + qsTr(" mm") + Retranslate.onLanguageChanged //Yeah, Mr. Pythagoras! Yeah, math!
                 }
                 Label {
-                    text: qsTr("Pixel Size: ") + Retranslate.onLanguageChanged + dispinfo.pixelSize.height + qsTr(" px x ") + Retranslate.onLanguageChanged + dispinfo.pixelSize.width + qsTr(" px") + Retranslate.onLanguageChanged
+                    text: qsTr("Pixel Size: ") + Retranslate.onLanguageChanged + dispinfo.pixelSize.height.toFixed(2) + qsTr(" px x ") + Retranslate.onLanguageChanged + dispinfo.pixelSize.width.toFixed(2) + qsTr(" px") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: qsTr("Resolution: ") + Retranslate.onLanguageChanged + dispinfo.resolution.height + qsTr(" px/m x ") + Retranslate.onLanguageChanged + dispinfo.resolution.width + qsTr(" px/m") + Retranslate.onLanguageChanged
+                    text: qsTr("Resolution: ") + Retranslate.onLanguageChanged + dispinfo.resolution.height.toFixed(2) + qsTr(" px/m x ") + Retranslate.onLanguageChanged + dispinfo.resolution.width.toFixed(2) + qsTr(" px/m") + Retranslate.onLanguageChanged
                 }
                 Label {
                     text: qsTr("Technology: ") + Retranslate.onLanguageChanged + (dispinfo.displayTechnology == 0 ? qsTr("Bad or Unknown") + Retranslate.onLanguageChanged : (dispinfo.displayTechnology == 1 ? qsTr("LCD") + Retranslate.onLanguageChanged : (dispinfo.displayTechnology == 2 ? qsTr("OLED") + Retranslate.onLanguageChanged : (dispinfo.displayTechnology == 3 ? qsTr("CRT") + Retranslate.onLanguageChanged : (dispinfo.displayTechnology == 4 ? qsTr("Plasma") + Retranslate.onLanguageChanged : qsTr("LED") + Retranslate.onLanguageChanged)))))
