@@ -21,7 +21,7 @@ Page {
             }
             function lookup() {
                 if (_swlookup.softwareRelease().indexOf(".") != -1 && outputtext.text.indexOf(_swlookup.softwareRelease()) == -1){
-                    outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - SR " + _swlookup.softwareRelease() + "\n");
+                    outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - SR " + _swlookup.softwareRelease() + " [" + serverdropdown.selectedOption.text + "]\n");
                     led.flash(1);
                 }
                 else {
@@ -103,7 +103,7 @@ Page {
             enabled: (scanning == false)
             Option {
                 id: main
-                text: "Main"
+                text: "Production"
                 value: "https://cs.sl.blackberry.com/cse/srVersionLookup/2.0.0/"
                 selected: true
             }

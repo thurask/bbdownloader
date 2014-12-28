@@ -7,7 +7,6 @@ Handles software version lookup.
 #include <QtCore>
 #include <QtNetwork>
 #include <QtXml>
-#include <QDateTime>
 #include "SwLookup.hpp"
 
 SwLookup::SwLookup(QObject* parent)
@@ -15,11 +14,6 @@ SwLookup::SwLookup(QObject* parent)
 , m_networkAccessManager(new QNetworkAccessManager(this))
 {
     m_softwareRelease = "";
-}
-
-QString SwLookup::softwareRelease()
-{
-    return m_softwareRelease;
 }
 
 void SwLookup::post(QString osVer, QString server)
@@ -40,9 +34,7 @@ void SwLookup::post(QString osVer, QString server)
                 "</srVersionLookupRequest>";
         request.setHeader(QNetworkRequest::ContentTypeHeader, "text/xml;charset=UTF-8");
         QNetworkReply* reply = m_networkAccessManager->post(request, query.toUtf8());
-        bool ok = connect(reply, SIGNAL(finished()), this, SLOT(onGetReply()));
-        Q_ASSERT(ok);
-        Q_UNUSED(ok);
+        connect(reply, SIGNAL(finished()), this, SLOT(onGetReply()));
     }
     else {
         QString error = tr("Error");
@@ -58,8 +50,7 @@ void SwLookup::onGetReply()
     while(!xml.atEnd() && !xml.hasError()) {
         if(xml.tokenType() == QXmlStreamReader::StartElement) {
             if (xml.name() == "softwareReleaseVersion") {
-                QString schwanzstucker = xml.readElementText().simplified();
-                m_softwareRelease = schwanzstucker;
+                setSoftwareRelease(xml.readElementText());
             }
         }
         xml.readNext();
@@ -67,24 +58,32 @@ void SwLookup::onGetReply()
     sender()->deleteLater();
 }
 
-QString SwLookup::lookupIncrement(QString os)
+void SwLookup::setSoftwareRelease(QString sw)
 {
+    m_softwareRelease = sw.toUtf8().simplified();
+    emit softwareReleaseChanged();
+}
+
+QString SwLookup::softwareRelease()
+{
+    return m_softwareRelease;
+}
+
+QString SwLookup::lookupIncrement(QString os, int inc)
+{
+    if (inc == ""){
+        inc = 3; //default
+    }
     QStringList splitarray = os.split(".");
     if (splitarray[3] == "") {
         return tr("Error");
     }
     if (splitarray[3].toInt() < 9998){
-        splitarray[3] = QString::number((splitarray[3]).toInt() + 3);
+        splitarray[3] = QString::number((splitarray[3]).toInt() + inc);
         return splitarray.join(".");
     }
     else {
         splitarray[3] = QString::number(0);
         return splitarray.join(".");
     }
-}
-
-void SwLookup::setSoftwareRelease(QString sw)
-{
-    m_softwareRelease = sw.toUtf8().simplified();
-    emit softwareReleaseChanged();
 }
