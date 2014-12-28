@@ -9,6 +9,9 @@ Page {
     property string selecteddir
     property bool fileexists
     ScrollView {
+        scrollViewProperties.pinchToZoomEnabled: false
+        scrollViewProperties.scrollMode: ScrollMode.Vertical
+        scrollViewProperties.overScrollEffectMode: OverScrollEffectMode.OnPinch
         Container {
             Container {
                 Header {

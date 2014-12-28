@@ -31,7 +31,7 @@ Page {
     ]
     ScrollView {
         scrollViewProperties.scrollMode: ScrollMode.Vertical
-        scrollViewProperties.overScrollEffectMode: OverScrollEffectMode.None
+        scrollViewProperties.overScrollEffectMode: OverScrollEffectMode.OnPinch
         scrollViewProperties.pinchToZoomEnabled: false
         Container {
             Container {
