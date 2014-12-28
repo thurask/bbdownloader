@@ -20,7 +20,7 @@ public:
     void post(QString osVer, QString server);
     QString softwareRelease();
     void setSoftwareRelease(QString sw);
-    QString lookupIncrement(QString os);
+    QString lookupIncrement(QString os, int inc);
 
     Q_SIGNALS:
     void softwareReleaseChanged();

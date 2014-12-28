@@ -27,7 +27,7 @@ Page {
                 else {
                     led.cancel();
                 }
-                autolookup_input.text = _swlookup.lookupIncrement(autolookup_input.text);
+                autolookup_input.text = _swlookup.lookupIncrement(autolookup_input.text, 3);
                 timer.start();
             }
         },

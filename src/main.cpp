@@ -21,7 +21,6 @@
 #include "timer.hpp"
 #include "Settings.hpp"
 #include "UpdateChecker.hpp"
-#include "LinkGenerator.hpp"
 #include "Nomedia.hpp"
 #include "MetadataReader.hpp"
 
@@ -86,10 +85,6 @@ Q_DECL_EXPORT int main(int argc, char **argv)
     //Update checker
     UpdateChecker *updatechecker = new UpdateChecker();
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Checker", updatechecker);
-
-    //Link generator
-    LinkGenerator linkgen;
-    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("_linkgen", &linkgen);
 
     //Nomedia
     Nomedia nomedia;

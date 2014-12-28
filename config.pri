@@ -202,7 +202,6 @@ config_pri_source_group1 {
     SOURCES += \
         $$quote($$BASEDIR/src/Clipboard.cpp) \
         $$quote($$BASEDIR/src/DownloadManager.cpp) \
-        $$quote($$BASEDIR/src/LinkGenerator.cpp) \
         $$quote($$BASEDIR/src/MetadataReader.cpp) \
         $$quote($$BASEDIR/src/Nomedia.cpp) \
         $$quote($$BASEDIR/src/Settings.cpp) \
@@ -218,7 +217,6 @@ config_pri_source_group1 {
     HEADERS += \
         $$quote($$BASEDIR/src/Clipboard.hpp) \
         $$quote($$BASEDIR/src/DownloadManager.hpp) \
-        $$quote($$BASEDIR/src/LinkGenerator.hpp) \
         $$quote($$BASEDIR/src/MetadataReader.hpp) \
         $$quote($$BASEDIR/src/Nomedia.hpp) \
         $$quote($$BASEDIR/src/Settings.hpp) \

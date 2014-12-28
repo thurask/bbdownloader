@@ -15,7 +15,7 @@ Page {
     ScrollView {
         scrollViewProperties.pinchToZoomEnabled: false
         scrollViewProperties.scrollMode: ScrollMode.Vertical
-        scrollViewProperties.overScrollEffectMode: OverScrollEffectMode.None
+        scrollViewProperties.overScrollEffectMode: OverScrollEffectMode.OnPinch
         Container {
             topPadding: 20.0
             Header {
@@ -48,7 +48,7 @@ Page {
                             id: validator_osver
                             mode: ValidationMode.Immediate
                             onValidate: {
-                                var regex = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/)
+                                var regex = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/);
                                 if (regex.test(osver_input.text) == true) {
                                     validator_osver.setValid(true);
                                 } else {
@@ -60,7 +60,10 @@ Page {
                     Button {
                         text: qsTr("Lookup") + Retranslate.onLanguageChanged
                         onClicked: {
-                            swver_input.text = _swlookup.softwareRelease();
+                            var regex = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/);
+                            if (regex.test(osver_input.text) == true) {
+                                swver_input.text = _swlookup.softwareRelease();
+                            }
                         }
                     }
                 }
@@ -81,7 +84,7 @@ Page {
                             id: validator_radver
                             mode: ValidationMode.Immediate
                             onValidate: {
-                                var regex = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/)
+                                var regex = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/);
                                 if (regex.test(radiover_input.text) == true) {
                                     validator_radver.setValid(true);
                                 } else {
@@ -93,7 +96,10 @@ Page {
                     Button {
                         text: qsTr("OS Version + 1") + Retranslate.onLanguageChanged
                         onClicked: {
-                            radiover_input.text = _linkgen.incrementRadio(osversion);
+                            var regex = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/);
+                            if (regex.test(osver_input.text) == true) {
+                                radiover_input.text = _swlookup.lookupIncrement(osver_input.text, 1);
+                            }
                         }
                     }
                 }
@@ -116,7 +122,7 @@ Page {
                             id: validator_swver
                             mode: ValidationMode.Immediate
                             onValidate: {
-                                var regex = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/)
+                                var regex = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/);
                                 if (regex.test(swver_input.text) == true || swver_input.text == "N/A") {
                                     validator_swver.setValid(true);
                                 } else {
@@ -135,8 +141,6 @@ Page {
                     }
                 }
             }
-            //Dropdowns
-
             //Generator buttons
             Container {
                 layout: StackLayout {
@@ -169,29 +173,15 @@ Page {
                 Header {
                     title: qsTr("Links") + Retranslate.onLanguageChanged
                 }
-                TextArea {
-                    id: generatedtext
-                    text: ""
-                    editable: false
-                    visible: true
-                    content.flags: TextContentFlag.ActiveText
-                }
                 Container {
                     id: global_exportcontainer
-                    layout: StackLayout {
-                        orientation: LayoutOrientation.TopToBottom
-                    }
                     horizontalAlignment: HorizontalAlignment.Center
-                    topPadding: 10.0
                     visible: false
-                    Header {
-                        title: ""
-                    }
                     Container {
+                        topPadding: 10.0
                         layout: StackLayout {
                             orientation: LayoutOrientation.LeftToRight
                         }
-                        topPadding: 10.0
                         horizontalAlignment: HorizontalAlignment.Center
                         Button {
                             id: exportbutton
@@ -216,6 +206,14 @@ Page {
                             }
                         }
                     }
+                }
+                TextArea {
+                    id: generatedtext
+                    text: ""
+                    editable: false
+                    visible: true
+                    content.flags: TextContentFlag.ActiveText
+                    scrollMode: TextAreaScrollMode.Stiff
                 }
             }
         }

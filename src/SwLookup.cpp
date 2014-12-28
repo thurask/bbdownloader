@@ -71,19 +71,19 @@ QString SwLookup::softwareRelease()
 
 QString SwLookup::lookupIncrement(QString os, int inc)
 {
-    if (inc == ""){
-        inc = 3; //default
-    }
-    QStringList splitarray = os.split(".");
-    if (splitarray[3] == "") {
-        return tr("Error");
-    }
-    if (splitarray[3].toInt() < 9998){
-        splitarray[3] = QString::number((splitarray[3]).toInt() + inc);
-        return splitarray.join(".");
+    QRegExp rx("(\\d{1,4}\\.)(\\d{1,4}\\.)(\\d{1,4}\\.)(\\d{1,4})");
+    if (os.contains(rx) == true){
+        QStringList splitarray = os.split(".");
+        if (splitarray[3].toInt() < 9999){
+            splitarray[3] = QString::number((splitarray[3]).toInt() + inc);
+            return splitarray.join(".");
+        }
+        else {
+            splitarray[3] = QString::number(0);
+            return splitarray.join(".");
+        }
     }
     else {
-        splitarray[3] = QString::number(0);
-        return splitarray.join(".");
+        return tr("Error");
     }
 }
