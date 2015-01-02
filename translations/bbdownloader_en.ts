@@ -93,10 +93,6 @@
 <context>
     <name>EScreens</name>
     <message>
-        <source>Open EScreens</source>
-        <translation>Open EScreens</translation>
-    </message>
-    <message>
         <source>App Version</source>
         <translation>App Version</translation>
     </message>
@@ -141,16 +137,16 @@
         <translation>PIN</translation>
     </message>
     <message>
-        <source>Load PIN</source>
-        <translation>Load PIN</translation>
-    </message>
-    <message>
-        <source>Load App Version</source>
-        <translation>Load App Version</translation>
-    </message>
-    <message>
         <source>Load Uptime</source>
         <translation>Load Uptime</translation>
+    </message>
+    <message>
+        <source>Load Values</source>
+        <translation>Load Values</translation>
+    </message>
+    <message>
+        <source>EScreens</source>
+        <translation>EScreens</translation>
     </message>
 </context>
 <context>

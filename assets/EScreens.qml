@@ -22,6 +22,23 @@ Page {
             }
             ActionBar.placement: ActionBarPlacement.Signature
             imageSource: "asset:///images/menus/ic_pgp_key.png"
+        },
+        ActionItem {
+            title: qsTr("Load Values") + Retranslate.onLanguageChanged
+            onTriggered: {
+                pin.text = hwinfo.pin.slice(2)
+                appv.text = _manager.readTextFile("/base/etc/os.version", "normal")
+            }
+            ActionBar.placement: ActionBarPlacement.OnBar
+            imageSource: "asset:///images/menus/ic_edit.png"
+        },
+        ActionItem {
+            title: qsTr("EScreens") + Retranslate.onLanguageChanged
+            onTriggered: {
+                myQuery.trigger(myQuery.query.invokeActionId);
+            }
+            ActionBar.placement: ActionBarPlacement.OnBar
+            imageSource: "asset:///images/menus/ic_browser.png"
         }
     ]
     attachedObjects: [
@@ -42,9 +59,6 @@ Page {
     Container {
         topPadding: 10.0
         Container {
-            layout: StackLayout {
-                orientation: LayoutOrientation.LeftToRight
-            }
             topPadding: 5.0
             TextField {
                 id: pin
@@ -66,17 +80,8 @@ Page {
                     }
                 }
             }
-            Button {
-                text: qsTr("Load PIN") + Retranslate.onLanguageChanged
-                onClicked: {
-                    pin.text = hwinfo.pin.slice(2)
-                }
-            }
         }
         Container {
-            layout: StackLayout {
-                orientation: LayoutOrientation.LeftToRight
-            }
             topPadding: 5.0
             TextField {
                 id: appv
@@ -95,17 +100,8 @@ Page {
                     }
                 }
             }
-            Button {
-                text: qsTr("Load App Version") + Retranslate.onLanguageChanged
-                onClicked: {
-                    appv.text = _manager.readTextFile("/base/etc/os.version", "normal")
-                }
-            }
         }
         Container {
-            layout: StackLayout {
-                orientation: LayoutOrientation.LeftToRight
-            }
             topPadding: 5.0
             TextField {
                 id: uptime
@@ -127,12 +123,6 @@ Page {
                     var now = new Date();
                     var dmy = new Date(_manager.readTextFile("/var/boottime.txt", "normal"));
                     uptime.text = (now.getTime() - dmy.getTime());
-                }
-            }
-            Button {
-                text: qsTr("Open EScreens") + Retranslate.onLanguageChanged
-                onClicked: {
-                    myQuery.trigger(myQuery.query.invokeActionId);
                 }
             }//Load uptime button isn't the same as the actual escreens uptime, but I'm too proud of it to let it go
             Button {
