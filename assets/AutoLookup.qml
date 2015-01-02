@@ -56,6 +56,20 @@ Page {
             ActionBar.placement: ActionBarPlacement.OnBar
         },
         ActionItem {
+            id: autocopybutton
+            title: qsTr("Copy") + Retranslate.onLanguageChanged
+            enabled: (scanning == false)
+            onTriggered: {
+                Clipboard.copyToClipboard(outputtext.text);
+                lookupexporttoast.body = qsTr("Copied") + Retranslate.onLanguageChanged;
+                lookupexporttoast.button.enabled = false;
+                lookupexporttoast.button.label = "";
+                lookupexporttoast.show();
+            }
+            imageSource: "asset:///images/menus/ic_copy.png"
+            ActionBar.placement: ActionBarPlacement.OnBar
+        },
+        ActionItem {
             id: autoexportbutton
             title: qsTr("Export") + Retranslate.onLanguageChanged
             enabled: (scanning == false)
@@ -188,6 +202,9 @@ Page {
                 id: alpha2
                 text: qsTr("Alpha 2") + Retranslate.onLanguageChanged
                 value: "https://alpha2.sl.eval.blackberry.com/slscse/srVersionLookup/2.0.0/"
+            }
+            onSelectedValueChanged: {
+                _swlookup.post(autolookup_input.text, serverdropdown.selectedValue);
             }
         }
         Header {
