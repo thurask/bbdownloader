@@ -42,7 +42,7 @@ Page {
             enabled: false
             title: qsTr("Copy Links") + Retranslate.onLanguageChanged
             onTriggered: {
-                _manager.copyLinks(hashedswversion, osversion, radioversion)
+                _manager.copyLinks(hashedswversion, osversion, radioversion, true)
                 linkexporttoast.body = qsTr("All URLs copied") + Retranslate.onLanguageChanged;
                 linkexporttoast.show();
             }
@@ -54,7 +54,7 @@ Page {
             enabled: false
             title: qsTr("Export Links") + Retranslate.onLanguageChanged
             onTriggered: {
-                _manager.exportLinks(swrelease, hashedswversion, osversion, radioversion);
+                _manager.exportLinks(swrelease, hashedswversion, osversion, radioversion, true);
                 linkexporttoast.body = qsTr("Links saved to default directory") + Retranslate.onLanguageChanged;
                 linkexporttoast.button.enabled = true;
                 myQuery.query.uri = _manager.returnFilename();
@@ -247,7 +247,7 @@ Page {
                 uri: _manager.returnFilename()
                 mimeType: ""
                 invokeActionId: "bb.action.SHARE"
-                data: _manager.returnLinks(hashedswversion, osversion, radioversion)
+                data: _manager.returnLinks(hashedswversion, osversion, radioversion, true)
                 onQueryChanged: {
                     myQuery.query.updateQuery()
                 }
