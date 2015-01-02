@@ -124,7 +124,9 @@ Page {
                     var dmy = new Date(_manager.readTextFile("/var/boottime.txt", "normal"));
                     uptime.text = (now.getTime() - dmy.getTime());
                 }
-            }//Load uptime button isn't the same as the actual escreens uptime, but I'm too proud of it to let it go
+            }//Load uptime button isn't the same as the actual escreens uptime, but I'm too proud of it to let it go:
+            //escreens uptime is current ms since 01/01/1970 - ms since 01/01/1970 at boot time (/var/boottime.txt), but it's impossible
+            //to exactly match them since the escreens value is generated during app launch. Alas.
             Button {
                 visible: false
                 text: qsTr("Load Uptime") + Retranslate.onLanguageChanged
