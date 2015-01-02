@@ -920,6 +920,14 @@ https://github.com/thurask/bbdownloader</source>
         <source>Boot Time: </source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Hide Personal Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Personal Info</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>main</name>

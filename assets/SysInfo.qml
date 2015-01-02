@@ -9,6 +9,7 @@ import bb.device 1.4
 import bb 1.3
 
 Page {
+    property bool sanitized: false
     attachedObjects: [
         HardwareInfo {
             id: hardwareinfo
@@ -27,6 +28,42 @@ Page {
         },
         FileSystemInfo {
             id: fsinfo
+        }
+    ]
+    actions: [
+        ActionItem {
+            id: sanitizer
+            title: qsTr("Hide Personal Info") + Retranslate.onLanguageChanged
+            onTriggered: {
+                if (sanitized == false){
+                    sanitized = true
+                    sanitizer.title = qsTr("Show Personal Info") + Retranslate.onLanguageChanged
+                    pin.visible = false
+                    imei.visible = false
+                    meid.visible = false
+                    serial.visible = false
+                    mcc.visible = false
+                    mnc.visible = false
+                    simsn.visible = false
+                    rxid.visible = false
+                    dispname.visible = false
+                }
+                else {
+                    sanitized = false
+                    sanitizer.title = qsTr("Hide Personal Info") + Retranslate.onLanguageChanged
+                    pin.visible = true
+                    imei.visible = true
+                    meid.visible = true
+                    serial.visible = true
+                    mcc.visible = true
+                    mnc.visible = true
+                    simsn.visible = true
+                    rxid.visible = true
+                    dispname.visible = true
+                }
+            }
+            ActionBar.placement: ActionBarPlacement.Signature
+            imageSource: "asset:///images/menus/ic_contact.png"
         }
     ]
     ScrollView {
@@ -49,6 +86,7 @@ Page {
                     text: qsTr("Model Number: ") + Retranslate.onLanguageChanged + hardwareinfo.modelNumber;
                 }
                 Label {
+                    id: pin
                     text: qsTr("PIN: ") + Retranslate.onLanguageChanged + hardwareinfo.pin;
                 }
                 Label {
@@ -61,12 +99,15 @@ Page {
                     text: qsTr("HDMI: ") + Retranslate.onLanguageChanged + (hardwareinfo.hdmiConnector == 2 ? qsTr("Micro HDMI") + Retranslate.onLanguageChanged : (hardwareinfo.hdmiConnector == 1 ? qsTr("None") + Retranslate.onLanguageChanged : qsTr("Bad or Unknown")))
                 }
                 Label {
+                    id: imei
                     text: qsTr("IMEI: ") + Retranslate.onLanguageChanged + hardwareinfo.imei;
                 }
                 Label {
+                    id: meid
                     text: qsTr("MEID: ") + Retranslate.onLanguageChanged + hardwareinfo.meid;
                 }
                 Label {
+                    id: serial
                     text: qsTr("Serial Number: ") + Retranslate.onLanguageChanged + hardwareinfo.serialNumber;
                 }
                 Label {
@@ -94,12 +135,15 @@ Page {
                     text: qsTr("State: ") + Retranslate.onLanguageChanged + (siminfo.state == 5 ? qsTr("Ready") + Retranslate.onLanguageChanged : (siminfo.state == 4 ? qsTr("PIN Required") + Retranslate.onLanguageChanged : (siminfo.state == 3 ? qsTr("Read Error") + Retranslate.onLanguageChanged : (siminfo.state == 2 ? qsTr("Not Provisioned") + Retranslate.onLanguageChanged : (siminfo.state == 1 ? qsTr("Incompatible") + Retranslate.onLanguageChanged : qsTr("Not Detected") + Retranslate.onLanguageChanged)))))
                 }
                 Label {
+                    id: mcc
                     text: qsTr("Mobile Country Code (MCC): ") + Retranslate.onLanguageChanged + siminfo.mobileCountryCode;
                 }
                 Label {
+                    id: mnc
                     text: qsTr("Mobile Network Code (MNC): ") + Retranslate.onLanguageChanged + siminfo.mobileNetworkCode;
                 }
                 Label {
+                    id: simsn
                     text: qsTr("Serial Number: ") + Retranslate.onLanguageChanged + siminfo.serialNumber;
                 }
             }
@@ -169,6 +213,7 @@ Page {
                     text: qsTr("Temperature: ") + Retranslate.onLanguageChanged + battinfo.temperature.toFixed(2) + "°C (" + parseFloat(1.8 * (battinfo.temperature) + 32).toFixed(2) + "°F)"
                 }
                 Label {
+                    id: rxid
                     text: qsTr("RxID: ") + Retranslate.onLanguageChanged + battinfo.rxid
                 }
             }
@@ -196,6 +241,7 @@ Page {
                     text: qsTr("Technology: ") + Retranslate.onLanguageChanged + (dispinfo.displayTechnology == 0 ? qsTr("Bad or Unknown") + Retranslate.onLanguageChanged : (dispinfo.displayTechnology == 1 ? qsTr("LCD") + Retranslate.onLanguageChanged : (dispinfo.displayTechnology == 2 ? qsTr("OLED") + Retranslate.onLanguageChanged : (dispinfo.displayTechnology == 3 ? qsTr("CRT") + Retranslate.onLanguageChanged : (dispinfo.displayTechnology == 4 ? qsTr("Plasma") + Retranslate.onLanguageChanged : qsTr("LED") + Retranslate.onLanguageChanged)))))
                 }
                 Label {
+                    id: dispname
                     text: qsTr("Display Name: ") + Retranslate.onLanguageChanged + dispinfo.displayName
                 }
                 Label {

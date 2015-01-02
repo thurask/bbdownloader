@@ -1,5 +1,5 @@
 1
-71
+72
 10ppd/images/blank/blank.png
 10ppd/images/covers/cover.png
 12ppd/images/blank/blank.png
@@ -27,6 +27,7 @@ images/icons/icon_96.png
 images/menus/ic_browser.png
 images/menus/ic_certificate_import.png
 images/menus/ic_clear.png
+images/menus/ic_contact.png
 images/menus/ic_copy.png
 images/menus/ic_doctype_doc.png
 images/menus/ic_doctype_generic.png

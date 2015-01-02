@@ -172,6 +172,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/images/menus/ic_browser.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_certificate_import.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_clear.png) \
+        $$quote($$BASEDIR/assets/images/menus/ic_contact.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_copy.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_doctype_doc.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_doctype_generic.png) \

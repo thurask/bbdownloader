@@ -921,6 +921,14 @@ https://github.com/thurask/bbdownloader</translation>
         <source>Boot Time: </source>
         <translation>Boot Time: </translation>
     </message>
+    <message>
+        <source>Hide Personal Info</source>
+        <translation>Hide Personal Info</translation>
+    </message>
+    <message>
+        <source>Show Personal Info</source>
+        <translation>Show Personal Info</translation>
+    </message>
 </context>
 <context>
     <name>main</name>
