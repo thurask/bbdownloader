@@ -217,7 +217,7 @@ TabbedPane {
         delegate: Delegate {
             FileOps {
                 id: fileOpsPage
-                titleBar: CustomTitleBar {
+                pageBar: CustomTitleBar {
                 }
             }
         }

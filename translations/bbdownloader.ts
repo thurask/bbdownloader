@@ -71,6 +71,14 @@
         <source>Results</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CertViewer</name>
@@ -152,6 +160,32 @@
 <context>
     <name>FileOps</name>
     <message>
+        <source>.nomedia</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Added!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Blank Icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>HardwareIDs</name>
+    <message>
+        <source>Hardware IDs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>HashToolsPage</name>
+    <message>
         <source>File Picker</source>
         <translation type="unfinished"></translation>
     </message>
@@ -207,61 +241,6 @@
         <source>Hash copied to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Choose a Directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Current Directory:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>.nomedia File Exists: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>True</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>False</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Write .nomedia File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>File created!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Delete .nomedia File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>File deleted!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Added!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add blank icon</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>HardwareIDs</name>
-    <message>
-        <source>Hardware IDs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>HelpSheet</name>
@@ -315,6 +294,53 @@ https://github.com/thurask/bbdownloader</source>
     </message>
     <message>
         <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NomediaPage</name>
+    <message>
+        <source>.nomedia</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File Picker</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose a Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current Directory:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>.nomedia File Exists: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>True</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>False</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Write .nomedia File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File created!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete .nomedia File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File deleted!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

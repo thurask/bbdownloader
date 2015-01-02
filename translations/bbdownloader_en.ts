@@ -71,6 +71,14 @@
         <source>Results</source>
         <translation>Results</translation>
     </message>
+    <message>
+        <source>Copy</source>
+        <translation>Copy</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Copied</translation>
+    </message>
 </context>
 <context>
     <name>CertViewer</name>
@@ -152,6 +160,32 @@
 <context>
     <name>FileOps</name>
     <message>
+        <source>.nomedia</source>
+        <translation>.nomedia</translation>
+    </message>
+    <message>
+        <source>Added!</source>
+        <translation>Added!</translation>
+    </message>
+    <message>
+        <source>Add Blank Icon</source>
+        <translation>Add Blank Icon</translation>
+    </message>
+</context>
+<context>
+    <name>HardwareIDs</name>
+    <message>
+        <source>Hardware IDs</source>
+        <translation>Hardware IDs</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Close</translation>
+    </message>
+</context>
+<context>
+    <name>HashToolsPage</name>
+    <message>
         <source>File Picker</source>
         <translation>File Picker</translation>
     </message>
@@ -206,61 +240,6 @@
     <message>
         <source>Hash copied to clipboard</source>
         <translation>Hash copied to clipboard</translation>
-    </message>
-    <message>
-        <source>Choose a Directory</source>
-        <translation>Choose a Directory</translation>
-    </message>
-    <message>
-        <source>Current Directory:</source>
-        <translation>Current Directory:</translation>
-    </message>
-    <message>
-        <source>.nomedia File Exists: </source>
-        <translation>.nomedia File Exists: </translation>
-    </message>
-    <message>
-        <source>True</source>
-        <translation>True</translation>
-    </message>
-    <message>
-        <source>False</source>
-        <translation>False</translation>
-    </message>
-    <message>
-        <source>Write .nomedia File</source>
-        <translation>Write .nomedia File</translation>
-    </message>
-    <message>
-        <source>File created!</source>
-        <translation>File created!</translation>
-    </message>
-    <message>
-        <source>Delete .nomedia File</source>
-        <translation>Delete .nomedia File</translation>
-    </message>
-    <message>
-        <source>File deleted!</source>
-        <translation>File deleted!</translation>
-    </message>
-    <message>
-        <source>Added!</source>
-        <translation>Added!</translation>
-    </message>
-    <message>
-        <source>Add blank icon</source>
-        <translation>Add blank icon</translation>
-    </message>
-</context>
-<context>
-    <name>HardwareIDs</name>
-    <message>
-        <source>Hardware IDs</source>
-        <translation>Hardware IDs</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation>Close</translation>
     </message>
 </context>
 <context>
@@ -317,6 +296,53 @@ https://github.com/thurask/bbdownloader</translation>
     <message>
         <source>Refresh</source>
         <translation>Refresh</translation>
+    </message>
+</context>
+<context>
+    <name>NomediaPage</name>
+    <message>
+        <source>.nomedia</source>
+        <translation>.nomedia</translation>
+    </message>
+    <message>
+        <source>File Picker</source>
+        <translation>File Picker</translation>
+    </message>
+    <message>
+        <source>Choose a Directory</source>
+        <translation>Choose a Directory</translation>
+    </message>
+    <message>
+        <source>Current Directory:</source>
+        <translation>Current Directory:</translation>
+    </message>
+    <message>
+        <source>.nomedia File Exists: </source>
+        <translation>.nomedia File Exists: </translation>
+    </message>
+    <message>
+        <source>True</source>
+        <translation>True</translation>
+    </message>
+    <message>
+        <source>False</source>
+        <translation>False</translation>
+    </message>
+    <message>
+        <source>Write .nomedia File</source>
+        <translation>Write .nomedia File</translation>
+    </message>
+    <message>
+        <source>File created!</source>
+        <translation>File created!</translation>
+    </message>
+    <message>
+        <source>Delete .nomedia File</source>
+        <translation>Delete .nomedia File</translation>
+    </message>
+    <message>
+        <source>File deleted!</source>
+        <translation>File deleted!</translation>
     </message>
 </context>
 <context>

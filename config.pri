@@ -156,8 +156,10 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/EScreens.qml) \
         $$quote($$BASEDIR/assets/FileOps.qml) \
         $$quote($$BASEDIR/assets/HardwareIDs.qml) \
+        $$quote($$BASEDIR/assets/HashToolsPage.qml) \
         $$quote($$BASEDIR/assets/HelpSheet.qml) \
         $$quote($$BASEDIR/assets/MetadataSheet.qml) \
+        $$quote($$BASEDIR/assets/NomediaPage.qml) \
         $$quote($$BASEDIR/assets/OSDownloader.qml) \
         $$quote($$BASEDIR/assets/OSRepo.qml) \
         $$quote($$BASEDIR/assets/SettingsSheet.qml) \
@@ -178,6 +180,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/images/menus/ic_doctype_generic.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_edit.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_help.png) \
+        $$quote($$BASEDIR/assets/images/menus/ic_home.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_info.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_pgp_key.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_play.png) \
@@ -188,6 +191,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/images/menus/ic_share.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_show_vkb.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_stop.png) \
+        $$quote($$BASEDIR/assets/images/menus/ic_zoom_out.png) \
         $$quote($$BASEDIR/assets/images/numbers/0.png) \
         $$quote($$BASEDIR/assets/images/numbers/1.png) \
         $$quote($$BASEDIR/assets/images/numbers/2.png) \
