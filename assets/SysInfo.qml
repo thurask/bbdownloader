@@ -47,6 +47,7 @@ Page {
                     simsn.visible = false
                     rxid.visible = false
                     dispname.visible = false
+                    devmode.visible = false
                 }
                 else {
                     sanitized = false
@@ -60,6 +61,7 @@ Page {
                     simsn.visible = true
                     rxid.visible = true
                     dispname.visible = true
+                    devmode.visible = true
                 }
             }
             ActionBar.placement: ActionBarPlacement.Signature
@@ -289,26 +291,33 @@ Page {
                     text: qsTr("Webkit: ") + Retranslate.onLanguageChanged + _manager.readTextFile("/base/etc/webkit.version", "normal")
                 }
             }
-            Header {
-                title: qsTr("Device Properties") + Retranslate.onLanguageChanged
+            Container {
+                Header {
+                    title: qsTr("Device Properties") + Retranslate.onLanguageChanged
+                }
+                Label {
+                    text: _manager.readTextFile("/pps/services/deviceproperties", "normal")
+                    multiline: true
+                }
             }
-            Label {
-                text: _manager.readTextFile("/pps/services/deviceproperties", "normal")
-                multiline: true
+            Container {
+                Header {
+                    title: qsTr("Hardware Info") + Retranslate.onLanguageChanged
+                }
+                Label {
+                    text: _manager.readTextFile("/pps/services/hw_info/inventory", "normal")
+                    multiline: true
+                }
             }
-            Header {
-                title: qsTr("Hardware Info") + Retranslate.onLanguageChanged
-            }
-            Label {
-                text: _manager.readTextFile("/pps/services/hw_info/inventory", "normal")
-                multiline: true
-            }
-            Header {
-                title: qsTr("Development Mode") + Retranslate.onLanguageChanged
-            }
-            Label {
-                text: _manager.readTextFile("/pps/system/development/devmode", "normal")
-                multiline: true
+            Container {
+                id: devmode
+                Header {
+                    title: qsTr("Development Mode") + Retranslate.onLanguageChanged
+                }
+                Label {
+                    text: _manager.readTextFile("/pps/system/development/devmode", "normal")
+                    multiline: true
+                }
             }
         }
     }
