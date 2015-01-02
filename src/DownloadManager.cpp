@@ -24,66 +24,97 @@ QString DownloadManager::defaultDir()
     return default_dir;
 }
 
-void DownloadManager::setExportUrls(QString hashedswversion, QString osversion, QString radioversion)
+QString DownloadManager::returnOsLinks(QString hashedswversion, QString osversion, bool verizon)
 {
-    QString osurls = ("---OPERATING SYSTEMS---\n"
+    setOsLinks(hashedswversion, osversion, verizon);
+    return oslinks;
+}
+
+QString DownloadManager::returnRadioLinks(QString hashedswversion, QString osversion, QString radioversion)
+{
+    setRadioLinks(hashedswversion, osversion, radioversion);
+    return radiolinks;
+}
+
+void DownloadManager::setOsLinks(QString hashedswversion, QString osversion, bool verizon)
+{
+    oslinks = ("---OPERATING SYSTEMS---\n"
             "TI OMAP (STL100-1)\n"
             "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory.desktop/" + osversion + "/winchester.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n" +
             "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory/" + osversion + "/winchester.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar\n\n" +
             "Qualcomm 8960/8930 (Most others)\n" +
             "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.factory_sfi.desktop/" + osversion + "/qc8960.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n" +
-            "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.factory_sfi/" + osversion + "/qc8960.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar\n\n" +
-            "Verizon 8960/8930\n" +
-            "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi.desktop/" + osversion + "/qc8960.verizon_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n" +
-            "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi/" + osversion + "/qc8960.verizon_sfi-" + osversion + "-nto+armle-v7+signed.bar\n\n");
-    QString radiourls = ("---RADIOS---\n"
+            "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.factory_sfi/" + osversion + "/qc8960.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+    //Verizon images
+    if (verizon == true){
+        oslinks.append("Verizon 8960/8930\n"
+                "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi.desktop/" + osversion + "/qc8960.verizon_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n" +
+                "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi/" + osversion + "/qc8960.verizon_sfi-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+    }
+    //10.3.0 (Passport)
+    if (osversion.indexOf("10.3.0") != -1) {
+        oslinks.append("Qualcomm 8974 (Passport)\n"
+                "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.factory_sfi.desktop/" + osversion + "/qc8974.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n"
+                "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.factory_sfi/" + osversion + "/qc8974.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+    }
+    //10.3.1 (Passport, again)
+    if (osversion.indexOf("10.3.1") != -1) {
+        oslinks.append("Qualcomm 8974_8960 Hybrid (10.3.1+)\n"
+                "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/qc8960.factory_sfi_hybrid_qc8974.desktop-" + osversion + "-nto+armle-v7+signed.bar\n" +
+                "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/qc8960.factory_sfi_hybrid_qc8974-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+    }
+}
+
+void DownloadManager::setRadioLinks(QString hashedswversion, QString osversion, QString radioversion)
+{
+    radiolinks = ("---RADIOS---\n"
             "OMAP Z10: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.m5730/" + radioversion + "/m5730-" + radioversion + "-nto+armle-v7+signed.bar\n\n" +
             "Qualcomm Z10/P9982: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960/" + radioversion + "/qc8960-" + radioversion + "-nto+armle-v7+signed.bar\n\n" +
             "Verizon Z10: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.omadm/" + radioversion + "/qc8960.omadm-" + radioversion + "-nto+armle-v7+signed.bar\n\n" +
             "Q10/Q5/P9983: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr/" + radioversion + "/qc8960.wtr-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
     //10.2.0 and up (Z30)
     if (osversion.indexOf("10.0.") == -1 && osversion.indexOf("10.1.0") == -1) {
-        radiourls.append("Z30/Manitoba/Classic: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr5/" + radioversion + "/qc8960.wtr5-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
+        radiolinks.append("Z30/Manitoba/Classic: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr5/" + radioversion + "/qc8960.wtr5-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
     }
     //10.2.1 and up (Z3)
     if (osversion.indexOf("10.0.") == -1 && osversion.indexOf("10.1.0") == -1 && osversion.indexOf("10.2.0") == -1) {
-        radiourls.append("Z3/Kopi/Cafe: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8930.wtr5/" + radioversion + "/qc8930.wtr5-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
+        radiolinks.append("Z3/Kopi/Cafe: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8930.wtr5/" + radioversion + "/qc8930.wtr5-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
     }
     //10.3.0 (Passport)
     if (osversion.indexOf("10.3.0") != -1) {
-        osurls.append("Qualcomm 8974 (Passport)\n"
-                "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.factory_sfi.desktop/" + osversion + "/qc8974.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n"
-                "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.factory_sfi/" + osversion + "/qc8974.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar\n\n");
-        radiourls.append("Passport: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8974.wtr2/" + radioversion + "/qc8974.wtr2-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
+        radiolinks.append("Passport: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8974.wtr2/" + radioversion + "/qc8974.wtr2-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
     }
     //10.3.1 (Passport, again)
     if (osversion.indexOf("10.3.1") != -1) {
-        osurls.append("Qualcomm 8974_8960 Hybrid (10.3.1+)\n"
-                "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/qc8960.factory_sfi_hybrid_qc8974.desktop-" + osversion + "-nto+armle-v7+signed.bar\n" +
-                "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/qc8960.factory_sfi_hybrid_qc8974-" + osversion + "-nto+armle-v7+signed.bar\n\n");
-        radiourls.append("Passport: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8974.wtr2/" + radioversion + "/qc8974.wtr2-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
+        radiolinks.append("Passport: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8974.wtr2/" + radioversion + "/qc8974.wtr2-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
     }
-    exporturls = osurls + "\n" + radiourls;
 }
 
-void DownloadManager::exportLinks(QString swrelease, QString hashedswversion, QString osversion, QString radioversion)
+void DownloadManager::setExportUrls(QString hashedswversion, QString osversion, QString radioversion, bool verizon)
 {
-    setExportUrls(hashedswversion, osversion, radioversion);
+    setOsLinks(hashedswversion, osversion, verizon);
+    setRadioLinks(hashedswversion, osversion, radioversion);
+    exporturls = oslinks + "\n" + radiolinks;
+}
+
+void DownloadManager::exportLinks(QString swrelease, QString hashedswversion, QString osversion, QString radioversion, bool verizon)
+{
+    setExportUrls(hashedswversion, osversion, radioversion, verizon);
     saveTextFile(exporturls, swrelease);
 }
 
-void DownloadManager::copyLinks(QString hashedswversion, QString osversion, QString radioversion)
+void DownloadManager::copyLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon)
 {
-    setExportUrls(hashedswversion, osversion, radioversion);
+    setExportUrls(hashedswversion, osversion, radioversion, verizon);
     QByteArray exporturls_qba = exporturls.toUtf8();
     bb::system::Clipboard clipboard;
     clipboard.clear();
     clipboard.insert("text/plain", exporturls_qba);
 }
 
-QString DownloadManager::returnLinks(QString hashedswversion, QString osversion, QString radioversion)
+QString DownloadManager::returnLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon)
 {
-    setExportUrls(hashedswversion, osversion, radioversion);
+    setExportUrls(hashedswversion, osversion, radioversion, verizon);
     return exporturls;
 }
 

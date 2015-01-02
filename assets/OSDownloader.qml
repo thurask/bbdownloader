@@ -16,7 +16,9 @@ Page {
         ActionItem {
             title: qsTr("Generate") + Retranslate.onLanguageChanged
             onTriggered: {
-                generatedtext.text = _manager.returnLinks(hashedswversion, osversion, radioversion);
+                ostext.text = _manager.returnOsLinks(hashedswversion, osversion, true);
+                radiotext.text = _manager.returnRadioLinks(hashedswversion, osversion, radioversion);
+                divider.visible = true;
                 allclipboard.enabled = true;
                 exportbutton.enabled = true;
             }
@@ -26,7 +28,9 @@ Page {
         ActionItem {
             title: qsTr("Clear") + Retranslate.onLanguageChanged
             onTriggered: {
-                generatedtext.text = "";
+                ostext.text = "";
+                radiotext.text = "";
+                divider.visible = false;
                 allclipboard.enabled = false;
                 exportbutton.enabled = false;
             }
@@ -190,12 +194,26 @@ Page {
                     title: qsTr("Links") + Retranslate.onLanguageChanged
                 }
                 TextArea {
-                    id: generatedtext
+                    id: ostext
                     text: ""
                     editable: false
                     visible: true
                     content.flags: TextContentFlag.ActiveText
                     scrollMode: TextAreaScrollMode.Stiff
+                    maximumLength: 16384
+                }
+                Divider {
+                    id: divider
+                    visible: false
+                }
+                TextArea {
+                    id: radiotext
+                    text: ""
+                    editable: false
+                    visible: true
+                    content.flags: TextContentFlag.ActiveText
+                    scrollMode: TextAreaScrollMode.Stiff
+                    maximumLength: 16384
                 }
             }
         }
