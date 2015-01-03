@@ -73,7 +73,7 @@ Page {
             title: (radiotext.text.indexOf("Variant URL") != -1 ? qsTr("Copy Variant Links") + Retranslate.onLanguageChanged : qsTr("Copy Radio Links") + Retranslate.onLanguageChanged)
             onTriggered: {
                 _manager.copyRadioLinks(hashedswversion, osversion, radioversion)
-                linkexporttoast.body = qsTr("Radio URLs copied") + Retranslate.onLanguageChanged;
+                linkexporttoast.body = (radiotext.text.indexOf("Variant URL") != -1 ? qsTr("Variant URLs copied") + Retranslate.onLanguageChanged : qsTr("Radio URLs copied") + Retranslate.onLanguageChanged);
                 linkexporttoast.show();
             }
             ActionBar.placement: ActionBarPlacement.InOverflow
