@@ -70,36 +70,42 @@ TabbedPane {
     ]
     shortcuts: [
         Shortcut {
+            id: shortcut_o
             key: "o"
             onTriggered: {
                 tabbedpane.activeTab = tab_osgen
             }  
         },
         Shortcut {
+            id: shortcut_l
             key: "l"
             onTriggered: {
                 tabbedpane.activeTab = tab_lookup
             }
         },
         Shortcut {
+            id: shortcut_e
             key: "e"
             onTriggered: {
                 tabbedpane.activeTab = tab_escreens
             }
         },
         Shortcut {
+            id: shortcut_s
             key: "s"
             onTriggered: {
                 tabbedpane.activeTab = tab_sysinfo
             }
         },
         Shortcut {
+            id: shortcut_f
             key: "f"
             onTriggered: {
                 tabbedpane.activeTab = tab_fileops
             }
         },
         Shortcut {
+            id: shortcut_p
             key: "p"
             onTriggered: {
                 tabbedpane.activeTab = tab_ptcrb
@@ -166,6 +172,32 @@ TabbedPane {
                             }
                         }
                     ]
+                }
+                onLookupStarted: {
+                    shortcut_o.enabled = false;
+                    shortcut_l.enabled = false;
+                    shortcut_e.enabled = false;
+                    shortcut_s.enabled = false;
+                    shortcut_f.enabled = false;
+                    shortcut_p.enabled = false;
+                    tab_osgen.enabled = false;
+                    tab_escreens.enabled = false;
+                    tab_sysinfo.enabled = false;
+                    tab_fileops.enabled = false;
+                    tab_ptcrb.enabled = false;
+                }
+                onLookupStopped: {
+                    shortcut_o.enabled = true;
+                    shortcut_l.enabled = true;
+                    shortcut_e.enabled = true;
+                    shortcut_s.enabled = true;
+                    shortcut_f.enabled = true;
+                    shortcut_p.enabled = true;
+                    tab_osgen.enabled = true;
+                    tab_escreens.enabled = true;
+                    tab_sysinfo.enabled = true;
+                    tab_fileops.enabled = true;
+                    tab_ptcrb.enabled = true;
                 }
             }
         }

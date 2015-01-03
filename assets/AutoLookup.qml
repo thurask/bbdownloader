@@ -10,6 +10,8 @@ import bb.device 1.4
 import qt.timer 1.0
 
 Page {
+    signal lookupStarted()
+    signal lookupStopped()
     property bool scanning: false
     actions: [
         ActionItem {
@@ -21,6 +23,7 @@ Page {
                 }
                 else {
                     if (scanning == false) {
+                        lookupStarted()
                         if (outputtext.text = ""){
                             _swlookup.setSoftwareRelease("");
                         }
@@ -33,6 +36,7 @@ Page {
                         _swlookup.post(autolookup_input.text, serverdropdown.selectedValue);
                     }
                     else {
+                        lookupStopped()
                         scanning = false;
                         autolookupbutton.title = qsTr("Start") + Retranslate.onLanguageChanged
                         autolookupbutton.imageSource = "asset:///images/menus/ic_play.png"
