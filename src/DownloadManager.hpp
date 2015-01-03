@@ -26,6 +26,10 @@
 
         void copyLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon);
 
+        void copyOsLinks(QString hashedswversion, QString osversion, bool verizon);
+
+        void copyRadioLinks(QString hashedswversion, QString osversion, QString radioversion);
+
         QString returnLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon);
 
         QString returnFilename();

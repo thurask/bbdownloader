@@ -20,6 +20,10 @@ Page {
                 radiotext.text = _manager.returnRadioLinks(hashedswversion, osversion, radioversion);
                 divider.visible = true;
                 allclipboard.enabled = true;
+                osclipboard.enabled = true;
+                if (radiotext.text.length != 0){
+                    radioclipboard.enabled = true;
+                }
                 exportbutton.enabled = true;
             }
             ActionBar.placement: ActionBarPlacement.Signature
@@ -32,6 +36,8 @@ Page {
                 radiotext.text = "";
                 divider.visible = false;
                 allclipboard.enabled = false;
+                osclipboard.enabled = false;
+                radioclipboard.enabled = false;
                 exportbutton.enabled = false;
             }
             ActionBar.placement: ActionBarPlacement.OnBar
@@ -50,6 +56,30 @@ Page {
             imageSource: "asset:///images/menus/ic_copy.png"
         },
         ActionItem {
+            id: osclipboard
+            enabled: false
+            title: qsTr("Copy OS Links") + Retranslate.onLanguageChanged
+            onTriggered: {
+                _manager.copyOsLinks(hashedswversion, osversion, true)
+                linkexporttoast.body = qsTr("All URLs copied") + Retranslate.onLanguageChanged;
+                linkexporttoast.show();
+            }
+            ActionBar.placement: ActionBarPlacement.InOverflow
+            imageSource: "asset:///images/menus/ic_copy.png"
+        },
+        ActionItem {
+            id: radioclipboard
+            enabled: false
+            title: (radiotext.text.indexOf("Variant URL") != -1 ? qsTr("Copy Variant Links") + Retranslate.onLanguageChanged : qsTr("Copy Radio Links") + Retranslate.onLanguageChanged)
+            onTriggered: {
+                _manager.copyRadioLinks(hashedswversion, osversion, radioversion)
+                linkexporttoast.body = qsTr("Radio URLs copied") + Retranslate.onLanguageChanged;
+                linkexporttoast.show();
+            }
+            ActionBar.placement: ActionBarPlacement.InOverflow
+            imageSource: "asset:///images/menus/ic_copy.png"
+        },
+        ActionItem {
             id: exportbutton
             enabled: false
             title: qsTr("Export Links") + Retranslate.onLanguageChanged
@@ -62,7 +92,7 @@ Page {
                 myQuery.query.mimeType = "";
                 linkexporttoast.show();
             }
-            ActionBar.placement: ActionBarPlacement.OnBar
+            ActionBar.placement: ActionBarPlacement.InOverflow
             imageSource: "asset:///images/menus/ic_doctype_doc.png"
         }
     ]
@@ -132,7 +162,7 @@ Page {
                             mode: ValidationMode.Immediate
                             onValidate: {
                                 var regex = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/);
-                                if (regex.test(radiover_input.text) == true) {
+                                if (regex.test(radiover_input.text) == true || swver_input.text == "N/A") {
                                     validator_radver.setValid(true);
                                 } else {
                                     validator_radver.setValid(false);
