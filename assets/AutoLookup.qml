@@ -21,6 +21,9 @@ Page {
                 }
                 else {
                     if (scanning == false) {
+                        if (outputtext.text = ""){
+                            _swlookup.setSoftwareRelease("");
+                        }
                         scanning = true;
                         outputtext.storedtext = outputtext.text;
                         outputtext.text = "";
