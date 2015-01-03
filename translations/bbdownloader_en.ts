@@ -403,6 +403,26 @@ https://github.com/thurask/bbdownloader</translation>
         <source>Copy Links</source>
         <translation>Copy Links</translation>
     </message>
+    <message>
+        <source>Copy OS Links</source>
+        <translation>Copy OS Links</translation>
+    </message>
+    <message>
+        <source>Copy Radio Links</source>
+        <translation>Copy Radio Links</translation>
+    </message>
+    <message>
+        <source>Radio URLs copied</source>
+        <translation>Radio URLs copied</translation>
+    </message>
+    <message>
+        <source>Copy Variant Links</source>
+        <translation>Copy Variant Links</translation>
+    </message>
+    <message>
+        <source>Variant URLs copied</source>
+        <translation>Variant URLs copied</translation>
+    </message>
 </context>
 <context>
     <name>OSRepo</name>
