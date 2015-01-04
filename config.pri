@@ -186,6 +186,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/images/menus/ic_play.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_qs_developer_mode.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_qs_mobilehotspot.png) \
+        $$quote($$BASEDIR/assets/images/menus/ic_reload.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_search.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_settings.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_share.png) \

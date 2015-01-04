@@ -1,5 +1,5 @@
 1
-76
+77
 10ppd/images/blank/blank.png
 10ppd/images/covers/cover.png
 12ppd/images/blank/blank.png
@@ -40,6 +40,7 @@ images/menus/ic_pgp_key.png
 images/menus/ic_play.png
 images/menus/ic_qs_developer_mode.png
 images/menus/ic_qs_mobilehotspot.png
+images/menus/ic_reload.png
 images/menus/ic_search.png
 images/menus/ic_settings.png
 images/menus/ic_share.png

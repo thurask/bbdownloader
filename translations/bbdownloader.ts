@@ -90,6 +90,26 @@
         <source>Certification Browser</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use local file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Certifications (local copy)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Certifications (network copy)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Could not access online file. Loading local copy.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CustomTitleBar</name>
@@ -180,6 +200,26 @@
     </message>
     <message>
         <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use local file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hardware IDs (local copy)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hardware IDs (network copy)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Could not access online file. Loading local copy.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -29,6 +29,7 @@ Sheet {
         Container {
             horizontalAlignment: HorizontalAlignment.Fill
             Container {
+                topPadding: 5.0
                 layout: StackLayout {
                     orientation: LayoutOrientation.LeftToRight
                 }

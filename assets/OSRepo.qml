@@ -31,6 +31,7 @@ Sheet {
         Container {
             horizontalAlignment: HorizontalAlignment.Fill
             Container {
+                topPadding: 5.0
                 layout: StackLayout {
                     orientation: LayoutOrientation.LeftToRight
                 }
@@ -91,6 +92,7 @@ Sheet {
                     osRepo.releaseSelected(indexi.software, (indexi.trueos == "" ? indexi.os : indexi.trueos), indexi.radio)
                     xmlToast.show();
                 }
+                scrollIndicatorMode: ScrollIndicatorMode.ProportionalBar
             }
         }
     }
