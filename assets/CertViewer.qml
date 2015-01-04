@@ -72,6 +72,7 @@ Page {
                         title: ListItemData.variant
                         description: ListItemData.id
                         enabled: (ListItemData.url == "" ? false : true)
+                        status: (ListItemData.url == "" ? qsTr("N/A") + Retranslate.onLanguageChanged : ListItemData.url)
                     }
                 }
             ]
