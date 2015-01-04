@@ -1,730 +1,836 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE repo SYSTEM "dtd/repo.dtd" >
 <repo>
-     <release>
+	<release>
+		<series>10.3.1</series>
 		<trueos></trueos>
 		<os>10.3.1.1154</os>
 		<radio>10.3.1.1155</radio>
 		<software>10.3.1.747</software>
-		<notes>Classic launch OS</notes>
-     </release>
-     <release>
-        <trueos>10.3.1.997</trueos>
-        <os>10.3.1.0997</os>
-        <radio>10.3.1.996</radio>
-        <software>N/A</software>
-        <notes>SDK Autoloader</notes>
-    </release>
-    <release>
-        <trueos>10.3.1.634</trueos>
-        <os>10.3.1.0634</os>
-        <radio>10.3.1.633</radio>
-        <software>N/A</software>
-        <notes>SDK Autoloader</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.3.0.1418</os>
-        <radio>10.3.0.1419</radio>
-        <software>10.3.0.908</software>
-        <notes>Rogers Passport</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.3.0.1172</os>
-        <radio>10.3.0.1155</radio>
-        <software>10.3.0.754</software>
-        <notes>Indian Passport</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.3.0.1154</os>
-        <radio>10.3.0.1155</radio>
-        <software>10.3.0.738</software>
-        <notes>Rogers/Bell Passport</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.3.0.1052</os>
-        <radio>10.3.0.1053</radio>
-        <software>10.3.0.675</software>
-        <notes>Passport launch OS</notes>
-    </release>
-    <release>
-        <trueos>10.3.0.700</trueos>
-        <os>10.3.0.0700</os>
-        <radio>10.3.0.699</radio>
-        <software>N/A</software>
-        <notes>SDK Autoloader</notes>
-    </release>
-    <release>
-        <trueos>10.3.0.442</trueos>
-        <os>10.3.0.0442</os>
-        <radio>10.3.0.441</radio>
-        <software>N/A</software>
-        <notes>SDK Autoloader</notes>
-    </release><release>
-        <trueos></trueos>
-        <os>10.2.2.1609</os>
-        <radio>10.2.2.1532</radio>
-        <software>10.2.2.984</software>
-        <notes>Ask Angela Merkel</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.2.1531</os>
-        <radio>10.2.2.1532</radio>
-        <software>10.2.2.932</software>
-        <notes>Ask Angela Merkel</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.1.3442</os>
-        <radio>10.2.1.3140</radio>
-        <software>10.2.1.3062</software>
-        <notes>Minor bugfix to 10.2.1.3412</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.1.3412</os>
-        <radio>10.2.1.3140</radio>
-        <software>10.2.1.3054</software>
-        <notes>Minor bugfix to 10.2.1.3247 for Indian Z3</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.1.3358</os>
-        <radio>10.2.1.3359</radio>
-        <software>10.2.1.3023</software>
-        <notes>Minor bugfix to 10.2.1.3253 for Sprint -- No STL100-1</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.1.3337</os>
-        <radio>10.2.1.3338</radio>
-        <software>10.2.1.3014</software>
-        <notes>10.2.1 MR for ATT</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.1.3289</os>
-        <radio>10.2.1.3290</radio>
-        <software>10.2.1.2991</software>
-        <notes>10.2.1 MR MR for Verizon Z30 -- No STL100-1</notes>
-    </release>
-    <release>
-       <trueos></trueos>
-       <os>10.2.1.3253</os>
-       <radio>10.2.1.3182</radio>
-       <software>10.2.1.2976</software>
-       <notes>Minor bugfix to 10.2.1.3181 for Verizon Z10/Q10</notes>
-    </release>
-    <release>
-       <trueos></trueos>
-       <os>10.2.1.3247</os>
-       <radio>10.2.1.3140</radio>
-       <software>10.2.1.2977</software>
-       <notes>Minor bugfix to 10.2.1.3175</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.1.3175</os>
-        <radio>10.2.1.3140</radio>
-        <software>10.2.1.2941</software>
-        <notes>10.2.1 MR MR</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.1.2947</os>
-        <radio>10.2.1.2948</radio>
-        <software>10.2.1.2788</software>
-        <notes>Z3 Launch -- Radio only for Z3</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.1.2758</os>
-        <radio>10.2.1.2759</radio>
-        <software>10.2.1.2674</software>
-        <notes>10.2.1 for Sprint Q10</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.1.2294</os>
-        <radio>10.2.1.2142</radio>
-        <software>10.2.1.2192</software>
-        <notes>Minor bugfix to 10.2.1.2141 -- No STL100-1</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.1.2273</os>
-        <radio>10.2.1.2274</radio>
-        <software>10.2.1.2179</software>
-        <notes>10.2.1 for ATT</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.1.2234</os>
-        <radio>10.2.1.2235</radio>
-        <software>10.2.1.2160</software>
-        <notes>10.2.1 for Shop BlackBerry</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.1.2228</os>
-        <radio>10.2.1.2229</radio>
-        <software>10.2.1.2156</software>
-        <notes>10.2.1 for T-Mobile</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.1.2180</os>
-        <radio>10.2.1.2181</radio>
-        <software>10.2.1.2126</software>
-        <notes>10.2.1 for Verizon Z30 -- Only for Z10, Z30, Q10</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.1.2174</os>
-        <radio>10.2.1.2175</radio>
-        <software>10.2.1.2122</software>
-        <notes>10.2.1 for Verizon Z10/Q10</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.1.2141</os>
-        <radio>10.2.1.2142</radio>
-        <software>10.2.1.2102</software>
-        <notes>10.2.1 MR</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.1.1927</os>
-        <radio>10.2.1.1926</radio>
-        <software>N/A</software>
-        <notes>SDK Autoloader</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.1.1925</os>
-        <radio>10.2.1.1899</radio>
-        <software>10.2.1.537</software>
-        <notes>10.2.1 Launch</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.1.1057</os>
-        <radio>10.2.1.1056</radio>
-        <software>N/A</software>
-        <notes>SDK Autoloader</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.0.1809</os>
-        <radio>10.2.0.1810</radio>
-        <software>10.2.0.431</software>
-        <notes>Cosmote Greece</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.0.1803</os>
-        <radio>10.2.0.1804</radio>
-        <software>10.2.0.429</software>
-        <notes>10.2.0 MR</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.0.1793</os>
-        <radio>10.2.0.1792</radio>
-        <software>N/A</software>
-        <notes>SDK Autoloader</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.0.1791</os>
-        <radio>10.2.0.1792</radio>
-        <software>10.2.0.424</software>
-        <notes>10.2.0 Launch</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.0.1767</os>
-        <radio>10.2.0.1768</radio>
-        <software>10.2.0.415</software>
-        <notes>10.2.0 Launch</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.0.1761</os>
-        <radio>10.2.0.1762</radio>
-        <software>10.2.0.413</software>
-        <notes>10.2.0 Launch</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.0.1725</os>
-        <radio>10.2.0.1726</radio>
-        <software>10.2.0.405</software>
-        <notes>On servers for some reason</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.0.1521</os>
-        <radio>10.2.0.1522</radio>
-        <software>10.2.0.224</software>
-        <notes>Z30 Launch</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.0.1445</os>
-        <radio>10.2.0.1444</radio>
-        <software>N/A</software>
-        <notes>SDK Autoloader</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.0.1443</os>
-        <radio>10.2.0.1444</radio>
-        <software>10.2.0.210</software>
-        <notes>Z30 Launch</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.0.1233</os>
-        <radio>10.2.0.1234</radio>
-        <software>10.2.0.262</software>
-        <notes>Verizon Z30 Launch</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.2.0.1157</os>
-        <radio>10.2.0.1156</radio>
-        <software>N/A</software>
-        <notes>SDK Autoloader</notes>
-    </release>
-    <release>
-        <trueos>10.2.0.783</trueos>
-        <os>10.2.0.0783</os>
-        <radio>10.2.0.784</radio>
-        <software>10.2.0.110</software>
-        <notes>On servers for some reason</notes>
-    </release>
-    <release>
-        <trueos>10.2.0.341</trueos>
-        <os>10.2.0.0341</os>
-        <radio>10.2.0.340</radio>
-        <software>N/A</software>
-        <notes>SDK Autoloader</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.4828</os>
-        <radio>10.1.0.4829</radio>
-        <software>10.1.0.4211</software>
-        <notes>Sprint Q10 Launch</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.4780</os>
-        <radio>10.1.0.4781</radio>
-        <software>10.1.0.4200</software>
-        <notes>10.1 MR for T-Mobile</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.4699</os>
-        <radio>10.1.0.4700</radio>
-        <software>10.1.0.4189</software>
-        <notes>10.1 MR for Verizon Q10</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.4651</os>
-        <radio>10.1.0.4652</radio>
-        <software>10.1.0.4184</software>
-        <notes>10.1 MR</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.4633</os>
-        <radio>10.1.0.4634</radio>
-        <software>10.1.0.4181</software>
-        <notes>10.1 MR</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.4537</os>
-        <radio>10.1.0.4538</radio>
-        <software>10.1.0.4160</software>
-        <notes>10.1 MR</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.2420</os>
-        <radio>10.1.0.2421</radio>
-        <software>10.1.0.2320</software>
-        <notes>On servers for some reason</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.2354</os>
-        <radio>10.1.0.2355</radio>
-        <software>10.1.0.2312</software>
-        <notes>EMEA Z10 update</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.2342</os>
-        <radio>10.1.0.2343</radio>
-        <software>10.1.0.2309</software>
-        <notes>EMEA Q10/Q5 update</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.2151</os>
-        <radio>10.1.0.2152</radio>
-        <software>10.1.0.2039</software>
-        <notes>10.1 for Verizon Z10</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.2121</os>
-        <radio>10.1.0.2122</radio>
-        <software>10.1.0.2030</software>
-        <notes>10.1 for ATT Q10</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.2074</os>
-        <radio>10.1.0.2075</radio>
-        <software>10.1.0.2019</software>
-        <notes>10.1 for ATT Z10</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.2062</os>
-        <radio>10.1.0.2063</radio>
-        <software>10.1.0.2016</software>
-        <notes>On servers for some reason</notes>
-    </release><release>
-        <trueos></trueos>
-        <os>10.1.0.2050</os>
-        <radio>10.1.0.2051</radio>
-        <software>10.1.0.2014</software>
-        <notes>Telus update</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.2038</os>
-        <radio>10.1.0.2039</radio>
-        <software>10.1.0.2011</software>
-        <notes>10.1 for Verizon Q10 -- No STL100-1</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.2025</os>
-        <radio>10.1.0.2026</radio>
-        <software>10.1.0.2006</software>
-        <notes>10.1 for T-Mobile, ATT Q10 Launch -- No STL100-1</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.2009</os>
-        <radio>10.1.0.2010</radio>
-        <software>10.1.0.2002</software>
-        <notes>Verizon Q10 Launch -- Only for Q10 and Verizon Z10</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.1916</os>
-        <radio>10.1.0.1917</radio>
-        <software>10.1.0.317</software>
-        <notes>On servers for some reason</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.1910</os>
-        <radio>10.1.0.1911</radio>
-        <software>10.1.0.314</software>
-        <notes>Telstra</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.1762</os>
-        <radio>10.1.0.1763</radio>
-        <software>10.1.0.282</software>
-        <notes>On servers for some reason</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.1756</os>
-        <radio>10.1.0.1757</radio>
-        <software>10.1.0.278</software>
-        <notes>On servers for some reason</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.1720</os>
-        <radio>10.1.0.1721</radio>
-        <software>10.1.0.273</software>
-        <notes>10.1 Launch</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.1627</os>
-        <radio>10.1.0.1628</radio>
-        <software>10.1.0.264</software>
-        <notes>On servers for some reason</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.1609</os>
-        <radio>10.1.0.1610</radio>
-        <software>10.1.0.260</software>
-        <notes>On servers for some reason</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.1485</os>
-        <radio>10.1.0.1484</radio>
-        <software>N/A</software>
-        <notes>SDK Autoloader</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.1483</os>
-        <radio>10.1.0.1484</radio>
-        <software>10.1.0.238</software>
-        <notes>Q10 Launch</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.1022</os>
-        <radio>10.1.0.1021</radio>
-        <software>10.1.0.138</software>
-        <notes>SDK Autoloader</notes>
-    </release>
-    <release>
-        <trueos></trueos>
-        <os>10.1.0.1002</os>
-        <radio>10.1.0.1003</radio>
-        <software>10.1.0.132</software>
-        <notes>Appears to be a Chinese OS</notes>
-    </release>
-    <release>
-        <trueos>10.0.10.927</trueos>
-        <os>10.0.10.0927</os>
-        <radio>10.0.10.928</radio>
-        <software>10.0.10.131</software>
-        <notes>On servers for some reason</notes>
-    </release>
-    <release>
-        <trueos>10.0.10.822</trueos>
-        <os>10.0.10.0822</os>
-        <radio>10.0.10.823</radio>
-        <software>10.0.10.116</software>
-        <notes>ATT update</notes>
-    </release>
-    <release>
-        <trueos>10.0.10.738</trueos>
-        <os>10.0.10.0738</os>
-        <radio>10.0.10.739</radio>
-        <software>10.0.10.99</software>
-        <notes>EMEA update</notes>
-    </release>
-    <release>
-        <trueos>10.0.10.690</trueos>
-        <os>10.0.10.0690</os>
-        <radio>10.0.10.691</radio>
-        <software>10.0.10.90</software>
-        <notes>EMEA update</notes>
-    </release>
-    <release>
-        <trueos>10.0.10.684</trueos>
-        <os>10.0.10.0684</os>
-        <radio>10.0.10.685</radio>
-        <software>10.0.10.88</software>
-        <notes>ATT Z10 Launch</notes>
-    </release>
-    <release>
-        <trueos>10.0.10.672</trueos>
-        <os>10.0.10.0672</os>
-        <radio>10.0.10.673</radio>
-        <software>10.0.10.85</software>
-        <notes>10.0.10 Launch, T-Mobile Z10 Launch</notes>
-    </release>
-    <release>
-        <trueos>10.0.10.648</trueos>
-        <os>10.0.10.0648</os>
-        <radio>10.0.10.649</radio>
-        <software>10.0.10.82</software>
-        <notes>10.0.10 Launch</notes>
-    </release>
-    <release>
-        <trueos>10.0.10.263</trueos>
-        <os>10.0.10.0263</os>
-        <radio>10.0.10.262</radio>
-        <software>10.9.10.35</software>
-        <notes>Dev Alpha</notes>
-    </release>
-    <release>
-        <trueos>10.0.10.263</trueos>
-        <os>10.0.10.0262</os>
-        <radio>10.0.10.262</radio>
-        <software>10.9.10.35</software>
-        <notes>SDK Autoloader</notes>
-    </release>
-    <release>
-        <trueos>10.0.10.261</trueos>
-        <os>10.0.10.0261</os>
-        <radio>10.0.10.262</radio>
-        <software>10.0.10.58</software>
-        <notes>On servers for some reason</notes>
-    </release>
-    <release>
-        <trueos>10.0.9.2743</trueos>
-        <os>10.0.09.2743</os>
-        <radio>10.0.9.2744</radio>
-        <software>10.0.9.422</software>
-        <notes>10.0.9 for Verizon Z10 -- Verizon Z10 Only</notes>
-    </release>
-    <release>
-        <trueos>10.0.9.2709</trueos>
-        <os>10.0.09.2709</os>
-        <radio>10.0.9.2710</radio>
-        <software>10.0.9.412</software>
-        <notes>Verizon Z10 Launch -- Verizon Z10 Only</notes>
-    </release>
-    <release>
-        <trueos>10.0.9.2598</trueos>
-        <os>10.0.09.2598</os>
-        <radio>10.0.9.2599</radio>
-        <software>10.0.9.389</software>
-        <notes>On servers for some reason -- Verizon Z10 Only</notes>
-    </release>
-    <release>
-        <trueos>10.0.9.2592</trueos>
-        <os>10.0.09.2592</os>
-        <radio>10.0.9.2593</radio>
-        <software>10.0.9.388</software>
-        <notes>On servers for some reason -- Verizon Z10 Only</notes>
-    </release>
-    <release>
-        <trueos>10.0.9.2466</trueos>
-        <os>10.0.09.2466</os>
-        <radio>10.0.9.2467</radio>
-        <software>10.0.9.361</software>
-        <notes>On servers for some reason -- Verizon Z10 Only</notes>
-    </release>
-    <release>
-        <trueos>10.0.9.2460</trueos>
-        <os>10.0.09.2460</os>
-        <radio>10.0.9.2461</radio>
-        <software>10.0.9.359</software>
-        <notes>On servers for some reason -- Verizon Z10 Only</notes>
-    </release>
-    <release>
-        <trueos>10.0.9.2372</trueos>
-        <os>10.0.09.2372</os>
-        <radio>10.0.9.2373</radio>
-        <software>10.0.9.348</software>
-        <notes>Z10 Launch</notes>
-    </release>
-    <release>
-        <trueos>10.0.9.2320</trueos>
-        <os>10.0.09.2320</os>
-        <radio>10.0.9.2319</radio>
-        <software>10.9.9.339</software>
-        <notes>Dev Alpha</notes>
-    </release>
-    <release>
-        <trueos>10.0.9.2246</trueos>
-        <os>10.0.09.2246</os>
-        <radio>10.0.9.2247</radio>
-        <software>10.0.9.331</software>
-        <notes>On servers for some reason</notes>
-    </release>
-    <release>
-        <trueos>10.0.9.1675</trueos>
-        <os>10.0.09.1675</os>
-        <radio>10.0.9.1674</radio>
-        <software>10.0.9.253</software>
-        <notes>Dev Alpha</notes>
-    </release>
-    <release>
-        <trueos>10.0.9.1407</trueos>
-        <os>10.0.09.1407</os>
-        <radio>10.0.9.1408</radio>
-        <software>10.0.9.205</software>
-        <notes>On servers for some reason</notes>
-    </release>
-    <release>
-        <trueos>2.1.0.1917</trueos>
-        <os>02.1.0.1917</os>
-        <radio>2.1.0.1283</radio>
-        <software>2.1.0.1362</software>
-        <notes>4G PlayBook (v2 radio)</notes>
-    </release>
-    <release>
-        <trueos>2.1.0.1753</trueos>
-        <os>02.1.0.1754</os>
-        <radio>2.1.0.1283</radio>
-        <software>2.1.0.1347</software>
-        <notes>4G PlayBook (v2 radio)</notes>
-    </release>
-    <release>
-        <trueos>2.1.0.1753</trueos>
-        <os>02.1.0.1753</os>
-        <radio>N/A</radio>
-        <software>2.1.0.1345</software>
-        <notes>WiFi PlayBook only</notes>
-    </release>
-    <release>
-        <trueos>2.1.0.1526</trueos>
-        <os>02.1.0.1527</os>
-        <radio>2.1.0.1283</radio>
-        <software>2.1.0.1338</software>
-        <notes>4G PlayBook (v2 radio)</notes>
-    </release>
-    <release>
-        <trueos>2.1.0.1526</trueos>
-        <os>02.1.0.1526</os>
-        <radio>N/A</radio>
-        <software>2.1.0.1336</software>
-        <notes>WiFi PlayBook only</notes>
-    </release>
-    <release>
-        <trueos>2.1.0.1314</trueos>
-        <os>02.1.0.1314</os>
-        <radio>N/A</radio>
-        <software>2.1.0.1309</software>
-        <notes>WiFi PlayBook only</notes>
-    </release>
-    <release>
-        <trueos>2.1.0.1282</trueos>
-        <os>02.1.0.1282</os>
-        <radio>2.1.0.1283</radio>
-        <software>2.1.0.1302</software>
-        <notes>4G PlayBook (v2 radio)</notes>
-    </release>
-    <release>
-        <trueos>2.1.0.1088</trueos>
-        <os>02.1.0.1088</os>
-        <radio>2.1.0.1013</radio>
-        <software>2.1.0.1088</software>
-        <notes>4G PlayBook (v1 radio)</notes>
-    </release>
-    <release>
-        <trueos>2.1.0.1032</trueos>
-        <os>02.1.0.1032</os>
-        <radio>2.1.0.1013</radio>
-        <software>2.1.0.1032</software>
-        <notes>4G PlayBook (v1 radio)</notes>
-    </release>
-    <release>
-        <trueos>2.0.1.668</trueos>
-        <os>02.0.1.668</os>
-        <radio>2.0.1.677</radio>
-        <software>2.0.1.668</software>
-        <notes>4G PlayBook (v1 radio)</notes>
-    </release>
+		<notes>Classic</notes>
+	</release>
+	<release>
+		<series>10.3.1</series>
+		<trueos>10.3.1.997</trueos>
+		<os>10.3.1.0997</os>
+		<radio>10.3.1.996</radio>
+		<software>N/A</software>
+		<notes>SDK Autoloader</notes>
+	</release>
+	<release>
+		<series>10.3.1</series>
+		<trueos>10.3.1.634</trueos>
+		<os>10.3.1.0634</os>
+		<radio>10.3.1.633</radio>
+		<software>N/A</software>
+		<notes>SDK Autoloader</notes>
+	</release>
+	<release>
+		<series>10.3.0</series>
+		<trueos></trueos>
+		<os>10.3.0.1418</os>
+		<radio>10.3.0.1419</radio>
+		<software>10.3.0.908</software>
+		<notes>Passport</notes>
+	</release>
+	<release>
+		<series>10.3.0</series>
+		<trueos></trueos>
+		<os>10.3.0.1172</os>
+		<radio>10.3.0.1155</radio>
+		<software>10.3.0.754</software>
+		<notes>Indian Passport</notes>
+	</release>
+	<release>
+		<series>10.3.0</series>
+		<trueos></trueos>
+		<os>10.3.0.1154</os>
+		<radio>10.3.0.1155</radio>
+		<software>10.3.0.738</software>
+		<notes>Passport</notes>
+	</release>
+	<release>
+		<series>10.3.0</series>
+		<trueos></trueos>
+		<os>10.3.0.1052</os>
+		<radio>10.3.0.1053</radio>
+		<software>10.3.0.675</software>
+		<notes>Passport</notes>
+	</release>
+	<release>
+		<series>10.3.0</series>
+		<trueos>10.3.0.700</trueos>
+		<os>10.3.0.0700</os>
+		<radio>10.3.0.699</radio>
+		<software>N/A</software>
+		<notes>SDK Autoloader</notes>
+	</release>
+	<release>
+		<series>10.3.0</series>
+		<trueos>10.3.0.442</trueos>
+		<os>10.3.0.0442</os>
+		<radio>10.3.0.441</radio>
+		<software>N/A</software>
+		<notes>SDK Autoloader</notes>
+	</release>
+	<release>
+		<series>10.2.2</series>
+		<trueos></trueos>
+		<os>10.2.2.1609</os>
+		<radio>10.2.2.1532</radio>
+		<software>10.2.2.984</software>
+		<notes>SecuSmart</notes>
+	</release>
+	<release>
+		<series>10.2.2</series>
+		<trueos></trueos>
+		<os>10.2.2.1531</os>
+		<radio>10.2.2.1532</radio>
+		<software>10.2.2.932</software>
+		<notes>SecuSmart</notes>
+	</release>
+	<release>
+		<series>10.2.1</series>
+		<trueos></trueos>
+		<os>10.2.1.3442</os>
+		<radio>10.2.1.3140</radio>
+		<software>10.2.1.3062</software>
+		<notes>10.2.1.3247 bugfix</notes>
+	</release>
+	<release>
+		<series>10.2.1</series>
+		<trueos></trueos>
+		<os>10.2.1.3412</os>
+		<radio>10.2.1.3140</radio>
+		<software>10.2.1.3054</software>
+		<notes>10.2.1.3247 bugfix, Z3</notes>
+	</release>
+	<release>
+		<series>10.2.1</series>
+		<trueos></trueos>
+		<os>10.2.1.3358</os>
+		<radio>10.2.1.3359</radio>
+		<software>10.2.1.3023</software>
+		<notes>10.2.1.3253 bugfix, Sprint Q10 -- No STL100-1</notes>
+	</release>
+	<release>
+		<series>10.2.1</series>
+		<trueos></trueos>
+		<os>10.2.1.3337</os>
+		<radio>10.2.1.3338</radio>
+		<software>10.2.1.3014</software>
+		<notes>ATT</notes>
+	</release>
+	<release>
+		<series>10.2.1</series>
+		<trueos></trueos>
+		<os>10.2.1.3289</os>
+		<radio>10.2.1.3290</radio>
+		<software>10.2.1.2991</software>
+		<notes>VZW Z30 -- No STL100-1</notes>
+	</release>
+	<release>
+		<series>10.2.1</series>
+		<trueos></trueos>
+		<os>10.2.1.3253</os>
+		<radio>10.2.1.3182</radio>
+		<software>10.2.1.2976</software>
+		<notes>10.2.1.3181 bugfix, VZW Z10/Q10</notes>
+	</release>
+	<release>
+		<series>10.2.1</series>
+		<trueos></trueos>
+		<os>10.2.1.3247</os>
+		<radio>10.2.1.3140</radio>
+		<software>10.2.1.2977</software>
+		<notes>10.2.1.3175 bugfix</notes>
+	</release>
+	<release>
+		<series>10.2.1</series>
+		<trueos></trueos>
+		<os>10.2.1.3175</os>
+		<radio>10.2.1.3140</radio>
+		<software>10.2.1.2941</software>
+		<notes>10.2.1 MR MR</notes>
+	</release>
+	<release>
+		<series>10.2.1</series>
+		<trueos></trueos>
+		<os>10.2.1.2947</os>
+		<radio>10.2.1.2948</radio>
+		<software>10.2.1.2788</software>
+		<notes>Z3 -- Z3 radio</notes>
+	</release>
+	<release>
+		<series>10.2.1</series>
+		<trueos></trueos>
+		<os>10.2.1.2758</os>
+		<radio>10.2.1.2759</radio>
+		<software>10.2.1.2674</software>
+		<notes>Sprint Q10</notes>
+	</release>
+	<release>
+		<series>10.2.1</series>
+		<trueos></trueos>
+		<os>10.2.1.2294</os>
+		<radio>10.2.1.2142</radio>
+		<software>10.2.1.2192</software>
+		<notes>10.2.1.2141 bugfix -- No STL100-1</notes>
+	</release>
+	<release>
+		<series>10.2.1</series>
+		<trueos></trueos>
+		<os>10.2.1.2273</os>
+		<radio>10.2.1.2274</radio>
+		<software>10.2.1.2179</software>
+		<notes>ATT</notes>
+	</release>
+	<release>
+		<series>10.2.1</series>
+		<trueos></trueos>
+		<os>10.2.1.2234</os>
+		<radio>10.2.1.2235</radio>
+		<software>10.2.1.2160</software>
+		<notes>ShopBlackBerry</notes>
+	</release>
+	<release>
+		<series>10.2.1</series>
+		<trueos></trueos>
+		<os>10.2.1.2228</os>
+		<radio>10.2.1.2229</radio>
+		<software>10.2.1.2156</software>
+		<notes>T-Mobile</notes>
+	</release>
+	<release>
+		<series>10.2.1</series>
+		<trueos></trueos>
+		<os>10.2.1.2180</os>
+		<radio>10.2.1.2181</radio>
+		<software>10.2.1.2126</software>
+		<notes>VZW Z30 -- Z10/Z30/Q10</notes>
+	</release>
+	<release>
+		<series>10.2.1</series>
+		<trueos></trueos>
+		<os>10.2.1.2174</os>
+		<radio>10.2.1.2175</radio>
+		<software>10.2.1.2122</software>
+		<notes>VZW Z10/Q10</notes>
+	</release>
+	<release>
+		<series>10.2.1</series>
+		<trueos></trueos>
+		<os>10.2.1.2141</os>
+		<radio>10.2.1.2142</radio>
+		<software>10.2.1.2102</software>
+		<notes>10.2.1 MR</notes>
+	</release>
+	<release>
+		<series>10.2.1</series>
+		<trueos></trueos>
+		<os>10.2.1.1927</os>
+		<radio>10.2.1.1926</radio>
+		<software>N/A</software>
+		<notes>SDK Autoloader</notes>
+	</release>
+	<release>
+		<series>10.2.1</series>
+		<trueos></trueos>
+		<os>10.2.1.1925</os>
+		<radio>10.2.1.1899</radio>
+		<software>10.2.1.537</software>
+		<notes>10.2.1</notes>
+	</release>
+	<release>
+		<series>10.2.1</series>
+		<trueos></trueos>
+		<os>10.2.1.1057</os>
+		<radio>10.2.1.1056</radio>
+		<software>N/A</software>
+		<notes>SDK Autoloader</notes>
+	</release>
+	<release>
+		<series>10.2.0</series>
+		<trueos></trueos>
+		<os>10.2.0.1809</os>
+		<radio>10.2.0.1810</radio>
+		<software>10.2.0.431</software>
+		<notes>Cosmote Greece</notes>
+	</release>
+	<release>
+		<series>10.2.0</series>
+		<trueos></trueos>
+		<os>10.2.0.1803</os>
+		<radio>10.2.0.1804</radio>
+		<software>10.2.0.429</software>
+		<notes>10.2.0 MR</notes>
+	</release>
+	<release>
+		<series>10.2.0</series>
+		<trueos></trueos>
+		<os>10.2.0.1793</os>
+		<radio>10.2.0.1792</radio>
+		<software>N/A</software>
+		<notes>SDK Autoloader</notes>
+	</release>
+	<release>
+		<series>10.2.0</series>
+		<trueos></trueos>
+		<os>10.2.0.1791</os>
+		<radio>10.2.0.1792</radio>
+		<software>10.2.0.424</software>
+		<notes>10.2.0</notes>
+	</release>
+	<release>
+		<series>10.2.0</series>
+		<trueos></trueos>
+		<os>10.2.0.1767</os>
+		<radio>10.2.0.1768</radio>
+		<software>10.2.0.415</software>
+		<notes>10.2.0</notes>
+	</release>
+	<release>
+		<series>10.2.0</series>
+		<trueos></trueos>
+		<os>10.2.0.1761</os>
+		<radio>10.2.0.1762</radio>
+		<software>10.2.0.413</software>
+		<notes>10.2.0</notes>
+	</release>
+	<release>
+		<series>10.2.0</series>
+		<trueos></trueos>
+		<os>10.2.0.1725</os>
+		<radio>10.2.0.1726</radio>
+		<software>10.2.0.405</software>
+		<notes>Servers</notes>
+	</release>
+	<release>
+		<series>10.2.0</series>
+		<trueos></trueos>
+		<os>10.2.0.1521</os>
+		<radio>10.2.0.1522</radio>
+		<software>10.2.0.224</software>
+		<notes>Z30</notes>
+	</release>
+	<release>
+		<series>10.2.0</series>
+		<trueos></trueos>
+		<os>10.2.0.1445</os>
+		<radio>10.2.0.1444</radio>
+		<software>N/A</software>
+		<notes>SDK Autoloader</notes>
+	</release>
+	<release>
+		<series>10.2.0</series>
+		<trueos></trueos>
+		<os>10.2.0.1443</os>
+		<radio>10.2.0.1444</radio>
+		<software>10.2.0.210</software>
+		<notes>Z30</notes>
+	</release>
+	<release>
+		<series>10.2.0</series>
+		<trueos></trueos>
+		<os>10.2.0.1233</os>
+		<radio>10.2.0.1234</radio>
+		<software>10.2.0.262</software>
+		<notes>VZW Z30</notes>
+	</release>
+	<release>
+		<series>10.2.0</series>
+		<trueos></trueos>
+		<os>10.2.0.1157</os>
+		<radio>10.2.0.1156</radio>
+		<software>N/A</software>
+		<notes>SDK Autoloader</notes>
+	</release>
+	<release>
+		<series>10.2.0</series>
+		<trueos>10.2.0.783</trueos>
+		<os>10.2.0.0783</os>
+		<radio>10.2.0.784</radio>
+		<software>10.2.0.110</software>
+		<notes>Servers</notes>
+	</release>
+	<release>
+		<series>10.2.0</series>
+		<trueos>10.2.0.341</trueos>
+		<os>10.2.0.0341</os>
+		<radio>10.2.0.340</radio>
+		<software>N/A</software>
+		<notes>SDK Autoloader</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.4828</os>
+		<radio>10.1.0.4829</radio>
+		<software>10.1.0.4211</software>
+		<notes>Sprint Q10</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.4780</os>
+		<radio>10.1.0.4781</radio>
+		<software>10.1.0.4200</software>
+		<notes>T-Mobile</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.4699</os>
+		<radio>10.1.0.4700</radio>
+		<software>10.1.0.4189</software>
+		<notes>VZW Q10</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.4651</os>
+		<radio>10.1.0.4652</radio>
+		<software>10.1.0.4184</software>
+		<notes>10.1 MR</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.4633</os>
+		<radio>10.1.0.4634</radio>
+		<software>10.1.0.4181</software>
+		<notes>10.1 MR</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.4537</os>
+		<radio>10.1.0.4538</radio>
+		<software>10.1.0.4160</software>
+		<notes>10.1 MR</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.2420</os>
+		<radio>10.1.0.2421</radio>
+		<software>10.1.0.2320</software>
+		<notes>Servers</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.2354</os>
+		<radio>10.1.0.2355</radio>
+		<software>10.1.0.2312</software>
+		<notes>EMEA Z10</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.2342</os>
+		<radio>10.1.0.2343</radio>
+		<software>10.1.0.2309</software>
+		<notes>EMEA Q10/Q5</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.2151</os>
+		<radio>10.1.0.2152</radio>
+		<software>10.1.0.2039</software>
+		<notes>VZW Z10</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.2121</os>
+		<radio>10.1.0.2122</radio>
+		<software>10.1.0.2030</software>
+		<notes>ATT Q10</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.2074</os>
+		<radio>10.1.0.2075</radio>
+		<software>10.1.0.2019</software>
+		<notes>ATT Z10</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.2062</os>
+		<radio>10.1.0.2063</radio>
+		<software>10.1.0.2016</software>
+		<notes>Servers</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.2050</os>
+		<radio>10.1.0.2051</radio>
+		<software>10.1.0.2014</software>
+		<notes>Telus</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.2038</os>
+		<radio>10.1.0.2039</radio>
+		<software>10.1.0.2011</software>
+		<notes>VZW Q10 -- No STL100-1</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.2025</os>
+		<radio>10.1.0.2026</radio>
+		<software>10.1.0.2006</software>
+		<notes>T-Mobile, ATT Q10 -- No STL100-1</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.2009</os>
+		<radio>10.1.0.2010</radio>
+		<software>10.1.0.2002</software>
+		<notes>VZW Q10/Z10</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.1916</os>
+		<radio>10.1.0.1917</radio>
+		<software>10.1.0.317</software>
+		<notes>Servers</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.1910</os>
+		<radio>10.1.0.1911</radio>
+		<software>10.1.0.314</software>
+		<notes>Telstra</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.1762</os>
+		<radio>10.1.0.1763</radio>
+		<software>10.1.0.282</software>
+		<notes>Servers</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.1756</os>
+		<radio>10.1.0.1757</radio>
+		<software>10.1.0.278</software>
+		<notes>Servers</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.1720</os>
+		<radio>10.1.0.1721</radio>
+		<software>10.1.0.273</software>
+		<notes>10.1</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.1627</os>
+		<radio>10.1.0.1628</radio>
+		<software>10.1.0.264</software>
+		<notes>Servers</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.1609</os>
+		<radio>10.1.0.1610</radio>
+		<software>10.1.0.260</software>
+		<notes>Servers</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.1485</os>
+		<radio>10.1.0.1484</radio>
+		<software>N/A</software>
+		<notes>SDK Autoloader</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.1483</os>
+		<radio>10.1.0.1484</radio>
+		<software>10.1.0.238</software>
+		<notes>Q10</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.1022</os>
+		<radio>10.1.0.1021</radio>
+		<software>10.1.0.138</software>
+		<notes>SDK Autoloader</notes>
+	</release>
+	<release>
+		<series>10.1</series>
+		<trueos></trueos>
+		<os>10.1.0.1002</os>
+		<radio>10.1.0.1003</radio>
+		<software>10.1.0.132</software>
+		<notes>China?</notes>
+	</release>
+	<release>
+		<series>10.0</series>
+		<trueos>10.0.10.927</trueos>
+		<os>10.0.10.0927</os>
+		<radio>10.0.10.928</radio>
+		<software>10.0.10.131</software>
+		<notes>Servers</notes>
+	</release>
+	<release>
+		<series>10.0</series>
+		<trueos>10.0.10.822</trueos>
+		<os>10.0.10.0822</os>
+		<radio>10.0.10.823</radio>
+		<software>10.0.10.116</software>
+		<notes>ATT Z10</notes>
+	</release>
+	<release>
+		<series>10.0</series>
+		<trueos>10.0.10.738</trueos>
+		<os>10.0.10.0738</os>
+		<radio>10.0.10.739</radio>
+		<software>10.0.10.99</software>
+		<notes>EMEA Z10</notes>
+	</release>
+	<release>
+		<series>10.0</series>
+		<trueos>10.0.10.690</trueos>
+		<os>10.0.10.0690</os>
+		<radio>10.0.10.691</radio>
+		<software>10.0.10.90</software>
+		<notes>EMEA Z10</notes>
+	</release>
+	<release>
+		<series>10.0</series>
+		<trueos>10.0.10.684</trueos>
+		<os>10.0.10.0684</os>
+		<radio>10.0.10.685</radio>
+		<software>10.0.10.88</software>
+		<notes>ATT Z10</notes>
+	</release>
+	<release>
+		<series>10.0</series>
+		<trueos>10.0.10.672</trueos>
+		<os>10.0.10.0672</os>
+		<radio>10.0.10.673</radio>
+		<software>10.0.10.85</software>
+		<notes>10.0.10 (NA), T-Mobile Z10</notes>
+	</release>
+	<release>
+		<series>10.0</series>
+		<trueos>10.0.10.648</trueos>
+		<os>10.0.10.0648</os>
+		<radio>10.0.10.649</radio>
+		<software>10.0.10.82</software>
+		<notes>10.0.10 (EMEA)</notes>
+	</release>
+	<release>
+		<series>10.0</series>
+		<trueos>10.0.10.263</trueos>
+		<os>10.0.10.0263</os>
+		<radio>10.0.10.262</radio>
+		<software>10.9.10.35</software>
+		<notes>Dev Alpha</notes>
+	</release>
+	<release>
+		<series>10.0</series>
+		<trueos>10.0.10.263</trueos>
+		<os>10.0.10.0262</os>
+		<radio>10.0.10.262</radio>
+		<software>N/A</software>
+		<notes>SDK Autoloader</notes>
+	</release>
+	<release>
+		<series>10.0</series>
+		<trueos>10.0.10.261</trueos>
+		<os>10.0.10.0261</os>
+		<radio>10.0.10.262</radio>
+		<software>10.0.10.58</software>
+		<notes>Servers</notes>
+	</release>
+	<release>
+		<series>10.0</series>
+		<trueos>10.0.9.2743</trueos>
+		<os>10.0.09.2743</os>
+		<radio>10.0.9.2744</radio>
+		<software>10.0.9.422</software>
+		<notes>VZW Z10</notes>
+	</release>
+	<release>
+		<series>10.0</series>
+		<trueos>10.0.9.2709</trueos>
+		<os>10.0.09.2709</os>
+		<radio>10.0.9.2710</radio>
+		<software>10.0.9.412</software>
+		<notes>VZW Z10</notes>
+	</release>
+	<release>
+		<series>10.0</series>
+		<trueos>10.0.9.2598</trueos>
+		<os>10.0.09.2598</os>
+		<radio>10.0.9.2599</radio>
+		<software>10.0.9.389</software>
+		<notes>Servers -- VZW Z10</notes>
+	</release>
+	<release>
+		<series>10.0</series>
+		<trueos>10.0.9.2592</trueos>
+		<os>10.0.09.2592</os>
+		<radio>10.0.9.2593</radio>
+		<software>10.0.9.388</software>
+		<notes>Servers -- VZW Z10</notes>
+	</release>
+	<release>
+		<series>10.0</series>
+		<trueos>10.0.9.2466</trueos>
+		<os>10.0.09.2466</os>
+		<radio>10.0.9.2467</radio>
+		<software>10.0.9.361</software>
+		<notes>Servers -- VZW Z10</notes>
+	</release>
+	<release>
+		<series>10.0</series>
+		<trueos>10.0.9.2460</trueos>
+		<os>10.0.09.2460</os>
+		<radio>10.0.9.2461</radio>
+		<software>10.0.9.359</software>
+		<notes>Servers -- VZW Z10</notes>
+	</release>
+	<release>
+		<series>10.0</series>
+		<trueos>10.0.9.2372</trueos>
+		<os>10.0.09.2372</os>
+		<radio>10.0.9.2373</radio>
+		<software>10.0.9.348</software>
+		<notes>Z10 Launch</notes>
+	</release>
+	<release>
+		<series>10.0</series>
+		<trueos>10.0.9.2320</trueos>
+		<os>10.0.09.2320</os>
+		<radio>10.0.9.2319</radio>
+		<software>10.9.9.339</software>
+		<notes>Dev Alpha</notes>
+	</release>
+	<release>
+		<series>10.0</series>
+		<trueos>10.0.9.2246</trueos>
+		<os>10.0.09.2246</os>
+		<radio>10.0.9.2247</radio>
+		<software>10.0.9.331</software>
+		<notes>Servers</notes>
+	</release>
+	<release>
+		<series>10.0</series>
+		<trueos>10.0.9.1675</trueos>
+		<os>10.0.09.1675</os>
+		<radio>10.0.9.1674</radio>
+		<software>10.0.9.253</software>
+		<notes>Dev Alpha</notes>
+	</release>
+	<release>
+		<series>10.0</series>
+		<trueos>10.0.9.1407</trueos>
+		<os>10.0.09.1407</os>
+		<radio>10.0.9.1408</radio>
+		<software>10.0.9.205</software>
+		<notes>Servers</notes>
+	</release>
+	<release>
+		<series>02.1</series>
+		<trueos>2.1.0.1917</trueos>
+		<os>02.1.0.1917</os>
+		<radio>2.1.0.1283</radio>
+		<software>2.1.0.1362</software>
+		<notes>4G PlayBook (v2 radio)</notes>
+	</release>
+	<release>
+		<series>02.1</series>
+		<trueos>2.1.0.1753</trueos>
+		<os>02.1.0.1754</os>
+		<radio>2.1.0.1283</radio>
+		<software>2.1.0.1347</software>
+		<notes>4G PlayBook (v2 radio)</notes>
+	</release>
+	<release>
+		<series>02.1</series>
+		<trueos>2.1.0.1753</trueos>
+		<os>02.1.0.1753</os>
+		<radio>N/A</radio>
+		<software>2.1.0.1345</software>
+		<notes>WiFi PlayBook</notes>
+	</release>
+	<release>
+		<series>02.1</series>
+		<trueos>2.1.0.1526</trueos>
+		<os>02.1.0.1527</os>
+		<radio>2.1.0.1283</radio>
+		<software>2.1.0.1338</software>
+		<notes>4G PlayBook (v2 radio)</notes>
+	</release>
+	<release>
+		<series>02.1</series>
+		<trueos>2.1.0.1526</trueos>
+		<os>02.1.0.1526</os>
+		<radio>N/A</radio>
+		<software>2.1.0.1336</software>
+		<notes>WiFi PlayBook</notes>
+	</release>
+	<release>
+		<series>02.1</series>
+		<trueos>2.1.0.1314</trueos>
+		<os>02.1.0.1314</os>
+		<radio>N/A</radio>
+		<software>2.1.0.1309</software>
+		<notes>WiFi PlayBook</notes>
+	</release>
+	<release>
+		<series>02.1</series>
+		<trueos>2.1.0.1282</trueos>
+		<os>02.1.0.1282</os>
+		<radio>2.1.0.1283</radio>
+		<software>2.1.0.1302</software>
+		<notes>4G PlayBook (v2 radio)</notes>
+	</release>
+	<release>
+		<series>02.1</series>
+		<trueos>2.1.0.1088</trueos>
+		<os>02.1.0.1088</os>
+		<radio>2.1.0.1013</radio>
+		<software>2.1.0.1088</software>
+		<notes>4G PlayBook (v1 radio)</notes>
+	</release>
+	<release>
+		<series>02.1</series>
+		<trueos>2.1.0.1032</trueos>
+		<os>02.1.0.1032</os>
+		<radio>2.1.0.1013</radio>
+		<software>2.1.0.1032</software>
+		<notes>4G PlayBook (v1 radio)</notes>
+	</release>
+	<release>
+		<series>02.0</series>
+		<trueos>2.0.1.668</trueos>
+		<os>02.0.1.668</os>
+		<radio>2.0.1.677</radio>
+		<software>2.0.1.668</software>
+		<notes>4G PlayBook (v1 radio)</notes>
+	</release>
 </repo>

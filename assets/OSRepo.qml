@@ -76,30 +76,13 @@ Sheet {
                 listItemComponents: [
                     ListItemComponent {
                         type: "header"
-                        Container {
-                            Label {
-                                text: ""
-                            }
-                        }
                     },
                     ListItemComponent {
                         type: "item"
-                        Container {
-                            Label {
-                                text: "OS: " + (ListItemData.trueos == "" ? ListItemData.os : ListItemData.trueos)
-                                textStyle.fontWeight: FontWeight.Bold
-                                multiline: true
-                            }
-                            Label {
-                                text: "Software Release: " + ListItemData.software + " | Radio: " + ListItemData.radio
-                            }
-                            Label {
-                                text: ListItemData.notes
-                                textStyle.fontSize: FontSize.Small
-                                multiline: true
-                            }
-                            Divider {
-                            }
+                        StandardListItem {
+                            title: (ListItemData.trueos == "" ? ListItemData.os : ListItemData.trueos)
+                            description: "SR: " + ListItemData.software + " | Radio: " + ListItemData.radio
+                            status: ListItemData.notes
                         }
                     }
                 ]
@@ -115,10 +98,10 @@ Sheet {
         GroupDataModel {
             id: repoDataModel
             sortingKeys: [
-            "os"
+            "series"
             ]
-            sortedAscending: false
             grouping: ItemGrouping.ByFullValue
+            sortedAscending: false
         },
         DataSource {
             id: repoDataSource
@@ -142,9 +125,6 @@ Sheet {
         SystemToast {
             id: xmlToast
             body: qsTr("Values copied to OS Downloader") + Retranslate.onLanguageChanged
-        },
-        LayoutUpdateHandler {
-            id: listhandler
         }
     ]
     onCreationCompleted: {
