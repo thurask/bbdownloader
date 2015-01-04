@@ -58,18 +58,18 @@
 	</hardware>
 	<hardware>
 		<id>8D00270A</id>
-		<name>Dev Alpha C</name>
-		<variant>SQN100-3</variant>
+		<name>Dev Alpha</name>
+		<variant>C SQN100-3</variant>
 	</hardware>
 	<hardware>
 		<id>04002307</id>
-		<name>Dev Alpha A</name>
-		<variant>PRO100-2</variant>
+		<name>Dev Alpha</name>
+		<variant>A PRO100-2</variant>
 	</hardware>
 	<hardware>
 		<id>04002607</id>
-		<name>Dev Alpha B</name>
-		<variant>STL100-1</variant>
+		<name>Dev Alpha</name>
+		<variant>B STL100-1</variant>
 	</hardware>
 	<hardware>
 		<id>84002A0A</id>
@@ -220,6 +220,11 @@
 		<id>06001A06</id>
 		<name>PlayBook</name>
 		<variant>WiFi</variant>
+	</hardware>
+	<hardware>
+		<id>0C001A06</id>
+		<name>PlayBook</name>
+		<variant>Verizon LTE</variant>
 	</hardware>
 	<hardware>
 		<id>0D001A06</id>
