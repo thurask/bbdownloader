@@ -110,6 +110,14 @@
         <source>Could not access online file. Loading local copy.</source>
         <translation>Could not access online file. Loading local copy.</translation>
     </message>
+    <message>
+        <source>Invalid</source>
+        <translation>Invalid</translation>
+    </message>
+    <message>
+        <source>Valid</source>
+        <translation>Valid</translation>
+    </message>
 </context>
 <context>
     <name>CustomTitleBar</name>

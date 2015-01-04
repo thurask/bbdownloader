@@ -3,6 +3,12 @@
 <repo>
 	<device>
 		<name>PlayBook</name>
+		<variant>WiFi</variant>
+		<id>RDJ21WW</id>
+		<url></url>
+	</device>
+	<device>
+		<name>PlayBook</name>
 		<variant>HSPA+</variant>
 		<id>REH51UW</id>
 		<url>21167</url>
@@ -14,10 +20,34 @@
 		<url>21212</url>
 	</device>
 	<device>
+		<name>PlayBook</name>
+		<variant>Verizon LTE</variant>
+		<id>REF31LW</id>
+		<url></url>
+	</device>
+	<device>
+		<name>Dev Alpha</name>
+		<variant>Dev Alpha B</variant>
+		<id>RFG82UW</id>
+		<url></url>
+	</device>
+	<device>
+		<name>Dev Alpha</name>
+		<variant>Dev Alpha C</variant>
+		<id>RFN82UW</id>
+		<url></url>
+	</device>
+	<device>
 		<name>Z10</name>
 		<variant>STL100-1</variant>
 		<id>RFG81UW</id>
 		<url>21737</url>
+	</device>
+	<device>
+		<name>Z10</name>
+		<variant>STL100-2</variant>
+		<id>RFH121LW</id>
+		<url></url>
 	</device>
 	<device>
 		<name>Z10</name>
@@ -32,6 +62,12 @@
 		<url>21990</url>
 	</device>
 	<device>
+		<name>Z10</name>
+		<variant>STL100-4</variant>
+		<id>RFA91LW</id>
+		<url></url>
+	</device>
+	<device>
 		<name>Q10</name>
 		<variant>SQN100-1</variant>
 		<id>RFL111LW</id>
@@ -39,9 +75,21 @@
 	</device>
 	<device>
 		<name>Q10</name>
+		<variant>SQN100-2</variant>
+		<id>RFM121LW</id>
+		<url></url>
+	</device>
+	<device>
+		<name>Q10</name>
 		<variant>SQN100-3</variant>
 		<id>RFN81UW</id>
 		<url>22693</url>
+	</device>
+	<device>
+		<name>Q10</name>
+		<variant>SQN100-4</variant>
+		<id>RFQ111LW</id>
+		<url></url>
 	</device>
 	<device>
 		<name>Q10</name>
@@ -62,10 +110,34 @@
 		<url>24132</url>
 	</device>
 	<device>
+		<name>Q5</name>
+		<variant>SQR100-3</variant>
+		<id>RFT81UW</id>
+		<url></url>
+	</device>
+	<device>
 		<name>Z30</name>
 		<variant>STA100-1</variant>
 		<id>RFV121LW</id>
 		<url>23752</url>
+	</device>
+	<device>
+		<name>Z30</name>
+		<variant>STA100-2</variant>
+		<id>RFW121LW</id>
+		<url></url>
+	</device>
+	<device>
+		<name>Z30</name>
+		<variant>STA100-3</variant>
+		<id>RFX101LW</id>
+		<url></url>
+	</device>
+	<device>
+		<name>Z30</name>
+		<variant>STA100-4</variant>
+		<id>RGB141LW</id>
+		<url></url>
 	</device>
 	<device>
 		<name>Z30</name>
@@ -74,10 +146,106 @@
 		<url>24057</url>
 	</device>
 	<device>
+		<name>Z30</name>
+		<variant>STA100-6</variant>
+		<id>RGU131LW</id>
+		<url></url>
+	</device>
+	<device>
+		<name>Z5</name>
+		<variant>STB100-1</variant>
+		<id>RGH111LW</id>
+		<url></url>
+	</device>
+	<device>
+		<name>Z5</name>
+		<variant>STB100-2</variant>
+		<id>RGJ121LW</id>
+		<url></url>
+	</device>
+	<device>
+		<name>Z5</name>
+		<variant>STB100-3</variant>
+		<id>RGL121LW</id>
+		<url></url>
+	</device>
+	<device>
+		<name>Z5</name>
+		<variant>STB100-4</variant>
+		<id>RGM121LW</id>
+		<url></url>
+	</device>
+	<device>
+		<name>Z5</name>
+		<variant>STB100-5</variant>
+		<id>RGK111LW</id>
+		<url></url>
+	</device>
+	<device>
+		<name>Q3</name>
+		<variant>SQC100-1</variant>
+		<id>RGP71UW</id>
+		<url></url>
+	</device>
+	<device>
+		<name>Q3</name>
+		<variant>SQC100-2</variant>
+		<id>RGN81UW</id>
+		<url></url>
+	</device>
+	<device>
+		<name>Z3</name>
+		<variant>STJ100-1</variant>
+		<id></id>
+		<url></url>
+	</device>
+	<device>
+		<name>Z3</name>
+		<variant>STJ100-2</variant>
+		<id>RHJ81UW</id>
+		<url></url>
+	</device>
+	<device>
+		<name>P'9982</name>
+		<variant>STK100-1</variant>
+		<id>RGE111LW</id>
+		<url></url>
+	</device>
+	<device>
+		<name>P'9982</name>
+		<variant>STK100-2</variant>
+		<id>RGF111LW</id>
+		<url></url>
+	</device>
+	<device>
+		<name>P'9983</name>
+		<variant>SQK100-1</variant>
+		<id>RHB121LW</id>
+		<url></url>
+	</device>
+	<device>
+		<name>P'9983</name>
+		<variant>SQK100-2</variant>
+		<id>RHA111LW</id>
+		<url></url>
+	</device>
+	<device>
 		<name>Passport</name>
 		<variant>SQW100-1</variant>
 		<id>RGY181LW</id>
 		<url>25955</url>
+	</device>
+	<device>
+		<name>Passport</name>
+		<variant>SQW100-2</variant>
+		<id></id>
+		<url></url>
+	</device>
+	<device>
+		<name>Passport</name>
+		<variant>SQW100-3</variant>
+		<id>RGV161LW</id>
+		<url></url>
 	</device>
 	<device>
 		<name>Classic</name>
@@ -93,8 +261,20 @@
 	</device>
 	<device>
 		<name>Classic</name>
+		<variant>SQC100-3</variant>
+		<id>RHF141LW</id>
+		<url></url>
+	</device>
+	<device>
+		<name>Classic</name>
 		<variant>SQC100-4</variant>
 		<id>RHG161LW</id>
 		<url>26628</url>
+	</device>
+	<device>
+		<name>Classic</name>
+		<variant>SQC100-5</variant>
+		<id>RHF142LW</id>
+		<url></url>
 	</device>
 </repo>
