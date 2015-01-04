@@ -71,14 +71,17 @@ Page {
                     StandardListItem {
                         title: ListItemData.variant
                         description: ListItemData.id
+                        enabled: (ListItemData.url == "" ? false : true)
                     }
                 }
             ]
             onTriggered: {
                 var indexi = repoDataModel.data(indexPath);  
-                selectedid = indexi.url
-                var wview = certPageDef.createObject()
-                wview.open();
+                if (indexi.url != ""){
+                    selectedid = indexi.url
+                    var wview = certPageDef.createObject()
+                    wview.open();
+                }
             }
             scrollIndicatorMode: ScrollIndicatorMode.ProportionalBar
         }
