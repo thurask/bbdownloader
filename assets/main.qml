@@ -26,12 +26,12 @@ TabbedPane {
             title: qsTr("Keyboard Shortcuts") + Retranslate.onLanguageChanged
             cancelButton.enabled: false
             customButton.enabled: false
-            body: qsTr("o = OS Link Generator") + Retranslate.onLanguageChanged + "\n"
-            + qsTr("l = OS Lookup Tool") + Retranslate.onLanguageChanged + "\n"
-            + qsTr("e = Engineering Screens") + Retranslate.onLanguageChanged + "\n"
-            + qsTr("s = System Info") + Retranslate.onLanguageChanged + "\n"
-            + qsTr("f = File Operations") + Retranslate.onLanguageChanged + "\n"
-            + qsTr("p = Certification Browser") + Retranslate.onLanguageChanged
+            body: qsTr("%1 = OS Link Generator").arg(qsTr("o") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n"
+            + qsTr("%1 = OS Lookup Tool").arg(qsTr("l") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n"
+            + qsTr("%1 = Engineering Screens").arg(qsTr("e") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n"
+            + qsTr("%1 = System Info").arg(qsTr("s") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n"
+            + qsTr("%1 = File Operations").arg(qsTr("f") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n"
+            + qsTr("%1 = Certification Browser").arg(qsTr("p") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged
             includeRememberMe: false
             rememberMeChecked: false
         },

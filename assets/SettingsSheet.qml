@@ -94,12 +94,12 @@ Sheet {
                         onClicked: {
                             Settings.saveValueFor("defaultdir", "shared/downloads/bbdownloader/");
                             _manager.setDefaultDir("shared/downloads/bbdownloader/");
-                            defaultlabel.setText(qsTr("Current Directory: ") + Retranslate.onLanguageChanged + "\n" + Settings.getValueFor("defaultdir", "shared/downloads/bbdownloader/"))
+                            defaultlabel.setText(qsTr("Current Directory:\n%1").arg(Settings.getValueFor("defaultdir", "shared/downloads/bbdownloader/")) + Retranslate.onLanguageChanged)
                         }
                     }
                     Label {
                         id: defaultlabel
-                        text: qsTr("Current Directory: ") + Retranslate.onLanguageChanged + "\n" + Settings.getValueFor("defaultdir", "shared/downloads/bbdownloader/")
+                        text: qsTr("Current Directory:\n%1").arg(Settings.getValueFor("defaultdir", "shared/downloads/bbdownloader/")) + Retranslate.onLanguageChanged
                         horizontalAlignment: HorizontalAlignment.Center
                         multiline: true
                         textStyle.textAlign: TextAlign.Center
@@ -134,7 +134,7 @@ Sheet {
             onFileSelected: {
                 Settings.saveValueFor("defaultdir", (selectedFiles[0] + "/"))
                 _manager.setDefaultDir(selectedFiles[0] + "/")
-                defaultlabel.setText(qsTr("Current Directory: ") + Retranslate.onLanguageChanged + "\n" + Settings.getValueFor("defaultdir", "shared/downloads/bbdownloader/"))
+                defaultlabel.setText(qsTr("Current Directory:\n%1").arg(Settings.getValueFor("defaultdir", "shared/downloads/bbdownloader/")) + Retranslate.onLanguageChanged)
             }
         },
         SystemToast {

@@ -58,10 +58,10 @@ Page {
         ActionItem {
             id: osclipboard
             enabled: false
-            title: qsTr("Copy OS Links") + Retranslate.onLanguageChanged
+            title: (ostext.text.indexOf("Normal URL") != -1 ? qsTr("Copy Autoloader Links") + Retranslate.onLanguageChanged : qsTr("Copy OS Links") + Retranslate.onLanguageChanged)
             onTriggered: {
                 _manager.copyOsLinks(hashedswversion, osversion, true)
-                linkexporttoast.body = qsTr("All URLs copied") + Retranslate.onLanguageChanged;
+                linkexporttoast.body = (ostext.text.indexOf("Normal URL") != -1 ? qsTr("Autoloader URLs copied") + Retranslate.onLanguageChanged : qsTr("OS URLs copied") + Retranslate.onLanguageChanged);
                 linkexporttoast.show();
             }
             ActionBar.placement: ActionBarPlacement.InOverflow
@@ -114,7 +114,7 @@ Page {
                     }
                     TextField {
                         id: osver_input
-                        hintText: qsTr("Target OS Version") + Retranslate.onLanguageChanged
+                        hintText: qsTr("OS Version") + Retranslate.onLanguageChanged
                         onTextChanging: {
                             osversion = osver_input.text
                             _swlookup.post(osversion, "https://cs.sl.blackberry.com/cse/srVersionLookup/2.0.0/");
@@ -153,7 +153,7 @@ Page {
                     }
                     TextField {
                         id: radiover_input
-                        hintText: qsTr("Target Radio Version") + Retranslate.onLanguageChanged
+                        hintText: qsTr("Radio Version") + Retranslate.onLanguageChanged
                         onTextChanging: {
                             radioversion = radiover_input.text
                         }
@@ -187,7 +187,7 @@ Page {
                     }
                     TextField {
                         id: swver_input
-                        hintText: qsTr("Target SW Version") + Retranslate.onLanguageChanged
+                        hintText: qsTr("Software Version") + Retranslate.onLanguageChanged
                         onTextChanging: {
                             swrelease = swver_input.text
                             hashCalculateSha.calculateHash(swrelease)

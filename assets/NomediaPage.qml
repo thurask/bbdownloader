@@ -46,7 +46,7 @@ Page {
                     horizontalAlignment: HorizontalAlignment.Center
                 }
                 Label {
-                    text: qsTr(".nomedia File Exists: ") + Retranslate.onLanguageChanged + (fileexists == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)
+                    text: qsTr(".nomedia File Exists: %1").arg((fileexists == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged
                     horizontalAlignment: HorizontalAlignment.Center
                 }
                 Container {

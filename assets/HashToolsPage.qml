@@ -6,7 +6,7 @@ Container {
     property bool pickermode
     property string hashmode
     Header {
-        title: "Hash Tools" + Retranslate.onLanguageChanged
+        title: qsTr("Hash Tools") + Retranslate.onLanguageChanged
     }
     attachedObjects: [
         FilePicker {
@@ -92,7 +92,7 @@ Container {
             Label {
                 id: resultLabel
                 horizontalAlignment: HorizontalAlignment.Center
-                text: qsTr("%1").arg(picker.selectedFile)
+                text: picker.selectedFile
                 multiline: true
             }         
         }

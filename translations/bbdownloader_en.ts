@@ -254,10 +254,6 @@
         <translation>Choose a file</translation>
     </message>
     <message>
-        <source>%1</source>
-        <translation>%1</translation>
-    </message>
-    <message>
         <source>Hashed output (MD4):</source>
         <translation>Hashed output (MD4):</translation>
     </message>
@@ -288,6 +284,10 @@
     <message>
         <source>Hash copied to clipboard</source>
         <translation>Hash copied to clipboard</translation>
+    </message>
+    <message>
+        <source>Hash Tools</source>
+        <translation>Hash Tools</translation>
     </message>
 </context>
 <context>
@@ -365,10 +365,6 @@ https://github.com/thurask/bbdownloader</translation>
         <translation>Current Directory:</translation>
     </message>
     <message>
-        <source>.nomedia File Exists: </source>
-        <translation>.nomedia File Exists: </translation>
-    </message>
-    <message>
         <source>True</source>
         <translation>True</translation>
     </message>
@@ -392,28 +388,20 @@ https://github.com/thurask/bbdownloader</translation>
         <source>File deleted!</source>
         <translation>File deleted!</translation>
     </message>
+    <message>
+        <source>.nomedia File Exists: %1</source>
+        <translation>.nomedia File Exists: %1</translation>
+    </message>
 </context>
 <context>
     <name>OSDownloader</name>
-    <message>
-        <source>Target OS Version</source>
-        <translation>Target OS Version</translation>
-    </message>
     <message>
         <source>Lookup</source>
         <translation>Lookup</translation>
     </message>
     <message>
-        <source>Target Radio Version</source>
-        <translation>Target Radio Version</translation>
-    </message>
-    <message>
         <source>OS Version + 1</source>
         <translation>OS Version + 1</translation>
-    </message>
-    <message>
-        <source>Target SW Version</source>
-        <translation>Target SW Version</translation>
     </message>
     <message>
         <source>Known Software</source>
@@ -471,6 +459,30 @@ https://github.com/thurask/bbdownloader</translation>
         <source>Variant URLs copied</source>
         <translation>Variant URLs copied</translation>
     </message>
+    <message>
+        <source>Copy Autoloader Links</source>
+        <translation>Copy Autoloader Links</translation>
+    </message>
+    <message>
+        <source>Autoloader URLs copied</source>
+        <translation>Autoloader URLs copied</translation>
+    </message>
+    <message>
+        <source>OS URLs copied</source>
+        <translation>OS URLs copied</translation>
+    </message>
+    <message>
+        <source>OS Version</source>
+        <translation>OS Version</translation>
+    </message>
+    <message>
+        <source>Radio Version</source>
+        <translation>Radio Version</translation>
+    </message>
+    <message>
+        <source>Software Version</source>
+        <translation>Software Version</translation>
+    </message>
 </context>
 <context>
     <name>OSRepo</name>
@@ -487,10 +499,6 @@ https://github.com/thurask/bbdownloader</translation>
         <translation>Refresh</translation>
     </message>
     <message>
-        <source>Values copied to OS Downloader</source>
-        <translation>Values copied to OS Downloader</translation>
-    </message>
-    <message>
         <source>Use local file</source>
         <translation>Use local file</translation>
     </message>
@@ -505,6 +513,14 @@ https://github.com/thurask/bbdownloader</translation>
     <message>
         <source>Known Software (network copy)</source>
         <translation>Known Software (network copy)</translation>
+    </message>
+    <message>
+        <source>SR: %1 | Radio: %2</source>
+        <translation>SR: %1 | Radio: %2</translation>
+    </message>
+    <message>
+        <source>Values copied</source>
+        <translation>Values copied</translation>
     </message>
 </context>
 <context>
@@ -528,10 +544,6 @@ https://github.com/thurask/bbdownloader</translation>
     <message>
         <source>Download Folder</source>
         <translation>Download Folder</translation>
-    </message>
-    <message>
-        <source>Current Directory: </source>
-        <translation>Current Directory:</translation>
     </message>
     <message>
         <source>Change Theme</source>
@@ -629,6 +641,12 @@ https://github.com/thurask/bbdownloader</translation>
         <source>Dark Magenta</source>
         <translation>Dark Magenta</translation>
     </message>
+    <message>
+        <source>Current Directory:
+%1</source>
+        <translation>Current Directory:
+%1</translation>
+    </message>
 </context>
 <context>
     <name>SwLookup</name>
@@ -644,56 +662,12 @@ https://github.com/thurask/bbdownloader</translation>
         <translation>Hardware</translation>
     </message>
     <message>
-        <source>Device Name: </source>
-        <translation>Device Name: </translation>
-    </message>
-    <message>
-        <source>Model Name: </source>
-        <translation>Model Name: </translation>
-    </message>
-    <message>
-        <source>Model Number: </source>
-        <translation>Model Number: </translation>
-    </message>
-    <message>
-        <source>Hardware ID: </source>
-        <translation>Hardware ID: </translation>
-    </message>
-    <message>
-        <source>Serial Number: </source>
-        <translation>Serial Number: </translation>
-    </message>
-    <message>
         <source>Memory</source>
         <translation>Memory</translation>
     </message>
     <message>
-        <source>Free Device Memory: </source>
-        <translation>Free Device Memory: </translation>
-    </message>
-    <message>
-        <source>Total Device Memory: </source>
-        <translation>Total Device Memory: </translation>
-    </message>
-    <message>
         <source>Battery</source>
         <translation>Battery</translation>
-    </message>
-    <message>
-        <source>Condition: </source>
-        <translation>Condition: </translation>
-    </message>
-    <message>
-        <source>Remaining: </source>
-        <translation>Remaining: </translation>
-    </message>
-    <message>
-        <source>Cycle Count: </source>
-        <translation>Cycle Count: </translation>
-    </message>
-    <message>
-        <source>Temperature: </source>
-        <translation>Temperature: </translation>
     </message>
     <message>
         <source>Device Properties</source>
@@ -712,22 +686,6 @@ https://github.com/thurask/bbdownloader</translation>
         <translation>Development Mode</translation>
     </message>
     <message>
-        <source>PIN: </source>
-        <translation>PIN: </translation>
-    </message>
-    <message>
-        <source>IMEI: </source>
-        <translation>IMEI: </translation>
-    </message>
-    <message>
-        <source>MEID: </source>
-        <translation>MEID: </translation>
-    </message>
-    <message>
-        <source>HDMI: </source>
-        <translation>HDMI: </translation>
-    </message>
-    <message>
         <source>OK</source>
         <translation>OK</translation>
     </message>
@@ -740,14 +698,6 @@ https://github.com/thurask/bbdownloader</translation>
         <translation>SIM Card</translation>
     </message>
     <message>
-        <source>Mobile Country Code (MCC): </source>
-        <translation>Mobile Country Code (MCC): </translation>
-    </message>
-    <message>
-        <source>Mobile Network Code (MNC): </source>
-        <translation>Mobile Network Code (MNC): </translation>
-    </message>
-    <message>
         <source>Micro HDMI</source>
         <translation>Micro HDMI</translation>
     </message>
@@ -756,60 +706,8 @@ https://github.com/thurask/bbdownloader</translation>
         <translation>None</translation>
     </message>
     <message>
-        <source>OS Version: </source>
-        <translation>OS Version: </translation>
-    </message>
-    <message>
-        <source>Radio Version: </source>
-        <translation>Radio Version: </translation>
-    </message>
-    <message>
-        <source>NFC Firmware: </source>
-        <translation>NFC Firmware: </translation>
-    </message>
-    <message>
-        <source>NFC Stack: </source>
-        <translation>NFC Stack: </translation>
-    </message>
-    <message>
-        <source>WiFi: </source>
-        <translation>WiFi: </translation>
-    </message>
-    <message>
-        <source>Webkit: </source>
-        <translation>Webkit: </translation>
-    </message>
-    <message>
         <source>Display</source>
         <translation>Display</translation>
-    </message>
-    <message>
-        <source>Physical Size: </source>
-        <translation>Physical Size: </translation>
-    </message>
-    <message>
-        <source> mm x </source>
-        <translation> mm x </translation>
-    </message>
-    <message>
-        <source> mm</source>
-        <translation> mm</translation>
-    </message>
-    <message>
-        <source>Pixel Size: </source>
-        <translation>Pixel Size: </translation>
-    </message>
-    <message>
-        <source>Resolution: </source>
-        <translation>Resolution: </translation>
-    </message>
-    <message>
-        <source>Technology: </source>
-        <translation>Technology: </translation>
-    </message>
-    <message>
-        <source>State: </source>
-        <translation>State: </translation>
     </message>
     <message>
         <source>Ready</source>
@@ -836,20 +734,12 @@ https://github.com/thurask/bbdownloader</translation>
         <translation>Not Detected</translation>
     </message>
     <message>
-        <source>Present: </source>
-        <translation>Present: </translation>
-    </message>
-    <message>
         <source>True</source>
         <translation>True</translation>
     </message>
     <message>
         <source>False</source>
         <translation>False</translation>
-    </message>
-    <message>
-        <source>Charging State: </source>
-        <translation>Charging State: </translation>
     </message>
     <message>
         <source>Full</source>
@@ -868,22 +758,6 @@ https://github.com/thurask/bbdownloader</translation>
         <translation>Not Charging</translation>
     </message>
     <message>
-        <source>Full Charge Capacity: </source>
-        <translation>Full Charge Capacity: </translation>
-    </message>
-    <message>
-        <source> mAh</source>
-        <translation> mAh</translation>
-    </message>
-    <message>
-        <source>RxID: </source>
-        <translation>RxID: </translation>
-    </message>
-    <message>
-        <source>Aspect: </source>
-        <translation>Aspect: </translation>
-    </message>
-    <message>
         <source>Square</source>
         <translation>Square</translation>
     </message>
@@ -894,26 +768,6 @@ https://github.com/thurask/bbdownloader</translation>
     <message>
         <source>Landscape</source>
         <translation>Landscape</translation>
-    </message>
-    <message>
-        <source>Diagonal: </source>
-        <translation>Diagonal: </translation>
-    </message>
-    <message>
-        <source> px x </source>
-        <translation> px x </translation>
-    </message>
-    <message>
-        <source> px</source>
-        <translation> px</translation>
-    </message>
-    <message>
-        <source> px/m x </source>
-        <translation> px/m x </translation>
-    </message>
-    <message>
-        <source> px/m</source>
-        <translation> px/m</translation>
     </message>
     <message>
         <source>LCD</source>
@@ -936,70 +790,6 @@ https://github.com/thurask/bbdownloader</translation>
         <translation>LED</translation>
     </message>
     <message>
-        <source> MiB</source>
-        <translation> MiB</translation>
-    </message>
-    <message>
-        <source>Build ID: </source>
-        <translation>Build ID: </translation>
-    </message>
-    <message>
-        <source>Adobe Flash: </source>
-        <translation>Adobe Flash: </translation>
-    </message>
-    <message>
-        <source>Physical Keyboard: </source>
-        <translation>Physical Keyboard: </translation>
-    </message>
-    <message>
-        <source>Physical Menu Button: </source>
-        <translation>Physical Menu Button: </translation>
-    </message>
-    <message>
-        <source>Physical Back Button: </source>
-        <translation>Physical Back Button: </translation>
-    </message>
-    <message>
-        <source>Physical Phone Keys: </source>
-        <translation>Physical Phone Keys: </translation>
-    </message>
-    <message>
-        <source>Physical Trackpad: </source>
-        <translation>Physical Trackpad: </translation>
-    </message>
-    <message>
-        <source>Display Name: </source>
-        <translation>Display Name: </translation>
-    </message>
-    <message>
-        <source>Attached: </source>
-        <translation>Attached: </translation>
-    </message>
-    <message>
-        <source>Detachable: </source>
-        <translation>Detachable: </translation>
-    </message>
-    <message>
-        <source>Wireless: </source>
-        <translation>Wireless: </translation>
-    </message>
-    <message>
-        <source>Build Branch: </source>
-        <translation>Build Branch: </translation>
-    </message>
-    <message>
-        <source>Physical Capacity: </source>
-        <translation>Physical Capacity: </translation>
-    </message>
-    <message>
-        <source>Accessible Capacity: </source>
-        <translation>Accessible Capacity: </translation>
-    </message>
-    <message>
-        <source>Available Capacity: </source>
-        <translation>Available Capacity: </translation>
-    </message>
-    <message>
         <source>Local Filesystem</source>
         <translation>Local Filesystem</translation>
     </message>
@@ -1008,20 +798,208 @@ https://github.com/thurask/bbdownloader</translation>
         <translation>SD Card</translation>
     </message>
     <message>
-        <source> GB</source>
-        <translation> GB</translation>
-    </message>
-    <message>
-        <source>Boot Time: </source>
-        <translation>Boot Time: </translation>
-    </message>
-    <message>
         <source>Hide Personal Info</source>
         <translation>Hide Personal Info</translation>
     </message>
     <message>
         <source>Show Personal Info</source>
         <translation>Show Personal Info</translation>
+    </message>
+    <message>
+        <source>Device Name: %1</source>
+        <translation>Device Name: %1</translation>
+    </message>
+    <message>
+        <source>Model Name: %1</source>
+        <translation>Model Name: %1</translation>
+    </message>
+    <message>
+        <source>Model Number: %1</source>
+        <translation>Model Number: %1</translation>
+    </message>
+    <message>
+        <source>PIN: %1</source>
+        <translation>PIN: %1</translation>
+    </message>
+    <message>
+        <source>Hardware ID: %1</source>
+        <translation>Hardware ID: %1</translation>
+    </message>
+    <message>
+        <source>Boot Time: %1</source>
+        <translation>Boot Time %1</translation>
+    </message>
+    <message>
+        <source>HDMI: %1</source>
+        <translation>HDMI: %1</translation>
+    </message>
+    <message>
+        <source>IMEI: %1</source>
+        <translation>IMEI: %1</translation>
+    </message>
+    <message>
+        <source>MEID: %1</source>
+        <translation>MEID: %1</translation>
+    </message>
+    <message>
+        <source>Serial Number: %1</source>
+        <translation>Serial Number: %1</translation>
+    </message>
+    <message>
+        <source>Physical Keyboard: %1</source>
+        <translation>Physical Keyboard: %1</translation>
+    </message>
+    <message>
+        <source>Physical Menu Button: %1</source>
+        <translation>Physical Menu Button: %1</translation>
+    </message>
+    <message>
+        <source>Physical Back Button: %1</source>
+        <translation>Physical Back Button: %1</translation>
+    </message>
+    <message>
+        <source>Physical Phone Keys: %1</source>
+        <translation>Physical Phone Keys: %1</translation>
+    </message>
+    <message>
+        <source>Physical Trackpad: %1</source>
+        <translation>Physical Trackpad: %1</translation>
+    </message>
+    <message>
+        <source>State: %1</source>
+        <translation>State: %1</translation>
+    </message>
+    <message>
+        <source>Mobile Country Code (MCC): %1</source>
+        <translation>Mobile Country Code (MCC): %1</translation>
+    </message>
+    <message>
+        <source>Mobile Network Code (MNC): %1</source>
+        <translation>Mobile Network Code (MNC): %1</translation>
+    </message>
+    <message>
+        <source>Total Device Memory: %1 MiB</source>
+        <translation>Total Device Memory: %1 MiB</translation>
+    </message>
+    <message>
+        <source>Free Device Memory: %1 MiB</source>
+        <translation>Free Device Memory: %1 MiB</translation>
+    </message>
+    <message>
+        <source>Physical Capacity: %1 GB</source>
+        <translation>Physical Capacity: %1 GB</translation>
+    </message>
+    <message>
+        <source>Accessible Capacity: %1 GB</source>
+        <translation>Accessible Capacity: %1 GB</translation>
+    </message>
+    <message>
+        <source>Available Capacity: %1 GB</source>
+        <translation>Available Capacity: %1 GB</translation>
+    </message>
+    <message>
+        <source>Present: %1</source>
+        <translation>Present: %1</translation>
+    </message>
+    <message>
+        <source>Charging State: %1</source>
+        <translation>Charging State: %1</translation>
+    </message>
+    <message>
+        <source>Condition: %1</source>
+        <translation>Condition: %1</translation>
+    </message>
+    <message>
+        <source>Full Charge Capacity: %1 mAh</source>
+        <translation>Full Charge Capacity: %1 mAh</translation>
+    </message>
+    <message>
+        <source>Remaining: %1%</source>
+        <translation>Remaining: %1%</translation>
+    </message>
+    <message>
+        <source>Cycle Count: %1</source>
+        <translation>Cycle Count: %1</translation>
+    </message>
+    <message>
+        <source>RxID: %1</source>
+        <translation>RxID: %1</translation>
+    </message>
+    <message>
+        <source>Aspect: %1</source>
+        <translation>Aspect: %1</translation>
+    </message>
+    <message>
+        <source>Technology: %1</source>
+        <translation>Technology: %1</translation>
+    </message>
+    <message>
+        <source>Display Name: %1</source>
+        <translation>Display Name: %1</translation>
+    </message>
+    <message>
+        <source>Attached: %1</source>
+        <translation>Attached: %1</translation>
+    </message>
+    <message>
+        <source>Detachable: %1</source>
+        <translation>Detachable: %1</translation>
+    </message>
+    <message>
+        <source>Wireless: %1</source>
+        <translation>Wireless: %1</translation>
+    </message>
+    <message>
+        <source>Build ID: %1</source>
+        <translation>Build ID: %1</translation>
+    </message>
+    <message>
+        <source>Build Branch: %1</source>
+        <translation>Build Branch: %1</translation>
+    </message>
+    <message>
+        <source>OS Version: %1</source>
+        <translation>OS Version: %1</translation>
+    </message>
+    <message>
+        <source>Radio Version: %1</source>
+        <translation>Radio Version: %1</translation>
+    </message>
+    <message>
+        <source>NFC Firmware: %1</source>
+        <translation>NFC Firmware: %1</translation>
+    </message>
+    <message>
+        <source>NFC Stack: %1</source>
+        <translation>NFC Stack: %1</translation>
+    </message>
+    <message>
+        <source>WiFi: %1</source>
+        <translation>WiFi: %1</translation>
+    </message>
+    <message>
+        <source>Webkit: %1</source>
+        <translation>Webkit: %1</translation>
+    </message>
+    <message>
+        <source>Temperature: %1 °C (%2 °F)</source>
+        <translation>Temperature: %1 °C (%2 °F)</translation>
+    </message>
+    <message>
+        <source>Physical Size: %1 mm x %2 mm</source>
+        <translation>Physical Size: %1 mm x %2 mm</translation>
+    </message>
+    <message>
+        <source>Diagonal: %1 mm</source>
+        <translation>Diagonal: %1 mm</translation>
+    </message>
+    <message>
+        <source>Pixel Size: %1 px x %2 px</source>
+        <translation>Pixel Size: %1 px x %2 px</translation>
+    </message>
+    <message>
+        <source>Resolution: %1 px/m x %2 px/m</source>
+        <translation>Resolution: %1 px/m x %2 px/m</translation>
     </message>
 </context>
 <context>
@@ -1051,28 +1029,12 @@ https://github.com/thurask/bbdownloader</translation>
         <translation>Keyboard Shortcuts</translation>
     </message>
     <message>
-        <source>l = OS Lookup Tool</source>
-        <translation>l = OS Lookup Tool</translation>
-    </message>
-    <message>
-        <source>e = Engineering Screens</source>
-        <translation>e = Engineering Screens</translation>
-    </message>
-    <message>
-        <source>s = System Info</source>
-        <translation>s = System Info</translation>
-    </message>
-    <message>
         <source>Metadata</source>
         <translation>Metadata</translation>
     </message>
     <message>
         <source>Hardware IDs</source>
         <translation>Hardware IDs</translation>
-    </message>
-    <message>
-        <source>f = File Operations</source>
-        <translation>f = File Operations</translation>
     </message>
     <message>
         <source>OS Link Generator</source>
@@ -1083,16 +1045,56 @@ https://github.com/thurask/bbdownloader</translation>
         <translation>File Operations</translation>
     </message>
     <message>
-        <source>o = OS Link Generator</source>
-        <translation>o = OS Link Generator</translation>
-    </message>
-    <message>
         <source>Certification Browser</source>
         <translation>Certification Browser</translation>
     </message>
     <message>
-        <source>p = Certification Browser</source>
-        <translation>p = Certification Browser</translation>
+        <source>%1 = OS Link Generator</source>
+        <translation>%1 = OS Link Generator</translation>
+    </message>
+    <message>
+        <source>o</source>
+        <translation>o</translation>
+    </message>
+    <message>
+        <source>%1 = OS Lookup Tool</source>
+        <translation>%1 = OS Lookup Tool</translation>
+    </message>
+    <message>
+        <source>l</source>
+        <translation>l</translation>
+    </message>
+    <message>
+        <source>%1 = Engineering Screens</source>
+        <translation>%1 = Engineering Screens</translation>
+    </message>
+    <message>
+        <source>e</source>
+        <translation>e</translation>
+    </message>
+    <message>
+        <source>%1 = System Info</source>
+        <translation>%1 = System Info</translation>
+    </message>
+    <message>
+        <source>s</source>
+        <translation>s</translation>
+    </message>
+    <message>
+        <source>%1 = File Operations</source>
+        <translation>%1 = File Operations</translation>
+    </message>
+    <message>
+        <source>f</source>
+        <translation>f</translation>
+    </message>
+    <message>
+        <source>%1 = Certification Browser</source>
+        <translation>%1 = Certification Browser</translation>
+    </message>
+    <message>
+        <source>p</source>
+        <translation>p</translation>
     </message>
 </context>
 </TS>

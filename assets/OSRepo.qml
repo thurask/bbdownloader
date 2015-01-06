@@ -82,7 +82,7 @@ Sheet {
                         type: "item"
                         StandardListItem {
                             title: (ListItemData.trueos == "" ? ListItemData.os : ListItemData.trueos)
-                            description: "SR: " + ListItemData.software + " | Radio: " + ListItemData.radio
+                            description: qsTr("SR: %1 | Radio: %2").arg(ListItemData.software).arg(ListItemData.radio) + Retranslate.onLanguageChanged
                             status: ListItemData.notes
                         }
                     }
@@ -126,7 +126,7 @@ Sheet {
         },
         SystemToast {
             id: xmlToast
-            body: qsTr("Values copied to OS Downloader") + Retranslate.onLanguageChanged
+            body: qsTr("Values copied") + Retranslate.onLanguageChanged
         }
     ]
     onCreationCompleted: {
