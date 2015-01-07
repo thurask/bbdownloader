@@ -263,16 +263,22 @@ Page {
                     title: qsTr("Versions") + Retranslate.onLanguageChanged;
                 }
                 Label {
+                    text: qsTr("OS Version: %1").arg(_manager.readTextFile("/base/etc/os.version", "normal")) + Retranslate.onLanguageChanged;
+                }
+                Label {
                     text: qsTr("Build ID: %1").arg(_manager.readTextFile("/base/svnrev", "firstline").slice(9)) + Retranslate.onLanguageChanged
                 }
                 Label {
                     text: qsTr("Build Branch: %1").arg(_manager.readTextFile("/base/svnrev", "branch").slice(13)) + Retranslate.onLanguageChanged;
                 }
                 Label {
-                    text: qsTr("OS Version: %1").arg(_manager.readTextFile("/base/etc/os.version", "normal")) + Retranslate.onLanguageChanged;
+                    text: qsTr("Radio Version: %1").arg(_manager.readTextFile("/radio/etc/radio.version", "normal")) + Retranslate.onLanguageChanged;
                 }
                 Label {
-                    text: qsTr("Radio Version: %1").arg(_manager.readTextFile("/radio/etc/radio.version", "normal")) + Retranslate.onLanguageChanged;
+                    text: qsTr("Build ID: %1").arg(_manager.readTextFile("/radio/svnrev", "firstline").slice(9)) + Retranslate.onLanguageChanged
+                }
+                Label {
+                    text: qsTr("Build Branch: %1").arg(_manager.readTextFile("/radio/svnrev", "branch").slice(13)) + Retranslate.onLanguageChanged;
                 }
                 Label {
                     text: qsTr("NFC Firmware: %1").arg(_manager.readTextFile("/var/etc/nfc/nfcFirmware.version", "normal")) + Retranslate.onLanguageChanged;
