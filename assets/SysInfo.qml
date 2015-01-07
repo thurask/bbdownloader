@@ -104,9 +104,13 @@ Page {
                     id: imei
                     text: qsTr("IMEI: %1").arg(hardwareinfo.imei) + Retranslate.onLanguageChanged;
                 }
-                Label {
-                    id: meid
-                    text: qsTr("MEID: %1").arg(hardwareinfo.meid) + Retranslate.onLanguageChanged;
+                Container {
+                    id: meidc
+                    visible: (!!hardwareinfo.meid) //if not blank
+                    Label {
+                        id: meid
+                        text: qsTr("MEID: %1").arg(hardwareinfo.meid) + Retranslate.onLanguageChanged;
+                    }
                 }
                 Label {
                     id: serial
@@ -212,11 +216,15 @@ Page {
                     text: qsTr("Cycle Count: %1").arg(battinfo.cycleCount) + Retranslate.onLanguageChanged;
                 }
                 Label {
-                    text: qsTr("Temperature: %1 °C (%2 °F)").arg(battinfo.temperature.toFixed(2)).arg(parseFloat(1.8 * (battinfo.temperature) + 32).toFixed(2)) + Retranslate.onLanguageChanged;
+                    text: qsTr("Temperature: %1 °C (%2 °F)").arg(battinfo.temperature.toFixed(1)).arg(parseFloat(1.8 * (battinfo.temperature) + 32).toFixed(1)) + Retranslate.onLanguageChanged;
                 }
-                Label {
-                    id: rxid
-                    text: qsTr("RxID: %1").arg(battinfo.rxid) + Retranslate.onLanguageChanged;
+                Container {
+                    id: rxidc
+                    visible: (battinfo.rxid == "" ? false : true)
+                    Label {
+                        id: rxid
+                        text: qsTr("RxID: %1").arg(battinfo.rxid) + Retranslate.onLanguageChanged;
+                    }
                 }
             }
             Container {
