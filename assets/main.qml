@@ -175,29 +175,11 @@ TabbedPane {
                 }
                 onLookupStarted: {
                     shortcut_o.enabled = false;
-                    shortcut_l.enabled = false;
-                    shortcut_e.enabled = false;
-                    shortcut_s.enabled = false;
-                    shortcut_f.enabled = false;
-                    shortcut_p.enabled = false;
                     tab_osgen.enabled = false;
-                    tab_escreens.enabled = false;
-                    tab_sysinfo.enabled = false;
-                    tab_fileops.enabled = false;
-                    tab_ptcrb.enabled = false;
                 }
                 onLookupStopped: {
                     shortcut_o.enabled = true;
-                    shortcut_l.enabled = true;
-                    shortcut_e.enabled = true;
-                    shortcut_s.enabled = true;
-                    shortcut_f.enabled = true;
-                    shortcut_p.enabled = true;
                     tab_osgen.enabled = true;
-                    tab_escreens.enabled = true;
-                    tab_sysinfo.enabled = true;
-                    tab_fileops.enabled = true;
-                    tab_ptcrb.enabled = true;
                 }
             }
         }
