@@ -482,6 +482,14 @@ https://github.com/thurask/bbdownloader</source>
         <source>Software Version</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>STL100-1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Verizon OS</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OSRepo</name>

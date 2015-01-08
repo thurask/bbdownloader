@@ -24,19 +24,19 @@ QString DownloadManager::defaultDir()
     return default_dir;
 }
 
-QString DownloadManager::returnOsLinks(QString hashedswversion, QString osversion, bool verizon)
+QString DownloadManager::returnOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester)
 {
-    setOsLinks(hashedswversion, osversion, verizon);
+    setOsLinks(hashedswversion, osversion, verizon, winchester);
     return oslinks;
 }
 
-QString DownloadManager::returnRadioLinks(QString hashedswversion, QString osversion, QString radioversion)
+QString DownloadManager::returnRadioLinks(QString hashedswversion, QString osversion, QString radioversion, bool winchester)
 {
-    setRadioLinks(hashedswversion, osversion, radioversion);
+    setRadioLinks(hashedswversion, osversion, radioversion, winchester);
     return radiolinks;
 }
 
-void DownloadManager::setOsLinks(QString hashedswversion, QString osversion, bool verizon)
+void DownloadManager::setOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester)
 {
     //Autoloaders
     if (hashedswversion == "08d2e98e6754af941484848930ccbaddfefe13d6"){
@@ -57,11 +57,14 @@ void DownloadManager::setOsLinks(QString hashedswversion, QString osversion, boo
     //To look nice, variant URLs (10.3.1.634) are in the radio links
     else {
         if (osversion.indexOf("10.") != -1){
-            oslinks = ("---OPERATING SYSTEMS---\n"
-                    "TI OMAP (STL100-1)\n"
-                    "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory.desktop/" + osversion + "/winchester.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n" +
-                    "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory/" + osversion + "/winchester.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar\n\n" +
-                    "Qualcomm 8960/8930 (Most others)\n" +
+            oslinks = ("---OPERATING SYSTEMS---\n");
+            //STL100-1
+            if (winchester == true){
+                oslinks.append("TI OMAP (STL100-1)\n"
+                        "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory.desktop/" + osversion + "/winchester.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n" +
+                        "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory/" + osversion + "/winchester.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+            }
+            oslinks.append("Qualcomm 8960/8930 (Most others)\n"
                     "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.factory_sfi.desktop/" + osversion + "/qc8960.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n" +
                     "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.factory_sfi/" + osversion + "/qc8960.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar\n\n");
             //Verizon images
@@ -84,15 +87,18 @@ void DownloadManager::setOsLinks(QString hashedswversion, QString osversion, boo
             }
             oslinks.chop(2); //trailing \n\n
         }
-        else {
+        else if (osversion.indexOf("10.") == -1 && osversion.isEmpty() == false){
             oslinks = ("---OPERATING SYSTEMS---\n"
                     "TI OMAP (PlayBook)\n"
                     "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory.desktop/" + osversion + "/winchester.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar");
         }
+        else {
+            oslinks = "";
+        }
     }
 }
 
-void DownloadManager::setRadioLinks(QString hashedswversion, QString osversion, QString radioversion)
+void DownloadManager::setRadioLinks(QString hashedswversion, QString osversion, QString radioversion, bool winchester)
 {
     if (hashedswversion == "08d2e98e6754af941484848930ccbaddfefe13d6"){
         radiolinks = ("Variant URL\n\n"
@@ -110,11 +116,16 @@ void DownloadManager::setRadioLinks(QString hashedswversion, QString osversion, 
     }
     else {
         if (osversion.indexOf("10.") != -1){
-            radiolinks = ("---RADIOS---\n"
-                    "OMAP Z10: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.m5730/" + radioversion + "/m5730-" + radioversion + "-nto+armle-v7+signed.bar\n\n" +
-                    "Qualcomm Z10/P9982: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960/" + radioversion + "/qc8960-" + radioversion + "-nto+armle-v7+signed.bar\n\n" +
-                    "Verizon Z10: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.omadm/" + radioversion + "/qc8960.omadm-" + radioversion + "-nto+armle-v7+signed.bar\n\n" +
-                    "Q10/Q5/P9983: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr/" + radioversion + "/qc8960.wtr-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
+            radiolinks = ("---RADIOS---\n");
+            if (winchester == true){
+                radiolinks.append("OMAP Z10: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.m5730/" + radioversion + "/m5730-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
+            }
+            radiolinks.append("Qualcomm Z10/P9982: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960/" + radioversion + "/qc8960-" + radioversion + "-nto+armle-v7+signed.bar\n\n" +
+                    "Verizon Z10: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.omadm/" + radioversion + "/qc8960.omadm-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
+            //10.1 and up (Q10)
+            if (osversion.indexOf("10.0.") == -1){
+                radiolinks.append("Q10/Q5/P9983: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr/" + radioversion + "/qc8960.wtr-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
+            }
             //10.2.0 and up (Z30, Kopi/Cafe/Z3)
             if (osversion.indexOf("10.0.") == -1 && osversion.indexOf("10.1.") == -1) {
                 radiolinks.append("Z30/Manitoba/Classic: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr5/" + radioversion + "/qc8960.wtr5-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
@@ -126,7 +137,7 @@ void DownloadManager::setRadioLinks(QString hashedswversion, QString osversion, 
             }
             radiolinks.chop(2); //trailing \n\n
         }
-        else {
+        else if (osversion.indexOf("10.") == -1 && osversion.isEmpty() == false){
             if (radioversion.indexOf("N/A") != -1){
                 radiolinks = "";
             }
@@ -136,52 +147,55 @@ void DownloadManager::setRadioLinks(QString hashedswversion, QString osversion, 
                         "PlayBook (new): http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/mod.qcmdm9k-" + radioversion + "-nto+armle-v7+signed.bar");
             }
         }
+        else {
+            radiolinks = "";
+        }
     }
 }
 
-void DownloadManager::setExportUrls(QString hashedswversion, QString osversion, QString radioversion, bool verizon)
+void DownloadManager::setExportUrls(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester)
 {
-    setOsLinks(hashedswversion, osversion, verizon);
-    setRadioLinks(hashedswversion, osversion, radioversion);
+    setOsLinks(hashedswversion, osversion, verizon, winchester);
+    setRadioLinks(hashedswversion, osversion, radioversion, winchester);
     exporturls = oslinks + "\n" + radiolinks;
 }
 
-void DownloadManager::exportLinks(QString swrelease, QString hashedswversion, QString osversion, QString radioversion, bool verizon)
+void DownloadManager::exportLinks(QString swrelease, QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester)
 {
-    setExportUrls(hashedswversion, osversion, radioversion, verizon);
+    setExportUrls(hashedswversion, osversion, radioversion, verizon, winchester);
     saveTextFile(exporturls, swrelease);
 }
 
-void DownloadManager::copyOsLinks(QString hashedswversion, QString osversion, bool verizon)
+void DownloadManager::copyOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester)
 {
-    setOsLinks(hashedswversion, osversion, verizon);
+    setOsLinks(hashedswversion, osversion, verizon, winchester);
     QByteArray exporturls_qba = oslinks.toUtf8();
     bb::system::Clipboard clipboard;
     clipboard.clear();
     clipboard.insert("text/plain", exporturls_qba);
 }
 
-void DownloadManager::copyRadioLinks(QString hashedswversion, QString osversion, QString radioversion)
+void DownloadManager::copyRadioLinks(QString hashedswversion, QString osversion, QString radioversion, bool winchester)
 {
-    setRadioLinks(hashedswversion, osversion, radioversion);
+    setRadioLinks(hashedswversion, osversion, radioversion, winchester);
     QByteArray exporturls_qba = radiolinks.toUtf8();
     bb::system::Clipboard clipboard;
     clipboard.clear();
     clipboard.insert("text/plain", exporturls_qba);
 }
 
-void DownloadManager::copyLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon)
+void DownloadManager::copyLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester)
 {
-    setExportUrls(hashedswversion, osversion, radioversion, verizon);
+    setExportUrls(hashedswversion, osversion, radioversion, verizon, winchester);
     QByteArray exporturls_qba = exporturls.toUtf8();
     bb::system::Clipboard clipboard;
     clipboard.clear();
     clipboard.insert("text/plain", exporturls_qba);
 }
 
-QString DownloadManager::returnLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon)
+QString DownloadManager::returnLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester)
 {
-    setExportUrls(hashedswversion, osversion, radioversion, verizon);
+    setExportUrls(hashedswversion, osversion, radioversion, verizon, winchester);
     return exporturls;
 }
 

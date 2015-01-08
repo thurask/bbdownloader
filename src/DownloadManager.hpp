@@ -12,25 +12,25 @@
 
     public Q_SLOTS:
 
-        QString returnOsLinks(QString hashedswversion, QString osversion, bool verizon);
+        QString returnOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester);
 
-        QString returnRadioLinks(QString hashedswversion, QString osversion, QString radioversion);
+        QString returnRadioLinks(QString hashedswversion, QString osversion, QString radioversion, bool winchester);
 
-        void setOsLinks(QString hashedswversion, QString osversion, bool verizon);
+        void setOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester);
 
-        void setRadioLinks(QString hashedswversion, QString osversion, QString radioversion);
+        void setRadioLinks(QString hashedswversion, QString osversion, QString radioversion, bool winchester);
 
         void saveTextFile(QString urls, QString swrelease);
 
-        void exportLinks(QString swrelease, QString hashedswversion, QString osversion, QString radioversion, bool verizon);
+        void exportLinks(QString swrelease, QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester);
 
-        void copyLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon);
+        void copyLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester);
 
-        void copyOsLinks(QString hashedswversion, QString osversion, bool verizon);
+        void copyOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester);
 
-        void copyRadioLinks(QString hashedswversion, QString osversion, QString radioversion);
+        void copyRadioLinks(QString hashedswversion, QString osversion, QString radioversion, bool winchester);
 
-        QString returnLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon);
+        QString returnLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester);
 
         QString returnFilename();
 
@@ -42,7 +42,7 @@
 
     private:
 
-        void setExportUrls(QString hashedswversion, QString osversion, QString radioversion, bool verizon);
+        void setExportUrls(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester);
 
         QString exporturls;
 
