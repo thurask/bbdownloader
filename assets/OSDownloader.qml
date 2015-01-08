@@ -33,6 +33,7 @@ Page {
         },
         ActionItem {
             title: qsTr("Clear") + Retranslate.onLanguageChanged
+            enabled: (ostext.text != "")
             onTriggered: {
                 ostext.text = "";
                 radiotext.text = "";
@@ -142,7 +143,7 @@ Page {
                         text: qsTr("Lookup") + Retranslate.onLanguageChanged
                         onClicked: {
                             var regex = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/);
-                            if (regex.test(osver_input.text) == true) {
+                            if (regex.test(osver_input.text) == true ) {
                                 swver_input.text = _swlookup.softwareRelease();
                             }
                         }
@@ -164,7 +165,7 @@ Page {
                             mode: ValidationMode.Immediate
                             onValidate: {
                                 var regex = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/);
-                                if (regex.test(radiover_input.text) == true || swver_input.text == "N/A") {
+                                if (regex.test(radiover_input.text) == true || swver_input.text == "N/A" || (osver_input.text.indexOf("10.") == -1 && radiover_input.text == "N/A")) {
                                     validator_radver.setValid(true);
                                 } else {
                                     validator_radver.setValid(false);
