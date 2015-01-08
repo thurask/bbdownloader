@@ -50,7 +50,7 @@ Page {
         ActionItem {
             id: autoclearbutton
             title: qsTr("Clear") + Retranslate.onLanguageChanged
-            enabled: (scanning == false)
+            enabled: (scanning == false && outputtext.text != "")
             onTriggered: {
                 outputtext.storedtext = outputtext.text;
                 outputtext.text = "";
@@ -65,7 +65,7 @@ Page {
         ActionItem {
             id: autocopybutton
             title: qsTr("Copy") + Retranslate.onLanguageChanged
-            enabled: (scanning == false)
+            enabled: (scanning == false && outputtext.text != "")
             onTriggered: {
                 Clipboard.copyToClipboard(outputtext.text);
                 lookupexporttoast.body = qsTr("Copied") + Retranslate.onLanguageChanged;
@@ -79,7 +79,7 @@ Page {
         ActionItem {
             id: autoexportbutton
             title: qsTr("Export") + Retranslate.onLanguageChanged
-            enabled: (scanning == false)
+            enabled: (scanning == false && outputtext.text != "")
             onTriggered: {
                 _manager.saveTextFile(outputtext.text, "Lookup-" + (serverdropdown.selectedOption.text));
                 lookupexporttoast.body = qsTr("Lookups saved to default directory") + Retranslate.onLanguageChanged;
@@ -93,7 +93,7 @@ Page {
         ActionItem {
             id: autosharebutton
             title: qsTr("Share") + Retranslate.onLanguageChanged
-            enabled: (scanning == false)
+            enabled: (scanning == false && outputtext.text != "")
             onTriggered: {
                 myQuery.trigger(myQuery.query.invokeActionId)
             }
