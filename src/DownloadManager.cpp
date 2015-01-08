@@ -73,15 +73,15 @@ void DownloadManager::setOsLinks(QString hashedswversion, QString osversion, boo
                         "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi.desktop/" + osversion + "/qc8960.verizon_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n" +
                         "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi/" + osversion + "/qc8960.verizon_sfi-" + osversion + "-nto+armle-v7+signed.bar\n\n");
             }
-            //10.3.0 (Passport)
+            //10.3.0 specifically (Passport)
             if (osversion.indexOf("10.3.0") != -1) {
                 oslinks.append("Qualcomm 8974 (Passport)\n"
                         "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.factory_sfi.desktop/" + osversion + "/qc8974.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n"
                         "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.factory_sfi/" + osversion + "/qc8974.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar\n\n");
             }
-            //10.3.1 (Passport, again)
-            if (osversion.indexOf("10.3.1") != -1) {
-                oslinks.append("Qualcomm 8974_8960 Hybrid (10.3.1+)\n"
+            //10.3.1 and up (Passport, again)
+            if (osversion.indexOf("10.0.") == -1 && osversion.indexOf("10.1.") == -1 && osversion.indexOf("10.2.") == -1 && osversion.indexOf("10.3.0") == -1) {
+                oslinks.append("Qualcomm 8974_8960 Hybrid (Passport)\n"
                         "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/qc8960.factory_sfi_hybrid_qc8974.desktop-" + osversion + "-nto+armle-v7+signed.bar\n" +
                         "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/qc8960.factory_sfi_hybrid_qc8974-" + osversion + "-nto+armle-v7+signed.bar\n\n");
             }
@@ -137,6 +137,7 @@ void DownloadManager::setRadioLinks(QString hashedswversion, QString osversion, 
             }
             radiolinks.chop(2); //trailing \n\n
         }
+        //not 10.x but not empty
         else if (osversion.indexOf("10.") == -1 && osversion.isEmpty() == false){
             if (radioversion.indexOf("N/A") != -1){
                 radiolinks = "";
