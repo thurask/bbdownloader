@@ -10,5 +10,5 @@ TitleBar {
         id: acceptaction
         enabled: false
     }
-    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version) + Retranslate.onLanguageChanged
+    title: qsTr("BBDownloader %1").arg(((AppInfo.version.split('.')).slice(0,3)).join('.')) + Retranslate.onLanguageChanged
 }

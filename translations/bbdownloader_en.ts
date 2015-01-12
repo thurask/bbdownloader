@@ -122,8 +122,8 @@
 <context>
     <name>CustomTitleBar</name>
     <message>
-        <source>BB10 OS Downloader %1</source>
-        <translation>BB10 OS Downloader %1</translation>
+        <source>BBDownloader %1</source>
+        <translation>BBDownloader %1</translation>
     </message>
 </context>
 <context>

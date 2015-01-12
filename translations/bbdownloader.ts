@@ -122,7 +122,7 @@
 <context>
     <name>CustomTitleBar</name>
     <message>
-        <source>BB10 OS Downloader %1</source>
+        <source>BBDownloader %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
