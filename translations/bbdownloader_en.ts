@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="en_US">
+<TS version="2.0" language="en_US">
 <context>
     <name>AutoLookup</name>
     <message>
@@ -1019,10 +1019,6 @@
         <translation>OS Lookup Tool</translation>
     </message>
     <message>
-        <source>Engineering Screens</source>
-        <translation>Engineering Screens</translation>
-    </message>
-    <message>
         <source>System Info</source>
         <translation>System Info</translation>
     </message>
@@ -1049,10 +1045,6 @@
     <message>
         <source>File Operations</source>
         <translation>File Operations</translation>
-    </message>
-    <message>
-        <source>Certification Browser</source>
-        <translation>Certification Browser</translation>
     </message>
     <message>
         <source>%1 = OS Link Generator</source>
@@ -1109,6 +1101,14 @@
     <message>
         <source>HWIDs</source>
         <translation>HWIDs</translation>
+    </message>
+    <message>
+        <source>EScreens</source>
+        <translation>EScreens</translation>
+    </message>
+    <message>
+        <source>PTCRB Browser</source>
+        <translation>PTCRB Browser</translation>
     </message>
 </context>
 </TS>

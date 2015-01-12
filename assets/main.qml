@@ -187,7 +187,7 @@ TabbedPane {
     }
     Tab {
         id: tab_escreens
-        title: qsTr("Engineering Screens") + Retranslate.onLanguageChanged
+        title: qsTr("EScreens") + Retranslate.onLanguageChanged
         imageSource: "asset:///images/menus/ic_qs_developer_mode.png"
         delegate: Delegate {
             EScreens {
@@ -239,7 +239,7 @@ TabbedPane {
     }
     Tab {
         id: tab_ptcrb
-        title: qsTr("Certification Browser") + Retranslate.onLanguageChanged
+        title: qsTr("PTCRB Browser") + Retranslate.onLanguageChanged
         imageSource: "asset:///images/menus/ic_certificate_import.png"
         delegate: Delegate {
             CertViewer {

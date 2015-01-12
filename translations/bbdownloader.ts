@@ -1016,10 +1016,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Engineering Screens</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>System Info</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1045,10 +1041,6 @@
     </message>
     <message>
         <source>File Operations</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Certification Browser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1105,6 +1097,14 @@
     </message>
     <message>
         <source>HWIDs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>EScreens</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PTCRB Browser</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

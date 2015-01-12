@@ -243,6 +243,20 @@ QString DownloadManager::readTextFile(QString uri, QString mode)
             }
         }
     }
+    if (mode == "normsimp"){
+        text = textStream.readAll();
+        text = text.simplified();
+    }
+    if (mode == "firstsimp"){
+        text = textStream.readLine();
+        text = text.simplified();
+    }
     file.close();
+    if (text.startsWith('\n')){
+        text.remove(0, 1);
+    }
+    if (text.endsWith('\n')){
+        text.chop(1);
+    }
     return text;
 }
