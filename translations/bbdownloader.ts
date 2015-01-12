@@ -301,15 +301,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Do what you want with the source code: 
-https://github.com/thurask/bbdownloader</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default save folder: /accounts/1000/shared/downloads/bbdownloader</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
@@ -319,6 +310,16 @@ https://github.com/thurask/bbdownloader</source>
     </message>
     <message>
         <source>Updates posted to Github or Twitter: @thuraski</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default save folder: 
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do what you want with the source code: 
+%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1039,10 +1040,6 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hardware IDs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>OS Link Generator</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1100,6 +1097,14 @@ https://github.com/thurask/bbdownloader</source>
     </message>
     <message>
         <source>p</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HWIDs</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

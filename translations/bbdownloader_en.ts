@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="en_US">
+<TS version="2.1" language="en_US">
 <context>
     <name>AutoLookup</name>
     <message>
@@ -301,16 +301,6 @@
         <translation>BB10 OS Downloader developed by Thurask.</translation>
     </message>
     <message>
-        <source>Do what you want with the source code: 
-https://github.com/thurask/bbdownloader</source>
-        <translation>Do what you want with the source code: 
-https://github.com/thurask/bbdownloader</translation>
-    </message>
-    <message>
-        <source>Default save folder: /accounts/1000/shared/downloads/bbdownloader</source>
-        <translation>Default save folder: /accounts/1000/shared/downloads/bbdownloader</translation>
-    </message>
-    <message>
         <source>Help</source>
         <translation>Help</translation>
     </message>
@@ -321,6 +311,18 @@ https://github.com/thurask/bbdownloader</translation>
     <message>
         <source>Updates posted to Github or Twitter: @thuraski</source>
         <translation>Updates posted to Github or Twitter: @thuraski</translation>
+    </message>
+    <message>
+        <source>Default save folder: 
+%1</source>
+        <translation>Default save folder: 
+%1</translation>
+    </message>
+    <message>
+        <source>Do what you want with the source code: 
+%1</source>
+        <translation>Do what you want with the source code :
+%1</translation>
     </message>
 </context>
 <context>
@@ -1041,10 +1043,6 @@ https://github.com/thurask/bbdownloader</translation>
         <translation>Metadata</translation>
     </message>
     <message>
-        <source>Hardware IDs</source>
-        <translation>Hardware IDs</translation>
-    </message>
-    <message>
         <source>OS Link Generator</source>
         <translation>OS Link Generator</translation>
     </message>
@@ -1103,6 +1101,14 @@ https://github.com/thurask/bbdownloader</translation>
     <message>
         <source>p</source>
         <translation>p</translation>
+    </message>
+    <message>
+        <source>Shortcuts</source>
+        <translation>Shortcuts</translation>
+    </message>
+    <message>
+        <source>HWIDs</source>
+        <translation>HWIDs</translation>
     </message>
 </context>
 </TS>

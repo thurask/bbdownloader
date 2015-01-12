@@ -39,13 +39,14 @@ Sheet {
                 content.flags: TextContentFlag.ActiveText
             }
             Label {
-                text: qsTr("Default save folder: /accounts/1000/shared/downloads/bbdownloader") + Retranslate.onLanguageChanged
+                text: qsTr("Default save folder: \n%1").arg("/accounts/1000/shared/downloads/bbdownloader") + Retranslate.onLanguageChanged
                 horizontalAlignment: HorizontalAlignment.Center
                 textFit.mode: LabelTextFitMode.Default
                 textStyle.textAlign: TextAlign.Center
+                multiline: true
             }
             Label {
-                text: qsTr("Do what you want with the source code: \nhttps://github.com/thurask/bbdownloader") + Retranslate.onLanguageChanged
+                text: qsTr("Do what you want with the source code: \n%1").arg("https://github.com/thurask/bbdownloader") + Retranslate.onLanguageChanged
                 horizontalAlignment: HorizontalAlignment.Center
                 textFit.mode: LabelTextFitMode.Default
                 textStyle.textAlign: TextAlign.Center

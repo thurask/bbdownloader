@@ -23,7 +23,7 @@ TabbedPane {
         },
         SystemDialog {
             id: shortcutDialog
-            title: qsTr("Keyboard Shortcuts") + Retranslate.onLanguageChanged
+            title: qsTr("Shortcuts") + Retranslate.onLanguageChanged
             cancelButton.enabled: false
             customButton.enabled: false
             body: qsTr("%1 = OS Link Generator").arg(qsTr("o") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n"
@@ -207,7 +207,7 @@ TabbedPane {
                 id: sysInfoPage
                 titleBar: CustomTitleBar {
                     acceptAction.enabled: true
-                    acceptAction.title: qsTr("Hardware IDs") + Retranslate.onLanguageChanged
+                    acceptAction.title: qsTr("HWIDs") + Retranslate.onLanguageChanged
                     acceptAction.onTriggered: {
                         var hwids = hardwareIDsDefinition.createObject()
                         hwids.open();
