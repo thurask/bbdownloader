@@ -106,6 +106,8 @@ Page {
                     WebView {
                         id: mainwebview
                         url: ("https://ptcrb.com/vendor/complete/view_complete_request_guest.cfm?modelid=" + selectedid)
+                        settings.zoomToFitEnabled: true
+                        settings.textAutosizingEnabled: true
                     }
                 }
             }
