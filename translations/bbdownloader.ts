@@ -186,21 +186,6 @@
     </message>
 </context>
 <context>
-    <name>FileOps</name>
-    <message>
-        <source>.nomedia</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Added!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add Blank Icon</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>HardwareIDs</name>
     <message>
         <source>Hardware IDs</source>
@@ -289,13 +274,17 @@
         <source>Hash Tools</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Blank Icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Added!</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HelpSheet</name>
-    <message>
-        <source>BB10 OS Downloader %1</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>BB10 OS Downloader developed by Thurask.</source>
         <translation type="unfinished"></translation>
@@ -320,6 +309,10 @@
     <message>
         <source>Do what you want with the source code: 
 %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>BB10 OS Downloader %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -390,6 +383,10 @@
     </message>
     <message>
         <source>.nomedia File Exists: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -480,15 +477,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Software Version</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>STL100-1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Verizon OS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SW Version</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1020,10 +1017,6 @@
 <context>
     <name>main</name>
     <message>
-        <source>OS Lookup Tool</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>System Info</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1040,15 +1033,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>OS Link Generator</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>File Operations</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 = OS Link Generator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1056,15 +1041,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 = OS Lookup Tool</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>l</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 = Engineering Screens</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1088,10 +1065,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 = Certification Browser</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>p</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1109,6 +1082,34 @@
     </message>
     <message>
         <source>PTCRB Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 = OS Links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 = Lookup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 = EScreens</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 = PTCRB Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OS Links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lookup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nomedia</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

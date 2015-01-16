@@ -24,6 +24,7 @@ Sheet {
                 text: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
                 horizontalAlignment: HorizontalAlignment.Center
                 textStyle.fontWeight: FontWeight.Bold
+                textStyle.fontSize: FontSize.Large
             }
             Label  {
                 text: qsTr("BB10 OS Downloader developed by Thurask.") + Retranslate.onLanguageChanged

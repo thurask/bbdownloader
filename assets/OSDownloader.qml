@@ -190,7 +190,7 @@ Page {
                     }
                     TextField {
                         id: swver_input
-                        hintText: qsTr("Software Version") + Retranslate.onLanguageChanged
+                        hintText: qsTr("SW Version") + Retranslate.onLanguageChanged
                         onTextChanging: {
                             swrelease = swver_input.text
                             hashCalculateSha.calculateHash(swrelease)

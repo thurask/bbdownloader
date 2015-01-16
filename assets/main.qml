@@ -26,12 +26,12 @@ TabbedPane {
             title: qsTr("Shortcuts") + Retranslate.onLanguageChanged
             cancelButton.enabled: false
             customButton.enabled: false
-            body: qsTr("%1 = OS Link Generator").arg(qsTr("o") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n"
-            + qsTr("%1 = OS Lookup Tool").arg(qsTr("l") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n"
-            + qsTr("%1 = Engineering Screens").arg(qsTr("e") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n"
+            body: qsTr("%1 = OS Links").arg(qsTr("o") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n"
+            + qsTr("%1 = Lookup").arg(qsTr("l") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n"
+            + qsTr("%1 = EScreens").arg(qsTr("e") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n"
             + qsTr("%1 = System Info").arg(qsTr("s") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n"
             + qsTr("%1 = File Operations").arg(qsTr("f") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n"
-            + qsTr("%1 = Certification Browser").arg(qsTr("p") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged
+            + qsTr("%1 = PTCRB Browser").arg(qsTr("p") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged
             includeRememberMe: false
             rememberMeChecked: false
         },
@@ -140,7 +140,7 @@ TabbedPane {
     }
     Tab {
         id: tab_osgen
-        title: qsTr("OS Link Generator") + Retranslate.onLanguageChanged
+        title: qsTr("OS Links") + Retranslate.onLanguageChanged
         imageSource: "asset:///images/menus/ic_qs_mobilehotspot.png"
         delegate: Delegate {
             OSDownloader {
@@ -153,7 +153,7 @@ TabbedPane {
     }
     Tab {
         id: tab_lookup
-        title: qsTr("OS Lookup Tool") + Retranslate.onLanguageChanged
+        title: qsTr("Lookup") + Retranslate.onLanguageChanged
         imageSource: "asset:///images/menus/ic_search.png"
         delegate: Delegate {
             AutoLookup {
@@ -229,9 +229,23 @@ TabbedPane {
         title: qsTr("File Operations") + Retranslate.onLanguageChanged
         imageSource: "asset:///images/menus/ic_doctype_generic.png"
         delegate: Delegate {
-            FileOps {
-                id: fileOpsPage
-                pageBar: CustomTitleBar {
+            HashToolsPage {
+                id: hashToolsPage
+                titleBar: CustomTitleBar {
+                    acceptAction.enabled: true
+                    acceptAction.title: qsTr("Nomedia") + Retranslate.onLanguageChanged
+                    acceptAction.onTriggered: {
+                        var nomedia = nomediaPageDef.createObject()
+                        nomedia.open();
+                    }
+                    attachedObjects: [
+                        ComponentDefinition {
+                            id: nomediaPageDef
+                            NomediaPage {
+                            
+                            }
+                        }
+                    ]
                 }
             }
         }

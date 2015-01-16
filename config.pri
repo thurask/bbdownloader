@@ -154,7 +154,6 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/CertViewer.qml) \
         $$quote($$BASEDIR/assets/CustomTitleBar.qml) \
         $$quote($$BASEDIR/assets/EScreens.qml) \
-        $$quote($$BASEDIR/assets/FileOps.qml) \
         $$quote($$BASEDIR/assets/HardwareIDs.qml) \
         $$quote($$BASEDIR/assets/HashToolsPage.qml) \
         $$quote($$BASEDIR/assets/HelpSheet.qml) \
@@ -192,7 +191,6 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/images/menus/ic_share.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_show_vkb.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_stop.png) \
-        $$quote($$BASEDIR/assets/images/menus/ic_zoom_out.png) \
         $$quote($$BASEDIR/assets/images/numbers/0.png) \
         $$quote($$BASEDIR/assets/images/numbers/1.png) \
         $$quote($$BASEDIR/assets/images/numbers/2.png) \
