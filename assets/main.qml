@@ -130,7 +130,7 @@ TabbedPane {
         }
         actions: [
             ActionItem {
-                title: qsTr("Keyboard Shortcuts") + Retranslate.onLanguageChanged
+                title: qsTr("Shortcuts") + Retranslate.onLanguageChanged
                 imageSource: "asset:///images/menus/ic_show_vkb.png"
                 onTriggered: {
                     shortcutDialog.show()
