@@ -111,7 +111,12 @@ Page {
             }
             function lookup() {
                 if (_swlookup.softwareRelease().indexOf(".") != -1 && outputtext.text.indexOf(_swlookup.softwareRelease()) == -1){
-                    outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - SR " + _swlookup.softwareRelease() + " [" + serverdropdown.selectedOption.text + "] [" + _swlookup.getAvailability() + "]\n");
+                    if (serverdropdown.selectedValue.indexOf("cs.sl") != -1){
+                        outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - SR " + _swlookup.softwareRelease() + " [" + serverdropdown.selectedOption.text + "] [" + _swlookup.getAvailability() + "]\n");
+                    }
+                    else {
+                        outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - SR " + _swlookup.softwareRelease() + " [" + serverdropdown.selectedOption.text + "]\n");
+                    }
                     led.flash(1);
                 }
                 else {
