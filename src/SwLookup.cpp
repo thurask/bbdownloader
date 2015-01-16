@@ -14,12 +14,20 @@ SwLookup::SwLookup(QObject* parent)
 , m_networkAccessManager(new QNetworkAccessManager(this))
 {
     m_softwareRelease = "";
+    m_server = "";
+    m_availability = "";
 }
 
 void SwLookup::post(QString osVer, QString server)
 {
     QRegExp rx("(\\d{0,4}\\.)(\\d{0,4}\\.)(\\d{0,4}\\.)(\\d{0,4})");
     if (osVer.contains(rx) == true){
+        if (server.contains("cs.sl") == true){
+            setServer("production");
+        }
+        else {
+            setServer("private");
+        }
         QUrl url(server);
         QNetworkRequest request(url);
         QString query = "<srVersionLookupRequest version=\"2.0.0\" authEchoTS=\"1366644680359\">"
@@ -37,8 +45,7 @@ void SwLookup::post(QString osVer, QString server)
         connect(reply, SIGNAL(finished()), this, SLOT(onGetReply()));
     }
     else {
-        QString error = tr("Error");
-        setSoftwareRelease(error);
+        setSoftwareRelease(tr("Error"));
     }
 }
 
@@ -51,11 +58,44 @@ void SwLookup::onGetReply()
         if(xml.tokenType() == QXmlStreamReader::StartElement) {
             if (xml.name() == "softwareReleaseVersion") {
                 setSoftwareRelease(xml.readElementText());
+                QCryptographicHash qch(QCryptographicHash::Sha1);
+                qch.addData((m_softwareRelease).toUtf8());
+                if (m_server == "production"){
+                    checkAvailability(QString((qch.result()).toHex()));
+                }
             }
         }
         xml.readNext();
     }
     sender()->deleteLater();
+}
+
+void SwLookup::checkAvailability(QString swrelease)
+{
+    QString av_url = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + swrelease;
+    QNetworkRequest qnr;
+    qnr.setUrl(QUrl(av_url));
+    QNetworkReply* qnr_reply = m_networkAccessManager->head(qnr);
+    connect(qnr_reply, SIGNAL(finished()), this, SLOT(availabilityReply()));
+}
+
+void SwLookup::availabilityReply()
+{
+    QNetworkReply* av_reply = (QNetworkReply*)sender();
+    if (m_server == "production"){
+        int status = av_reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+        if (status == 200 || (status > 300 && status <= 308))
+        {
+            setAvailability(tr("Valid"));
+        }
+        else {
+            setAvailability(tr("Invalid"));
+        }
+    }
+    else {
+        setAvailability(tr("Invalid"));
+    }
+    av_reply->deleteLater();
 }
 
 void SwLookup::setSoftwareRelease(QString sw)
@@ -67,6 +107,26 @@ void SwLookup::setSoftwareRelease(QString sw)
 QString SwLookup::softwareRelease()
 {
     return m_softwareRelease;
+}
+
+QString SwLookup::getServer()
+{
+    return m_server;
+}
+
+void SwLookup::setServer(QString server)
+{
+    m_server = server;
+}
+
+QString SwLookup::getAvailability()
+{
+    return m_availability;
+}
+
+void SwLookup::setAvailability(QString availability)
+{
+    m_availability = availability;
 }
 
 QString SwLookup::lookupIncrement(QString os, int inc)

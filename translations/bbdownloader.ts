@@ -661,6 +661,14 @@
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Valid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SysInfo</name>
@@ -1025,10 +1033,6 @@
     </message>
     <message>
         <source>Update!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Keyboard Shortcuts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

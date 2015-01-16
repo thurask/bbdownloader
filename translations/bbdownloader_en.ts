@@ -664,6 +664,14 @@
         <source>Error</source>
         <translation>Error</translation>
     </message>
+    <message>
+        <source>Valid</source>
+        <translation type="unfinished">Valid</translation>
+    </message>
+    <message>
+        <source>Invalid</source>
+        <translation type="unfinished">Invalid</translation>
+    </message>
 </context>
 <context>
     <name>SysInfo</name>
@@ -1029,10 +1037,6 @@
     <message>
         <source>Update!</source>
         <translation>Update!</translation>
-    </message>
-    <message>
-        <source>Keyboard Shortcuts</source>
-        <translation>Keyboard Shortcuts</translation>
     </message>
     <message>
         <source>Metadata</source>

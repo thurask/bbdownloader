@@ -13,6 +13,10 @@ class SwLookup : public QObject
 
     Q_PROPERTY(QString m_softwareRelease READ softwareRelease WRITE setSoftwareRelease NOTIFY softwareReleaseChanged)
 
+    Q_PROPERTY(QString m_server READ getServer WRITE setServer)
+
+    Q_PROPERTY(QString m_availability READ getAvailability WRITE setAvailability)
+
 public:
     SwLookup(QObject* parent = 0);
 
@@ -20,6 +24,11 @@ public:
     void post(QString osVer, QString server);
     QString softwareRelease();
     void setSoftwareRelease(QString sw);
+    QString getServer();
+    void setServer(QString server);
+    QString getAvailability();
+    void checkAvailability(QString swrelease);
+    void setAvailability(QString availability);
     QString lookupIncrement(QString os, int inc);
 
     Q_SIGNALS:
@@ -27,10 +36,13 @@ public:
 
     private Q_SLOTS:
     void onGetReply();
+    void availabilityReply();
 
     private:
     QNetworkAccessManager* m_networkAccessManager;
     QString m_softwareRelease;
+    QString m_server;
+    QString m_availability;
 };
 
 

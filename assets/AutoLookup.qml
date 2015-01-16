@@ -111,7 +111,7 @@ Page {
             }
             function lookup() {
                 if (_swlookup.softwareRelease().indexOf(".") != -1 && outputtext.text.indexOf(_swlookup.softwareRelease()) == -1){
-                    outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - SR " + _swlookup.softwareRelease() + " [" + serverdropdown.selectedOption.text + "]\n");
+                    outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - SR " + _swlookup.softwareRelease() + " [" + serverdropdown.selectedOption.text + "] [" + _swlookup.getAvailability() + "]\n");
                     led.flash(1);
                 }
                 else {
