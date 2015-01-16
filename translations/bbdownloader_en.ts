@@ -483,12 +483,40 @@
         <translation>STL100-1</translation>
     </message>
     <message>
-        <source>Verizon OS</source>
-        <translation>Verizon OS</translation>
-    </message>
-    <message>
         <source>SW Version</source>
         <translation>SW Version</translation>
+    </message>
+    <message>
+        <source>Passport</source>
+        <translation>Passport</translation>
+    </message>
+    <message>
+        <source>Z10</source>
+        <translation>Z10</translation>
+    </message>
+    <message>
+        <source>Q10</source>
+        <translation>Q10</translation>
+    </message>
+    <message>
+        <source>Z30</source>
+        <translation>Z30</translation>
+    </message>
+    <message>
+        <source>Z3</source>
+        <translation>Z3</translation>
+    </message>
+    <message>
+        <source>Core</source>
+        <translation>Core</translation>
+    </message>
+    <message>
+        <source>VZW</source>
+        <translation>VZW</translation>
+    </message>
+    <message>
+        <source>8960</source>
+        <translation>8960</translation>
     </message>
 </context>
 <context>

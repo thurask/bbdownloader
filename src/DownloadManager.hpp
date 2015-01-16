@@ -12,25 +12,25 @@
 
     public Q_SLOTS:
 
-        QString returnOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester);
+        QString returnOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester, bool passport, bool core, bool qcom);
 
-        QString returnRadioLinks(QString hashedswversion, QString osversion, QString radioversion, bool winchester);
+        QString returnRadioLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool lseries, bool nseries, bool aseries, bool jakarta);
 
-        void setOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester);
+        void setOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester, bool passport, bool core, bool qcom);
 
-        void setRadioLinks(QString hashedswversion, QString osversion, QString radioversion, bool winchester);
+        void setRadioLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool lseries, bool nseries, bool aseries, bool jakarta);
 
         void saveTextFile(QString urls, QString swrelease);
 
-        void exportLinks(QString swrelease, QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester);
+        void exportLinks(QString swrelease, QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool core, bool qcom, bool lseries, bool nseries, bool aseries, bool jakarta);
 
-        void copyLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester);
+        void copyLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool core, bool qcom, bool lseries, bool nseries, bool aseries, bool jakarta);
 
-        void copyOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester);
+        void copyOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester, bool passport, bool core, bool qcom);
 
-        void copyRadioLinks(QString hashedswversion, QString osversion, QString radioversion, bool winchester);
+        void copyRadioLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool lseries, bool nseries, bool aseries, bool jakarta);
 
-        QString returnLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester);
+        QString returnLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool core, bool qcom, bool lseries, bool nseries, bool aseries, bool jakarta);
 
         QString returnFilename();
 
@@ -42,7 +42,7 @@
 
     private:
 
-        void setExportUrls(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester);
+        void setExportUrls(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool core, bool qcom, bool lseries, bool nseries, bool aseries, bool jakarta);
 
         QString exporturls;
 

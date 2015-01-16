@@ -12,14 +12,21 @@ Page {
     property string swrelease
     property string osversion
     property string radioversion
-    property bool verizon: false
+    property bool verizon: true
+    property bool core: true
+    property bool qcom: true
     property bool winchester: true
+    property bool passport: true
+    property bool lseries: true
+    property bool nseries: true
+    property bool aseries: true
+    property bool jakarta: true
     actions: [
         ActionItem {
             title: qsTr("Generate") + Retranslate.onLanguageChanged
             onTriggered: {
-                ostext.text = _manager.returnOsLinks(hashedswversion, osversion, verizon, winchester);
-                radiotext.text = _manager.returnRadioLinks(hashedswversion, osversion, radioversion, winchester);
+                ostext.text = _manager.returnOsLinks(hashedswversion, osversion, verizon, winchester, passport, core, qcom);
+                radiotext.text = _manager.returnRadioLinks(hashedswversion, osversion, radioversion, verizon, winchester, passport, lseries, nseries, aseries, jakarta);
                 divider.visible = true;
                 allclipboard.enabled = true;
                 osclipboard.enabled = true;
@@ -51,7 +58,7 @@ Page {
             enabled: false
             title: qsTr("Copy Links") + Retranslate.onLanguageChanged
             onTriggered: {
-                _manager.copyLinks(hashedswversion, osversion, radioversion, verizon, winchester)
+                _manager.copyLinks(hashedswversion, osversion, radioversion, verizon, winchester, passport, core, qcom, lseries, nseries, aseries, jakarta)
                 linkexporttoast.body = qsTr("All URLs copied") + Retranslate.onLanguageChanged;
                 linkexporttoast.show();
             }
@@ -63,7 +70,7 @@ Page {
             enabled: false
             title: (ostext.text.indexOf("Normal URL") != -1 ? qsTr("Copy Autoloader Links") + Retranslate.onLanguageChanged : qsTr("Copy OS Links") + Retranslate.onLanguageChanged)
             onTriggered: {
-                _manager.copyOsLinks(hashedswversion, osversion, verizon, winchester)
+                _manager.copyOsLinks(hashedswversion, osversion, verizon, winchester, passport, core, qcom)
                 linkexporttoast.body = (ostext.text.indexOf("Normal URL") != -1 ? qsTr("Autoloader URLs copied") + Retranslate.onLanguageChanged : qsTr("OS URLs copied") + Retranslate.onLanguageChanged);
                 linkexporttoast.show();
             }
@@ -75,7 +82,7 @@ Page {
             enabled: false
             title: (radiotext.text.indexOf("Variant URL") != -1 ? qsTr("Copy Variant Links") + Retranslate.onLanguageChanged : qsTr("Copy Radio Links") + Retranslate.onLanguageChanged)
             onTriggered: {
-                _manager.copyRadioLinks(hashedswversion, osversion, radioversion, winchester)
+                _manager.copyRadioLinks(hashedswversion, osversion, radioversion, verizon, winchester, passport, lseries, nseries, aseries, jakarta)
                 linkexporttoast.body = (radiotext.text.indexOf("Variant URL") != -1 ? qsTr("Variant URLs copied") + Retranslate.onLanguageChanged : qsTr("Radio URLs copied") + Retranslate.onLanguageChanged);
                 linkexporttoast.show();
             }
@@ -87,7 +94,7 @@ Page {
             enabled: false
             title: qsTr("Export Links") + Retranslate.onLanguageChanged
             onTriggered: {
-                _manager.exportLinks(swrelease, hashedswversion, osversion, radioversion, verizon, winchester);
+                _manager.exportLinks(swrelease, hashedswversion, osversion, radioversion, verizon, winchester, passport, core, qcom, lseries, nseries, aseries, jakarta);
                 linkexporttoast.body = qsTr("Links saved to default directory") + Retranslate.onLanguageChanged;
                 linkexporttoast.button.enabled = true;
                 myQuery.query.uri = _manager.returnFilename();
@@ -223,8 +230,99 @@ Page {
                 
             }
             Container {
-                layout: StackLayout {
-                    orientation: LayoutOrientation.LeftToRight
+                layout: GridLayout {
+                    columnCount: 3
+                }  
+                CheckBox {
+                    id: checkbox_core
+                    text: qsTr("Core") + Retranslate.onLanguageChanged
+                    checked: true
+                    onCheckedChanged: {
+                        if (checked){
+                            core = true;
+                        }
+                        else {
+                            core = false;
+                        }
+                    }
+                }              
+                CheckBox {
+                    id: checkbox_vzw
+                    text: qsTr("VZW") + Retranslate.onLanguageChanged
+                    checked: true
+                    onCheckedChanged: {
+                        if (checked){
+                            verizon = true;
+                        }
+                        else {
+                            verizon = false;
+                        }
+                    }
+                }
+                CheckBox {
+                    id: checkbox_8960
+                    text: qsTr("8960") + Retranslate.onLanguageChanged
+                    checked: true
+                    onCheckedChanged: {
+                        if (checked){
+                            qcom = true;
+                        }
+                        else {
+                            qcom = false;
+                        }
+                    }
+                }
+                CheckBox {
+                    id: checkbox_z10
+                    text: qsTr("Z10") + Retranslate.onLanguageChanged
+                    checked: true
+                    onCheckedChanged: {
+                        if (checked){
+                            lseries = true;
+                        }
+                        else {
+                            lseries = false;
+                        }
+                    }
+                }
+                CheckBox {
+                    id: checkbox_q10
+                    text: qsTr("Q10") + Retranslate.onLanguageChanged
+                    checked: true
+                    onCheckedChanged: {
+                        if (checked){
+                            nseries = true;
+                        }
+                        else {
+                            nseries = false;
+                        }
+                    }
+                }
+                CheckBox {
+                    id: checkbox_z30
+                    text: qsTr("Z30") + Retranslate.onLanguageChanged
+                    checked: true
+                    onCheckedChanged: {
+                        if (checked){
+                            aseries = true;
+                        }
+                        else {
+                            aseries = false;
+                        }
+                    }
+                }
+                CheckBox {
+                    id: checkbox_z3
+                    text: qsTr("Z3") + Retranslate.onLanguageChanged
+                    checked: true
+                    onCheckedChanged: {
+                        if (checked){
+                            jakarta = true;
+                        }
+                        else {
+                            jakarta = false;
+                        }
+                    }
                 }
                 CheckBox {
                     id: checkbox_omap
@@ -240,15 +338,15 @@ Page {
                     }
                 }
                 CheckBox {
-                    id: checkbox_vzw
-                    text: qsTr("Verizon OS") + Retranslate.onLanguageChanged
-                    checked: false
+                    id: checkbox_8974
+                    text: qsTr("Passport") + Retranslate.onLanguageChanged
+                    checked: true
                     onCheckedChanged: {
                         if (checked){
-                            verizon = true;
+                            passport = true;
                         }
                         else {
-                            verizon = false;
+                            passport = false;
                         }
                     }
                 }
@@ -314,7 +412,7 @@ Page {
                 uri: _manager.returnFilename()
                 mimeType: ""
                 invokeActionId: "bb.action.SHARE"
-                data: _manager.returnLinks(hashedswversion, osversion, radioversion, verizon, winchester)
+                data: _manager.returnLinks(hashedswversion, osversion, radioversion, verizon, winchester, passport, core, qcom, lseries, nseries, aseries, jakarta)
                 onQueryChanged: {
                     myQuery.query.updateQuery()
                 }

@@ -481,11 +481,39 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Verizon OS</source>
+        <source>SW Version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>SW Version</source>
+        <source>Passport</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Z10</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Q10</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Z30</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Z3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Core</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>VZW</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>8960</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
