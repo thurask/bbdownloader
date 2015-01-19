@@ -164,9 +164,11 @@ Page {
                 verticalAlignment: VerticalAlignment.Center
                 enabled: (scanning == false)
                 onTextChanging: {
+                    autolookup_input.text = _swlookup.spaceTrimmer(autolookup_input.text);
                     _swlookup.post(autolookup_input.text, serverdropdown.selectedValue);
                 }
                 onTextChanged: {
+                    autolookup_input.text = _swlookup.spaceTrimmer(autolookup_input.text);
                     _swlookup.post(autolookup_input.text, serverdropdown.selectedValue);
                 }
                 hintText: qsTr("Enter OS version") + Retranslate.onLanguageChanged

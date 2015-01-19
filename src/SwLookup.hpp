@@ -30,6 +30,7 @@ public:
     void checkAvailability(QString swrelease);
     void setAvailability(QString availability);
     QString lookupIncrement(QString os, int inc);
+    QString spaceTrimmer(QString lookup);
 
     Q_SIGNALS:
     void softwareReleaseChanged();

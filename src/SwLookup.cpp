@@ -84,8 +84,7 @@ void SwLookup::availabilityReply()
     QNetworkReply* av_reply = (QNetworkReply*)sender();
     if (m_server == "production"){
         int status = av_reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
-        if (status == 200 || (status > 300 && status <= 308))
-        {
+        if (status == 200 || (status > 300 && status <= 308)){
             setAvailability(tr("Valid"));
         }
         else {
@@ -146,4 +145,12 @@ QString SwLookup::lookupIncrement(QString os, int inc)
     else {
         return tr("Error");
     }
+}
+
+QString SwLookup::spaceTrimmer(QString lookup)
+{
+    if (lookup.endsWith(" ") == true){
+        lookup.chop(1);
+    }
+    return lookup;
 }
