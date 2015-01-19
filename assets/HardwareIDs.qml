@@ -6,6 +6,7 @@
 
 import bb.cascades 1.4
 import bb.data 1.0
+import bb.system 1.2
 
 Sheet {
     id: hardwareIDs
@@ -79,8 +80,37 @@ Sheet {
                     ListItemComponent {
                         type: "item"
                         StandardListItem {
+                            id: slistitem
                             title: ListItemData.id
-                            description: ListItemData.name + " " + ListItemData.variant
+                            description: qsTr("%1 %2").arg(ListItemData.name).arg(ListItemData.variant) + Retranslate.onLanguageChanged
+                            contextActions: [
+                                ActionSet {
+                                    actions: [
+                                        ActionItem {
+                                            title: qsTr("Copy ID") + Retranslate.onLanguageChanged
+                                            imageSource: "asset:///images/menus/ic_copy.png"
+                                            onTriggered: {
+                                                Clipboard.copyToClipboard(slistitem.ListItem.data.id.toString())
+                                                copytoast.show()
+                                            }
+                                        },
+                                        ActionItem {
+                                            title: qsTr("Copy Full Name") + Retranslate.onLanguageChanged
+                                            imageSource: "asset:///images/menus/ic_copy.png"
+                                            onTriggered: {
+                                                Clipboard.copyToClipboard(qsTr("%1 %2 (%3)").arg(slistitem.ListItem.data.name.toString()).arg(slistitem.ListItem.data.variant.toString()).arg(slistitem.ListItem.data.id.toString()) + Retranslate.onLanguageChanged)
+                                                copytoast.show()
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                            attachedObjects: [
+                                SystemToast { //Toast must be attached to ListItem in order to appear
+                                    id: copytoast
+                                    body: qsTr("Copied") + Retranslate.onLanguageChanged
+                                }
+                            ]
                         }
                     }
                 ]

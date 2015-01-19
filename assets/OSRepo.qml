@@ -61,6 +61,10 @@ Sheet {
                     }
                 }
             }
+            Label {
+                text: qsTr("Tap to select, long press to copy") + Retranslate.onLanguageChanged
+                horizontalAlignment: HorizontalAlignment.Center
+            }
             Header {
                 id: mainheader
                 title: (localtoggle.checked == true ? qsTr("Known Software (local copy)") + Retranslate.onLanguageChanged : qsTr("Known Software (network copy)") + Retranslate.onLanguageChanged)
@@ -81,9 +85,57 @@ Sheet {
                     ListItemComponent {
                         type: "item"
                         StandardListItem {
+                            id: slistitem
                             title: (ListItemData.trueos == "" ? ListItemData.os : ListItemData.trueos)
                             description: qsTr("SR: %1 | Radio: %2").arg(ListItemData.software).arg(ListItemData.radio) + Retranslate.onLanguageChanged
                             status: ListItemData.notes
+                            contextActions: [
+                                ActionSet {
+                                    actions: [
+                                        ActionItem {
+                                            title: qsTr("Copy OS") + Retranslate.onLanguageChanged
+                                            imageSource: "asset:///images/menus/ic_copy.png"
+                                            onTriggered: {
+                                                var smeg = (slistitem.ListItem.data.trueos.toString() == "" ? slistitem.ListItem.data.os.toString() : slistitem.ListItem.data.trueos.toString())
+                                                Clipboard.copyToClipboard(smeg)
+                                                copytoast.show()
+                                            }
+                                        },
+                                        ActionItem {
+                                            title: qsTr("Copy Radio") + Retranslate.onLanguageChanged
+                                            imageSource: "asset:///images/menus/ic_copy.png"
+                                            onTriggered: {
+                                                Clipboard.copyToClipboard(slistitem.ListItem.data.radio.toString())
+                                                copytoast.show()
+                                            }
+                                            enabled: (slistitem.ListItem.data.radio.toString != "N/A")
+                                        },
+                                        ActionItem {
+                                            title: qsTr("Copy Software") + Retranslate.onLanguageChanged
+                                            imageSource: "asset:///images/menus/ic_copy.png"
+                                            onTriggered: {
+                                                Clipboard.copyToClipboard(slistitem.ListItem.data.software.toString())
+                                                copytoast.show()
+                                            }
+                                            enabled: (slistitem.ListItem.data.software.toString != "N/A")
+                                        },
+                                        ActionItem {
+                                            title: qsTr("Copy All") + Retranslate.onLanguageChanged
+                                            imageSource: "asset:///images/menus/ic_copy.png"
+                                            onTriggered: {
+                                                Clipboard.copyToClipboard(qsTr("OS %1 | Radio %2 | Software %3").arg(slistitem.ListItem.data.trueos.toString() == "" ? slistitem.ListItem.data.os.toString() : slistitem.ListItem.data.trueos.toString()).arg(slistitem.ListItem.data.radio.toString()).arg(slistitem.ListItem.data.software.toString()) + Retranslate.onLanguageChanged)
+                                                copytoast.show()
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                            attachedObjects: [
+                                SystemToast { //Toast must be attached to ListItem in order to appear
+                                    id: copytoast
+                                    body: qsTr("Copied") + Retranslate.onLanguageChanged
+                                }
+                            ]
                         }
                     }
                 ]
@@ -126,7 +178,7 @@ Sheet {
         },
         SystemToast {
             id: xmlToast
-            body: qsTr("Values copied") + Retranslate.onLanguageChanged
+            body: qsTr("Values sent to generator") + Retranslate.onLanguageChanged
         }
     ]
     onCreationCompleted: {

@@ -1,5 +1,6 @@
 import bb.cascades 1.4
 import bb.data 1.0
+import bb.system 1.2
 
 Page {
     property alias tbar: certpage.titleBar
@@ -69,11 +70,41 @@ Page {
                 ListItemComponent {
                     type: "item"
                     StandardListItem {
+                        id: slistitem
                         title: ListItemData.variant
                         description: ListItemData.id
-                        enabled: (ListItemData.url == "" ? false : true)
                         visible: ((ListItemData.id == "" || ListItemData.variant == "" || ListItemData.name == "") ? false : true)
                         status: (ListItemData.url == "" ? qsTr("Invalid") + Retranslate.onLanguageChanged : qsTr("Valid") + Retranslate.onLanguageChanged)
+                        contextActions: [
+                            ActionSet {
+                                actions: [
+                                    ActionItem {
+                                        title: qsTr("Copy URL") + Retranslate.onLanguageChanged
+                                        imageSource: "asset:///images/menus/ic_copy.png"
+                                        onTriggered: {
+                                            Clipboard.copyToClipboard("https://ptcrb.com/vendor/complete/view_complete_request_guest.cfm?modelid=" + slistitem.ListItem.data.url.toString())
+                                            copytoast.show()
+                                        }
+                                        enabled: (slistitem.ListItem.data.url.toString() == "" ? false : true)
+                                    },
+                                    ActionItem {
+                                        title: qsTr("Copy Name/Variant") + Retranslate.onLanguageChanged
+                                        imageSource: "asset:///images/menus/ic_copy.png"
+                                        onTriggered: {
+                                            Clipboard.copyToClipboard(qsTr("%1 %2 (%3)").arg(slistitem.ListItem.data.name.toString()).arg(slistitem.ListItem.data.variant.toString()).arg(slistitem.ListItem.data.id.toString()) + Retranslate.onLanguageChanged)
+                                            copytoast.show()
+                                        }
+                                        enabled: (slistitem.ListItem.data.variant.toString() == "" ? false : true)
+                                    }
+                                ]
+                            }
+                        ]
+                        attachedObjects: [
+                            SystemToast { //Toast must be attached to ListItem in order to appear
+                                id: copytoast
+                                body: qsTr("Copied") + Retranslate.onLanguageChanged
+                            }
+                        ]
                     }
                 }
             ]
@@ -103,12 +134,34 @@ Page {
                             }
                         }
                     }
+                    actions: [
+                        ActionItem {
+                            title: qsTr("Open in Browser") + Retranslate.onLanguageChanged
+                            imageSource: "asset:///images/menus/ic_browser.png"
+                            onTriggered: {
+                                myQuery.trigger(myQuery.query.invokeActionId);
+                            }
+                            ActionBar.placement: ActionBarPlacement.OnBar
+                        }
+                    ]
                     WebView {
                         id: mainwebview
                         url: ("https://ptcrb.com/vendor/complete/view_complete_request_guest.cfm?modelid=" + selectedid)
                         settings.zoomToFitEnabled: true
                         settings.textAutosizingEnabled: true
                     }
+                    attachedObjects: [
+                        Invocation {
+                            id: myQuery
+                            query {
+                                uri: mainwebview.url
+                                invokeActionId: "bb.action.OPEN"
+                                onQueryChanged: {
+                                    myQuery.query.updateQuery()
+                                }
+                            }
+                        }
+                    ]
                 }
             }
         },

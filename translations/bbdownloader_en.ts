@@ -118,6 +118,26 @@
         <source>Valid</source>
         <translation>Valid</translation>
     </message>
+    <message>
+        <source>Copy URL</source>
+        <translation>Copy URL</translation>
+    </message>
+    <message>
+        <source>%1 %2 (%3)</source>
+        <translation>%1 %2 (%3)</translation>
+    </message>
+    <message>
+        <source>Copy Name/Variant</source>
+        <translation>Copy Name/Variant</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Copied</translation>
+    </message>
+    <message>
+        <source>Open in Browser</source>
+        <translation>Open in Browser</translation>
+    </message>
 </context>
 <context>
     <name>CustomTitleBar</name>
@@ -214,6 +234,26 @@
     <message>
         <source>Could not access online file. Loading local copy.</source>
         <translation>Could not access online file. Loading local copy.</translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation>%1 %2</translation>
+    </message>
+    <message>
+        <source>Copy ID</source>
+        <translation>Copy ID</translation>
+    </message>
+    <message>
+        <source>Copy Full Name</source>
+        <translation>Copy Full Name</translation>
+    </message>
+    <message>
+        <source>%1 %2 (%3)</source>
+        <translation>%1 %2 (%3)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Copied</translation>
     </message>
 </context>
 <context>
@@ -554,8 +594,36 @@
         <translation>SR: %1 | Radio: %2</translation>
     </message>
     <message>
-        <source>Values copied</source>
-        <translation>Values copied</translation>
+        <source>Copy OS</source>
+        <translation>Copy OS</translation>
+    </message>
+    <message>
+        <source>Copy Radio</source>
+        <translation>Copy Radio</translation>
+    </message>
+    <message>
+        <source>Copy Software</source>
+        <translation>Copy Software</translation>
+    </message>
+    <message>
+        <source>Copy All</source>
+        <translation>Copy All</translation>
+    </message>
+    <message>
+        <source>OS %1 | Radio %2 | Software %3</source>
+        <translation>OS %1 | Radio %2 | Software %3</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Copied</translation>
+    </message>
+    <message>
+        <source>Values sent to generator</source>
+        <translation>Values sent to generator</translation>
+    </message>
+    <message>
+        <source>Tap to select, long press to copy</source>
+        <translation>Tap to select, long press to copy</translation>
     </message>
 </context>
 <context>

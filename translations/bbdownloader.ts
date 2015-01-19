@@ -118,6 +118,26 @@
         <source>Valid</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Copy URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 %2 (%3)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy Name/Variant</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CustomTitleBar</name>
@@ -213,6 +233,26 @@
     </message>
     <message>
         <source>Could not access online file. Loading local copy.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy Full Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 %2 (%3)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -552,7 +592,35 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Values copied</source>
+        <source>Copy OS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy Radio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy Software</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OS %1 | Radio %2 | Software %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Values sent to generator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tap to select, long press to copy</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
