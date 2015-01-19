@@ -86,6 +86,7 @@ Page {
                 TextField {
                     id: hashinput
                     hintText: qsTr("Text to be hashed") + Retranslate.onLanguageChanged
+                    clearButtonVisible: true
                 }
             }
             Container {

@@ -185,6 +185,8 @@ Page {
                         }
                     }
                 }
+                clearButtonVisible: true
+                maximumLength: 19
             }
         }
         DropDown {

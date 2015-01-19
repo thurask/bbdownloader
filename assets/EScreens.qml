@@ -66,6 +66,10 @@ Page {
                 onTextChanging: {
                     pin.text = pin.text.toLowerCase()
                 }
+                onTextChanged: {
+                    pin.text = pin.text.toLowerCase()
+                }
+                maximumLength: 8
                 validator: Validator {
                     id: validator_pin
                     mode: ValidationMode.Immediate
@@ -79,6 +83,7 @@ Page {
                         }
                     }
                 }
+                clearButtonVisible: true
             }
         }
         Container {
@@ -86,6 +91,12 @@ Page {
             TextField {
                 id: appv
                 hintText: qsTr("App Version") + Retranslate.onLanguageChanged
+                onTextChanging: {
+                    appv.text = _swlookup.spaceTrimmer(appv.text)
+                }
+                onTextChanged: {
+                    appv.text = _swlookup.spaceTrimmer(appv.text)
+                }
                 validator: Validator {
                     id: validator_appver
                     mode: ValidationMode.Immediate
@@ -99,6 +110,8 @@ Page {
                         }
                     }
                 }
+                clearButtonVisible: true
+                maximumLength: 19
             }
         }
         Container {
@@ -119,6 +132,7 @@ Page {
                         }
                     }
                 }
+                clearButtonVisible: true
                 function returnUptime() {
                     var now = new Date();
                     var dmy = new Date(_manager.readTextFile("/var/boottime.txt", "normal"));

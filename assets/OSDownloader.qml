@@ -126,10 +126,12 @@ Page {
                         id: osver_input
                         hintText: qsTr("OS Version") + Retranslate.onLanguageChanged
                         onTextChanging: {
+                            osver_input.text = _swlookup.spaceTrimmer(osver_input.text)
                             osversion = osver_input.text
                             _swlookup.post(osversion, "https://cs.sl.blackberry.com/cse/srVersionLookup/2.0.0/");
                         }
                         onTextChanged: {
+                            osver_input.text = _swlookup.spaceTrimmer(osver_input.text)
                             osversion = osver_input.text
                             _swlookup.post(osversion, "https://cs.sl.blackberry.com/cse/srVersionLookup/2.0.0/");
                         }
@@ -145,6 +147,8 @@ Page {
                                 }
                             }
                         }
+                        clearButtonVisible: true
+                        maximumLength: 19
                     }
                     Button {
                         text: qsTr("Lookup") + Retranslate.onLanguageChanged
@@ -165,6 +169,11 @@ Page {
                         id: radiover_input
                         hintText: qsTr("Radio Version") + Retranslate.onLanguageChanged
                         onTextChanging: {
+                            radiover_input.text = _swlookup.spaceTrimmer(radiover_input.text)
+                            radioversion = radiover_input.text
+                        }
+                        onTextChanged: {
+                            radiover_input.text = _swlookup.spaceTrimmer(radiover_input.text)
                             radioversion = radiover_input.text
                         }
                         validator: Validator {
@@ -179,6 +188,8 @@ Page {
                                 }
                             }
                         }
+                        clearButtonVisible: true
+                        maximumLength: 19
                     }
                     Button {
                         text: qsTr("OS Version + 1") + Retranslate.onLanguageChanged
@@ -199,6 +210,13 @@ Page {
                         id: swver_input
                         hintText: qsTr("SW Version") + Retranslate.onLanguageChanged
                         onTextChanging: {
+                            swver_input.text = _swlookup.spaceTrimmer(swver_input.text)
+                            swrelease = swver_input.text
+                            hashCalculateSha.calculateHash(swrelease)
+                            hashedswversion = hashCalculateSha.getHash()
+                        }
+                        onTextChanged: {
+                            swver_input.text = _swlookup.spaceTrimmer(swver_input.text)
                             swrelease = swver_input.text
                             hashCalculateSha.calculateHash(swrelease)
                             hashedswversion = hashCalculateSha.getHash()
@@ -215,6 +233,8 @@ Page {
                                 }
                             }
                         }
+                        clearButtonVisible: true
+                        maximumLength: 19
                     }
                     Button {
                         id: repobutton
