@@ -32,8 +32,11 @@ Page {
                 osclipboard.enabled = true;
                 if (radiotext.text.length != 0){
                     radioclipboard.enabled = true;
+                    radiopaste.enabled = true;
                 }
                 exportbutton.enabled = true;
+                allpaste.enabled = true;
+                ospaste.enabled = true;
             }
             ActionBar.placement: ActionBarPlacement.Signature
             imageSource: "asset:///images/menus/ic_edit.png"
@@ -49,6 +52,9 @@ Page {
                 osclipboard.enabled = false;
                 radioclipboard.enabled = false;
                 exportbutton.enabled = false;
+                allpaste.enabled = false;
+                ospaste.enabled = false;
+                radiopaste.enabled = false;
             }
             ActionBar.placement: ActionBarPlacement.OnBar
             imageSource: "asset:///images/menus/ic_clear.png"
@@ -104,6 +110,39 @@ Page {
             }
             ActionBar.placement: ActionBarPlacement.InOverflow
             imageSource: "asset:///images/menus/ic_doctype_doc.png"
+        },
+        ActionItem {
+            id: allpaste
+            enabled: false
+            title: qsTr("Upload Links") + Retranslate.onLanguageChanged
+            onTriggered: {
+                Paster.uploadPaste(_manager.returnLinks(hashedswversion, osversion, radioversion, verizon, winchester, passport, core, qcom, lseries, nseries, aseries, jakarta))
+                Paster.uploadUrlChanged.connect(pastetoast.show())
+            }
+            imageSource: "asset:///images/menus/ic_browser.png"
+            ActionBar.placement: ActionBarPlacement.OnBar
+        },
+        ActionItem {
+            id: ospaste
+            enabled: false
+            title: (ostext.text.indexOf("Normal URL") != -1 ? qsTr("Upload Autoloader Links") + Retranslate.onLanguageChanged : qsTr("Upload OS Links") + Retranslate.onLanguageChanged)
+            onTriggered: {
+                Paster.uploadPaste(_manager.returnOsLinks(hashedswversion, osversion, verizon, winchester, passport, core, qcom))
+                Paster.uploadUrlChanged.connect(pastetoast.show())
+            }
+            imageSource: "asset:///images/menus/ic_browser.png"
+            ActionBar.placement: ActionBarPlacement.OnBar
+        },
+        ActionItem {
+            id: radiopaste
+            enabled: false
+            title: (radiotext.text.indexOf("Variant URL") != -1 ? qsTr("Upload Variant Links") + Retranslate.onLanguageChanged : qsTr("Upload Radio Links") + Retranslate.onLanguageChanged)
+            onTriggered: {
+                Paster.uploadPaste(_manager.returnRadioLinks(hashedswversion, osversion, radioversion, verizon, winchester, passport, lseries, nseries, aseries, jakarta))
+                Paster.uploadUrlChanged.connect(pastetoast.show())
+            }
+            imageSource: "asset:///images/menus/ic_browser.png"
+            ActionBar.placement: ActionBarPlacement.OnBar
         }
     ]
     ScrollView {
@@ -424,6 +463,15 @@ Page {
                 if (linkexporttoast.result == SystemUiResult.ButtonSelection){
                     myQuery.trigger(myQuery.query.invokeActionId)
                 }
+            }
+        },
+        SystemToast {
+            id: pastetoast
+            body: qsTr("URL Copied") + Retranslate.onLanguageChanged
+            button.enabled: false
+            button.label: ""
+            onFinished: {
+                Clipboard.copyToClipboard(Paster.getUploadUrl())
             }
         },
         Invocation {

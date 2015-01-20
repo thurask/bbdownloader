@@ -19,7 +19,7 @@ Page {
             title: qsTr("Start") + Retranslate.onLanguageChanged
             onTriggered: {
                 if (validator.valid == false){
-                    autolookup_input.text = qsTr("Please input a valid OS version") + Retranslate.onLanguageChanged;
+                    autolookup_input.text = qsTr("Input Valid OS") + Retranslate.onLanguageChanged;
                 }
                 else {
                     if (scanning == false) {
@@ -67,7 +67,7 @@ Page {
             title: qsTr("Copy") + Retranslate.onLanguageChanged
             enabled: (scanning == false && outputtext.text != "")
             onTriggered: {
-                Clipboard.copyToClipboard(outputtext.text);
+                Clipboard.copyToClipboard(_swlookup.spaceTrimmer(outputtext.text));
                 lookupexporttoast.body = qsTr("Copied") + Retranslate.onLanguageChanged;
                 lookupexporttoast.button.enabled = false;
                 lookupexporttoast.button.label = "";
@@ -98,6 +98,17 @@ Page {
                 myQuery.trigger(myQuery.query.invokeActionId)
             }
             imageSource: "asset:///images/menus/ic_share.png"
+            ActionBar.placement: ActionBarPlacement.OnBar
+        },
+        ActionItem {
+            id: autopastebutton
+            title: qsTr("Upload Lookups") + Retranslate.onLanguageChanged
+            enabled: (scanning == false && outputtext.text != "")
+            onTriggered: {
+                Paster.uploadPaste(_swlookup.spaceTrimmer(outputtext.text))
+                Paster.uploadUrlChanged.connect(pastetoast.show())
+            }
+            imageSource: "asset:///images/menus/ic_browser.png"
             ActionBar.placement: ActionBarPlacement.OnBar
         }
     ]
@@ -135,6 +146,15 @@ Page {
                 if (lookupexporttoast.result == SystemUiResult.ButtonSelection){
                     outputtext.setText(outputtext.storedtext);
                 }
+            }
+        },
+        SystemToast {
+            id: pastetoast
+            body: qsTr("URL Copied") + Retranslate.onLanguageChanged
+            button.enabled: false
+            button.label: ""
+            onFinished: {
+                Clipboard.copyToClipboard(Paster.getUploadUrl())
             }
         },
         Invocation {

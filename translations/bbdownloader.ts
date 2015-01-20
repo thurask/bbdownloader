@@ -4,7 +4,11 @@
 <context>
     <name>AutoLookup</name>
     <message>
-        <source>Enter OS version</source>
+        <source>Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -20,15 +24,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Export</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Share</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Server</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -36,15 +40,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Start</source>
+        <source>Share</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Stop</source>
+        <source>Enter OS version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Please input a valid OS version</source>
+        <source>Server</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -72,11 +76,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Copy</source>
+        <source>URL Copied</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Copied</source>
+        <source>Upload Lookups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input Valid OS</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -554,6 +562,30 @@
     </message>
     <message>
         <source>8960</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload Links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload Autoloader Links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload OS Links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload Variant Links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload Radio Links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL Copied</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

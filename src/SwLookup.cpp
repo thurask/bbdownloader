@@ -149,7 +149,7 @@ QString SwLookup::lookupIncrement(QString os, int inc)
 
 QString SwLookup::spaceTrimmer(QString lookup)
 {
-    if (lookup.endsWith(" ") == true){
+    if (lookup.endsWith(" ") == true || lookup.endsWith("\n") == true){
         lookup.chop(1);
     }
     return lookup;

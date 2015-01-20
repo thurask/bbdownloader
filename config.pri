@@ -223,6 +223,7 @@ config_pri_source_group1 {
         $$quote($$BASEDIR/src/DownloadManager.cpp) \
         $$quote($$BASEDIR/src/MetadataReader.cpp) \
         $$quote($$BASEDIR/src/Nomedia.cpp) \
+        $$quote($$BASEDIR/src/PasteClient.cpp) \
         $$quote($$BASEDIR/src/Settings.cpp) \
         $$quote($$BASEDIR/src/SwLookup.cpp) \
         $$quote($$BASEDIR/src/UpdateChecker.cpp) \
@@ -238,6 +239,7 @@ config_pri_source_group1 {
         $$quote($$BASEDIR/src/DownloadManager.hpp) \
         $$quote($$BASEDIR/src/MetadataReader.hpp) \
         $$quote($$BASEDIR/src/Nomedia.hpp) \
+        $$quote($$BASEDIR/src/PasteClient.hpp) \
         $$quote($$BASEDIR/src/Settings.hpp) \
         $$quote($$BASEDIR/src/SwLookup.hpp) \
         $$quote($$BASEDIR/src/UpdateChecker.hpp) \
