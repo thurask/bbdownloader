@@ -184,7 +184,7 @@ void DownloadManager::setExportUrls(QString hashedswversion, QString osversion, 
 {
     setOsLinks(hashedswversion, osversion, verizon, winchester, passport, core, qcom);
     setRadioLinks(hashedswversion, osversion, radioversion, verizon, winchester, passport, lseries, nseries, aseries, jakarta);
-    exporturls = oslinks + "\n" + radiolinks;
+    exporturls = oslinks + "\n\n" + radiolinks;
 }
 
 void DownloadManager::exportLinks(QString swrelease, QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool core, bool qcom, bool lseries, bool nseries, bool aseries, bool jakarta)
