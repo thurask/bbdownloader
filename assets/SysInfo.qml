@@ -77,7 +77,7 @@ Page {
         scrollViewProperties.pinchToZoomEnabled: false
         Container {
             Container {
-                topPadding: 20.0
+                topPadding: 5.0
                 Header {
                     title: qsTr("Hardware") + Retranslate.onLanguageChanged;
                 }

@@ -57,9 +57,8 @@ Page {
         }
     ]
     Container {
-        topPadding: 10.0
+        topPadding: 5.0
         Container {
-            topPadding: 5.0
             TextField {
                 id: pin
                 hintText: qsTr("PIN") + Retranslate.onLanguageChanged
@@ -149,32 +148,34 @@ Page {
                 }
             }
         }
-        
-        DropDown {
-            id: validity
-            title: qsTr("Validity") + Retranslate.onLanguageChanged
-            options: [
-                Option {
-                    text: qsTr("1 day") + Retranslate.onLanguageChanged
-                    value: ""
-                },
-                Option {
-                    text: qsTr("3 days") + Retranslate.onLanguageChanged
-                    value: "%55%72%79%79%62%20%7A%6C%20%6F%6E%6F%6C%2C%20%75%72%79%79%62%20%7A%6C%20%75%62%61%72%6C%2C%20%75%72%79%79%62%20%7A%6C%20%65%6E%74%20%67%76%7A%72%20%74%6E%79"
-                },
-                Option {
-                    text: qsTr("7 days") + Retranslate.onLanguageChanged
-                    value: "%55%72%20%6A%6E%66%20%6E%20%6F%62%6C%2C%20%6E%61%71%20%66%75%72%20%6A%6E%66%20%6E%20%74%76%65%79%2C%20%70%6E%61%20%56%20%7A%6E%78%72%20%76%67%20%6E%61%6C%20%7A%62%65%72%20%62%6F%69%76%62%68%66%3F"
-                },
-                Option {
-                    text: qsTr("15 days") + Retranslate.onLanguageChanged
-                    value: "%46%62%20%6E%7A%20%56%2C%20%66%67%76%79%79%20%6A%6E%76%67%76%61%74%2C%20%73%62%65%20%67%75%76%66%20%6A%62%65%79%71%20%67%62%20%66%67%62%63%20%75%6E%67%76%61%74%3F"
-                },
-                Option {
-                    text: qsTr("30 days") + Retranslate.onLanguageChanged
-                    value: "%56%20%79%62%69%72%20%7A%6C%66%72%79%73%20%67%62%71%6E%6C%2C%20%61%62%67%20%79%76%78%72%20%6C%72%66%67%72%65%71%6E%6C%2E%20%56%27%7A%20%70%62%62%79%2C%20%56%27%7A%20%70%6E%79%7A%2C%20%56%27%7A%20%74%62%61%61%6E%20%6F%72%20%62%78%6E%6C"
-                    selected: true
-                }]
+        Container {
+            topPadding: 5.0
+            DropDown {
+                id: validity
+                title: qsTr("Validity") + Retranslate.onLanguageChanged
+                options: [
+                    Option {
+                        text: qsTr("1 day") + Retranslate.onLanguageChanged
+                        value: ""
+                    },
+                    Option {
+                        text: qsTr("3 days") + Retranslate.onLanguageChanged
+                        value: "%55%72%79%79%62%20%7A%6C%20%6F%6E%6F%6C%2C%20%75%72%79%79%62%20%7A%6C%20%75%62%61%72%6C%2C%20%75%72%79%79%62%20%7A%6C%20%65%6E%74%20%67%76%7A%72%20%74%6E%79"
+                    },
+                    Option {
+                        text: qsTr("7 days") + Retranslate.onLanguageChanged
+                        value: "%55%72%20%6A%6E%66%20%6E%20%6F%62%6C%2C%20%6E%61%71%20%66%75%72%20%6A%6E%66%20%6E%20%74%76%65%79%2C%20%70%6E%61%20%56%20%7A%6E%78%72%20%76%67%20%6E%61%6C%20%7A%62%65%72%20%62%6F%69%76%62%68%66%3F"
+                    },
+                    Option {
+                        text: qsTr("15 days") + Retranslate.onLanguageChanged
+                        value: "%46%62%20%6E%7A%20%56%2C%20%66%67%76%79%79%20%6A%6E%76%67%76%61%74%2C%20%73%62%65%20%67%75%76%66%20%6A%62%65%79%71%20%67%62%20%66%67%62%63%20%75%6E%67%76%61%74%3F"
+                    },
+                    Option {
+                        text: qsTr("30 days") + Retranslate.onLanguageChanged
+                        value: "%56%20%79%62%69%72%20%7A%6C%66%72%79%73%20%67%62%71%6E%6C%2C%20%61%62%67%20%79%76%78%72%20%6C%72%66%67%72%65%71%6E%6C%2E%20%56%27%7A%20%70%62%62%79%2C%20%56%27%7A%20%70%6E%79%7A%2C%20%56%27%7A%20%74%62%61%61%6E%20%6F%72%20%62%78%6E%6C"
+                        selected: true
+                    }]
+            }
         }
         Label {
             id: ykey

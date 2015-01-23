@@ -150,14 +150,13 @@ Page {
         scrollViewProperties.scrollMode: ScrollMode.Vertical
         scrollViewProperties.overScrollEffectMode: OverScrollEffectMode.OnPinch
         Container {
-            topPadding: 10.0
+            topPadding: 5.0
             //Inputs
             Container {
                 layout: StackLayout {
                     orientation: LayoutOrientation.TopToBottom
                 }
                 Container {
-                    topPadding: 5.0
                     layout: StackLayout {
                         orientation: LayoutOrientation.LeftToRight
                     }
@@ -451,7 +450,7 @@ Page {
             //Links
             Container {
                 horizontalAlignment: HorizontalAlignment.Center
-                topPadding: 10.0
+                topPadding: 5.0
                 Header {
                     title: qsTr("Links") + Retranslate.onLanguageChanged
                 }

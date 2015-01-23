@@ -63,7 +63,8 @@ void MetadataReader::setRuntimeMetadata(QString runtime)
         runtime.chop(1);
     }
     if (runtime.startsWith('\n') && runtime.endsWith('\n')){
-        runtime.mid(1,1);
+        runtime.remove(0,1);
+        runtime.chop(1);
     }
     runtimeMetadata = runtime;
 }
@@ -82,7 +83,8 @@ void MetadataReader::setSimulatorMetadata(QString simulator)
         simulator.chop(1);
     }
     if (simulator.startsWith('\n') && simulator.endsWith('\n')){
-        simulator.mid(1,1);
+        simulator.remove(0,1);
+        simulator.chop(1);
     }
     simulatorMetadata = simulator;
 }

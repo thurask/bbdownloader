@@ -32,38 +32,41 @@ Sheet {
             horizontalAlignment: HorizontalAlignment.Fill
             Container {
                 topPadding: 5.0
-                layout: StackLayout {
-                    orientation: LayoutOrientation.LeftToRight
-                }
                 horizontalAlignment: HorizontalAlignment.Center
-                verticalAlignment: VerticalAlignment.Center
                 Label {
-                    text: qsTr("Use local file") + Retranslate.onLanguageChanged
-                    verticalAlignment: VerticalAlignment.Center
+                    text: qsTr("Tap to select, long press to copy") + Retranslate.onLanguageChanged
+                    horizontalAlignment: HorizontalAlignment.Center
                 }
-                ToggleButton {
-                    id: localtoggle
+                Container {
+                    layout: StackLayout {
+                        orientation: LayoutOrientation.LeftToRight
+                    }
+                    horizontalAlignment: HorizontalAlignment.Center
                     verticalAlignment: VerticalAlignment.Center
-                    checked: true
-                    onCheckedChanged: {
-                        if (localtoggle.checked == true) {
-                            mainheader.title = qsTr("Known Software (local copy)") + Retranslate.onLanguageChanged
-                            repoDataSource.source = "asset:///xml/repo.xml";
-                            repoDataSource.remote = false;
-                            repoDataSource.load();
-                        }
-                        else {
-                            mainheader.title = qsTr("Known Software (network copy)") + Retranslate.onLanguageChanged
-                            repoDataSource.source = "http://thurask.github.io/repo.xml";
-                            repoDataSource.remote = true;
-                            repoDataSource.load();
+                    Label {
+                        text: qsTr("Use local file") + Retranslate.onLanguageChanged
+                        verticalAlignment: VerticalAlignment.Center
+                    }
+                    ToggleButton {
+                        id: localtoggle
+                        verticalAlignment: VerticalAlignment.Center
+                        checked: true
+                        onCheckedChanged: {
+                            if (localtoggle.checked == true) {
+                                mainheader.title = qsTr("Known Software (local copy)") + Retranslate.onLanguageChanged
+                                repoDataSource.source = "asset:///xml/repo.xml";
+                                repoDataSource.remote = false;
+                                repoDataSource.load();
+                            }
+                            else {
+                                mainheader.title = qsTr("Known Software (network copy)") + Retranslate.onLanguageChanged
+                                repoDataSource.source = "http://thurask.github.io/repo.xml";
+                                repoDataSource.remote = true;
+                                repoDataSource.load();
+                            }
                         }
                     }
                 }
-            }
-            Label {
-                text: qsTr("Tap to select, long press to copy") + Retranslate.onLanguageChanged
-                horizontalAlignment: HorizontalAlignment.Center
             }
             Header {
                 id: mainheader

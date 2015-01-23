@@ -174,8 +174,8 @@ Page {
         }
     ]
     Container {
+        topPadding: 5.0
         Container {
-            topPadding: 10.0
             layout: StackLayout {
                 orientation: LayoutOrientation.LeftToRight
             }
@@ -209,38 +209,41 @@ Page {
                 maximumLength: 19
             }
         }
-        DropDown {
-            id: serverdropdown
-            title: qsTr("Server") + Retranslate.onLanguageChanged
-            enabled: (scanning == false)
-            Option {
-                id: main
-                text: qsTr("Production") + Retranslate.onLanguageChanged
-                value: "https://cs.sl.blackberry.com/cse/srVersionLookup/2.0.0/"
-                selected: true
-            }
-            Option {
-                id: beta
-                text: qsTr("Beta") + Retranslate.onLanguageChanged
-                value: "https://beta.sl.eval.blackberry.com/slscse/srVersionLookup/2.0.0/"
-            }
-            Option {
-                id: beta2
-                text: qsTr("Beta 2") + Retranslate.onLanguageChanged
-                value: "https://beta2.sl.eval.blackberry.com/slscse/srVersionLookup/2.0.0/"
-            }
-            Option {
-                id: alpha
-                text: qsTr("Alpha") + Retranslate.onLanguageChanged
-                value: "https://alpha.sl.eval.blackberry.com/slscse/srVersionLookup/2.0.0/"
-            }
-            Option {
-                id: alpha2
-                text: qsTr("Alpha 2") + Retranslate.onLanguageChanged
-                value: "https://alpha2.sl.eval.blackberry.com/slscse/srVersionLookup/2.0.0/"
-            }
-            onSelectedValueChanged: {
-                _swlookup.post(autolookup_input.text, serverdropdown.selectedValue);
+        Container {
+            topPadding: 5.0
+            DropDown {
+                id: serverdropdown
+                title: qsTr("Server") + Retranslate.onLanguageChanged
+                enabled: (scanning == false)
+                Option {
+                    id: main
+                    text: qsTr("Production") + Retranslate.onLanguageChanged
+                    value: "https://cs.sl.blackberry.com/cse/srVersionLookup/2.0.0/"
+                    selected: true
+                }
+                Option {
+                    id: beta
+                    text: qsTr("Beta") + Retranslate.onLanguageChanged
+                    value: "https://beta.sl.eval.blackberry.com/slscse/srVersionLookup/2.0.0/"
+                }
+                Option {
+                    id: beta2
+                    text: qsTr("Beta 2") + Retranslate.onLanguageChanged
+                    value: "https://beta2.sl.eval.blackberry.com/slscse/srVersionLookup/2.0.0/"
+                }
+                Option {
+                    id: alpha
+                    text: qsTr("Alpha") + Retranslate.onLanguageChanged
+                    value: "https://alpha.sl.eval.blackberry.com/slscse/srVersionLookup/2.0.0/"
+                }
+                Option {
+                    id: alpha2
+                    text: qsTr("Alpha 2") + Retranslate.onLanguageChanged
+                    value: "https://alpha2.sl.eval.blackberry.com/slscse/srVersionLookup/2.0.0/"
+                }
+                onSelectedValueChanged: {
+                    _swlookup.post(autolookup_input.text, serverdropdown.selectedValue);
+                }
             }
         }
         Header {
