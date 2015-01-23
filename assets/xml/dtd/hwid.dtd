@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!ELEMENT repo (hardware*)>
-<!ELEMENT hardware (id,name,variant)>
+<!ELEMENT hardware (id,name,variant,image)>
 <!ELEMENT id (#PCDATA)>
 <!ELEMENT name (#PCDATA)>
 <!ELEMENT variant (#PCDATA)>
+<!ELEMENT image (#PCDATA)>
 
 <!--
 ===HWID===
@@ -14,4 +15,5 @@ Format:
 	<id>Hardware ID (no leading 0x, ex. 04002607)</id>
 	<name>Device name (ex. Z10)</name>
 	<variant>Device variant (ex. STL100-1)</variant>
+	<image>asset:///images/devices/image.jpg</image>
 </hardware>-->

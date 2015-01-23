@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!ELEMENT repo (device*)>
-<!ELEMENT device (name,variant,id,url)>
+<!ELEMENT device (name,variant,id,url,image)>
 <!ELEMENT name (#PCDATA)>
 <!ELEMENT variant (#PCDATA)>
 <!ELEMENT id (#PCDATA)>
 <!ELEMENT url (#PCDATA)>
+<!ELEMENT image (#PCDATA)>
+
+<!--
+===PTCRB===
+A list of all the PTCRB lookups/device IDs for QNX devices.
+
+Format:
+<device>
+	<name>Device name (ex. Z10)</name>
+	<variant>Device variant (ex. STL100-1)</variant>
+	<id>Device ID (ex. RFG81UW)</id>
+	<url>PTCRB model ID (last number in URL)</url>
+	<image>asset:///images/devices/image.jpg</image>
+</device>-->

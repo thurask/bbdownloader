@@ -75,6 +75,7 @@ Page {
                         description: ListItemData.id
                         visible: ((ListItemData.id == "" || ListItemData.variant == "" || ListItemData.name == "") ? false : true)
                         status: (ListItemData.url == "" ? qsTr("Invalid") + Retranslate.onLanguageChanged : qsTr("Valid") + Retranslate.onLanguageChanged)
+                        imageSource: ListItemData.image
                         contextActions: [
                             ActionSet {
                                 actions: [

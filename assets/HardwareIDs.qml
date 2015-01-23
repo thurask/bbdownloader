@@ -83,6 +83,7 @@ Sheet {
                             id: slistitem
                             title: ListItemData.id
                             description: qsTr("%1 %2").arg(ListItemData.name).arg(ListItemData.variant) + Retranslate.onLanguageChanged
+                            imageSource: ListItemData.image
                             contextActions: [
                                 ActionSet {
                                     actions: [

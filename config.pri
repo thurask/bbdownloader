@@ -166,6 +166,22 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/images/blank/blank.png) \
         $$quote($$BASEDIR/assets/images/covers/cover.png) \
         $$quote($$BASEDIR/assets/images/covers/cover_small.png) \
+        $$quote($$BASEDIR/assets/images/devices/9982.jpg) \
+        $$quote($$BASEDIR/assets/images/devices/9983.jpg) \
+        $$quote($$BASEDIR/assets/images/devices/classic.jpg) \
+        $$quote($$BASEDIR/assets/images/devices/daa.jpg) \
+        $$quote($$BASEDIR/assets/images/devices/dab.jpg) \
+        $$quote($$BASEDIR/assets/images/devices/dac.jpg) \
+        $$quote($$BASEDIR/assets/images/devices/passport.jpg) \
+        $$quote($$BASEDIR/assets/images/devices/passportatt.jpg) \
+        $$quote($$BASEDIR/assets/images/devices/playbook.jpg) \
+        $$quote($$BASEDIR/assets/images/devices/q10.jpg) \
+        $$quote($$BASEDIR/assets/images/devices/q3.jpg) \
+        $$quote($$BASEDIR/assets/images/devices/q5.jpg) \
+        $$quote($$BASEDIR/assets/images/devices/z10.jpg) \
+        $$quote($$BASEDIR/assets/images/devices/z3.jpg) \
+        $$quote($$BASEDIR/assets/images/devices/z30.jpg) \
+        $$quote($$BASEDIR/assets/images/devices/z5.jpg) \
         $$quote($$BASEDIR/assets/images/icons/icon_110.png) \
         $$quote($$BASEDIR/assets/images/icons/icon_144.png) \
         $$quote($$BASEDIR/assets/images/icons/icon_90.png) \
@@ -323,6 +339,9 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/images/covers/*.qml) \
         $$quote($$BASEDIR/../assets/images/covers/*.js) \
         $$quote($$BASEDIR/../assets/images/covers/*.qs) \
+        $$quote($$BASEDIR/../assets/images/devices/*.qml) \
+        $$quote($$BASEDIR/../assets/images/devices/*.js) \
+        $$quote($$BASEDIR/../assets/images/devices/*.qs) \
         $$quote($$BASEDIR/../assets/images/icons/*.qml) \
         $$quote($$BASEDIR/../assets/images/icons/*.js) \
         $$quote($$BASEDIR/../assets/images/icons/*.qs) \
