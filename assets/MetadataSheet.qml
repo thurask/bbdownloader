@@ -21,23 +21,45 @@ Sheet {
                 }
             }
         }
-        ScrollView {
+        Container {
             Container {
+                layout: StackLayout {
+                    orientation: LayoutOrientation.LeftToRight
+                }
                 Header {
                     title: qsTr("Runtime Metadata") + Retranslate.onLanguageChanged
-                }
-                TextArea {
-                    id: runtimelabel
-                    text: _metadata.getRuntimeMetadata()
-                    editable: false
+                    layoutProperties: StackLayoutProperties {
+                        spaceQuota: 0.5
+                    }
                 }
                 Header {
                     title: qsTr("Simulator Metadata") + Retranslate.onLanguageChanged
+                    layoutProperties: StackLayoutProperties {
+                        spaceQuota: 0.5
+                    }
                 }
-                TextArea {
-                    id: simulatorlabel
-                    text: _metadata.getSimulatorMetadata()
-                    editable: false
+            }
+            ScrollView {
+                Container {
+                    layout: StackLayout {
+                        orientation: LayoutOrientation.LeftToRight
+                    }
+                    Container {
+                        horizontalAlignment: HorizontalAlignment.Left
+                        TextArea {
+                            id: runtimelabel
+                            text: _metadata.getRuntimeMetadata()
+                            editable: false
+                        }
+                    }
+                    Container {
+                        horizontalAlignment: HorizontalAlignment.Right
+                        TextArea {
+                            id: simulatorlabel
+                            text: _metadata.getSimulatorMetadata()
+                            editable: false
+                        }
+                    }
                 }
             }
         }

@@ -26,14 +26,26 @@ void MetadataReader::getMetadata()
 void MetadataReader::readRuntimeMetadata()
 {
     QNetworkReply *reply = qobject_cast<QNetworkReply *>(sender());
-    setRuntimeMetadata(QString(reply->readAll()));
+    QString rawmet = reply->readAll();
+    QStringList linemet = rawmet.split("\n");
+    QStringList metversion;
+    for (int i = 0; i < linemet.count() - 1; i++) {
+        metversion.append((linemet[i].split(",")[1]));
+    }
+    setRuntimeMetadata(metversion.join("\n"));
     sender()->deleteLater();
 }
 
 void MetadataReader::readSimulatorMetadata()
 {
     QNetworkReply *reply = qobject_cast<QNetworkReply *>(sender());
-    setSimulatorMetadata(QString(reply->readAll()));
+    QString rawsim = reply->readAll();
+    QStringList linesim = rawsim.split("\n");
+    QStringList simversion;
+    for (int i = 0; i < linesim.count() - 1; i++) {
+        simversion.append((linesim[i].split(",")[1]));
+    }
+    setSimulatorMetadata(simversion.join("\n"));
     sender()->deleteLater();
 }
 
@@ -50,6 +62,9 @@ void MetadataReader::setRuntimeMetadata(QString runtime)
     if (runtime.endsWith('\n')){
         runtime.chop(1);
     }
+    if (runtime.startsWith('\n') && runtime.endsWith('\n')){
+        runtime.mid(1,1);
+    }
     runtimeMetadata = runtime;
 }
 
@@ -65,6 +80,9 @@ void MetadataReader::setSimulatorMetadata(QString simulator)
     }
     if (simulator.endsWith('\n')){
         simulator.chop(1);
+    }
+    if (simulator.startsWith('\n') && simulator.endsWith('\n')){
+        simulator.mid(1,1);
     }
     simulatorMetadata = simulator;
 }
