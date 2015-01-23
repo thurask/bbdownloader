@@ -1145,6 +1145,10 @@
         <source>Resolution: %1 px/m x %2 px/m</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>User Agent: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>main</name>

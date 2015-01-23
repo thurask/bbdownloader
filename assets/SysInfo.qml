@@ -28,6 +28,9 @@ Page {
         },
         FileSystemInfo {
             id: fsinfo
+        },
+        WebView {
+            id: dummywebview
         }
     ]
     actions: [
@@ -344,6 +347,10 @@ Page {
                 }
                 Label {
                     text: qsTr("NFC Stack: %1").arg(_manager.readTextFile("/var/etc/nfc/nfcStack.version", "normsimp")) + Retranslate.onLanguageChanged
+                    multiline: true
+                }
+                Label {
+                    text: qsTr("User Agent: %1").arg(dummywebview.settings.userAgent) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {

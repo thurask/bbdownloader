@@ -99,7 +99,6 @@ Q_DECL_EXPORT int main(int argc, char **argv)
     PasteClient paster;
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Paster", &paster);
 
-
     //Timer
     qmlRegisterType<QTimer>("qt.timer", 1, 0, "QTimer");
 
