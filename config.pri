@@ -207,16 +207,6 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/images/menus/ic_share.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_show_vkb.png) \
         $$quote($$BASEDIR/assets/images/menus/ic_stop.png) \
-        $$quote($$BASEDIR/assets/images/numbers/0.png) \
-        $$quote($$BASEDIR/assets/images/numbers/1.png) \
-        $$quote($$BASEDIR/assets/images/numbers/2.png) \
-        $$quote($$BASEDIR/assets/images/numbers/3.png) \
-        $$quote($$BASEDIR/assets/images/numbers/4.png) \
-        $$quote($$BASEDIR/assets/images/numbers/5.png) \
-        $$quote($$BASEDIR/assets/images/numbers/6.png) \
-        $$quote($$BASEDIR/assets/images/numbers/7.png) \
-        $$quote($$BASEDIR/assets/images/numbers/8.png) \
-        $$quote($$BASEDIR/assets/images/numbers/9.png) \
         $$quote($$BASEDIR/assets/images/splash/aseries_landscape.png) \
         $$quote($$BASEDIR/assets/images/splash/aseries_portrait.png) \
         $$quote($$BASEDIR/assets/images/splash/lseries_landscape.png) \
@@ -348,9 +338,6 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/images/menus/*.qml) \
         $$quote($$BASEDIR/../assets/images/menus/*.js) \
         $$quote($$BASEDIR/../assets/images/menus/*.qs) \
-        $$quote($$BASEDIR/../assets/images/numbers/*.qml) \
-        $$quote($$BASEDIR/../assets/images/numbers/*.js) \
-        $$quote($$BASEDIR/../assets/images/numbers/*.qs) \
         $$quote($$BASEDIR/../assets/images/splash/*.qml) \
         $$quote($$BASEDIR/../assets/images/splash/*.js) \
         $$quote($$BASEDIR/../assets/images/splash/*.qs) \
