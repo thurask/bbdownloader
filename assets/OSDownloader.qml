@@ -285,10 +285,48 @@ Page {
                     }
                 }
             }
-            Divider {
-                
+            Container {
+                topPadding: 5.0
+                horizontalAlignment: HorizontalAlignment.Center
+                layout: StackLayout {
+                    orientation: LayoutOrientation.LeftToRight
+                }
+                Label {
+                    text: qsTr("Show Checkboxes") + Retranslate.onLanguageChanged
+                    verticalAlignment: VerticalAlignment.Center
+                }
+                ToggleButton {
+                    id: toggle_checkbox
+                    horizontalAlignment: HorizontalAlignment.Center
+                    checked: true
+                    onCheckedChanged: {
+                        if(checked) {
+                            checkbox_8960.visible = true
+                            checkbox_8974.visible = true
+                            checkbox_core.visible = true
+                            checkbox_omap.visible = true
+                            checkbox_q10.visible = true
+                            checkbox_vzw.visible = true
+                            checkbox_z10.visible = true
+                            checkbox_z3.visible = true
+                            checkbox_z30.visible = true
+                        }
+                        else {
+                            checkbox_8960.visible = false
+                            checkbox_8974.visible = false
+                            checkbox_core.visible = false
+                            checkbox_omap.visible = false
+                            checkbox_q10.visible = false
+                            checkbox_vzw.visible = false
+                            checkbox_z10.visible = false
+                            checkbox_z3.visible = false
+                            checkbox_z30.visible = false
+                        }
+                    } 
+                }
             }
             Container {
+                topPadding: 5.0
                 layout: GridLayout {
                     columnCount: 3
                 }  

@@ -588,6 +588,10 @@
         <source>URL Copied</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Show Checkboxes</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OSRepo</name>

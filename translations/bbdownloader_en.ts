@@ -590,6 +590,10 @@
         <source>URL Copied</source>
         <translation>URL Copied</translation>
     </message>
+    <message>
+        <source>Show Checkboxes</source>
+        <translation>Show Checkboxes</translation>
+    </message>
 </context>
 <context>
     <name>OSRepo</name>
