@@ -25,13 +25,51 @@ void MetadataReader::getMetadata()
 
 void MetadataReader::readRuntimeMetadata()
 {
+    QStringList metversion;
+    QString oldmetadata("10.1.0.1020\n"
+                "10.0.10.822\n"
+                "10.0.10.738\n"
+                "10.0.10.690\n"
+                "10.0.10.684\n"
+                "10.0.10.672\n"
+                "10.0.10.648\n"
+                "10.0.10.261\n"
+                "10.0.9.2743\n"
+                "10.0.9.2709\n"
+                "10.0.9.2372\n"
+                "10.1.0.1483\n"
+                "10.1.0.1627\n"
+                "10.1.0.1720\n"
+                "10.1.0.1910\n"
+                "10.1.0.1916\n"
+                "10.1.0.2025\n"
+                "10.1.0.2062\n"
+                "10.1.0.2038\n"
+                "10.1.0.2050\n"
+                "10.1.0.2074\n"
+                "10.1.0.2121\n"
+                "10.1.0.2151\n"
+                "10.1.0.2342\n"
+                "10.1.0.2354\n"
+                "10.1.0.2420\n"
+                "10.1.0.4537\n"
+                "10.1.0.4633\n"
+                "10.1.0.4651\n"
+                "10.1.0.4699\n"
+                "10.1.0.4780\n"
+                "10.1.0.4828\n"
+                "10.2.0.1155\n");
+    QStringList oldsplit = oldmetadata.split("\n");
+    for (int i = 0; i < oldsplit.count() -1; i++) {
+        metversion.append(oldsplit[i]);
+    }
     QNetworkReply *reply = qobject_cast<QNetworkReply *>(sender());
     QString rawmet = reply->readAll();
     QStringList linemet = rawmet.split("\n");
-    QStringList metversion;
     for (int i = 0; i < linemet.count() - 1; i++) {
         metversion.append((linemet[i].split(",")[1]));
     }
+    metversion.sort();
     setRuntimeMetadata(metversion.join("\n"));
     sender()->deleteLater();
 }
@@ -45,6 +83,7 @@ void MetadataReader::readSimulatorMetadata()
     for (int i = 0; i < linesim.count() - 1; i++) {
         simversion.append((linesim[i].split(",")[1]));
     }
+    simversion.sort();
     setSimulatorMetadata(simversion.join("\n"));
     sender()->deleteLater();
 }
