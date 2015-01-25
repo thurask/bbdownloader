@@ -21,7 +21,7 @@ Sheet {
         }
         Container {
             Label {
-                text: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+                text: qsTr("BB10 OS Downloader %1 FINAL").arg(((AppInfo.version.split('.')).slice(0,3)).join('.'))
                 horizontalAlignment: HorizontalAlignment.Center
                 textStyle.fontWeight: FontWeight.Bold
                 textStyle.fontSize: FontSize.Large
