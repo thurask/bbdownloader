@@ -1,5 +1,12 @@
+#Compiled files
 arm/
 x86/
 arm-p/
 translations/*.qm
+
+#Momentics settings
 .settings/
+
+#git archive files, but not the readme
+git-archive/*
+!git-archive/*.md
