@@ -31,31 +31,39 @@ Sheet {
         Container {
             horizontalAlignment: HorizontalAlignment.Fill
             Container {
-                layout: StackLayout {
-                    orientation: LayoutOrientation.LeftToRight
-                }
+                topPadding: 5.0
                 horizontalAlignment: HorizontalAlignment.Center
-                verticalAlignment: VerticalAlignment.Center
                 Label {
-                    text: qsTr("Use local file") + Retranslate.onLanguageChanged
-                    verticalAlignment: VerticalAlignment.Center
+                    text: qsTr("Tap to select, long press to copy") + Retranslate.onLanguageChanged
+                    horizontalAlignment: HorizontalAlignment.Center
                 }
-                ToggleButton {
-                    id: localtoggle
+                Container {
+                    layout: StackLayout {
+                        orientation: LayoutOrientation.LeftToRight
+                    }
+                    horizontalAlignment: HorizontalAlignment.Center
                     verticalAlignment: VerticalAlignment.Center
-                    checked: true
-                    onCheckedChanged: {
-                        if (localtoggle.checked == true) {
-                            mainheader.title = qsTr("Known Software (local copy)") + Retranslate.onLanguageChanged
-                            repoDataSource.source = "asset:///xml/repo.xml";
-                            repoDataSource.remote = false;
-                            repoDataSource.load();
-                        }
-                        else {
-                            mainheader.title = qsTr("Known Software (network copy)") + Retranslate.onLanguageChanged
-                            repoDataSource.source = "http://thurask.github.io/repo.xml";
-                            repoDataSource.remote = true;
-                            repoDataSource.load();
+                    Label {
+                        text: qsTr("Use local file") + Retranslate.onLanguageChanged
+                        verticalAlignment: VerticalAlignment.Center
+                    }
+                    ToggleButton {
+                        id: localtoggle
+                        verticalAlignment: VerticalAlignment.Center
+                        checked: true
+                        onCheckedChanged: {
+                            if (localtoggle.checked == true) {
+                                mainheader.title = qsTr("Known Software (local copy)") + Retranslate.onLanguageChanged
+                                repoDataSource.source = "asset:///xml/repo.xml";
+                                repoDataSource.remote = false;
+                                repoDataSource.load();
+                            }
+                            else {
+                                mainheader.title = qsTr("Known Software (network copy)") + Retranslate.onLanguageChanged
+                                repoDataSource.source = "http://thurask.github.io/repo.xml";
+                                repoDataSource.remote = true;
+                                repoDataSource.load();
+                            }
                         }
                     }
                 }
@@ -76,30 +84,61 @@ Sheet {
                 listItemComponents: [
                     ListItemComponent {
                         type: "header"
-                        Container {
-                            Label {
-                                text: ""
-                            }
-                        }
                     },
                     ListItemComponent {
                         type: "item"
-                        Container {
-                            Label {
-                                text: "OS: " + (ListItemData.trueos == "" ? ListItemData.os : ListItemData.trueos)
-                                textStyle.fontWeight: FontWeight.Bold
-                                multiline: true
-                            }
-                            Label {
-                                text: "Software Release: " + ListItemData.software + " | Radio: " + ListItemData.radio
-                            }
-                            Label {
-                                text: ListItemData.notes
-                                textStyle.fontSize: FontSize.Small
-                                multiline: true
-                            }
-                            Divider {
-                            }
+                        StandardListItem {
+                            id: slistitem
+                            title: (ListItemData.trueos == "" ? ListItemData.os : ListItemData.trueos)
+                            description: qsTr("SR: %1 | Radio: %2").arg(ListItemData.software).arg(ListItemData.radio) + Retranslate.onLanguageChanged
+                            status: ListItemData.notes
+                            contextActions: [
+                                ActionSet {
+                                    actions: [
+                                        ActionItem {
+                                            title: qsTr("Copy OS") + Retranslate.onLanguageChanged
+                                            imageSource: "asset:///images/menus/ic_copy.png"
+                                            onTriggered: {
+                                                var smeg = (slistitem.ListItem.data.trueos.toString() == "" ? slistitem.ListItem.data.os.toString() : slistitem.ListItem.data.trueos.toString())
+                                                Clipboard.copyToClipboard(smeg)
+                                                copytoast.show()
+                                            }
+                                        },
+                                        ActionItem {
+                                            title: qsTr("Copy Radio") + Retranslate.onLanguageChanged
+                                            imageSource: "asset:///images/menus/ic_copy.png"
+                                            onTriggered: {
+                                                Clipboard.copyToClipboard(slistitem.ListItem.data.radio.toString())
+                                                copytoast.show()
+                                            }
+                                            enabled: (slistitem.ListItem.data.radio.toString != "N/A")
+                                        },
+                                        ActionItem {
+                                            title: qsTr("Copy Software") + Retranslate.onLanguageChanged
+                                            imageSource: "asset:///images/menus/ic_copy.png"
+                                            onTriggered: {
+                                                Clipboard.copyToClipboard(slistitem.ListItem.data.software.toString())
+                                                copytoast.show()
+                                            }
+                                            enabled: (slistitem.ListItem.data.software.toString != "N/A")
+                                        },
+                                        ActionItem {
+                                            title: qsTr("Copy All") + Retranslate.onLanguageChanged
+                                            imageSource: "asset:///images/menus/ic_copy.png"
+                                            onTriggered: {
+                                                Clipboard.copyToClipboard(qsTr("OS %1 | Radio %2 | Software %3").arg(slistitem.ListItem.data.trueos.toString() == "" ? slistitem.ListItem.data.os.toString() : slistitem.ListItem.data.trueos.toString()).arg(slistitem.ListItem.data.radio.toString()).arg(slistitem.ListItem.data.software.toString()) + Retranslate.onLanguageChanged)
+                                                copytoast.show()
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                            attachedObjects: [
+                                SystemToast { //Toast must be attached to ListItem in order to appear
+                                    id: copytoast
+                                    body: qsTr("Copied") + Retranslate.onLanguageChanged
+                                }
+                            ]
                         }
                     }
                 ]
@@ -108,6 +147,7 @@ Sheet {
                     osRepo.releaseSelected(indexi.software, (indexi.trueos == "" ? indexi.os : indexi.trueos), indexi.radio)
                     xmlToast.show();
                 }
+                scrollIndicatorMode: ScrollIndicatorMode.ProportionalBar
             }
         }
     }
@@ -115,10 +155,10 @@ Sheet {
         GroupDataModel {
             id: repoDataModel
             sortingKeys: [
-            "os"
+            "series"
             ]
-            sortedAscending: false
             grouping: ItemGrouping.ByFullValue
+            sortedAscending: false
         },
         DataSource {
             id: repoDataSource
@@ -141,10 +181,7 @@ Sheet {
         },
         SystemToast {
             id: xmlToast
-            body: qsTr("Values copied to OS Downloader") + Retranslate.onLanguageChanged
-        },
-        LayoutUpdateHandler {
-            id: listhandler
+            body: qsTr("Values sent to generator") + Retranslate.onLanguageChanged
         }
     ]
     onCreationCompleted: {

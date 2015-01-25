@@ -1,6 +1,7 @@
 /*UpdateChecker.cpp
 -------------------
 Handles app version lookup.
+
 --Thurask*/
 
 #include "UpdateChecker.hpp"
@@ -14,7 +15,7 @@ UpdateChecker::UpdateChecker()
 void UpdateChecker::checkForUpdates()
 {
     setLocalVersion(bb::ApplicationInfo().version());
-    QUrl url("http://thurask.github.io/bbdownloader_version_1030.txt");
+    QUrl url("http://thurask.github.io/bbdownloader_version_1031.txt");
     QNetworkAccessManager *nam = new QNetworkAccessManager(this);
     QNetworkReply *reply = nam->get(QNetworkRequest(url));
     connect(reply, SIGNAL(finished()), this, SLOT(writeUpdateFile()));
@@ -74,3 +75,4 @@ UpdateChecker::~UpdateChecker()
 {
 
 }
+

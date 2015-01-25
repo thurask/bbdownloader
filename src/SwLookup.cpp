@@ -7,7 +7,6 @@ Handles software version lookup.
 #include <QtCore>
 #include <QtNetwork>
 #include <QtXml>
-#include <QDateTime>
 #include "SwLookup.hpp"
 
 SwLookup::SwLookup(QObject* parent)
@@ -15,17 +14,20 @@ SwLookup::SwLookup(QObject* parent)
 , m_networkAccessManager(new QNetworkAccessManager(this))
 {
     m_softwareRelease = "";
-}
-
-QString SwLookup::softwareRelease()
-{
-    return m_softwareRelease;
+    m_server = "";
+    m_availability = "";
 }
 
 void SwLookup::post(QString osVer, QString server)
 {
     QRegExp rx("(\\d{0,4}\\.)(\\d{0,4}\\.)(\\d{0,4}\\.)(\\d{0,4})");
     if (osVer.contains(rx) == true){
+        if (server.contains("cs.sl") == true){
+            setServer("production");
+        }
+        else {
+            setServer("private");
+        }
         QUrl url(server);
         QNetworkRequest request(url);
         QString query = "<srVersionLookupRequest version=\"2.0.0\" authEchoTS=\"1366644680359\">"
@@ -40,13 +42,10 @@ void SwLookup::post(QString osVer, QString server)
                 "</srVersionLookupRequest>";
         request.setHeader(QNetworkRequest::ContentTypeHeader, "text/xml;charset=UTF-8");
         QNetworkReply* reply = m_networkAccessManager->post(request, query.toUtf8());
-        bool ok = connect(reply, SIGNAL(finished()), this, SLOT(onGetReply()));
-        Q_ASSERT(ok);
-        Q_UNUSED(ok);
+        connect(reply, SIGNAL(finished()), this, SLOT(onGetReply()));
     }
     else {
-        QString error = tr("Error");
-        setSoftwareRelease(error);
+        setSoftwareRelease(tr("Error"));
     }
 }
 
@@ -58,10 +57,11 @@ void SwLookup::onGetReply()
     while(!xml.atEnd() && !xml.hasError()) {
         if(xml.tokenType() == QXmlStreamReader::StartElement) {
             if (xml.name() == "softwareReleaseVersion") {
-                QString schwanzstucker = xml.readElementText().simplified();
-                if (QString::compare(m_softwareRelease.simplified(), schwanzstucker, Qt::CaseInsensitive) != 0){
-                    m_softwareRelease = schwanzstucker;
-                    emit softwareReleaseChanged();
+                setSoftwareRelease(xml.readElementText());
+                QCryptographicHash qch(QCryptographicHash::Sha1);
+                qch.addData((m_softwareRelease).toUtf8());
+                if (m_server == "production"){
+                    checkAvailability(QString((qch.result()).toHex()));
                 }
             }
         }
@@ -70,24 +70,87 @@ void SwLookup::onGetReply()
     sender()->deleteLater();
 }
 
-QString SwLookup::lookupIncrement(QString os)
+void SwLookup::checkAvailability(QString swrelease)
 {
-    QStringList splitarray = os.split(".");
-    if (splitarray[3] == "") {
-        return tr("Error");
-    }
-    if (splitarray[3].toInt() < 9998){
-        splitarray[3] = QString::number((splitarray[3]).toInt() + 3);
-        return splitarray.join(".");
+    QString av_url = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + swrelease;
+    QNetworkRequest qnr;
+    qnr.setUrl(QUrl(av_url));
+    QNetworkReply* qnr_reply = m_networkAccessManager->head(qnr);
+    connect(qnr_reply, SIGNAL(finished()), this, SLOT(availabilityReply()));
+}
+
+void SwLookup::availabilityReply()
+{
+    QNetworkReply* av_reply = (QNetworkReply*)sender();
+    if (m_server == "production"){
+        int status = av_reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+        if (status == 200 || (status > 300 && status <= 308)){
+            setAvailability(tr("Valid"));
+        }
+        else {
+            setAvailability(tr("Invalid"));
+        }
     }
     else {
-        splitarray[3] = QString::number(0);
-        return splitarray.join(".");
+        setAvailability(tr("Invalid"));
     }
+    av_reply->deleteLater();
 }
 
 void SwLookup::setSoftwareRelease(QString sw)
 {
-    m_softwareRelease = sw;
+    m_softwareRelease = sw.toUtf8().simplified();
     emit softwareReleaseChanged();
+}
+
+QString SwLookup::softwareRelease()
+{
+    return m_softwareRelease;
+}
+
+QString SwLookup::getServer()
+{
+    return m_server;
+}
+
+void SwLookup::setServer(QString server)
+{
+    m_server = server;
+}
+
+QString SwLookup::getAvailability()
+{
+    return m_availability;
+}
+
+void SwLookup::setAvailability(QString availability)
+{
+    m_availability = availability;
+}
+
+QString SwLookup::lookupIncrement(QString os, int inc)
+{
+    QRegExp rx("(\\d{1,4}\\.)(\\d{1,4}\\.)(\\d{1,4}\\.)(\\d{1,4})");
+    if (os.contains(rx) == true){
+        QStringList splitarray = os.split(".");
+        if (splitarray[3].toInt() < 9999){
+            splitarray[3] = QString::number((splitarray[3]).toInt() + inc);
+            return splitarray.join(".");
+        }
+        else {
+            splitarray[3] = QString::number(0);
+            return splitarray.join(".");
+        }
+    }
+    else {
+        return tr("Error");
+    }
+}
+
+QString SwLookup::spaceTrimmer(QString lookup)
+{
+    if (lookup.endsWith(" ") == true || lookup.endsWith("\n") == true){
+        lookup.chop(1);
+    }
+    return lookup;
 }

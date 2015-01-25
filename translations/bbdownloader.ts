@@ -4,15 +4,11 @@
 <context>
     <name>AutoLookup</name>
     <message>
-        <source>Input</source>
+        <source>Start</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>OS Version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enter OS version</source>
+        <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -28,15 +24,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Export</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Share</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Server</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -44,146 +40,117 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Start</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Stop</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please input a valid OS version</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>DeltaOSDownloader</name>
-    <message>
-        <source>Inputs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Target OS Version</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Lookup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Target Radio Version</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>OS Version + 1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Target SW Version</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Known Software</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Initial OS Version</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Initial Radio Version</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose OS Type</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose Device</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Generate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Clear</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Links</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>OS Link:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Radio Link:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copy OS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>OS URL copied</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copy Radio</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Radio URL copied</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Download OS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Download Radio</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export Links</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copy All</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>All URLs copied</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Share Links</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Clipboard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Downloads</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Share</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Links saved to default directory</source>
+        <source>Enter OS version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Use Current</source>
+        <source>Server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Production</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Beta</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Beta 2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alpha</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alpha 2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Results</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL Copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload Lookups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input Valid OS</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CertViewer</name>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Certification Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use local file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Certifications (local copy)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Certifications (network copy)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Could not access online file. Loading local copy.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Valid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 %2 (%3)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy Name/Variant</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CustomTitleBar</name>
+    <message>
+        <source>BBDownloader %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -216,10 +183,6 @@
 </context>
 <context>
     <name>EScreens</name>
-    <message>
-        <source>Open EScreens</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>App Version</source>
         <translation type="unfinished"></translation>
@@ -264,6 +227,18 @@
         <source>PIN</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Load Uptime</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Load Values</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>EScreens</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HardwareIDs</name>
@@ -272,11 +247,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Use local file</source>
+        <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Could not access online file. Loading local copy.</source>
+        <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use local file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -287,9 +266,33 @@
         <source>Hardware IDs (network copy)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Could not access online file. Loading local copy.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy Full Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 %2 (%3)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
-    <name>HashTools</name>
+    <name>HashToolsPage</name>
     <message>
         <source>File Picker</source>
         <translation type="unfinished"></translation>
@@ -308,10 +311,6 @@
     </message>
     <message>
         <source>Choose a file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -335,6 +334,10 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Hash saved to default directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Copy to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
@@ -343,27 +346,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hash saved to default directory</source>
+        <source>Hash Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Blank Icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Added!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>HelpSheet</name>
     <message>
-        <source>BB10 OS Downloader %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>BB10 OS Downloader developed by Thurask.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Do what you want with the source code: 
-https://github.com/thurask/bbdownloader</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default save folder: /accounts/1000/shared/downloads/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -378,21 +376,23 @@ https://github.com/thurask/bbdownloader</source>
         <source>Updates posted to Github or Twitter: @thuraski</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Default save folder: 
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do what you want with the source code: 
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>BB10 OS Downloader %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>LinkGenerator</name>
-    <message>
-        <source>Delta from </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source> to </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Verizon delta from </source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Debrick OS:</source>
         <translation type="unfinished"></translation>
@@ -470,6 +470,18 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Delta from </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> to </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Verizon delta from </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>OMAP Z10 radio delta from </source>
         <translation type="unfinished"></translation>
     </message>
@@ -486,6 +498,10 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Z30/Classic radio delta from </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Z3 radio delta from </source>
         <translation type="unfinished"></translation>
     </message>
@@ -494,16 +510,39 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Z30/Classic radio delta from </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>Nomedia</name>
+    <name>MetadataSheet</name>
+    <message>
+        <source>Metadata</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Runtime Metadata</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Simulator Metadata</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NomediaPage</name>
+    <message>
+        <source>.nomedia</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <source>File Picker</source>
         <translation type="unfinished"></translation>
@@ -517,7 +556,11 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>.nomedia File Exists: </source>
+        <source>True</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>False</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -537,30 +580,18 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>True</source>
+        <source>.nomedia File Exists: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>False</source>
+        <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>OSDownloader</name>
     <message>
-        <source>Inputs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Target OS Version</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Lookup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Target Radio Version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -568,19 +599,7 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Target SW Version</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Known Software</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose OS Type</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose Device</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -592,19 +611,7 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>OS Link:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Radio Link:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Links</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -616,47 +623,7 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Share Links</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Clipboard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copy OS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>OS URL copied</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copy Radio</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Radio URL copied</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copy All</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>All URLs copied</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Downloads</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Download OS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Download Radio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -664,43 +631,115 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Debrick OS</source>
+        <source>Copy Links</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Core OS</source>
+        <source>Copy OS Links</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Verizon Debrick OS</source>
+        <source>Copy Radio Links</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Verizon Core OS</source>
+        <source>Radio URLs copied</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>China Debrick OS</source>
+        <source>Copy Variant Links</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>China Core OS</source>
+        <source>Variant URLs copied</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>SDK Debrick OS</source>
+        <source>Copy Autoloader Links</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>SDK Core OS</source>
+        <source>Autoloader URLs copied</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>SDK Autoloader (Old style URL)</source>
+        <source>OS URLs copied</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>SDK Autoloader (New style URL)</source>
+        <source>OS Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>STL100-1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SW Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Passport</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Z10</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Q10</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Z30</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Z3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Core</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>VZW</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>8960</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload Links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload Autoloader Links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload OS Links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload Variant Links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload Radio Links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL Copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Checkboxes</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -719,10 +758,6 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Values copied to OS Downloader</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Use local file</source>
         <translation type="unfinished"></translation>
     </message>
@@ -736,6 +771,42 @@ https://github.com/thurask/bbdownloader</source>
     </message>
     <message>
         <source>Known Software (network copy)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SR: %1 | Radio: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy OS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy Radio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy Software</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OS %1 | Radio %2 | Software %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Values sent to generator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tap to select, long press to copy</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -759,10 +830,6 @@ https://github.com/thurask/bbdownloader</source>
     </message>
     <message>
         <source>Download Folder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Current Directory: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -794,11 +861,76 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Local version: </source>
+        <source>Colors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source> | Update version: </source>
+        <source>Primary Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Base Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Red</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Green</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yellow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Blue</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cyan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Gray</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Magenta</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dark Red</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dark Green</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dark Yellow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dark Blue</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dark Cyan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dark Gray</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dark Magenta</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current Directory:
+%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -806,6 +938,14 @@ https://github.com/thurask/bbdownloader</source>
     <name>SwLookup</name>
     <message>
         <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Valid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -816,59 +956,11 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Device Name: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Model Name: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Model Number: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Serial Number: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Memory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Free Device Memory: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Total Device Memory: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Battery</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Condition: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Remaining: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cycle Count: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Temperature: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source> bytes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Hardware ID: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -888,22 +980,6 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>PIN: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>IMEI: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>MEID: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>HDMI: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
@@ -916,14 +992,6 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Mobile Country Code (MCC): </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Mobile Network Code (MNC): </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Micro HDMI</source>
         <translation type="unfinished"></translation>
     </message>
@@ -932,110 +1000,386 @@ https://github.com/thurask/bbdownloader</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>OS Version: </source>
+        <source>Display</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Radio Version: </source>
+        <source>Ready</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>NFC Firmware: </source>
+        <source>PIN Required</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>NFC Stack: </source>
+        <source>Read Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Adobe Flash: </source>
+        <source>Not Provisioned</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Adobe AIR: </source>
+        <source>Incompatible</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>WiFi: </source>
+        <source>Not Detected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Webkit: </source>
+        <source>True</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>False</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Full</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Discharging</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Charging</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not Charging</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Square</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Portrait</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Landscape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>LCD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OLED</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CRT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Plasma</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>LED</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Local Filesystem</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SD Card</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide Personal Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Personal Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Device Name: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Model Name: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Model Number: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PIN: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hardware ID: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Boot Time: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HDMI: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IMEI: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>MEID: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Serial Number: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Physical Keyboard: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>State: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mobile Country Code (MCC): %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mobile Network Code (MNC): %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Total Device Memory: %1 MiB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Free Device Memory: %1 MiB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Physical Capacity: %1 GB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Accessible Capacity: %1 GB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Available Capacity: %1 GB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Present: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Charging State: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Condition: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Full Charge Capacity: %1 mAh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remaining: %1%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cycle Count: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>RxID: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Technology: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Name: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attached: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Detachable: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wireless: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Build ID: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Build Branch: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OS Version: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio Version: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>NFC Firmware: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>NFC Stack: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>WiFi: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Webkit: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Temperature: %1 °C (%2 °F)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Physical Size: %1 mm x %2 mm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Diagonal: %1 mm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pixel Size: %1 px x %2 px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Resolution: %1 px/m x %2 px/m</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User Agent: %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
-        <source>BB10 OS Downloader %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>OS Lookup Tool</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Hash Tools</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Engineering Screens</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>System Info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hardware ID List</source>
+        <source>Update available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>OS Downloader</source>
+        <source>Update!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Delta OS Downloader</source>
+        <source>Metadata</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>.nomedia Helper</source>
+        <source>File Operations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Keyboard Shortcuts</source>
+        <source>o</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>o = OS Downloader</source>
+        <source>l</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>d = Delta OS Downloader</source>
+        <source>e</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>l = OS Lookup Tool</source>
+        <source>%1 = System Info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>h = Hash Tools</source>
+        <source>s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>e = Engineering Screens</source>
+        <source>%1 = File Operations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>s = System Info</source>
+        <source>f</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>i = Hardware ID List</source>
+        <source>p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>n = .nomedia Helper</source>
+        <source>Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HWIDs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>EScreens</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PTCRB Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 = OS Links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 = Lookup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 = EScreens</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 = PTCRB Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OS Links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lookup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nomedia</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

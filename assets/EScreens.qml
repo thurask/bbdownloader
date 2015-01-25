@@ -5,9 +5,42 @@
  --Thurask*/
 
 import bb.cascades 1.3
+import bb.device 1.3
 import "js/escreens.js" as Escreens
 
 Page {
+    actions: [
+        ActionItem {
+            title: qsTr("Get Key") + Retranslate.onLanguageChanged
+            onTriggered: {
+                var regex_pin = RegExp(/\b[0-9a-f]{8}\b/)
+                var regex_appv = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/)
+                var regex_uptime = RegExp(/\b\d{1,}\b/)
+                if (regex_pin.test(pin.text) == true && regex_appv.test(appv.text) == true && regex_uptime.test(uptime.text) == true){
+                    Escreens.newHMAC();
+                }
+            }
+            ActionBar.placement: ActionBarPlacement.Signature
+            imageSource: "asset:///images/menus/ic_pgp_key.png"
+        },
+        ActionItem {
+            title: qsTr("Load Values") + Retranslate.onLanguageChanged
+            onTriggered: {
+                pin.text = hwinfo.pin.slice(2)
+                appv.text = _manager.readTextFile("/base/etc/os.version", "normal")
+            }
+            ActionBar.placement: ActionBarPlacement.OnBar
+            imageSource: "asset:///images/menus/ic_edit.png"
+        },
+        ActionItem {
+            title: qsTr("EScreens") + Retranslate.onLanguageChanged
+            onTriggered: {
+                myQuery.trigger(myQuery.query.invokeActionId);
+            }
+            ActionBar.placement: ActionBarPlacement.OnBar
+            imageSource: "asset:///images/menus/ic_browser.png"
+        }
+    ]
     attachedObjects: [
         Invocation {
             id: myQuery
@@ -18,23 +51,24 @@ Page {
                     myQuery.query.updateQuery()
                 }
             }
+        },
+        HardwareInfo {
+            id: hwinfo
         }
     ]
-    ScrollView {
-        scrollViewProperties.scrollMode: ScrollMode.Vertical
-        scrollViewProperties.pinchToZoomEnabled: false
-        scrollViewProperties.overScrollEffectMode: OverScrollEffectMode.None
+    Container {
+        topPadding: 5.0
         Container {
-            topPadding: 20.0
-            Label {
-                text: qsTr("PIN") + Retranslate.onLanguageChanged
-            }
             TextField {
                 id: pin
                 hintText: qsTr("PIN") + Retranslate.onLanguageChanged
                 onTextChanging: {
                     pin.text = pin.text.toLowerCase()
                 }
+                onTextChanged: {
+                    pin.text = pin.text.toLowerCase()
+                }
+                maximumLength: 8
                 validator: Validator {
                     id: validator_pin
                     mode: ValidationMode.Immediate
@@ -48,13 +82,20 @@ Page {
                         }
                     }
                 }
+                clearButtonVisible: true
             }
-            Label {
-                text: qsTr("App Version") + Retranslate.onLanguageChanged
-            }
+        }
+        Container {
+            topPadding: 5.0
             TextField {
                 id: appv
                 hintText: qsTr("App Version") + Retranslate.onLanguageChanged
+                onTextChanging: {
+                    appv.text = _swlookup.spaceTrimmer(appv.text)
+                }
+                onTextChanged: {
+                    appv.text = _swlookup.spaceTrimmer(appv.text)
+                }
                 validator: Validator {
                     id: validator_appver
                     mode: ValidationMode.Immediate
@@ -68,10 +109,12 @@ Page {
                         }
                     }
                 }
+                clearButtonVisible: true
+                maximumLength: 19
             }
-            Label {
-                text: qsTr("Uptime") + Retranslate.onLanguageChanged
-            }
+        }
+        Container {
+            topPadding: 5.0
             TextField {
                 id: uptime
                 hintText: qsTr("Uptime") + Retranslate.onLanguageChanged
@@ -88,7 +131,25 @@ Page {
                         }
                     }
                 }
+                clearButtonVisible: true
+                function returnUptime() {
+                    var now = new Date();
+                    var dmy = new Date(_manager.readTextFile("/var/boottime.txt", "normal"));
+                    uptime.text = (now.getTime() - dmy.getTime());
+                }
+            }//Load uptime button isn't the same as the actual escreens uptime, but I'm too proud of it to let it go:
+            //escreens uptime is current ms since 01/01/1970 - ms since 01/01/1970 at boot time (/var/boottime.txt), but it's impossible
+            //to exactly match them since the escreens value is generated during app launch. Alas.
+            Button {
+                visible: false
+                text: qsTr("Load Uptime") + Retranslate.onLanguageChanged
+                onClicked: {
+                    uptime.returnUptime();
+                }
             }
+        }
+        Container {
+            topPadding: 5.0
             DropDown {
                 id: validity
                 title: qsTr("Validity") + Retranslate.onLanguageChanged
@@ -96,7 +157,6 @@ Page {
                     Option {
                         text: qsTr("1 day") + Retranslate.onLanguageChanged
                         value: ""
-                        selected: true
                     },
                     Option {
                         text: qsTr("3 days") + Retranslate.onLanguageChanged
@@ -113,32 +173,15 @@ Page {
                     Option {
                         text: qsTr("30 days") + Retranslate.onLanguageChanged
                         value: "%56%20%79%62%69%72%20%7A%6C%66%72%79%73%20%67%62%71%6E%6C%2C%20%61%62%67%20%79%76%78%72%20%6C%72%66%67%72%65%71%6E%6C%2E%20%56%27%7A%20%70%62%62%79%2C%20%56%27%7A%20%70%6E%79%7A%2C%20%56%27%7A%20%74%62%61%61%6E%20%6F%72%20%62%78%6E%6C"
+                        selected: true
                     }]
             }
-            Container {
-                layout: StackLayout {
-                    orientation: LayoutOrientation.LeftToRight
-                }
-                horizontalAlignment: HorizontalAlignment.Center
-                Button {
-                    text: qsTr("Get Key") + Retranslate.onLanguageChanged
-                    onClicked: {
-                        Escreens.newHMAC();
-                    }
-                }
-                Button {
-                    text: qsTr("Open EScreens") + Retranslate.onLanguageChanged
-                    onClicked: {
-                        myQuery.trigger(myQuery.query.invokeActionId);
-                    }
-                }
-            }
-            Label {
-                id: ykey
-                text: qsTr("Your Key") + Retranslate.onLanguageChanged
-                horizontalAlignment: HorizontalAlignment.Center
-                textStyle.fontSize: FontSize.XLarge
-            }
+        }
+        Label {
+            id: ykey
+            text: qsTr("Your Key") + Retranslate.onLanguageChanged
+            horizontalAlignment: HorizontalAlignment.Center
+            textStyle.fontSize: FontSize.XXLarge
         }
     }
 }

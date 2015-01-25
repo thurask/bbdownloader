@@ -6,6 +6,7 @@
 
 import bb.cascades 1.3
 import bb.system 1.2
+import qt.timer 1.0
 
 TabbedPane {
     id: tabbedpane
@@ -22,19 +23,28 @@ TabbedPane {
         },
         SystemDialog {
             id: shortcutDialog
-            title: qsTr("Keyboard Shortcuts") + Retranslate.onLanguageChanged
+            title: qsTr("Shortcuts") + Retranslate.onLanguageChanged
             cancelButton.enabled: false
             customButton.enabled: false
-            body: qsTr("o = OS Downloader") + Retranslate.onLanguageChanged + "\n"
-            + qsTr("d = Delta OS Downloader") + Retranslate.onLanguageChanged + "\n"
-            + qsTr("l = OS Lookup Tool") + Retranslate.onLanguageChanged + "\n"
-            + qsTr("h = Hash Tools") + Retranslate.onLanguageChanged + "\n"
-            + qsTr("e = Engineering Screens") + Retranslate.onLanguageChanged + "\n"
-            + qsTr("s = System Info") + Retranslate.onLanguageChanged + "\n"
-            + qsTr("i = Hardware ID List") + Retranslate.onLanguageChanged + "\n"
-            + qsTr("n = .nomedia Helper") + Retranslate.onLanguageChanged
+            body: qsTr("%1 = OS Links").arg(qsTr("o") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n"
+            + qsTr("%1 = Lookup").arg(qsTr("l") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n"
+            + qsTr("%1 = EScreens").arg(qsTr("e") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n"
+            + qsTr("%1 = System Info").arg(qsTr("s") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n"
+            + qsTr("%1 = File Operations").arg(qsTr("f") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n"
+            + qsTr("%1 = PTCRB Browser").arg(qsTr("p") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged
             includeRememberMe: false
             rememberMeChecked: false
+        },
+        SystemToast {
+            id: updateToast
+            body: qsTr("Update available") + Retranslate.onLanguageChanged
+            button.enabled: true
+            button.label: qsTr("Update!") + Retranslate.onLanguageChanged
+            onFinished: {
+                if (updateToast.result == SystemUiResult.ButtonSelection){
+                    invoke.trigger("bb.action.OPEN")
+                }
+            }
         },
         Invocation {
             id: invoke
@@ -44,61 +54,66 @@ TabbedPane {
                 invokeActionId: "bb.action.OPEN"
             }
         },
+        QTimer {
+            id: timer
+            interval: 5000
+            onTimeout:{
+                if (Checker.returnUpdate() == true){
+                    updateToast.show();
+                    timer.stop();
+                }
+            }
+        },
         ActiveFrame {
             id: multi
         }
-    ]  
+    ]
     shortcuts: [
         Shortcut {
+            id: shortcut_o
             key: "o"
             onTriggered: {
-                tabbedpane.activeTab = tab1
+                tabbedpane.activeTab = tab_osgen
             }  
         },
         Shortcut {
-            key: "d"
-            onTriggered: {
-                tabbedpane.activeTab = tab2
-            }
-        },
-        Shortcut {
+            id: shortcut_l
             key: "l"
             onTriggered: {
-                tabbedpane.activeTab = tab3
+                tabbedpane.activeTab = tab_lookup
             }
         },
         Shortcut {
-            key: "h"
-            onTriggered: {
-                tabbedpane.activeTab = tab4
-            }
-        },
-        Shortcut {
+            id: shortcut_e
             key: "e"
             onTriggered: {
-                tabbedpane.activeTab = tab5
+                tabbedpane.activeTab = tab_escreens
             }
         },
         Shortcut {
+            id: shortcut_s
             key: "s"
             onTriggered: {
-                tabbedpane.activeTab = tab6
+                tabbedpane.activeTab = tab_sysinfo
             }
         },
         Shortcut {
-            key: "i"
+            id: shortcut_f
+            key: "f"
             onTriggered: {
-                tabbedpane.activeTab = tab7
+                tabbedpane.activeTab = tab_fileops
             }
         },
         Shortcut {
-            key: "n"
+            id: shortcut_p
+            key: "p"
             onTriggered: {
-                tabbedpane.activeTab = tab8
+                tabbedpane.activeTab = tab_ptcrb
             }
         }
     ]
     Menu.definition: MenuDefinition {
+        id: menu
         helpAction: HelpActionItem {
             imageSource: "asset:///images/menus/ic_help.png"
             onTriggered: {
@@ -115,7 +130,7 @@ TabbedPane {
         }
         actions: [
             ActionItem {
-                title: qsTr("Keyboard Shortcuts") + Retranslate.onLanguageChanged
+                title: qsTr("Shortcuts") + Retranslate.onLanguageChanged
                 imageSource: "asset:///images/menus/ic_show_vkb.png"
                 onTriggered: {
                     shortcutDialog.show()
@@ -124,120 +139,137 @@ TabbedPane {
         ]
     }
     Tab {
-        id: tab1
-        title: qsTr("OS Downloader") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/tabs/1.png"
+        id: tab_osgen
+        title: qsTr("OS Links") + Retranslate.onLanguageChanged
+        imageSource: "asset:///images/menus/ic_qs_mobilehotspot.png"
         delegate: Delegate {
             OSDownloader {
-                id:osDownloaderPage
-                titleBar: TitleBar {
-                    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+                id: osDownloaderPage
+                titleBar: CustomTitleBar {
                 }
             }
         }
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
     }
     Tab {
-        id: tab2
-        title: qsTr("Delta OS Downloader") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/tabs/2.png"
-        delegate: Delegate {
-            DeltaOSDownloader {
-                id:deltaOsDownloaderPage
-                titleBar: TitleBar {
-                    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
-                }
-            }
-        }
-        delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
-    }
-    Tab {
-        id: tab3
-        title: qsTr("OS Lookup Tool") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/tabs/3.png"
+        id: tab_lookup
+        title: qsTr("Lookup") + Retranslate.onLanguageChanged
+        imageSource: "asset:///images/menus/ic_search.png"
         delegate: Delegate {
             AutoLookup {
-                id:autoLookupPage
-                titleBar: TitleBar {
-                    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+                id: autoLookupPage
+                titleBar: CustomTitleBar {
+                    acceptAction.enabled: true
+                    acceptAction.title: qsTr("Metadata") + Retranslate.onLanguageChanged
+                    acceptAction.onTriggered: {
+                        var metadata = metadatadefinition.createObject()
+                        metadata.open();
+                    }
+                    attachedObjects: [
+                        ComponentDefinition {
+                            id: metadatadefinition
+                            MetadataSheet {
+                            }
+                        }
+                    ]
+                }
+                onLookupStarted: {
+                    shortcut_o.enabled = false;
+                    tab_osgen.enabled = false;
+                }
+                onLookupStopped: {
+                    shortcut_o.enabled = true;
+                    tab_osgen.enabled = true;
                 }
             }
         }
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
     }
     Tab {
-        id: tab4
-        title: qsTr("Hash Tools") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/tabs/4.png"
-        delegate: Delegate {
-            HashTools {
-                id:hashToolsPage
-                titleBar: TitleBar {
-                    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
-                }
-            }
-        }
-        delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
-    }
-    Tab {
-        id: tab5
-        title: qsTr("Engineering Screens") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/tabs/5.png"
+        id: tab_escreens
+        title: qsTr("EScreens") + Retranslate.onLanguageChanged
+        imageSource: "asset:///images/menus/ic_qs_developer_mode.png"
         delegate: Delegate {
             EScreens {
-                id:eScreensPage
-                titleBar: TitleBar {
-                    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+                id: eScreensPage
+                titleBar: CustomTitleBar {
                 }
             }
         }
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivateImmediately
     }
     Tab {
-        id: tab6
+        id: tab_sysinfo
         title: qsTr("System Info") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/tabs/6.png"
+        imageSource: "asset:///images/menus/ic_info.png"
         delegate: Delegate {
             SysInfo {
-                id:sysInfoPage
-                titleBar: TitleBar {
-                    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+                id: sysInfoPage
+                titleBar: CustomTitleBar {
+                    acceptAction.enabled: true
+                    acceptAction.title: qsTr("HWIDs") + Retranslate.onLanguageChanged
+                    acceptAction.onTriggered: {
+                        var hwids = hardwareIDsDefinition.createObject()
+                        hwids.open();
+                    }
+                    attachedObjects: [
+                        ComponentDefinition {
+                            id: hardwareIDsDefinition
+                            HardwareIDs {
+                            }
+                        }
+                    ]
                 }
             }
         }
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivatedWhileSelected
     }
     Tab {
-        id: tab7
-        title: qsTr("Hardware ID List") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/tabs/7.png"
+        id: tab_fileops
+        title: qsTr("File Operations") + Retranslate.onLanguageChanged
+        imageSource: "asset:///images/menus/ic_doctype_generic.png"
         delegate: Delegate {
-            HardwareIDs {
-                id:hardwareIDsPage
-                titleBar: TitleBar {
-                    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+            HashToolsPage {
+                id: hashToolsPage
+                titleBar: CustomTitleBar {
+                    acceptAction.enabled: true
+                    acceptAction.title: qsTr("Nomedia") + Retranslate.onLanguageChanged
+                    acceptAction.onTriggered: {
+                        var nomedia = nomediaPageDef.createObject()
+                        nomedia.open();
+                    }
+                    attachedObjects: [
+                        ComponentDefinition {
+                            id: nomediaPageDef
+                            NomediaPage {
+                            
+                            }
+                        }
+                    ]
                 }
             }
         }
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
     }
     Tab {
-        id: tab8
-        title: qsTr(".nomedia Helper") + Retranslate.onLanguageChanged
-        imageSource: "asset:///images/tabs/8.png"
+        id: tab_ptcrb
+        title: qsTr("PTCRB Browser") + Retranslate.onLanguageChanged
+        imageSource: "asset:///images/menus/ic_certificate_import.png"
         delegate: Delegate {
-            Nomedia {
-                id: nomediaPage
-                titleBar: TitleBar {
-                    title: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+            CertViewer {
+                id: certViewerPage
+                tbar: CustomTitleBar {
                 }
             }
         }
         delegateActivationPolicy: TabDelegateActivationPolicy.ActivateWhenSelected
     }
     onCreationCompleted: {
+        _metadata.getMetadata()
         var defaultdir = Settings.getValueFor("defaultdir", "shared/downloads/bbdownloader/");
         _manager.setDefaultDir(defaultdir);
+        Checker.checkForUpdates();
+        timer.start();
         Application.setCover(multi);
     }
 }

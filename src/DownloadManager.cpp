@@ -9,67 +9,13 @@
 #include <bb/system/Clipboard>
 
 #include <QtCore>
-#include <QtNetwork>
 
-DownloadManager::DownloadManager(QObject *parent)
-: QObject(parent), m_currentDownload(0), m_downloadedCount(0), m_totalCount(0), m_progressTotal(0), m_progressValue(0)
+DownloadManager::DownloadManager()
 {
 }
 
-QString DownloadManager::errorMessage() const
+void DownloadManager::setDefaultDir(QString dir)
 {
-    return m_errorMessage.join("\n");
-}
-
-QString DownloadManager::statusMessage() const
-{
-    return m_statusMessage.join("\n");
-}
-
-int DownloadManager::activeDownloads() const
-{
-    return m_downloadQueue.count();
-}
-
-int DownloadManager::progressTotal() const
-{
-    return m_progressTotal;
-}
-
-int DownloadManager::progressValue() const
-{
-    return m_progressValue;
-}
-
-QString DownloadManager::progressMessage() const
-{
-    return m_progressMessage;
-}
-
-void DownloadManager::downloadUrl(const QString &url)
-{
-    append(QUrl(url));
-}
-
-void DownloadManager::append(const QUrl &url)
-{
-    /**
-     * If there is no job in the queue at the moment or we do
-     * not process any job currently, then we trigger the processing
-     * of the next job.
-     */
-    if (m_downloadQueue.isEmpty() && !m_currentDownload)
-        QTimer::singleShot(0, this, SLOT(startNextDownload()));
-
-    // Enqueue the new URL to the job queue
-    m_downloadQueue.enqueue(url);
-    emit activeDownloadsChanged();
-
-    // Increment the total number of jobs
-    ++m_totalCount;
-}
-
-void DownloadManager::setDefaultDir(QString dir){
     default_dir = dir;
 }
 
@@ -78,297 +24,206 @@ QString DownloadManager::defaultDir()
     return default_dir;
 }
 
-QString DownloadManager::saveFileName(const QUrl &url)
+QString DownloadManager::returnOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester, bool passport, bool core, bool qcom)
 {
-    //Create dir in downloads dir
-    QDir dir(default_dir);
-    if (!dir.exists()) {
-        dir.mkpath(".");
+    setOsLinks(hashedswversion, osversion, verizon, winchester, passport, core, qcom);
+    return oslinks;
+}
+
+QString DownloadManager::returnRadioLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool lseries, bool nseries, bool aseries, bool jakarta)
+{
+    setRadioLinks(hashedswversion, osversion, radioversion, verizon, winchester, passport, lseries, nseries, aseries, jakarta);
+    return radiolinks;
+}
+
+void DownloadManager::setOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester, bool passport, bool core, bool qcom)
+{
+    //Autoloaders
+    if (hashedswversion == "08d2e98e6754af941484848930ccbaddfefe13d6"){
+        oslinks = ("---AUTOLOADERS---\n"
+                "Normal URL\n\n"
+                "STL100-1: http://developer.blackberry.com/native/downloads/fetch/Autoload-STL100-1-" + osversion +".exe\n\n" +
+                "STL100-2/3: http://developer.blackberry.com/native/downloads/fetch/Autoload-STL100-3-" + osversion +".exe\n\n" +
+                "STL100-4: http://developer.blackberry.com/native/downloads/fetch/Autoload-STL100-4-" + osversion +".exe\n\n" +
+                "SQN100-X/SQR100-X: http://developer.blackberry.com/native/downloads/fetch/Autoload-SQN100-1-" + osversion +".exe\n\n" +
+                "STA100-X: http://developer.blackberry.com/native/downloads/fetch/Autoload-STA100-5-" + osversion +".exe\n\n" +
+                "STJ100-X: http://developer.blackberry.com/native/downloads/fetch/Autoload-STJ100-1-" + osversion +".exe\n\n" +
+                "SQW100-X: http://developer.blackberry.com/native/downloads/fetch/Autoload-SQW100-1-" + osversion +".exe\n\n" +
+                "Dev Alpha A: http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlpha-" + osversion +".exe\n\n" +
+                "Dev Alpha B: http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlphaB-" + osversion +".exe\n\n" +
+                "Dev Alpha A_B: http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlphaA_B-" + osversion +".exe\n\n" +
+                "Dev Alpha C: http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlphaC-" + osversion +".exe");
     }
-
-    // First extract the path component from the URL ...
-    const QString path = url.path();
-
-    // ... and then extract the file name.
-    QString basename = QFileInfo(path).fileName();
-
-    if (basename.isEmpty())
-        basename = "download";
-
-    // Replace the file name with 'download' if the URL provides no file name.
-
-    basename = default_dir + basename;
-    // locate in downloads directory
-
-    /**
-     * Check if the file name exists already, if so, append an increasing number and test again.
-     */
-    if (QFile::exists(basename)) {
-        // already exists, don't overwrite
-        int i = 0;
-        basename += '.';
-        while (QFile::exists(basename + QString::number(i)))
-            ++i;
-
-        basename += QString::number(i);
+    //To look nice, variant URLs (10.3.1.634) are in the radio links
+    else {
+        if (osversion.indexOf("10.") != -1){
+            oslinks = ("---OPERATING SYSTEMS---\n");
+            //STL100-1
+            if (winchester == true){
+                oslinks.append("TI OMAP (STL100-1)\n"
+                        "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory.desktop/" + osversion + "/winchester.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+                if (core == true) {
+                    oslinks.chop(1);
+                    oslinks.append("Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory/" + osversion + "/winchester.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+                }
+            }
+            //89x0 images
+            if (qcom == true) {
+                oslinks.append("Qualcomm 8960/8930 (Most others)\n"
+                        "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.factory_sfi.desktop/" + osversion + "/qc8960.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+                if (core == true) {
+                    oslinks.chop(1);
+                    oslinks.append("Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.factory_sfi/" + osversion + "/qc8960.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+                }
+            }
+            //Verizon images
+            if (verizon == true){
+                oslinks.append("Verizon 8960/8930\n"
+                        "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi.desktop/" + osversion + "/qc8960.verizon_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+                if (core == true) {
+                    oslinks.chop(1);
+                    oslinks.append("Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi/" + osversion + "/qc8960.verizon_sfi-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+                }
+            }
+            //10.3.0 specifically (Passport)
+            if (passport == true && osversion.indexOf("10.3.0") != -1) {
+                oslinks.append("Qualcomm 8974 (Passport)\n"
+                        "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.factory_sfi.desktop/" + osversion + "/qc8974.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+                if (core == true) {
+                    oslinks.chop(1);
+                    oslinks.append("Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.factory_sfi/" + osversion + "/qc8974.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+                }
+            }
+            //10.3.1 and up (Passport, again)
+            if (passport == true && (osversion.indexOf("10.0.") == -1 && osversion.indexOf("10.1.") == -1 && osversion.indexOf("10.2.") == -1 && osversion.indexOf("10.3.0") == -1)) {
+                oslinks.append("Qualcomm 8974_8960 Hybrid (Passport)\n"
+                        "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/qc8960.factory_sfi_hybrid_qc8974.desktop-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+                if (core == true)  {
+                    oslinks.chop(1);
+                    oslinks.append("Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/qc8960.factory_sfi_hybrid_qc8974-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+                }
+            }
+            oslinks.chop(2); //trailing \n\n
+        }
+        else if (osversion.indexOf("10.") == -1 && osversion.isEmpty() == false) {
+            oslinks = ("---OPERATING SYSTEMS---\n"
+                    "TI OMAP (PlayBook)\n"
+                    "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory.desktop/" + osversion + "/winchester.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar");
+        }
+        else {
+            oslinks = "";
+        }
     }
-
-    return basename;
 }
 
-void DownloadManager::addErrorMessage(const QString &message)
+void DownloadManager::setRadioLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool lseries, bool nseries, bool aseries, bool jakarta)
 {
-    m_errorMessage.append(message);
-    emit errorMessageChanged();
-}
-
-void DownloadManager::addStatusMessage(const QString &message)
-{
-    m_statusMessage.append(message);
-    emit statusMessageChanged();
-}
-
-void DownloadManager::startNextDownload()
-{
-    // If the queue is empty just add a new status message
-    if (m_downloadQueue.isEmpty()) {
-        addStatusMessage(QString("%1/%2 files downloaded successfully").arg(m_downloadedCount).arg(m_totalCount));
-        return;
+    if (hashedswversion == "08d2e98e6754af941484848930ccbaddfefe13d6"){
+        radiolinks = ("Variant URL\n\n"
+                "STL100-1: http://developer.blackberry.com/native/downloads/fetch/Autoload-STL-100-1-" + osversion +".exe\n\n" +
+                "STL100-2/3: http://developer.blackberry.com/native/downloads/fetch/Autoload-STL-100-3-" + osversion +".exe\n\n" +
+                "STL100-4: http://developer.blackberry.com/native/downloads/fetch/Autoload-STL-100-4-" + osversion +".exe\n\n" +
+                "SQN100-X/SQR100-X: http://developer.blackberry.com/native/downloads/fetch/Autoload-SQN-100-1-" + osversion +".exe\n\n" +
+                "STA100-X: http://developer.blackberry.com/native/downloads/fetch/Autoload-STA-100-5-" + osversion +".exe\n\n" +
+                "STJ100-X: http://developer.blackberry.com/native/downloads/fetch/Autoload-STJ-100-1-" + osversion +".exe\n\n" +
+                "SQW100-X: http://developer.blackberry.com/native/downloads/fetch/Autoload-SQW-100-1-" + osversion +".exe\n\n" +
+                "Dev Alpha A: http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlpha-" + osversion +".exe\n\n" +
+                "Dev Alpha B: http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlphaB-" + osversion +".exe\n\n" +
+                "Dev Alpha A_B: http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlphaA_B-" + osversion +".exe\n\n" +
+                "Dev Alpha C: http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlphaC-" + osversion +".exe");
     }
-
-    // Otherwise dequeue the first job from the queue ...
-    const QUrl url = m_downloadQueue.dequeue();
-
-    // ... and determine a local file name where the result can be stored.
-    const QString filename = saveFileName(url);
-
-    // Open the file with this file name for writing
-    m_output.setFileName(filename);
-    if (!m_output.open(QIODevice::WriteOnly)) {
-        addErrorMessage(QString("Problem opening save file '%1' for download '%2': %3").arg(filename, url.toString(), m_output.errorString()));
-
-        startNextDownload();
-        return; // skip this download
+    else {
+        if (osversion.indexOf("10.") != -1){
+            radiolinks = ("---RADIOS---\n");
+            if (winchester == true){
+                radiolinks.append("OMAP Z10: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.m5730/" + radioversion + "/m5730-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
+            }
+            if (lseries == true) {
+                radiolinks.append("Qualcomm Z10/P9982: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960/" + radioversion + "/qc8960-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
+                if (verizon == true) {
+                    radiolinks.append("Verizon Z10: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.omadm/" + radioversion + "/qc8960.omadm-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
+                }
+            }
+            //10.1 and up (Q10)
+            if (nseries == true && osversion.indexOf("10.0.") == -1){
+                radiolinks.append("Q10/Q5/P9983: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr/" + radioversion + "/qc8960.wtr-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
+            }
+            //10.2.0 and up (Z30, Kopi/Cafe/Z3)
+            if (osversion.indexOf("10.0.") == -1 && osversion.indexOf("10.1.") == -1) {
+                if (aseries == true) {
+                    radiolinks.append("Z30/Manitoba/Classic: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr5/" + radioversion + "/qc8960.wtr5-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
+                }
+                if (jakarta == true) {
+                    radiolinks.append("Z3/Kopi/Cafe: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8930.wtr5/" + radioversion + "/qc8930.wtr5-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
+                }
+            }
+            //10.3.0 and up (Passport)
+            if (passport == true && (osversion.indexOf("10.0.") == -1 && osversion.indexOf("10.1.") == -1 && osversion.indexOf("10.2.") == -1)) {
+                radiolinks.append("Passport: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8974.wtr2/" + radioversion + "/qc8974.wtr2-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
+            }
+            radiolinks.chop(2); //trailing \n\n
+        }
+        //not 10.x but not empty
+        else if (osversion.indexOf("10.") == -1 && osversion.isEmpty() == false){
+            if (radioversion.indexOf("N/A") != -1){
+                radiolinks = "";
+            }
+            else {
+                radiolinks = ("---RADIOS---\n"
+                        "PlayBook (old): http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/mod-qcmdm9k-" + radioversion + "-nto+armle-v7+signed.bar\n" +
+                        "PlayBook (new): http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/mod.qcmdm9k-" + radioversion + "-nto+armle-v7+signed.bar");
+            }
+        }
+        else {
+            radiolinks = "";
+        }
     }
-
-    // Now create the network request for the URL ...
-    QNetworkRequest request(url);
-    request.setAttribute(QNetworkRequest::HttpPipeliningAllowedAttribute, true);
-
-    // ... and start the download.
-    m_currentDownload = m_manager.get(request);
-
-    // Connect against the necessary signals to get informed about progress and status changes
-    connect(m_currentDownload, SIGNAL(downloadProgress(qint64, qint64)),
-            SLOT(downloadProgress(qint64, qint64)));
-    connect(m_currentDownload, SIGNAL(finished()), SLOT(downloadFinished()));
-    connect(m_currentDownload, SIGNAL(readyRead()), SLOT(downloadReadyRead()));
-
-    // Add a status message
-    addStatusMessage(QString("Downloading %1...").arg(url.toString()));
-
-    // Start the timer so that we can calculate the download speed later on
-    m_downloadTime.start();
 }
 
-void DownloadManager::downloadProgress(qint64 bytesReceived, qint64 bytesTotal)
+void DownloadManager::setExportUrls(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool core, bool qcom, bool lseries, bool nseries, bool aseries, bool jakarta)
 {
-    // Update the properties with the new progress values
-    m_progressTotal = bytesTotal;
-    m_progressValue = bytesReceived;
-    emit progressTotalChanged();
-    emit progressValueChanged();
-
-    // Calculate the download speed ...
-    double speed = bytesReceived * 1000.0 / m_downloadTime.elapsed();
-    QString unit;
-    if (speed < 1024) {
-        unit = "bytes/sec";
-    } else if (speed < 1024 * 1024) {
-        speed /= 1024;
-        unit = "kB/s";
-    } else {
-        speed /= 1024 * 1024;
-        unit = "MB/s";
-    }
-
-    // ... and update the progress message.
-    m_progressMessage = QString("%1 %2").arg(speed, 3, 'f', 1).arg(unit);
-    emit progressMessageChanged();
+    setOsLinks(hashedswversion, osversion, verizon, winchester, passport, core, qcom);
+    setRadioLinks(hashedswversion, osversion, radioversion, verizon, winchester, passport, lseries, nseries, aseries, jakarta);
+    exporturls = oslinks + "\n\n" + radiolinks;
 }
 
-void DownloadManager::downloadFinished()
+void DownloadManager::exportLinks(QString swrelease, QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool core, bool qcom, bool lseries, bool nseries, bool aseries, bool jakarta)
 {
-    // Reset the progress information when the download has finished
-    m_progressTotal = 0;
-    m_progressValue = 0;
-    m_progressMessage.clear();
-    emit progressValueChanged();
-    emit progressTotalChanged();
-    emit progressMessageChanged();
-
-    // Close the file where the data have been written
-    m_output.close();
-
-    // Add a status or error message
-    if (m_currentDownload->error()) {
-        addErrorMessage(QString("Failed: %1").arg(m_currentDownload->errorString()));
-        //delete temp file
-        m_output.remove();
-    } else {
-        addStatusMessage("Succeeded.");
-        ++m_downloadedCount;
-    }
-
-    /**
-     * We can't call 'delete m_currentDownload' here, because this method might have been invoked directly as result of a signal
-     * emission of the network reply object.
-     */
-    m_currentDownload->deleteLater();
-    m_currentDownload = 0;
-    emit activeDownloadsChanged();
-
-    // Trigger the execution of the next job
-    startNextDownload();
-}
-
-void DownloadManager::downloadReadyRead()
-{
-    // Whenever new data are available on the network reply, write them out to the result file
-    m_output.write(m_currentDownload->readAll());
-}
-
-void DownloadManager::downloadCancelled()
-{
-    m_currentDownload->abort();
-
-    // Reset the progress information when the download has finished
-    m_progressTotal = 0;
-    m_progressValue = 0;
-    m_progressMessage.clear();
-    emit progressValueChanged();
-    emit progressTotalChanged();
-    emit progressMessageChanged();
-
-    // Delete the file where the data have been written
-    m_output.close();
-    m_output.remove();
-
-    /**
-     * We can't call 'delete m_currentDownload' here, because this method might have been invoked directly as result of a signal
-     * emission of the network reply object.
-     */
-    m_currentDownload->deleteLater();
-    m_currentDownload = 0;
-    emit activeDownloadsChanged();
-}
-
-void DownloadManager::messagesCleared()
-{
-    //Clear status messages
-    m_errorMessage.clear();
-    m_statusMessage.clear();
-    emit errorMessageChanged();
-    emit statusMessageChanged();
-}
-
-void DownloadManager::setExportUrls(QString hashedswversion, QString osversion, QString radioversion)
-{
-    exporturls = ("---OPERATING SYSTEMS---\n"
-            "STL100-1\n"
-            "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory.desktop/" + osversion + "/winchester.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n" +
-            "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory/" + osversion + "/winchester.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar\n" +
-            "\n" +
-            "Qualcomm 8960/8930 (Most others)\n" +
-            "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.factory_sfi.desktop/" + osversion + "/qc8960.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n" +
-            "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.factory_sfi/" + osversion + "/qc8960.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar\n" +
-            "\n" +
-            "Verizon Devices\n" +
-            "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi.desktop/" + osversion + "/qc8960.verizon_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n" +
-            "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi/" + osversion + "/qc8960.verizon_sfi-" + osversion + "-nto+armle-v7+signed.bar\n" +
-            "\n" +
-            "Qualcomm 8974 (Passport)\n" +
-            "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.factory_sfi.desktop/" + osversion + "/qc8974.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n" +
-            "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.factory_sfi/" + osversion + "/qc8974.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar\n" +
-            "\n" +
-            "Qualcomm 8974_8960 Hybrid (10.3.1+)\n" +
-            "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/qc8960.factory_sfi_hybrid_qc8974.desktop-" + osversion + "-nto+armle-v7+signed.bar" +
-            "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/qc8960.factory_sfi_hybrid_qc8974-" + osversion + "-nto+armle-v7+signed.bar\n" +
-            "\n\n" +
-            "---RADIOS---\n" +
-            "OMAP Z10: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.m5730/" + radioversion + "/m5730-" + radioversion + "-nto+armle-v7+signed.bar\n" +
-            "Qualcomm Z10/P9982: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960/" + radioversion + "/qc8960-" + radioversion + "-nto+armle-v7+signed.bar\n" +
-            "Verizon Z10: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.omadm/" + radioversion + "/qc8960.omadm-" + radioversion + "-nto+armle-v7+signed.bar\n" +
-            "Q10/Q5/P9983: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr/" + radioversion + "/qc8960.wtr-" + radioversion + "-nto+armle-v7+signed.bar\n" +
-            "Z30/Manitoba/Classic: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr5/" + radioversion + "/qc8960.wtr5-" + radioversion + "-nto+armle-v7+signed.bar\n" +
-            "Z3/Kopi/Cafe: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8930.wtr5/" + radioversion + "/qc8930.wtr5-" + radioversion + "-nto+armle-v7+signed.bar\n" +
-            "Passport: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8974.wtr2/" + radioversion + "/qc8974.wtr2-" + radioversion + "-nto+armle-v7+signed.bar\n" +
-            "");
-}
-
-void DownloadManager::exportLinks(QString swrelease, QString hashedswversion, QString osversion, QString radioversion)
-{
-    setExportUrls(hashedswversion, osversion, radioversion);
+    setExportUrls(hashedswversion, osversion, radioversion, verizon, winchester, passport, core, qcom, lseries, nseries, aseries, jakarta);
     saveTextFile(exporturls, swrelease);
 }
 
-void DownloadManager::copyLinks(QString hashedswversion, QString osversion, QString radioversion)
+void DownloadManager::copyOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester, bool passport, bool core, bool qcom)
 {
-    setExportUrls(hashedswversion, osversion, radioversion);
+    setOsLinks(hashedswversion, osversion, verizon, winchester, passport, core, qcom);
+    QByteArray exporturls_qba = oslinks.toUtf8();
+    bb::system::Clipboard clipboard;
+    clipboard.clear();
+    clipboard.insert("text/plain", exporturls_qba);
+}
+
+void DownloadManager::copyRadioLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool lseries, bool nseries, bool aseries, bool jakarta)
+{
+    setRadioLinks(hashedswversion, osversion, radioversion, verizon, winchester, passport, lseries, nseries, aseries, jakarta);
+    QByteArray exporturls_qba = radiolinks.toUtf8();
+    bb::system::Clipboard clipboard;
+    clipboard.clear();
+    clipboard.insert("text/plain", exporturls_qba);
+}
+
+void DownloadManager::copyLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool core, bool qcom, bool lseries, bool nseries, bool aseries, bool jakarta)
+{
+    setExportUrls(hashedswversion, osversion, radioversion, verizon, winchester, passport, core, qcom, lseries, nseries, aseries, jakarta);
     QByteArray exporturls_qba = exporturls.toUtf8();
     bb::system::Clipboard clipboard;
     clipboard.clear();
     clipboard.insert("text/plain", exporturls_qba);
 }
 
-QString DownloadManager::returnLinks(QString hashedswversion, QString osversion, QString radioversion)
+QString DownloadManager::returnLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool core, bool qcom, bool lseries, bool nseries, bool aseries, bool jakarta)
 {
-    setExportUrls(hashedswversion, osversion, radioversion);
+    setExportUrls(hashedswversion, osversion, radioversion, verizon, winchester, passport, core, qcom, lseries, nseries, aseries, jakarta);
     return exporturls;
-}
-
-void DownloadManager::setExportUrlsDelta(QString hashedswversion, QString osversion, QString radioversion, QString osinit, QString osinit2, QString radinit, QString radinit2)
-{
-    exporturlsdelta = ("---OPERATING SYSTEMS---\n"
-            "STL100-1\n"
-            "Delta OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory.d" + osinit + "/" + osversion + "/winchester.factory_sfi-" + osversion + "-nto+armle-v7+signed+patch+"+ osinit2 + ".bar\n" +
-            "Qualcomm 8960\n" +
-            "Delta OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.factory.d" + osinit + "/" + osversion + "/qc8960.factory_sfi-" + osversion + "-nto+armle-v7+signed+patch+"+ osinit2 + ".bar\n" +
-            "Verizon\n" +
-            "Delta OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon.d" + osinit + "/" + osversion + "/qc8960.verizon_sfi-" + osversion + "-nto+armle-v7+signed+patch+"+ osinit2 + ".bar\n" +
-            "Qualcomm 8974\n" +
-            "Delta OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8974.factory.d" + osinit + "/" + osversion + "/qc8974.factory_sfi-" + osversion + "-nto+armle-v7+signed+patch+"+ osinit2 + ".bar\n\n" +
-            "---RADIOS---\n" +
-            "OMAP Z10: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.m5730.d" + radinit + "/" + radioversion + "/m5730-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar\n" +
-            "Qualcomm Z10/P9982: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.d" + radinit + "/" + radioversion + "/qc8960-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar\n" +
-            "Verizon Z10: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.omadm.d" + radinit + "/" + radioversion + "/qc8960.omadm-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar\n" +
-            "Q10/Q5/P9983: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr.d" + radinit + "/" + radioversion + "/qc8960.wtr-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar\n" +
-            "Z30/Manitoba/Classic: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr5.d" + radinit + "/" + radioversion + "/qc8960.wtr5-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar\n" +
-            "Z3/Kopi/Cafe: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8930.wtr5.d" + radinit + "/" + radioversion + "/qc8930.wtr5-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar\n" +
-            "Passport: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8974.wtr2.d" + radinit + "/" + radioversion + "/qc8974.wtr2-" + radioversion + "-nto+armle-v7+signed+patch+"+ radinit2 + ".bar\n" +
-            "");
-}
-
-void DownloadManager::exportDeltaLinks(QString hashedswversion, QString osversion, QString radioversion, QString osinitversion, QString osinit, QString osinit2, QString radinit, QString radinit2)
-{
-    setExportUrlsDelta(hashedswversion, osversion, radioversion, osinit, osinit2, radinit, radinit2);
-    QString deltasw = osinitversion + "-to-" + osversion;
-    saveTextFile(exporturlsdelta, deltasw);
-}
-
-void DownloadManager::copyDeltaLinks(QString hashedswversion, QString osversion, QString radioversion, QString osinit, QString osinit2, QString radinit, QString radinit2)
-{
-    setExportUrlsDelta(hashedswversion, osversion, radioversion, osinit, osinit2, radinit, radinit2);
-    QByteArray exporturlsdelta_qba = exporturlsdelta.toUtf8();
-    bb::system::Clipboard clipboard;
-    clipboard.clear();
-    clipboard.insert("text/plain", exporturlsdelta_qba);
-}
-
-QString DownloadManager::returnDeltaLinks(QString hashedswversion, QString osversion, QString radioversion, QString osinit, QString osinit2, QString radinit, QString radinit2)
-{
-    setExportUrlsDelta(hashedswversion, osversion, radioversion, osinit, osinit2, radinit, radinit2);
-    return exporturlsdelta;
 }
 
 void DownloadManager::saveTextFile(QString urls, QString swrelease)
@@ -380,7 +235,7 @@ void DownloadManager::saveTextFile(QString urls, QString swrelease)
     //Get local date and time
     QDateTime dateTime = QDateTime::currentDateTime();
     QString dateTimeString = dateTime.toString("yyyy_MMM_dd_hh_mm_ss");
-    QFile file(default_dir+swrelease+"--"+dateTimeString+".txt");
+    QFile file(default_dir+swrelease+"-"+dateTimeString+".txt");
     QFileInfo fi(file);
     filename = fi.absoluteFilePath();
     file.open(QIODevice::WriteOnly);
@@ -406,6 +261,28 @@ QString DownloadManager::readTextFile(QString uri, QString mode)
     if (mode == "firstline"){
         text = textStream.readLine();
     }
+    if (mode == "branch"){
+        while (!textStream.atEnd()){
+            QString tempstring = textStream.readLine();
+            if (tempstring.startsWith("Build Branch") == true){
+                text = tempstring;
+            }
+        }
+    }
+    if (mode == "normsimp"){
+        text = textStream.readAll();
+        text = text.simplified();
+    }
+    if (mode == "firstsimp"){
+        text = textStream.readLine();
+        text = text.simplified();
+    }
     file.close();
+    if (text.startsWith('\n')){
+        text.remove(0, 1);
+    }
+    if (text.endsWith('\n')){
+        text.chop(1);
+    }
     return text;
 }

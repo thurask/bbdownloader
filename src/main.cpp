@@ -15,14 +15,14 @@
 #include "hashcalculatemd5.hpp"
 #include "hashcalculatemd4.hpp"
 #include "DownloadManager.hpp"
-#include "QmlBeam.hpp"
 #include "SwLookup.hpp"
 #include "Clipboard.hpp"
 #include "timer.hpp"
 #include "Settings.hpp"
 #include "UpdateChecker.hpp"
-#include "LinkGenerator.hpp"
 #include "Nomedia.hpp"
+#include "MetadataReader.hpp"
+#include "PasteClient.hpp"
 
 using namespace bb::cascades;
 
@@ -83,13 +83,17 @@ Q_DECL_EXPORT int main(int argc, char **argv)
     UpdateChecker *updatechecker = new UpdateChecker();
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Checker", updatechecker);
 
-    //Link generator
-    LinkGenerator linkgen;
-    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("_linkgen", &linkgen);
-
     //Nomedia
     Nomedia nomedia;
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Nomedia", &nomedia);
+
+    //Momentics metadata
+    MetadataReader metadata;
+    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("_metadata", &metadata);
+
+    //Paste client
+    PasteClient paster;
+    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Paster", &paster);
 
     //Timer
     qmlRegisterType<QTimer>("qt.timer", 1, 0, "QTimer");
