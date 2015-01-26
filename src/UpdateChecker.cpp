@@ -15,7 +15,7 @@ UpdateChecker::UpdateChecker()
 void UpdateChecker::checkForUpdates()
 {
     setLocalVersion(bb::ApplicationInfo().version());
-    QUrl url("http://thurask.github.io/bbdownloader_version_1031.txt");
+    QUrl url("http://thurask.github.io/bbdownloader_version_1030.txt");
     QNetworkAccessManager *nam = new QNetworkAccessManager(this);
     QNetworkReply *reply = nam->get(QNetworkRequest(url));
     connect(reply, SIGNAL(finished()), this, SLOT(writeUpdateFile()));
