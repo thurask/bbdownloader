@@ -1,7 +1,7 @@
 /*OSDownloader.qml
  ------------------
  The meat of the application. Generates and downloads CSE Prod links.
- 
+
  --Thurask*/
 
 import bb.cascades 1.4
@@ -25,8 +25,9 @@ Page {
         ActionItem {
             title: qsTr("Generate") + Retranslate.onLanguageChanged
             onTriggered: {
-                ostext.text = _manager.returnOsLinks(hashedswversion, osversion, verizon, winchester, passport, core, qcom);
-                radiotext.text = _manager.returnRadioLinks(hashedswversion, osversion, radioversion, verizon, winchester, passport, lseries, nseries, aseries, jakarta);
+                _manager.setExportUrls(hashedswversion, osversion, radioversion, verizon, winchester, passport, core, qcom, lseries, nseries, aseries, jakarta);
+                ostext.text = _manager.returnOsLinks();
+                radiotext.text = _manager.returnRadioLinks();
                 divider.visible = true;
                 allclipboard.enabled = true;
                 osclipboard.enabled = true;
@@ -64,9 +65,9 @@ Page {
             enabled: false
             title: qsTr("Copy Links") + Retranslate.onLanguageChanged
             onTriggered: {
-                _manager.copyLinks(hashedswversion, osversion, radioversion, verizon, winchester, passport, core, qcom, lseries, nseries, aseries, jakarta)
-                linkexporttoast.body = qsTr("All URLs copied") + Retranslate.onLanguageChanged;
-                linkexporttoast.show();
+                _manager.copyLinks()
+                copytoast.body = qsTr("All URLs copied") + Retranslate.onLanguageChanged;
+                copytoast.show();
             }
             ActionBar.placement: ActionBarPlacement.OnBar
             imageSource: "asset:///images/menus/ic_copy.png"
@@ -76,9 +77,9 @@ Page {
             enabled: false
             title: (ostext.text.indexOf("Normal URL") != -1 ? qsTr("Copy Autoloader Links") + Retranslate.onLanguageChanged : qsTr("Copy OS Links") + Retranslate.onLanguageChanged)
             onTriggered: {
-                _manager.copyOsLinks(hashedswversion, osversion, verizon, winchester, passport, core, qcom)
-                linkexporttoast.body = (ostext.text.indexOf("Normal URL") != -1 ? qsTr("Autoloader URLs copied") + Retranslate.onLanguageChanged : qsTr("OS URLs copied") + Retranslate.onLanguageChanged);
-                linkexporttoast.show();
+                _manager.copyOsLinks()
+                copytoast.body = (ostext.text.indexOf("Normal URL") != -1 ? qsTr("Autoloader URLs copied") + Retranslate.onLanguageChanged : qsTr("OS URLs copied") + Retranslate.onLanguageChanged);
+                copytoast.show();
             }
             ActionBar.placement: ActionBarPlacement.InOverflow
             imageSource: "asset:///images/menus/ic_copy.png"
@@ -88,9 +89,9 @@ Page {
             enabled: false
             title: (radiotext.text.indexOf("Variant URL") != -1 ? qsTr("Copy Variant Links") + Retranslate.onLanguageChanged : qsTr("Copy Radio Links") + Retranslate.onLanguageChanged)
             onTriggered: {
-                _manager.copyRadioLinks(hashedswversion, osversion, radioversion, verizon, winchester, passport, lseries, nseries, aseries, jakarta)
-                linkexporttoast.body = (radiotext.text.indexOf("Variant URL") != -1 ? qsTr("Variant URLs copied") + Retranslate.onLanguageChanged : qsTr("Radio URLs copied") + Retranslate.onLanguageChanged);
-                linkexporttoast.show();
+                _manager.copyRadioLinks()
+                copytoast.body = (radiotext.text.indexOf("Variant URL") != -1 ? qsTr("Variant URLs copied") + Retranslate.onLanguageChanged : qsTr("Radio URLs copied") + Retranslate.onLanguageChanged);
+                copytoast.show();
             }
             ActionBar.placement: ActionBarPlacement.InOverflow
             imageSource: "asset:///images/menus/ic_copy.png"
@@ -100,12 +101,7 @@ Page {
             enabled: false
             title: qsTr("Export Links") + Retranslate.onLanguageChanged
             onTriggered: {
-                _manager.exportLinks(swrelease, hashedswversion, osversion, radioversion, verizon, winchester, passport, core, qcom, lseries, nseries, aseries, jakarta);
-                linkexporttoast.body = qsTr("Links saved to default directory") + Retranslate.onLanguageChanged;
-                linkexporttoast.button.enabled = true;
-                myQuery.query.uri = _manager.returnFilename();
-                myQuery.query.data = "";
-                myQuery.query.mimeType = "";
+                _manager.exportLinks(swrelease);
                 linkexporttoast.show();
             }
             ActionBar.placement: ActionBarPlacement.InOverflow
@@ -116,7 +112,7 @@ Page {
             enabled: false
             title: qsTr("Upload Links") + Retranslate.onLanguageChanged
             onTriggered: {
-                Paster.uploadPaste(_manager.returnLinks(hashedswversion, osversion, radioversion, verizon, winchester, passport, core, qcom, lseries, nseries, aseries, jakarta))
+                Paster.uploadPaste(_manager.returnLinks())
                 Paster.uploadUrlChanged.connect(pastetoast.show())
             }
             imageSource: "asset:///images/menus/ic_browser.png"
@@ -127,7 +123,7 @@ Page {
             enabled: false
             title: (ostext.text.indexOf("Normal URL") != -1 ? qsTr("Upload Autoloader Links") + Retranslate.onLanguageChanged : qsTr("Upload OS Links") + Retranslate.onLanguageChanged)
             onTriggered: {
-                Paster.uploadPaste(_manager.returnOsLinks(hashedswversion, osversion, verizon, winchester, passport, core, qcom))
+                Paster.uploadPaste(_manager.returnOsLinks())
                 Paster.uploadUrlChanged.connect(pastetoast.show())
             }
             imageSource: "asset:///images/menus/ic_browser.png"
@@ -138,7 +134,7 @@ Page {
             enabled: false
             title: (radiotext.text.indexOf("Variant URL") != -1 ? qsTr("Upload Variant Links") + Retranslate.onLanguageChanged : qsTr("Upload Radio Links") + Retranslate.onLanguageChanged)
             onTriggered: {
-                Paster.uploadPaste(_manager.returnRadioLinks(hashedswversion, osversion, radioversion, verizon, winchester, passport, lseries, nseries, aseries, jakarta))
+                Paster.uploadPaste(_manager.returnRadioLinks())
                 Paster.uploadUrlChanged.connect(pastetoast.show())
             }
             imageSource: "asset:///images/menus/ic_browser.png"
@@ -321,14 +317,14 @@ Page {
                             checkbox_z3.visible = false
                             checkbox_z30.visible = false
                         }
-                    } 
+                    }
                 }
             }
             Container {
                 topPadding: 5.0
                 layout: GridLayout {
                     columnCount: 3
-                }  
+                }
                 CheckBox {
                     id: checkbox_core
                     text: qsTr("Core") + Retranslate.onLanguageChanged
@@ -341,7 +337,7 @@ Page {
                             core = false;
                         }
                     }
-                }              
+                }
                 CheckBox {
                     id: checkbox_vzw
                     text: qsTr("VZW") + Retranslate.onLanguageChanged
@@ -492,9 +488,13 @@ Page {
             }
         },
         SystemToast {
+            id: copytoast
+            body: "";
+        },
+        SystemToast {
             id: linkexporttoast
-            body: ""
-            button.enabled: false
+            body: qsTr("Links saved to default directory") + Retranslate.onLanguageChanged;
+            button.enabled: true
             button.label: qsTr("Share") + Retranslate.onLanguageChanged;
             onFinished: {
                 if (linkexporttoast.result == SystemUiResult.ButtonSelection){
@@ -506,7 +506,6 @@ Page {
             id: pastetoast
             body: qsTr("URL Copied") + Retranslate.onLanguageChanged
             button.enabled: false
-            button.label: ""
             onFinished: {
                 Clipboard.copyToClipboard(Paster.getUploadUrl())
             }
@@ -517,7 +516,7 @@ Page {
                 uri: _manager.returnFilename()
                 mimeType: ""
                 invokeActionId: "bb.action.SHARE"
-                data: _manager.returnLinks(hashedswversion, osversion, radioversion, verizon, winchester, passport, core, qcom, lseries, nseries, aseries, jakarta)
+                data: _manager.returnLinks()
                 onQueryChanged: {
                     myQuery.query.updateQuery()
                 }

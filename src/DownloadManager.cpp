@@ -24,16 +24,19 @@ QString DownloadManager::defaultDir()
     return default_dir;
 }
 
-QString DownloadManager::returnOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester, bool passport, bool core, bool qcom)
+QString DownloadManager::returnOsLinks()
 {
-    setOsLinks(hashedswversion, osversion, verizon, winchester, passport, core, qcom);
     return oslinks;
 }
 
-QString DownloadManager::returnRadioLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool lseries, bool nseries, bool aseries, bool jakarta)
+QString DownloadManager::returnRadioLinks()
 {
-    setRadioLinks(hashedswversion, osversion, radioversion, verizon, winchester, passport, lseries, nseries, aseries, jakarta);
     return radiolinks;
+}
+
+QString DownloadManager::returnLinks()
+{
+    return exporturls;
 }
 
 void DownloadManager::setOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester, bool passport, bool core, bool qcom)
@@ -187,43 +190,33 @@ void DownloadManager::setExportUrls(QString hashedswversion, QString osversion, 
     exporturls = oslinks + "\n\n" + radiolinks;
 }
 
-void DownloadManager::exportLinks(QString swrelease, QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool core, bool qcom, bool lseries, bool nseries, bool aseries, bool jakarta)
+void DownloadManager::exportLinks(QString swrelease)
 {
-    setExportUrls(hashedswversion, osversion, radioversion, verizon, winchester, passport, core, qcom, lseries, nseries, aseries, jakarta);
     saveTextFile(exporturls, swrelease);
 }
 
-void DownloadManager::copyOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester, bool passport, bool core, bool qcom)
+void DownloadManager::copyOsLinks()
 {
-    setOsLinks(hashedswversion, osversion, verizon, winchester, passport, core, qcom);
     QByteArray exporturls_qba = oslinks.toUtf8();
     bb::system::Clipboard clipboard;
     clipboard.clear();
     clipboard.insert("text/plain", exporturls_qba);
 }
 
-void DownloadManager::copyRadioLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool lseries, bool nseries, bool aseries, bool jakarta)
+void DownloadManager::copyRadioLinks()
 {
-    setRadioLinks(hashedswversion, osversion, radioversion, verizon, winchester, passport, lseries, nseries, aseries, jakarta);
     QByteArray exporturls_qba = radiolinks.toUtf8();
     bb::system::Clipboard clipboard;
     clipboard.clear();
     clipboard.insert("text/plain", exporturls_qba);
 }
 
-void DownloadManager::copyLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool core, bool qcom, bool lseries, bool nseries, bool aseries, bool jakarta)
+void DownloadManager::copyLinks()
 {
-    setExportUrls(hashedswversion, osversion, radioversion, verizon, winchester, passport, core, qcom, lseries, nseries, aseries, jakarta);
     QByteArray exporturls_qba = exporturls.toUtf8();
     bb::system::Clipboard clipboard;
     clipboard.clear();
     clipboard.insert("text/plain", exporturls_qba);
-}
-
-QString DownloadManager::returnLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool core, bool qcom, bool lseries, bool nseries, bool aseries, bool jakarta)
-{
-    setExportUrls(hashedswversion, osversion, radioversion, verizon, winchester, passport, core, qcom, lseries, nseries, aseries, jakarta);
-    return exporturls;
 }
 
 void DownloadManager::saveTextFile(QString urls, QString swrelease)
