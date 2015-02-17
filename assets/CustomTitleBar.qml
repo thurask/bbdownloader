@@ -1,4 +1,5 @@
 import bb.cascades 1.4
+import bb 1.3
 
 TitleBar {
     id: customtitlebar
@@ -6,5 +7,10 @@ TitleBar {
         id: acceptaction
         enabled: false
     }
-    title: qsTr("BBDownloader %1").arg(((AppInfo.version.split('.')).slice(0,3)).join('.')) + Retranslate.onLanguageChanged
+    title: qsTr("BBDownloader %1").arg(((appinfo.version.split('.')).slice(0,3)).join('.')) + Retranslate.onLanguageChanged
+    attachedObjects: [
+        ApplicationInfo {
+            id: appinfo
+        }
+    ]
 }

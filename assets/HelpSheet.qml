@@ -5,6 +5,7 @@
  --Thurask*/
 
 import bb.cascades 1.4
+import bb 1.3
 
 Sheet {
     id: helpSheet
@@ -21,7 +22,7 @@ Sheet {
         }
         Container {
             Label {
-                text: qsTr("BB10 OS Downloader %1").arg(AppInfo.version)
+                text: qsTr("BB10 OS Downloader %1").arg(appinfo.version)
                 horizontalAlignment: HorizontalAlignment.Center
                 textStyle.fontWeight: FontWeight.Bold
                 textStyle.fontSize: FontSize.Large
@@ -56,4 +57,9 @@ Sheet {
             }
         }
     }
+    attachedObjects: [
+        ApplicationInfo {
+            id: appinfo
+        }
+    ]
 }

@@ -6,21 +6,12 @@
 #include <bb/cascades/QmlDocument>
 #include <bb/cascades/AbstractPane>
 #include <bb/cascades/LocaleHandler>
-#include <bb/ApplicationInfo>
 
 using namespace bb::cascades;
 
 ApplicationUI::ApplicationUI() :
                         QObject()
 {
-
-    // get app version without hardcoding
-    bb::ApplicationInfo appInfo;
-    QDeclarativePropertyMap* appProperties = new QDeclarativePropertyMap;
-    appProperties->insert("name", QVariant(appInfo.title()));
-    appProperties->insert("version", QVariant(appInfo.version()));
-    appProperties->insert("description", QVariant(appInfo.description()));
-
     // prepare the localization
     m_pTranslator = new QTranslator(this);
     m_pLocaleHandler = new LocaleHandler(this);
@@ -41,7 +32,6 @@ ApplicationUI::ApplicationUI() :
     // Create scene document from main.qml asset, the parent is set
     // to ensure the document gets destroyed properly at shut down.
     QmlDocument *qml = QmlDocument::create("asset:///main.qml").parent(this);
-    qml->setContextProperty("AppInfo", appProperties);
 
     // Create root object for the UI
     AbstractPane *root = qml->createRootObject<AbstractPane>();
