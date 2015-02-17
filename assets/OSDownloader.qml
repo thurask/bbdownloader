@@ -494,13 +494,6 @@ Page {
         SystemToast {
             id: linkexporttoast
             body: qsTr("Links saved to default directory") + Retranslate.onLanguageChanged;
-            button.enabled: true
-            button.label: qsTr("Share") + Retranslate.onLanguageChanged;
-            onFinished: {
-                if (linkexporttoast.result == SystemUiResult.ButtonSelection){
-                    myQuery.trigger(myQuery.query.invokeActionId)
-                }
-            }
         },
         SystemToast {
             id: pastetoast
@@ -508,18 +501,6 @@ Page {
             button.enabled: false
             onFinished: {
                 Clipboard.copyToClipboard(Paster.getUploadUrl())
-            }
-        },
-        Invocation {
-            id: myQuery
-            query {
-                uri: _manager.returnFilename()
-                mimeType: ""
-                invokeActionId: "bb.action.SHARE"
-                data: _manager.returnLinks()
-                onQueryChanged: {
-                    myQuery.query.updateQuery()
-                }
             }
         }
     ]

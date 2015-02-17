@@ -471,10 +471,6 @@
         <translation>All URLs copied</translation>
     </message>
     <message>
-        <source>Share</source>
-        <translation>Share</translation>
-    </message>
-    <message>
         <source>Copy Links</source>
         <translation>Copy Links</translation>
     </message>

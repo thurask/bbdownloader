@@ -471,10 +471,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Share</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Copy Links</source>
         <translation type="unfinished"></translation>
     </message>
