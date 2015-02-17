@@ -42,6 +42,8 @@
 
         QString defaultDir();
 
+        QString getcwd();
+
     private:
 
         QString exporturls;

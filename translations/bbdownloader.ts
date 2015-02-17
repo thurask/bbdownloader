@@ -334,10 +334,6 @@
 <context>
     <name>HelpSheet</name>
     <message>
-        <source>BB10 OS Downloader developed by Thurask.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
@@ -346,21 +342,19 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Updates posted to Github or Twitter: @thuraski</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default save folder: 
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Do what you want with the source code: 
-%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>BB10 OS Downloader %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>https://github.com/thurask/bbdownloader</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>README</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

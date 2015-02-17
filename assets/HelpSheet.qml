@@ -27,33 +27,39 @@ Sheet {
                 textStyle.fontWeight: FontWeight.Bold
                 textStyle.fontSize: FontSize.Large
             }
-            Label  {
-                text: qsTr("BB10 OS Downloader developed by Thurask.") + Retranslate.onLanguageChanged
-                horizontalAlignment: HorizontalAlignment.Center
-                textFit.mode: LabelTextFitMode.Default
-                textStyle.textAlign: TextAlign.Center
-            }
             Label {
-                text: qsTr("Updates posted to Github or Twitter: @thuraski") + Retranslate.onLanguageChanged
-                horizontalAlignment: HorizontalAlignment.Center
-                textFit.mode: LabelTextFitMode.Default
-                textStyle.textAlign: TextAlign.Center
-                content.flags: TextContentFlag.ActiveText
-            }
-            Label {
-                text: qsTr("Default save folder: \n%1").arg("/accounts/1000/shared/downloads/bbdownloader") + Retranslate.onLanguageChanged
-                horizontalAlignment: HorizontalAlignment.Center
-                textFit.mode: LabelTextFitMode.Default
-                textStyle.textAlign: TextAlign.Center
-                multiline: true
-            }
-            Label {
-                text: qsTr("Do what you want with the source code: \n%1").arg("https://github.com/thurask/bbdownloader") + Retranslate.onLanguageChanged
+                text: qsTr("https://github.com/thurask/bbdownloader") + Retranslate.onLanguageChanged
                 horizontalAlignment: HorizontalAlignment.Center
                 textFit.mode: LabelTextFitMode.Default
                 textStyle.textAlign: TextAlign.Center
                 content.flags: TextContentFlag.ActiveText
                 multiline: true
+            }
+            Divider {
+                
+            }
+            ScrollView {
+                scrollViewProperties.scrollMode: ScrollMode.Vertical
+                scrollViewProperties.pinchToZoomEnabled: false
+                scrollViewProperties.overScrollEffectMode: OverScrollEffectMode.None
+                Container {
+                    Header {
+                        title: qsTr("README") + Retranslate.onLanguageChanged
+                    }
+                    Label {
+                        text: _manager.readTextFile(_manager.getcwd() + "/app/native/README.md", "normal")
+                        content.flags: TextContentFlag.ActiveText
+                        multiline: true
+                    }
+                    Header {
+                        title: qsTr("LICENSE") + Retranslate.onLanguageChanged
+                    }
+                    Label {
+                        text: _manager.readTextFile(_manager.getcwd() + "/app/native/LICENSE", "normal")
+                        content.flags: TextContentFlag.ActiveText
+                        multiline: true
+                    }
+                }
             }
         }
     }

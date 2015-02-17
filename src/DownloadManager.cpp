@@ -279,3 +279,8 @@ QString DownloadManager::readTextFile(QString uri, QString mode)
     }
     return text;
 }
+
+QString DownloadManager::getcwd()
+{
+    return QDir::currentPath();
+}
