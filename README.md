@@ -19,13 +19,15 @@ An OS/radio link generator, automatic lookup tool, certification/metadata browse
 
 ## How to Contribute
 Have artwork/bugfixes/features/translations/whatnot that can be useful? Send it upstream via pull request.
-
 For feature requests and bug reports, use the Github issues system.
 
-If you want to translate this app into a non-English language, read the README file in the /translations directory.
+## For Translators
+If you want to contribute, get [Qt Linguist](https://github.com/thurask/Qt-Linguist/releases/latest).
+All of the strings you need to translate are in bbdownloader.ts. When you're done, save it as bbdownloader_([LANGUAGE CODE](https://developer.blackberry.com/playbook/native/reference/com.qnx.doc.dinkum/topic/cpp/localedefs.html)) and send it to me via pull request.
 
 ## License
-Read the LICENSE file in this directory.
+No fancy licensing here, just fork this and do whatever.
+Although, if you figure out something interesting, please do try to put it upstream via pull request.
 
 ## Authors
 * Thurask [(@thuraski)](http://www.twitter.com/thuraski)

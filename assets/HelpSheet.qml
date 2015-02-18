@@ -51,14 +51,6 @@ Sheet {
                         content.flags: TextContentFlag.ActiveText
                         multiline: true
                     }
-                    Header {
-                        title: qsTr("LICENSE") + Retranslate.onLanguageChanged
-                    }
-                    Label {
-                        text: _manager.readTextFile(_manager.getcwd() + "/app/native/LICENSE", "normal")
-                        content.flags: TextContentFlag.ActiveText
-                        multiline: true
-                    }
                 }
             }
         }

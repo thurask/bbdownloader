@@ -353,10 +353,6 @@
         <source>README</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>LICENSE</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>MetadataSheet</name>
