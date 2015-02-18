@@ -6,7 +6,3 @@ translations/*.qm
 
 #Momentics settings
 .settings/
-
-#git archive files, but not the readme
-git-archive/*
-!git-archive/*.md
