@@ -52,6 +52,7 @@ void DownloadManager::setOsLinks(QString hashedswversion, QString osversion, boo
                 "STA100-X: http://developer.blackberry.com/native/downloads/fetch/Autoload-STA100-5-" + osversion +".exe\n\n" +
                 "STJ100-X: http://developer.blackberry.com/native/downloads/fetch/Autoload-STJ100-1-" + osversion +".exe\n\n" +
                 "SQW100-X: http://developer.blackberry.com/native/downloads/fetch/Autoload-SQW100-1-" + osversion +".exe\n\n" +
+                "STR100-X: http://developer.blackberry.com/native/downloads/fetch/Autoload-STR100-1-" + osversion +".exe\n\n" +
                 "Dev Alpha A: http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlpha-" + osversion +".exe\n\n" +
                 "Dev Alpha B: http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlphaB-" + osversion +".exe\n\n" +
                 "Dev Alpha A_B: http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlphaA_B-" + osversion +".exe\n\n" +
@@ -130,6 +131,7 @@ void DownloadManager::setRadioLinks(QString hashedswversion, QString osversion, 
                 "STA100-X: http://developer.blackberry.com/native/downloads/fetch/Autoload-STA-100-5-" + osversion +".exe\n\n" +
                 "STJ100-X: http://developer.blackberry.com/native/downloads/fetch/Autoload-STJ-100-1-" + osversion +".exe\n\n" +
                 "SQW100-X: http://developer.blackberry.com/native/downloads/fetch/Autoload-SQW-100-1-" + osversion +".exe\n\n" +
+                "STR100-X: http://developer.blackberry.com/native/downloads/fetch/Autoload-STR-100-1-" + osversion +".exe\n\n" +
                 "Dev Alpha A: http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlpha-" + osversion +".exe\n\n" +
                 "Dev Alpha B: http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlphaB-" + osversion +".exe\n\n" +
                 "Dev Alpha A_B: http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlphaA_B-" + osversion +".exe\n\n" +
@@ -154,7 +156,7 @@ void DownloadManager::setRadioLinks(QString hashedswversion, QString osversion, 
             //10.2.0 and up (Z30, Kopi/Cafe/Z3)
             if (osversion.indexOf("10.0.") == -1 && osversion.indexOf("10.1.") == -1) {
                 if (aseries == true) {
-                    radiolinks.append("Z30/Manitoba/Classic: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr5/" + radioversion + "/qc8960.wtr5-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
+                    radiolinks.append("Z30/Leap/Classic: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.wtr5/" + radioversion + "/qc8960.wtr5-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
                 }
                 if (jakarta == true) {
                     radiolinks.append("Z3/Kopi/Cafe: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8930.wtr5/" + radioversion + "/qc8930.wtr5-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
