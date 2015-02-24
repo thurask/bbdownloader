@@ -330,4 +330,18 @@
 		<url></url>
 		<image>asset:///images/devices/classic.jpg</image>
 	</device>
+	<device>
+		<name>Leap</name>
+		<variant>STR100-1</variant>
+		<id>RHD131LW</id>
+		<url></url>
+		<image>asset:///images/devices/leap.jpg</image>
+	</device>
+	<device>
+		<name>Leap</name>
+		<variant>STR100-2</variant>
+		<id>RHC161LW</id>
+		<url></url>
+		<image>asset:///images/devices/leap.jpg</image>
+	</device>
 </repo>

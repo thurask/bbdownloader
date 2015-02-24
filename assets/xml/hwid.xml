@@ -283,4 +283,16 @@
 		<variant>HSPA+</variant>
 		<image>asset:///images/devices/playbook.jpg</image>
 	</hardware>
+	<hardware>
+		<id>07002E0A</id>
+		<name>Leap</name>
+		<variant>STR100-1</variant>
+		<image>asset:///images/devices/leap.jpg</image>
+	</hardware>
+	<hardware>
+		<id>06002E0A</id>
+		<name>Leap</name>
+		<variant>STR100-2</variant>
+		<image>asset:///images/devices/leap.jpg</image>
+	</hardware>
 </repo>

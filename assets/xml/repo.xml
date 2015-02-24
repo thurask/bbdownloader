@@ -36,6 +36,22 @@
 	<release>
 		<series>10.3.1</series>
 		<trueos></trueos>
+		<os>10.3.1.1520</os>
+		<radio>10.3.1.1521</radio>
+		<software>10.3.1.989</software>
+		<notes>VZW Classic</notes>
+	</release>
+	<release>
+		<series>10.3.1</series>
+		<trueos></trueos>
+		<os>10.3.1.1448</os>
+		<radio>10.3.1.1449</radio>
+		<software>10.3.1.941</software>
+		<notes>VZW Classic</notes>
+	</release>
+	<release>
+		<series>10.3.1</series>
+		<trueos></trueos>
 		<os>10.3.1.1298</os>
 		<radio>10.3.1.1299</radio>
 		<software>10.3.1.841</software>
