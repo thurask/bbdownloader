@@ -172,6 +172,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/images/devices/daa.jpg) \
         $$quote($$BASEDIR/assets/images/devices/dab.jpg) \
         $$quote($$BASEDIR/assets/images/devices/dac.jpg) \
+        $$quote($$BASEDIR/assets/images/devices/leap.jpg) \
         $$quote($$BASEDIR/assets/images/devices/passport.jpg) \
         $$quote($$BASEDIR/assets/images/devices/passportatt.jpg) \
         $$quote($$BASEDIR/assets/images/devices/playbook.jpg) \
