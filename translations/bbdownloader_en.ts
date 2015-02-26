@@ -958,7 +958,7 @@
     </message>
     <message>
         <source>Boot Time: %1</source>
-        <translation>Boot Time %1</translation>
+        <translation>Boot Time: %1</translation>
     </message>
     <message>
         <source>HDMI: %1</source>
