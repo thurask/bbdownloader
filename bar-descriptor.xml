@@ -112,10 +112,10 @@
     <asset path="translations" dest="qm">
         <include name="*.qm"/>
     </asset>
-    
+
     <asset path="assets"></asset>
-    <asset path="README.md">README.md</asset>
-    
+    <asset path="README.html">README.html</asset>
+
     <!-- Request permission to execute native code.  Required for native applications. -->
     <permission system="true">run_native</permission>
     <permission>access_shared</permission>

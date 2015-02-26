@@ -1,7 +1,7 @@
 /*HelpSheet.qml
  --------------
  Help menu, including credits and notes.
- 
+
  --Thurask*/
 
 import bb.cascades 1.4
@@ -36,20 +36,25 @@ Sheet {
                 multiline: true
             }
             Divider {
-                
+
+            }
+            Header {
+                title: qsTr("README") + Retranslate.onLanguageChanged //Markdown to HTML: http://stackedit.io/
             }
             ScrollView {
                 scrollViewProperties.scrollMode: ScrollMode.Vertical
                 scrollViewProperties.pinchToZoomEnabled: false
                 scrollViewProperties.overScrollEffectMode: OverScrollEffectMode.None
-                Container {
-                    Header {
-                        title: qsTr("README") + Retranslate.onLanguageChanged
-                    }
-                    Label {
-                        text: _manager.readTextFile(_manager.getcwd() + "/app/native/README.md", "normal")
-                        content.flags: TextContentFlag.ActiveText
-                        multiline: true
+                WebView {
+                    url: "local:///README.html"
+                    settings.activeTextEnabled: false
+                    onNavigationRequested: {
+                        if (request.url == "local:///README.html"){
+                            request.action = WebNavigationRequestAction.Accept
+                        }
+                        else {
+                            request.action = WebNavigationRequestAction.Ignore //open in browser, but do it yourself
+                        }
                     }
                 }
             }
