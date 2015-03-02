@@ -344,4 +344,18 @@
 		<url></url>
 		<image>asset:///images/devices/leap.jpg</image>
 	</device>
+	<device>
+		<name>Z20</name>
+		<variant>STM100-1</variant>
+		<id></id>
+		<url></url>
+		<image>asset:///images/devices/manitoba.jpg</image>
+	</device>
+	<device>
+		<name>Z20</name>
+		<variant>STM100-2</variant>
+		<id>RHC161LW</id>
+		<url></url>
+		<image>asset:///images/devices/manitoba.jpg</image>
+	</device>
 </repo>

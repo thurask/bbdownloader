@@ -295,4 +295,16 @@
 		<variant>STR100-2</variant>
 		<image>asset:///images/devices/leap.jpg</image>
 	</hardware>
+	<hardware>
+		<id>05002E0A</id>
+		<name>Z20</name>
+		<variant>STM100-1</variant>
+		<image>asset:///images/devices/manitoba.jpg</image>
+	</hardware>
+	<hardware>
+		<id>04002E0A</id>
+		<name>Z20</name>
+		<variant>STM100-2</variant>
+		<image>asset:///images/devices/manitoba.jpg</image>
+	</hardware>
 </repo>
