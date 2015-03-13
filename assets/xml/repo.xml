@@ -4,6 +4,14 @@
 	<release>
 		<series>10.3.1</series>
 		<trueos></trueos>
+		<os>10.3.1.2558</os>
+		<radio>10.3.1.2559</radio>
+		<software>10.3.1.1767</software>
+		<notes>10.3.1 MR for Z30</notes>
+	</release>
+	<release>
+		<series>10.3.1</series>
+		<trueos></trueos>
 		<os>10.3.1.2267</os>
 		<radio>10.3.1.2268</radio>
 		<software>10.3.1.1581</software>
