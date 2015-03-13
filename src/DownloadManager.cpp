@@ -39,7 +39,7 @@ QString DownloadManager::returnLinks()
     return exporturls;
 }
 
-void DownloadManager::setOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester, bool passport, bool core, bool qcom)
+void DownloadManager::setOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester, bool passport, bool core, bool qcom, bool jakarta)
 {
     //Autoloaders
     if (hashedswversion == "08d2e98e6754af941484848930ccbaddfefe13d6"){
@@ -71,18 +71,32 @@ void DownloadManager::setOsLinks(QString hashedswversion, QString osversion, boo
                     oslinks.append("Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.factory/" + osversion + "/winchester.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar\n\n");
                 }
             }
-            //89x0 images
+            //8960 images
             if (qcom == true) {
-                oslinks.append("Qualcomm 8960/8930 (Most others)\n"
-                        "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.factory_sfi.desktop/" + osversion + "/qc8960.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+                if (osversion.indexOf("10.0.") == -1 && osversion.indexOf("10.1.") == -1 && osversion.indexOf("10.2.") == -1 && osversion.indexOf("10.3.0") == -1) {
+                    oslinks.append("Qualcomm 8960\n");
+                }
+                else {
+                    oslinks.append("Qualcomm 8960/8930 (Most others)\n");
+                }
+                oslinks.append("Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.factory_sfi.desktop/" + osversion + "/qc8960.factory_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n\n");
                 if (core == true) {
                     oslinks.chop(1);
                     oslinks.append("Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.factory_sfi/" + osversion + "/qc8960.factory_sfi-" + osversion + "-nto+armle-v7+signed.bar\n\n");
                 }
             }
+            //8x30 images
+            if (jakarta == true && (osversion.indexOf("10.0.") == -1 && osversion.indexOf("10.1.") == -1 && osversion.indexOf("10.2.") == -1 && osversion.indexOf("10.3.0") == -1)) {
+                oslinks.append("Qualcomm 8x30_8960 Hybrid (Z3)\n"
+                        "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/qc8960.factory_sfi_hybrid_qc8x30.desktop-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+                if (core == true)  {
+                    oslinks.chop(1);
+                    oslinks.append("Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/qc8960.factory_sfi_hybrid_qc8x30-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+                }
+            }
             //Verizon images
             if (verizon == true){
-                oslinks.append("Verizon 8960/8930\n"
+                oslinks.append("Verizon 8960\n"
                         "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi.desktop/" + osversion + "/qc8960.verizon_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n\n");
                 if (core == true) {
                     oslinks.chop(1);
@@ -187,7 +201,7 @@ void DownloadManager::setRadioLinks(QString hashedswversion, QString osversion, 
 
 void DownloadManager::setExportUrls(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool core, bool qcom, bool lseries, bool nseries, bool aseries, bool jakarta)
 {
-    setOsLinks(hashedswversion, osversion, verizon, winchester, passport, core, qcom);
+    setOsLinks(hashedswversion, osversion, verizon, winchester, passport, core, qcom, jakarta);
     setRadioLinks(hashedswversion, osversion, radioversion, verizon, winchester, passport, lseries, nseries, aseries, jakarta);
     exporturls = oslinks + "\n\n" + radiolinks;
 }
