@@ -74,7 +74,7 @@ void DownloadManager::setOsLinks(QString hashedswversion, QString osversion, boo
             //8960 images
             if (qcom == true) {
                 if (osversion.indexOf("10.0.") == -1 && osversion.indexOf("10.1.") == -1 && osversion.indexOf("10.2.") == -1 && osversion.indexOf("10.3.0") == -1) {
-                    oslinks.append("Qualcomm 8960\n");
+                    oslinks.append("Qualcomm 8960\n"); //because of 8x30 hybrid
                 }
                 else {
                     oslinks.append("Qualcomm 8960/8930 (Most others)\n");
@@ -87,20 +87,11 @@ void DownloadManager::setOsLinks(QString hashedswversion, QString osversion, boo
             }
             //8x30 images
             if (jakarta == true && (osversion.indexOf("10.0.") == -1 && osversion.indexOf("10.1.") == -1 && osversion.indexOf("10.2.") == -1 && osversion.indexOf("10.3.0") == -1)) {
-                oslinks.append("Qualcomm 8x30_8960 Hybrid (Z3)\n"
+                oslinks.append("Qualcomm 8960_8x30 Hybrid (Z3)\n"
                         "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/qc8960.factory_sfi_hybrid_qc8x30.desktop-" + osversion + "-nto+armle-v7+signed.bar\n\n");
                 if (core == true)  {
                     oslinks.chop(1);
                     oslinks.append("Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/qc8960.factory_sfi_hybrid_qc8x30-" + osversion + "-nto+armle-v7+signed.bar\n\n");
-                }
-            }
-            //Verizon images
-            if (verizon == true){
-                oslinks.append("Verizon 8960\n"
-                        "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi.desktop/" + osversion + "/qc8960.verizon_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n\n");
-                if (core == true) {
-                    oslinks.chop(1);
-                    oslinks.append("Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi/" + osversion + "/qc8960.verizon_sfi-" + osversion + "-nto+armle-v7+signed.bar\n\n");
                 }
             }
             //10.3.0 specifically (Passport)
@@ -114,11 +105,20 @@ void DownloadManager::setOsLinks(QString hashedswversion, QString osversion, boo
             }
             //10.3.1 and up (Passport, again)
             if (passport == true && (osversion.indexOf("10.0.") == -1 && osversion.indexOf("10.1.") == -1 && osversion.indexOf("10.2.") == -1 && osversion.indexOf("10.3.0") == -1)) {
-                oslinks.append("Qualcomm 8974_8960 Hybrid (Passport)\n"
+                oslinks.append("Qualcomm 8960_8974 Hybrid (Passport)\n"
                         "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/qc8960.factory_sfi_hybrid_qc8974.desktop-" + osversion + "-nto+armle-v7+signed.bar\n\n");
                 if (core == true)  {
                     oslinks.chop(1);
                     oslinks.append("Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/qc8960.factory_sfi_hybrid_qc8974-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+                }
+            }
+            //Verizon images
+            if (verizon == true){
+                oslinks.append("Verizon 8960\n"
+                        "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi.desktop/" + osversion + "/qc8960.verizon_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+                if (core == true) {
+                    oslinks.chop(1);
+                    oslinks.append("Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi/" + osversion + "/qc8960.verizon_sfi-" + osversion + "-nto+armle-v7+signed.bar\n\n");
                 }
             }
             oslinks.chop(2); //trailing \n\n
