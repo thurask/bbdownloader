@@ -163,6 +163,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/OSRepo.qml) \
         $$quote($$BASEDIR/assets/SettingsSheet.qml) \
         $$quote($$BASEDIR/assets/SysInfo.qml) \
+        $$quote($$BASEDIR/assets/html/README.html) \
         $$quote($$BASEDIR/assets/images/blank/blank.png) \
         $$quote($$BASEDIR/assets/images/covers/cover.png) \
         $$quote($$BASEDIR/assets/images/covers/cover_small.png) \
@@ -322,6 +323,9 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/9ppd/images/covers/*.qml) \
         $$quote($$BASEDIR/../assets/9ppd/images/covers/*.js) \
         $$quote($$BASEDIR/../assets/9ppd/images/covers/*.qs) \
+        $$quote($$BASEDIR/../assets/html/*.qml) \
+        $$quote($$BASEDIR/../assets/html/*.js) \
+        $$quote($$BASEDIR/../assets/html/*.qs) \
         $$quote($$BASEDIR/../assets/images/*.qml) \
         $$quote($$BASEDIR/../assets/images/*.js) \
         $$quote($$BASEDIR/../assets/images/*.qs) \

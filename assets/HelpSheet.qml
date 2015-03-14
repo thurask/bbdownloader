@@ -46,14 +46,22 @@ Sheet {
                 scrollViewProperties.pinchToZoomEnabled: false
                 scrollViewProperties.overScrollEffectMode: OverScrollEffectMode.None
                 WebView {
-                    url: "local:///README.html"
+                    id: wview
+                    url: "local:///assets/html/README.html"
                     settings.activeTextEnabled: false
+                    settings.background: Color.Transparent
                     onNavigationRequested: {
-                        if (request.url == "local:///README.html"){
+                        if (request.url == "local:///assets/html/README.html"){
                             request.action = WebNavigationRequestAction.Accept
                         }
                         else {
                             request.action = WebNavigationRequestAction.Ignore //open in browser, but do it yourself
+                        }
+                    }
+                    onLoadingChanged: {
+                        if (loadProgress == 100) {
+                            console.log(Settings.getValueFor("theme", "bright"))
+                            wview.postMessage(Settings.getValueFor("theme", "bright"))
                         }
                     }
                 }

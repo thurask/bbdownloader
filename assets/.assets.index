@@ -1,5 +1,5 @@
 1
-83
+84
 10ppd/images/blank/blank.png
 10ppd/images/covers/cover.png
 12ppd/images/blank/blank.png
@@ -17,6 +17,7 @@ EScreens.qml
 HardwareIDs.qml
 HashToolsPage.qml
 HelpSheet.qml
+html/README.html
 images/blank/blank.png
 images/covers/cover.png
 images/covers/cover_small.png
