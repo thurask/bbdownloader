@@ -27,7 +27,11 @@ Page {
             onTriggered: {
                 _manager.setExportUrls(hashedswversion, osversion, radioversion, verizon, winchester, passport, core, qcom, lseries, nseries, aseries, jakarta);
                 ostext.text = _manager.returnOsLinks();
+                coretext.text = _manager.returnCoreLinks();
                 radiotext.text = _manager.returnRadioLinks();
+                ostext.visible = true;
+                coretext.visible = core;
+                radiotext.visible = true;
                 divider.visible = true;
                 allclipboard.enabled = true;
                 osclipboard.enabled = true;
@@ -47,7 +51,11 @@ Page {
             enabled: (ostext.text != "")
             onTriggered: {
                 ostext.text = "";
+                coretext.text = "";
                 radiotext.text = "";
+                ostext.visible = false;
+                coretext.visible = false;
+                radiotext.visible = false;
                 divider.visible = false;
                 allclipboard.enabled = false;
                 osclipboard.enabled = false;
@@ -123,7 +131,13 @@ Page {
             enabled: false
             title: (ostext.text.indexOf("Normal URL") != -1 ? qsTr("Upload Autoloader Links") + Retranslate.onLanguageChanged : qsTr("Upload OS Links") + Retranslate.onLanguageChanged)
             onTriggered: {
-                Paster.uploadPaste(_manager.returnOsLinks())
+                var smeg = _manager.returnCoreLinks()
+                if (smeg == ""){
+                    Paster.uploadPaste(_manager.returnOsLinks())
+                }
+                else {
+                    Paster.uploadPaste(_manager.returnOsLinks() + "\n\n" + _manager.returnCoreLinks())
+                }
                 Paster.uploadUrlChanged.connect(pastetoast.show())
             }
             imageSource: "asset:///images/menus/ic_browser.png"
@@ -452,6 +466,15 @@ Page {
                 }
                 TextArea {
                     id: ostext
+                    text: ""
+                    editable: false
+                    visible: true
+                    content.flags: TextContentFlag.ActiveText
+                    scrollMode: TextAreaScrollMode.Stiff
+                    maximumLength: 16384
+                }
+                TextArea {
+                    id: coretext
                     text: ""
                     editable: false
                     visible: true

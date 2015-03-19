@@ -14,11 +14,15 @@
 
         QString returnOsLinks();
 
+        QString returnCoreLinks();
+
         QString returnRadioLinks();
 
         void setExportUrls(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool core, bool qcom, bool lseries, bool nseries, bool aseries, bool jakarta);
 
-        void setOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester, bool passport, bool core, bool qcom, bool jakarta);
+        void setOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester, bool passport, bool qcom, bool jakarta);
+
+        void setCoreLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester, bool passport, bool qcom, bool jakarta, bool dummy);
 
         void setRadioLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool lseries, bool nseries, bool aseries, bool jakarta);
 
@@ -51,6 +55,8 @@
         QString radiolinks;
 
         QString oslinks;
+
+        QString corelinks;
 
         QString filename;
 
