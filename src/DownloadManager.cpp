@@ -7,11 +7,15 @@
 
 #include "DownloadManager.hpp"
 #include <bb/system/Clipboard>
+#include <bb/ApplicationInfo>
 
 #include <QtCore>
 
 DownloadManager::DownloadManager()
 {
+    bb::ApplicationInfo appInfo;
+
+    appversion = appInfo.version();
 }
 
 void DownloadManager::setDefaultDir(QString dir)
@@ -236,16 +240,20 @@ void DownloadManager::setRadioLinks(QString hashedswversion, QString osversion, 
     }
 }
 
-void DownloadManager::setExportUrls(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool core, bool qcom, bool lseries, bool nseries, bool aseries, bool jakarta)
+void DownloadManager::setExportUrls(QString swversion, QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool core, bool qcom, bool lseries, bool nseries, bool aseries, bool jakarta)
 {
     setOsLinks(hashedswversion, osversion, verizon, winchester, passport, qcom, jakarta);
     setCoreLinks(hashedswversion, osversion, verizon, winchester, passport, qcom, jakarta, !core); // if core == true, dummy == false and vice versa
     setRadioLinks(hashedswversion, osversion, radioversion, verizon, winchester, passport, lseries, nseries, aseries, jakarta);
-    exporturls = oslinks + "\n\n";
+    exporturls = "~~~POTENTIAL LINKS~~~\n";
+    exporturls.append("OS " + osversion + " | RADIO " + radioversion + "\nSW RELEASE: " + swversion + "\n\n");
+    exporturls.append(oslinks + "\n\n");
     if (core == true) {
         exporturls.append(corelinks + "\n\n");
     }
     exporturls.append(radiolinks);
+    exporturls.append ("\n\n~~~~~~~~\nGenerated with BBDownloader " + appversion);
+    exporturls.append("\nhttps://github.com/thurask/bbdownloader");
 }
 
 void DownloadManager::exportLinks(QString swrelease)

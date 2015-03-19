@@ -18,7 +18,7 @@
 
         QString returnRadioLinks();
 
-        void setExportUrls(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool core, bool qcom, bool lseries, bool nseries, bool aseries, bool jakarta);
+        void setExportUrls(QString swversion, QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool core, bool qcom, bool lseries, bool nseries, bool aseries, bool jakarta);
 
         void setOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester, bool passport, bool qcom, bool jakarta);
 
@@ -49,6 +49,8 @@
         QString getcwd();
 
     private:
+
+        QString appversion;
 
         QString exporturls;
 

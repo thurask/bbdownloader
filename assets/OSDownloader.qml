@@ -25,7 +25,7 @@ Page {
         ActionItem {
             title: qsTr("Generate") + Retranslate.onLanguageChanged
             onTriggered: {
-                _manager.setExportUrls(hashedswversion, osversion, radioversion, verizon, winchester, passport, core, qcom, lseries, nseries, aseries, jakarta);
+                _manager.setExportUrls(swrelease, hashedswversion, osversion, radioversion, verizon, winchester, passport, core, qcom, lseries, nseries, aseries, jakarta);
                 ostext.text = _manager.returnOsLinks();
                 coretext.text = _manager.returnCoreLinks();
                 radiotext.text = _manager.returnRadioLinks();
