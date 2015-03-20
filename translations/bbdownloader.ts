@@ -1135,6 +1135,14 @@
         <source>User Agent: %1</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%1 days, %2 hours, %3 minutes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Uptime: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>main</name>

@@ -1,7 +1,7 @@
 /*SysInfo.qml
  -------------
  Reads device information.
- 
+
  --Thurask*/
 
 import bb.cascades 1.4
@@ -10,6 +10,23 @@ import bb 1.3
 
 Page {
     property bool sanitized: false
+    property string uptime
+    onCreationCompleted: {
+        var now = new Date();
+        var dmy = new Date(_manager.readTextFile("/var/boottime.txt", "normal"));
+        var raw_ms = (now.getTime() - dmy.getTime());
+        //Days, hours, minutes
+        var milliseconds = raw_ms % 1000;
+        raw_ms = (raw_ms - milliseconds) / 1000;
+        var seconds = raw_ms % 60;
+        raw_ms = (raw_ms - seconds) / 60;
+        var minutes = raw_ms % 60;
+        raw_ms = (raw_ms - minutes) / 60;
+        var hours = raw_ms % 60;
+        raw_ms = (raw_ms - hours) / 24;
+        var days =  raw_ms % 24;
+        uptime = qsTr("%1 days, %2 hours, %3 minutes").arg(days).arg(hours).arg(minutes) + Retranslate.onLanguageChanged;
+    }
     attachedObjects: [
         HardwareInfo {
             id: hardwareinfo
@@ -104,6 +121,10 @@ Page {
                 }
                 Label {
                     text: qsTr("Boot Time: %1").arg(_manager.readTextFile("/var/boottime.txt", "normsimp")) + Retranslate.onLanguageChanged;
+                    multiline: true
+                }
+                Label {
+                    text: qsTr("Uptime: %1").arg(uptime) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
@@ -209,6 +230,7 @@ Page {
             }
             Container {
                 topPadding: 20.0
+                visible: (fsinfo.fileSystemCapacity("/sdcard/external_sd/") > 0)
                 Header {
                     title: qsTr("SD Card") + Retranslate.onLanguageChanged;
                 }
