@@ -51,7 +51,7 @@ Page {
             layout: StackLayout {
                 orientation: LayoutOrientation.TopToBottom
             }
-            topPadding: ui.du(1.5)
+            topPadding: ui.du(0.5)
             Container {
                 layout: StackLayout {
                     orientation: LayoutOrientation.LeftToRight
@@ -77,7 +77,6 @@ Page {
             Divider {
             }
             Container {
-                topPadding: ui.du(1.5)
                 id: textmodecontainer
                 visible: (pickermode == false)
                 Label {
@@ -90,24 +89,17 @@ Page {
                 }
             }
             Container {
-                topPadding: ui.du(1.5)
                 id: pickermodecontainer
                 visible: (pickermode == true)
                 layout: StackLayout {
                     orientation: LayoutOrientation.TopToBottom
                 }
                 horizontalAlignment: HorizontalAlignment.Center
-                Container {
-                    layout: StackLayout {
-                        orientation: LayoutOrientation.LeftToRight
-                    }
-                    horizontalAlignment: HorizontalAlignment.Center
-                    Button {
-                        text: qsTr("Choose a file") + Retranslate.onLanguageChanged
-                        onClicked: {
-                            resultLabel.visible = true;
-                            picker.open();
-                        }
+                Button {
+                    text: qsTr("Choose a file") + Retranslate.onLanguageChanged
+                    onClicked: {
+                        resultLabel.visible = true;
+                        picker.open();
                     }
                 }
                 Label {
@@ -118,14 +110,11 @@ Page {
                 }
             }
             Container {
-                topPadding: ui.du(4.0)
                 layout: StackLayout {
                     orientation: LayoutOrientation.TopToBottom
                 }
-                Divider {
-                }
                 Container {
-                    topPadding: ui.du(1.5)
+                    topPadding: ui.du(0.5)
                     layout: StackLayout {
                         orientation: LayoutOrientation.LeftToRight
                     }
@@ -180,7 +169,6 @@ Page {
                 }
             }
             Container {
-                topPadding: ui.du(4.0)
                 layout: StackLayout {
                     orientation: LayoutOrientation.TopToBottom
                 }
