@@ -20,7 +20,7 @@ Page {
     Container {
         horizontalAlignment: HorizontalAlignment.Fill
         Container {
-            topPadding: 5.0
+            topPadding: ui.du(0.5)
             layout: StackLayout {
                 orientation: LayoutOrientation.LeftToRight
             }
@@ -110,7 +110,7 @@ Page {
                 }
             ]
             onTriggered: {
-                var indexi = repoDataModel.data(indexPath);  
+                var indexi = repoDataModel.data(indexPath);
                 if (indexi.url != ""){
                     selectedid = indexi.url
                     var wview = certPageDef.createObject()

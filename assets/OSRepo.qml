@@ -1,7 +1,7 @@
 /*OSRepo.qml
  -----------
  Reads remote XML repo. Handy.
- 
+
  --Thurask*/
 
 import bb.cascades 1.4
@@ -31,7 +31,7 @@ Sheet {
         Container {
             horizontalAlignment: HorizontalAlignment.Fill
             Container {
-                topPadding: 5.0
+                topPadding: ui.du(0.5)
                 horizontalAlignment: HorizontalAlignment.Center
                 Label {
                     text: qsTr("Tap to select, long press to copy") + Retranslate.onLanguageChanged

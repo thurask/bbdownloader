@@ -1,7 +1,7 @@
 /*EScreens.qml
  -------------
  Generates a code for the escreens app (take that, Javascript!). Invoke the escreens app.
- 
+
  --Thurask*/
 
 import bb.cascades 1.4
@@ -57,7 +57,7 @@ Page {
         }
     ]
     Container {
-        topPadding: 5.0
+        topPadding: ui.du(0.5)
         Container {
             TextField {
                 id: pin
@@ -86,7 +86,7 @@ Page {
             }
         }
         Container {
-            topPadding: 5.0
+            topPadding: ui.du(0.5)
             TextField {
                 id: appv
                 hintText: qsTr("App Version") + Retranslate.onLanguageChanged
@@ -114,7 +114,7 @@ Page {
             }
         }
         Container {
-            topPadding: 5.0
+            topPadding: ui.du(0.5)
             TextField {
                 id: uptime
                 hintText: qsTr("Uptime") + Retranslate.onLanguageChanged
@@ -149,7 +149,7 @@ Page {
             }
         }
         Container {
-            topPadding: 5.0
+            topPadding: ui.du(0.5)
             DropDown {
                 id: validity
                 title: qsTr("Validity") + Retranslate.onLanguageChanged

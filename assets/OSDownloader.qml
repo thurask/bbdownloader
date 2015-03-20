@@ -160,7 +160,7 @@ Page {
         scrollViewProperties.scrollMode: ScrollMode.Vertical
         scrollViewProperties.overScrollEffectMode: OverScrollEffectMode.OnPinch
         Container {
-            topPadding: 5.0
+            topPadding: ui.du(0.5)
             //Inputs
             Container {
                 layout: StackLayout {
@@ -209,7 +209,7 @@ Page {
                     }
                 }
                 Container {
-                    topPadding: 5.0
+                    topPadding: ui.du(0.5)
                     layout: StackLayout {
                         orientation: LayoutOrientation.LeftToRight
                     }
@@ -250,7 +250,7 @@ Page {
                     }
                 }
                 Container {
-                    topPadding: 5.0
+                    topPadding: ui.du(0.5)
                     layout: StackLayout {
                         orientation: LayoutOrientation.LeftToRight
                     }
@@ -295,7 +295,7 @@ Page {
                 }
             }
             Container {
-                topPadding: 5.0
+                topPadding: ui.du(0.5)
                 horizontalAlignment: HorizontalAlignment.Center
                 layout: StackLayout {
                     orientation: LayoutOrientation.LeftToRight
@@ -335,7 +335,7 @@ Page {
                 }
             }
             Container {
-                topPadding: 5.0
+                topPadding: ui.du(0.5)
                 layout: GridLayout {
                     columnCount: 3
                 }
@@ -460,7 +460,7 @@ Page {
             //Links
             Container {
                 horizontalAlignment: HorizontalAlignment.Center
-                topPadding: 5.0
+                topPadding: ui.du(0.5)
                 Header {
                     title: qsTr("Links") + Retranslate.onLanguageChanged
                 }

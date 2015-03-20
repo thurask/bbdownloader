@@ -1,7 +1,7 @@
 /*HardwareIDs.qml
  ----------------
  List of hardware IDs, duh.
- 
+
  --Thurask*/
 
 import bb.cascades 1.4
@@ -30,7 +30,7 @@ Sheet {
         Container {
             horizontalAlignment: HorizontalAlignment.Fill
             Container {
-                topPadding: 5.0
+                topPadding: ui.du(0.5)
                 layout: StackLayout {
                     orientation: LayoutOrientation.LeftToRight
                 }
@@ -117,7 +117,7 @@ Sheet {
                 ]
                 scrollIndicatorMode: ScrollIndicatorMode.ProportionalBar
             }
-        }  
+        }
         attachedObjects: [
             GroupDataModel {
                 id: repoDataModel

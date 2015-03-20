@@ -51,7 +51,7 @@ Page {
             layout: StackLayout {
                 orientation: LayoutOrientation.TopToBottom
             }
-            topPadding: 20.0
+            topPadding: ui.du(1.5)
             Container {
                 layout: StackLayout {
                     orientation: LayoutOrientation.LeftToRight
@@ -74,10 +74,10 @@ Page {
                     }
                 }
             }
-            Divider {        
+            Divider {
             }
             Container {
-                topPadding: 20.0
+                topPadding: ui.du(1.5)
                 id: textmodecontainer
                 visible: (pickermode == false)
                 Label {
@@ -90,7 +90,7 @@ Page {
                 }
             }
             Container {
-                topPadding: 20.0
+                topPadding: ui.du(1.5)
                 id: pickermodecontainer
                 visible: (pickermode == true)
                 layout: StackLayout {
@@ -115,17 +115,17 @@ Page {
                     horizontalAlignment: HorizontalAlignment.Center
                     text: picker.selectedFile
                     multiline: true
-                }         
+                }
             }
             Container {
-                topPadding: 50.0
+                topPadding: ui.du(4.0)
                 layout: StackLayout {
                     orientation: LayoutOrientation.TopToBottom
                 }
                 Divider {
                 }
                 Container {
-                    topPadding: 10.0
+                    topPadding: ui.du(1.5)
                     layout: StackLayout {
                         orientation: LayoutOrientation.LeftToRight
                     }
@@ -159,7 +159,7 @@ Page {
                                 hashCalculateSha.calculateFileHash(picker.selectedFile);
                                 hashoutput.text = hashCalculateSha.getHash();
                             }
-                        }  
+                        }
                     }
                     Button {
                         text: "MD5"
@@ -175,12 +175,12 @@ Page {
                                 hashCalculateMd5.calculateFileHash(picker.selectedFile);
                                 hashoutput.text = hashCalculateMd5.getHash();
                             }
-                        }  
+                        }
                     }
                 }
             }
             Container {
-                topPadding: 50.0
+                topPadding: ui.du(4.0)
                 layout: StackLayout {
                     orientation: LayoutOrientation.TopToBottom
                 }
@@ -197,11 +197,11 @@ Page {
                     layout: StackLayout {
                         orientation: LayoutOrientation.LeftToRight
                     }
-                    Button {                   
+                    Button {
                         id: exportbutton
                         text: qsTr("Export to file") + Retranslate.onLanguageChanged
                         onClicked: {
-                            hashToast.body = qsTr("Hash saved to default directory") + Retranslate.onLanguageChanged;            
+                            hashToast.body = qsTr("Hash saved to default directory") + Retranslate.onLanguageChanged;
                             hashToast.show();
                             if (togglebutton.checked == false){
                                 var exporthash = (hashinput.text + " -- " + hashoutput.text);

@@ -41,7 +41,7 @@ Sheet {
                 ]
                 Container {
                     horizontalAlignment: HorizontalAlignment.Center
-                    topPadding: 20.0
+                    topPadding: ui.du(1.5)
                     Button {
                         text: qsTr("Choose a Directory") + Retranslate.onLanguageChanged
                         horizontalAlignment: HorizontalAlignment.Center
@@ -51,7 +51,7 @@ Sheet {
                     }
                     Label {
                         text: qsTr("Current Directory:") + Retranslate.onLocaleOrLanguageChanged
-                        horizontalAlignment: HorizontalAlignment.Center 
+                        horizontalAlignment: HorizontalAlignment.Center
                     }
                     Label {
                         text: selecteddir
@@ -62,7 +62,7 @@ Sheet {
                         horizontalAlignment: HorizontalAlignment.Center
                     }
                     Container {
-                        topPadding: 10.0
+                        topPadding: ui.du(1.0)
                         layout: StackLayout {
                             orientation: LayoutOrientation.LeftToRight
                         }

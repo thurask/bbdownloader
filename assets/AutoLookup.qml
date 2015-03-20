@@ -182,7 +182,7 @@ Page {
         }
     ]
     Container {
-        topPadding: 5.0
+        topPadding: ui.du(0.5)
         Container {
             layout: StackLayout {
                 orientation: LayoutOrientation.LeftToRight
@@ -218,7 +218,7 @@ Page {
             }
         }
         Container {
-            topPadding: 5.0
+            topPadding: ui.du(0.5)
             DropDown {
                 id: serverdropdown
                 title: qsTr("Server") + Retranslate.onLanguageChanged

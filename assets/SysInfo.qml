@@ -94,7 +94,7 @@ Page {
         scrollViewProperties.pinchToZoomEnabled: false
         Container {
             Container {
-                topPadding: 5.0
+                topPadding: ui.du(0.5)
                 Header {
                     title: qsTr("Hardware") + Retranslate.onLanguageChanged;
                 }
@@ -172,7 +172,7 @@ Page {
                 }
             }
             Container {
-                topPadding: 20.0
+                topPadding: ui.du(1.5)
                 Header {
                     title: qsTr("SIM Card") + Retranslate.onLanguageChanged;
                 }
@@ -197,7 +197,7 @@ Page {
                 }
             }
             Container {
-                topPadding: 20.0
+                topPadding: ui.du(1.5)
                 Header {
                     title: qsTr("Memory") + Retranslate.onLanguageChanged;
                 }
@@ -211,7 +211,7 @@ Page {
                 }
             }
             Container {
-                topPadding: 20.0
+                topPadding: ui.du(1.5)
                 Header {
                     title: qsTr("Local Filesystem") + Retranslate.onLanguageChanged;
                 }
@@ -229,7 +229,7 @@ Page {
                 }
             }
             Container {
-                topPadding: 20.0
+                topPadding: ui.du(1.5)
                 visible: (fsinfo.fileSystemCapacity("/sdcard/external_sd/") > 0)
                 Header {
                     title: qsTr("SD Card") + Retranslate.onLanguageChanged;
@@ -244,7 +244,7 @@ Page {
                 }
             }
             Container {
-                topPadding: 20.0
+                topPadding: ui.du(1.5)
                 Header {
                     title: qsTr("Battery") + Retranslate.onLanguageChanged;
                 }
@@ -287,7 +287,7 @@ Page {
                 }
             }
             Container {
-                topPadding: 20.0
+                topPadding: ui.du(1.5)
                 Header {
                     title: qsTr("Display") + Retranslate.onLanguageChanged;
                 }
@@ -334,8 +334,8 @@ Page {
                 }
             }
             Container {
-                topPadding: 20.0
-                bottomPadding: 20.0
+                topPadding: ui.du(1.5)
+                bottomPadding: ui.du(1.5)
                 Header {
                     title: qsTr("Versions") + Retranslate.onLanguageChanged;
                 }
