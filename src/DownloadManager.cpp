@@ -107,8 +107,8 @@ void DownloadManager::setOsLinks(QString hashedswversion, QString osversion, boo
                         "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi.desktop/" + osversion + "/qc8960.verizon_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n\n");
             }
             oslinks.chop(2); //trailing \n\n
-            if (corelinks.endsWith("S--") == true) {
-                corelinks.append("-"); //re-add chopped off dash in title, if it's there
+            if (oslinks.endsWith("S--") == true) {
+                oslinks.append("-"); //re-add chopped off dash in title, if it's there
             }
         }
         else if (osversion.indexOf("10.") == -1 && osversion.isEmpty() == false) {
