@@ -107,6 +107,9 @@ void DownloadManager::setOsLinks(QString hashedswversion, QString osversion, boo
                         "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi.desktop/" + osversion + "/qc8960.verizon_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n\n");
             }
             oslinks.chop(2); //trailing \n\n
+            if (corelinks.endsWith("S--") == true) {
+                corelinks.append("-"); //re-add chopped off dash in title, if it's there
+            }
         }
         else if (osversion.indexOf("10.") == -1 && osversion.isEmpty() == false) {
             oslinks = ("---OPERATING SYSTEMS---\n"
@@ -167,6 +170,9 @@ void DownloadManager::setCoreLinks(QString hashedswversion, QString osversion, b
                             "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi/" + osversion + "/qc8960.verizon_sfi-" + osversion + "-nto+armle-v7+signed.bar\n\n");
                 }
                 corelinks.chop(2); //trailing \n\n
+                if (corelinks.endsWith("S--") == true) {
+                    corelinks.append("-"); //re-add chopped off dash in title, if it's there
+                }
             }
             else {
                 corelinks = "";
@@ -222,6 +228,9 @@ void DownloadManager::setRadioLinks(QString hashedswversion, QString osversion, 
                 radiolinks.append("Passport: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8974.wtr2/" + radioversion + "/qc8974.wtr2-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
             }
             radiolinks.chop(2); //trailing \n\n
+            if (radiolinks.endsWith("S--") == true) {
+                radiolinks.append("-"); //re-add chopped off dash in title, if it's there
+            }
         }
         //not 10.x but not empty
         else if (osversion.indexOf("10.") == -1 && osversion.isEmpty() == false){
