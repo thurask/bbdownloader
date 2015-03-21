@@ -61,6 +61,7 @@ Page {
             visible: false
         }
         ListView {
+            scrollRole: ScrollRole.Main
             id: listView
             dataModel: repoDataModel
             listItemComponents: [

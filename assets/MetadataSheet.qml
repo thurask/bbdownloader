@@ -40,6 +40,10 @@ Sheet {
                 }
             }
             ScrollView {
+                scrollRole: ScrollRole.Main
+                scrollViewProperties.scrollMode: ScrollMode.Vertical
+                scrollViewProperties.pinchToZoomEnabled: false
+                scrollViewProperties.overScrollEffectMode: OverScrollEffectMode.None
                 Container {
                     layout: StackLayout {
                         orientation: LayoutOrientation.LeftToRight

@@ -89,6 +89,7 @@ Page {
         }
     ]
     ScrollView {
+        scrollRole: ScrollRole.Main
         scrollViewProperties.scrollMode: ScrollMode.Vertical
         scrollViewProperties.overScrollEffectMode: OverScrollEffectMode.OnPinch
         scrollViewProperties.pinchToZoomEnabled: false

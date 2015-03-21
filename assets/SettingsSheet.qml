@@ -23,11 +23,24 @@ Sheet {
             }
         }
         ScrollView{
+            scrollRole: ScrollRole.Main
             scrollViewProperties.pinchToZoomEnabled: false
             scrollViewProperties.scrollMode: ScrollMode.Vertical
             scrollViewProperties.overScrollEffectMode: OverScrollEffectMode.None
             Container {
                 horizontalAlignment: HorizontalAlignment.Center
+                Container {
+                    horizontalAlignment: HorizontalAlignment.Center
+                    topPadding: ui.du(0.5)
+                    Button {
+                        text: qsTr("Check for Updates") + Retranslate.onLanguageChanged
+                        horizontalAlignment: HorizontalAlignment.Center
+                        onClicked: {
+                            Checker.checkForUpdates();
+                            timer.start();
+                        }
+                    }
+                }
                 Container {
                     Header {
                         title: qsTr("Colors") + Retranslate.onLanguageChanged
@@ -103,19 +116,6 @@ Sheet {
                         horizontalAlignment: HorizontalAlignment.Center
                         multiline: true
                         textStyle.textAlign: TextAlign.Center
-                    }
-                }
-                Container {
-                    Header {
-                        title: qsTr("Check for Updates") + Retranslate.onLanguageChanged
-                    }
-                    Button {
-                        text: qsTr("Check") + Retranslate.onLanguageChanged
-                        horizontalAlignment: HorizontalAlignment.Center
-                        onClicked: {
-                            Checker.checkForUpdates();
-                            timer.start();
-                        }
                     }
                 }
             }

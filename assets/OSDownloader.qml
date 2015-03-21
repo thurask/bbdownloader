@@ -30,7 +30,12 @@ Page {
                 coretext.text = _manager.returnCoreLinks();
                 radiotext.text = _manager.returnRadioLinks();
                 ostext.visible = true;
-                coretext.visible = core;
+                if (swrelease == "N/A"){
+                    coretext.visible = false;
+                }
+                else {
+                    coretext.visible = core;
+                }
                 radiotext.visible = true;
                 divider.visible = true;
                 allclipboard.enabled = true;
@@ -156,6 +161,7 @@ Page {
         }
     ]
     ScrollView {
+        scrollRole: ScrollRole.Main
         scrollViewProperties.pinchToZoomEnabled: false
         scrollViewProperties.scrollMode: ScrollMode.Vertical
         scrollViewProperties.overScrollEffectMode: OverScrollEffectMode.OnPinch

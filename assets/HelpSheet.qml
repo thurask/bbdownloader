@@ -35,13 +35,11 @@ Sheet {
                 content.flags: TextContentFlag.ActiveText
                 multiline: true
             }
-            Divider {
-
-            }
             Header {
                 title: qsTr("README") + Retranslate.onLanguageChanged //Markdown to HTML: http://stackedit.io/
             }
             ScrollView {
+                scrollRole: ScrollRole.Main
                 scrollViewProperties.scrollMode: ScrollMode.Vertical
                 scrollViewProperties.pinchToZoomEnabled: false
                 scrollViewProperties.overScrollEffectMode: OverScrollEffectMode.None
