@@ -736,14 +736,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Primary Color</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Base Color</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Red</source>
         <translation type="unfinished"></translation>
     </message>
@@ -802,6 +794,14 @@
     <message>
         <source>Current Directory:
 %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Primary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Base</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

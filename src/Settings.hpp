@@ -14,8 +14,7 @@ public:
     QString getValueFor(const QString &objectName, const QString &defaultValue);
 
     Q_INVOKABLE
-    void clearSettings( const QString &inputValue);
-
+    void clearSettings();
 
     Q_INVOKABLE
     void saveValueFor(const QString &objectName, const QString &inputValue);

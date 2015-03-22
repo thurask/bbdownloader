@@ -11,28 +11,23 @@ Handles app theme settings.
 Settings::Settings() {
 }
 
-QString Settings::getValueFor(const QString &objectName, const QString &defaultValue) {
+QString Settings::getValueFor(const QString &objectName, const QString &defaultValue)
+{
     QSettings settings;
-
-    // If no value has been saved, return the default value.
     if (settings.value(objectName).isNull()) {
         return defaultValue;
     }
-
-    // Otherwise, return the value stored in the settings object.
     return settings.value(objectName).toString();
 }
 
-void Settings::clearSettings( const QString &inputValue)
+void Settings::clearSettings()
 {
     QSettings settings;
-    if (inputValue == "clear") {
-            settings.clear();
-        }
+    settings.clear();
 }
 
-void Settings::saveValueFor(const QString &objectName, const QString &inputValue) {
-    // A new value is saved to the application settings object.
+void Settings::saveValueFor(const QString &objectName, const QString &inputValue)
+{
     QSettings settings;
     settings.setValue(objectName, QVariant(inputValue));
 }

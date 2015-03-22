@@ -736,14 +736,6 @@
         <translation>Colors</translation>
     </message>
     <message>
-        <source>Primary Color</source>
-        <translation>Primary Color</translation>
-    </message>
-    <message>
-        <source>Base Color</source>
-        <translation>Base Color</translation>
-    </message>
-    <message>
         <source>Red</source>
         <translation>Red</translation>
     </message>
@@ -804,6 +796,14 @@
 %1</source>
         <translation>Current Directory:
 %1</translation>
+    </message>
+    <message>
+        <source>Primary</source>
+        <translation>Primary</translation>
+    </message>
+    <message>
+        <source>Base</source>
+        <translation>Base</translation>
     </message>
 </context>
 <context>

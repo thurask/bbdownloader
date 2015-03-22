@@ -47,7 +47,7 @@ Sheet {
                     }
                     DropDown {
                         id: colordropdown_main
-                        title: qsTr("Primary Color") + Retranslate.onLanguageChanged
+                        title: qsTr("Primary") + Retranslate.onLanguageChanged
                         Option { text: qsTr("Default") + Retranslate.onLanguageChanged; value: Color.create(0xFF0092CC); selected: true }
                         Option { text: qsTr("Red") + Retranslate.onLanguageChanged; value: Color.Red }
                         Option { text: qsTr("Green") + Retranslate.onLanguageChanged; value: Color.Green }
@@ -62,7 +62,7 @@ Sheet {
                     }
                     DropDown {
                         id: colordropdown_base
-                        title: qsTr("Base Color") + Retranslate.onLanguageChanged
+                        title: qsTr("Base") + Retranslate.onLanguageChanged
                         Option { text: qsTr("Default") + Retranslate.onLanguageChanged; value: Color.create(0xFF087099); selected: true }
                         Option { text: qsTr("Dark Red") + Retranslate.onLanguageChanged; value: Color.DarkRed }
                         Option { text: qsTr("Dark Green") + Retranslate.onLanguageChanged; value: Color.DarkGreen }
