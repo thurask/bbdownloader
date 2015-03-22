@@ -146,6 +146,20 @@ TabbedPane {
             OSDownloader {
                 id: osDownloaderPage
                 titleBar: CustomTitleBar {
+                    acceptAction.enabled: true
+                    acceptAction.title: qsTr("Config") + Retranslate.onLanguageChanged
+                    acceptAction.onTriggered: {
+                        var config = configdefinition.createObject()
+                        config.open()
+                    }
+                    attachedObjects: [
+                        ComponentDefinition {
+                            id: configdefinition
+                            OSDownloaderConfig {
+                                
+                            }
+                        }
+                    ]
                 }
             }
         }

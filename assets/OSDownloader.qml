@@ -12,20 +12,37 @@ Page {
     property string swrelease
     property string osversion
     property string radioversion
-    property bool verizon: true
-    property bool core: true
-    property bool qcom: true
-    property bool winchester: true
-    property bool passport: true
-    property bool lseries: true
-    property bool nseries: true
-    property bool aseries: true
-    property bool jakarta: true
+    property bool verizon
+    property bool core
+    property bool qcom
+    property bool winchester
+    property bool passport
+    property bool lseries
+    property bool nseries
+    property bool aseries
+    property bool jakarta
+    property bool aquarius
+    property bool china
+    property bool sdk
+    property bool laguna
     actions: [
         ActionItem {
             title: qsTr("Generate") + Retranslate.onLanguageChanged
             onTriggered: {
-                _manager.setExportUrls(swrelease, hashedswversion, osversion, radioversion, verizon, winchester, passport, core, qcom, lseries, nseries, aseries, jakarta);
+                verizon = Settings.getValueFor("verizon", "true")
+                core = Settings.getValueFor("core", "true")
+                qcom = Settings.getValueFor("qcom", "true")
+                winchester = Settings.getValueFor("winchester", "true")
+                passport = Settings.getValueFor("passport", "true")
+                lseries = Settings.getValueFor("lseries", "true")
+                nseries = Settings.getValueFor("nseries", "true")
+                aseries = Settings.getValueFor("aseries", "true")
+                jakarta = Settings.getValueFor("jakarta", "true")
+                laguna = Settings.getValueFor("laguna", "true")
+                aquarius = Settings.getValueFor("aquarius", "false")
+                china = Settings.getValueFor("china", "false")
+                sdk = Settings.getValueFor("sdk", "false")
+                _manager.setExportUrls(swrelease, hashedswversion, osversion, radioversion, verizon, winchester, passport, core, qcom, lseries, nseries, aseries, jakarta, aquarius, china, sdk, laguna);
                 ostext.text = _manager.returnOsLinks();
                 coretext.text = _manager.returnCoreLinks();
                 radiotext.text = _manager.returnRadioLinks();
@@ -296,169 +313,6 @@ Page {
                         onClicked: {
                             var createdSheet = repoCompDef.createObject();
                             createdSheet.open();
-                        }
-                    }
-                }
-            }
-            Container {
-                topPadding: ui.du(0.5)
-                horizontalAlignment: HorizontalAlignment.Center
-                layout: StackLayout {
-                    orientation: LayoutOrientation.LeftToRight
-                }
-                Label {
-                    text: qsTr("Show Checkboxes") + Retranslate.onLanguageChanged
-                    verticalAlignment: VerticalAlignment.Center
-                }
-                ToggleButton {
-                    id: toggle_checkbox
-                    horizontalAlignment: HorizontalAlignment.Center
-                    checked: true
-                    onCheckedChanged: {
-                        if(checked) {
-                            checkbox_8960.visible = true
-                            checkbox_8974.visible = true
-                            checkbox_core.visible = true
-                            checkbox_omap.visible = true
-                            checkbox_q10.visible = true
-                            checkbox_vzw.visible = true
-                            checkbox_z10.visible = true
-                            checkbox_z3.visible = true
-                            checkbox_z30.visible = true
-                        }
-                        else {
-                            checkbox_8960.visible = false
-                            checkbox_8974.visible = false
-                            checkbox_core.visible = false
-                            checkbox_omap.visible = false
-                            checkbox_q10.visible = false
-                            checkbox_vzw.visible = false
-                            checkbox_z10.visible = false
-                            checkbox_z3.visible = false
-                            checkbox_z30.visible = false
-                        }
-                    }
-                }
-            }
-            Container {
-                topPadding: ui.du(0.5)
-                layout: GridLayout {
-                    columnCount: 3
-                }
-                CheckBox {
-                    id: checkbox_core
-                    text: qsTr("Core") + Retranslate.onLanguageChanged
-                    checked: true
-                    onCheckedChanged: {
-                        if (checked){
-                            core = true;
-                        }
-                        else {
-                            core = false;
-                        }
-                    }
-                }
-                CheckBox {
-                    id: checkbox_vzw
-                    text: qsTr("VZW") + Retranslate.onLanguageChanged
-                    checked: true
-                    onCheckedChanged: {
-                        if (checked){
-                            verizon = true;
-                        }
-                        else {
-                            verizon = false;
-                        }
-                    }
-                }
-                CheckBox {
-                    id: checkbox_8960
-                    text: qsTr("8960") + Retranslate.onLanguageChanged
-                    checked: true
-                    onCheckedChanged: {
-                        if (checked){
-                            qcom = true;
-                        }
-                        else {
-                            qcom = false;
-                        }
-                    }
-                }
-                CheckBox {
-                    id: checkbox_z10
-                    text: qsTr("Z10") + Retranslate.onLanguageChanged
-                    checked: true
-                    onCheckedChanged: {
-                        if (checked){
-                            lseries = true;
-                        }
-                        else {
-                            lseries = false;
-                        }
-                    }
-                }
-                CheckBox {
-                    id: checkbox_q10
-                    text: qsTr("Q10") + Retranslate.onLanguageChanged
-                    checked: true
-                    onCheckedChanged: {
-                        if (checked){
-                            nseries = true;
-                        }
-                        else {
-                            nseries = false;
-                        }
-                    }
-                }
-                CheckBox {
-                    id: checkbox_z30
-                    text: qsTr("Z30") + Retranslate.onLanguageChanged
-                    checked: true
-                    onCheckedChanged: {
-                        if (checked){
-                            aseries = true;
-                        }
-                        else {
-                            aseries = false;
-                        }
-                    }
-                }
-                CheckBox {
-                    id: checkbox_z3
-                    text: qsTr("Z3") + Retranslate.onLanguageChanged
-                    checked: true
-                    onCheckedChanged: {
-                        if (checked){
-                            jakarta = true;
-                        }
-                        else {
-                            jakarta = false;
-                        }
-                    }
-                }
-                CheckBox {
-                    id: checkbox_omap
-                    text: qsTr("STL100-1") + Retranslate.onLanguageChanged
-                    checked: true
-                    onCheckedChanged: {
-                        if (checked){
-                            winchester = true;
-                        }
-                        else {
-                            winchester = false;
-                        }
-                    }
-                }
-                CheckBox {
-                    id: checkbox_8974
-                    text: qsTr("Passport") + Retranslate.onLanguageChanged
-                    checked: true
-                    onCheckedChanged: {
-                        if (checked){
-                            passport = true;
-                        }
-                        else {
-                            passport = false;
                         }
                     }
                 }

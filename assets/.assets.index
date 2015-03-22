@@ -1,5 +1,5 @@
 1
-84
+85
 10ppd/images/blank/blank.png
 10ppd/images/covers/cover.png
 12ppd/images/blank/blank.png
@@ -75,6 +75,7 @@ main.qml
 MetadataSheet.qml
 NomediaPage.qml
 OSDownloader.qml
+OSDownloaderConfig.qml
 OSRepo.qml
 SettingsSheet.qml
 SysInfo.qml

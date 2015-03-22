@@ -48,7 +48,7 @@ QString DownloadManager::returnLinks()
     return exporturls;
 }
 
-void DownloadManager::setOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester, bool passport, bool qcom, bool jakarta)
+void DownloadManager::setOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester, bool passport, bool qcom, bool jakarta, bool china, bool sdk)
 {
     //Autoloaders
     if (hashedswversion == "08d2e98e6754af941484848930ccbaddfefe13d6"){
@@ -106,6 +106,22 @@ void DownloadManager::setOsLinks(QString hashedswversion, QString osversion, boo
                 oslinks.append("Verizon 8960\n"
                         "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi.desktop/" + osversion + "/qc8960.verizon_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n\n");
             }
+            //China images
+            if (china == true){
+                oslinks.append("China 8960\n"
+                        "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.china_sfi.desktop/" + osversion + "/qc8960.china_sfi.desktop-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+            }
+            //SDK images
+            if (sdk == true){
+                if (qcom == true){
+                    oslinks.append("SDK 8960\n"
+                            "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.sdk.desktop/" + osversion + "/qc8960.sdk.desktop-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+                }
+                if (winchester == true){
+                    oslinks.append("SDK OMAP\n"
+                            "Debrick OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.winchester.sdk.desktop/" + osversion + "/winchester.sdk.desktop-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+                }
+            }
             oslinks.chop(2); //trailing \n\n
             if (oslinks.endsWith("S--") == true) {
                 oslinks.append("-"); //re-add chopped off dash in title, if it's there
@@ -122,7 +138,7 @@ void DownloadManager::setOsLinks(QString hashedswversion, QString osversion, boo
     }
 }
 
-void DownloadManager::setCoreLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester, bool passport, bool qcom, bool jakarta, bool dummy)
+void DownloadManager::setCoreLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester, bool passport, bool qcom, bool jakarta, bool dummy, bool china, bool sdk)
 {
     if (hashedswversion == "08d2e98e6754af941484848930ccbaddfefe13d6"){
         corelinks = "";
@@ -169,6 +185,22 @@ void DownloadManager::setCoreLinks(QString hashedswversion, QString osversion, b
                     corelinks.append("Verizon 8960\n"
                             "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.verizon_sfi/" + osversion + "/qc8960.verizon_sfi-" + osversion + "-nto+armle-v7+signed.bar\n\n");
                 }
+                //China images
+                if (china == true){
+                    corelinks.append("China 8960\n"
+                            "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.china_sfi/" + osversion + "/qc8960.china_sfi-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+                }
+                //SDK images
+                if (sdk == true){
+                    if (qcom == true){
+                        corelinks.append("SDK 8960\n"
+                                "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.qc8960.sdk/" + osversion + "/qc8960.sdk-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+                    }
+                    if (winchester == true){
+                        corelinks.append("SDK OMAP\n"
+                                "Core OS: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.coreos.qcfm.os.winchester.sdk/" + osversion + "/winchester.sdk-" + osversion + "-nto+armle-v7+signed.bar\n\n");
+                    }
+                }
                 corelinks.chop(2); //trailing \n\n
                 if (corelinks.endsWith("S--") == true) {
                     corelinks.append("-"); //re-add chopped off dash in title, if it's there
@@ -181,7 +213,7 @@ void DownloadManager::setCoreLinks(QString hashedswversion, QString osversion, b
     }
 }
 
-void DownloadManager::setRadioLinks(QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool lseries, bool nseries, bool aseries, bool jakarta)
+void DownloadManager::setRadioLinks(QString hashedswversion, QString osversion, QString radioversion, bool winchester, bool passport, bool lseries, bool nseries, bool aseries, bool jakarta, bool aquarius, bool laguna)
 {
     if (hashedswversion == "08d2e98e6754af941484848930ccbaddfefe13d6"){
         radiolinks = ("Variant URL\n\n"
@@ -206,9 +238,9 @@ void DownloadManager::setRadioLinks(QString hashedswversion, QString osversion, 
             }
             if (lseries == true) {
                 radiolinks.append("Qualcomm Z10/P9982: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960/" + radioversion + "/qc8960-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
-                if (verizon == true) {
-                    radiolinks.append("Verizon Z10: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.omadm/" + radioversion + "/qc8960.omadm-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
-                }
+            }
+            if (laguna == true) {
+                radiolinks.append("Verizon Z10: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8960.omadm/" + radioversion + "/qc8960.omadm-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
             }
             //10.1 and up (Q10)
             if (nseries == true && osversion.indexOf("10.0.") == -1){
@@ -221,6 +253,9 @@ void DownloadManager::setRadioLinks(QString hashedswversion, QString osversion, 
                 }
                 if (jakarta == true) {
                     radiolinks.append("Z3/Kopi/Cafe: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8930.wtr5/" + radioversion + "/qc8930.wtr5-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
+                }
+                if (aquarius == true) {
+                    radiolinks.append("AQ Series: http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + hashedswversion + "/com.qnx.qcfm.radio.qc8974/" + radioversion + "/qc8974-" + radioversion + "-nto+armle-v7+signed.bar\n\n");
                 }
             }
             //10.3.0 and up (Passport)
@@ -249,11 +284,11 @@ void DownloadManager::setRadioLinks(QString hashedswversion, QString osversion, 
     }
 }
 
-void DownloadManager::setExportUrls(QString swversion, QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool core, bool qcom, bool lseries, bool nseries, bool aseries, bool jakarta)
+void DownloadManager::setExportUrls(QString swversion, QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool core, bool qcom, bool lseries, bool nseries, bool aseries, bool jakarta, bool aquarius, bool china, bool sdk, bool laguna)
 {
-    setOsLinks(hashedswversion, osversion, verizon, winchester, passport, qcom, jakarta);
-    setCoreLinks(hashedswversion, osversion, verizon, winchester, passport, qcom, jakarta, !core); // if core == true, dummy == false and vice versa
-    setRadioLinks(hashedswversion, osversion, radioversion, verizon, winchester, passport, lseries, nseries, aseries, jakarta);
+    setOsLinks(hashedswversion, osversion, verizon, winchester, passport, qcom, jakarta, china, sdk);
+    setCoreLinks(hashedswversion, osversion, verizon, winchester, passport, qcom, jakarta, !core, china, sdk); // if core == true, dummy == false and vice versa
+    setRadioLinks(hashedswversion, osversion, radioversion, winchester, passport, lseries, nseries, aseries, jakarta, aquarius, laguna);
     exporturls = "~~~POTENTIAL LINKS~~~\n";
     exporturls.append("OS " + osversion + " | RADIO " + radioversion + "\nSW RELEASE: " + swversion + "\n\n");
     exporturls.append(oslinks + "\n\n");

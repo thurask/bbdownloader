@@ -511,43 +511,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>STL100-1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>SW Version</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Passport</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Z10</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Q10</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Z30</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Z3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Core</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>VZW</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>8960</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -574,8 +538,83 @@
         <source>URL Copied</source>
         <translation type="unfinished"></translation>
     </message>
+</context>
+<context>
+    <name>OSDownloaderConfig</name>
     <message>
-        <source>Show Checkboxes</source>
+        <source>Link Config</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>8960</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Z3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Passport</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Verizon 8960</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Z10 (STL100-1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Q10/Q5/P9983</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Obsolete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>AQ Series</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SDK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Z10 (STL100-2/3)/P9982</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Z10 (STL100-4)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Z30/Leap/Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>China 8960</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default: everything except Obsolete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Operating System Types</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Core (any)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Devices</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -678,10 +717,6 @@
     </message>
     <message>
         <source>Check for Updates</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Check</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1240,6 +1275,10 @@
     </message>
     <message>
         <source>Nomedia</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Config</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -511,44 +511,8 @@
         <translation>Radio Version</translation>
     </message>
     <message>
-        <source>STL100-1</source>
-        <translation>STL100-1</translation>
-    </message>
-    <message>
         <source>SW Version</source>
         <translation>SW Version</translation>
-    </message>
-    <message>
-        <source>Passport</source>
-        <translation>Passport</translation>
-    </message>
-    <message>
-        <source>Z10</source>
-        <translation>Z10</translation>
-    </message>
-    <message>
-        <source>Q10</source>
-        <translation>Q10</translation>
-    </message>
-    <message>
-        <source>Z30</source>
-        <translation>Z30</translation>
-    </message>
-    <message>
-        <source>Z3</source>
-        <translation>Z3</translation>
-    </message>
-    <message>
-        <source>Core</source>
-        <translation>Core</translation>
-    </message>
-    <message>
-        <source>VZW</source>
-        <translation>VZW</translation>
-    </message>
-    <message>
-        <source>8960</source>
-        <translation>8960</translation>
     </message>
     <message>
         <source>Upload Links</source>
@@ -574,9 +538,84 @@
         <source>URL Copied</source>
         <translation>URL Copied</translation>
     </message>
+</context>
+<context>
+    <name>OSDownloaderConfig</name>
     <message>
-        <source>Show Checkboxes</source>
-        <translation>Show Checkboxes</translation>
+        <source>Link Config</source>
+        <translation>Link Config</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Close</translation>
+    </message>
+    <message>
+        <source>8960</source>
+        <translation>8960</translation>
+    </message>
+    <message>
+        <source>Z3</source>
+        <translation>Z3</translation>
+    </message>
+    <message>
+        <source>Passport</source>
+        <translation>Passport</translation>
+    </message>
+    <message>
+        <source>Verizon 8960</source>
+        <translation>Verizon 8960</translation>
+    </message>
+    <message>
+        <source>Z10 (STL100-1)</source>
+        <translation>Z10 (STL100-1)</translation>
+    </message>
+    <message>
+        <source>Q10/Q5/P9983</source>
+        <translation>Q10/Q5/P9983</translation>
+    </message>
+    <message>
+        <source>Obsolete</source>
+        <translation>Obsolete</translation>
+    </message>
+    <message>
+        <source>AQ Series</source>
+        <translation>AQ Series</translation>
+    </message>
+    <message>
+        <source>SDK</source>
+        <translation>SDK</translation>
+    </message>
+    <message>
+        <source>Z10 (STL100-2/3)/P9982</source>
+        <translation>Z10 (STL100-2/3)/P9982</translation>
+    </message>
+    <message>
+        <source>Z10 (STL100-4)</source>
+        <translation>Z10 (STL100-4)</translation>
+    </message>
+    <message>
+        <source>Z30/Leap/Classic</source>
+        <translation>Z30/Leap/Classic</translation>
+    </message>
+    <message>
+        <source>China 8960</source>
+        <translation>China 8960</translation>
+    </message>
+    <message>
+        <source>Default: everything except Obsolete</source>
+        <translation>Default: everything except Obsolete</translation>
+    </message>
+    <message>
+        <source>Operating System Types</source>
+        <translation>Operating System Types</translation>
+    </message>
+    <message>
+        <source>Core (any)</source>
+        <translation>Core (any)</translation>
+    </message>
+    <message>
+        <source>Devices</source>
+        <translation>Devices</translation>
     </message>
 </context>
 <context>
@@ -679,10 +718,6 @@
     <message>
         <source>Check for Updates</source>
         <translation>Check for Updates</translation>
-    </message>
-    <message>
-        <source>Check</source>
-        <translation>Check</translation>
     </message>
     <message>
         <source>Update!</source>
@@ -1242,6 +1277,10 @@
     <message>
         <source>Nomedia</source>
         <translation>Nomedia</translation>
+    </message>
+    <message>
+        <source>Config</source>
+        <translation>Config</translation>
     </message>
 </context>
 </TS>

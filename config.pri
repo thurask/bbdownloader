@@ -160,6 +160,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/MetadataSheet.qml) \
         $$quote($$BASEDIR/assets/NomediaPage.qml) \
         $$quote($$BASEDIR/assets/OSDownloader.qml) \
+        $$quote($$BASEDIR/assets/OSDownloaderConfig.qml) \
         $$quote($$BASEDIR/assets/OSRepo.qml) \
         $$quote($$BASEDIR/assets/SettingsSheet.qml) \
         $$quote($$BASEDIR/assets/SysInfo.qml) \
