@@ -290,7 +290,7 @@ void DownloadManager::setExportUrls(QString swversion, QString hashedswversion, 
     setCoreLinks(hashedswversion, osversion, verizon, winchester, passport, qcom, jakarta, !core, china, sdk); // if core == true, dummy == false and vice versa
     setRadioLinks(hashedswversion, osversion, radioversion, winchester, passport, lseries, nseries, aseries, jakarta, aquarius, laguna);
     exporturls = "~~~POTENTIAL LINKS~~~\n";
-    exporturls.append("OS " + osversion + " | RADIO " + radioversion + "\nSW RELEASE: " + swversion + "\n\n");
+    exporturls.append("OS " + osversion + " | RADIO " + radioversion + "\nSOFTWARE RELEASE " + swversion + "\n\n");
     exporturls.append(oslinks + "\n\n");
     if (core == true) {
         exporturls.append(corelinks + "\n\n");
