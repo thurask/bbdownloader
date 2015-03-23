@@ -1,7 +1,7 @@
 /*main.qml
  ---------
  Get the party started. Formerly the bulk of the QML, now just a bridge between separate tabs. Extensible!
- 
+
  --Thurask*/
 
 import bb.cascades 1.4
@@ -19,6 +19,10 @@ TabbedPane {
         ComponentDefinition {
             id: settingsSheetDefinition
             SettingsSheet {
+                id: settingsSheet
+                onColorsChanged: {
+                    Application.themeSupport.setPrimaryColor(maincolor, basecolor)
+                }
             }
         },
         SystemDialog {
@@ -74,7 +78,7 @@ TabbedPane {
             key: "o"
             onTriggered: {
                 tabbedpane.activeTab = tab_osgen
-            }  
+            }
         },
         Shortcut {
             id: shortcut_l
@@ -156,7 +160,6 @@ TabbedPane {
                         ComponentDefinition {
                             id: configdefinition
                             OSDownloaderConfig {
-                                
                             }
                         }
                     ]
@@ -256,7 +259,6 @@ TabbedPane {
                         ComponentDefinition {
                             id: nomediaPageDef
                             NomediaPage {
-                            
                             }
                         }
                     ]

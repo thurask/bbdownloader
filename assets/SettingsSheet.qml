@@ -1,7 +1,7 @@
 /*SettingsSheet.qml
  ------------------
  Settings menu, including theme select.
- 
+
  --Thurask*/
 
 import bb.cascades 1.4
@@ -10,6 +10,7 @@ import bb.system 1.2
 import qt.timer 1.0
 
 Sheet {
+    signal colorsChanged(variant maincolor, variant basecolor)
     id: settingsSheet
     content: Page {
         titleBar: TitleBar {
@@ -48,31 +49,93 @@ Sheet {
                     DropDown {
                         id: colordropdown_main
                         title: qsTr("Primary") + Retranslate.onLanguageChanged
-                        Option { text: qsTr("Default") + Retranslate.onLanguageChanged; value: Color.create(0xFF0092CC); selected: true }
-                        Option { text: qsTr("Red") + Retranslate.onLanguageChanged; value: Color.Red }
-                        Option { text: qsTr("Green") + Retranslate.onLanguageChanged; value: Color.Green }
-                        Option { text: qsTr("Yellow") + Retranslate.onLanguageChanged; value: Color.Yellow }
-                        Option { text: qsTr("Blue") + Retranslate.onLanguageChanged; value: Color.Blue }
-                        Option { text: qsTr("Cyan") + Retranslate.onLanguageChanged; value: Color.Cyan }
-                        Option { text: qsTr("Gray") + Retranslate.onLanguageChanged; value: Color.Gray }
-                        Option { text: qsTr("Magenta") + Retranslate.onLanguageChanged; value: Color.Magenta }
-                        onSelectedValueChanged: {
+                        selectedIndex: Settings.getValueFor("index_maincolor", 0)
+                        options: [
+                            Option {
+                                text: qsTr("Default") + Retranslate.onLanguageChanged
+                                value: dummy_main.background
+                            },
+                            Option {
+                                text: qsTr("Red") + Retranslate.onLanguageChanged
+                                value: Color.Red
+                            },
+                            Option {
+                                text: qsTr("Green") + Retranslate.onLanguageChanged
+                                value: Color.Green
+                            },
+                            Option {
+                                text: qsTr("Yellow") + Retranslate.onLanguageChanged
+                                value: Color.Yellow
+                            },
+                            Option {
+                                text: qsTr("Blue") + Retranslate.onLanguageChanged
+                                value: Color.Blue
+                            },
+                            Option {
+                                text: qsTr("Cyan") + Retranslate.onLanguageChanged
+                                value: Color.Cyan
+                            },
+                            Option {
+                                text: qsTr("Gray") + Retranslate.onLanguageChanged
+                                value: Color.Gray
+                            },
+                            Option {
+                                text: qsTr("Magenta") + Retranslate.onLanguageChanged
+                                value: Color.Magenta
+                            }
+                        ]
+                        onSelectedOptionChanged: {
+                            Settings.saveValueFor("index_maincolor", colordropdown_main.selectedIndex)
+                            Settings.saveValueFor("maincolor", colordropdown_main.selectedValue)
                             Application.themeSupport.setPrimaryColor(colordropdown_main.selectedValue,colordropdown_base.selectedValue)
+                            Application.themeSupport.setPrimaryColor(colordropdown_main.selectedValue,colordropdown_base.selectedValue) //have to do this twice to get *everything* to update
+                            colorsChanged(colordropdown_main.selectedValue, colordropdown_base.selectedValue)
                         }
                     }
                     DropDown {
                         id: colordropdown_base
                         title: qsTr("Base") + Retranslate.onLanguageChanged
-                        Option { text: qsTr("Default") + Retranslate.onLanguageChanged; value: Color.create(0xFF087099); selected: true }
-                        Option { text: qsTr("Dark Red") + Retranslate.onLanguageChanged; value: Color.DarkRed }
-                        Option { text: qsTr("Dark Green") + Retranslate.onLanguageChanged; value: Color.DarkGreen }
-                        Option { text: qsTr("Dark Yellow") + Retranslate.onLanguageChanged; value: Color.DarkYellow }
-                        Option { text: qsTr("Dark Blue") + Retranslate.onLanguageChanged; value: Color.DarkBlue}
-                        Option { text: qsTr("Dark Cyan") + Retranslate.onLanguageChanged; value: Color.DarkCyan}
-                        Option { text: qsTr("Dark Gray") + Retranslate.onLanguageChanged; value: Color.DarkGray}
-                        Option { text: qsTr("Dark Magenta") + Retranslate.onLanguageChanged; value: Color.DarkMagenta}
-                        onSelectedValueChanged: {
+                        selectedIndex: Settings.getValueFor("index_basecolor", 0)
+                        options: [
+                            Option {
+                                text: qsTr("Default") + Retranslate.onLanguageChanged
+                                value: dummy_base.background
+                            },
+                            Option {
+                                text: qsTr("Dark Red") + Retranslate.onLanguageChanged
+                                value: Color.DarkRed
+                            },
+                            Option {
+                                text: qsTr("Dark Green") + Retranslate.onLanguageChanged
+                                value: Color.DarkGreen
+                            },
+                            Option {
+                                text: qsTr("Dark Yellow") + Retranslate.onLanguageChanged
+                                value: Color.DarkYellow
+                            },
+                            Option {
+                                text: qsTr("Dark Blue") + Retranslate.onLanguageChanged
+                                value: Color.DarkBlue
+                            },
+                            Option {
+                                text: qsTr("Dark Cyan") + Retranslate.onLanguageChanged
+                                value: Color.DarkCyan
+                            },
+                            Option {
+                                text: qsTr("Dark Gray") + Retranslate.onLanguageChanged
+                                value: Color.DarkGray
+                            },
+                            Option {
+                                text: qsTr("Dark Magenta") + Retranslate.onLanguageChanged
+                                value: Color.DarkMagenta
+                            }
+                        ]
+                        onSelectedOptionChanged: {
+                            Settings.saveValueFor("index_basecolor", colordropdown_base.selectedIndex)
+                            Settings.saveValueFor("basecolor", colordropdown_base.selectedValue)
                             Application.themeSupport.setPrimaryColor(colordropdown_main.selectedValue,colordropdown_base.selectedValue)
+                            Application.themeSupport.setPrimaryColor(colordropdown_main.selectedValue,colordropdown_base.selectedValue) //seriously, screw themeSupport
+                            colorsChanged(colordropdown_main.selectedValue, colordropdown_base.selectedValue)
                         }
                     }
                     Button {
@@ -117,9 +180,30 @@ Sheet {
                         multiline: true
                         textStyle.textAlign: TextAlign.Center
                     }
+                    Container {
+                        id: dummy_main
+                        visible: false
+                        background: Color.create("#FF0092CC")
+                    }
+                    Container {
+                        id: dummy_base
+                        visible: false
+                        background: Color.create("#FF087099")
+                    }
                 }
             }
         }
+    }
+    onCreationCompleted: {
+        colordropdown_base.at(0).value = dummy_base.background
+        colordropdown_main.at(0).value = dummy_main.background
+        var baseindex = Settings.getValueFor("index_basecolor", "0")
+        var primindex = Settings.getValueFor("index_maincolor", "0")
+        colordropdown_base.setSelectedIndex(baseindex)
+        colordropdown_main.setSelectedIndex(primindex)
+        Application.themeSupport.setPrimaryColor(colordropdown_main.selectedValue,colordropdown_base.selectedValue)
+        Application.themeSupport.setPrimaryColor(colordropdown_main.selectedValue,colordropdown_base.selectedValue)
+        colorsChanged(colordropdown_main.selectedValue, colordropdown_base.selectedValue)
     }
     attachedObjects: [
         FilePicker {
