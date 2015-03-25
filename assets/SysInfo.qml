@@ -9,6 +9,7 @@ import bb.device 1.4
 import bb 1.3
 
 Page {
+    id: sysinfopage
     property bool sanitized: false
     property string uptime
     onCreationCompleted: {
@@ -16,15 +17,11 @@ Page {
         var dmy = new Date(_manager.readTextFile("/var/boottime.txt", "normal"));
         var raw_ms = (now.getTime() - dmy.getTime());
         //Days, hours, minutes
-        var milliseconds = raw_ms % 1000;
-        raw_ms = (raw_ms - milliseconds) / 1000;
-        var seconds = raw_ms % 60;
-        raw_ms = (raw_ms - seconds) / 60;
-        var minutes = raw_ms % 60;
-        raw_ms = (raw_ms - minutes) / 60;
-        var hours = raw_ms % 60;
-        raw_ms = (raw_ms - hours) / 24;
-        var days =  raw_ms % 24;
+        var days = Math.floor(raw_ms / (24*60*60*1000));
+        var daysms=raw_ms % (24*60*60*1000);
+        var hours = Math.floor((daysms)/(60*60*1000));
+        var hoursms=raw_ms % (60*60*1000);
+        var minutes = Math.floor((hoursms)/(60*1000));
         uptime = qsTr("%1 days, %2 hours, %3 minutes").arg(days).arg(hours).arg(minutes) + Retranslate.onLanguageChanged;
     }
     attachedObjects: [

@@ -1,5 +1,5 @@
 1
-85
+86
 10ppd/images/blank/blank.png
 10ppd/images/covers/cover.png
 12ppd/images/blank/blank.png
@@ -13,6 +13,7 @@ ActiveFrame.qml
 AutoLookup.qml
 CertViewer.qml
 CustomTitleBar.qml
+db/index.dat
 EScreens.qml
 HardwareIDs.qml
 HashToolsPage.qml

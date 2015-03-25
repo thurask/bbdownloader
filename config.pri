@@ -10,6 +10,7 @@ device {
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
                 $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
+                $$quote(${QNX_TARGET}/usr/include/bb) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
@@ -18,6 +19,7 @@ device {
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
                 $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
+                $$quote(${QNX_TARGET}/usr/include/bb) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             LIBS += -lbbcascades \
@@ -25,6 +27,7 @@ device {
                 -lQtCore \
                 -lQtXml \
                 -lbbcascadespickers \
+                -lbb \
                 -lclipboard \
                 -lbbdata \
                 -lbbsystem \
@@ -40,6 +43,7 @@ device {
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
                 $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
+                $$quote(${QNX_TARGET}/usr/include/bb) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
@@ -48,6 +52,7 @@ device {
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
                 $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
+                $$quote(${QNX_TARGET}/usr/include/bb) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             LIBS += -lbbcascades \
@@ -55,6 +60,7 @@ device {
                 -lQtCore \
                 -lQtXml \
                 -lbbcascadespickers \
+                -lbb \
                 -lclipboard \
                 -lbbdata \
                 -lbbsystem \
@@ -75,6 +81,7 @@ device {
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
                 $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
+                $$quote(${QNX_TARGET}/usr/include/bb) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
@@ -83,6 +90,7 @@ device {
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
                 $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
+                $$quote(${QNX_TARGET}/usr/include/bb) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             LIBS += -lbbcascades \
@@ -90,6 +98,7 @@ device {
                 -lQtCore \
                 -lQtXml \
                 -lbbcascadespickers \
+                -lbb \
                 -lclipboard \
                 -lbbdata \
                 -lbbsystem \
@@ -111,6 +120,7 @@ simulator {
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
                 $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
+                $$quote(${QNX_TARGET}/usr/include/bb) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
@@ -119,6 +129,7 @@ simulator {
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
                 $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
+                $$quote(${QNX_TARGET}/usr/include/bb) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             LIBS += -lbbcascades \
@@ -126,6 +137,7 @@ simulator {
                 -lQtCore \
                 -lQtXml \
                 -lbbcascadespickers \
+                -lbb \
                 -lclipboard \
                 -lbbdata \
                 -lbbsystem \
@@ -164,6 +176,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/OSRepo.qml) \
         $$quote($$BASEDIR/assets/SettingsSheet.qml) \
         $$quote($$BASEDIR/assets/SysInfo.qml) \
+        $$quote($$BASEDIR/assets/db/index.dat) \
         $$quote($$BASEDIR/assets/html/README.html) \
         $$quote($$BASEDIR/assets/images/blank/blank.png) \
         $$quote($$BASEDIR/assets/images/covers/cover.png) \
@@ -324,6 +337,9 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/9ppd/images/covers/*.qml) \
         $$quote($$BASEDIR/../assets/9ppd/images/covers/*.js) \
         $$quote($$BASEDIR/../assets/9ppd/images/covers/*.qs) \
+        $$quote($$BASEDIR/../assets/db/*.qml) \
+        $$quote($$BASEDIR/../assets/db/*.js) \
+        $$quote($$BASEDIR/../assets/db/*.qs) \
         $$quote($$BASEDIR/../assets/html/*.qml) \
         $$quote($$BASEDIR/../assets/html/*.js) \
         $$quote($$BASEDIR/../assets/html/*.qs) \

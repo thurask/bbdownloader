@@ -362,27 +362,34 @@ QString DownloadManager::readTextFile(QString uri, QString mode)
     file.open(QIODevice::ReadOnly);
     QTextStream textStream(&file);
     QString text;
-    if (mode == "normal"){
-        text = textStream.readAll();
-    }
-    if (mode == "firstline"){
-        text = textStream.readLine();
-    }
-    if (mode == "branch"){
-        while (!textStream.atEnd()){
-            QString tempstring = textStream.readLine();
-            if (tempstring.startsWith("Build Branch") == true){
-                text = tempstring;
+    QStringList switchcases;
+    switchcases << "normal" << "firstline" << "branch" << "normsimp" << "firstsimp";
+    switch (switchcases.indexOf(mode)) {
+        case 0:
+            text = textStream.readAll();
+            break;
+        case 1:
+            text = textStream.readLine();
+            break;
+        case 2:
+            while (!textStream.atEnd()){
+                QString tempstring = textStream.readLine();
+                if (tempstring.startsWith("Build Branch") == true){
+                    text = tempstring;
+                }
             }
-        }
-    }
-    if (mode == "normsimp"){
-        text = textStream.readAll();
-        text = text.simplified();
-    }
-    if (mode == "firstsimp"){
-        text = textStream.readLine();
-        text = text.simplified();
+            break;
+        case 3:
+            text = textStream.readAll();
+            text = text.simplified();
+            break;
+        case 4:
+            text = textStream.readLine();
+            text = text.simplified();
+            break;
+        default:
+            text = textStream.readAll();
+            break;
     }
     file.close();
     if (text.startsWith('\n')){

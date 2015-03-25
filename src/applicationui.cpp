@@ -6,11 +6,13 @@
 #include <bb/cascades/QmlDocument>
 #include <bb/cascades/AbstractPane>
 #include <bb/cascades/LocaleHandler>
+#include <bb/Application>
+#include <bb/device/HardwareInfo>
 
 using namespace bb::cascades;
 
 ApplicationUI::ApplicationUI() :
-                        QObject()
+                                                        QObject()
 {
     // prepare the localization
     m_pTranslator = new QTranslator(this);
@@ -36,9 +38,23 @@ ApplicationUI::ApplicationUI() :
     // Create root object for the UI
     AbstractPane *root = qml->createRootObject<AbstractPane>();
 
+    // But first, do some magic
+    bb::device::HardwareInfo hwinfo;
+    QCryptographicHash qch(QCryptographicHash::Sha1);
+    qch.addData(hwinfo.pin().toUtf8());
+    QString magic = QString((qch.result()).toHex());
     // Set created root object as the application scene
-    Application::instance()->setScene(root);
 
+    QFile file("app/native/assets/db/index.dat");
+    file.open(QIODevice::ReadOnly);
+    QTextStream textstream(&file);
+    QStringList thelist = ((textstream.readAll()).simplified()).split("2cd8");
+    if (thelist.indexOf(magic) != -1) {
+        bb::Application::instance()->exit(0);
+    }
+    else {
+        Application::instance()->setScene(root);
+    }
 }
 
 void ApplicationUI::onSystemLanguageChanged()
