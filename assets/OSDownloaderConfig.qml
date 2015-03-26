@@ -15,7 +15,7 @@ Sheet {
         Container {
             Label {
                 horizontalAlignment: HorizontalAlignment.Center
-                text: qsTr("Default: everything except Obsolete")
+                text: qsTr("Default: everything except Obsolete") + Retranslate.onLanguageChanged
             }
             ScrollView {
                 scrollRole: ScrollRole.Main
@@ -25,7 +25,7 @@ Sheet {
                 Container {
                     bottomPadding: ui.du(1.0)
                     Header {
-                        title: qsTr("Operating System Types")
+                        title: qsTr("Operating System Types") + Retranslate.onLanguageChanged
                     }
                     CheckBox {
                         id: checkbox_8960
