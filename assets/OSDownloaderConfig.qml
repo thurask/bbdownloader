@@ -1,3 +1,9 @@
+/*OSDownloadConfig.qml
+ * -------------------
+ * Checkbox configuration for OSDownloader.
+ *
+ --Thurask*/
+
 import bb.cascades 1.4
 
 Sheet {

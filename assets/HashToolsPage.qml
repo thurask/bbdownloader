@@ -1,3 +1,9 @@
+/*HashToolsPage.qml
+ * ----------------
+ * Miscellaneous tools (hash, nomedia, blank icon). Most of this is hash tools, hence the name.
+ *
+ --Thurask*/
+
 import bb.cascades 1.4
 import bb.cascades.pickers 1.0
 import bb.platform 1.3
@@ -12,7 +18,7 @@ Page {
             imageSource: "asset:///images/menus/ic_home.png"
             ActionBar.placement: ActionBarPlacement.Signature
             onTriggered: {
-                homeScreen.addShortcut("asset:///images/blank/blank.png","\uFEFF","sicwipe://"); //URI does nothing, duh
+                homeScreen.addShortcut("asset:///images/blank/blank.png", "\uFEFF", "sicwipe://"); //URI does nothing, duh
                 icontoast.show()
             }
         }
@@ -65,10 +71,9 @@ Page {
                     id: togglebutton
                     verticalAlignment: VerticalAlignment.Center
                     onCheckedChanged: {
-                        if (checked == true){
+                        if (checked == true) {
                             pickermode = true;
-                        }
-                        else {
+                        } else {
                             pickermode = false;
                         }
                     }
@@ -124,11 +129,10 @@ Page {
                         onClicked: {
                             hashmode = "MD4";
                             hashoutput_label.text = qsTr("Hashed output (MD4):") + Retranslate.onLanguageChanged;
-                            if (pickermode == false){
+                            if (pickermode == false) {
                                 _hashgen.calculateHash(hashinput.text, 0, 0)
                                 hashoutput.text = _hashgen.returnHash()
-                            }
-                            else {
+                            } else {
                                 _hashgen.calculateHash(picker.selectedFile, 0, 1)
                                 hashoutput.text = _hashgen.returnHash()
                             }
@@ -140,11 +144,10 @@ Page {
                         onClicked: {
                             hashmode = "SHA1"
                             hashoutput_label.text = qsTr("Hashed output (SHA-1):") + Retranslate.onLanguageChanged;
-                            if (pickermode == false){
+                            if (pickermode == false) {
                                 _hashgen.calculateHash(hashinput.text, 2, 0)
                                 hashoutput.text = _hashgen.returnHash()
-                            }
-                            else {
+                            } else {
                                 _hashgen.calculateHash(picker.selectedFile, 2, 1)
                                 hashoutput.text = _hashgen.returnHash()
                             }
@@ -156,11 +159,10 @@ Page {
                         onClicked: {
                             hashmode = "MD5"
                             hashoutput_label.text = qsTr("Hashed output (MD5):") + Retranslate.onLanguageChanged;
-                            if (pickermode == false){
+                            if (pickermode == false) {
                                 _hashgen.calculateHash(hashinput.text, 1, 0)
                                 hashoutput.text = _hashgen.returnHash()
-                            }
-                            else {
+                            } else {
                                 _hashgen.calculateHash(picker.selectedFile, 1, 1)
                                 hashoutput.text = _hashgen.returnHash()
                             }
@@ -173,6 +175,7 @@ Page {
                     orientation: LayoutOrientation.TopToBottom
                 }
                 Label {
+                    topPadding: ui.du(1.0)
                     id: hashoutput_label
                     text: qsTr("Hashed output:") + Retranslate.onLanguageChanged
                 }
@@ -191,11 +194,11 @@ Page {
                         onClicked: {
                             hashToast.body = qsTr("Hash saved to default directory") + Retranslate.onLanguageChanged;
                             hashToast.show();
-                            if (togglebutton.checked == false){
+                            if (togglebutton.checked == false) {
                                 var exporthash = (hashinput.text + " -- " + hashoutput.text);
                                 _manager.saveTextFile(exporthash, hashmode);
                             }
-                            if (togglebutton.checked == true){
+                            if (togglebutton.checked == true) {
                                 var exporthash_file = (picker.selectedFile + " -- " + hashoutput.text);
                                 _manager.saveTextFile(exporthash_file, hashmode);
                             }

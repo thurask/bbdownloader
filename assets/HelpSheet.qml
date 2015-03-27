@@ -1,7 +1,7 @@
 /*HelpSheet.qml
- --------------
- Help menu, including credits and notes.
-
+ * --------------
+ * Help menu, including credits and notes.
+ *
  --Thurask*/
 
 import bb.cascades 1.4
@@ -49,10 +49,9 @@ Sheet {
                     settings.activeTextEnabled: false
                     settings.background: Color.Transparent
                     onNavigationRequested: {
-                        if (request.url == "local:///assets/html/README.html"){
+                        if (request.url == "local:///assets/html/README.html") {
                             request.action = WebNavigationRequestAction.Accept
-                        }
-                        else {
+                        } else {
                             request.action = WebNavigationRequestAction.Ignore //open in browser, but do it yourself
                         }
                     }

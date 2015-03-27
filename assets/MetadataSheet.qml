@@ -1,3 +1,9 @@
+/*MetadataSheet.qml
+ * -----------------
+ * Display Momentics runtime/simulator metadata.
+ *
+ --Thurask*/
+
 import bb.cascades 1.4
 
 Sheet {

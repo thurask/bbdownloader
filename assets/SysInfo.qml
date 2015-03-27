@@ -1,7 +1,7 @@
 /*SysInfo.qml
- -------------
- Reads device information.
-
+ * -------------
+ * Reads device information.
+ *
  --Thurask*/
 
 import bb.cascades 1.4
@@ -17,11 +17,11 @@ Page {
         var dmy = new Date(_manager.readTextFile("/var/boottime.txt", "normal"));
         var raw_ms = (now.getTime() - dmy.getTime());
         //Days, hours, minutes
-        var days = Math.floor(raw_ms / (24*60*60*1000));
-        var daysms=raw_ms % (24*60*60*1000);
-        var hours = Math.floor((daysms)/(60*60*1000));
-        var hoursms=raw_ms % (60*60*1000);
-        var minutes = Math.floor((hoursms)/(60*1000));
+        var days = Math.floor(raw_ms / (24 * 60 * 60 * 1000));
+        var daysms = raw_ms % (24 * 60 * 60 * 1000);
+        var hours = Math.floor((daysms) / (60 * 60 * 1000));
+        var hoursms = raw_ms % (60 * 60 * 1000);
+        var minutes = Math.floor((hoursms) / (60 * 1000));
         uptime = qsTr("%1 days, %2 hours, %3 minutes").arg(days).arg(hours).arg(minutes) + Retranslate.onLanguageChanged;
     }
     attachedObjects: [
@@ -52,7 +52,7 @@ Page {
             id: sanitizer
             title: qsTr("Hide Personal Info") + Retranslate.onLanguageChanged
             onTriggered: {
-                if (sanitized == false){
+                if (sanitized == false) {
                     sanitized = true
                     sanitizer.title = qsTr("Show Personal Info") + Retranslate.onLanguageChanged
                     pin.visible = false
@@ -65,8 +65,7 @@ Page {
                     rxid.visible = false
                     dispname.visible = false
                     devmode.visible = false
-                }
-                else {
+                } else {
                     sanitized = false
                     sanitizer.title = qsTr("Hide Personal Info") + Retranslate.onLanguageChanged
                     pin.visible = true
@@ -94,31 +93,31 @@ Page {
             Container {
                 topPadding: ui.du(0.5)
                 Header {
-                    title: qsTr("Hardware") + Retranslate.onLanguageChanged;
+                    title: qsTr("Hardware") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: qsTr("Device Name: %1").arg(hardwareinfo.deviceName) + Retranslate.onLanguageChanged;
+                    text: qsTr("Device Name: %1").arg(hardwareinfo.deviceName) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Model Name: %1").arg(hardwareinfo.modelName) + Retranslate.onLanguageChanged;
+                    text: qsTr("Model Name: %1").arg(hardwareinfo.modelName) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Model Number: %1").arg(hardwareinfo.modelNumber) + Retranslate.onLanguageChanged;
+                    text: qsTr("Model Number: %1").arg(hardwareinfo.modelNumber) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
                     id: pin
-                    text: qsTr("PIN: %1").arg(hardwareinfo.pin) + Retranslate.onLanguageChanged;
+                    text: qsTr("PIN: %1").arg(hardwareinfo.pin) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Hardware ID: %1").arg(hardwareinfo.hardwareId) + Retranslate.onLanguageChanged;
+                    text: qsTr("Hardware ID: %1").arg(hardwareinfo.hardwareId) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Boot Time: %1").arg(_manager.readTextFile("/var/boottime.txt", "normsimp")) + Retranslate.onLanguageChanged;
+                    text: qsTr("Boot Time: %1").arg(_manager.readTextFile("/var/boottime.txt", "normsimp")) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
@@ -126,103 +125,103 @@ Page {
                     multiline: true
                 }
                 Label {
-                    text: qsTr("HDMI: %1").arg((hardwareinfo.hdmiConnector == 2 ? qsTr("Micro HDMI") + Retranslate.onLanguageChanged : (hardwareinfo.hdmiConnector == 1 ? qsTr("None") + Retranslate.onLanguageChanged : qsTr("Bad or Unknown")))) + Retranslate.onLanguageChanged;
+                    text: qsTr("HDMI: %1").arg((hardwareinfo.hdmiConnector == 2 ? qsTr("Micro HDMI") + Retranslate.onLanguageChanged : (hardwareinfo.hdmiConnector == 1 ? qsTr("None") + Retranslate.onLanguageChanged : qsTr("Bad or Unknown")))) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
                     id: imei
-                    text: qsTr("IMEI: %1").arg(hardwareinfo.imei) + Retranslate.onLanguageChanged;
+                    text: qsTr("IMEI: %1").arg(hardwareinfo.imei) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Container {
                     id: meidc
-                    visible: (!!hardwareinfo.meid) //if not blank
+                    visible: (! ! hardwareinfo.meid) //if not blank
                     Label {
                         id: meid
-                        text: qsTr("MEID: %1").arg(hardwareinfo.meid) + Retranslate.onLanguageChanged;
+                        text: qsTr("MEID: %1").arg(hardwareinfo.meid) + Retranslate.onLanguageChanged
                         multiline: true
                     }
                 }
                 Label {
                     id: serial
-                    text: qsTr("Serial Number: %1").arg(hardwareinfo.serialNumber.slice(10,14) + "-" + hardwareinfo.serialNumber.slice(14,18) + "-" + hardwareinfo.serialNumber.slice(18,22)) + Retranslate.onLanguageChanged;
+                    text: qsTr("Serial Number: %1").arg(hardwareinfo.serialNumber.slice(10, 14) + "-" + hardwareinfo.serialNumber.slice(14, 18) + "-" + hardwareinfo.serialNumber.slice(18, 22)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Physical Keyboard: %1").arg((hardwareinfo.isPhysicalKeyboardDevice == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged;
+                    text: qsTr("Physical Keyboard: %1").arg((hardwareinfo.isPhysicalKeyboardDevice == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Physical Menu Button: %1").arg((hardwareinfo.hasPhysicalMenuButton == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged;
+                    text: qsTr("Physical Menu Button: %1").arg((hardwareinfo.hasPhysicalMenuButton == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Physical Back Button: %1").arg((hardwareinfo.hasPhysicalBackButton == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged;
+                    text: qsTr("Physical Back Button: %1").arg((hardwareinfo.hasPhysicalBackButton == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Physical Phone Keys: %1").arg((hardwareinfo.hasPhysicalPhoneKeys == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged;
+                    text: qsTr("Physical Phone Keys: %1").arg((hardwareinfo.hasPhysicalPhoneKeys == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Physical Trackpad: %1").arg((hardwareinfo.isTrackpadDevice == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged;
+                    text: qsTr("Physical Trackpad: %1").arg((hardwareinfo.isTrackpadDevice == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
             }
             Container {
                 topPadding: ui.du(1.5)
                 Header {
-                    title: qsTr("SIM Card") + Retranslate.onLanguageChanged;
+                    title: qsTr("SIM Card") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: qsTr("State: %1").arg((siminfo.state == 5 ? qsTr("Ready") + Retranslate.onLanguageChanged : (siminfo.state == 4 ? qsTr("PIN Required") + Retranslate.onLanguageChanged : (siminfo.state == 3 ? qsTr("Read Error") + Retranslate.onLanguageChanged : (siminfo.state == 2 ? qsTr("Not Provisioned") + Retranslate.onLanguageChanged : (siminfo.state == 1 ? qsTr("Incompatible") + Retranslate.onLanguageChanged : qsTr("Not Detected") + Retranslate.onLanguageChanged)))))) + Retranslate.onLanguageChanged;
+                    text: qsTr("State: %1").arg((siminfo.state == 5 ? qsTr("Ready") + Retranslate.onLanguageChanged : (siminfo.state == 4 ? qsTr("PIN Required") + Retranslate.onLanguageChanged : (siminfo.state == 3 ? qsTr("Read Error") + Retranslate.onLanguageChanged : (siminfo.state == 2 ? qsTr("Not Provisioned") + Retranslate.onLanguageChanged : (siminfo.state == 1 ? qsTr("Incompatible") + Retranslate.onLanguageChanged : qsTr("Not Detected") + Retranslate.onLanguageChanged)))))) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
                     id: mcc
-                    text: qsTr("Mobile Country Code (MCC): %1").arg(siminfo.mobileCountryCode) + Retranslate.onLanguageChanged;
+                    text: qsTr("Mobile Country Code (MCC): %1").arg(siminfo.mobileCountryCode) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
                     id: mnc
-                    text: qsTr("Mobile Network Code (MNC): %1").arg(siminfo.mobileNetworkCode) + Retranslate.onLanguageChanged;
+                    text: qsTr("Mobile Network Code (MNC): %1").arg(siminfo.mobileNetworkCode) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
                     id: simsn
-                    text: qsTr("Serial Number: %1").arg(siminfo.serialNumber) + Retranslate.onLanguageChanged;
+                    text: qsTr("Serial Number: %1").arg(siminfo.serialNumber) + Retranslate.onLanguageChanged
                     multiline: true
                 }
             }
             Container {
                 topPadding: ui.du(1.5)
                 Header {
-                    title: qsTr("Memory") + Retranslate.onLanguageChanged;
+                    title: qsTr("Memory") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: qsTr("Total Device Memory: %1 MiB").arg((memoryinfo.totalDeviceMemory()/1048576).toFixed(2).toLocaleString()) + Retranslate.onLanguageChanged;
+                    text: qsTr("Total Device Memory: %1 MiB").arg((memoryinfo.totalDeviceMemory() / 1048576).toFixed(2).toLocaleString()) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Free Device Memory: %1 MiB").arg((memoryinfo.availableDeviceMemory()/1048576).toFixed(2).toLocaleString()) + Retranslate.onLanguageChanged;
+                    text: qsTr("Free Device Memory: %1 MiB").arg((memoryinfo.availableDeviceMemory() / 1048576).toFixed(2).toLocaleString()) + Retranslate.onLanguageChanged
                     multiline: true
                 }
             }
             Container {
                 topPadding: ui.du(1.5)
                 Header {
-                    title: qsTr("Local Filesystem") + Retranslate.onLanguageChanged;
+                    title: qsTr("Local Filesystem") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: qsTr("Physical Capacity: %1 GB").arg((fsinfo.physicalCapacity()/1000000000).toFixed(2).toLocaleString()) + Retranslate.onLanguageChanged;
+                    text: qsTr("Physical Capacity: %1 GB").arg((fsinfo.physicalCapacity() / 1000000000).toFixed(2).toLocaleString()) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Accessible Capacity: %1 GB").arg((fsinfo.fileSystemCapacity("/")/1000000000).toFixed(2).toLocaleString()) + Retranslate.onLanguageChanged;
+                    text: qsTr("Accessible Capacity: %1 GB").arg((fsinfo.fileSystemCapacity("/") / 1000000000).toFixed(2).toLocaleString()) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Available Capacity: %1 GB").arg((fsinfo.availableFileSystemSpace("/")/1000000000).toFixed(2).toLocaleString()) + Retranslate.onLanguageChanged;
+                    text: qsTr("Available Capacity: %1 GB").arg((fsinfo.availableFileSystemSpace("/") / 1000000000).toFixed(2).toLocaleString()) + Retranslate.onLanguageChanged
                     multiline: true
                 }
             }
@@ -230,48 +229,48 @@ Page {
                 topPadding: ui.du(1.5)
                 visible: (fsinfo.fileSystemCapacity("/sdcard/external_sd/") > 0)
                 Header {
-                    title: qsTr("SD Card") + Retranslate.onLanguageChanged;
+                    title: qsTr("SD Card") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: qsTr("Accessible Capacity: %1 GB").arg((fsinfo.fileSystemCapacity("/sdcard/external_sd/")/1000000000).toFixed(2).toLocaleString()) + Retranslate.onLanguageChanged;
+                    text: qsTr("Accessible Capacity: %1 GB").arg((fsinfo.fileSystemCapacity("/sdcard/external_sd/") / 1000000000).toFixed(2).toLocaleString()) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Available Capacity: %1 GB").arg((fsinfo.availableFileSystemSpace("/sdcard/external_sd/")/1000000000).toFixed(2).toLocaleString()) + Retranslate.onLanguageChanged;
+                    text: qsTr("Available Capacity: %1 GB").arg((fsinfo.availableFileSystemSpace("/sdcard/external_sd/") / 1000000000).toFixed(2).toLocaleString()) + Retranslate.onLanguageChanged
                     multiline: true
                 }
             }
             Container {
                 topPadding: ui.du(1.5)
                 Header {
-                    title: qsTr("Battery") + Retranslate.onLanguageChanged;
+                    title: qsTr("Battery") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: qsTr("Present: %1").arg((battinfo.present == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged;
+                    text: qsTr("Present: %1").arg((battinfo.present == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Charging State: %1").arg((battinfo.chargingState == 4 ? qsTr("Full") + Retranslate.onLanguageChanged : (battinfo.chargingState == 3 ? qsTr("Discharging") + Retranslate.onLanguageChanged : (battinfo.chargingState == 2 ? qsTr("Charging") + Retranslate.onLanguageChanged : (battinfo.chargingState == 1 ? qsTr("Not Charging") + Retranslate.onLanguageChanged : qsTr("Bad or Unknown") + Retranslate.onLanguageChanged))))) + Retranslate.onLanguageChanged;
+                    text: qsTr("Charging State: %1").arg((battinfo.chargingState == 4 ? qsTr("Full") + Retranslate.onLanguageChanged : (battinfo.chargingState == 3 ? qsTr("Discharging") + Retranslate.onLanguageChanged : (battinfo.chargingState == 2 ? qsTr("Charging") + Retranslate.onLanguageChanged : (battinfo.chargingState == 1 ? qsTr("Not Charging") + Retranslate.onLanguageChanged : qsTr("Bad or Unknown") + Retranslate.onLanguageChanged))))) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Condition: %1").arg((battinfo.condition == 1 ? qsTr("OK") + Retranslate.onLanguageChanged : qsTr("Bad or Unknown") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged;
+                    text: qsTr("Condition: %1").arg((battinfo.condition == 1 ? qsTr("OK") + Retranslate.onLanguageChanged : qsTr("Bad or Unknown") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Full Charge Capacity: %1 mAh").arg(battinfo.fullChargeCapacity) + Retranslate.onLanguageChanged;
+                    text: qsTr("Full Charge Capacity: %1 mAh").arg(battinfo.fullChargeCapacity) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Remaining: %1%").arg(battinfo.level) + Retranslate.onLanguageChanged;
+                    text: qsTr("Remaining: %1%").arg(battinfo.level) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Cycle Count: %1").arg(battinfo.cycleCount) + Retranslate.onLanguageChanged;
+                    text: qsTr("Cycle Count: %1").arg(battinfo.cycleCount) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Temperature: %1 °C (%2 °F)").arg(battinfo.temperature.toFixed(1)).arg(parseFloat(1.8 * (battinfo.temperature) + 32).toFixed(1)) + Retranslate.onLanguageChanged;
+                    text: qsTr("Temperature: %1 °C (%2 °F)").arg(battinfo.temperature.toFixed(1)).arg(parseFloat(1.8 * (battinfo.temperature) + 32).toFixed(1)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Container {
@@ -279,7 +278,7 @@ Page {
                     visible: (battinfo.rxid == "" ? false : true)
                     Label {
                         id: rxid
-                        text: qsTr("RxID: %1").arg(battinfo.rxid) + Retranslate.onLanguageChanged;
+                        text: qsTr("RxID: %1").arg(battinfo.rxid) + Retranslate.onLanguageChanged
                         multiline: true
                     }
                 }
@@ -287,10 +286,10 @@ Page {
             Container {
                 topPadding: ui.du(1.5)
                 Header {
-                    title: qsTr("Display") + Retranslate.onLanguageChanged;
+                    title: qsTr("Display") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: qsTr("Aspect: %1").arg((dispinfo.aspectType == 2 ? qsTr("Square") + Retranslate.onLanguageChanged : (dispinfo.aspectType == 1 ? qsTr("Portrait") + Retranslate.onLanguageChanged : qsTr("Landscape") + Retranslate.onLanguageChanged))) + Retranslate.onLanguageChanged;
+                    text: qsTr("Aspect: %1").arg((dispinfo.aspectType == 2 ? qsTr("Square") + Retranslate.onLanguageChanged : (dispinfo.aspectType == 1 ? qsTr("Portrait") + Retranslate.onLanguageChanged : qsTr("Landscape") + Retranslate.onLanguageChanged))) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
@@ -323,11 +322,11 @@ Page {
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Detachable: %1").arg((dispinfo.detachable == true ? qsTr("True") + Retranslate.onLanguageChanged  : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged
+                    text: qsTr("Detachable: %1").arg((dispinfo.detachable == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Wireless: %1").arg((dispinfo.wireless == true ? qsTr("True") + Retranslate.onLanguageChanged  : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged
+                    text: qsTr("Wireless: %1").arg((dispinfo.wireless == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
             }
@@ -335,7 +334,7 @@ Page {
                 topPadding: ui.du(1.5)
                 bottomPadding: ui.du(1.5)
                 Header {
-                    title: qsTr("Versions") + Retranslate.onLanguageChanged;
+                    title: qsTr("Versions") + Retranslate.onLanguageChanged
                 }
                 Label {
                     text: qsTr("OS Version: %1").arg(_manager.readTextFile("/base/etc/os.version", "normsimp")) + Retranslate.onLanguageChanged
@@ -384,29 +383,29 @@ Page {
             }
             Container {
                 Header {
-                    title: qsTr("Device Properties") + Retranslate.onLanguageChanged;
+                    title: qsTr("Device Properties") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: _manager.readTextFile("/pps/services/deviceproperties", "normal");
+                    text: _manager.readTextFile("/pps/services/deviceproperties", "normal")
                     multiline: true
                 }
             }
             Container {
                 Header {
-                    title: qsTr("Hardware Info") + Retranslate.onLanguageChanged;
+                    title: qsTr("Hardware Info") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: _manager.readTextFile("/pps/services/hw_info/inventory", "normal");
+                    text: _manager.readTextFile("/pps/services/hw_info/inventory", "normal")
                     multiline: true
                 }
             }
             Container {
                 id: devmode
                 Header {
-                    title: qsTr("Development Mode") + Retranslate.onLanguageChanged;
+                    title: qsTr("Development Mode") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: _manager.readTextFile("/pps/system/development/devmode", "normal");
+                    text: _manager.readTextFile("/pps/system/development/devmode", "normal")
                     multiline: true
                 }
             }

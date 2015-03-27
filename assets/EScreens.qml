@@ -1,7 +1,7 @@
 /*EScreens.qml
- -------------
- Generates a code for the escreens app (take that, Javascript!). Invoke the escreens app.
-
+ * -------------
+ * Generates a code for the escreens app (take that, Javascript!). Invoke the escreens app.
+ *
  --Thurask*/
 
 import bb.cascades 1.4
@@ -16,7 +16,7 @@ Page {
                 var regex_pin = RegExp(/\b[0-9a-f]{8}\b/)
                 var regex_appv = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/)
                 var regex_uptime = RegExp(/\b\d{1,}\b/)
-                if (regex_pin.test(pin.text) == true && regex_appv.test(appv.text) == true && regex_uptime.test(uptime.text) == true){
+                if (regex_pin.test(pin.text) == true && regex_appv.test(appv.text) == true && regex_uptime.test(uptime.text) == true) {
                     Escreens.newHMAC();
                 }
             }
@@ -76,8 +76,7 @@ Page {
                         var regex_pin = RegExp(/\b[0-9a-f]{8}\b/)
                         if (regex_pin.test(pin.text) == true) {
                             validator_pin.setValid(true);
-                        }
-                        else {
+                        } else {
                             validator_pin.setValid(false);
                         }
                     }
@@ -103,8 +102,7 @@ Page {
                         var regex_appv = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/)
                         if (regex_appv.test(appv.text) == true) {
                             validator_appver.setValid(true);
-                        }
-                        else {
+                        } else {
                             validator_appver.setValid(false);
                         }
                     }
@@ -125,8 +123,7 @@ Page {
                         var regex_uptime = RegExp(/\b\d{1,}\b/)
                         if (regex_uptime.test(uptime.text) == true) {
                             validator_uptime.setValid(true);
-                        }
-                        else {
+                        } else {
                             validator_uptime.setValid(false);
                         }
                     }
@@ -137,7 +134,7 @@ Page {
                     var dmy = new Date(_manager.readTextFile("/var/boottime.txt", "normal"));
                     uptime.text = (now.getTime() - dmy.getTime());
                 }
-            }//Load uptime button isn't the same as the actual escreens uptime, but I'm too proud of it to let it go:
+            } //Load uptime button isn't the same as the actual escreens uptime, but I'm too proud of it to let it go:
             //escreens uptime is current ms since 01/01/1970 - ms since 01/01/1970 at boot time (/var/boottime.txt), but it's impossible
             //to exactly match them since the escreens value is generated during app launch. Alas.
             Button {
@@ -174,7 +171,8 @@ Page {
                         text: qsTr("30 days") + Retranslate.onLanguageChanged
                         value: "%56%20%79%62%69%72%20%7A%6C%66%72%79%73%20%67%62%71%6E%6C%2C%20%61%62%67%20%79%76%78%72%20%6C%72%66%67%72%65%71%6E%6C%2E%20%56%27%7A%20%70%62%62%79%2C%20%56%27%7A%20%70%6E%79%7A%2C%20%56%27%7A%20%74%62%61%61%6E%20%6F%72%20%62%78%6E%6C"
                         selected: true
-                    }]
+                    }
+                ]
             }
         }
         Label {

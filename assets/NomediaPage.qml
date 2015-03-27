@@ -1,3 +1,9 @@
+/*NomediaPage.qml
+ * --------------
+ * Work with .nomedia files (delete and create).
+ *
+ --Thurask*/
+
 import bb.cascades 1.4
 import bb.cascades.pickers 1.0
 import bb.system 1.2

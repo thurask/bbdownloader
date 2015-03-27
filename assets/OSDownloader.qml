@@ -1,6 +1,6 @@
 /*OSDownloader.qml
  ------------------
- The meat of the application. Generates and downloads CSE Prod links.
+ Generates OS server links. No guarantees of existence.
 
  --Thurask*/
 

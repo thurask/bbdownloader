@@ -1,6 +1,6 @@
 /*SettingsSheet.qml
  * ------------------
- * Settings menu, including theme select.
+ * Settings menu, including theme select, update check and directory select.
  *
  --Thurask*/
 

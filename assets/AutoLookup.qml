@@ -1,7 +1,7 @@
-/*Autolookup.qml
- ---------------
- Get some SW/OS pairs. Export your findings to a text file, if you want.
-
+/*AutoLookup.qml
+ * ---------------
+ * Get some SW/OS pairs. Export your findings to a text file, if you want.
+ *
  --Thurask*/
 
 import bb.cascades 1.4
@@ -18,13 +18,12 @@ Page {
             id: autolookupbutton
             title: qsTr("Start") + Retranslate.onLanguageChanged
             onTriggered: {
-                if (validator.valid == false){
+                if (validator.valid == false) {
                     autolookup_input.text = qsTr("Input Valid OS") + Retranslate.onLanguageChanged;
-                }
-                else {
+                } else {
                     if (scanning == false) {
                         lookupStarted()
-                        if (outputtext.text = ""){
+                        if (outputtext.text = "") {
                             _swlookup.setSoftwareRelease("");
                         }
                         scanning = true;
@@ -34,8 +33,7 @@ Page {
                         autolookupbutton.imageSource = "asset:///images/menus/ic_stop.png"
                         _swlookup.softwareReleaseChanged.connect(timer.lookup())
                         _swlookup.post(autolookup_input.text, serverdropdown.selectedValue);
-                    }
-                    else {
+                    } else {
                         lookupStopped()
                         scanning = false;
                         autolookupbutton.title = qsTr("Start") + Retranslate.onLanguageChanged
@@ -113,7 +111,7 @@ Page {
         }
     ]
     attachedObjects: [
-        QTimer{
+        QTimer {
             id: timer
             interval: 2000
             onTimeout: {
@@ -121,24 +119,21 @@ Page {
                 _swlookup.post(autolookup_input.text, serverdropdown.selectedValue);
             }
             function lookup() {
-                if (_swlookup.softwareRelease().indexOf(".") != -1 && outputtext.text.indexOf(_swlookup.softwareRelease()) == -1){
-                    if (serverdropdown.selectedValue.indexOf("cs.sl") != -1){
+                if (_swlookup.softwareRelease().indexOf(".") != -1 && outputtext.text.indexOf(_swlookup.softwareRelease()) == -1) {
+                    if (serverdropdown.selectedValue.indexOf("cs.sl") != -1) {
                         var smeg = _swlookup.getAvailability()
                         outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - SR " + _swlookup.softwareRelease() + " [" + serverdropdown.selectedOption.text + "] [" + smeg + "]\n");
                         if (smeg == "Valid") {
                             led.color = LedColor.Magenta
-                        }
-                        else {
+                        } else {
                             led.color = LedColor.White
                         }
-                    }
-                    else {
+                    } else {
                         outputtext.text = outputtext.text + ("OS " + autolookup_input.text + " - SR " + _swlookup.softwareRelease() + " [" + serverdropdown.selectedOption.text + "]\n");
                         led.color = LedColor.White
                     }
                     led.flash(1);
-                }
-                else {
+                } else {
                     led.cancel();
                 }
                 autolookup_input.text = _swlookup.lookupIncrement(autolookup_input.text, 3);
@@ -151,7 +146,7 @@ Page {
             button.enabled: false
             button.label: ""
             onFinished: {
-                if (lookupexporttoast.result == SystemUiResult.ButtonSelection){
+                if (lookupexporttoast.result == SystemUiResult.ButtonSelection) {
                     outputtext.setText(outputtext.storedtext);
                 }
             }
@@ -207,8 +202,7 @@ Page {
                         var regex = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/)
                         if (regex.test(autolookup_input.text) == true) {
                             validator.setValid(true);
-                        }
-                        else {
+                        } else {
                             validator.setValid(false);
                         }
                     }

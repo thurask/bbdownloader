@@ -1,7 +1,7 @@
 /*OSRepo.qml
- -----------
- Reads remote XML repo. Handy.
-
+ * -----------
+ * Reads remote XML repo. Handy.
+ *
  --Thurask*/
 
 import bb.cascades 1.4
@@ -57,8 +57,7 @@ Sheet {
                                 repoDataSource.source = "asset:///xml/repo.xml";
                                 repoDataSource.remote = false;
                                 repoDataSource.load();
-                            }
-                            else {
+                            } else {
                                 mainheader.title = qsTr("Known Software (network copy)") + Retranslate.onLanguageChanged
                                 repoDataSource.source = "http://thurask.github.io/repo.xml";
                                 repoDataSource.remote = true;
@@ -155,9 +154,7 @@ Sheet {
     attachedObjects: [
         GroupDataModel {
             id: repoDataModel
-            sortingKeys: [
-            "series"
-            ]
+            sortingKeys: [ "series" ]
             grouping: ItemGrouping.ByFullValue
             sortedAscending: false
         },

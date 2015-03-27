@@ -1,7 +1,7 @@
 /*main.qml
- ---------
- Get the party started. Formerly the bulk of the QML, now just a bridge between separate tabs. Extensible!
-
+ * ---------
+ * Get the party started. Formerly the bulk of the QML, now just a bridge between separate tabs. Extensible!
+ *
  --Thurask*/
 
 import bb.cascades 1.4
@@ -30,12 +30,7 @@ TabbedPane {
             title: qsTr("Shortcuts") + Retranslate.onLanguageChanged
             cancelButton.enabled: false
             customButton.enabled: false
-            body: qsTr("%1 = OS Links").arg(qsTr("o") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n"
-            + qsTr("%1 = Lookup").arg(qsTr("l") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n"
-            + qsTr("%1 = EScreens").arg(qsTr("e") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n"
-            + qsTr("%1 = System Info").arg(qsTr("s") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n"
-            + qsTr("%1 = File Operations").arg(qsTr("f") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n"
-            + qsTr("%1 = PTCRB Browser").arg(qsTr("p") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged
+            body: qsTr("%1 = OS Links").arg(qsTr("o") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n" + qsTr("%1 = Lookup").arg(qsTr("l") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n" + qsTr("%1 = EScreens").arg(qsTr("e") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n" + qsTr("%1 = System Info").arg(qsTr("s") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n" + qsTr("%1 = File Operations").arg(qsTr("f") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged + "\n" + qsTr("%1 = PTCRB Browser").arg(qsTr("p") + Retranslate.onLanguageChanged) + Retranslate.onLanguageChanged
             includeRememberMe: false
             rememberMeChecked: false
         },
@@ -45,7 +40,7 @@ TabbedPane {
             button.enabled: true
             button.label: qsTr("Update!") + Retranslate.onLanguageChanged
             onFinished: {
-                if (updateToast.result == SystemUiResult.ButtonSelection){
+                if (updateToast.result == SystemUiResult.ButtonSelection) {
                     invoke.trigger("bb.action.OPEN")
                 }
             }
@@ -61,8 +56,8 @@ TabbedPane {
         QTimer {
             id: timer
             interval: 5000
-            onTimeout:{
-                if (Checker.returnUpdate() == true){
+            onTimeout: {
+                if (Checker.returnUpdate() == true) {
                     updateToast.show();
                     timer.stop();
                 }

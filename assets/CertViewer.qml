@@ -1,3 +1,9 @@
+/*CertViewer.qml
+ * -------------
+ * Browse device certifications (PTCRB)
+ *
+ --Thurask*/
+
 import bb.cascades 1.4
 import bb.data 1.0
 import bb.system 1.2
@@ -40,8 +46,7 @@ Page {
                         repoDataSource.source = "asset:///xml/ptcrb.xml";
                         repoDataSource.remote = false;
                         repoDataSource.load();
-                    }
-                    else {
+                    } else {
                         mainheader.title = qsTr("Certifications (network copy)") + Retranslate.onLanguageChanged
                         repoDataSource.source = "http://thurask.github.io/ptcrb.xml";
                         repoDataSource.remote = true;
@@ -112,7 +117,7 @@ Page {
             ]
             onTriggered: {
                 var indexi = repoDataModel.data(indexPath);
-                if (indexi.url != ""){
+                if (indexi.url != "") {
                     selectedid = indexi.url
                     var wview = certPageDef.createObject()
                     wview.open();
@@ -169,11 +174,7 @@ Page {
         },
         GroupDataModel {
             id: repoDataModel
-            sortingKeys: [
-            "name",
-            "variant",
-            "id"
-            ]
+            sortingKeys: [ "name", "variant", "id" ]
             sortedAscending: true
             grouping: ItemGrouping.ByFullValue
         },

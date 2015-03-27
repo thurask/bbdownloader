@@ -1,7 +1,7 @@
 /*HardwareIDs.qml
- ----------------
- List of hardware IDs, duh.
-
+ * ----------------
+ * List of hardware IDs, duh.
+ *
  --Thurask*/
 
 import bb.cascades 1.4
@@ -50,8 +50,7 @@ Sheet {
                             repoDataSource.source = "asset:///xml/hwid.xml";
                             repoDataSource.remote = false;
                             repoDataSource.load();
-                        }
-                        else {
+                        } else {
                             mainheader.title = qsTr("Hardware IDs (network copy)") + Retranslate.onLanguageChanged
                             repoDataSource.source = "http://thurask.github.io/hwid.xml";
                             repoDataSource.remote = true;
@@ -121,10 +120,7 @@ Sheet {
         attachedObjects: [
             GroupDataModel {
                 id: repoDataModel
-                sortingKeys: [
-                "name",
-                "variant"
-                ]
+                sortingKeys: [ "name", "variant" ]
                 sortedAscending: true
                 grouping: ItemGrouping.ByFullValue
             },
