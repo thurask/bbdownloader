@@ -1,17 +1,10 @@
-/*SwLookup.cpp
---------------
-Handles software version lookup.
-
---Thurask*/
-
 #include <QtCore>
 #include <QtNetwork>
 #include <QtXml>
 #include "SwLookup.hpp"
 
-SwLookup::SwLookup(QObject* parent)
-: QObject(parent)
-, m_networkAccessManager(new QNetworkAccessManager(this))
+SwLookup::SwLookup(QObject* parent) :
+        QObject(parent), m_networkAccessManager(new QNetworkAccessManager(this))
 {
     m_softwareRelease = "";
     m_server = "";
@@ -21,30 +14,30 @@ SwLookup::SwLookup(QObject* parent)
 void SwLookup::post(QString osVer, QString server)
 {
     QRegExp rx("(\\d{0,4}\\.)(\\d{0,4}\\.)(\\d{0,4}\\.)(\\d{0,4})");
-    if (osVer.contains(rx) == true){
-        if (server.contains("cs.sl") == true){
+    if (osVer.contains(rx) == true) {
+        if (server.contains("cs.sl") == true) {
             setServer("production");
-        }
-        else {
+        } else {
             setServer("private");
         }
         QUrl url(server);
         QNetworkRequest request(url);
-        QString query = "<srVersionLookupRequest version=\"2.0.0\" authEchoTS=\"1366644680359\">"
-                "<clientProperties><hardware>"
-                "<pin>0x2FFFFFB3</pin><bsn>1140011878</bsn><imei>004402242176786</imei><id>0x8D00240A</id><isBootROMSecure>true</isBootROMSecure>"
-                "</hardware>"
-                "<network>"
-                "<vendorId>0x0</vendorId><homeNPC>0x60</homeNPC><currentNPC>0x60</currentNPC><ecid>0x1</ecid>"
-                "</network>"
-                "<software><currentLocale>en_US</currentLocale><legalLocale>en_US</legalLocale>"
-                "<osVersion>"+ osVer +"</osVersion><omadmEnabled>false</omadmEnabled></software></clientProperties>"
-                "</srVersionLookupRequest>";
+        QString query =
+                "<srVersionLookupRequest version=\"2.0.0\" authEchoTS=\"1366644680359\">"
+                        "<clientProperties><hardware>"
+                        "<pin>0x2FFFFFB3</pin><bsn>1140011878</bsn><imei>004402242176786</imei><id>0x8D00240A</id><isBootROMSecure>true</isBootROMSecure>"
+                        "</hardware>"
+                        "<network>"
+                        "<vendorId>0x0</vendorId><homeNPC>0x60</homeNPC><currentNPC>0x60</currentNPC><ecid>0x1</ecid>"
+                        "</network>"
+                        "<software><currentLocale>en_US</currentLocale><legalLocale>en_US</legalLocale>"
+                        "<osVersion>" + osVer
+                        + "</osVersion><omadmEnabled>false</omadmEnabled></software></clientProperties>"
+                                "</srVersionLookupRequest>";
         request.setHeader(QNetworkRequest::ContentTypeHeader, "text/xml;charset=UTF-8");
         QNetworkReply* reply = m_networkAccessManager->post(request, query.toUtf8());
         connect(reply, SIGNAL(finished()), this, SLOT(onGetReply()));
-    }
-    else {
+    } else {
         setSoftwareRelease(tr("Error"));
     }
 }
@@ -54,13 +47,13 @@ void SwLookup::onGetReply()
     QNetworkReply* reply = qobject_cast<QNetworkReply*>(sender());
     QByteArray data = reply->readAll();
     QXmlStreamReader xml(data);
-    while(!xml.atEnd() && !xml.hasError()) {
-        if(xml.tokenType() == QXmlStreamReader::StartElement) {
+    while (!xml.atEnd() && !xml.hasError()) {
+        if (xml.tokenType() == QXmlStreamReader::StartElement) {
             if (xml.name() == "softwareReleaseVersion") {
                 setSoftwareRelease(xml.readElementText());
                 QCryptographicHash qch(QCryptographicHash::Sha1);
                 qch.addData((m_softwareRelease).toUtf8());
-                if (m_server == "production"){
+                if (m_server == "production") {
                     checkAvailability(QString((qch.result()).toHex()));
                 }
             }
@@ -81,17 +74,15 @@ void SwLookup::checkAvailability(QString swrelease)
 
 void SwLookup::availabilityReply()
 {
-    QNetworkReply* av_reply = (QNetworkReply*)sender();
-    if (m_server == "production"){
+    QNetworkReply* av_reply = (QNetworkReply*) sender();
+    if (m_server == "production") {
         int status = av_reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
-        if (status == 200 || (status > 300 && status <= 308)){
+        if (status == 200 || (status > 300 && status <= 308)) {
             setAvailability(tr("Valid"));
-        }
-        else {
+        } else {
             setAvailability(tr("Invalid"));
         }
-    }
-    else {
+    } else {
         setAvailability(tr("Invalid"));
     }
     av_reply->deleteLater();
@@ -131,25 +122,23 @@ void SwLookup::setAvailability(QString availability)
 QString SwLookup::lookupIncrement(QString os, int inc)
 {
     QRegExp rx("(\\d{1,4}\\.)(\\d{1,4}\\.)(\\d{1,4}\\.)(\\d{1,4})");
-    if (os.contains(rx) == true){
+    if (os.contains(rx) == true) {
         QStringList splitarray = os.split(".");
-        if (splitarray[3].toInt() < 9999){
+        if (splitarray[3].toInt() < 9999) {
             splitarray[3] = QString::number((splitarray[3]).toInt() + inc);
             return splitarray.join(".");
-        }
-        else {
+        } else {
             splitarray[3] = QString::number(0);
             return splitarray.join(".");
         }
-    }
-    else {
+    } else {
         return tr("Error");
     }
 }
 
 QString SwLookup::spaceTrimmer(QString lookup)
 {
-    if (lookup.endsWith(" ") == true || lookup.endsWith("\n") == true){
+    if (lookup.endsWith(" ") == true || lookup.endsWith("\n") == true) {
         lookup.chop(1);
     }
     return lookup;

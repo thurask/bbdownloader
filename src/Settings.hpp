@@ -3,7 +3,15 @@
 
 #include <QtCore>
 
-class Settings: public QObject {
+/*!
+ *  @class     Settings
+ *  @brief     Settings class
+ *  @details   Implement QSettings for QML
+ *  @author    Thurask
+ *  @date      2014-2015
+ */
+class Settings: public QObject
+{
     Q_OBJECT
 
 public:

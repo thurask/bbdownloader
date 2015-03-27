@@ -17,12 +17,8 @@ class DownloadManager: public QObject
 public:
     DownloadManager();
 
-    public Q_SLOTS:
+public Q_SLOTS:
 
-    /*!
-     * @brief   Return debrick OS links
-     * @return  Returns oslinks QString
-     */
     QString returnOsLinks();
 
     QString returnCoreLinks();
@@ -56,7 +52,7 @@ public:
 
     QString getcwd();
 
-    private Q_SLOTS:
+private Q_SLOTS:
 
     void setOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester,
             bool passport, bool qcom, bool jakarta, bool china, bool sdk);
@@ -68,7 +64,7 @@ public:
             bool winchester, bool passport, bool lseries, bool nseries, bool aseries, bool jakarta,
             bool aquarius, bool laguna);
 
-    private:
+private:
 
     QString appversion;
 

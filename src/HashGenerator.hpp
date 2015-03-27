@@ -3,8 +3,12 @@
 
 #include <QtCore>
 
-/*
- *
+/*!
+ *  @class     HashGenerator
+ *  @brief     HashGenerator class
+ *  @details   Perform cryptographic hashing of input
+ *  @author    Thurask
+ *  @date      2015
  */
 class HashGenerator : public QObject
 {

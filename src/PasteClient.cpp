@@ -1,11 +1,4 @@
-/*
- * PasteClient.cpp
- *
- *  Created on: Jan 19, 2015
- *      Author: Thurask
- */
-
-#include <PasteClient.hpp>
+#include "PasteClient.hpp"
 
 #include <QtCore>
 #include <QtNetwork>
@@ -17,12 +10,12 @@ PasteClient::PasteClient()
 
 void PasteClient::uploadPaste(QString payload)
 {
-    apikey = "b7c91d3c4f31ab6b8241a03356cce646";
+    apikey = "b7c91d3c4f31ab6b8241a03356cce646"; //if you're recompiling this, get your own :P
     QUrl url("https://paste.ee/api");
     url.addEncodedQueryItem("key", QUrl::toPercentEncoding(apikey));
-    url.addEncodedQueryItem("format", QUrl::toPercentEncoding("simple"));
+    url.addEncodedQueryItem("format", QUrl::toPercentEncoding("simple")); //it isn't source code, so don't tell the server to format it like source code
     url.addEncodedQueryItem("paste", QUrl::toPercentEncoding(payload));
-    url.addEncodedQueryItem("description", QUrl::toPercentEncoding("BBDownloader Paste"));
+    url.addEncodedQueryItem("description", QUrl::toPercentEncoding("BBDownloader Paste")); //better than "Untitled Paste"
     QNetworkRequest request(url);
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
     QNetworkAccessManager *http = new QNetworkAccessManager(this);
@@ -62,6 +55,6 @@ QString PasteClient::getApiKey()
 
 PasteClient::~PasteClient()
 {
-    // TODO Auto-generated destructor stub
+
 }
 

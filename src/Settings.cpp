@@ -1,14 +1,15 @@
 /*Settings.cpp
---------------
-Handles app theme settings.
+ --------------
+ Handles app theme settings.
 
---Thurask*/
+ --Thurask*/
 
 #include "Settings.hpp"
 
 #include <QtCore>
 
-Settings::Settings() {
+Settings::Settings()
+{
 }
 
 QString Settings::getValueFor(const QString &objectName, const QString &defaultValue)

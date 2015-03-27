@@ -1,10 +1,3 @@
-/*
- * UpdateChecker.hpp
- *
- *  Created on: Sep 22, 2014
- *      Author: Thurask
- */
-
 #ifndef UPDATECHECKER_HPP_
 #define UPDATECHECKER_HPP_
 
@@ -12,6 +5,13 @@
 #include <QtCore>
 #include <QtNetwork>
 
+/*!
+ *  @class     UpdateChecker
+ *  @brief     UpdateChecker class
+ *  @details   Queries thurask.github.io, checks if there's an update for this app out
+ *  @author    Thurask
+ *  @date      2014-2015
+ */
 class UpdateChecker: public QObject
 {
     Q_OBJECT
@@ -24,19 +24,14 @@ public:
 
 public Q_SLOTS:
     Q_INVOKABLE
-    void checkForUpdates();
-    Q_INVOKABLE
-    void setUpdateVersion(QString text);
-    Q_INVOKABLE
-    QString getUpdateVersion();
-    Q_INVOKABLE
-    void setLocalVersion(QString text);
-    Q_INVOKABLE
-    QString getLocalVersion();
-    Q_INVOKABLE
+    void checkForUpdates();Q_INVOKABLE
+    void setUpdateVersion(QString text);Q_INVOKABLE
+    QString getUpdateVersion();Q_INVOKABLE
+    void setLocalVersion(QString text);Q_INVOKABLE
+    QString getLocalVersion();Q_INVOKABLE
     bool returnUpdate();
 
-Q_SIGNALS:
+    Q_SIGNALS:
     void updateVersionChanged();
     void localVersionChanged();
 

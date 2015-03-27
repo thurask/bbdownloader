@@ -1,16 +1,16 @@
-/*
- * MetadataReader.hpp
- *
- *  Created on: Dec 12, 2014
- *      Author: thura_000
- */
-
 #ifndef METADATAREADER_HPP_
 #define METADATAREADER_HPP_
 
 #include <QtCore>
 #include <QtNetwork>
 
+/*!
+ *  @class     MetadataReader
+ *  @brief     MetadataReader class
+ *  @details   Read Momentics simulator and runtime metadata lists from BlackBerry server
+ *  @author    Thurask
+ *  @date      2014-2015
+ */
 class MetadataReader: public QObject
 {
     Q_OBJECT

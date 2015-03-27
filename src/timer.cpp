@@ -1,15 +1,8 @@
-/*timer.cpp
------------
-Provides a QTimer that can be used in QML.
-
---Thurask*/
-
-#include <QTimer>
 #include "timer.hpp"
+#include <QtCore>
 
-Timer::Timer(QObject* parent)
-     : bb::cascades::CustomControl(),
-     _timer(new QTimer(this))
+Timer::Timer(QObject* parent) :
+        bb::cascades::CustomControl(), _timer(new QTimer(this))
 {
     Q_UNUSED(parent);
     connect(_timer, SIGNAL(timeout()), this, SIGNAL(timeout()));

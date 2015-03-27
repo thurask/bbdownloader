@@ -1,16 +1,16 @@
-/*
- * PasteClient.hpp
- *
- *  Created on: Jan 19, 2015
- *      Author: Thurask
- */
-
 #ifndef PASTECLIENT_HPP_
 #define PASTECLIENT_HPP_
 
 #include <QtCore>
 #include <QtNetwork>
 
+/*!
+ *  @class     PastClient
+ *  @brief     PasteClient class
+ *  @details   Handles text upload to paste.ee + handling of results
+ *  @author    Thurask
+ *  @date      2015
+ */
 class PasteClient: public QObject
 {
     Q_OBJECT
@@ -23,7 +23,7 @@ public:
     PasteClient();
     virtual ~PasteClient();
 
-    public Q_SLOTS:
+public Q_SLOTS:
     Q_INVOKABLE
     void uploadPaste(QString payload);
 
@@ -40,7 +40,7 @@ public:
     void uploadUrlChanged();
     void apiKeyChanged();
 
-    private Q_SLOTS:
+private Q_SLOTS:
     void pasteReply();
 
 private:

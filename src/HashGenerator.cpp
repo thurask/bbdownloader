@@ -1,5 +1,4 @@
 #include "HashGenerator.hpp"
-
 #include <QtCore>
 
 HashGenerator::HashGenerator()
@@ -10,86 +9,73 @@ HashGenerator::HashGenerator()
 void HashGenerator::calculateHash(QString input, Hashmode hashmode, Filemode filemode)
 {
     switch (hashmode) {
-        case MD4:
-        {
+        case MD4: {
             QCryptographicHash qch(QCryptographicHash::Md4);
             switch (filemode) {
-                case TEXT:
-                {
+                case TEXT: {
                     qch.addData(input.toUtf8());
                     hash = QString(qch.result().toHex());
                     break;
                 }
-                case FILE:
-                {
+                case FILE: {
                     QFile file(input);
                     file.open(QFile::ReadOnly);
-                    while(!file.atEnd()){
+                    while (!file.atEnd()) {
                         qch.addData(file.read(8192));
                     }
                     hash = QString(qch.result().toHex());
                 }
-                default:
-                {
+                default: {
                     break;
                 }
             }
             break;
         }
-        case MD5:
-        {
+        case MD5: {
             QCryptographicHash qch(QCryptographicHash::Md5);
             switch (filemode) {
-                case TEXT:
-                {
+                case TEXT: {
                     qch.addData(input.toUtf8());
                     hash = QString(qch.result().toHex());
                     break;
                 }
-                case FILE:
-                {
+                case FILE: {
                     QFile file(input);
                     file.open(QFile::ReadOnly);
-                    while(!file.atEnd()){
+                    while (!file.atEnd()) {
                         qch.addData(file.read(8192));
                     }
                     hash = QString(qch.result().toHex());
                 }
-                default:
-                {
+                default: {
                     break;
                 }
             }
             break;
         }
-        case SHA1:
-        {
+        case SHA1: {
             QCryptographicHash qch(QCryptographicHash::Sha1);
             switch (filemode) {
-                case TEXT:
-                {
+                case TEXT: {
                     qch.addData(input.toUtf8());
                     hash = QString(qch.result().toHex());
                     break;
                 }
-                case FILE:
-                {
+                case FILE: {
                     QFile file(input);
                     file.open(QFile::ReadOnly);
-                    while(!file.atEnd()){
+                    while (!file.atEnd()) {
                         qch.addData(file.read(8192));
                     }
                     hash = QString(qch.result().toHex());
                 }
-                default:
-                {
+                default: {
                     break;
                 }
             }
             break;
         }
-        default:
-        {
+        default: {
             break;
         }
     }

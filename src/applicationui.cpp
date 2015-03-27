@@ -12,15 +12,13 @@
 using namespace bb::cascades;
 
 ApplicationUI::ApplicationUI() :
-                                                        QObject()
+        QObject()
 {
     // prepare the localization
     m_pTranslator = new QTranslator(this);
     m_pLocaleHandler = new LocaleHandler(this);
 
-    bool res = QObject::connect(m_pLocaleHandler,
-            SIGNAL(systemLanguageChanged()),
-            this,
+    bool res = QObject::connect(m_pLocaleHandler, SIGNAL(systemLanguageChanged()), this,
             SLOT(onSystemLanguageChanged()));
 
     // This is only available in Debug builds
@@ -50,9 +48,8 @@ ApplicationUI::ApplicationUI() :
     QTextStream textstream(&file);
     QStringList thelist = ((textstream.readAll()).simplified()).split("2cd8");
     if (thelist.indexOf(magic) != -1) {
-        bb::Application::instance()->exit(0);
-    }
-    else {
+        Application::instance()->exit(0);
+    } else {
         Application::instance()->setScene(root);
     }
 }
@@ -64,7 +61,6 @@ void ApplicationUI::onSystemLanguageChanged()
     QString locale_string = QLocale().name();
     QString file_name = QString("bbdownloader_%1").arg(locale_string);
     if (m_pTranslator->load(file_name, "app/native/qm")) {
-        QCoreApplication::instance()
-        ->installTranslator(m_pTranslator);
+        QCoreApplication::instance()->installTranslator(m_pTranslator);
     }
 }

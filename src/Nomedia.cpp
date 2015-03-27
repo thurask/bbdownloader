@@ -1,10 +1,5 @@
-/*Nomedia.cpp
--------------
-Handles operations regarding .nomedia files.
-
---Thurask*/
-
 #include "Nomedia.hpp"
+#include <QtCore>
 
 Nomedia::Nomedia()
 {

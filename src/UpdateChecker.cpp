@@ -1,9 +1,3 @@
-/*UpdateChecker.cpp
--------------------
-Handles app version lookup.
-
---Thurask*/
-
 #include "UpdateChecker.hpp"
 #include <bb/ApplicationInfo>
 #include <QtCore>
@@ -54,21 +48,18 @@ void UpdateChecker::setLocalVersion(QString text)
 
 bool UpdateChecker::returnUpdate()
 {
-    if (updateVersion != ""){
-        int x = QString::compare(updateVersion, localVersion, Qt::CaseInsensitive);  // if strings are equal x should return 0
-        if (x == 0){
+    if (updateVersion != "") {
+        int x = QString::compare(updateVersion, localVersion, Qt::CaseInsensitive); // if strings are equal x should return 0
+        if (x == 0) {
             return false;
-        }
-        else {
+        } else {
             if ((localVersion.split(".")[3].toInt()) > (updateVersion.split(".")[3].toInt())) {
                 return false;
-            }
-            else {
+            } else {
                 return true;
             }
         }
-    }
-    else {
+    } else {
         return false;
     }
 }

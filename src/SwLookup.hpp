@@ -7,7 +7,14 @@
 
 class QNetworkAccessManager;
 
-class SwLookup : public QObject
+/*!
+ *  @class     SwLookup
+ *  @brief     SwLookup class
+ *  @details   Interact with BlackBerry APIs (software release lookup)
+ *  @author    Thurask
+ *  @date      2014-2015
+ */
+class SwLookup: public QObject
 {
     Q_OBJECT
 
@@ -20,7 +27,7 @@ class SwLookup : public QObject
 public:
     SwLookup(QObject* parent = 0);
 
-    public Q_SLOTS:
+public Q_SLOTS:
     void post(QString osVer, QString server);
     QString softwareRelease();
     void setSoftwareRelease(QString sw);
@@ -35,17 +42,15 @@ public:
     Q_SIGNALS:
     void softwareReleaseChanged();
 
-    private Q_SLOTS:
+private Q_SLOTS:
     void onGetReply();
     void availabilityReply();
 
-    private:
+private:
     QNetworkAccessManager* m_networkAccessManager;
     QString m_softwareRelease;
     QString m_server;
     QString m_availability;
 };
-
-
 
 #endif /* SWLOOKUP_HPP_ */
