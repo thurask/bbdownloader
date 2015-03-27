@@ -1,7 +1,7 @@
 /*SettingsSheet.qml
- ------------------
- Settings menu, including theme select.
-
+ * ------------------
+ * Settings menu, including theme select.
+ *
  --Thurask*/
 
 import bb.cascades 1.4
@@ -23,7 +23,7 @@ Sheet {
                 }
             }
         }
-        ScrollView{
+        ScrollView {
             scrollRole: ScrollRole.Main
             scrollViewProperties.pinchToZoomEnabled: false
             scrollViewProperties.scrollMode: ScrollMode.Vertical
@@ -54,41 +54,59 @@ Sheet {
                             Option {
                                 text: qsTr("Default") + Retranslate.onLanguageChanged
                                 value: dummy_main.background
+                                objectName: "0x0092CC"
                             },
                             Option {
                                 text: qsTr("Red") + Retranslate.onLanguageChanged
                                 value: Color.Red
+                                objectName: "0xFF0000"
                             },
                             Option {
                                 text: qsTr("Green") + Retranslate.onLanguageChanged
                                 value: Color.Green
+                                objectName: "0x00FF00"
                             },
                             Option {
                                 text: qsTr("Yellow") + Retranslate.onLanguageChanged
                                 value: Color.Yellow
+                                objectName: "0xFFFF00"
                             },
                             Option {
                                 text: qsTr("Blue") + Retranslate.onLanguageChanged
                                 value: Color.Blue
+                                objectName: "0x0000FF"
                             },
                             Option {
                                 text: qsTr("Cyan") + Retranslate.onLanguageChanged
                                 value: Color.Cyan
+                                objectName: "0x00FFFF"
                             },
                             Option {
                                 text: qsTr("Gray") + Retranslate.onLanguageChanged
                                 value: Color.Gray
+                                objectName: "0x9F9FA3"
                             },
                             Option {
                                 text: qsTr("Magenta") + Retranslate.onLanguageChanged
                                 value: Color.Magenta
+                                objectName: "0xFF00FF"
+                            },
+                            Option {
+                                text: qsTr("Light Gray") + Retranslate.onLanguageChanged
+                                value: Color.LightGray
+                                objectName: "0xBFBFBF"
+                            },
+                            Option {
+                                text: qsTr("White") + Retranslate.onLanguageChanged
+                                value: Color.White
+                                objectName: "0xFFFFFF"
                             }
                         ]
                         onSelectedOptionChanged: {
                             Settings.saveValueFor("index_maincolor", colordropdown_main.selectedIndex)
-                            Settings.saveValueFor("maincolor", colordropdown_main.selectedValue)
-                            Application.themeSupport.setPrimaryColor(colordropdown_main.selectedValue,colordropdown_base.selectedValue)
-                            Application.themeSupport.setPrimaryColor(colordropdown_main.selectedValue,colordropdown_base.selectedValue) //have to do this twice to get *everything* to update
+                            Settings.saveValueFor("maincolor", colordropdown_main.selectedOption.objectName)
+                            Application.themeSupport.setPrimaryColor(colordropdown_main.selectedValue, colordropdown_base.selectedValue)
+                            Application.themeSupport.setPrimaryColor(colordropdown_main.selectedValue, colordropdown_base.selectedValue) //have to do this twice to get *everything* to update
                             colorsChanged(colordropdown_main.selectedValue, colordropdown_base.selectedValue)
                         }
                     }
@@ -100,41 +118,54 @@ Sheet {
                             Option {
                                 text: qsTr("Default") + Retranslate.onLanguageChanged
                                 value: dummy_base.background
+                                objectName: "0x087099"
                             },
                             Option {
                                 text: qsTr("Dark Red") + Retranslate.onLanguageChanged
                                 value: Color.DarkRed
+                                objectName: "0x800000"
                             },
                             Option {
                                 text: qsTr("Dark Green") + Retranslate.onLanguageChanged
                                 value: Color.DarkGreen
+                                objectName: "0x008000"
                             },
                             Option {
                                 text: qsTr("Dark Yellow") + Retranslate.onLanguageChanged
                                 value: Color.DarkYellow
+                                objectName: "0x808000"
                             },
                             Option {
                                 text: qsTr("Dark Blue") + Retranslate.onLanguageChanged
                                 value: Color.DarkBlue
+                                objectName: "0x000080"
                             },
                             Option {
                                 text: qsTr("Dark Cyan") + Retranslate.onLanguageChanged
                                 value: Color.DarkCyan
+                                objectName: "0x008080"
                             },
                             Option {
                                 text: qsTr("Dark Gray") + Retranslate.onLanguageChanged
                                 value: Color.DarkGray
+                                objectName: "0x808080"
                             },
                             Option {
                                 text: qsTr("Dark Magenta") + Retranslate.onLanguageChanged
                                 value: Color.DarkMagenta
+                                objectName: "0x800080"
+                            },
+                            Option {
+                                text: qsTr("Black") + Retranslate.onLanguageChanged
+                                value: Color.Black
+                                objectName: "0x000000"
                             }
                         ]
                         onSelectedOptionChanged: {
                             Settings.saveValueFor("index_basecolor", colordropdown_base.selectedIndex)
-                            Settings.saveValueFor("basecolor", colordropdown_base.selectedValue)
-                            Application.themeSupport.setPrimaryColor(colordropdown_main.selectedValue,colordropdown_base.selectedValue)
-                            Application.themeSupport.setPrimaryColor(colordropdown_main.selectedValue,colordropdown_base.selectedValue) //seriously, screw themeSupport
+                            Settings.saveValueFor("basecolor", colordropdown_base.selectedOption.objectName)
+                            Application.themeSupport.setPrimaryColor(colordropdown_main.selectedValue, colordropdown_base.selectedValue)
+                            Application.themeSupport.setPrimaryColor(colordropdown_main.selectedValue, colordropdown_base.selectedValue) //seriously, screw themeSupport
                             colorsChanged(colordropdown_main.selectedValue, colordropdown_base.selectedValue)
                         }
                     }
@@ -145,8 +176,7 @@ Sheet {
                             if (Application.themeSupport.theme.colorTheme.style == VisualStyle.Bright) {
                                 Application.themeSupport.setVisualStyle(VisualStyle.Dark);
                                 Settings.saveValueFor("theme", "dark");
-                            }
-                            else {
+                            } else {
                                 Application.themeSupport.setVisualStyle(VisualStyle.Bright);
                                 Settings.saveValueFor("theme", "bright");
                             }
@@ -201,8 +231,8 @@ Sheet {
         var primindex = Settings.getValueFor("index_maincolor", "0")
         colordropdown_base.setSelectedIndex(baseindex)
         colordropdown_main.setSelectedIndex(primindex)
-        Application.themeSupport.setPrimaryColor(colordropdown_main.selectedValue,colordropdown_base.selectedValue)
-        Application.themeSupport.setPrimaryColor(colordropdown_main.selectedValue,colordropdown_base.selectedValue)
+        Application.themeSupport.setPrimaryColor(colordropdown_main.selectedValue, colordropdown_base.selectedValue)
+        Application.themeSupport.setPrimaryColor(colordropdown_main.selectedValue, colordropdown_base.selectedValue)
         colorsChanged(colordropdown_main.selectedValue, colordropdown_base.selectedValue)
     }
     attachedObjects: [
@@ -227,7 +257,7 @@ Sheet {
             button.enabled: true
             button.label: qsTr("Update!") + Retranslate.onLanguageChanged
             onFinished: {
-                if (updateToast.result == SystemUiResult.ButtonSelection){
+                if (updateToast.result == SystemUiResult.ButtonSelection) {
                     invoke.trigger("bb.action.OPEN")
                 }
             }
@@ -243,14 +273,13 @@ Sheet {
         QTimer {
             id: timer
             interval: 1000
-            onTimeout:{
-                if (Checker.returnUpdate() == true){
+            onTimeout: {
+                if (Checker.returnUpdate() == true) {
                     updateToast.body = qsTr("Update available") + Retranslate.onLanguageChanged;
                     updateToast.button.enabled = true;
-                    updateToast.button.label =  qsTr("Update!") + Retranslate.onLanguageChanged
+                    updateToast.button.label = qsTr("Update!") + Retranslate.onLanguageChanged
                     updateToast.show();
-                }
-                else {
+                } else {
                     updateToast.body = qsTr("No updates available") + Retranslate.onLanguageChanged;
                     updateToast.button.enabled = false;
                     updateToast.button.label = "";

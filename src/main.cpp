@@ -28,8 +28,7 @@ using namespace bb::cascades;
 QString getValue()
 {
     Settings settings;
-    // use "theme" key for property showing what theme to use on application start
-    return settings.getValueFor("theme", "");
+    return settings.getValueFor("theme", "default") + "?primaryColor=" + settings.getValueFor("maincolor", "0x0092CC") + "&primaryBase=" + settings.getValueFor("basecolor", "0x087099");
 }
 
 void myMessageOutput(QtMsgType type, const char* msg)
@@ -42,7 +41,6 @@ void myMessageOutput(QtMsgType type, const char* msg)
 Q_DECL_EXPORT int main(int argc, char **argv)
 
 {
-
     qputenv("CASCADES_THEME", getValue().toUtf8());
 
     Application app(argc, argv);

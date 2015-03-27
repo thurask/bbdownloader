@@ -805,6 +805,18 @@
         <source>Base</source>
         <translation>Base</translation>
     </message>
+    <message>
+        <source>White</source>
+        <translation>White</translation>
+    </message>
+    <message>
+        <source>Light Gray</source>
+        <translation>Light Gray</translation>
+    </message>
+    <message>
+        <source>Black</source>
+        <translation>Black</translation>
+    </message>
 </context>
 <context>
     <name>SwLookup</name>
