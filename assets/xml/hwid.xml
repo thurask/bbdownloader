@@ -5,306 +5,306 @@
 		<id>04002607</id>
 		<name>Z10</name>
 		<variant>STL100-1</variant>
-		<image>asset:///images/devices/z10.jpg</image>
+		<image>asset:///images/devices/z10.png</image>
 	</hardware>
 	<hardware>
 		<id>8700240A</id>
 		<name>Z10</name>
 		<variant>STL100-2</variant>
-		<image>asset:///images/devices/z10.jpg</image>
+		<image>asset:///images/devices/z10.png</image>
 	</hardware>
 	<hardware>
 		<id>8500240A</id>
 		<name>Z10</name>
 		<variant>STL100-3</variant>
-		<image>asset:///images/devices/z10.jpg</image>
+		<image>asset:///images/devices/z10.png</image>
 	</hardware>
 	<hardware>
 		<id>8400240A</id>
 		<name>Z10</name>
 		<variant>STL100-4</variant>
-		<image>asset:///images/devices/z10.jpg</image>
+		<image>asset:///images/devices/z10.png</image>
 	</hardware>
 	<hardware>
 		<id>87002A07</id>
 		<name>Q3</name>
 		<variant>SQC100-1</variant>
-		<image>asset:///images/devices/q3.jpg</image>
+		<image>asset:///images/devices/q3.png</image>
 	</hardware>
 	<hardware>
 		<id>8C002A07</id>
 		<name>Q3</name>
 		<variant>SQC100-2</variant>
-		<image>asset:///images/devices/q3.jpg</image>
+		<image>asset:///images/devices/q3.png</image>
 	</hardware>
 	<hardware>
 		<id>8400270A</id>
 		<name>Q10</name>
 		<variant>SQN100-1</variant>
-		<image>asset:///images/devices/q10.jpg</image>
+		<image>asset:///images/devices/q10.png</image>
 	</hardware>
 	<hardware>
 		<id>8500270A</id>
 		<name>Q10</name>
 		<variant>SQN100-2</variant>
-		<image>asset:///images/devices/q10.jpg</image>
+		<image>asset:///images/devices/q10.png</image>
 	</hardware>
 	<hardware>
 		<id>8600270A</id>
 		<name>Q10</name>
 		<variant>SQN100-3</variant>
-		<image>asset:///images/devices/q10.jpg</image>
+		<image>asset:///images/devices/q10.png</image>
 	</hardware>
 	<hardware>
 		<id>8C00270A</id>
 		<name>Q10</name>
 		<variant>SQN100-4</variant>
-		<image>asset:///images/devices/q10.jpg</image>
+		<image>asset:///images/devices/q10.png</image>
 	</hardware>
 	<hardware>
 		<id>8700270A</id>
 		<name>Q10</name>
 		<variant>SQN100-5</variant>
-		<image>asset:///images/devices/q10.jpg</image>
+		<image>asset:///images/devices/q10.png</image>
 	</hardware>
 	<hardware>
 		<id>8D00270A</id>
 		<name>Dev Alpha</name>
 		<variant>C SQN100-3</variant>
-		<image>asset:///images/devices/dac.jpg</image>
+		<image>asset:///images/devices/dac.png</image>
 	</hardware>
 	<hardware>
 		<id>04002307</id>
 		<name>Dev Alpha</name>
 		<variant>A PRO100-2</variant>
-		<image>asset:///images/devices/daa.jpg</image>
+		<image>asset:///images/devices/daa.png</image>
 	</hardware>
 	<hardware>
 		<id>04002607</id>
 		<name>Dev Alpha</name>
 		<variant>B STL100-1</variant>
-		<image>asset:///images/devices/dab.jpg</image>
+		<image>asset:///images/devices/dab.png</image>
 	</hardware>
 	<hardware>
 		<id>84002A0A</id>
 		<name>Q5</name>
 		<variant>SQR100-1</variant>
-		<image>asset:///images/devices/q5.jpg</image>
+		<image>asset:///images/devices/q5.png</image>
 	</hardware>
 	<hardware>
 		<id>85002A0A</id>
 		<name>Q5</name>
 		<variant>SQR100-2</variant>
-		<image>asset:///images/devices/q5.jpg</image>
+		<image>asset:///images/devices/q5.png</image>
 	</hardware>
 	<hardware>
 		<id>86002A0A</id>
 		<name>Q5</name>
 		<variant>SQR100-3</variant>
-		<image>asset:///images/devices/q5.jpg</image>
+		<image>asset:///images/devices/q5.png</image>
 	</hardware>
 	<hardware>
 		<id>87002C0A</id>
 		<name>Passport</name>
 		<variant>SQW100-1</variant>
-		<image>asset:///images/devices/passport.jpg</image>
+		<image>asset:///images/devices/passport.png</image>
 	</hardware>
 	<hardware>
 		<id>85002C0A</id>
 		<name>Passport</name>
 		<variant>SQW100-2</variant>
-		<image>asset:///images/devices/passport.jpg</image>
+		<image>asset:///images/devices/passport.png</image>
 	</hardware>
 	<hardware>
 		<id>84002C0A</id>
 		<name>Passport</name>
 		<variant>SQW100-3</variant>
-		<image>asset:///images/devices/passportatt.jpg</image>
+		<image>asset:///images/devices/passportatt.png</image>
 	</hardware>
 	<hardware>
 		<id>8C00240A</id>
 		<name>Z30</name>
 		<variant>STA100-1</variant>
-		<image>asset:///images/devices/z30.jpg</image>
+		<image>asset:///images/devices/z30.png</image>
 	</hardware>
 	<hardware>
 		<id>8D00240A</id>
 		<name>Z30</name>
 		<variant>STA100-2</variant>
-		<image>asset:///images/devices/z30.jpg</image>
+		<image>asset:///images/devices/z30.png</image>
 	</hardware>
 	<hardware>
 		<id>8E00240A</id>
 		<name>Z30</name>
 		<variant>STA100-3</variant>
-		<image>asset:///images/devices/z30.jpg</image>
+		<image>asset:///images/devices/z30.png</image>
 	</hardware>
 	<hardware>
 		<id>8F00240A</id>
 		<name>Z30</name>
 		<variant>STA100-4</variant>
-		<image>asset:///images/devices/z30.jpg</image>
+		<image>asset:///images/devices/z30.png</image>
 	</hardware>
 	<hardware>
 		<id>9500240A</id>
 		<name>Z30</name>
 		<variant>STA100-5</variant>
-		<image>asset:///images/devices/z30.jpg</image>
+		<image>asset:///images/devices/z30.png</image>
 	</hardware>
 	<hardware>
 		<id>B500240A</id>
 		<name>Z30</name>
 		<variant>STA100-6</variant>
-		<image>asset:///images/devices/z30.jpg</image>
+		<image>asset:///images/devices/z30.png</image>
 	</hardware>
 	<hardware>
 		<id>AD00240A</id>
 		<name>Z30</name>
 		<variant>STA100-9</variant>
-		<image>asset:///images/devices/z30.jpg</image>
+		<image>asset:///images/devices/z30.png</image>
 	</hardware>
 	<hardware>
 		<id>04002E07</id>
 		<name>Z3</name>
 		<variant>STJ100-1</variant>
-		<image>asset:///images/devices/z3.jpg</image>
+		<image>asset:///images/devices/z3.png</image>
 	</hardware>
 	<hardware>
 		<id>05002E07</id>
 		<name>Z3</name>
 		<variant>STJ100-2</variant>
-		<image>asset:///images/devices/z3.jpg</image>
+		<image>asset:///images/devices/z3.png</image>
 	</hardware>
 	<hardware>
 		<id>9700240A</id>
 		<name>Z5</name>
 		<variant>STB100-1</variant>
-		<image>asset:///images/devices/z5.jpg</image>
+		<image>asset:///images/devices/z5.png</image>
 	</hardware>
 	<hardware>
 		<id>9600240A</id>
 		<name>Z5</name>
 		<variant>STB100-2</variant>
-		<image>asset:///images/devices/z5.jpg</image>
+		<image>asset:///images/devices/z5.png</image>
 	</hardware>
 	<hardware>
 		<id>A700240A</id>
 		<name>Z5</name>
 		<variant>STB100-3</variant>
-		<image>asset:///images/devices/z5.jpg</image>
+		<image>asset:///images/devices/z5.png</image>
 	</hardware>
 	<hardware>
 		<id>AC00240A</id>
 		<name>Z5</name>
 		<variant>STB100-4</variant>
-		<image>asset:///images/devices/z5.jpg</image>
+		<image>asset:///images/devices/z5.png</image>
 	</hardware>
 	<hardware>
 		<id>9C00240A</id>
 		<name>Z5</name>
 		<variant>STB100-5</variant>
-		<image>asset:///images/devices/z5.jpg</image>
+		<image>asset:///images/devices/z5.png</image>
 	</hardware>
 	<hardware>
 		<id>A500240A</id>
 		<name>P'9982</name>
 		<variant>STK100-1</variant>
-		<image>asset:///images/devices/9982.jpg</image>
+		<image>asset:///images/devices/9982.png</image>
 	</hardware>
 	<hardware>
 		<id>A600240A</id>
 		<name>P'9982</name>
 		<variant>STK100-2</variant>
-		<image>asset:///images/devices/9982.jpg</image>
+		<image>asset:///images/devices/9982.png</image>
 	</hardware>
 	<hardware>
 		<id>8F00270A</id>
 		<name>P'9983</name>
 		<variant>SQK100-1</variant>
-		<image>asset:///images/devices/9983.jpg</image>
+		<image>asset:///images/devices/9983.png</image>
 	</hardware>
 	<hardware>
 		<id>8E00270A</id>
 		<name>P'9983</name>
 		<variant>SQK100-2</variant>
-		<image>asset:///images/devices/9983.jpg</image>
+		<image>asset:///images/devices/9983.png</image>
 	</hardware>
 	<hardware>
 		<id>9600270A</id>
 		<name>Classic</name>
 		<variant>SQC100-1</variant>
-		<image>asset:///images/devices/classic.jpg</image>
+		<image>asset:///images/devices/classic.png</image>
 	</hardware>
 	<hardware>
 		<id>9400270A</id>
 		<name>Classic</name>
 		<variant>SQC100-2</variant>
-		<image>asset:///images/devices/classic.jpg</image>
+		<image>asset:///images/devices/classic.png</image>
 	</hardware>
 	<hardware>
 		<id>9500270A</id>
 		<name>Classic</name>
 		<variant>SQC100-3</variant>
-		<image>asset:///images/devices/classic.jpg</image>
+		<image>asset:///images/devices/classic.png</image>
 	</hardware>
 	<hardware>
 		<id>9700270A</id>
 		<name>Classic</name>
 		<variant>SQC100-4</variant>
-		<image>asset:///images/devices/classic.jpg</image>
+		<image>asset:///images/devices/classic.png</image>
 	</hardware>
 	<hardware>
 		<id>9C00270A</id>
 		<name>Classic</name>
 		<variant>SQC100-5</variant>
-		<image>asset:///images/devices/classic.jpg</image>
+		<image>asset:///images/devices/classic.png</image>
 	</hardware>
 	<hardware>
 		<id>06001A06</id>
 		<name>PlayBook</name>
 		<variant>WiFi</variant>
-		<image>asset:///images/devices/playbook.jpg</image>
+		<image>asset:///images/devices/playbook.png</image>
 	</hardware>
 	<hardware>
 		<id>0C001A06</id>
 		<name>PlayBook</name>
 		<variant>Verizon LTE</variant>
-		<image>asset:///images/devices/playbook.jpg</image>
+		<image>asset:///images/devices/playbook.png</image>
 	</hardware>
 	<hardware>
 		<id>0D001A06</id>
 		<name>PlayBook</name>
 		<variant>LTE</variant>
-		<image>asset:///images/devices/playbook.jpg</image>
+		<image>asset:///images/devices/playbook.png</image>
 	</hardware>
 	<hardware>
 		<id>0E001A06</id>
 		<name>PlayBook</name>
 		<variant>HSPA+</variant>
-		<image>asset:///images/devices/playbook.jpg</image>
+		<image>asset:///images/devices/playbook.png</image>
 	</hardware>
 	<hardware>
 		<id>07002E0A</id>
 		<name>Leap</name>
 		<variant>STR100-1</variant>
-		<image>asset:///images/devices/leap.jpg</image>
+		<image>asset:///images/devices/leap.png</image>
 	</hardware>
 	<hardware>
 		<id>06002E0A</id>
 		<name>Leap</name>
 		<variant>STR100-2</variant>
-		<image>asset:///images/devices/leap.jpg</image>
+		<image>asset:///images/devices/leap.png</image>
 	</hardware>
 	<hardware>
 		<id>05002E0A</id>
 		<name>Z20</name>
 		<variant>STM100-1</variant>
-		<image>asset:///images/devices/manitoba.jpg</image>
+		<image>asset:///images/devices/manitoba.png</image>
 	</hardware>
 	<hardware>
 		<id>04002E0A</id>
 		<name>Z20</name>
 		<variant>STM100-2</variant>
-		<image>asset:///images/devices/manitoba.jpg</image>
+		<image>asset:///images/devices/manitoba.png</image>
 	</hardware>
 </repo>
