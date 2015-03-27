@@ -1,15 +1,6 @@
-/*
- * DownloadManager.cpp
- *
- *  Created on: Jun 7, 2014
- *      Author: thura_000
- */
-
 #include "DownloadManager.hpp"
 #include <bb/system/Clipboard>
 #include <bb/ApplicationInfo>
-
-#include <QtCore>
 
 DownloadManager::DownloadManager()
 {
@@ -363,7 +354,7 @@ QString DownloadManager::readTextFile(QString uri, QString mode)
     QTextStream textStream(&file);
     QString text;
     QStringList switchcases;
-    switchcases << "normal" << "firstline" << "branch" << "normsimp" << "firstsimp";
+    switchcases << "normal" << "firstline" << "branch" << "normsimp" << "firstsimp"; //mmm, dat elegance
     switch (switchcases.indexOf(mode)) {
         case 0:
             text = textStream.readAll();

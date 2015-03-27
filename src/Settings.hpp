@@ -8,7 +8,6 @@ class Settings: public QObject {
 
 public:
     Settings();
-    virtual ~Settings();
 
     Q_INVOKABLE
     QString getValueFor(const QString &objectName, const QString &defaultValue);

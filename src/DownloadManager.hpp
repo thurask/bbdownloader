@@ -1,68 +1,88 @@
 #ifndef DOWNLOADMANAGER_HPP_
 #define DOWNLOADMANAGER_HPP_
 
-    #include <QtCore>
+#include <QtCore>
 
-    class DownloadManager : public QObject
-    {
-        Q_OBJECT
+/*!
+ *  @class     DownloadManager
+ *  @brief     DownloadManager class
+ *  @details   Handles URL generation and filesystem work
+ *  @author    Thurask
+ *  @date      2014-2015
+ */
+class DownloadManager: public QObject
+{
+    Q_OBJECT
 
-    public:
-        DownloadManager();
+public:
+    DownloadManager();
 
     public Q_SLOTS:
 
-        QString returnOsLinks();
+    /*!
+     * @brief   Return debrick OS links
+     * @return  Returns oslinks QString
+     */
+    QString returnOsLinks();
 
-        QString returnCoreLinks();
+    QString returnCoreLinks();
 
-        QString returnRadioLinks();
+    QString returnRadioLinks();
 
-        void setExportUrls(QString swversion, QString hashedswversion, QString osversion, QString radioversion, bool verizon, bool winchester, bool passport, bool core, bool qcom, bool lseries, bool nseries, bool aseries, bool jakarta, bool aquarius, bool china, bool sdk, bool laguna);
+    void setExportUrls(QString swversion, QString hashedswversion, QString osversion,
+            QString radioversion, bool verizon, bool winchester, bool passport, bool core,
+            bool qcom, bool lseries, bool nseries, bool aseries, bool jakarta, bool aquarius,
+            bool china, bool sdk, bool laguna);
 
-        void setOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester, bool passport, bool qcom, bool jakarta, bool china, bool sdk);
+    void saveTextFile(QString urls, QString swrelease);
 
-        void setCoreLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester, bool passport, bool qcom, bool jakarta, bool dummy, bool china, bool sdk);
+    void exportLinks(QString swrelease);
 
-        void setRadioLinks(QString hashedswversion, QString osversion, QString radioversion, bool winchester, bool passport, bool lseries, bool nseries, bool aseries, bool jakarta, bool aquarius, bool laguna);
+    void copyLinks();
 
-        void saveTextFile(QString urls, QString swrelease);
+    void copyOsLinks();
 
-        void exportLinks(QString swrelease);
+    void copyRadioLinks();
 
-        void copyLinks();
+    QString returnLinks();
 
-        void copyOsLinks();
+    QString returnFilename();
 
-        void copyRadioLinks();
+    QString readTextFile(QString uri, QString mode);
 
-        QString returnLinks();
+    void setDefaultDir(QString dir);
 
-        QString returnFilename();
+    QString defaultDir();
 
-        QString readTextFile(QString uri, QString mode);
+    QString getcwd();
 
-        void setDefaultDir(QString dir);
+    private Q_SLOTS:
 
-        QString defaultDir();
+    void setOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester,
+            bool passport, bool qcom, bool jakarta, bool china, bool sdk);
 
-        QString getcwd();
+    void setCoreLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester,
+            bool passport, bool qcom, bool jakarta, bool dummy, bool china, bool sdk);
+
+    void setRadioLinks(QString hashedswversion, QString osversion, QString radioversion,
+            bool winchester, bool passport, bool lseries, bool nseries, bool aseries, bool jakarta,
+            bool aquarius, bool laguna);
 
     private:
 
-        QString appversion;
+    QString appversion;
 
-        QString exporturls;
+    QString exporturls;
 
-        QString radiolinks;
+    QString radiolinks;
 
-        QString oslinks;
+    QString oslinks;
 
-        QString corelinks;
+    QString corelinks;
 
-        QString filename;
+    QString filename;
 
-        QString default_dir;
-    };
+    QString default_dir;
+};
 
 #endif /* DOWNLOADMANAGER_HPP_ */

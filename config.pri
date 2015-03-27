@@ -9,8 +9,8 @@ device {
                 $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
                 $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
-                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
@@ -18,8 +18,8 @@ device {
                 $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
                 $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
-                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             LIBS += -lbbcascades \
@@ -42,8 +42,8 @@ device {
                 $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
                 $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
-                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
@@ -51,8 +51,8 @@ device {
                 $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
                 $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
-                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             LIBS += -lbbcascades \
@@ -80,8 +80,8 @@ device {
                 $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
                 $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
-                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
@@ -89,8 +89,8 @@ device {
                 $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
                 $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
-                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             LIBS += -lbbcascades \
@@ -119,8 +119,8 @@ simulator {
                 $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
                 $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
-                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
@@ -128,8 +128,8 @@ simulator {
                 $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
                 $$quote(${QNX_TARGET}/usr/include/bb/cascades/pickers) \
-                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb) \
+                $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             LIBS += -lbbcascades \
@@ -244,6 +244,7 @@ config_pri_source_group1 {
     SOURCES += \
         $$quote($$BASEDIR/src/Clipboard.cpp) \
         $$quote($$BASEDIR/src/DownloadManager.cpp) \
+        $$quote($$BASEDIR/src/HashGenerator.cpp) \
         $$quote($$BASEDIR/src/MetadataReader.cpp) \
         $$quote($$BASEDIR/src/Nomedia.cpp) \
         $$quote($$BASEDIR/src/PasteClient.cpp) \
@@ -251,15 +252,13 @@ config_pri_source_group1 {
         $$quote($$BASEDIR/src/SwLookup.cpp) \
         $$quote($$BASEDIR/src/UpdateChecker.cpp) \
         $$quote($$BASEDIR/src/applicationui.cpp) \
-        $$quote($$BASEDIR/src/hashcalculatemd4.cpp) \
-        $$quote($$BASEDIR/src/hashcalculatemd5.cpp) \
-        $$quote($$BASEDIR/src/hashcalculatesha.cpp) \
         $$quote($$BASEDIR/src/main.cpp) \
         $$quote($$BASEDIR/src/timer.cpp)
 
     HEADERS += \
         $$quote($$BASEDIR/src/Clipboard.hpp) \
         $$quote($$BASEDIR/src/DownloadManager.hpp) \
+        $$quote($$BASEDIR/src/HashGenerator.hpp) \
         $$quote($$BASEDIR/src/MetadataReader.hpp) \
         $$quote($$BASEDIR/src/Nomedia.hpp) \
         $$quote($$BASEDIR/src/PasteClient.hpp) \
@@ -267,9 +266,6 @@ config_pri_source_group1 {
         $$quote($$BASEDIR/src/SwLookup.hpp) \
         $$quote($$BASEDIR/src/UpdateChecker.hpp) \
         $$quote($$BASEDIR/src/applicationui.hpp) \
-        $$quote($$BASEDIR/src/hashcalculatemd4.hpp) \
-        $$quote($$BASEDIR/src/hashcalculatemd5.hpp) \
-        $$quote($$BASEDIR/src/hashcalculatesha.hpp) \
         $$quote($$BASEDIR/src/timer.hpp)
 }
 

@@ -125,12 +125,12 @@ Page {
                             hashmode = "MD4";
                             hashoutput_label.text = qsTr("Hashed output (MD4):") + Retranslate.onLanguageChanged;
                             if (pickermode == false){
-                                hashCalculateMd4.calculateHash(hashinput.text);
-                                hashoutput.text = hashCalculateMd4.getHash();
+                                _hashgen.calculateHash(hashinput.text, 0, 0)
+                                hashoutput.text = _hashgen.returnHash()
                             }
                             else {
-                                hashCalculateMd4.calculateFileHash(picker.selectedFile);
-                                hashoutput.text = hashCalculateMd4.getHash();
+                                _hashgen.calculateHash(picker.selectedFile, 0, 1)
+                                hashoutput.text = _hashgen.returnHash()
                             }
                         }
                     }
@@ -141,12 +141,12 @@ Page {
                             hashmode = "SHA1"
                             hashoutput_label.text = qsTr("Hashed output (SHA-1):") + Retranslate.onLanguageChanged;
                             if (pickermode == false){
-                                hashCalculateSha.calculateHash(hashinput.text);
-                                hashoutput.text = hashCalculateSha.getHash();
+                                _hashgen.calculateHash(hashinput.text, 2, 0)
+                                hashoutput.text = _hashgen.returnHash()
                             }
                             else {
-                                hashCalculateSha.calculateFileHash(picker.selectedFile);
-                                hashoutput.text = hashCalculateSha.getHash();
+                                _hashgen.calculateHash(picker.selectedFile, 2, 1)
+                                hashoutput.text = _hashgen.returnHash()
                             }
                         }
                     }
@@ -156,13 +156,13 @@ Page {
                         onClicked: {
                             hashmode = "MD5"
                             hashoutput_label.text = qsTr("Hashed output (MD5):") + Retranslate.onLanguageChanged;
-                            if (pickermode == false ){
-                                hashCalculateMd5.calculateHash(hashinput.text);
-                                hashoutput.text = hashCalculateMd5.getHash();
+                            if (pickermode == false){
+                                _hashgen.calculateHash(hashinput.text, 1, 0)
+                                hashoutput.text = _hashgen.returnHash()
                             }
                             else {
-                                hashCalculateMd5.calculateFileHash(picker.selectedFile);
-                                hashoutput.text = hashCalculateMd5.getHash();
+                                _hashgen.calculateHash(picker.selectedFile, 1, 1)
+                                hashoutput.text = _hashgen.returnHash()
                             }
                         }
                     }

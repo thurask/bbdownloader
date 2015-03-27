@@ -283,14 +283,14 @@ Page {
                         onTextChanging: {
                             swver_input.text = _swlookup.spaceTrimmer(swver_input.text)
                             swrelease = swver_input.text
-                            hashCalculateSha.calculateHash(swrelease)
-                            hashedswversion = hashCalculateSha.getHash()
+                            _hashgen.calculateHash(swrelease, 2, 0)
+                            hashedswversion = _hashgen.returnHash()
                         }
                         onTextChanged: {
                             swver_input.text = _swlookup.spaceTrimmer(swver_input.text)
                             swrelease = swver_input.text
-                            hashCalculateSha.calculateHash(swrelease)
-                            hashedswversion = hashCalculateSha.getHash()
+                            _hashgen.calculateHash(swrelease, 2, 0)
+                            hashedswversion = _hashgen.returnHash()
                         }
                         validator: Validator {
                             id: validator_swver

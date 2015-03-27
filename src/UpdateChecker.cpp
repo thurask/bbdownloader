@@ -6,6 +6,8 @@ Handles app version lookup.
 
 #include "UpdateChecker.hpp"
 #include <bb/ApplicationInfo>
+#include <QtCore>
+#include <QtNetwork>
 
 UpdateChecker::UpdateChecker()
 {
@@ -70,9 +72,3 @@ bool UpdateChecker::returnUpdate()
         return false;
     }
 }
-
-UpdateChecker::~UpdateChecker()
-{
-
-}
-

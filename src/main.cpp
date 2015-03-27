@@ -12,9 +12,7 @@
 #include <QtXml>
 #include <Qt4/QtDeclarative/qdeclarativedebug.h>
 
-#include "hashcalculatesha.hpp"
-#include "hashcalculatemd5.hpp"
-#include "hashcalculatemd4.hpp"
+#include "HashGenerator.hpp"
 #include "DownloadManager.hpp"
 #include "SwLookup.hpp"
 #include "Clipboard.hpp"
@@ -51,40 +49,32 @@ Q_DECL_EXPORT int main(int argc, char **argv)
     qInstallMsgHandler(myMessageOutput);
 #endif
 
-    //Live QML
+    //Live QML, debug only
     DevelopmentSupport::install();
 
-    //SHA-1
-    HashCalculateSha*ihashcalcsha =  new HashCalculateSha();
-    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("hashCalculateSha", ihashcalcsha);
-
-    //MD5
-    HashCalculateMd5*ihashcalcmd5 =  new HashCalculateMd5();
-    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("hashCalculateMd5", ihashcalcmd5);
-
-    //MD4
-    HashCalculateMd4*ihashcalcmd4 =  new HashCalculateMd4();
-    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("hashCalculateMd4", ihashcalcmd4);
+    //MD4/MD5/SHA-1
+    HashGenerator hashgenerator;
+    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("_hashgen", &hashgenerator);
 
     //File downloader
     DownloadManager manager;
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("_manager", &manager);
 
     //Clipboard
-    Clipboard *clipboard = new Clipboard();
-    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Clipboard", clipboard);
+    Clipboard clipboard;
+    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Clipboard", &clipboard);
 
     //Software lookup
     SwLookup swlookup;
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("_swlookup", &swlookup);
 
     //QSettings
-    Settings *settings = new Settings();
-    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Settings", settings);
+    Settings settings;
+    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Settings", &settings);
 
     //Update checker
-    UpdateChecker *updatechecker = new UpdateChecker();
-    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Checker", updatechecker);
+    UpdateChecker updatechecker;
+    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Checker", &updatechecker);
 
     //Nomedia
     Nomedia nomedia;

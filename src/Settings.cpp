@@ -31,8 +31,3 @@ void Settings::saveValueFor(const QString &objectName, const QString &inputValue
     QSettings settings;
     settings.setValue(objectName, QVariant(inputValue));
 }
-
-Settings::~Settings() {
-}
-
-

@@ -8,6 +8,7 @@
 #ifndef CLIPBOARD_HPP_
 #define CLIPBOARD_HPP_
 
+#include <bb/system/Clipboard>
 #include <QtCore>
 
 class Clipboard: public QObject {
@@ -15,12 +16,9 @@ class Clipboard: public QObject {
 
 public:
         Clipboard();
-        virtual ~Clipboard();
 
         Q_INVOKABLE
         void copyToClipboard(const QByteArray copyText);
 };
-
-
 
 #endif /* CLIPBOARD_HPP_ */

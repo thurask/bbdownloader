@@ -8,6 +8,7 @@
 #ifndef UPDATECHECKER_HPP_
 #define UPDATECHECKER_HPP_
 
+#include <bb/ApplicationInfo>
 #include <QtCore>
 #include <QtNetwork>
 
@@ -20,7 +21,6 @@ class UpdateChecker: public QObject
 
 public:
     UpdateChecker();
-    virtual ~UpdateChecker();
 
 public Q_SLOTS:
     Q_INVOKABLE
