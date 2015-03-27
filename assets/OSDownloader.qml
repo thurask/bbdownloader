@@ -1,7 +1,7 @@
 /*OSDownloader.qml
- ------------------
- Generates OS server links. No guarantees of existence.
-
+ * ------------------
+ * Generates OS server links. No guarantees of existence.
+ *
  --Thurask*/
 
 import bb.cascades 1.4
@@ -12,52 +12,26 @@ Page {
     property string swrelease
     property string osversion
     property string radioversion
-    property bool verizon
     property bool core
-    property bool qcom
-    property bool winchester
-    property bool passport
-    property bool lseries
-    property bool nseries
-    property bool aseries
-    property bool jakarta
-    property bool aquarius
-    property bool china
-    property bool sdk
-    property bool laguna
     actions: [
         ActionItem {
             title: qsTr("Generate") + Retranslate.onLanguageChanged
             onTriggered: {
-                verizon = Settings.getValueFor("verizon", "true")
-                core = Settings.getValueFor("core", "true")
-                qcom = Settings.getValueFor("qcom", "true")
-                winchester = Settings.getValueFor("winchester", "true")
-                passport = Settings.getValueFor("passport", "true")
-                lseries = Settings.getValueFor("lseries", "true")
-                nseries = Settings.getValueFor("nseries", "true")
-                aseries = Settings.getValueFor("aseries", "true")
-                jakarta = Settings.getValueFor("jakarta", "true")
-                laguna = Settings.getValueFor("laguna", "true")
-                aquarius = Settings.getValueFor("aquarius", "false")
-                china = Settings.getValueFor("china", "false")
-                sdk = Settings.getValueFor("sdk", "false")
-                _manager.setExportUrls(swrelease, hashedswversion, osversion, radioversion, verizon, winchester, passport, core, qcom, lseries, nseries, aseries, jakarta, aquarius, china, sdk, laguna);
+                core = Settings.getValueFor("core", "true");
+                _manager.setExportUrls(swrelease, hashedswversion, osversion, radioversion);
                 ostext.text = _manager.returnOsLinks();
                 coretext.text = _manager.returnCoreLinks();
                 radiotext.text = _manager.returnRadioLinks();
                 ostext.visible = true;
-                if (swrelease == "N/A"){
+                if (swrelease == "N/A") {
                     coretext.visible = false;
-                }
-                else {
+                } else {
                     coretext.visible = core;
                 }
                 radiotext.visible = true;
-                divider.visible = true;
                 allclipboard.enabled = true;
                 osclipboard.enabled = true;
-                if (radiotext.text.length != 0){
+                if (radiotext.text.length != 0) {
                     radioclipboard.enabled = true;
                     radiopaste.enabled = true;
                 }
@@ -78,7 +52,6 @@ Page {
                 ostext.visible = false;
                 coretext.visible = false;
                 radiotext.visible = false;
-                divider.visible = false;
                 allclipboard.enabled = false;
                 osclipboard.enabled = false;
                 radioclipboard.enabled = false;
@@ -154,10 +127,9 @@ Page {
             title: (ostext.text.indexOf("Normal URL") != -1 ? qsTr("Upload Autoloader Links") + Retranslate.onLanguageChanged : qsTr("Upload OS Links") + Retranslate.onLanguageChanged)
             onTriggered: {
                 var smeg = _manager.returnCoreLinks()
-                if (smeg == ""){
+                if (smeg == "") {
                     Paster.uploadPaste(_manager.returnOsLinks())
-                }
-                else {
+                } else {
                     Paster.uploadPaste(_manager.returnOsLinks() + "\n\n" + _manager.returnCoreLinks())
                 }
                 Paster.uploadUrlChanged.connect(pastetoast.show())
@@ -225,7 +197,7 @@ Page {
                         text: qsTr("Lookup") + Retranslate.onLanguageChanged
                         onClicked: {
                             var regex = RegExp(/\b\d{1,4}\.\d{1,4}\.\d{1,4}\.\d{1,4}\b/);
-                            if (regex.test(osver_input.text) == true ) {
+                            if (regex.test(osver_input.text) == true) {
                                 swver_input.text = _swlookup.softwareRelease();
                             }
                         }
@@ -342,10 +314,6 @@ Page {
                     scrollMode: TextAreaScrollMode.Stiff
                     maximumLength: 16384
                 }
-                Divider {
-                    id: divider
-                    visible: false
-                }
                 TextArea {
                     id: radiotext
                     text: ""
@@ -372,11 +340,11 @@ Page {
         },
         SystemToast {
             id: copytoast
-            body: "";
+            body: ""
         },
         SystemToast {
             id: linkexporttoast
-            body: qsTr("Links saved to default directory") + Retranslate.onLanguageChanged;
+            body: qsTr("Links saved to default directory") + Retranslate.onLanguageChanged
         },
         SystemToast {
             id: pastetoast

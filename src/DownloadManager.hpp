@@ -26,9 +26,7 @@ public Q_SLOTS:
     QString returnRadioLinks();
 
     void setExportUrls(QString swversion, QString hashedswversion, QString osversion,
-            QString radioversion, bool verizon, bool winchester, bool passport, bool core,
-            bool qcom, bool lseries, bool nseries, bool aseries, bool jakarta, bool aquarius,
-            bool china, bool sdk, bool laguna);
+            QString radioversion);
 
     void saveTextFile(QString urls, QString swrelease);
 
@@ -54,15 +52,13 @@ public Q_SLOTS:
 
 private Q_SLOTS:
 
-    void setOsLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester,
-            bool passport, bool qcom, bool jakarta, bool china, bool sdk);
+    void setOsLinks(QString hashedswversion, QString osversion);
 
-    void setCoreLinks(QString hashedswversion, QString osversion, bool verizon, bool winchester,
-            bool passport, bool qcom, bool jakarta, bool dummy, bool china, bool sdk);
+    void setCoreLinks(QString hashedswversion, QString osversion);
 
-    void setRadioLinks(QString hashedswversion, QString osversion, QString radioversion,
-            bool winchester, bool passport, bool lseries, bool nseries, bool aseries, bool jakarta,
-            bool aquarius, bool laguna);
+    void setRadioLinks(QString hashedswversion, QString osversion, QString radioversion);
+
+    void generateBools();
 
 private:
 
@@ -79,6 +75,32 @@ private:
     QString filename;
 
     QString default_dir;
+
+    bool verizon;
+
+    bool core;
+
+    bool qcom;
+
+    bool winchester;
+
+    bool passport;
+
+    bool jakarta;
+
+    bool china;
+
+    bool sdk;
+
+    bool lseries;
+
+    bool nseries;
+
+    bool aseries;
+
+    bool aquarius;
+
+    bool laguna;
 };
 
 #endif /* DOWNLOADMANAGER_HPP_ */
