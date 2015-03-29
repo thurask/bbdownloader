@@ -93,14 +93,12 @@ QString MetadataReader::getRuntimeMetadata()
 
 void MetadataReader::setRuntimeMetadata(QString runtime)
 {
-    if (runtime.startsWith('\n')) {
-        runtime.remove(0, 1);
-    }
-    if (runtime.endsWith('\n')) {
-        runtime.chop(1);
-    }
     if (runtime.startsWith('\n') && runtime.endsWith('\n')) {
         runtime.remove(0, 1);
+        runtime.chop(1);
+    } else if (runtime.startsWith('\n') && !(runtime.endsWith('\n'))) {
+        runtime.remove(0, 1);
+    } else if (!(runtime.startsWith('\n')) && runtime.endsWith('\n')) {
         runtime.chop(1);
     }
     runtimeMetadata = runtime;
@@ -113,19 +111,16 @@ QString MetadataReader::getSimulatorMetadata()
 
 void MetadataReader::setSimulatorMetadata(QString simulator)
 {
-    if (simulator.startsWith('\n')) {
-        simulator.remove(0, 1);
-    }
-    if (simulator.endsWith('\n')) {
-        simulator.chop(1);
-    }
     if (simulator.startsWith('\n') && simulator.endsWith('\n')) {
         simulator.remove(0, 1);
+        simulator.chop(1);
+    } else if (simulator.startsWith('\n') && !(simulator.endsWith('\n'))) {
+        simulator.remove(0, 1);
+    } else if (!(simulator.startsWith('\n')) && simulator.endsWith('\n')) {
         simulator.chop(1);
     }
     simulatorMetadata = simulator;
 }
-
 MetadataReader::~MetadataReader()
 {
 

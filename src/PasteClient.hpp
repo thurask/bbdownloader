@@ -5,7 +5,7 @@
 #include <QtNetwork>
 
 /*!
- *  @class     PastClient
+ *  @class     PasteClient
  *  @brief     PasteClient class
  *  @details   Handles text upload to paste.ee + handling of results
  *  @author    Thurask
