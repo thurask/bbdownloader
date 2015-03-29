@@ -1,7 +1,7 @@
 /*SysInfo.qml
  * -------------
  * Reads device information.
- *
+ * 
  --Thurask*/
 
 import bb.cascades 1.4
@@ -11,18 +11,12 @@ import bb 1.3
 Page {
     id: sysinfopage
     property bool sanitized: false
-    property string uptime
-    onCreationCompleted: {
-        var now = new Date();
-        var dmy = new Date(_manager.readTextFile("/var/boottime.txt", "normal"));
-        var raw_ms = (now.getTime() - dmy.getTime());
-        //Days, hours, minutes
-        var days = Math.floor(raw_ms / (24 * 60 * 60 * 1000));
-        var daysms = raw_ms % (24 * 60 * 60 * 1000);
-        var hours = Math.floor((daysms) / (60 * 60 * 1000));
-        var hoursms = raw_ms % (60 * 60 * 1000);
-        var minutes = Math.floor((hoursms) / (60 * 1000));
-        uptime = qsTr("%1 days, %2 hours, %3 minutes").arg(days).arg(hours).arg(minutes) + Retranslate.onLanguageChanged;
+    function bool2string(abool) {
+        if (abool == true) {
+            return qsTr("True") + Retranslate.onLanguageChanged
+        } else {
+            return qsTr("False") + Retranslate.onLanguageChanged
+        }
     }
     attachedObjects: [
         HardwareInfo {
@@ -121,12 +115,39 @@ Page {
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Uptime: %1").arg(uptime) + Retranslate.onLanguageChanged
+                    text: qsTr("Uptime: %1").arg(getUptime()) + Retranslate.onLanguageChanged
                     multiline: true
+                    function getUptime() {
+                        var now = new Date();
+                        var dmy = new Date(_manager.readTextFile("/var/boottime.txt", "normal"));
+                        var raw_ms = (now.getTime() - dmy.getTime());
+                        //Days, hours, minutes
+                        var days = Math.floor(raw_ms / (24 * 60 * 60 * 1000));
+                        var daysms = raw_ms % (24 * 60 * 60 * 1000);
+                        var hours = Math.floor((daysms) / (60 * 60 * 1000));
+                        var hoursms = raw_ms % (60 * 60 * 1000);
+                        var minutes = Math.floor((hoursms) / (60 * 1000));
+                        return qsTr("%1 days, %2 hours, %3 minutes").arg(days).arg(hours).arg(minutes) + Retranslate.onLanguageChanged;
+                    }
                 }
                 Label {
-                    text: qsTr("HDMI: %1").arg((hardwareinfo.hdmiConnector == 2 ? qsTr("Micro HDMI") + Retranslate.onLanguageChanged : (hardwareinfo.hdmiConnector == 1 ? qsTr("None") + Retranslate.onLanguageChanged : qsTr("Bad or Unknown")))) + Retranslate.onLanguageChanged
+                    text: qsTr("HDMI: %1").arg(getHDMI(hardwareinfo.hdmiConnector)) + Retranslate.onLanguageChanged
                     multiline: true
+                    function getHDMI(connector) {
+                        switch (connector) {
+                            case 0:
+                                return qsTr("Bad or Unknown") + Retranslate.onLanguageChanged;
+                                break;
+                            case 1:
+                                return qsTr("None") + Retranslate.onLanguageChanged;
+                                break;
+                            case 2:
+                                return qsTr("Micro HDMI") + Retranslate.onLanguageChanged;
+                                break;
+                            default:
+                                return qsTr("Bad or Unknown") + Retranslate.onLanguageChanged;
+                        }
+                    }
                 }
                 Label {
                     id: imei
@@ -148,23 +169,23 @@ Page {
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Physical Keyboard: %1").arg((hardwareinfo.isPhysicalKeyboardDevice == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged
+                    text: qsTr("Physical Keyboard: %1").arg(bool2string(hardwareinfo.isPhysicalKeyboardDevice)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Physical Menu Button: %1").arg((hardwareinfo.hasPhysicalMenuButton == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged
+                    text: qsTr("Physical Menu Button: %1").arg(bool2string(hardwareinfo.hasPhysicalMenuButton)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Physical Back Button: %1").arg((hardwareinfo.hasPhysicalBackButton == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged
+                    text: qsTr("Physical Back Button: %1").arg(bool2string(hardwareinfo.hasPhysicalBackButton)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Physical Phone Keys: %1").arg((hardwareinfo.hasPhysicalPhoneKeys == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged
+                    text: qsTr("Physical Phone Keys: %1").arg(bool2string(hardwareinfo.hasPhysicalPhoneKeys)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Physical Trackpad: %1").arg((hardwareinfo.isTrackpadDevice == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged
+                    text: qsTr("Physical Trackpad: %1").arg(bool2string(hardwareinfo.isTrackpadDevice)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
             }
@@ -174,8 +195,32 @@ Page {
                     title: qsTr("SIM Card") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: qsTr("State: %1").arg((siminfo.state == 5 ? qsTr("Ready") + Retranslate.onLanguageChanged : (siminfo.state == 4 ? qsTr("PIN Required") + Retranslate.onLanguageChanged : (siminfo.state == 3 ? qsTr("Read Error") + Retranslate.onLanguageChanged : (siminfo.state == 2 ? qsTr("Not Provisioned") + Retranslate.onLanguageChanged : (siminfo.state == 1 ? qsTr("Incompatible") + Retranslate.onLanguageChanged : qsTr("Not Detected") + Retranslate.onLanguageChanged)))))) + Retranslate.onLanguageChanged
+                    text: qsTr("State: %1").arg(getSimState(siminfo.state)) + Retranslate.onLanguageChanged
                     multiline: true
+                    function getSimState(state) {
+                        switch (state) {
+                            case 0:
+                                return qsTr("Not Detected") + Retranslate.onLanguageChanged;
+                                break;
+                            case 1:
+                                return qsTr("Incompatible") + Retranslate.onLanguageChanged;
+                                break;
+                            case 2:
+                                return qsTr("Not Provisioned") + Retranslate.onLanguageChanged;
+                                break;
+                            case 3:
+                                return qsTr("Read Error") + Retranslate.onLanguageChanged;
+                                break;
+                            case 4:
+                                return qsTr("PIN Required") + Retranslate.onLanguageChanged;
+                                break;
+                            case 5:
+                                return qsTr("Ready") + Retranslate.onLanguageChanged;
+                                break;
+                            default:
+                                return qsTr("Not Detected") + Retranslate.onLanguageChanged;
+                        }
+                    }
                 }
                 Label {
                     id: mcc
@@ -246,19 +291,52 @@ Page {
                     title: qsTr("Battery") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: qsTr("Present: %1").arg((battinfo.present == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged
+                    text: qsTr("Present: %1").arg(bool2string(battinfo.present)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Charging State: %1").arg((battinfo.chargingState == 4 ? qsTr("Full") + Retranslate.onLanguageChanged : (battinfo.chargingState == 3 ? qsTr("Discharging") + Retranslate.onLanguageChanged : (battinfo.chargingState == 2 ? qsTr("Charging") + Retranslate.onLanguageChanged : (battinfo.chargingState == 1 ? qsTr("Not Charging") + Retranslate.onLanguageChanged : qsTr("Bad or Unknown") + Retranslate.onLanguageChanged))))) + Retranslate.onLanguageChanged
+                    text: qsTr("Charging State: %1").arg(getChargingState(battinfo.chargingState)) + Retranslate.onLanguageChanged
                     multiline: true
+                    function getChargingState(state) {
+                        switch (state) {
+                            case 0:
+                                return qsTr("Bad or Unknown") + Retranslate.onLanguageChanged;
+                                break;
+                            case 1:
+                                return qsTr("Not Charging") + Retranslate.onLanguageChanged;
+                                break;
+                            case 2:
+                                return qsTr("Charging") + Retranslate.onLanguageChanged;
+                                break;
+                            case 3:
+                                return qsTr("Discharging") + Retranslate.onLanguageChanged;
+                                break;
+                            case 4:
+                                return qsTr("Full") + Retranslate.onLanguageChanged;
+                                break;
+                            default:
+                                return qsTr("Bad or Unknown") + Retranslate.onLanguageChanged;
+                        }
+                    }
                 }
                 Label {
-                    text: qsTr("Condition: %1").arg((battinfo.condition == 1 ? qsTr("OK") + Retranslate.onLanguageChanged : qsTr("Bad or Unknown") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged
+                    text: qsTr("Condition: %1").arg(getCondition(battinfo.condition)) + Retranslate.onLanguageChanged
                     multiline: true
+                    function getCondition(condition) {
+                        switch (condition) {
+                            case 0:
+                                return qsTr("Bad or Unknown") + Retranslate.onLanguageChanged;
+                                break;
+                            case 1:
+                                return qsTr("OK") + Retranslate.onLanguageChanged;
+                                break;
+                            default:
+                                return qsTr("Bad or Unknown") + Retranslate.onLanguageChanged;
+                        }
+                    }
                 }
                 Label {
-                    text: qsTr("Full Charge Capacity: %1 mAh").arg(battinfo.fullChargeCapacity) + Retranslate.onLanguageChanged
+                    text: qsTr("Full Charge Capacity: %1 mAh").arg(battinfo.fullChargeCapacity.toString()) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
@@ -289,8 +367,24 @@ Page {
                     title: qsTr("Display") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: qsTr("Aspect: %1").arg((dispinfo.aspectType == 2 ? qsTr("Square") + Retranslate.onLanguageChanged : (dispinfo.aspectType == 1 ? qsTr("Portrait") + Retranslate.onLanguageChanged : qsTr("Landscape") + Retranslate.onLanguageChanged))) + Retranslate.onLanguageChanged
+                    text: qsTr("Aspect: %1").arg(getAspect(dispinfo.aspectType)) + Retranslate.onLanguageChanged
                     multiline: true
+                    function getAspect(aspect) {
+                        switch (aspect) {
+                            case 0:
+                                return qsTr("Landscape") + Retranslate.onLanguageChanged;
+                                break;
+                            case 1:
+                                return qsTr("Portrait") + Retranslate.onLanguageChanged;
+                                break;
+                            case 2:
+                                return qsTr("Square") + Retranslate.onLanguageChanged;
+                                break;
+                            default:
+                                return qsTr("Bad or Unknown") + Retranslate.onLanguageChanged;
+                                
+                        }
+                    }
                 }
                 Label {
                     text: qsTr("Physical Size: %1 mm x %2 mm").arg(dispinfo.physicalSize.height.toFixed(2)).arg(dispinfo.physicalSize.width.toFixed(2)) + Retranslate.onLanguageChanged
@@ -309,8 +403,32 @@ Page {
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Technology: %1").arg((dispinfo.displayTechnology == 0 ? qsTr("Bad or Unknown") + Retranslate.onLanguageChanged : (dispinfo.displayTechnology == 1 ? qsTr("LCD") + Retranslate.onLanguageChanged : (dispinfo.displayTechnology == 2 ? qsTr("OLED") + Retranslate.onLanguageChanged : (dispinfo.displayTechnology == 3 ? qsTr("CRT") + Retranslate.onLanguageChanged : (dispinfo.displayTechnology == 4 ? qsTr("Plasma") + Retranslate.onLanguageChanged : qsTr("LED") + Retranslate.onLanguageChanged)))))) + Retranslate.onLanguageChanged
+                    text: qsTr("Technology: %1").arg(getTechnology(dispinfo.displayTechnology)) + Retranslate.onLanguageChanged
                     multiline: true
+                    function getTechnology(technology) {
+                        switch (technology) {
+                            case 0:
+                                return qsTr("Bad or Unknown") + Retranslate.onLanguageChanged;
+                                break;
+                            case 1:
+                                return qsTr("LCD") + Retranslate.onLanguageChanged;
+                                break;
+                            case 2:
+                                return qsTr("OLED") + Retranslate.onLanguageChanged;
+                                break;
+                            case 3:
+                                return qsTr("CRT") + Retranslate.onLanguageChanged;
+                                break;
+                            case 4:
+                                return qsTr("Plasma") + Retranslate.onLanguageChanged;
+                                break;
+                            case 5:
+                                return qsTr("LED") + Retranslate.onLanguageChanged;
+                                break;
+                            default:
+                                return qsTr("Bad or Unknown") + Retranslate.onLanguageChanged;
+                        }
+                    }
                 }
                 Label {
                     id: dispname
@@ -318,15 +436,15 @@ Page {
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Attached: %1").arg((dispinfo.attached == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged
+                    text: qsTr("Attached: %1").arg(bool2string(dispinfo.attached)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Detachable: %1").arg((dispinfo.detachable == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged
+                    text: qsTr("Detachable: %1").arg(bool2string(dispinfo.detachable)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Wireless: %1").arg((dispinfo.wireless == true ? qsTr("True") + Retranslate.onLanguageChanged : qsTr("False") + Retranslate.onLanguageChanged)) + Retranslate.onLanguageChanged
+                    text: qsTr("Wireless: %1").arg(bool2string(dispinfo.wireless)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
             }
