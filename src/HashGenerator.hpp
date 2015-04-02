@@ -10,7 +10,7 @@
  *  @author    Thurask
  *  @date      2015
  */
-class HashGenerator : public QObject
+class HashGenerator: public QObject
 {
     Q_OBJECT
     Q_ENUMS(Hashmode Filemode)
@@ -18,18 +18,17 @@ class HashGenerator : public QObject
 public:
     HashGenerator();
 
-    enum Hashmode {
-        MD4 = 0,
-        MD5,
-        SHA1
+    enum Hashmode
+    {
+        MD4 = 0, MD5, SHA1
     };
 
-    enum Filemode {
-        TEXT = 0,
-        FILE
+    enum Filemode
+    {
+        TEXT = 0, FILE
     };
 
-    public Q_SLOTS:
+public Q_SLOTS:
 
     Q_INVOKABLE
     void calculateHash(QString input, Hashmode hashmode, Filemode filemode);
@@ -37,7 +36,7 @@ public:
     Q_INVOKABLE
     QString returnHash();
 
-    private:
+private:
 
     QString hash;
 };
