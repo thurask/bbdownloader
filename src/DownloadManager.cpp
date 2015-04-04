@@ -94,13 +94,14 @@ void DownloadManager::setOsLinks(QString hashedswversion, QString osversion)
                     "Dev Alpha A: http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlpha-"
                             + osversion + ".exe\n\n");
         }
-        if (osversion.indexOf("10.0") == -1) {
+        if (osversion.indexOf("10.0") == -1
+                && (osversion.indexOf("10.1") != -1 || osversion.indexOf("10.2.0") != -1)) {
             oslinks.append(
                     "Dev Alpha A_B: http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlphaA_B-"
                             + osversion + ".exe\n\n");
         }
         if (osversion.indexOf("10.0") == -1 && osversion.indexOf("10.1") == -1
-                && osversion.indexOf("10.2") == -1) {
+                && osversion.indexOf("10.2.0") == -1) {
             oslinks.append(
                     "Dev Alpha B: http://developer.blackberry.com/native/downloads/fetch/Autoload-DevAlphaB-"
                             + osversion + ".exe\n\n");
@@ -227,7 +228,17 @@ void DownloadManager::setOsLinks(QString hashedswversion, QString osversion)
 void DownloadManager::setCoreLinks(QString hashedswversion, QString osversion)
 {
     if (hashedswversion == "08d2e98e6754af941484848930ccbaddfefe13d6") {
-        corelinks = "";
+        if ((osversion.indexOf("10.0.") == -1 && osversion.indexOf("10.1.") == -1
+                && osversion.indexOf("10.2.") == -1 && osversion.indexOf("10.3.0") == -1)
+                && osversion.indexOf("10.3.1.634") == -1) { //please stop changing these names, BlackBerry
+            corelinks =
+                    ("STL100-1/Dev Alpha B: http://developer.blackberry.com/native/downloads/fetch/Autoload-STL100-1-DevAlphaB-"
+                            + osversion + ".exe\n\n"
+                            + "SQN100-X/SQR100-X/Dev Alpha C: http://developer.blackberry.com/native/downloads/fetch/Autoload-SQN100-3-DevAlphaC-"
+                            + osversion + ".exe\n\n");
+        } else {
+            corelinks = "";
+        }
     } else {
         if (core == false) {
             corelinks = "";

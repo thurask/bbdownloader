@@ -12,22 +12,16 @@ Page {
     property string swrelease
     property string osversion
     property string radioversion
-    property bool core
     actions: [
         ActionItem {
             title: qsTr("Generate") + Retranslate.onLanguageChanged
             onTriggered: {
-                core = Settings.getValueFor("core", "true");
                 _manager.setExportUrls(swrelease, hashedswversion, osversion, radioversion);
                 ostext.text = _manager.returnOsLinks();
                 coretext.text = _manager.returnCoreLinks();
                 radiotext.text = _manager.returnRadioLinks();
                 ostext.visible = true;
-                if (swrelease == "N/A") {
-                    coretext.visible = false;
-                } else {
-                    coretext.visible = core;
-                }
+                coretext.visible = true;
                 radiotext.visible = true;
                 allclipboard.enabled = true;
                 osclipboard.enabled = true;
