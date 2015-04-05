@@ -975,14 +975,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hide Personal Info</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show Personal Info</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Device Name: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1188,6 +1180,18 @@
     </message>
     <message>
         <source>Uptime: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide Personal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Personal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

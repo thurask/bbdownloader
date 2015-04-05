@@ -976,14 +976,6 @@
         <translation>SD Card</translation>
     </message>
     <message>
-        <source>Hide Personal Info</source>
-        <translation>Hide Personal Info</translation>
-    </message>
-    <message>
-        <source>Show Personal Info</source>
-        <translation>Show Personal Info</translation>
-    </message>
-    <message>
         <source>Device Name: %1</source>
         <translation>Device Name: %1</translation>
     </message>
@@ -1190,6 +1182,18 @@
     <message>
         <source>Uptime: %1</source>
         <translation>Uptime: %1</translation>
+    </message>
+    <message>
+        <source>Hide Personal</source>
+        <translation>Hide Personal</translation>
+    </message>
+    <message>
+        <source>Show Personal</source>
+        <translation>Show Personal</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation>Refresh</translation>
     </message>
 </context>
 <context>

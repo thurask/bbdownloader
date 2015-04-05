@@ -44,11 +44,11 @@ Page {
     actions: [
         ActionItem {
             id: sanitizer
-            title: qsTr("Hide Personal Info") + Retranslate.onLanguageChanged
+            title: qsTr("Hide Personal") + Retranslate.onLanguageChanged
             onTriggered: {
                 if (sanitized == false) {
                     sanitized = true
-                    sanitizer.title = qsTr("Show Personal Info") + Retranslate.onLanguageChanged
+                    sanitizer.title = qsTr("Show Personal") + Retranslate.onLanguageChanged
                     pin.visible = false
                     imei.visible = false
                     meid.visible = false
@@ -61,7 +61,7 @@ Page {
                     devmode.visible = false
                 } else {
                     sanitized = false
-                    sanitizer.title = qsTr("Hide Personal Info") + Retranslate.onLanguageChanged
+                    sanitizer.title = qsTr("Hide Personal") + Retranslate.onLanguageChanged
                     pin.visible = true
                     imei.visible = true
                     meid.visible = true
@@ -76,6 +76,16 @@ Page {
             }
             ActionBar.placement: ActionBarPlacement.Signature
             imageSource: "asset:///images/menus/ic_contact.png"
+        },
+        ActionItem {
+            title: qsTr("Refresh") + Retranslate.onLanguageChanged
+            onTriggered: {
+                uptime.text = qsTr("Uptime: %1").arg(uptime.getUptime()) + Retranslate.onLanguageChanged
+                freemem.text = qsTr("Free Device Memory: %1 MiB").arg((memoryinfo.availableDeviceMemory() / 1048576).toFixed(2).toLocaleString()) + Retranslate.onLanguageChanged
+                temp.text = qsTr("Temperature: %1 °C (%2 °F)").arg(battinfo.temperature.toFixed(1)).arg(parseFloat(1.8 * (battinfo.temperature) + 32).toFixed(1)) + Retranslate.onLanguageChanged
+            }
+            imageSource: "asset:///images/menus/ic_reload.png"
+            ActionBar.placement: ActionBarPlacement.OnBar
         }
     ]
     ScrollView {
@@ -115,6 +125,7 @@ Page {
                     multiline: true
                 }
                 Label {
+                    id: uptime
                     text: qsTr("Uptime: %1").arg(getUptime()) + Retranslate.onLanguageChanged
                     multiline: true
                     function getUptime() {
@@ -248,6 +259,7 @@ Page {
                     multiline: true
                 }
                 Label {
+                    id: freemem
                     text: qsTr("Free Device Memory: %1 MiB").arg((memoryinfo.availableDeviceMemory() / 1048576).toFixed(2).toLocaleString()) + Retranslate.onLanguageChanged
                     multiline: true
                 }
@@ -348,6 +360,7 @@ Page {
                     multiline: true
                 }
                 Label {
+                    id: temp
                     text: qsTr("Temperature: %1 °C (%2 °F)").arg(battinfo.temperature.toFixed(1)).arg(parseFloat(1.8 * (battinfo.temperature) + 32).toFixed(1)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
