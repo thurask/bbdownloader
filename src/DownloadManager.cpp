@@ -235,13 +235,13 @@ void DownloadManager::setCoreLinks(QString hashedswversion, QString osversion)
                     ("STL100-1/Dev Alpha B: http://developer.blackberry.com/native/downloads/fetch/Autoload-STL100-1-DevAlphaB-"
                             + osversion + ".exe\n\n"
                             + "SQN100-X/SQR100-X/Dev Alpha C: http://developer.blackberry.com/native/downloads/fetch/Autoload-SQN100-3-DevAlphaC-"
-                            + osversion + ".exe\n\n");
+                            + osversion + ".exe");
         } else {
-            corelinks = "";
+            corelinks = ""; //for non-10.3.1.>634 OSs
         }
     } else {
         if (core == false) {
-            corelinks = "";
+            corelinks = ""; //of course
         } else {
             if (osversion.indexOf("10.") != -1) {
                 corelinks = ("---CORE OPERATING SYSTEMS---\n");
@@ -346,7 +346,7 @@ void DownloadManager::setCoreLinks(QString hashedswversion, QString osversion)
                     corelinks.append("-"); //re-add chopped off dash in title, if it's there
                 }
             } else {
-                corelinks = "";
+                corelinks = ""; //not BB10 OS
             }
         }
     }
