@@ -7,17 +7,11 @@
 import bb.cascades 1.4
 import bb.device 1.4
 import bb 1.3
+import "js/SysInfo.js" as JScript
 
 Page {
     id: sysinfopage
     property bool sanitized: false
-    function bool2string(abool) {
-        if (abool == true) {
-            return qsTr("True") + Retranslate.onLanguageChanged
-        } else {
-            return qsTr("False") + Retranslate.onLanguageChanged
-        }
-    }
     attachedObjects: [
         HardwareInfo {
             id: hardwareinfo
@@ -37,6 +31,12 @@ Page {
         FileSystemInfo {
             id: fsinfo
         },
+        CellularRadioInfo {
+            id: crinfo
+        },
+        CellularNetworkInfo {
+            id: cninfo
+        },
         WebView {
             id: dummywebview
         }
@@ -55,6 +55,10 @@ Page {
                     serial.visible = false
                     mcc.visible = false
                     mnc.visible = false
+                    celldispname.visible = false
+                    cellname.visible = false
+                    cellmcc.visible = false
+                    cellmnc.visible = false
                     simsn.visible = false
                     rxid.visible = false
                     dispname.visible = false
@@ -68,6 +72,10 @@ Page {
                     serial.visible = true
                     mcc.visible = true
                     mnc.visible = true
+                    celldispname.visible = true
+                    cellname.visible = true
+                    cellmcc.visible = true
+                    cellmnc.visible = true
                     simsn.visible = true
                     rxid.visible = true
                     dispname.visible = true
@@ -80,8 +88,10 @@ Page {
         ActionItem {
             title: qsTr("Refresh") + Retranslate.onLanguageChanged
             onTriggered: {
-                uptime.text = qsTr("Uptime: %1").arg(uptime.getUptime()) + Retranslate.onLanguageChanged
+                cellstrength.text = qsTr("Signal Strength: %1 dBm").arg(cninfo.signalStrength) + Retranslate.onLanguageChanged
+                uptime.text = qsTr("Uptime: %1").arg(JScript.getUptime()) + Retranslate.onLanguageChanged
                 freemem.text = qsTr("Free Device Memory: %1 MiB").arg((memoryinfo.availableDeviceMemory() / 1048576).toFixed(2).toLocaleString()) + Retranslate.onLanguageChanged
+                sdavcap.text = qsTr("Available Capacity: %1 GB").arg((fsinfo.availableFileSystemSpace("/sdcard/external_sd/") / 1000000000).toFixed(2).toLocaleString()) + Retranslate.onLanguageChanged
                 temp.text = qsTr("Temperature: %1 °C (%2 °F)").arg(battinfo.temperature.toFixed(1)).arg(parseFloat(1.8 * (battinfo.temperature) + 32).toFixed(1)) + Retranslate.onLanguageChanged
             }
             imageSource: "asset:///images/menus/ic_reload.png"
@@ -126,39 +136,12 @@ Page {
                 }
                 Label {
                     id: uptime
-                    text: qsTr("Uptime: %1").arg(getUptime()) + Retranslate.onLanguageChanged
+                    text: qsTr("Uptime: %1").arg(JScript.getUptime()) + Retranslate.onLanguageChanged
                     multiline: true
-                    function getUptime() {
-                        var now = new Date();
-                        var dmy = new Date(_manager.readTextFile("/var/boottime.txt", "normal"));
-                        var raw_ms = (now.getTime() - dmy.getTime());
-                        //Days, hours, minutes
-                        var days = Math.floor(raw_ms / (24 * 60 * 60 * 1000));
-                        var daysms = raw_ms % (24 * 60 * 60 * 1000);
-                        var hours = Math.floor((daysms) / (60 * 60 * 1000));
-                        var hoursms = raw_ms % (60 * 60 * 1000);
-                        var minutes = Math.floor((hoursms) / (60 * 1000));
-                        return qsTr("%1 days, %2 hours, %3 minutes").arg(days).arg(hours).arg(minutes) + Retranslate.onLanguageChanged;
-                    }
                 }
                 Label {
-                    text: qsTr("HDMI: %1").arg(getHDMI(hardwareinfo.hdmiConnector)) + Retranslate.onLanguageChanged
+                    text: qsTr("HDMI: %1").arg(JScript.getHDMI(hardwareinfo.hdmiConnector)) + Retranslate.onLanguageChanged
                     multiline: true
-                    function getHDMI(connector) {
-                        switch (connector) {
-                            case 0:
-                                return qsTr("Bad or Unknown") + Retranslate.onLanguageChanged;
-                                break;
-                            case 1:
-                                return qsTr("None") + Retranslate.onLanguageChanged;
-                                break;
-                            case 2:
-                                return qsTr("Micro HDMI") + Retranslate.onLanguageChanged;
-                                break;
-                            default:
-                                return qsTr("Bad or Unknown") + Retranslate.onLanguageChanged;
-                        }
-                    }
                 }
                 Label {
                     id: imei
@@ -176,27 +159,27 @@ Page {
                 }
                 Label {
                     id: serial
-                    text: qsTr("Serial Number: %1").arg(hardwareinfo.serialNumber.slice(10, 14) + "-" + hardwareinfo.serialNumber.slice(14, 18) + "-" + hardwareinfo.serialNumber.slice(18, 22)) + Retranslate.onLanguageChanged
+                    text: qsTr("Serial Number: %1").arg(hardwareinfo.serialNumber.slice(13, 14) + "-" + hardwareinfo.serialNumber.slice(14, 18) + "-" + hardwareinfo.serialNumber.slice(18, 22)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Physical Keyboard: %1").arg(bool2string(hardwareinfo.isPhysicalKeyboardDevice)) + Retranslate.onLanguageChanged
+                    text: qsTr("Physical Keyboard: %1").arg(JScript.bool2string(hardwareinfo.isPhysicalKeyboardDevice)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Physical Menu Button: %1").arg(bool2string(hardwareinfo.hasPhysicalMenuButton)) + Retranslate.onLanguageChanged
+                    text: qsTr("Physical Menu Button: %1").arg(JScript.bool2string(hardwareinfo.hasPhysicalMenuButton)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Physical Back Button: %1").arg(bool2string(hardwareinfo.hasPhysicalBackButton)) + Retranslate.onLanguageChanged
+                    text: qsTr("Physical Back Button: %1").arg(JScript.bool2string(hardwareinfo.hasPhysicalBackButton)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Physical Phone Keys: %1").arg(bool2string(hardwareinfo.hasPhysicalPhoneKeys)) + Retranslate.onLanguageChanged
+                    text: qsTr("Physical Phone Keys: %1").arg(JScript.bool2string(hardwareinfo.hasPhysicalPhoneKeys)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Physical Trackpad: %1").arg(bool2string(hardwareinfo.isTrackpadDevice)) + Retranslate.onLanguageChanged
+                    text: qsTr("Physical Trackpad: %1").arg(JScript.bool2string(hardwareinfo.isTrackpadDevice)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
             }
@@ -206,32 +189,8 @@ Page {
                     title: qsTr("SIM Card") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: qsTr("State: %1").arg(getSimState(siminfo.state)) + Retranslate.onLanguageChanged
+                    text: qsTr("State: %1").arg(JScript.getSimState(siminfo.state)) + Retranslate.onLanguageChanged
                     multiline: true
-                    function getSimState(state) {
-                        switch (state) {
-                            case 0:
-                                return qsTr("Not Detected") + Retranslate.onLanguageChanged;
-                                break;
-                            case 1:
-                                return qsTr("Incompatible") + Retranslate.onLanguageChanged;
-                                break;
-                            case 2:
-                                return qsTr("Not Provisioned") + Retranslate.onLanguageChanged;
-                                break;
-                            case 3:
-                                return qsTr("Read Error") + Retranslate.onLanguageChanged;
-                                break;
-                            case 4:
-                                return qsTr("PIN Required") + Retranslate.onLanguageChanged;
-                                break;
-                            case 5:
-                                return qsTr("Ready") + Retranslate.onLanguageChanged;
-                                break;
-                            default:
-                                return qsTr("Not Detected") + Retranslate.onLanguageChanged;
-                        }
-                    }
                 }
                 Label {
                     id: mcc
@@ -247,6 +206,218 @@ Page {
                     id: simsn
                     text: qsTr("Serial Number: %1").arg(siminfo.serialNumber) + Retranslate.onLanguageChanged
                     multiline: true
+                }
+            }
+            Container {
+                topPadding: ui.du(1.5)
+                Header {
+                    title: qsTr("Cellular Network") + Retranslate.onLanguageChanged
+                }
+                Label {
+                    id: cellname
+                    text: qsTr("Name: %1").arg(cninfo.name) + Retranslate.onLanguageChanged
+                    multiline: true
+                }
+                Label {
+                    id: celldispname
+                    text: qsTr("Display Name: %1").arg(cninfo.displayName) + Retranslate.onLanguageChanged
+                    multiline: true
+                }
+                Label {
+                    id: cellmcc
+                    text: qsTr("Mobile Country Code (MCC): %1").arg(cninfo.mobileCountryCode) + Retranslate.onLanguageChanged
+                    multiline: true
+                }
+                Label {
+                    id: cellmnc
+                    text: qsTr("Mobile Network Code (MNC): %1").arg(cninfo.mobileNetworkCode) + Retranslate.onLanguageChanged
+                    multiline: true
+                }
+                Label {
+                    text: qsTr("Roaming: %1").arg(JScript.bool2string(cninfo.roaming)) + Retranslate.onLanguageChanged
+                }
+                Label {
+                    id: cellstrength
+                    text: qsTr("Signal Strength: %1 dBm").arg(cninfo.signalStrength) + Retranslate.onLanguageChanged
+                }
+                Label {
+                    id: cni_supptech
+                    text: qsTr("Supported Technologies: %1%2%3%4%5%6")
+                    .arg(JScript.celltechBitcomp(3, 0x0))
+                    .arg(JScript.celltechBitcomp(3, 0x1))
+                    .arg(JScript.celltechBitcomp(3, 0x2))
+                    .arg(JScript.celltechBitcomp(3, 0x4))
+                    .arg(JScript.celltechBitcomp(3, 0x8))
+                    .arg(JScript.celltechBitcomp(3, 0x10)) + Retranslate.onLanguageChanged
+                    onCreationCompleted: {
+                        cni_supptech.text = cni_supptech.text.trim()
+                        while (cni_supptech.text.charAt(-1) == "," || cni_supptech.text.charAt(-1) == " ") {
+                            cni_supptech.text = cni_supptech.text.slice(0, -1)
+                        }
+                    }
+                }
+                Label {
+                    id: cni_suppserv
+                    text: qsTr("Supported Services: %1%2%3%4%5%6%7%8%9%10%11%12%13%14%15%16%17")
+                    .arg(JScript.celltechBitcomp(0, 0x0))
+                    .arg(JScript.celltechBitcomp(0, 0x1))
+                    .arg(JScript.celltechBitcomp(0, 0x2))
+                    .arg(JScript.celltechBitcomp(0, 0x4))
+                    .arg(JScript.celltechBitcomp(0, 0x100))
+                    .arg(JScript.celltechBitcomp(0, 0x200))
+                    .arg(JScript.celltechBitcomp(0, 0x400))
+                    .arg(JScript.celltechBitcomp(0, 0x1000))
+                    .arg(JScript.celltechBitcomp(0, 0x2000))
+                    .arg(JScript.celltechBitcomp(0, 0x4000))
+                    .arg(JScript.celltechBitcomp(0, 0x8000))
+                    .arg(JScript.celltechBitcomp(0, 0x10000))
+                    .arg(JScript.celltechBitcomp(0, 0x20000))
+                    .arg(JScript.celltechBitcomp(0, 0x40000))
+                    .arg(JScript.celltechBitcomp(0, 0x80000))
+                    .arg(JScript.celltechBitcomp(0, 0x100000))
+                    .arg(JScript.celltechBitcomp(0, 0x200000))+ Retranslate.onLanguageChanged
+                    multiline: true
+                    onCreationCompleted: {
+                        cni_suppserv.text = cni_suppserv.text.trim()
+                        while (cni_suppserv.text.charAt(-1) == "," || cni_suppserv.text.charAt(-1) == " ") {
+                            cni_suppserv.text = cni_suppserv.text.slice(0, -1)
+                        }
+                    }
+                }
+            }
+            Container {
+                topPadding: ui.du(1.5)
+                Header {
+                    title: qsTr("Cellular Radio") + Retranslate.onLanguageChanged
+                }
+                Label {
+                    text: qsTr("Powered On: %1").arg(JScript.bool2string(crinfo.poweredOn)) + Retranslate.onLanguageChanged
+                }
+                Label {
+                    text: qsTr("Network Count: %1").arg(crinfo.networkCount) + Retranslate.onLanguageChanged
+                }
+                Label {
+                    text: qsTr("Data Enabled: %1").arg(JScript.bool2string(crinfo.dataEnabled)) + Retranslate.onLanguageChanged
+                }
+                Label {
+                    text: qsTr("Data Roaming: %1").arg(JScript.bool2string(crinfo.dataRoaming)) + Retranslate.onLanguageChanged
+                }
+                Label {
+                    id: cri_supptech
+                    text: qsTr("Supported Technologies: %1%2%3%4%5%6")
+                    .arg(JScript.celltechBitcomp(0, 0x0))
+                    .arg(JScript.celltechBitcomp(0, 0x1))
+                    .arg(JScript.celltechBitcomp(0, 0x2))
+                    .arg(JScript.celltechBitcomp(0, 0x4))
+                    .arg(JScript.celltechBitcomp(0, 0x8))
+                    .arg(JScript.celltechBitcomp(0, 0x10)) + Retranslate.onLanguageChanged
+                    multiline: true
+                    onCreationCompleted: {
+                        cri_supptech.text = cri_supptech.text.trim()
+                        while (cri_supptech.text.charAt(-1) == "," || cri_supptech.text.charAt(-1) == " ") {
+                            cri_supptech.text = cri_supptech.text.slice(0, -1)
+                        }
+                    }
+                }
+                Label {
+                    id: cri_entech
+                    text: qsTr("Enabled Technologies: %1%2%3%4%5%6")
+                    .arg(JScript.celltechBitcomp(1, 0x0))
+                    .arg(JScript.celltechBitcomp(1, 0x1))
+                    .arg(JScript.celltechBitcomp(1, 0x2))
+                    .arg(JScript.celltechBitcomp(1, 0x4))
+                    .arg(JScript.celltechBitcomp(1, 0x8))
+                    .arg(JScript.celltechBitcomp(1, 0x10)) + Retranslate.onLanguageChanged
+                    multiline: true
+                    onCreationCompleted: {
+                        cri_entech.text = cri_entech.text.trim()
+                        while (cri_entech.text.charAt(-1) == "," || cri_entech.text.charAt(-1) == " ") {
+                            cri_entech.text = cri_entech.text.slice(0, -1)
+                        }
+                    }
+                }
+                Label {
+                    id: cri_acttech
+                    text: qsTr("Active Technologies: %1%2%3%4%5%6")
+                    .arg(JScript.celltechBitcomp(2, 0x0))
+                    .arg(JScript.celltechBitcomp(2, 0x1))
+                    .arg(JScript.celltechBitcomp(2, 0x2))
+                    .arg(JScript.celltechBitcomp(2, 0x4))
+                    .arg(JScript.celltechBitcomp(2, 0x8))
+                    .arg(JScript.celltechBitcomp(2, 0x10)) + Retranslate.onLanguageChanged
+                    multiline: true
+                    onCreationCompleted: {
+                        cri_acttech.text = cri_acttech.text.trim()
+                        while (cri_acttech.text.charAt(-1) == "," || cri_acttech.text.charAt(-1) == " ") {
+                            cri_acttech.text = cri_acttech.text.slice(0, -1)
+                        }
+                    }
+                }
+                Label {
+                    id: cri_suppserv
+                    text: qsTr("Supported Services: %1%2%3%4%5%6%7%8%9%10%11%12%13%14%15%16%17")
+                    .arg(JScript.celltechBitcomp(0, 0x0))
+                    .arg(JScript.celltechBitcomp(0, 0x1))
+                    .arg(JScript.celltechBitcomp(0, 0x2))
+                    .arg(JScript.celltechBitcomp(0, 0x4))
+                    .arg(JScript.celltechBitcomp(0, 0x100))
+                    .arg(JScript.celltechBitcomp(0, 0x200))
+                    .arg(JScript.celltechBitcomp(0, 0x400))
+                    .arg(JScript.celltechBitcomp(0, 0x1000))
+                    .arg(JScript.celltechBitcomp(0, 0x2000))
+                    .arg(JScript.celltechBitcomp(0, 0x4000))
+                    .arg(JScript.celltechBitcomp(0, 0x8000))
+                    .arg(JScript.celltechBitcomp(0, 0x10000))
+                    .arg(JScript.celltechBitcomp(0, 0x20000))
+                    .arg(JScript.celltechBitcomp(0, 0x40000))
+                    .arg(JScript.celltechBitcomp(0, 0x80000))
+                    .arg(JScript.celltechBitcomp(0, 0x100000))
+                    .arg(JScript.celltechBitcomp(0, 0x200000))+ Retranslate.onLanguageChanged
+                    multiline: true
+                    onCreationCompleted: {
+                        cri_suppserv.text = cri_suppserv.text.trim()
+                        while (cri_suppserv.text.charAt(-1) == "," || cri_suppserv.text.charAt(-1) == " ") {
+                            cri_suppserv.text = cri_suppserv.text.slice(0, -1)
+                        }
+                    }
+                }
+                Label {
+                    id: cri_suppbands
+                    text: qsTr("Supported Bands: %1%2%3%4%5%6%7%8%9%10%11%12%13%14%15%16%17%18%19%20%21%22%23%24%25%26%27")
+                    .arg(JScript.cellbandsBitcomp(0x0))
+                    .arg(JScript.cellbandsBitcomp(0x1))
+                    .arg(JScript.cellbandsBitcomp(0x2))
+                    .arg(JScript.cellbandsBitcomp(0x4))
+                    .arg(JScript.cellbandsBitcomp(0x8))
+                    .arg(JScript.cellbandsBitcomp(0x10))
+                    .arg(JScript.cellbandsBitcomp(0x20))
+                    .arg(JScript.cellbandsBitcomp(0x40))
+                    .arg(JScript.cellbandsBitcomp(0x80))
+                    .arg(JScript.cellbandsBitcomp(0x100))
+                    .arg(JScript.cellbandsBitcomp(0x200))
+                    .arg(JScript.cellbandsBitcomp(0x400))
+                    .arg(JScript.cellbandsBitcomp(0x800))
+                    .arg(JScript.cellbandsBitcomp(0x1000))
+                    .arg(JScript.cellbandsBitcomp(0x2000))
+                    .arg(JScript.cellbandsBitcomp(0x4000))
+                    .arg(JScript.cellbandsBitcomp(0x8000))
+                    .arg(JScript.cellbandsBitcomp(0x10000))
+                    .arg(JScript.cellbandsBitcomp(0x20000))
+                    .arg(JScript.cellbandsBitcomp(0x40000))
+                    .arg(JScript.cellbandsBitcomp(0x80000))
+                    .arg(JScript.cellbandsBitcomp(0x100000))
+                    .arg(JScript.cellbandsBitcomp(0x200000))
+                    .arg(JScript.cellbandsBitcomp(0x400000))
+                    .arg(JScript.cellbandsBitcomp(0x800000))
+                    .arg(JScript.cellbandsBitcomp(0x1000000))
+                    .arg(JScript.cellbandsBitcomp(0x2000000)) + Retranslate.onLanguageChanged
+                    multiline: true
+                    onCreationCompleted: {
+                        cri_suppbands.text = cri_suppbands.text.trim()
+                        while (cri_suppbands.text.charAt(-1) == "," || cri_suppbands.text.charAt(-1) == " ") {
+                            cri_suppbands.text = cri_suppbands.text.slice(0, -1)
+                        }
+                    }
                 }
             }
             Container {
@@ -293,6 +464,7 @@ Page {
                     multiline: true
                 }
                 Label {
+                    id: sdavcap
                     text: qsTr("Available Capacity: %1 GB").arg((fsinfo.availableFileSystemSpace("/sdcard/external_sd/") / 1000000000).toFixed(2).toLocaleString()) + Retranslate.onLanguageChanged
                     multiline: true
                 }
@@ -303,49 +475,16 @@ Page {
                     title: qsTr("Battery") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: qsTr("Present: %1").arg(bool2string(battinfo.present)) + Retranslate.onLanguageChanged
+                    text: qsTr("Present: %1").arg(JScript.bool2string(battinfo.present)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Charging State: %1").arg(getChargingState(battinfo.chargingState)) + Retranslate.onLanguageChanged
+                    text: qsTr("Charging State: %1").arg(JScript.getChargingState(battinfo.chargingState)) + Retranslate.onLanguageChanged
                     multiline: true
-                    function getChargingState(state) {
-                        switch (state) {
-                            case 0:
-                                return qsTr("Bad or Unknown") + Retranslate.onLanguageChanged;
-                                break;
-                            case 1:
-                                return qsTr("Not Charging") + Retranslate.onLanguageChanged;
-                                break;
-                            case 2:
-                                return qsTr("Charging") + Retranslate.onLanguageChanged;
-                                break;
-                            case 3:
-                                return qsTr("Discharging") + Retranslate.onLanguageChanged;
-                                break;
-                            case 4:
-                                return qsTr("Full") + Retranslate.onLanguageChanged;
-                                break;
-                            default:
-                                return qsTr("Bad or Unknown") + Retranslate.onLanguageChanged;
-                        }
-                    }
                 }
                 Label {
-                    text: qsTr("Condition: %1").arg(getCondition(battinfo.condition)) + Retranslate.onLanguageChanged
+                    text: qsTr("Condition: %1").arg(JScript.getCondition(battinfo.condition)) + Retranslate.onLanguageChanged
                     multiline: true
-                    function getCondition(condition) {
-                        switch (condition) {
-                            case 0:
-                                return qsTr("Bad or Unknown") + Retranslate.onLanguageChanged;
-                                break;
-                            case 1:
-                                return qsTr("OK") + Retranslate.onLanguageChanged;
-                                break;
-                            default:
-                                return qsTr("Bad or Unknown") + Retranslate.onLanguageChanged;
-                        }
-                    }
                 }
                 Label {
                     text: qsTr("Full Charge Capacity: %1 mAh").arg(battinfo.fullChargeCapacity.toString()) + Retranslate.onLanguageChanged
@@ -380,24 +519,8 @@ Page {
                     title: qsTr("Display") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: qsTr("Aspect: %1").arg(getAspect(dispinfo.aspectType)) + Retranslate.onLanguageChanged
+                    text: qsTr("Aspect: %1").arg(JScript.getAspect(dispinfo.aspectType)) + Retranslate.onLanguageChanged
                     multiline: true
-                    function getAspect(aspect) {
-                        switch (aspect) {
-                            case 0:
-                                return qsTr("Landscape") + Retranslate.onLanguageChanged;
-                                break;
-                            case 1:
-                                return qsTr("Portrait") + Retranslate.onLanguageChanged;
-                                break;
-                            case 2:
-                                return qsTr("Square") + Retranslate.onLanguageChanged;
-                                break;
-                            default:
-                                return qsTr("Bad or Unknown") + Retranslate.onLanguageChanged;
-                                
-                        }
-                    }
                 }
                 Label {
                     text: qsTr("Physical Size: %1 mm x %2 mm").arg(dispinfo.physicalSize.height.toFixed(2)).arg(dispinfo.physicalSize.width.toFixed(2)) + Retranslate.onLanguageChanged
@@ -416,32 +539,8 @@ Page {
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Technology: %1").arg(getTechnology(dispinfo.displayTechnology)) + Retranslate.onLanguageChanged
+                    text: qsTr("Technology: %1").arg(JScript.getTechnology(dispinfo.displayTechnology)) + Retranslate.onLanguageChanged
                     multiline: true
-                    function getTechnology(technology) {
-                        switch (technology) {
-                            case 0:
-                                return qsTr("Bad or Unknown") + Retranslate.onLanguageChanged;
-                                break;
-                            case 1:
-                                return qsTr("LCD") + Retranslate.onLanguageChanged;
-                                break;
-                            case 2:
-                                return qsTr("OLED") + Retranslate.onLanguageChanged;
-                                break;
-                            case 3:
-                                return qsTr("CRT") + Retranslate.onLanguageChanged;
-                                break;
-                            case 4:
-                                return qsTr("Plasma") + Retranslate.onLanguageChanged;
-                                break;
-                            case 5:
-                                return qsTr("LED") + Retranslate.onLanguageChanged;
-                                break;
-                            default:
-                                return qsTr("Bad or Unknown") + Retranslate.onLanguageChanged;
-                        }
-                    }
                 }
                 Label {
                     id: dispname
@@ -449,15 +548,15 @@ Page {
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Attached: %1").arg(bool2string(dispinfo.attached)) + Retranslate.onLanguageChanged
+                    text: qsTr("Attached: %1").arg(JScript.bool2string(dispinfo.attached)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Detachable: %1").arg(bool2string(dispinfo.detachable)) + Retranslate.onLanguageChanged
+                    text: qsTr("Detachable: %1").arg(JScript.bool2string(dispinfo.detachable)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Wireless: %1").arg(bool2string(dispinfo.wireless)) + Retranslate.onLanguageChanged
+                    text: qsTr("Wireless: %1").arg(JScript.bool2string(dispinfo.wireless)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
             }

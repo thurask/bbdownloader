@@ -1195,6 +1195,254 @@
         <source>Refresh</source>
         <translation>Refresh</translation>
     </message>
+    <message>
+        <source>Supported Technologies: %1%2%3%4%5%6</source>
+        <translation>Supported Technologies: %1%2%3%4%5%6</translation>
+    </message>
+    <message>
+        <source>LTE</source>
+        <translation>LTE</translation>
+    </message>
+    <message>
+        <source>None, </source>
+        <translation>None, </translation>
+    </message>
+    <message>
+        <source>GSM, </source>
+        <translation>GSM, </translation>
+    </message>
+    <message>
+        <source>UMTS, </source>
+        <translation>UMTS, </translation>
+    </message>
+    <message>
+        <source>CDMA1X, </source>
+        <translation>CDMA1X, </translation>
+    </message>
+    <message>
+        <source>EVDO, </source>
+        <translation>EVDO, </translation>
+    </message>
+    <message>
+        <source>Cellular Network</source>
+        <translation>Cellular Network</translation>
+    </message>
+    <message>
+        <source>Cellular Radio</source>
+        <translation>Cellular Radio</translation>
+    </message>
+    <message>
+        <source>Powered On: %1</source>
+        <translation>Powered On: %1</translation>
+    </message>
+    <message>
+        <source>Network Count: %1</source>
+        <translation>Network Count: %1</translation>
+    </message>
+    <message>
+        <source>Data Enabled: %1</source>
+        <translation>Data Enabled: %1</translation>
+    </message>
+    <message>
+        <source>Data Roaming: %1</source>
+        <translation>Data Roaming: %1</translation>
+    </message>
+    <message>
+        <source>Enabled Technologies: %1%2%3%4%5%6</source>
+        <translation>Enabled Technologies: %1%2%3%4%5%6</translation>
+    </message>
+    <message>
+        <source>CDMA 0 (800), </source>
+        <translation>CDMA 0 (800), </translation>
+    </message>
+    <message>
+        <source>CDMA 1 (1900), </source>
+        <translation>CDMA 1 (1900), </translation>
+    </message>
+    <message>
+        <source>CDMA 15 (1700/2100), </source>
+        <translation>CDMA 15 (1700/2100), </translation>
+    </message>
+    <message>
+        <source>GSM 850, </source>
+        <translation>GSM 850, </translation>
+    </message>
+    <message>
+        <source>GSM 900, </source>
+        <translation>GSM 900, </translation>
+    </message>
+    <message>
+        <source>GSM 1800, </source>
+        <translation>GSM 1800, </translation>
+    </message>
+    <message>
+        <source>GSM 1900, </source>
+        <translation>GSM 1900, </translation>
+    </message>
+    <message>
+        <source>UMTS 1 (2100), </source>
+        <translation>UMTS 1 (2100), </translation>
+    </message>
+    <message>
+        <source>UMTS 2 (1900), </source>
+        <translation>UMTS 2 (1900), </translation>
+    </message>
+    <message>
+        <source>UMTS 3 (1800), </source>
+        <translation>UMTS 3 (1800), </translation>
+    </message>
+    <message>
+        <source>UMTS 4 (1700), </source>
+        <translation>UMTS 4 (1700), </translation>
+    </message>
+    <message>
+        <source>UMTS 5 (850), </source>
+        <translation>UMTS 5 (850), </translation>
+    </message>
+    <message>
+        <source>UMTS 6 (800), </source>
+        <translation>UMTS 6 (800), </translation>
+    </message>
+    <message>
+        <source>UMTS 7 (2600), </source>
+        <translation>UMTS 7 (2600), </translation>
+    </message>
+    <message>
+        <source>UMTS 8 (900), </source>
+        <translation>UMTS 8 (900), </translation>
+    </message>
+    <message>
+        <source>UMTS 9 (1700), </source>
+        <translation>UMTS 9 (1700), </translation>
+    </message>
+    <message>
+        <source>UMTS 10 (1700), </source>
+        <translation>UMTS 10 (1700), </translation>
+    </message>
+    <message>
+        <source>LTE 2 (1900), </source>
+        <translation>LTE 2 (1900), </translation>
+    </message>
+    <message>
+        <source>LTE 3 (1800), </source>
+        <translation>LTE 3 (1800), </translation>
+    </message>
+    <message>
+        <source>LTE 4 (1700/2100), </source>
+        <translation>LTE 4 (1700/2100), </translation>
+    </message>
+    <message>
+        <source>LTE 5 (850), </source>
+        <translation>LTE 5 (850), </translation>
+    </message>
+    <message>
+        <source>LTE 7 (2600), </source>
+        <translation>LTE 7 (2600), </translation>
+    </message>
+    <message>
+        <source>LTE 8 (900), </source>
+        <translation>LTE 8 (900), </translation>
+    </message>
+    <message>
+        <source>LTE 13 (700), </source>
+        <translation>LTE 13 (700), </translation>
+    </message>
+    <message>
+        <source>LTE 17 (700), </source>
+        <translation>LTE 17 (700), </translation>
+    </message>
+    <message>
+        <source>Supported Bands: %1%2%3%4%5%6%7%8%9%10%11%12%13%14%15%16%17%18%19%20%21%22%23%24%25%26%27</source>
+        <translation>Supported Bands: %1%2%3%4%5%6%7%8%9%10%11%12%13%14%15%16%17%18%19%20%21%22%23%24%25%26%27</translation>
+    </message>
+    <message>
+        <source>Emergency, </source>
+        <translation>Emergency, </translation>
+    </message>
+    <message>
+        <source>Voice, </source>
+        <translation>Voice, </translation>
+    </message>
+    <message>
+        <source>E911 Callback, </source>
+        <translation>E911 Callback, </translation>
+    </message>
+    <message>
+        <source>Data, </source>
+        <translation>Data, </translation>
+    </message>
+    <message>
+        <source>GAN</source>
+        <translation>GAN</translation>
+    </message>
+    <message>
+        <source>Concurrent Voice+Data, </source>
+        <translation>Concurrent Voice+Data, </translation>
+    </message>
+    <message>
+        <source>GPRS Data, </source>
+        <translation>GPRS Data, </translation>
+    </message>
+    <message>
+        <source>EDGE Data, </source>
+        <translation>EDGE Data, </translation>
+    </message>
+    <message>
+        <source>HSPA Data, </source>
+        <translation>HSPA Data, </translation>
+    </message>
+    <message>
+        <source>UMTS Data, </source>
+        <translation>UMTS Data, </translation>
+    </message>
+    <message>
+        <source>HSPA+ Data, </source>
+        <translation>HSPA+ Data, </translation>
+    </message>
+    <message>
+        <source>CDMA Data, </source>
+        <translation>CDMA Data, </translation>
+    </message>
+    <message>
+        <source>EVDO 0 Data, </source>
+        <translation>EVDO 0 Data, </translation>
+    </message>
+    <message>
+        <source>EVDO A Data, </source>
+        <translation>EVDO A Data, </translation>
+    </message>
+    <message>
+        <source>eHRPD Data, </source>
+        <translation>eHRPD Data, </translation>
+    </message>
+    <message>
+        <source>LTE Data</source>
+        <translation>LTE Data</translation>
+    </message>
+    <message>
+        <source>LTE 20 (800)</source>
+        <translation>LTE 20 (800)</translation>
+    </message>
+    <message>
+        <source>Active Technologies: %1%2%3%4%5%6</source>
+        <translation>Active Technologies: %1%2%3%4%5%6</translation>
+    </message>
+    <message>
+        <source>Supported Services: %1%2%3%4%5%6%7%8%9%10%11%12%13%14%15%16%17</source>
+        <translation>Supported Services: %1%2%3%4%5%6%7%8%9%10%11%12%13%14%15%16%17</translation>
+    </message>
+    <message>
+        <source>Signal Strength: %1 dBm</source>
+        <translation>Signal Strength: %1 dBm</translation>
+    </message>
+    <message>
+        <source>Name: %1</source>
+        <translation>Name: %1</translation>
+    </message>
+    <message>
+        <source>Roaming: %1</source>
+        <translation>Roaming: %1</translation>
+    </message>
 </context>
 <context>
     <name>main</name>

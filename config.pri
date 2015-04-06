@@ -230,6 +230,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/images/splash/lseries_portrait.png) \
         $$quote($$BASEDIR/assets/images/splash/nseries.png) \
         $$quote($$BASEDIR/assets/images/splash/wseries.png) \
+        $$quote($$BASEDIR/assets/js/SysInfo.js) \
         $$quote($$BASEDIR/assets/js/escreens.js) \
         $$quote($$BASEDIR/assets/main.qml) \
         $$quote($$BASEDIR/assets/xml/dtd/hwid.dtd) \
