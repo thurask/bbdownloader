@@ -31,6 +31,7 @@ void FileSystemManager::saveTextFile(const QString& content, const QString& titl
     QTextStream outStream(&file);
     outStream << content;
     file.close();
+    fa.logEvent("TEXTFILE_SAVED", false);
 }
 
 QString FileSystemManager::returnFilename()

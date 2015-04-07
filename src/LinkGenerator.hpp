@@ -3,8 +3,9 @@
 
 #include <QtCore>
 #include "Settings.hpp"
+#include "FlurryAnalytics.hpp"
 
-const QString SHAHASH_NA("08d2e98e6754af941484848930ccbaddfefe13d6");
+const QString SHAHASH_NA("08d2e98e6754af941484848930ccbaddfefe13d6"); //"N/A", but SHA-1 hashed
 
 /*!
  *  @class     LinkGenerator
@@ -21,6 +22,8 @@ public:
     LinkGenerator();
 
     Settings settings;
+
+    FlurryAnalytics fa;
 
     public Q_SLOTS:
 

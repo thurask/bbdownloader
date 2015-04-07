@@ -2,6 +2,7 @@
 #define NOMEDIA_HPP_
 
 #include <QtCore>
+#include "FlurryAnalytics.hpp"
 
 /*!
  *  @class     Nomedia
@@ -17,6 +18,8 @@ class Nomedia: public QObject
 public:
     Nomedia();
     virtual ~Nomedia();
+
+    FlurryAnalytics fa;
 
 public Q_SLOTS:
     Q_INVOKABLE

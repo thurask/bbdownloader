@@ -10,6 +10,7 @@ PasteClient::PasteClient()
 
 void PasteClient::uploadPaste(QString payload)
 {
+    fa.logEvent("PASTEE_UPLOAD", true);
     QUrl url("https://paste.ee/api");
     url.addEncodedQueryItem("key", QUrl::toPercentEncoding(PASTEEE_API_KEY));
     url.addEncodedQueryItem("format", QUrl::toPercentEncoding("simple")); //it isn't source code, so don't tell the server to format it like source code
@@ -27,6 +28,7 @@ void PasteClient::pasteReply()
     QNetworkReply* reply = qobject_cast<QNetworkReply*>(sender());
     QVariant url = reply->readAll();
     setUploadUrl(url.toString());
+    fa.endTimedEvent("PASTEE_UPLOAD");
     sender()->deleteLater();
 }
 

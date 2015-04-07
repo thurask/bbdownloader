@@ -2,6 +2,7 @@
 #define HASHGENERATOR_HPP_
 
 #include <QtCore>
+#include "FlurryAnalytics.hpp"
 
 /*!
  *  @class     HashGenerator
@@ -27,6 +28,8 @@ public:
     {
         TEXT = 0, FILE
     };
+
+    FlurryAnalytics fa;
 
     public Q_SLOTS:
 

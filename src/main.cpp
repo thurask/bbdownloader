@@ -9,10 +9,7 @@
 #include <bb/device/HardwareInfo>
 
 #include <Flurry.h>
-#include <FlurryApiKey.h> //#define API_KEY = "ASDADASDASDASDASDASDASD"
-
-#include <QtCore>
-#include <QtNetwork>
+#include <FlurryApiKey.h> //#define API_KEY = "ASDADASDASDASDASDASDASD"#include <QtCore>#include <QtNetwork>
 #include <QtXml>
 #include <Qt4/QtDeclarative/qdeclarativedebug.h>
 
@@ -27,6 +24,7 @@
 #include "Nomedia.hpp"
 #include "MetadataReader.hpp"
 #include "PasteClient.hpp"
+#include "FlurryAnalytics.hpp"
 
 using namespace bb::cascades;
 
@@ -42,13 +40,12 @@ Q_DECL_EXPORT int main(int argc, char **argv)
 {
     Settings settings;
 
-    qputenv("CASCADES_THEME", (settings.getValueFor("theme", "default") + "?primaryColor=" + settings.getValueFor("maincolor", "0x0092CC") + "&primaryBase=" + settings.getValueFor("basecolor", "0x087099")).toUtf8());
+    qputenv("CASCADES_THEME",
+            (settings.getValueFor("theme", "default") + "?primaryColor="
+                    + settings.getValueFor("maincolor", "0x0092CC") + "&primaryBase="
+                    + settings.getValueFor("basecolor", "0x087099")).toUtf8());
 
     Application app(argc, argv);
-
-    if (settings.getValueFor("UUID", "") == "") {
-        settings.saveValueFor("UUID", QUuid::createUuid().toString());
-    }
 
     settings.saveValueFor("appversion", bb::ApplicationInfo().version());
 
@@ -111,11 +108,15 @@ Q_DECL_EXPORT int main(int argc, char **argv)
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Paster", &paster);
 
     //Timer
-    qmlRegisterType<QTimer>("qt.timer", 1, 0, "QTimer");
+    qmlRegisterType < QTimer > ("qt.timer", 1, 0, "QTimer");
 
     //Flurry
-    Flurry::Analytics::StartSession(API_KEY);
-
+    FlurryAnalytics flurry;
+    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Flurry", &flurry);
+    Flurry::Analytics::SetSecureTransportEnabled(true); //use SSL
+    if (settings.getValueFor("enableFlurry", "true") == "true") {
+        Flurry::Analytics::StartSession(API_KEY);
+    }
     // Create the Application UI object, this is where the main.qml file
     // is loaded and the application scene is set.
     ApplicationUI appui;

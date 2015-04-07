@@ -70,6 +70,7 @@ void LinkGenerator::setExportUrls(const QString& swversion, const QString& hashe
     exporturls.append(radiolinks);
     exporturls.append("\n\n~~~~~~~~\nGenerated with BBDownloader " + appversion);
     exporturls.append("\nhttps://github.com/thurask/bbdownloader");
+    fa.logEvent("URLS_GENERATED", false);
 }
 
 void LinkGenerator::setOsLinks(const QString& hashedswversion, const QString& osversion)

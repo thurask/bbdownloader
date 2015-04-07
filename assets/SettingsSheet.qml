@@ -221,6 +221,34 @@ Sheet {
                         background: Color.create("#FF087099")
                     }
                 }
+                Container {
+                    Header {
+                        title: qsTr("Flurry Analytics") + Retranslate.onLanguageChanged
+                    }
+                    Container {
+                        topPadding: ui.du(0.5)
+                        horizontalAlignment: HorizontalAlignment.Center
+                        layout: StackLayout {
+                            orientation: LayoutOrientation.LeftToRight
+                        }
+                        Label {
+                            text: qsTr("Enable Flurry") + Retranslate.onLanguageChanged
+                            verticalAlignment: VerticalAlignment.Center
+                        }
+                        ToggleButton {
+                            checked: Settings.getValueFor("enableFlurry", "true")
+                            onCheckedChanged: {
+                                Settings.saveValueFor("enableFlurry", checked)
+                            }
+                        }
+                    }
+                    Label {
+                        horizontalAlignment: HorizontalAlignment.Center
+                        text: qsTr("This app uses Flurry Analytics.\nNo personal data is uploaded.") + Retranslate.onLanguageChanged
+                        multiline: true
+                        textStyle.textAlign: TextAlign.Center
+                    }
+                }
             }
         }
     }

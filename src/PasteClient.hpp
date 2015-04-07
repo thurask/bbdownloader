@@ -3,6 +3,7 @@
 
 #include <QtCore>
 #include <QtNetwork>
+#include "FlurryAnalytics.hpp"
 
 const QString PASTEEE_API_KEY("b7c91d3c4f31ab6b8241a03356cce646");
 
@@ -22,6 +23,8 @@ class PasteClient: public QObject
 public:
     PasteClient();
     virtual ~PasteClient();
+
+    FlurryAnalytics fa;
 
 public Q_SLOTS:
     Q_INVOKABLE

@@ -817,6 +817,20 @@
         <source>Black</source>
         <translation>Black</translation>
     </message>
+    <message>
+        <source>Flurry Analytics</source>
+        <translation>Flurry Analytics</translation>
+    </message>
+    <message>
+        <source>Enable Flurry</source>
+        <translation>Enable Flurry</translation>
+    </message>
+    <message>
+        <source>This app uses Flurry Analytics.
+No personal data is uploaded.</source>
+        <translation>This app uses Flurry Analytics.
+No personal data is uploaded.</translation>
+    </message>
 </context>
 <context>
     <name>SwLookup</name>

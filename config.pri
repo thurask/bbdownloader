@@ -296,6 +296,7 @@ config_pri_source_group1 {
     SOURCES += \
         $$quote($$BASEDIR/src/Clipboard.cpp) \
         $$quote($$BASEDIR/src/FileSystemManager.cpp) \
+        $$quote($$BASEDIR/src/FlurryAnalytics.cpp) \
         $$quote($$BASEDIR/src/HashGenerator.cpp) \
         $$quote($$BASEDIR/src/LinkGenerator.cpp) \
         $$quote($$BASEDIR/src/MetadataReader.cpp) \
@@ -311,6 +312,7 @@ config_pri_source_group1 {
     HEADERS += \
         $$quote($$BASEDIR/src/Clipboard.hpp) \
         $$quote($$BASEDIR/src/FileSystemManager.hpp) \
+        $$quote($$BASEDIR/src/FlurryAnalytics.hpp) \
         $$quote($$BASEDIR/src/HashGenerator.hpp) \
         $$quote($$BASEDIR/src/LinkGenerator.hpp) \
         $$quote($$BASEDIR/src/MetadataReader.hpp) \

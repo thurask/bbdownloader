@@ -41,8 +41,7 @@ QString HashGenerator::returnHash()
     return hash;
 }
 
-void HashGenerator::calculateEscreen(QString pin, QString version, QString uptime,
-        QString validity)
+void HashGenerator::calculateEscreen(QString pin, QString version, QString uptime, QString validity)
 {
     escreen = "";
     QByteArray key("Up the time stream without a TARDIS");
@@ -66,6 +65,7 @@ void HashGenerator::calculateEscreen(QString pin, QString version, QString uptim
     QByteArray hashed = QCryptographicHash::hash(total, QCryptographicHash::Sha1);
     escreen = QString(hashed.toHex());
     escreen = escreen.left(8).toUpper(); //first 8 characters, uppercase
+    fa.logEvent("ESCREENS_GENERATED", false);
 }
 
 QString HashGenerator::returnEscreen()

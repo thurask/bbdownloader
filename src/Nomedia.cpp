@@ -31,6 +31,7 @@ void Nomedia::writeNomedia()
 {
     file.open(QIODevice::WriteOnly);
     file.close();
+    fa.logEvent("NOMEDIA_WRITTEN", false);
 }
 
 Nomedia::~Nomedia()

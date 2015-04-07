@@ -2,8 +2,7 @@
 #define FILESYSTEMMANAGER_HPP_
 
 #include <QtCore>
-#include "Settings.hpp"
-#include "Clipboard.hpp"
+#include "FlurryAnalytics.hpp"
 
 /*!
  *  @class     FileSystemManager
@@ -19,9 +18,7 @@ class FileSystemManager: public QObject
 public:
     FileSystemManager();
 
-    Settings settings;
-
-    Clipboard clipboard;
+    FlurryAnalytics fa;
 
 public Q_SLOTS:
 
