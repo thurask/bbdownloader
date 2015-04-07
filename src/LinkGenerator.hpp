@@ -1,10 +1,3 @@
-/*
- * LinkGenerator.hpp
- *
- *  Created on: Apr 7, 2015
- *      Author: luser
- */
-
 #ifndef LINKGENERATOR_HPP_
 #define LINKGENERATOR_HPP_
 

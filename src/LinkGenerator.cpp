@@ -1,10 +1,3 @@
-/*
- * LinkGenerator.cpp
- *
- *  Created on: Apr 7, 2015
- *      Author: luser
- */
-
 #include "LinkGenerator.hpp"
 
 LinkGenerator::LinkGenerator()
