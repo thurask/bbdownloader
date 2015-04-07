@@ -4,9 +4,9 @@ BASEDIR = $$quote($$_PRO_FILE_PWD_)
 device {
     CONFIG(debug, debug|release) {
         profile {
-            INCLUDEPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
+            INCLUDEPATH += $$quote(${FLURRY_SDK_LOC}) \
+                $$quote(${QNX_TARGET}/usr/include/bb/device) \
                 $$quote(${QNX_TARGET}/usr/include/openssl) \
-                $$quote(X:/bbndk/workspace/FlurryBlackberrySDKv2.0) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
                 $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
@@ -15,9 +15,9 @@ device {
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
-            DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
+            DEPENDPATH += $$quote(${FLURRY_SDK_LOC}) \
+                $$quote(${QNX_TARGET}/usr/include/bb/device) \
                 $$quote(${QNX_TARGET}/usr/include/openssl) \
-                $$quote(X:/bbndk/workspace/FlurryBlackberrySDKv2.0) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
                 $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
@@ -42,17 +42,17 @@ device {
                 -lbbsystem \
                 -lQtNetwork
 
-            LIBS += $$quote(-LX:/bbndk/workspace/FlurryBlackberrySDKv2.0/Flurry/armle-v7)
+            LIBS += $$quote(-L${FLURRY_SDK_LOC}/Flurry/armle-v7)
 
-            PRE_TARGETDEPS += $$quote(X:/bbndk/workspace/FlurryBlackberrySDKv2.0/Flurry/armle-v7)
+            PRE_TARGETDEPS += $$quote(${FLURRY_SDK_LOC}/Flurry/armle-v7)
 
             CONFIG += \
                 config_pri_assets \
                 config_pri_source_group1
         } else {
-            INCLUDEPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
+            INCLUDEPATH += $$quote(${FLURRY_SDK_LOC}) \
+                $$quote(${QNX_TARGET}/usr/include/bb/device) \
                 $$quote(${QNX_TARGET}/usr/include/openssl) \
-                $$quote(X:/bbndk/workspace/FlurryBlackberrySDKv2.0) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
                 $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
@@ -61,9 +61,9 @@ device {
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
-            DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
+            DEPENDPATH += $$quote(${FLURRY_SDK_LOC}) \
+                $$quote(${QNX_TARGET}/usr/include/bb/device) \
                 $$quote(${QNX_TARGET}/usr/include/openssl) \
-                $$quote(X:/bbndk/workspace/FlurryBlackberrySDKv2.0) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
                 $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
@@ -88,9 +88,9 @@ device {
                 -lbbsystem \
                 -lQtNetwork
 
-            LIBS += $$quote(-LX:/bbndk/workspace/FlurryBlackberrySDKv2.0/Flurry/armle-v7)
+            LIBS += $$quote(-L${FLURRY_SDK_LOC}/Flurry/armle-v7)
 
-            PRE_TARGETDEPS += $$quote(X:/bbndk/workspace/FlurryBlackberrySDKv2.0/Flurry/armle-v7)
+            PRE_TARGETDEPS += $$quote(${FLURRY_SDK_LOC}/Flurry/armle-v7)
 
             CONFIG += \
                 config_pri_assets \
@@ -101,9 +101,9 @@ device {
 
     CONFIG(release, debug|release) {
         !profile {
-            INCLUDEPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
+            INCLUDEPATH += $$quote(${FLURRY_SDK_LOC}) \
+                $$quote(${QNX_TARGET}/usr/include/bb/device) \
                 $$quote(${QNX_TARGET}/usr/include/openssl) \
-                $$quote(X:/bbndk/workspace/FlurryBlackberrySDKv2.0) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
                 $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
@@ -112,9 +112,9 @@ device {
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
-            DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
+            DEPENDPATH += $$quote(${FLURRY_SDK_LOC}) \
+                $$quote(${QNX_TARGET}/usr/include/bb/device) \
                 $$quote(${QNX_TARGET}/usr/include/openssl) \
-                $$quote(X:/bbndk/workspace/FlurryBlackberrySDKv2.0) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
                 $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
@@ -139,9 +139,9 @@ device {
                 -lbbsystem \
                 -lQtNetwork
 
-            LIBS += $$quote(-LX:/bbndk/workspace/FlurryBlackberrySDKv2.0/Flurry/armle-v7)
+            LIBS += $$quote(-L${FLURRY_SDK_LOC}/Flurry/armle-v7)
 
-            PRE_TARGETDEPS += $$quote(X:/bbndk/workspace/FlurryBlackberrySDKv2.0/Flurry/armle-v7)
+            PRE_TARGETDEPS += $$quote(${FLURRY_SDK_LOC}/Flurry/armle-v7)
 
             CONFIG += \
                 config_pri_assets \
@@ -153,9 +153,9 @@ device {
 simulator {
     CONFIG(debug, debug|release) {
         !profile {
-            INCLUDEPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
+            INCLUDEPATH += $$quote(${FLURRY_SDK_LOC}) \
+                $$quote(${QNX_TARGET}/usr/include/bb/device) \
                 $$quote(${QNX_TARGET}/usr/include/openssl) \
-                $$quote(X:/bbndk/workspace/FlurryBlackberrySDKv2.0) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
                 $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
@@ -164,9 +164,9 @@ simulator {
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtCore) \
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
-            DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
+            DEPENDPATH += $$quote(${FLURRY_SDK_LOC}) \
+                $$quote(${QNX_TARGET}/usr/include/bb/device) \
                 $$quote(${QNX_TARGET}/usr/include/openssl) \
-                $$quote(X:/bbndk/workspace/FlurryBlackberrySDKv2.0) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
                 $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
@@ -191,9 +191,9 @@ simulator {
                 -lbbsystem \
                 -lQtNetwork
 
-            LIBS += $$quote(-LX:/bbndk/workspace/FlurryBlackberrySDKv2.0/Flurry/x86)
+            LIBS += $$quote(-L${FLURRY_SDK_LOC}/Flurry/x86)
 
-            PRE_TARGETDEPS += $$quote(X:/bbndk/workspace/FlurryBlackberrySDKv2.0/Flurry/x86)
+            PRE_TARGETDEPS += $$quote(${FLURRY_SDK_LOC}/Flurry/x86)
 
             CONFIG += \
                 config_pri_assets \

@@ -47,4 +47,10 @@
 		<nature>org.eclipse.cdt.qt.core.qtNature</nature>
 		<nature>com.rim.tad.tools.qml.core.qmlNature</nature>
 	</natures>
+	<variableList>
+		<variable>
+			<name>FLURRY_SDK_LOC</name>
+			<value>file:/X:/bbndk/workspace/FlurryBlackberrySDKv2.0</value>
+		</variable>
+	</variableList>
 </projectDescription>
