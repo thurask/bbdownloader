@@ -23,6 +23,9 @@ An OS/radio link generator, automatic lookup tool, certification/metadata browse
  3. Import into Momentics
  4. Build project
 
+As of 5.8.3, this project requires the Flurry SDK for BlackBerry 10 in order to perfectly recreate upstream.
+If you want to use Flurry, make sure your Flurry SDK location (without spaces) is the FLURRY_SDK_LOC linked resource (Project > Properties > Resource > Linked Resources).
+
 ## How to Contribute
 Have artwork/bugfixes/features/translations/whatnot that can be useful? Send it upstream via pull request.
 For feature requests and bug reports, use the Github issues system.
