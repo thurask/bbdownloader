@@ -5,6 +5,8 @@ device {
     CONFIG(debug, debug|release) {
         profile {
             INCLUDEPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
+                $$quote(${QNX_TARGET}/usr/include/openssl) \
+                $$quote(X:/bbndk/workspace/FlurryBlackberrySDKv2.0) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
                 $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
@@ -14,6 +16,8 @@ device {
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
+                $$quote(${QNX_TARGET}/usr/include/openssl) \
+                $$quote(X:/bbndk/workspace/FlurryBlackberrySDKv2.0) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
                 $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
@@ -23,21 +27,32 @@ device {
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             LIBS += -lbbcascades \
+                -lscreen \
+                -lpackageinfo \
                 -lbbdevice \
                 -lQtCore \
                 -lQtXml \
+                -lcurl \
+                -lFlurry \
                 -lbbcascadespickers \
+                -lssl \
                 -lbb \
                 -lclipboard \
                 -lbbdata \
                 -lbbsystem \
                 -lQtNetwork
+
+            LIBS += $$quote(-LX:/bbndk/workspace/FlurryBlackberrySDKv2.0/Flurry/armle-v7)
+
+            PRE_TARGETDEPS += $$quote(X:/bbndk/workspace/FlurryBlackberrySDKv2.0/Flurry/armle-v7)
 
             CONFIG += \
                 config_pri_assets \
                 config_pri_source_group1
         } else {
             INCLUDEPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
+                $$quote(${QNX_TARGET}/usr/include/openssl) \
+                $$quote(X:/bbndk/workspace/FlurryBlackberrySDKv2.0) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
                 $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
@@ -47,6 +62,8 @@ device {
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
+                $$quote(${QNX_TARGET}/usr/include/openssl) \
+                $$quote(X:/bbndk/workspace/FlurryBlackberrySDKv2.0) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
                 $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
@@ -56,15 +73,24 @@ device {
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             LIBS += -lbbcascades \
+                -lscreen \
+                -lpackageinfo \
                 -lbbdevice \
                 -lQtCore \
                 -lQtXml \
+                -lcurl \
+                -lFlurry \
                 -lbbcascadespickers \
+                -lssl \
                 -lbb \
                 -lclipboard \
                 -lbbdata \
                 -lbbsystem \
                 -lQtNetwork
+
+            LIBS += $$quote(-LX:/bbndk/workspace/FlurryBlackberrySDKv2.0/Flurry/armle-v7)
+
+            PRE_TARGETDEPS += $$quote(X:/bbndk/workspace/FlurryBlackberrySDKv2.0/Flurry/armle-v7)
 
             CONFIG += \
                 config_pri_assets \
@@ -76,6 +102,8 @@ device {
     CONFIG(release, debug|release) {
         !profile {
             INCLUDEPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
+                $$quote(${QNX_TARGET}/usr/include/openssl) \
+                $$quote(X:/bbndk/workspace/FlurryBlackberrySDKv2.0) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
                 $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
@@ -85,6 +113,8 @@ device {
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
+                $$quote(${QNX_TARGET}/usr/include/openssl) \
+                $$quote(X:/bbndk/workspace/FlurryBlackberrySDKv2.0) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
                 $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
@@ -94,15 +124,24 @@ device {
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             LIBS += -lbbcascades \
+                -lscreen \
+                -lpackageinfo \
                 -lbbdevice \
                 -lQtCore \
                 -lQtXml \
+                -lcurl \
+                -lFlurry \
                 -lbbcascadespickers \
+                -lssl \
                 -lbb \
                 -lclipboard \
                 -lbbdata \
                 -lbbsystem \
                 -lQtNetwork
+
+            LIBS += $$quote(-LX:/bbndk/workspace/FlurryBlackberrySDKv2.0/Flurry/armle-v7)
+
+            PRE_TARGETDEPS += $$quote(X:/bbndk/workspace/FlurryBlackberrySDKv2.0/Flurry/armle-v7)
 
             CONFIG += \
                 config_pri_assets \
@@ -115,6 +154,8 @@ simulator {
     CONFIG(debug, debug|release) {
         !profile {
             INCLUDEPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
+                $$quote(${QNX_TARGET}/usr/include/openssl) \
+                $$quote(X:/bbndk/workspace/FlurryBlackberrySDKv2.0) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
                 $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
@@ -124,6 +165,8 @@ simulator {
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             DEPENDPATH += $$quote(${QNX_TARGET}/usr/include/bb/device) \
+                $$quote(${QNX_TARGET}/usr/include/openssl) \
+                $$quote(X:/bbndk/workspace/FlurryBlackberrySDKv2.0) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtNetwork) \
                 $$quote(${QNX_TARGET}/usr/include/bb/data) \
                 $$quote(${QNX_TARGET}/usr/include/qt4/QtXml) \
@@ -133,15 +176,24 @@ simulator {
                 $$quote(${QNX_TARGET}/usr/include/bb/system)
 
             LIBS += -lbbcascades \
+                -lscreen \
+                -lpackageinfo \
                 -lbbdevice \
                 -lQtCore \
                 -lQtXml \
+                -lcurl \
+                -lFlurry \
                 -lbbcascadespickers \
+                -lssl \
                 -lbb \
                 -lclipboard \
                 -lbbdata \
                 -lbbsystem \
                 -lQtNetwork
+
+            LIBS += $$quote(-LX:/bbndk/workspace/FlurryBlackberrySDKv2.0/Flurry/x86)
+
+            PRE_TARGETDEPS += $$quote(X:/bbndk/workspace/FlurryBlackberrySDKv2.0/Flurry/x86)
 
             CONFIG += \
                 config_pri_assets \
@@ -231,7 +283,6 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/images/splash/nseries.png) \
         $$quote($$BASEDIR/assets/images/splash/wseries.png) \
         $$quote($$BASEDIR/assets/js/SysInfo.js) \
-        $$quote($$BASEDIR/assets/js/escreens.js) \
         $$quote($$BASEDIR/assets/main.qml) \
         $$quote($$BASEDIR/assets/xml/dtd/hwid.dtd) \
         $$quote($$BASEDIR/assets/xml/dtd/ptcrb.dtd) \
@@ -244,8 +295,9 @@ config_pri_assets {
 config_pri_source_group1 {
     SOURCES += \
         $$quote($$BASEDIR/src/Clipboard.cpp) \
-        $$quote($$BASEDIR/src/DownloadManager.cpp) \
+        $$quote($$BASEDIR/src/FileSystemManager.cpp) \
         $$quote($$BASEDIR/src/HashGenerator.cpp) \
+        $$quote($$BASEDIR/src/LinkGenerator.cpp) \
         $$quote($$BASEDIR/src/MetadataReader.cpp) \
         $$quote($$BASEDIR/src/Nomedia.cpp) \
         $$quote($$BASEDIR/src/PasteClient.cpp) \
@@ -258,8 +310,9 @@ config_pri_source_group1 {
 
     HEADERS += \
         $$quote($$BASEDIR/src/Clipboard.hpp) \
-        $$quote($$BASEDIR/src/DownloadManager.hpp) \
+        $$quote($$BASEDIR/src/FileSystemManager.hpp) \
         $$quote($$BASEDIR/src/HashGenerator.hpp) \
+        $$quote($$BASEDIR/src/LinkGenerator.hpp) \
         $$quote($$BASEDIR/src/MetadataReader.hpp) \
         $$quote($$BASEDIR/src/Nomedia.hpp) \
         $$quote($$BASEDIR/src/PasteClient.hpp) \

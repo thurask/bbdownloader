@@ -19,7 +19,7 @@ public:
     Clipboard();
 
     Q_INVOKABLE
-    void copyToClipboard(const QByteArray copyText);
+    void copyToClipboard(const QByteArray& copyText);
 };
 
 #endif /* CLIPBOARD_HPP_ */

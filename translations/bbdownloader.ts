@@ -157,11 +157,35 @@
 <context>
     <name>EScreens</name>
     <message>
+        <source>Get Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Load Values</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>EScreens</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PIN</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>App Version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Uptime</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Load Uptime</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -189,27 +213,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Get Key</source>
+        <source>Copy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Your Key</source>
+        <source>Key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>PIN</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Load Uptime</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Load Values</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>EScreens</source>
+        <source>Copied</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -483,14 +495,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Copy Variant Links</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Variant URLs copied</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Copy Autoloader Links</source>
         <translation type="unfinished"></translation>
     </message>
@@ -524,10 +528,6 @@
     </message>
     <message>
         <source>Upload OS Links</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Upload Variant Links</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

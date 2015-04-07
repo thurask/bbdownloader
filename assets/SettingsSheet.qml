@@ -199,7 +199,7 @@ Sheet {
                         horizontalAlignment: HorizontalAlignment.Center
                         onClicked: {
                             Settings.saveValueFor("defaultdir", "shared/downloads/bbdownloader/");
-                            _manager.setDefaultDir("shared/downloads/bbdownloader/");
+                            _fsmanager.setDefaultDir("shared/downloads/bbdownloader/");
                             defaultlabel.setText(qsTr("Current Directory:\n%1").arg(Settings.getValueFor("defaultdir", "shared/downloads/bbdownloader/")) + Retranslate.onLanguageChanged)
                         }
                     }
@@ -247,7 +247,7 @@ Sheet {
             sortOrder: FilePickerSortOrder.Default
             onFileSelected: {
                 Settings.saveValueFor("defaultdir", (selectedFiles[0] + "/"))
-                _manager.setDefaultDir(selectedFiles[0] + "/")
+                _fsmanager.setDefaultDir(selectedFiles[0] + "/")
                 defaultlabel.setText(qsTr("Current Directory:\n%1").arg(Settings.getValueFor("defaultdir", "shared/downloads/bbdownloader/")) + Retranslate.onLanguageChanged)
             }
         },

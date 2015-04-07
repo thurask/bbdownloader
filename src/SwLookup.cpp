@@ -63,7 +63,7 @@ void SwLookup::onGetReply()
     sender()->deleteLater();
 }
 
-void SwLookup::checkAvailability(QString swrelease)
+void SwLookup::checkAvailability(const QString& swrelease)
 {
     QString av_url = "http://cdn.fs.sl.blackberry.com/fs/qnx/production/" + swrelease;
     QNetworkRequest qnr;
@@ -88,7 +88,7 @@ void SwLookup::availabilityReply()
     av_reply->deleteLater();
 }
 
-void SwLookup::setSoftwareRelease(QString sw)
+void SwLookup::setSoftwareRelease(const QString& sw)
 {
     m_softwareRelease = sw.toUtf8().simplified();
     emit softwareReleaseChanged();
@@ -104,7 +104,7 @@ QString SwLookup::getServer()
     return m_server;
 }
 
-void SwLookup::setServer(QString server)
+void SwLookup::setServer(const QString& server)
 {
     m_server = server;
 }
@@ -119,7 +119,7 @@ void SwLookup::setAvailability(QString availability)
     m_availability = availability;
 }
 
-QString SwLookup::lookupIncrement(QString os, int inc)
+QString SwLookup::lookupIncrement(QString os, const int inc)
 {
     QRegExp rx("(\\d{1,4}\\.)(\\d{1,4}\\.)(\\d{1,4}\\.)(\\d{1,4})");
     if (os.contains(rx) == true) {

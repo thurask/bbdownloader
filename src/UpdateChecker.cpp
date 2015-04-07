@@ -24,7 +24,7 @@ void UpdateChecker::writeUpdateFile()
     sender()->deleteLater();
 }
 
-QString UpdateChecker::getUpdateVersion()
+const QString UpdateChecker::getUpdateVersion()
 {
     emit updateVersionChanged();
     return updateVersion;
@@ -35,7 +35,7 @@ void UpdateChecker::setUpdateVersion(QString text)
     updateVersion = text.simplified().toUtf8();
 }
 
-QString UpdateChecker::getLocalVersion()
+const QString UpdateChecker::getLocalVersion()
 {
     emit localVersionChanged();
     return localVersion;

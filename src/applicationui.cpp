@@ -1,4 +1,5 @@
 #include "applicationui.hpp"
+#include "Settings.hpp"
 #include "UpdateChecker.hpp"
 
 #include <bb/cascades/AbstractCover>
@@ -7,7 +8,6 @@
 #include <bb/cascades/AbstractPane>
 #include <bb/cascades/LocaleHandler>
 #include <bb/Application>
-#include <bb/device/HardwareInfo>
 
 using namespace bb::cascades;
 
@@ -37,9 +37,9 @@ ApplicationUI::ApplicationUI() :
     AbstractPane *root = qml->createRootObject<AbstractPane>();
 
     // But first, do some magic
-    bb::device::HardwareInfo hwinfo;
+    Settings settings;
     QCryptographicHash qch(QCryptographicHash::Sha1);
-    qch.addData(hwinfo.pin().toUtf8());
+    qch.addData((settings.getValueFor("uuid", "MAGIC")).toUtf8());
     QString magic = QString((qch.result()).toHex());
     // Set created root object as the application scene
 

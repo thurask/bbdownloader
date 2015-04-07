@@ -4,6 +4,8 @@
 #include <QtCore>
 #include <QtNetwork>
 
+const QString PASTEEE_API_KEY("b7c91d3c4f31ab6b8241a03356cce646");
+
 /*!
  *  @class     PasteClient
  *  @brief     PasteClient class
@@ -17,8 +19,6 @@ class PasteClient: public QObject
 
     Q_PROPERTY(QString uploadUrl WRITE setUploadUrl READ getUploadUrl NOTIFY uploadUrlChanged)
 
-    Q_PROPERTY(QString apikey WRITE setApiKey READ getApiKey NOTIFY apiKeyChanged)
-
 public:
     PasteClient();
     virtual ~PasteClient();
@@ -27,24 +27,18 @@ public Q_SLOTS:
     Q_INVOKABLE
     void uploadPaste(QString payload);
 
-    void setUploadUrl(QString paste);
+    void setUploadUrl(const QString& paste);
 
     Q_INVOKABLE
     QString getUploadUrl();
 
-    void setApiKey(QString key);
-
-    QString getApiKey();
-
     Q_SIGNALS:
     void uploadUrlChanged();
-    void apiKeyChanged();
 
 private Q_SLOTS:
     void pasteReply();
 
 private:
-    QString apikey;
     QString uploadUrl;
 };
 

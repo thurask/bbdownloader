@@ -24,6 +24,8 @@
 							<tool id="com.qnx.qcc.tool.compiler.813714651" name="QCC Compiler" superClass="com.qnx.qcc.tool.compiler">
 								<option id="com.qnx.qcc.option.compiler.optlevel.1470645359" name="Optimization Level" superClass="com.qnx.qcc.option.compiler.optlevel" value="com.qnx.qcc.option.compiler.optlevel.0" valueType="enumerated"/>
 								<option id="com.qnx.qcc.option.compiler.includePath.1035228657" name="Include Directories (-I)" superClass="com.qnx.qcc.option.compiler.includePath" valueType="includePath">
+									<listOptionValue builtIn="false" value="X:/bbndk/workspace/FlurryBlackberrySDKv2.0"/>
+									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/openssl"/>
 									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/qt4/QtCore"/>
 									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/bb"/>
 									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/bb/device"/>
@@ -50,6 +52,14 @@
 									<listOptionValue builtIn="false" value="bbdevice"/>
 									<listOptionValue builtIn="false" value="clipboard"/>
 									<listOptionValue builtIn="false" value="bb"/>
+									<listOptionValue builtIn="false" value="Flurry"/>
+									<listOptionValue builtIn="false" value="curl"/>
+									<listOptionValue builtIn="false" value="packageinfo"/>
+									<listOptionValue builtIn="false" value="screen"/>
+									<listOptionValue builtIn="false" value="ssl"/>
+								</option>
+								<option id="com.qnx.qcc.option.linker.libraryPaths.1913252605" name="Library Paths (-L)" superClass="com.qnx.qcc.option.linker.libraryPaths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="X:/bbndk/workspace/FlurryBlackberrySDKv2.0/Flurry/armle-v7"/>
 								</option>
 							</tool>
 							<tool id="com.qnx.qcc.tool.archiver.2062759920" name="QCC Archiver" superClass="com.qnx.qcc.tool.archiver"/>
@@ -87,6 +97,8 @@
 							<tool errorParsers="org.eclipse.cdt.core.GCCErrorParser" id="com.qnx.qcc.tool.compiler.192308013" name="QCC Compiler" superClass="com.qnx.qcc.tool.compiler">
 								<option id="com.qnx.qcc.option.compiler.optlevel.444036344" name="Optimization Level" superClass="com.qnx.qcc.option.compiler.optlevel" value="com.qnx.qcc.option.compiler.optlevel.0" valueType="enumerated"/>
 								<option id="com.qnx.qcc.option.compiler.includePath.2056363022" name="Include Directories (-I)" superClass="com.qnx.qcc.option.compiler.includePath" valueType="includePath">
+									<listOptionValue builtIn="false" value="X:/bbndk/workspace/FlurryBlackberrySDKv2.0"/>
+									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/openssl"/>
 									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/qt4/QtCore"/>
 									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/bb"/>
 									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/bb/device"/>
@@ -113,6 +125,14 @@
 									<listOptionValue builtIn="false" value="bbdevice"/>
 									<listOptionValue builtIn="false" value="clipboard"/>
 									<listOptionValue builtIn="false" value="bb"/>
+									<listOptionValue builtIn="false" value="Flurry"/>
+									<listOptionValue builtIn="false" value="curl"/>
+									<listOptionValue builtIn="false" value="packageinfo"/>
+									<listOptionValue builtIn="false" value="screen"/>
+									<listOptionValue builtIn="false" value="ssl"/>
+								</option>
+								<option id="com.qnx.qcc.option.linker.libraryPaths.1722636756" name="Library Paths (-L)" superClass="com.qnx.qcc.option.linker.libraryPaths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="X:/bbndk/workspace/FlurryBlackberrySDKv2.0/Flurry/armle-v7"/>
 								</option>
 							</tool>
 							<tool id="com.qnx.qcc.tool.archiver.1814317071" name="QCC Archiver" superClass="com.qnx.qcc.tool.archiver"/>
@@ -148,6 +168,8 @@
 							<tool id="com.qnx.qcc.tool.compiler.2012932230" name="QCC Compiler" superClass="com.qnx.qcc.tool.compiler">
 								<option id="com.qnx.qcc.option.compiler.optlevel.810657905" name="Optimization Level" superClass="com.qnx.qcc.option.compiler.optlevel" value="com.qnx.qcc.option.compiler.optlevel.0" valueType="enumerated"/>
 								<option id="com.qnx.qcc.option.compiler.includePath.1428553601" name="Include Directories (-I)" superClass="com.qnx.qcc.option.compiler.includePath" valueType="includePath">
+									<listOptionValue builtIn="false" value="X:/bbndk/workspace/FlurryBlackberrySDKv2.0"/>
+									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/openssl"/>
 									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/qt4/QtCore"/>
 									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/bb"/>
 									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/bb/device"/>
@@ -174,6 +196,14 @@
 									<listOptionValue builtIn="false" value="bbdevice"/>
 									<listOptionValue builtIn="false" value="clipboard"/>
 									<listOptionValue builtIn="false" value="bb"/>
+									<listOptionValue builtIn="false" value="Flurry"/>
+									<listOptionValue builtIn="false" value="curl"/>
+									<listOptionValue builtIn="false" value="packageinfo"/>
+									<listOptionValue builtIn="false" value="screen"/>
+									<listOptionValue builtIn="false" value="ssl"/>
+								</option>
+								<option id="com.qnx.qcc.option.linker.libraryPaths.728183269" name="Library Paths (-L)" superClass="com.qnx.qcc.option.linker.libraryPaths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="X:/bbndk/workspace/FlurryBlackberrySDKv2.0/Flurry/armle-v7"/>
 								</option>
 							</tool>
 							<tool id="com.qnx.qcc.tool.archiver.1872179984" name="QCC Archiver" superClass="com.qnx.qcc.tool.archiver"/>
@@ -209,6 +239,8 @@
 							<tool id="com.qnx.qcc.tool.compiler.740589626" name="QCC Compiler" superClass="com.qnx.qcc.tool.compiler">
 								<option id="com.qnx.qcc.option.compiler.optlevel.2123273936" name="Optimization Level" superClass="com.qnx.qcc.option.compiler.optlevel" value="com.qnx.qcc.option.compiler.optlevel.0" valueType="enumerated"/>
 								<option id="com.qnx.qcc.option.compiler.includePath.1785513154" name="Include Directories (-I)" superClass="com.qnx.qcc.option.compiler.includePath" valueType="includePath">
+									<listOptionValue builtIn="false" value="X:/bbndk/workspace/FlurryBlackberrySDKv2.0"/>
+									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/openssl"/>
 									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/qt4/QtCore"/>
 									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/bb"/>
 									<listOptionValue builtIn="false" value="${QNX_TARGET}/usr/include/bb/device"/>
@@ -235,6 +267,14 @@
 									<listOptionValue builtIn="false" value="bbdevice"/>
 									<listOptionValue builtIn="false" value="clipboard"/>
 									<listOptionValue builtIn="false" value="bb"/>
+									<listOptionValue builtIn="false" value="Flurry"/>
+									<listOptionValue builtIn="false" value="curl"/>
+									<listOptionValue builtIn="false" value="packageinfo"/>
+									<listOptionValue builtIn="false" value="screen"/>
+									<listOptionValue builtIn="false" value="ssl"/>
+								</option>
+								<option id="com.qnx.qcc.option.linker.libraryPaths.1117204335" name="Library Paths (-L)" superClass="com.qnx.qcc.option.linker.libraryPaths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="X:/bbndk/workspace/FlurryBlackberrySDKv2.0/Flurry/x86"/>
 								</option>
 							</tool>
 							<tool id="com.qnx.qcc.tool.archiver.1518130406" name="QCC Archiver" superClass="com.qnx.qcc.tool.archiver"/>

@@ -278,7 +278,7 @@ TabbedPane {
     onCreationCompleted: {
         _metadata.getMetadata()
         var defaultdir = Settings.getValueFor("defaultdir", "shared/downloads/bbdownloader/");
-        _manager.setDefaultDir(defaultdir);
+        _fsmanager.setDefaultDir(defaultdir);
         Checker.checkForUpdates();
         timer.start();
         Application.setCover(multi);

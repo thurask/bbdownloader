@@ -6,6 +6,10 @@
 #include <bb/cascades/Window>
 #include <bb/cascades/DevelopmentSupport>
 #include <bb/ApplicationInfo>
+#include <bb/device/HardwareInfo>
+
+#include <Flurry.h>
+#include <FlurryApiKey.h> //#define API_KEY = "ASDADASDASDASDASDASDASD"
 
 #include <QtCore>
 #include <QtNetwork>
@@ -13,7 +17,8 @@
 #include <Qt4/QtDeclarative/qdeclarativedebug.h>
 
 #include "HashGenerator.hpp"
-#include "DownloadManager.hpp"
+#include "FileSystemManager.hpp"
+#include "LinkGenerator.hpp"
 #include "SwLookup.hpp"
 #include "Clipboard.hpp"
 #include "timer.hpp"
@@ -25,12 +30,6 @@
 
 using namespace bb::cascades;
 
-QString getValue()
-{
-    Settings settings;
-    return settings.getValueFor("theme", "default") + "?primaryColor=" + settings.getValueFor("maincolor", "0x0092CC") + "&primaryBase=" + settings.getValueFor("basecolor", "0x087099");
-}
-
 void myMessageOutput(QtMsgType type, const char* msg)
 {
     Q_UNUSED(type);
@@ -41,9 +40,20 @@ void myMessageOutput(QtMsgType type, const char* msg)
 Q_DECL_EXPORT int main(int argc, char **argv)
 
 {
-    qputenv("CASCADES_THEME", getValue().toUtf8());
+    Settings settings;
+
+    qputenv("CASCADES_THEME", (settings.getValueFor("theme", "default") + "?primaryColor=" + settings.getValueFor("maincolor", "0x0092CC") + "&primaryBase=" + settings.getValueFor("basecolor", "0x087099")).toUtf8());
 
     Application app(argc, argv);
+
+    if (settings.getValueFor("UUID", "") == "") {
+        settings.saveValueFor("UUID", QUuid::createUuid().toString());
+    }
+
+    settings.saveValueFor("appversion", bb::ApplicationInfo().version());
+
+    bb::device::HardwareInfo hwinfo;
+    settings.saveValueFor("uuid", hwinfo.pin());
 
 #ifndef QT_NO_DEBUG
     qInstallMsgHandler(myMessageOutput);
@@ -57,10 +67,15 @@ Q_DECL_EXPORT int main(int argc, char **argv)
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("_hashgen",
             &hashgenerator);
 
-    //File downloader
-    DownloadManager manager;
-    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("_manager",
+    //Text file in/out
+    FileSystemManager manager;
+    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("_fsmanager",
             &manager);
+
+    //Link generation
+    LinkGenerator linkgen;
+    QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("_linkgen",
+            &linkgen);
 
     //Clipboard
     Clipboard clipboard;
@@ -73,7 +88,7 @@ Q_DECL_EXPORT int main(int argc, char **argv)
             &swlookup);
 
     //QSettings
-    Settings settings;
+    //Declared already
     QmlDocument::defaultDeclarativeEngine()->rootContext()->setContextProperty("Settings",
             &settings);
 
@@ -97,6 +112,9 @@ Q_DECL_EXPORT int main(int argc, char **argv)
 
     //Timer
     qmlRegisterType<QTimer>("qt.timer", 1, 0, "QTimer");
+
+    //Flurry
+    Flurry::Analytics::StartSession(API_KEY);
 
     // Create the Application UI object, this is where the main.qml file
     // is loaded and the application scene is set.

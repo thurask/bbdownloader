@@ -1,5 +1,5 @@
 1
-87
+86
 10ppd/images/blank/blank.png
 10ppd/images/covers/cover.png
 12ppd/images/blank/blank.png
@@ -71,7 +71,6 @@ images/splash/lseries_landscape.png
 images/splash/lseries_portrait.png
 images/splash/nseries.png
 images/splash/wseries.png
-js/escreens.js
 js/SysInfo.js
 main.qml
 MetadataSheet.qml

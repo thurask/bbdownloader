@@ -157,12 +157,36 @@
 <context>
     <name>EScreens</name>
     <message>
+        <source>Get Key</source>
+        <translation>Get Key</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Error</translation>
+    </message>
+    <message>
+        <source>Load Values</source>
+        <translation>Load Values</translation>
+    </message>
+    <message>
+        <source>EScreens</source>
+        <translation>EScreens</translation>
+    </message>
+    <message>
+        <source>PIN</source>
+        <translation>PIN</translation>
+    </message>
+    <message>
         <source>App Version</source>
         <translation>App Version</translation>
     </message>
     <message>
         <source>Uptime</source>
         <translation>Uptime</translation>
+    </message>
+    <message>
+        <source>Load Uptime</source>
+        <translation>Load Uptime</translation>
     </message>
     <message>
         <source>Validity</source>
@@ -189,28 +213,16 @@
         <translation>30 days</translation>
     </message>
     <message>
-        <source>Get Key</source>
-        <translation>Get Key</translation>
+        <source>Copy</source>
+        <translation>Copy</translation>
     </message>
     <message>
-        <source>Your Key</source>
-        <translation>Your Key</translation>
+        <source>Key</source>
+        <translation>Key</translation>
     </message>
     <message>
-        <source>PIN</source>
-        <translation>PIN</translation>
-    </message>
-    <message>
-        <source>Load Uptime</source>
-        <translation>Load Uptime</translation>
-    </message>
-    <message>
-        <source>Load Values</source>
-        <translation>Load Values</translation>
-    </message>
-    <message>
-        <source>EScreens</source>
-        <translation>EScreens</translation>
+        <source>Copied</source>
+        <translation>Copied</translation>
     </message>
 </context>
 <context>
@@ -483,14 +495,6 @@
         <translation>Radio URLs copied</translation>
     </message>
     <message>
-        <source>Copy Variant Links</source>
-        <translation>Copy Variant Links</translation>
-    </message>
-    <message>
-        <source>Variant URLs copied</source>
-        <translation>Variant URLs copied</translation>
-    </message>
-    <message>
         <source>Copy Autoloader Links</source>
         <translation>Copy Autoloader Links</translation>
     </message>
@@ -525,10 +529,6 @@
     <message>
         <source>Upload OS Links</source>
         <translation>Upload OS Links</translation>
-    </message>
-    <message>
-        <source>Upload Variant Links</source>
-        <translation>Upload Variant Links</translation>
     </message>
     <message>
         <source>Upload Radio Links</source>

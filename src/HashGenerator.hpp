@@ -28,7 +28,7 @@ public:
         TEXT = 0, FILE
     };
 
-public Q_SLOTS:
+    public Q_SLOTS:
 
     Q_INVOKABLE
     void calculateHash(QString input, Hashmode hashmode, Filemode filemode);
@@ -36,9 +36,18 @@ public Q_SLOTS:
     Q_INVOKABLE
     QString returnHash();
 
-private:
+    Q_INVOKABLE
+    void calculateEscreen(QString pin, QString version, QString uptime, QString validity);
 
+    Q_INVOKABLE
+    QString returnEscreen();
+
+    private Q_SLOTS:
+    void filemodeSwitcher(QString input, Filemode filemode, QCryptographicHash& qch);
+
+    private:
     QString hash;
+    QString escreen;
 };
 
 #endif /* HASHGENERATOR_HPP_ */

@@ -171,11 +171,11 @@ Page {
                 }
             }
             Container {
+                topPadding: ui.du(1.5)
                 layout: StackLayout {
                     orientation: LayoutOrientation.TopToBottom
                 }
                 Label {
-                    topPadding: ui.du(1.0)
                     id: hashoutput_label
                     text: qsTr("Hashed output:") + Retranslate.onLanguageChanged
                 }
@@ -196,11 +196,11 @@ Page {
                             hashToast.show();
                             if (togglebutton.checked == false) {
                                 var exporthash = (hashinput.text + " -- " + hashoutput.text);
-                                _manager.saveTextFile(exporthash, hashmode);
+                                _fsmanager.saveTextFile(exporthash, hashmode);
                             }
                             if (togglebutton.checked == true) {
                                 var exporthash_file = (picker.selectedFile + " -- " + hashoutput.text);
-                                _manager.saveTextFile(exporthash_file, hashmode);
+                                _fsmanager.saveTextFile(exporthash_file, hashmode);
                             }
                         }
                     }

@@ -16,12 +16,17 @@ Page {
         ActionItem {
             title: qsTr("Generate") + Retranslate.onLanguageChanged
             onTriggered: {
-                _manager.setExportUrls(swrelease, hashedswversion, osversion, radioversion);
-                ostext.text = _manager.returnOsLinks();
-                coretext.text = _manager.returnCoreLinks();
-                radiotext.text = _manager.returnRadioLinks();
+                _linkgen.setExportUrls(swrelease, hashedswversion, osversion, radioversion);
+                ostext.text = _linkgen.returnOsLinks();
+                coretext.text = _linkgen.returnCoreLinks();
+                radiotext.text = _linkgen.returnRadioLinks();
                 ostext.visible = true;
-                coretext.visible = true;
+                if (swrelease == "N/A") {
+                    coretext.visible = false
+                }
+                else {
+                    coretext.visible = true
+                }
                 radiotext.visible = true;
                 allclipboard.enabled = true;
                 osclipboard.enabled = true;
@@ -62,7 +67,7 @@ Page {
             enabled: false
             title: qsTr("Copy Links") + Retranslate.onLanguageChanged
             onTriggered: {
-                _manager.copyLinks()
+                Clipboard.copyToClipboard(_linkgen.returnLinks())
                 copytoast.body = qsTr("All URLs copied") + Retranslate.onLanguageChanged;
                 copytoast.show();
             }
@@ -72,9 +77,9 @@ Page {
         ActionItem {
             id: osclipboard
             enabled: false
-            title: (ostext.text.indexOf("Normal URL") != -1 ? qsTr("Copy Autoloader Links") + Retranslate.onLanguageChanged : qsTr("Copy OS Links") + Retranslate.onLanguageChanged)
+            title: (ostext.text.indexOf("AUTOLOADERS") != -1 ? qsTr("Copy Autoloader Links") + Retranslate.onLanguageChanged : qsTr("Copy OS Links") + Retranslate.onLanguageChanged)
             onTriggered: {
-                _manager.copyOsLinks()
+                Clipboard.copyToClipboard(_linkgen.returnCoreAndDebrickLinks())
                 copytoast.body = (ostext.text.indexOf("Normal URL") != -1 ? qsTr("Autoloader URLs copied") + Retranslate.onLanguageChanged : qsTr("OS URLs copied") + Retranslate.onLanguageChanged);
                 copytoast.show();
             }
@@ -84,10 +89,10 @@ Page {
         ActionItem {
             id: radioclipboard
             enabled: false
-            title: (radiotext.text.indexOf("Variant URL") != -1 ? qsTr("Copy Variant Links") + Retranslate.onLanguageChanged : qsTr("Copy Radio Links") + Retranslate.onLanguageChanged)
+            title: (qsTr("Copy Radio Links") + Retranslate.onLanguageChanged)
             onTriggered: {
-                _manager.copyRadioLinks()
-                copytoast.body = (radiotext.text.indexOf("Variant URL") != -1 ? qsTr("Variant URLs copied") + Retranslate.onLanguageChanged : qsTr("Radio URLs copied") + Retranslate.onLanguageChanged);
+                Clipboard.copyToClipboard(_linkgen.returnRadioLinks())
+                copytoast.body = (qsTr("Radio URLs copied") + Retranslate.onLanguageChanged);
                 copytoast.show();
             }
             ActionBar.placement: ActionBarPlacement.InOverflow
@@ -98,7 +103,7 @@ Page {
             enabled: false
             title: qsTr("Export Links") + Retranslate.onLanguageChanged
             onTriggered: {
-                _manager.exportLinks(swrelease);
+                _fsmanager.saveTextFile(_linkgen.returnLinks(), swrelease);
                 linkexporttoast.show();
             }
             ActionBar.placement: ActionBarPlacement.InOverflow
@@ -109,7 +114,7 @@ Page {
             enabled: false
             title: qsTr("Upload Links") + Retranslate.onLanguageChanged
             onTriggered: {
-                Paster.uploadPaste(_manager.returnLinks())
+                Paster.uploadPaste(_linkgen.returnLinks())
                 Paster.uploadUrlChanged.connect(pastetoast.show())
             }
             imageSource: "asset:///images/menus/ic_browser.png"
@@ -118,14 +123,9 @@ Page {
         ActionItem {
             id: ospaste
             enabled: false
-            title: (ostext.text.indexOf("Normal URL") != -1 ? qsTr("Upload Autoloader Links") + Retranslate.onLanguageChanged : qsTr("Upload OS Links") + Retranslate.onLanguageChanged)
+            title: (ostext.text.indexOf("AUTOLOADERS") != -1 ? qsTr("Upload Autoloader Links") + Retranslate.onLanguageChanged : qsTr("Upload OS Links") + Retranslate.onLanguageChanged)
             onTriggered: {
-                var smeg = _manager.returnCoreLinks()
-                if (smeg == "") {
-                    Paster.uploadPaste(_manager.returnOsLinks())
-                } else {
-                    Paster.uploadPaste(_manager.returnOsLinks() + "\n\n" + _manager.returnCoreLinks())
-                }
+                Paster.uploadPaste(_linkgen.returnCoreAndDebrickLinks())
                 Paster.uploadUrlChanged.connect(pastetoast.show())
             }
             imageSource: "asset:///images/menus/ic_browser.png"
@@ -134,9 +134,9 @@ Page {
         ActionItem {
             id: radiopaste
             enabled: false
-            title: (radiotext.text.indexOf("Variant URL") != -1 ? qsTr("Upload Variant Links") + Retranslate.onLanguageChanged : qsTr("Upload Radio Links") + Retranslate.onLanguageChanged)
+            title: (qsTr("Upload Radio Links") + Retranslate.onLanguageChanged)
             onTriggered: {
-                Paster.uploadPaste(_manager.returnRadioLinks())
+                Paster.uploadPaste(_linkgen.returnRadioLinks())
                 Paster.uploadUrlChanged.connect(pastetoast.show())
             }
             imageSource: "asset:///images/menus/ic_browser.png"

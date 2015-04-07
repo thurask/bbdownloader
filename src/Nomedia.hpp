@@ -20,7 +20,7 @@ public:
 
 public Q_SLOTS:
     Q_INVOKABLE
-    void setDir(QString directory);Q_INVOKABLE
+    void setDir(const QString& directory);Q_INVOKABLE
     bool checkNomedia();Q_INVOKABLE
     void deleteNomedia();Q_INVOKABLE
     void writeNomedia();

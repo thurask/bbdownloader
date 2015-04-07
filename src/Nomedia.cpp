@@ -6,7 +6,7 @@ Nomedia::Nomedia()
 
 }
 
-void Nomedia::setDir(QString directory)
+void Nomedia::setDir(const QString& directory)
 {
 dir = QDir(directory);
 file.setFileName(dir.absoluteFilePath(".nomedia"));

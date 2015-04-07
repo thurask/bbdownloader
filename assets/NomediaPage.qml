@@ -19,7 +19,7 @@ Sheet {
                 title: qsTr("Close") + Retranslate.onLanguageChanged
                 onTriggered: {
                     nomediaSheet.close()
-                    if (nomediaSheet) metadataSheet.destroy();
+                    if (nomediaSheet) nomediaSheet.destroy();
                 }
             }
         }

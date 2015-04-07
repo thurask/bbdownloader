@@ -26,9 +26,9 @@ public Q_SLOTS:
     Q_INVOKABLE
     void checkForUpdates();Q_INVOKABLE
     void setUpdateVersion(QString text);Q_INVOKABLE
-    QString getUpdateVersion();Q_INVOKABLE
+    const QString getUpdateVersion();Q_INVOKABLE
     void setLocalVersion(QString text);Q_INVOKABLE
-    QString getLocalVersion();Q_INVOKABLE
+    const QString getLocalVersion();Q_INVOKABLE
     bool returnUpdate();
 
     Q_SIGNALS:

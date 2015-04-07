@@ -6,7 +6,7 @@ Clipboard::Clipboard()
 {
 }
 
-void Clipboard::copyToClipboard(QByteArray copyText)
+void Clipboard::copyToClipboard(const QByteArray& copyText)
 {
     bb::system::Clipboard clipboard; // create clipboard
     clipboard.clear(); //empty

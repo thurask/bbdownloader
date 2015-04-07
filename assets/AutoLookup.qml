@@ -79,7 +79,7 @@ Page {
             title: qsTr("Export") + Retranslate.onLanguageChanged
             enabled: (scanning == false && outputtext.text != "")
             onTriggered: {
-                _manager.saveTextFile(outputtext.text, "Lookup-" + (serverdropdown.selectedOption.text));
+                _fsmanager.saveTextFile(outputtext.text, "Lookup-" + (serverdropdown.selectedOption.text));
                 lookupexporttoast.body = qsTr("Lookups saved to default directory") + Retranslate.onLanguageChanged;
                 lookupexporttoast.button.enabled = false;
                 lookupexporttoast.button.label = "";
@@ -133,8 +133,6 @@ Page {
                         led.color = LedColor.White
                     }
                     led.flash(1);
-                } else {
-                    led.cancel();
                 }
                 autolookup_input.text = _swlookup.lookupIncrement(autolookup_input.text, 3);
                 timer.start();

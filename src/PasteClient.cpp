@@ -10,9 +10,8 @@ PasteClient::PasteClient()
 
 void PasteClient::uploadPaste(QString payload)
 {
-    apikey = "b7c91d3c4f31ab6b8241a03356cce646"; //if you're recompiling this, get your own :P
     QUrl url("https://paste.ee/api");
-    url.addEncodedQueryItem("key", QUrl::toPercentEncoding(apikey));
+    url.addEncodedQueryItem("key", QUrl::toPercentEncoding(PASTEEE_API_KEY));
     url.addEncodedQueryItem("format", QUrl::toPercentEncoding("simple")); //it isn't source code, so don't tell the server to format it like source code
     url.addEncodedQueryItem("paste", QUrl::toPercentEncoding(payload));
     url.addEncodedQueryItem("description", QUrl::toPercentEncoding("BBDownloader Paste")); //better than "Untitled Paste"
@@ -31,7 +30,7 @@ void PasteClient::pasteReply()
     sender()->deleteLater();
 }
 
-void PasteClient::setUploadUrl(QString paste)
+void PasteClient::setUploadUrl(const QString& paste)
 {
     uploadUrl = paste;
     emit uploadUrlChanged();
@@ -40,17 +39,6 @@ void PasteClient::setUploadUrl(QString paste)
 QString PasteClient::getUploadUrl()
 {
     return uploadUrl;
-}
-
-void PasteClient::setApiKey(QString key)
-{
-    apikey = key;
-    emit apiKeyChanged();
-}
-
-QString PasteClient::getApiKey()
-{
-    return apikey;
 }
 
 PasteClient::~PasteClient()

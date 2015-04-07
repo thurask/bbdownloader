@@ -8,7 +8,7 @@ function bool2string(abool) {
 
 function getUptime() {
 	var now = new Date();
-	var dmy = new Date(_manager.readTextFile("/var/boottime.txt", "normal"));
+	var dmy = new Date(_fsmanager.readTextFile("/var/boottime.txt", "normal"));
 	var raw_ms = (now.getTime() - dmy.getTime());
 	//Days, hours, minutes
 	var days = Math.floor(raw_ms / (24 * 60 * 60 * 1000));

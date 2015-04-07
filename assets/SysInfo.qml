@@ -131,7 +131,7 @@ Page {
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Boot Time: %1").arg(_manager.readTextFile("/var/boottime.txt", "normsimp")) + Retranslate.onLanguageChanged
+                    text: qsTr("Boot Time: %1").arg(_fsmanager.readTextFile("/var/boottime.txt", "normsimp")) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
@@ -159,7 +159,7 @@ Page {
                 }
                 Label {
                     id: serial
-                    text: qsTr("Serial Number: %1").arg(hardwareinfo.serialNumber.slice(13, 14) + "-" + hardwareinfo.serialNumber.slice(14, 18) + "-" + hardwareinfo.serialNumber.slice(18, 22)) + Retranslate.onLanguageChanged
+                    text: qsTr("Serial Number: %1").arg(hardwareinfo.serialNumber.slice(10, 14) + "-" + hardwareinfo.serialNumber.slice(14, 18) + "-" + hardwareinfo.serialNumber.slice(18, 22)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
@@ -567,35 +567,35 @@ Page {
                     title: qsTr("Versions") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: qsTr("OS Version: %1").arg(_manager.readTextFile("/base/etc/os.version", "normsimp")) + Retranslate.onLanguageChanged
+                    text: qsTr("OS Version: %1").arg(_fsmanager.readTextFile("/base/etc/os.version", "normsimp")) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Build ID: %1").arg(_manager.readTextFile("/base/svnrev", "firstline").slice(9)) + Retranslate.onLanguageChanged
+                    text: qsTr("Build ID: %1").arg(_fsmanager.readTextFile("/base/svnrev", "firstline").slice(9)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Build Branch: %1").arg(_manager.readTextFile("/base/svnrev", "branch").slice(13)) + Retranslate.onLanguageChanged
+                    text: qsTr("Build Branch: %1").arg(_fsmanager.readTextFile("/base/svnrev", "branch").slice(13)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Radio Version: %1").arg(_manager.readTextFile("/radio/etc/radio.version", "normsimp")) + Retranslate.onLanguageChanged
+                    text: qsTr("Radio Version: %1").arg(_fsmanager.readTextFile("/radio/etc/radio.version", "normsimp")) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Build ID: %1").arg(_manager.readTextFile("/radio/svnrev", "firstline").slice(9)) + Retranslate.onLanguageChanged
+                    text: qsTr("Build ID: %1").arg(_fsmanager.readTextFile("/radio/svnrev", "firstline").slice(9)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Build Branch: %1").arg(_manager.readTextFile("/radio/svnrev", "branch").slice(13)) + Retranslate.onLanguageChanged
+                    text: qsTr("Build Branch: %1").arg(_fsmanager.readTextFile("/radio/svnrev", "branch").slice(13)) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("NFC Firmware: %1").arg(_manager.readTextFile("/var/etc/nfc/nfcFirmware.version", "normsimp")) + Retranslate.onLanguageChanged
+                    text: qsTr("NFC Firmware: %1").arg(_fsmanager.readTextFile("/var/etc/nfc/nfcFirmware.version", "normsimp")) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("NFC Stack: %1").arg(_manager.readTextFile("/var/etc/nfc/nfcStack.version", "normsimp")) + Retranslate.onLanguageChanged
+                    text: qsTr("NFC Stack: %1").arg(_fsmanager.readTextFile("/var/etc/nfc/nfcStack.version", "normsimp")) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
@@ -603,11 +603,11 @@ Page {
                     multiline: true
                 }
                 Label {
-                    text: qsTr("WiFi: %1").arg(_manager.readTextFile("/base/etc/wifi.version", "normsimp")) + Retranslate.onLanguageChanged
+                    text: qsTr("WiFi: %1").arg(_fsmanager.readTextFile("/base/etc/wifi.version", "normsimp")) + Retranslate.onLanguageChanged
                     multiline: true
                 }
                 Label {
-                    text: qsTr("Webkit: %1").arg(_manager.readTextFile("/base/etc/webkit.version", "normsimp")) + Retranslate.onLanguageChanged
+                    text: qsTr("Webkit: %1").arg(_fsmanager.readTextFile("/base/etc/webkit.version", "normsimp")) + Retranslate.onLanguageChanged
                     multiline: true
                 }
             }
@@ -616,7 +616,7 @@ Page {
                     title: qsTr("Device Properties") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: _manager.readTextFile("/pps/services/deviceproperties", "normal")
+                    text: _fsmanager.readTextFile("/pps/services/deviceproperties", "normal")
                     multiline: true
                 }
             }
@@ -625,7 +625,7 @@ Page {
                     title: qsTr("Hardware Info") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: _manager.readTextFile("/pps/services/hw_info/inventory", "normal")
+                    text: _fsmanager.readTextFile("/pps/services/hw_info/inventory", "normal")
                     multiline: true
                 }
             }
@@ -635,7 +635,7 @@ Page {
                     title: qsTr("Development Mode") + Retranslate.onLanguageChanged
                 }
                 Label {
-                    text: _manager.readTextFile("/pps/system/development/devmode", "normal")
+                    text: _fsmanager.readTextFile("/pps/system/development/devmode", "normal")
                     multiline: true
                 }
             }

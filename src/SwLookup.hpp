@@ -30,13 +30,13 @@ public:
 public Q_SLOTS:
     void post(QString osVer, QString server);
     QString softwareRelease();
-    void setSoftwareRelease(QString sw);
+    void setSoftwareRelease(const QString& sw);
     QString getServer();
-    void setServer(QString server);
+    void setServer(const QString& server);
     QString getAvailability();
-    void checkAvailability(QString swrelease);
+    void checkAvailability(const QString & swrelease);
     void setAvailability(QString availability);
-    QString lookupIncrement(QString os, int inc);
+    QString lookupIncrement(QString os, const int inc);
     QString spaceTrimmer(QString lookup);
 
     Q_SIGNALS:

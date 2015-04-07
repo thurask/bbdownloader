@@ -57,7 +57,6 @@ Sheet {
                     }
                     onLoadingChanged: {
                         if (loadProgress == 100) {
-                            console.log(Settings.getValueFor("theme", "bright"))
                             wview.postMessage(Settings.getValueFor("theme", "bright"))
                         }
                     }
