@@ -4,6 +4,14 @@
 	<release>
 		<series>10.3.1</series>
 		<trueos></trueos>
+		<os>10.3.1.2726</os>
+		<radio>10.3.1.2727</radio>
+		<software>10.3.1.1877</software>
+		<notes>Leap</notes>
+	</release>
+	<release>
+		<series>10.3.1</series>
+		<trueos></trueos>
 		<os>10.3.1.2708</os>
 		<radio>10.3.1.2709</radio>
 		<software>10.3.1.1865</software>
