@@ -2,6 +2,14 @@
 <!DOCTYPE repo SYSTEM "dtd/repo.dtd" >
 <repo>
 	<release>
+		<series>10.3.2</series>
+		<trueos>10.3.2.283</trueos>
+		<os>10.3.2.0283</os>
+		<radio>10.3.2.282</radio>
+		<software>N/A</software>
+		<notes>SDK Autoloader</notes>
+	</release>
+	<release>
 		<series>10.3.1</series>
 		<trueos></trueos>
 		<os>10.3.1.2726</os>
