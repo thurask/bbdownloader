@@ -3,11 +3,19 @@
 <repo>
 	<release>
 		<series>10.3.2</series>
+		<trueos>10.3.2.840</trueos>
+		<os>10.3.2.0840</os>
+		<radio>10.3.2.841</radio>
+		<software>10.3.2.544</software>
+		<notes>VZW Classic</notes>
+	</release>
+	<release>
+		<series>10.3.2</series>
 		<trueos>10.3.2.798</trueos>
 		<os>10.3.2.0798</os>
 		<radio>10.3.2.799</radio>
 		<software>10.3.2.516</software>
-		<notes>Shop BlackBerry</notes>
+		<notes>T-Mobile Classic</notes>
 	</release>
 	<release>
 		<series>10.3.2</series>
@@ -15,7 +23,7 @@
 		<os>10.3.2.0680</os>
 		<radio>10.3.2.681</radio>
 		<software>10.3.2.440</software>
-		<notes>Shop BlackBerry</notes>
+		<notes>10.3.2 for ATT</notes>
 	</release>
 	<release>
 		<series>10.3.2</series>
@@ -31,7 +39,7 @@
 		<os>10.3.1.2744</os>
 		<radio>10.3.1.2745</radio>
 		<software>10.3.1.1889</software>
-		<notes>ShopBlackBerry Classic</notes>
+		<notes>T-Mobile Classic</notes>
 	</release>
 	<release>
 		<series>10.3.1</series>

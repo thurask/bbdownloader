@@ -296,6 +296,13 @@
 		<image>asset:///images/devices/passportatt.png</image>
 	</device>
 	<device>
+		<name>Passport</name>
+		<variant>SQW100-4</variant>
+		<id>RHR191LW</id>
+		<url></url>
+		<image>asset:///images/devices/passportdallas.png</image>
+	</device>
+	<device>
 		<name>Classic</name>
 		<variant>SQC100-1</variant>
 		<id>RHH151LW</id>

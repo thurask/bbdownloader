@@ -122,6 +122,12 @@
 		<image>asset:///images/devices/passportatt.png</image>
 	</hardware>
 	<hardware>
+		<id>8F002C0A</id>
+		<name>Passport</name>
+		<variant>SQW100-4</variant>
+		<image>asset:///images/devices/passportdallas.png</image>
+	</hardware>
+	<hardware>
 		<id>8C00240A</id>
 		<name>Z30</name>
 		<variant>STA100-1</variant>
