@@ -1,368 +1,370 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE repo SYSTEM "dtd/ptcrb.dtd" >
-<repo>
-	<device>
-		<name>PlayBook</name>
-		<variant>WiFi</variant>
-		<id>RDJ21WW</id>
-		<url></url>
-		<image>asset:///images/devices/playbook.png</image>
-	</device>
-	<device>
-		<name>PlayBook</name>
-		<variant>HSPA+</variant>
-		<id>REH51UW</id>
-		<url>21167</url>
-		<image>asset:///images/devices/playbook.png</image>
-	</device>
-	<device>
-		<name>PlayBook</name>
-		<variant>LTE</variant>
-		<id>REG51LW</id>
-		<url>21212</url>
-		<image>asset:///images/devices/playbook.png</image>
-	</device>
-	<device>
-		<name>PlayBook</name>
-		<variant>Verizon LTE</variant>
-		<id>REF31LW</id>
-		<url></url>
-		<image>asset:///images/devices/playbook.png</image>
-	</device>
-	<device>
-		<name>Dev Alpha</name>
-		<variant>Dev Alpha A</variant>
-		<id></id>
-		<url></url>
-		<image>asset:///images/devices/daa.png</image>
-	</device>
-	<device>
-		<name>Dev Alpha</name>
-		<variant>Dev Alpha B</variant>
-		<id>RFG82UW</id>
-		<url></url>
-		<image>asset:///images/devices/dab.png</image>
-	</device>
-	<device>
-		<name>Dev Alpha</name>
-		<variant>Dev Alpha C</variant>
-		<id>RFN82UW</id>
-		<url></url>
-		<image>asset:///images/devices/dac.png</image>
-	</device>
-	<device>
-		<name>Z10</name>
-		<variant>STL100-1</variant>
-		<id>RFG81UW</id>
-		<url>21737</url>
-		<image>asset:///images/devices/z10.png</image>
-	</device>
-	<device>
-		<name>Z10</name>
-		<variant>STL100-2</variant>
-		<id>RFH121LW</id>
-		<url></url>
-		<image>asset:///images/devices/z10.png</image>
-	</device>
-	<device>
-		<name>Z10</name>
-		<variant>STL100-3</variant>
-		<id>RFF91LW</id>
-		<url>21730</url>
-		<image>asset:///images/devices/z10.png</image>
-	</device>
-	<device>
-		<name>Z10</name>
-		<variant>STL100-3</variant>
-		<id>RFK121LW</id>
-		<url>21990</url>
-		<image>asset:///images/devices/z10.png</image>
-	</device>
-	<device>
-		<name>Z10</name>
-		<variant>STL100-4</variant>
-		<id>RFA91LW</id>
-		<url></url>
-		<image>asset:///images/devices/z10.png</image>
-	</device>
-	<device>
-		<name>Q10</name>
-		<variant>SQN100-1</variant>
-		<id>RFL111LW</id>
-		<url>22692</url>
-		<image>asset:///images/devices/q10.png</image>
-	</device>
-	<device>
-		<name>Q10</name>
-		<variant>SQN100-2</variant>
-		<id>RFM121LW</id>
-		<url></url>
-		<image>asset:///images/devices/q10.png</image>
-	</device>
-	<device>
-		<name>Q10</name>
-		<variant>SQN100-3</variant>
-		<id>RFN81UW</id>
-		<url>22693</url>
-		<image>asset:///images/devices/q10.png</image>
-	</device>
-	<device>
-		<name>Q10</name>
-		<variant>SQN100-4</variant>
-		<id>RFQ111LW</id>
-		<url></url>
-		<image>asset:///images/devices/q10.png</image>
-	</device>
-	<device>
-		<name>Q10</name>
-		<variant>SQN100-5</variant>
-		<id>RFP121LW</id>
-		<url>22921</url>
-		<image>asset:///images/devices/q10.png</image>
-	</device>
-	<device>
-		<name>Q5</name>
-		<variant>SQR100-1</variant>
-		<id>RFR101LW</id>
-		<url>23178</url>
-		<image>asset:///images/devices/q5.png</image>
-	</device>
-	<device>
-		<name>Q5</name>
-		<variant>SQR100-2</variant>
-		<id>RFS121LW</id>
-		<url>24132</url>
-		<image>asset:///images/devices/q5.png</image>
-	</device>
-	<device>
-		<name>Q5</name>
-		<variant>SQR100-3</variant>
-		<id>RFT81UW</id>
-		<url></url>
-		<image>asset:///images/devices/q5.png</image>
-	</device>
-	<device>
-		<name>Z30</name>
-		<variant>STA100-1</variant>
-		<id>RFV121LW</id>
-		<url>23752</url>
-		<image>asset:///images/devices/z30.png</image>
-	</device>
-	<device>
-		<name>Z30</name>
-		<variant>STA100-2</variant>
-		<id>RFW121LW</id>
-		<url></url>
-		<image>asset:///images/devices/z30.png</image>
-	</device>
-	<device>
-		<name>Z30</name>
-		<variant>STA100-3</variant>
-		<id>RFX101LW</id>
-		<url></url>
-		<image>asset:///images/devices/z30.png</image>
-	</device>
-	<device>
-		<name>Z30</name>
-		<variant>STA100-4</variant>
-		<id>RGB141LW</id>
-		<url></url>
-		<image>asset:///images/devices/z30.png</image>
-	</device>
-	<device>
-		<name>Z30</name>
-		<variant>STA100-5</variant>
-		<id>RFY111LW</id>
-		<url>24057</url>
-		<image>asset:///images/devices/z30.png</image>
-	</device>
-	<device>
-		<name>Z30</name>
-		<variant>STA100-6</variant>
-		<id>RGU131LW</id>
-		<url></url>
-		<image>asset:///images/devices/z30.png</image>
-	</device>
-	<device>
-		<name>Z5</name>
-		<variant>STB100-1</variant>
-		<id>RGH111LW</id>
-		<url></url>
-		<image>asset:///images/devices/z5.png</image>
-	</device>
-	<device>
-		<name>Z5</name>
-		<variant>STB100-2</variant>
-		<id>RGJ121LW</id>
-		<url></url>
-		<image>asset:///images/devices/z5.png</image>
-	</device>
-	<device>
-		<name>Z5</name>
-		<variant>STB100-3</variant>
-		<id>RGL121LW</id>
-		<url></url>
-		<image>asset:///images/devices/z5.png</image>
-	</device>
-	<device>
-		<name>Z5</name>
-		<variant>STB100-4</variant>
-		<id>RGM121LW</id>
-		<url></url>
-		<image>asset:///images/devices/z5.png</image>
-	</device>
-	<device>
-		<name>Z5</name>
-		<variant>STB100-5</variant>
-		<id>RGK111LW</id>
-		<url></url>
-		<image>asset:///images/devices/z5.png</image>
-	</device>
-	<device>
-		<name>Q3</name>
-		<variant>SQC100-1</variant>
-		<id>RGP71UW</id>
-		<url></url>
-		<image>asset:///images/devices/q3.png</image>
-	</device>
-	<device>
-		<name>Q3</name>
-		<variant>SQC100-2</variant>
-		<id>RGN81UW</id>
-		<url></url>
-		<image>asset:///images/devices/q3.png</image>
-	</device>
-	<device>
-		<name>Z3</name>
-		<variant>STJ100-1</variant>
-		<id></id>
-		<url></url>
-		<image>asset:///images/devices/z3.png</image>
-	</device>
-	<device>
-		<name>Z3</name>
-		<variant>STJ100-2</variant>
-		<id>RHJ81UW</id>
-		<url>28162</url>
-		<image>asset:///images/devices/z3.png</image>
-	</device>
-	<device>
-		<name>P'9982</name>
-		<variant>STK100-1</variant>
-		<id>RGE111LW</id>
-		<url></url>
-		<image>asset:///images/devices/9982.png</image>
-	</device>
-	<device>
-		<name>P'9982</name>
-		<variant>STK100-2</variant>
-		<id>RGF111LW</id>
-		<url></url>
-		<image>asset:///images/devices/9982.png</image>
-	</device>
-	<device>
-		<name>P'9983</name>
-		<variant>SQK100-1</variant>
-		<id>RHB121LW</id>
-		<url></url>
-		<image>asset:///images/devices/9983.png</image>
-	</device>
-	<device>
-		<name>P'9983</name>
-		<variant>SQK100-2</variant>
-		<id>RHA111LW</id>
-		<url></url>
-		<image>asset:///images/devices/9983.png</image>
-	</device>
-	<device>
-		<name>Passport</name>
-		<variant>SQW100-1</variant>
-		<id>RGY181LW</id>
-		<url>25955</url>
-		<image>asset:///images/devices/passport.png</image>
-	</device>
-	<device>
-		<name>Passport</name>
-		<variant>SQW100-2</variant>
-		<id></id>
-		<url></url>
-		<image>asset:///images/devices/passport.png</image>
-	</device>
-	<device>
-		<name>Passport</name>
-		<variant>SQW100-3</variant>
-		<id>RGV161LW</id>
-		<url>28153</url>
-		<image>asset:///images/devices/passportatt.png</image>
-	</device>
-	<device>
-		<name>Passport</name>
-		<variant>SQW100-4</variant>
-		<id>RHR191LW</id>
-		<url></url>
-		<image>asset:///images/devices/passportdallas.png</image>
-	</device>
-	<device>
-		<name>Classic</name>
-		<variant>SQC100-1</variant>
-		<id>RHH151LW</id>
-		<url></url>
-		<image>asset:///images/devices/classic.png</image>
-	</device>
-	<device>
-		<name>Classic</name>
-		<variant>SQC100-2</variant>
-		<id>RHE151LW</id>
-		<url>28112</url>
-		<image>asset:///images/devices/classic.png</image>
-	</device>
-	<device>
-		<name>Classic</name>
-		<variant>SQC100-3</variant>
-		<id>RHF141LW</id>
-		<url></url>
-		<image>asset:///images/devices/classic.png</image>
-	</device>
-	<device>
-		<name>Classic</name>
-		<variant>SQC100-4</variant>
-		<id>RHG161LW</id>
-		<url>26628</url>
-		<image>asset:///images/devices/classic.png</image>
-	</device>
-	<device>
-		<name>Classic</name>
-		<variant>SQC100-5</variant>
-		<id>RHF142LW</id>
-		<url></url>
-		<image>asset:///images/devices/classic.png</image>
-	</device>
-	<device>
-		<name>Leap</name>
-		<variant>STR100-1</variant>
-		<id>RHD131LW</id>
-		<url></url>
-		<image>asset:///images/devices/leap.png</image>
-	</device>
-	<device>
-		<name>Leap</name>
-		<variant>STR100-2</variant>
-		<id>RHC161LW</id>
-		<url>28740</url>
-		<image>asset:///images/devices/leap.png</image>
-	</device>
-	<device>
-		<name>Z20</name>
-		<variant>STM100-1</variant>
-		<id></id>
-		<url></url>
-		<image>asset:///images/devices/manitoba.png</image>
-	</device>
-	<device>
-		<name>Z20</name>
-		<variant>STM100-2</variant>
-		<id>RHC161LW</id>
-		<url></url>
-		<image>asset:///images/devices/manitoba.png</image>
-	</device>
+<repo xmlns="http://tempuri.org/ptcrb"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://tempuri.org/ptcrb xsd/ptcrb.xsd">
+<device>
+<name>PlayBook</name>
+<variant>WiFi</variant>
+<id>RDJ21WW</id>
+<url></url>
+<image>asset:///images/devices/playbook.png</image>
+</device>
+<device>
+<name>PlayBook</name>
+<variant>HSPA+</variant>
+<id>REH51UW</id>
+<url>21167</url>
+<image>asset:///images/devices/playbook.png</image>
+</device>
+<device>
+<name>PlayBook</name>
+<variant>LTE</variant>
+<id>REG51LW</id>
+<url>21212</url>
+<image>asset:///images/devices/playbook.png</image>
+</device>
+<device>
+<name>PlayBook</name>
+<variant>Verizon LTE</variant>
+<id>REF31LW</id>
+<url></url>
+<image>asset:///images/devices/playbook.png</image>
+</device>
+<device>
+<name>Dev Alpha</name>
+<variant>Dev Alpha A</variant>
+<id></id>
+<url></url>
+<image>asset:///images/devices/daa.png</image>
+</device>
+<device>
+<name>Dev Alpha</name>
+<variant>Dev Alpha B</variant>
+<id>RFG82UW</id>
+<url></url>
+<image>asset:///images/devices/dab.png</image>
+</device>
+<device>
+<name>Dev Alpha</name>
+<variant>Dev Alpha C</variant>
+<id>RFN82UW</id>
+<url></url>
+<image>asset:///images/devices/dac.png</image>
+</device>
+<device>
+<name>Z10</name>
+<variant>STL100-1</variant>
+<id>RFG81UW</id>
+<url>21737</url>
+<image>asset:///images/devices/z10.png</image>
+</device>
+<device>
+<name>Z10</name>
+<variant>STL100-2</variant>
+<id>RFH121LW</id>
+<url></url>
+<image>asset:///images/devices/z10.png</image>
+</device>
+<device>
+<name>Z10</name>
+<variant>STL100-3</variant>
+<id>RFF91LW</id>
+<url>21730</url>
+<image>asset:///images/devices/z10.png</image>
+</device>
+<device>
+<name>Z10</name>
+<variant>STL100-3</variant>
+<id>RFK121LW</id>
+<url>21990</url>
+<image>asset:///images/devices/z10.png</image>
+</device>
+<device>
+<name>Z10</name>
+<variant>STL100-4</variant>
+<id>RFA91LW</id>
+<url></url>
+<image>asset:///images/devices/z10.png</image>
+</device>
+<device>
+<name>Q10</name>
+<variant>SQN100-1</variant>
+<id>RFL111LW</id>
+<url>22692</url>
+<image>asset:///images/devices/q10.png</image>
+</device>
+<device>
+<name>Q10</name>
+<variant>SQN100-2</variant>
+<id>RFM121LW</id>
+<url></url>
+<image>asset:///images/devices/q10.png</image>
+</device>
+<device>
+<name>Q10</name>
+<variant>SQN100-3</variant>
+<id>RFN81UW</id>
+<url>22693</url>
+<image>asset:///images/devices/q10.png</image>
+</device>
+<device>
+<name>Q10</name>
+<variant>SQN100-4</variant>
+<id>RFQ111LW</id>
+<url></url>
+<image>asset:///images/devices/q10.png</image>
+</device>
+<device>
+<name>Q10</name>
+<variant>SQN100-5</variant>
+<id>RFP121LW</id>
+<url>22921</url>
+<image>asset:///images/devices/q10.png</image>
+</device>
+<device>
+<name>Q5</name>
+<variant>SQR100-1</variant>
+<id>RFR101LW</id>
+<url>23178</url>
+<image>asset:///images/devices/q5.png</image>
+</device>
+<device>
+<name>Q5</name>
+<variant>SQR100-2</variant>
+<id>RFS121LW</id>
+<url>24132</url>
+<image>asset:///images/devices/q5.png</image>
+</device>
+<device>
+<name>Q5</name>
+<variant>SQR100-3</variant>
+<id>RFT81UW</id>
+<url></url>
+<image>asset:///images/devices/q5.png</image>
+</device>
+<device>
+<name>Z30</name>
+<variant>STA100-1</variant>
+<id>RFV121LW</id>
+<url>23752</url>
+<image>asset:///images/devices/z30.png</image>
+</device>
+<device>
+<name>Z30</name>
+<variant>STA100-2</variant>
+<id>RFW121LW</id>
+<url></url>
+<image>asset:///images/devices/z30.png</image>
+</device>
+<device>
+<name>Z30</name>
+<variant>STA100-3</variant>
+<id>RFX101LW</id>
+<url></url>
+<image>asset:///images/devices/z30.png</image>
+</device>
+<device>
+<name>Z30</name>
+<variant>STA100-4</variant>
+<id>RGB141LW</id>
+<url></url>
+<image>asset:///images/devices/z30.png</image>
+</device>
+<device>
+<name>Z30</name>
+<variant>STA100-5</variant>
+<id>RFY111LW</id>
+<url>24057</url>
+<image>asset:///images/devices/z30.png</image>
+</device>
+<device>
+<name>Z30</name>
+<variant>STA100-6</variant>
+<id>RGU131LW</id>
+<url></url>
+<image>asset:///images/devices/z30.png</image>
+</device>
+<device>
+<name>Z5</name>
+<variant>STB100-1</variant>
+<id>RGH111LW</id>
+<url></url>
+<image>asset:///images/devices/z5.png</image>
+</device>
+<device>
+<name>Z5</name>
+<variant>STB100-2</variant>
+<id>RGJ121LW</id>
+<url></url>
+<image>asset:///images/devices/z5.png</image>
+</device>
+<device>
+<name>Z5</name>
+<variant>STB100-3</variant>
+<id>RGL121LW</id>
+<url></url>
+<image>asset:///images/devices/z5.png</image>
+</device>
+<device>
+<name>Z5</name>
+<variant>STB100-4</variant>
+<id>RGM121LW</id>
+<url></url>
+<image>asset:///images/devices/z5.png</image>
+</device>
+<device>
+<name>Z5</name>
+<variant>STB100-5</variant>
+<id>RGK111LW</id>
+<url></url>
+<image>asset:///images/devices/z5.png</image>
+</device>
+<device>
+<name>Q3</name>
+<variant>SQC100-1</variant>
+<id>RGP71UW</id>
+<url></url>
+<image>asset:///images/devices/q3.png</image>
+</device>
+<device>
+<name>Q3</name>
+<variant>SQC100-2</variant>
+<id>RGN81UW</id>
+<url></url>
+<image>asset:///images/devices/q3.png</image>
+</device>
+<device>
+<name>Z3</name>
+<variant>STJ100-1</variant>
+<id></id>
+<url></url>
+<image>asset:///images/devices/z3.png</image>
+</device>
+<device>
+<name>Z3</name>
+<variant>STJ100-2</variant>
+<id>RHJ81UW</id>
+<url>28162</url>
+<image>asset:///images/devices/z3.png</image>
+</device>
+<device>
+<name>P'9982</name>
+<variant>STK100-1</variant>
+<id>RGE111LW</id>
+<url></url>
+<image>asset:///images/devices/9982.png</image>
+</device>
+<device>
+<name>P'9982</name>
+<variant>STK100-2</variant>
+<id>RGF111LW</id>
+<url></url>
+<image>asset:///images/devices/9982.png</image>
+</device>
+<device>
+<name>P'9983</name>
+<variant>SQK100-1</variant>
+<id>RHB121LW</id>
+<url></url>
+<image>asset:///images/devices/9983.png</image>
+</device>
+<device>
+<name>P'9983</name>
+<variant>SQK100-2</variant>
+<id>RHA111LW</id>
+<url></url>
+<image>asset:///images/devices/9983.png</image>
+</device>
+<device>
+<name>Passport</name>
+<variant>SQW100-1</variant>
+<id>RGY181LW</id>
+<url>25955</url>
+<image>asset:///images/devices/passport.png</image>
+</device>
+<device>
+<name>Passport</name>
+<variant>SQW100-2</variant>
+<id></id>
+<url></url>
+<image>asset:///images/devices/passport.png</image>
+</device>
+<device>
+<name>Passport</name>
+<variant>SQW100-3</variant>
+<id>RGV161LW</id>
+<url>28153</url>
+<image>asset:///images/devices/passportatt.png</image>
+</device>
+<device>
+<name>Passport</name>
+<variant>SQW100-4</variant>
+<id>RHR191LW</id>
+<url></url>
+<image>asset:///images/devices/passportdallas.png</image>
+</device>
+<device>
+<name>Classic</name>
+<variant>SQC100-1</variant>
+<id>RHH151LW</id>
+<url></url>
+<image>asset:///images/devices/classic.png</image>
+</device>
+<device>
+<name>Classic</name>
+<variant>SQC100-2</variant>
+<id>RHE151LW</id>
+<url>28112</url>
+<image>asset:///images/devices/classic.png</image>
+</device>
+<device>
+<name>Classic</name>
+<variant>SQC100-3</variant>
+<id>RHF141LW</id>
+<url></url>
+<image>asset:///images/devices/classic.png</image>
+</device>
+<device>
+<name>Classic</name>
+<variant>SQC100-4</variant>
+<id>RHG161LW</id>
+<url>26628</url>
+<image>asset:///images/devices/classic.png</image>
+</device>
+<device>
+<name>Classic</name>
+<variant>SQC100-5</variant>
+<id>RHF142LW</id>
+<url></url>
+<image>asset:///images/devices/classic.png</image>
+</device>
+<device>
+<name>Leap</name>
+<variant>STR100-1</variant>
+<id>RHD131LW</id>
+<url></url>
+<image>asset:///images/devices/leap.png</image>
+</device>
+<device>
+<name>Leap</name>
+<variant>STR100-2</variant>
+<id>RHC161LW</id>
+<url>28740</url>
+<image>asset:///images/devices/leap.png</image>
+</device>
+<device>
+<name>Z20</name>
+<variant>STM100-1</variant>
+<id></id>
+<url></url>
+<image>asset:///images/devices/manitoba.png</image>
+</device>
+<device>
+<name>Z20</name>
+<variant>STM100-2</variant>
+<id>RHC161LW</id>
+<url></url>
+<image>asset:///images/devices/manitoba.png</image>
+</device>
 </repo>

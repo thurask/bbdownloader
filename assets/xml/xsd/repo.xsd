@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://tempuri.org/repo" elementFormDefault="qualified" targetNamespace="http://tempuri.org/repo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="repo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="release" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="release">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="series" />
+        <xs:element ref="trueos" />
+        <xs:element ref="os" />
+        <xs:element ref="radio" />
+        <xs:element ref="software" />
+        <xs:element ref="notes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="series" type="xs:string" />
+  <xs:element name="trueos" type="xs:string" />
+  <xs:element name="os" type="xs:string" />
+  <xs:element name="radio" type="xs:string" />
+  <xs:element name="software" type="xs:string" />
+  <xs:element name="notes" type="xs:string" />
+</xs:schema>
