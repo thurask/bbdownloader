@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|BlackBerry">
+      <Configuration>Debug</Configuration>
+      <Platform>BlackBerry</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|BlackBerry">
+      <Configuration>Release</Configuration>
+      <Platform>BlackBerry</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9D1D5A91-832B-4C19-96B8-FAC0E712D110}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|BlackBerry'">
+    <PlatformToolset>qcc</PlatformToolset>
+    <ConfigurationAppType>Cascades</ConfigurationAppType>
+    <TargetArch>armle-v7</TargetArch>
+    <MakefileTargetName>Device-Debug</MakefileTargetName>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|BlackBerry'">
+    <PlatformToolset>qcc</PlatformToolset>
+    <ConfigurationAppType>Cascades</ConfigurationAppType>
+    <TargetArch>armle-v7</TargetArch>
+    <MakefileTargetName>Device-Release</MakefileTargetName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|BlackBerry'">
+    <OutDir>$(TargetArchPre)\o$(TargetArchPost)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|BlackBerry'">
+    <OutDir>$(TargetArchPre)\o$(TargetArchPost)-g\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|BlackBerry'">
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(FLURRY_SDK_LOC);$(QNX_TARGET)\usr\include\openssl;$(QNX_TARGET)\usr\include\qt4\QtCore;$(QNX_TARGET)\usr\include\bb;$(QNX_TARGET)\usr\include\bb\device;$(QNX_TARGET)\usr\include\bb\data;$(QNX_TARGET)\usr\include\bb\cascades\pickers;$(QNX_TARGET)\usr\include\bb\system;$(QNX_TARGET)\usr\include\qt4\QtNetwork;$(QNX_TARGET)\usr\include\qt4\QtXml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>QtCore;QtXml;QtNetwork;bbcascades;bbsystem;bbcascadespickers;bbdata;bbdevice;clipboard;bb;Flurry;curl;packageinfo;screen;ssl;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|BlackBerry'">
+    <Link>
+      <AdditionalDependencies>QtCore;QtXml;QtNetwork;bbcascades;bbsystem;bbcascadespickers;bbdata;bbdevice;clipboard;bb;Flurry;curl;packageinfo;screen;ssl;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(FLURRY_SDK_LOC);$(QNX_TARGET)\usr\include\openssl;$(QNX_TARGET)\usr\include\qt4\QtCore;$(QNX_TARGET)\usr\include\bb;$(QNX_TARGET)\usr\include\bb\device;$(QNX_TARGET)\usr\include\bb\data;$(QNX_TARGET)\usr\include\bb\cascades\pickers;$(QNX_TARGET)\usr\include\bb\system;$(QNX_TARGET)\usr\include\qt4\QtNetwork;$(QNX_TARGET)\usr\include\qt4\QtXml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include=".gitattributes" />
+    <None Include=".gitrevision" />
+    <None Include="assets\.assets.index" />
+    <None Include="assets\10ppd\images\blank\blank.png" />
+    <None Include="assets\10ppd\images\covers\cover.png" />
+    <None Include="assets\12ppd\images\blank\blank.png" />
+    <None Include="assets\12ppd\images\covers\cover.png" />
+    <None Include="assets\12ppd\images\covers\cover_small.png" />
+    <None Include="assets\8ppd\images\blank\blank.png" />
+    <None Include="assets\8ppd\images\covers\cover.png" />
+    <None Include="assets\9ppd\images\blank\blank.png" />
+    <None Include="assets\9ppd\images\covers\cover.png" />
+    <None Include="assets\ActiveFrame.qml" />
+    <None Include="assets\AutoLookup.qml" />
+    <None Include="assets\CertViewer.qml" />
+    <None Include="assets\CustomTitleBar.qml" />
+    <None Include="assets\db\index.dat" />
+    <None Include="assets\EScreens.qml" />
+    <None Include="assets\HardwareIDs.qml" />
+    <None Include="assets\HashToolsPage.qml" />
+    <None Include="assets\HelpSheet.qml" />
+    <None Include="assets\html\README.html" />
+    <None Include="assets\images\blank\blank.png" />
+    <None Include="assets\images\covers\cover.png" />
+    <None Include="assets\images\covers\cover_small.png" />
+    <None Include="assets\images\devices\9982.png" />
+    <None Include="assets\images\devices\9983.png" />
+    <None Include="assets\images\devices\classic.png" />
+    <None Include="assets\images\devices\daa.png" />
+    <None Include="assets\images\devices\dab.png" />
+    <None Include="assets\images\devices\dac.png" />
+    <None Include="assets\images\devices\leap.png" />
+    <None Include="assets\images\devices\manitoba.png" />
+    <None Include="assets\images\devices\passport.png" />
+    <None Include="assets\images\devices\passportatt.png" />
+    <None Include="assets\images\devices\passportdallas.png" />
+    <None Include="assets\images\devices\playbook.png" />
+    <None Include="assets\images\devices\q10.png" />
+    <None Include="assets\images\devices\q3.png" />
+    <None Include="assets\images\devices\q5.png" />
+    <None Include="assets\images\devices\z10.png" />
+    <None Include="assets\images\devices\z3.png" />
+    <None Include="assets\images\devices\z30.png" />
+    <None Include="assets\images\devices\z5.png" />
+    <None Include="assets\images\icons\icon_110.png" />
+    <None Include="assets\images\icons\icon_144.png" />
+    <None Include="assets\images\icons\icon_90.png" />
+    <None Include="assets\images\icons\icon_96.png" />
+    <None Include="assets\images\menus\ic_browser.png" />
+    <None Include="assets\images\menus\ic_certificate_import.png" />
+    <None Include="assets\images\menus\ic_clear.png" />
+    <None Include="assets\images\menus\ic_contact.png" />
+    <None Include="assets\images\menus\ic_copy.png" />
+    <None Include="assets\images\menus\ic_doctype_doc.png" />
+    <None Include="assets\images\menus\ic_doctype_generic.png" />
+    <None Include="assets\images\menus\ic_edit.png" />
+    <None Include="assets\images\menus\ic_help.png" />
+    <None Include="assets\images\menus\ic_home.png" />
+    <None Include="assets\images\menus\ic_info.png" />
+    <None Include="assets\images\menus\ic_pgp_key.png" />
+    <None Include="assets\images\menus\ic_play.png" />
+    <None Include="assets\images\menus\ic_qs_developer_mode.png" />
+    <None Include="assets\images\menus\ic_qs_mobilehotspot.png" />
+    <None Include="assets\images\menus\ic_reload.png" />
+    <None Include="assets\images\menus\ic_search.png" />
+    <None Include="assets\images\menus\ic_settings.png" />
+    <None Include="assets\images\menus\ic_share.png" />
+    <None Include="assets\images\menus\ic_show_vkb.png" />
+    <None Include="assets\images\menus\ic_stop.png" />
+    <None Include="assets\images\splash\aseries_landscape.png" />
+    <None Include="assets\images\splash\aseries_portrait.png" />
+    <None Include="assets\images\splash\lseries_landscape.png" />
+    <None Include="assets\images\splash\lseries_portrait.png" />
+    <None Include="assets\images\splash\nseries.png" />
+    <None Include="assets\images\splash\wseries.png" />
+    <None Include="assets\js\SysInfo.js" />
+    <None Include="assets\main.qml" />
+    <None Include="assets\MetadataSheet.qml" />
+    <None Include="assets\NomediaPage.qml" />
+    <None Include="assets\OSDownloader.qml" />
+    <None Include="assets\OSDownloaderConfig.qml" />
+    <None Include="assets\OSRepo.qml" />
+    <None Include="assets\SettingsSheet.qml" />
+    <None Include="assets\SysInfo.qml" />
+    <None Include="assets\xml\dtd\hwid.dtd" />
+    <None Include="assets\xml\dtd\ptcrb.dtd" />
+    <None Include="assets\xml\dtd\repo.dtd" />
+    <None Include="assets\xml\hwid.xml" />
+    <None Include="assets\xml\ptcrb.xml" />
+    <None Include="assets\xml\repo.xml" />
+    <None Include="bar-descriptor.xml" />
+    <None Include="bbdownloader.pro" />
+    <None Include="config.pri" />
+    <None Include="Makefile" />
+    <None Include="README.md" />
+    <None Include="translations\bbdownloader.pro" />
+    <None Include="translations\bbdownloader.ts" />
+    <None Include="translations\bbdownloader_en.ts" />
+    <None Include="translations\Makefile" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="precompiled.h" />
+    <ClInclude Include="src\applicationui.hpp" />
+    <ClInclude Include="src\Clipboard.hpp" />
+    <ClInclude Include="src\FileSystemManager.hpp" />
+    <ClInclude Include="src\FlurryAnalytics.hpp" />
+    <ClInclude Include="src\HashGenerator.hpp" />
+    <ClInclude Include="src\LinkGenerator.hpp" />
+    <ClInclude Include="src\MetadataReader.hpp" />
+    <ClInclude Include="src\Nomedia.hpp" />
+    <ClInclude Include="src\PasteClient.hpp" />
+    <ClInclude Include="src\Settings.hpp" />
+    <ClInclude Include="src\SwLookup.hpp" />
+    <ClInclude Include="src\timer.hpp" />
+    <ClInclude Include="src\UpdateChecker.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xsd Include="assets\xml\xsd\hwid.xsd" />
+    <Xsd Include="assets\xml\xsd\ptcrb.xsd" />
+    <Xsd Include="assets\xml\xsd\repo.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\applicationui.cpp" />
+    <ClCompile Include="src\Clipboard.cpp" />
+    <ClCompile Include="src\FileSystemManager.cpp" />
+    <ClCompile Include="src\FlurryAnalytics.cpp" />
+    <ClCompile Include="src\HashGenerator.cpp" />
+    <ClCompile Include="src\LinkGenerator.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\MetadataReader.cpp" />
+    <ClCompile Include="src\Nomedia.cpp" />
+    <ClCompile Include="src\PasteClient.cpp" />
+    <ClCompile Include="src\Settings.cpp" />
+    <ClCompile Include="src\SwLookup.cpp" />
+    <ClCompile Include="src\timer.cpp" />
+    <ClCompile Include="src\UpdateChecker.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
