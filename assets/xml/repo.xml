@@ -6,11 +6,20 @@ xsi:schemaLocation="http://tempuri.org/repo xsd/repo.xsd">
 <release>
 <series>10.3.2</series>
 <trueos></trueos>
-<os>10.3.2.2876</os>
-<radio>10.3.2.2836</radio>
-<software>10.3.2.2877</software>
+<os>10.3.2.2888</os>
+<radio>10.3.2.2877</radio>
+<software>10.3.2.2848</software>
 <notes>Shop BlackBerry</notes>
 </release>
+<release>
+<series>10.3.2</series>
+<trueos></trueos>
+<os>10.3.2.2876</os>
+<radio>10.3.2.2877</radio>
+<software>10.3.2.2836</software>
+<notes>Shop BlackBerry</notes>
+</release>
+<release>
 <series>10.3.2</series>
 <trueos></trueos>
 <os>10.3.2.2813</os>
