@@ -4,6 +4,14 @@
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://tempuri.org/repo xsd/repo.xsd">
 <release>
+<series>10.3.3</series>
+<trueos>10.3.3.746</trueos>
+<os>10.3.3.0746</os>
+<radio>10.3.3.745</radio>
+<software>N/A</software>
+<notes>SDK Autoloader</notes>
+</release>
+<release>
 <series>10.3.2</series>
 <trueos></trueos>
 <os>10.3.2.2888</os>
