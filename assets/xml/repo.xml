@@ -5,6 +5,14 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://tempuri.org/repo xsd/repo.xsd">
 <release>
 <series>10.3.3</series>
+<trueos></trueos>
+<os>10.3.3.2049</os>
+<radio>10.3.3.2050</radio>
+<software>10.3.3.1359</software>
+<notes>Shop BlackBerry</notes>
+</release>
+<release>
+<series>10.3.3</series>
 <trueos>10.3.3.746</trueos>
 <os>10.3.3.0746</os>
 <radio>10.3.3.745</radio>
