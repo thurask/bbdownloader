@@ -6,6 +6,14 @@ xsi:schemaLocation="http://tempuri.org/repo xsd/repo.xsd">
 <release>
 <series>10.3.3</series>
 <trueos></trueos>
+<os>10.3.3.3057</os>
+<radio>10.3.3.3058</radio>
+<software>10.3.3.2031</software>
+<notes>10.3.3</notes>
+</release>
+<release>
+<series>10.3.3</series>
+<trueos></trueos>
 <os>10.3.3.2205</os>
 <radio>10.3.3.2206</radio>
 <software>10.3.3.1463</software>
